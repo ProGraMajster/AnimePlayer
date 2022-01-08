@@ -1,0 +1,18 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="AnimePlayer.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="idMain" Type="System.String" Scope="User">
+      <Value Profile="(Default)">1ooEROdhBO4QbQHRDyKdm8OcjIgpYicqn</Value>
+    </Setting>
+    <Setting Name="RoundingControl" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="UpdateLink_Version" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">https://drive.google.com/uc?export=download&amp;id=1iLx01amO8pto7mm8PjDY3kPNi4Zgm3S0</Value>
+    </Setting>
+    <Setting Name="UpdateLink_File" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">https://drive.google.com/uc?export=download&amp;id=1Kswt2QT267dkIfF9p3H-6f_bYdq9QBDP</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

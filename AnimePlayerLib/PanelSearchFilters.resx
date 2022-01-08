@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <metadata name="toolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="toolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="checkBox_Mystery.ToolTip" xml:space="preserve">
+    <value>Fabuła tytułu opiera się na skonstruowanej zagadce lub tajemnicy i dążeniu do jej wyjaśnienia.
+Czasem rozwiązuje ją jeden konkretny bohater.
+Do gatunku należą też tytuły z celowo złożonym światem przedstawionym,
+którego obraz widz stopniowo odkrywa podczas seansu.</value>
+  </data>
+  <data name="checkBox_Steampunk.ToolTip" xml:space="preserve">
+    <value>Fabuła tytułu związana jest z realiami świata przedstawionego opartego na rozwiniętej mechanice.
+Zazwyczaj występują złożone mechanizmy napędzane silnikami parowymi; nie pojawia się prąd ani elektronika.</value>
+  </data>
+  <data name="checkBox_Psychological.ToolTip" xml:space="preserve">
+    <value>Gatunek przedstawiający problemy psychiczne zaburzenia jako główny wątek fabularny,
+ mogą również skupiać się na ukazaniu teorii psychologicznych lub ich elementów.
+Serie z tym tagiem często zawierają motyw żerowania umysłowego na innych,
+ lub gier mających na celu rozstrojenie psychiczne innej osoby.</value>
+  </data>
+  <data name="checkBox_Adventure.ToolTip" xml:space="preserve">
+    <value>Fabuła tytułu opiera się na przedstawieniu następujących po sobie wydarzeń (niekoniecznie związanych),
+ w których decydującą rolę gra stały protagonista lub protagonistka bądź też grupa głównych bohaterów.
+Często pokazywane jest stawianie czoła kolejnym przeszkodom bądź pojawia się motyw drogi i podróży.</value>
+  </data>
+  <data name="checkBox_Sci_Fi.ToolTip" xml:space="preserve">
+    <value>Jeden z podgatunków fantastyki.
+Fabuła tytułu jest osnuta na przewidywanych osiągnięciach nauki i techniki i ukazuje ich wpływ na życie jednostek lub społeczeństwa.
+Czas akcji prawie zawsze jest osadzony w przyszłości względem czasu autora.</value>
+  </data>
+  <data name="checkBox_Madness.ToolTip" xml:space="preserve">
+    <value>Gatunek ten odnosi się do serii w których, bieg wydarzeń, czas, fabuła, ukazane sceny, świat przedstawiony lub psychologia postaci zostaje mocno zakrzywiona i nie odpowiada logice oraz zdrowemu rozumowaniu.
+W głównej mierze zabiegi te mają na celu zmylenie oglądającego i odwrócenie jego uwagi od istotnych informacji poprzez kamuflowanie ich pod przykładowo
+ brakiem zbieżności zachowań bohaterów względem innych epizodów (tak jakby nie miały miejsca).
+Serię tego typu mogą nie mieć jasnych zakończeń tak aby sam oglądający mógł dojść do wizji autora.</value>
+  </data>
+  <data name="checkBox_Supernatural.ToolTip" xml:space="preserve">
+    <value>Podgatunek fantastyki, tytuł zawiera elementy nadprzyrodzone np. super moce, magię, fantastyczne stworzenia,
+ jednak ich istnienie nie jest wiedzą powszechną dla ogółu mieszkańców świata serii.
+
+Podsumowując serie te mogą mieć fantastyczne stworzenia, magie, nadprzyrodzone moce ale w odróżnieniu od
+ fantasty gdzie istnienie takich bytów jest powszechnie znane tutaj ogół mieszkańców świata serii nie może 
+wiedzieć o istnieniu tego typu stworzeń/umiejętności.</value>
+  </data>
+  <data name="checkBox_Historical.ToolTip" xml:space="preserve">
+    <value>Miejscem rozgrywania się akcji jest nasz świat, w jednej z minionych er historycznych.
+Tag służy wyszukiwaniu serii, które są umiejscowione w przeszłości, jednak na potrzeby utworu mogą się tam znaleźć inne moce, poziomy rozwojów świata/miast etc.</value>
+  </data>
+  <data name="checkBox_Horror.ToolTip" xml:space="preserve">
+    <value>Tytuł celowo wywołuje u widza grozę, niepokój, szok lub obrzydzenie za pomocą fabularnych zabiegów. 
+Często pojawiają się stworzenia fantastyczne, a występujące zjawiska są racjonalnie niewytłumaczalne. 
+Poziom przemocy zazwyczaj jest wysoki i często podkreślany scenami gore.
+</value>
+  </data>
+  <data name="checkBox_Hentai.ToolTip" xml:space="preserve">
+    <value>Tytuł przedstawia stosunek płciowy w kategorii pornografii. W tytule pokazywane są genitalia (w tym ocenzurowane)*.
+*Starsze serie sprzed 2000r. mogą mieć wyjątki bez genitaliów, zamiast tego sceny są zastępowane np cieniami w odpoweidnim kształcie, lub innymi substytutami, na które pozwalało prawo w Japonii zamiast pokazywania genitaliów.</value>
+  </data>
+  <data name="checkBox_Fantasy.ToolTip" xml:space="preserve">
+    <value>Fabuła tytułu związana jest z elementami magicznymi lub nadprzyrodzonymi stanowiącymi nieodłączną część przedstawionego świata (to znaczy, że elementy te są powszechnie znane w świecie serii, nie są to np. potwory nieznane mieszkańcom świata, nie zaliczymy też magii, o której istnieniu nie wie większość świata a jedynie używają je np. nieznane opinie publicznej grupki ludzi).</value>
+  </data>
+</root>

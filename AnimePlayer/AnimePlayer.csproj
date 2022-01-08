@@ -1,0 +1,56 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>disable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Configurations>Debug;Release;Debug Local</Configurations>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AnimePlayerLib\AnimePlayerLibrary.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Runtime.Serialization.Formatters.Soap.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+	<ItemGroup>
+		<COMReference Include="AxWMPLib">
+			<Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+			<VersionMajor>1</VersionMajor>
+			<VersionMinor>0</VersionMinor>
+			<Lcid>0</Lcid>
+			<WrapperTool>aximp</WrapperTool>
+			<Isolated>False</Isolated>
+		</COMReference>
+		<COMReference Include="WMPLib">
+			<Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+			<VersionMajor>1</VersionMajor>
+			<VersionMinor>0</VersionMinor>
+			<Lcid>0</Lcid>
+			<WrapperTool>tlbimp</WrapperTool>
+			<Isolated>False</Isolated>
+			<EmbedInteropTypes>True</EmbedInteropTypes>
+		</COMReference>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="Properties\Settings.Designer.cs">
+	    <DesignTimeSharedInput>True</DesignTimeSharedInput>
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>Settings.settings</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Update="Properties\Settings.settings">
+	    <Generator>SettingsSingleFileGenerator</Generator>
+	    <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+	  </None>
+	</ItemGroup>
+</Project>

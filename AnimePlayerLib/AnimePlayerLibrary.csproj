@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>disable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Configurations>Debug;Release;Debug Local</Configurations>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Runtime.Serialization.Formatters.Soap.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
