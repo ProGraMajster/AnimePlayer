@@ -48,6 +48,7 @@ namespace AnimePlayer
 
                 //Do naprawy!!!!!!!!!!!!!!!!!!!!!!!
                 panelNews = new NewFlowLayoutPanel();
+                panelNews.Name = "newFlowLayoutPanel_panelNews";
                 panelNews.Dock = DockStyle.Fill;
                 panelSTNewsMain.Controls.Add(panelNews);
                 panelNews.Show();
@@ -174,6 +175,11 @@ namespace AnimePlayer
                 rc = new ControlsNewMethods.RoundingControl
                 {
                     TargetControl = label2,
+                    CornerRadius = 15
+                };  
+                rc = new ControlsNewMethods.RoundingControl
+                {
+                    TargetControl = label_InfoText_news,
                     CornerRadius = 15
                 };  
             }
@@ -319,6 +325,7 @@ namespace AnimePlayer
             textBoxFinditem.AutoCompleteCustomSource = autoCSC_find;
             textBoxStartPagefinditem.AutoCompleteCustomSource = autoCSC_find;
             panelLoading.Hide();
+            this.Show();
         }
 
         public void CenterControlInForm(Control control)
@@ -975,6 +982,11 @@ namespace AnimePlayer
         private void PageTitileStatusList_Disposed(object sender, EventArgs e)
         {
             pageTitileStatusList = null;
+        }
+
+        private void panelStartPage_ControlAdded(object sender, ControlEventArgs e)
+        {
+            panelStartPage.Controls.SetChildIndex(panelSTNewsMain, 2);
         }
     }
 }

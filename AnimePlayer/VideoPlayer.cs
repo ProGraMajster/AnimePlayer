@@ -149,13 +149,17 @@ namespace AnimePlayer
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBox1.SelectedItem.ToString() == "PlayerType_1")
+            if (comboBox1.SelectedItem.ToString() == "PlayerType_0")
+            {
+                axwmp.uiMode = "none";
+            }
+            else if (comboBox1.SelectedItem.ToString() == "PlayerType_1")
             {
                 axwmp.uiMode = "full";
             }
-            else
+            else if (comboBox1.SelectedItem.ToString() == "PlayerType_2")
             {
-                axwmp.uiMode = "none";
+                
             }
         }
 

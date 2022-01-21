@@ -44,6 +44,7 @@ namespace AnimePlayer
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.panelSTNewsMain = new System.Windows.Forms.Panel();
+            this.label_InfoText_news = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
             this.panelTop = new System.Windows.Forms.Panel();
             this.roundedPanel1 = new AnimePlayerLibrary.RoundedPanel();
@@ -99,6 +100,7 @@ namespace AnimePlayer
             this.panel4.SuspendLayout();
             this.panePolecane.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panelSTNewsMain.SuspendLayout();
             this.panelTop.SuspendLayout();
             this.roundedPanel1.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -138,13 +140,14 @@ namespace AnimePlayer
             this.panelStartPage.Name = "panelStartPage";
             this.panelStartPage.Size = new System.Drawing.Size(1106, 624);
             this.panelStartPage.TabIndex = 6;
+            this.panelStartPage.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.panelStartPage_ControlAdded);
             // 
             // panelGroup
             // 
             this.panelGroup.Controls.Add(this.flowLayoutPanel2);
             this.panelGroup.Controls.Add(this.panel4);
             this.panelGroup.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelGroup.Location = new System.Drawing.Point(0, 844);
+            this.panelGroup.Location = new System.Drawing.Point(0, 872);
             this.panelGroup.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panelGroup.Name = "panelGroup";
             this.panelGroup.Size = new System.Drawing.Size(1089, 342);
@@ -227,7 +230,7 @@ namespace AnimePlayer
             this.panePolecane.Controls.Add(this.flowLayoutPanelPolecane);
             this.panePolecane.Controls.Add(this.panel1);
             this.panePolecane.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panePolecane.Location = new System.Drawing.Point(0, 502);
+            this.panePolecane.Location = new System.Drawing.Point(0, 530);
             this.panePolecane.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panePolecane.Name = "panePolecane";
             this.panePolecane.Size = new System.Drawing.Size(1089, 342);
@@ -275,12 +278,27 @@ namespace AnimePlayer
             // 
             // panelSTNewsMain
             // 
+            this.panelSTNewsMain.Controls.Add(this.label_InfoText_news);
             this.panelSTNewsMain.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSTNewsMain.Location = new System.Drawing.Point(0, 121);
             this.panelSTNewsMain.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panelSTNewsMain.Name = "panelSTNewsMain";
-            this.panelSTNewsMain.Size = new System.Drawing.Size(1089, 381);
+            this.panelSTNewsMain.Size = new System.Drawing.Size(1089, 409);
             this.panelSTNewsMain.TabIndex = 4;
+            // 
+            // label_InfoText_news
+            // 
+            this.label_InfoText_news.AutoSize = true;
+            this.label_InfoText_news.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label_InfoText_news.Font = new System.Drawing.Font("Comic Sans MS", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label_InfoText_news.ForeColor = System.Drawing.Color.White;
+            this.label_InfoText_news.Location = new System.Drawing.Point(0, 0);
+            this.label_InfoText_news.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label_InfoText_news.Name = "label_InfoText_news";
+            this.label_InfoText_news.Size = new System.Drawing.Size(117, 28);
+            this.label_InfoText_news.TabIndex = 1;
+            this.label_InfoText_news.Text = "Aktualności";
+            this.label_InfoText_news.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel8
             // 
@@ -937,8 +955,8 @@ namespace AnimePlayer
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.ClientSize = new System.Drawing.Size(1106, 624);
-            this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.panelNotifiError);
             this.DoubleBuffered = true;
             this.KeyPreview = true;
@@ -963,6 +981,8 @@ namespace AnimePlayer
             this.panePolecane.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panelSTNewsMain.ResumeLayout(false);
+            this.panelSTNewsMain.PerformLayout();
             this.panelTop.ResumeLayout(false);
             this.roundedPanel1.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
@@ -1048,6 +1068,8 @@ namespace AnimePlayer
         public System.Windows.Forms.Panel panelAllitem;
         private System.Windows.Forms.Button buttonShowTitleStatusList;
         private System.Windows.Forms.ToolTip toolTip;
+        private Label label1;
+        private Label label_InfoText_news;
     }
 }
 

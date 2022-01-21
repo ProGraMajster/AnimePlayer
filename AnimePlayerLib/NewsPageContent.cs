@@ -182,7 +182,8 @@ namespace AnimePlayerLibrary
             try
             {
                 Button button = (Button)sender;
-                System.Diagnostics.Process.Start(button.Tag.ToString());
+                System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo("cmd", $"/c start {button.Tag.ToString()}") { CreateNoWindow = true });
+                //System.Diagnostics.Process.Start(button.Tag.ToString());
                 return;
             }
             catch (Exception ex)
