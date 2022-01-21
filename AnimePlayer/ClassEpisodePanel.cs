@@ -13,7 +13,7 @@ namespace AnimePlayer
         public Label labelEp;
         public Button button_1080p;
         public Button button_720p;
-        public Button button_460p;
+        public Button button_480p;
         public Button button_360p;
         public int NumberBtn;
         public int numEp;
@@ -74,14 +74,14 @@ namespace AnimePlayer
             button_720p.Font = new System.Drawing.Font("Comic Sans MS", 10F);
             button_720p.AutoSize = true;
 
-            button_460p = new Button();
-            button_460p.Size = new Size(50, 30);
-            button_460p.FlatStyle = FlatStyle.Flat;
-            button_460p.ForeColor = Color.White;
-            button_460p.Dock = DockStyle.Right;
-            button_460p.Text = "460p";
-            button_460p.Font = new System.Drawing.Font("Comic Sans MS", 10F);
-            button_460p.AutoSize = true;
+            button_480p = new Button();
+            button_480p.Size = new Size(50, 30);
+            button_480p.FlatStyle = FlatStyle.Flat;
+            button_480p.ForeColor = Color.White;
+            button_480p.Dock = DockStyle.Right;
+            button_480p.Text = "480p";
+            button_480p.Font = new System.Drawing.Font("Comic Sans MS", 10F);
+            button_480p.AutoSize = true;
 
             button_360p = new Button();
             button_360p.Size = new Size(50, 30);
@@ -95,28 +95,28 @@ namespace AnimePlayer
             if (numberQuality == 1)
             {
                 button_360p.Show();
-                button_460p.Hide();
+                button_480p.Hide();
                 button_720p.Hide();
                 button_1080p.Hide();
             }
             else if (numberQuality == 2)
             {
                 button_360p.Show();
-                button_460p.Show();
+                button_480p.Show();
                 button_720p.Hide();
                 button_1080p.Hide();
             }
             else if (numberQuality == 3)
             {
                 button_360p.Show();
-                button_460p.Show();
+                button_480p.Show();
                 button_720p.Show();
                 button_1080p.Hide();
             }
             else if (numberQuality == 4)
             {
                 button_360p.Show();
-                button_460p.Show();
+                button_480p.Show();
                 button_720p.Show();
                 button_1080p.Show();
             }
@@ -149,12 +149,12 @@ namespace AnimePlayer
                             button_720p.Tag = zm[position];
                         }
                     }
-                    else if (zm[position] == "460p")
+                    else if (zm[position] == "480p")
                     {
                         position++;
                         if (zm[position] != null)
                         {
-                            button_460p.Tag = zm[position];
+                            button_480p.Tag = zm[position];
                         }
                     }
                     else if (zm[position] == "360p")
@@ -176,17 +176,17 @@ namespace AnimePlayer
 
             button_1080p.Name = "1080";
             button_720p.Name = "720";
-            button_460p.Name = "460";
+            button_480p.Name = "460";
             button_360p.Name = "360";
             panelMain.Controls.Add(button_1080p);
             panelMain.Controls.Add(button_720p);
-            panelMain.Controls.Add(button_460p);
+            panelMain.Controls.Add(button_480p);
             panelMain.Controls.Add(button_360p);
             panelMain.Controls.Add(labelEp);
             panelMain.Controls.Add(labelTitle);
             button_1080p.Click += Button_Click;
             button_720p.Click += Button_Click;
-            button_460p.Click += Button_Click;
+            button_480p.Click += Button_Click;
             button_360p.Click += Button_Click;
         }
 
@@ -207,7 +207,7 @@ namespace AnimePlayer
                         {
                             VideoPlayer videoPlayer = new VideoPlayer(CdaDownloader.GetVideoLink(btn.Tag.ToString(), CdaQuality.p720), btn.Tag.ToString(), panelTopv, pathFile, formW, skipLolcal);
                         }
-                        else if (btn.Name == "460")
+                        else if (btn.Name == "480")
                         {
                             VideoPlayer videoPlayer = new VideoPlayer(CdaDownloader.GetVideoLink(btn.Tag.ToString(), CdaQuality.p480), btn.Tag.ToString(), panelTopv, pathFile, formW, skipLolcal);
                         }

@@ -12,9 +12,14 @@ namespace AnimePlayer
         public double ShowSkipIntroTime = double.NaN;
         public double SkipIntro = double.NaN;
         Form form;
+        AxWMPLib.AxWindowsMediaPlayer axwmp;
         public VideoPlayer(string vlink,string olink, Panel panel, string path, Form f, WebContent.Skip skip)
         {
             InitializeComponent();
+            axwmp = new AxWMPLib.AxWindowsMediaPlayer();
+            axwmp.MouseMoveEvent += axwmp_mouseMoveEvent;
+            this.Controls.Add(axwmp);
+            axwmp.Dock = DockStyle.Fill;
             form = f;
             pathToFile = path;
             videoLink = vlink;
@@ -48,6 +53,8 @@ namespace AnimePlayer
 
         private void buttonClose_Click(object sender, EventArgs e)
         {
+            form.Size = sizeform;
+            form.FormBorderStyle = FormBorderStyle.Sizable;
             this.Hide();
             this.Dispose();
         }

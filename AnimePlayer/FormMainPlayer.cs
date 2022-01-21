@@ -106,6 +106,10 @@ namespace AnimePlayer
                 {
                     Directory.CreateDirectory("C:\\ContentLibrarys\\OtherFiles\\WMP_OverlayApp\\Items");
                 }
+                if (!Directory.Exists("C:\\ContentLibrarys\\OtherFiles\\WMP_OverlayApp\\Web_script"))
+                {
+                    Directory.CreateDirectory("C:\\ContentLibrarys\\OtherFiles\\WMP_OverlayApp\\Web_script");
+                }
             }
             catch (Exception)
             {
@@ -386,7 +390,7 @@ namespace AnimePlayer
         private void buttonPlayer_Click(object sender, EventArgs e)
         {
             panelMenu.Hide();
-            VideoPlayer videoPlayer = new VideoPlayer(panel2, true, this);
+            VideoPlayer _ = new VideoPlayer(panel2, true, this);
         }
 
         private void buttonExitApp_Click(object sender, EventArgs e)
@@ -396,7 +400,7 @@ namespace AnimePlayer
         int timerShow = 20;
         int timer_i = 0;
 
-        public void ShowErrorCode(string text, int time)
+        public void ShowAppMessageBox(string text, int time)
         {
             timer_i = 0;
             labelError.Text = text;
@@ -949,7 +953,7 @@ namespace AnimePlayer
         {
             try
             {
-                Directory.Delete(DefaultAppDir.Temp, true);
+                //Directory.Delete(DefaultAppDir.Temp, true);
             }
             catch(Exception ex)
             {

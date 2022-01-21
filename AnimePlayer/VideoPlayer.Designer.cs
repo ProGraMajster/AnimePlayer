@@ -236,8 +236,6 @@ namespace AnimePlayer
         }
 
         #endregion
-
-        public AxWMPLib.AxWindowsMediaPlayer axwmp;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button buttonClose;
         private System.Windows.Forms.Button button3;

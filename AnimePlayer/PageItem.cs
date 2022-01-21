@@ -10,6 +10,9 @@ namespace AnimePlayer
     {
         WebContent.Values values;
         OknoG oknoG;
+
+        public string linkToScriptComment = null;
+
         public PageItem()
         {
             InitializeComponent();
@@ -20,6 +23,7 @@ namespace AnimePlayer
             InitializeComponent();
             oknoG = okno;
             values = va;
+            panel_comments.Size = new Size(panel_comments.Width, 121);
             if (values != null)
             {
                 linkLabel1.Show();
@@ -46,7 +50,9 @@ namespace AnimePlayer
                 rc = new ControlsNewMethods.RoundingControl();
                 rc.TargetControl = button;
                 rc.CornerRadius = 15;
-
+                rc = new ControlsNewMethods.RoundingControl();
+                rc.TargetControl = button_Load_Comments;
+                rc.CornerRadius = 15;
             }
             if(okno.usedThemeColors)
             {
@@ -202,6 +208,12 @@ namespace AnimePlayer
                 oknoG.Resize += ChangeTitleState_Resize;
                 changeTitleState.Show();
                 changeTitleState.BringToFront();
+                if (AnimePlayer.Properties.Settings.Default.RoundingControl)
+                {
+                    ControlsNewMethods.RoundingControl rc = new ControlsNewMethods.RoundingControl();
+                    rc.TargetControl = changeTitleState;
+                    rc.CornerRadius = 15;
+                }
                 changeTitleState.Disposed += ChangeTitleState_Disposed;
                 changeTitleState.Location = new Point((this.ClientSize.Width - changeTitleState.Width) / 2,
                     (this.ClientSize.Height - changeTitleState.Height) / 2);
@@ -229,6 +241,53 @@ namespace AnimePlayer
             }
             catch(Exception ex)
             {
+                Console.WriteLine(ex.ToString());
+            }
+        }        
+
+        private async void button_Load_Comments_Click(object sender, EventArgs e)
+        {
+            try
+            {
+               Button btn = (Button)sender;
+               
+                if(btn.Tag != null)
+                {
+                    if(((Microsoft.Web.WebView2.WinForms.WebView2)btn.Tag).Visible)
+                    {
+                        ((Microsoft.Web.WebView2.WinForms.WebView2)btn.Tag).Visible = false;
+                        btn.Text = "Pokaż";
+                        panel_com_dockWebview.Visible = false;
+                        panel_comments.Size = new Size(panel_comments.Width, 121);
+                    }
+                    else
+                    {
+                        ((Microsoft.Web.WebView2.WinForms.WebView2)btn.Tag).Visible = true;
+                        btn.Text = "Ukryj";
+                        panel_com_dockWebview.Visible = true;
+                        panel_comments.Size = new Size(panel_comments.Width, 521);
+                    }
+                }
+                else
+                {
+                    panel_comments.Size = new Size(panel_comments.Width, 521);
+                    Microsoft.Web.WebView2.WinForms.WebView2 webView2 = new Microsoft.Web.WebView2.WinForms.WebView2();
+                    webView2.Name = "webView2";
+                    await webView2.EnsureCoreWebView2Async(default);
+                    panel_com_dockWebview.Controls.Add(webView2);
+                    webView2.Dock = DockStyle.Fill;
+                    webView2.Show();
+                    btn.Tag = webView2;
+                    if (webView2 != null && webView2.CoreWebView2 != null)
+                    {
+                        webView2.CoreWebView2.Navigate("file:///"+ DefaultAppDir.Web_script + values.name + "_script_comments.html");
+                        btn.Text = "Ukryj";
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Wystąpił błąd!");
                 Console.WriteLine(ex.ToString());
             }
         }

@@ -59,7 +59,7 @@ namespace AnimePlayer
                 Application.DoEvents();
                 ToolTip toolTip = new ToolTip();
                 toolTip.SetToolTip(oknoG.labelSatusWorkingApp, "Ograniczony dostęp do serwera");
-                oknoG.ShowErrorCode("Error code: DF01", 500);
+                oknoG.ShowAppMessageBox("Error code: DF01", 500);
                 oknoG.timerAnimationError.Start();
                 Console.WriteLine("--------- Local ----------");
                 oknoG.labelLoading.Text += ".";
@@ -1026,6 +1026,28 @@ namespace AnimePlayer
                             else
                             {
                                 GetListTypeEp(pageItem1, "C:\\ContentLibrarys\\OtherFiles\\WMP_OverlayApp\\Video\\" + values.name + "_list_ep.txt");
+                            }
+                        }
+                        else if (content[position] == "LinkToScriptComment")//LinkToScriptComment
+                        {
+                            oknoG.labelLoadingDetails.Text = "Load page: " + values.name + "> load > LinkToScriptComment";
+                            Application.DoEvents();
+                            position++;
+                            try
+                            {
+                                if(AnimePlayerLibrary.Download.File(pageItem1.linkToScriptComment = content[position],
+                                    DefaultAppDir.Web_script + Replacer.Names(values.name) + "_script_comments.html"))
+                                {
+                                    pageItem1.button_Load_Comments.Visible = true;
+                                }
+                                else
+                                {
+                                    oknoG.ShowAppMessageBox("Wystąpił błąd podczas wstępnego ładowania komentarzy", 400);
+                                }
+                            }
+                            catch (Exception exDwonScrCom)
+                            {
+                                Console.WriteLine(exDwonScrCom.ToString());
                             }
                         }
                         else if(content[position] == "RelatedSeries")

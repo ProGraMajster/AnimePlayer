@@ -68,6 +68,10 @@ namespace AnimePlayer
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.panel_comments = new System.Windows.Forms.Panel();
+            this.panel_com_dockWebview = new System.Windows.Forms.Panel();
+            this.button_Load_Comments = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
             this.panel11 = new System.Windows.Forms.Panel();
             this.flowLayoutPanelRelatedSeries = new AnimePlayerLibrary.NewFlowLayoutPanel();
             this.label6 = new System.Windows.Forms.Label();
@@ -99,6 +103,7 @@ namespace AnimePlayer
             this.panel7.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
+            this.panel_comments.SuspendLayout();
             this.panel11.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel10.SuspendLayout();
@@ -647,6 +652,7 @@ namespace AnimePlayer
             // 
             this.panel6.AutoScroll = true;
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.panel6.Controls.Add(this.panel_comments);
             this.panel6.Controls.Add(this.panel11);
             this.panel6.Controls.Add(this.panel5);
             this.panel6.Controls.Add(this.panel9);
@@ -658,6 +664,57 @@ namespace AnimePlayer
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(939, 590);
             this.panel6.TabIndex = 2;
+            // 
+            // panel_comments
+            // 
+            this.panel_comments.Controls.Add(this.panel_com_dockWebview);
+            this.panel_comments.Controls.Add(this.button_Load_Comments);
+            this.panel_comments.Controls.Add(this.label8);
+            this.panel_comments.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel_comments.Location = new System.Drawing.Point(0, 2212);
+            this.panel_comments.Margin = new System.Windows.Forms.Padding(12);
+            this.panel_comments.Name = "panel_comments";
+            this.panel_comments.Padding = new System.Windows.Forms.Padding(0, 12, 0, 12);
+            this.panel_comments.Size = new System.Drawing.Size(922, 521);
+            this.panel_comments.TabIndex = 7;
+            // 
+            // panel_com_dockWebview
+            // 
+            this.panel_com_dockWebview.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.panel_com_dockWebview.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel_com_dockWebview.Location = new System.Drawing.Point(0, 60);
+            this.panel_com_dockWebview.Name = "panel_com_dockWebview";
+            this.panel_com_dockWebview.Size = new System.Drawing.Size(922, 449);
+            this.panel_com_dockWebview.TabIndex = 6;
+            // 
+            // button_Load_Comments
+            // 
+            this.button_Load_Comments.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.button_Load_Comments.FlatAppearance.BorderSize = 0;
+            this.button_Load_Comments.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Load_Comments.ForeColor = System.Drawing.Color.White;
+            this.button_Load_Comments.Location = new System.Drawing.Point(135, 27);
+            this.button_Load_Comments.Name = "button_Load_Comments";
+            this.button_Load_Comments.Size = new System.Drawing.Size(75, 23);
+            this.button_Load_Comments.TabIndex = 7;
+            this.button_Load_Comments.Text = "Załaduj";
+            this.button_Load_Comments.UseVisualStyleBackColor = false;
+            this.button_Load_Comments.Visible = false;
+            this.button_Load_Comments.Click += new System.EventHandler(this.button_Load_Comments_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label8.Font = new System.Drawing.Font("Comic Sans MS", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(0, 12);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Name = "label8";
+            this.label8.Padding = new System.Windows.Forms.Padding(12);
+            this.label8.Size = new System.Drawing.Size(133, 48);
+            this.label8.TabIndex = 5;
+            this.label8.Text = "Komentarze";
             // 
             // panel11
             // 
@@ -967,6 +1024,8 @@ namespace AnimePlayer
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panel6.ResumeLayout(false);
+            this.panel_comments.ResumeLayout(false);
+            this.panel_comments.PerformLayout();
             this.panel11.ResumeLayout(false);
             this.panel11.PerformLayout();
             this.panel9.ResumeLayout(false);
@@ -1037,5 +1096,9 @@ namespace AnimePlayer
         public NewFlowLayoutPanel flowLayoutPanelRelatedSeries;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         public System.Windows.Forms.LinkLabel linkLabelChangeState;
+        private Panel panel_comments;
+        private Panel panel_com_dockWebview;
+        private Label label8;
+        public Button button_Load_Comments;
     }
 }

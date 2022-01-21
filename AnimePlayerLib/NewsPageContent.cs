@@ -36,7 +36,7 @@ namespace AnimePlayerLibrary
                 Console.WriteLine(ex.ToString());
             }
         }
-
+            
         public void SetContentPage()
         {
             try
