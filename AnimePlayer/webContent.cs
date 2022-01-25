@@ -11,6 +11,18 @@ namespace AnimePlayer
 {
     public static class WebContent
     {
+        public static void StartProcesSite(string link)
+        {
+            try
+            {
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+        }
+
         public class Skip
         {
             public double time_showButton { get; set; }

@@ -60,6 +60,7 @@ namespace AnimePlayer
                 label1.ForeColor = tChcolors.PageEpisode_ForeColor;
                 buttonClose.ForeColor = tChcolors.PageEpisode_ForeColor;
             }
+            buttonClose.ForeColor = Color.Red;
         }
 
         Task GetEpisode(string path)
@@ -91,6 +92,7 @@ namespace AnimePlayer
                     {
                         position++;
                         WebContent.Skip skip = new WebContent.Skip();
+                        //Service host file
                         string zm = "[" + content[position] + "] ";
                         position++;
                         zm += content[position] + " | ";

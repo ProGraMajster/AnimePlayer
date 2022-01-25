@@ -110,6 +110,10 @@ namespace AnimePlayer
                 {
                     Directory.CreateDirectory("C:\\ContentLibrarys\\OtherFiles\\WMP_OverlayApp\\Web_script");
                 }
+                if (!Directory.Exists("C:\\ContentLibrarys\\OtherFiles\\WMP_OverlayApp\\Community"))
+                {
+                    Directory.CreateDirectory("C:\\ContentLibrarys\\OtherFiles\\WMP_OverlayApp\\Community");
+                }
             }
             catch (Exception)
             {
@@ -991,6 +995,63 @@ namespace AnimePlayer
         private void panelStartPage_ControlAdded(object sender, ControlEventArgs e)
         {
             panelStartPage.Controls.SetChildIndex(panelSTNewsMain, 2);
+        }
+
+        private void buttonMoreBtnMenu_Click(object sender, EventArgs e)
+        {
+            panelMenu.Hide();
+            panelMoreButtons.Show();
+            panelMoreButtons.BringToFront();
+        }
+
+        private void button_MoreBtn_Open_Settings_Click(object sender, EventArgs e)
+        {
+            panelMoreButtons.Hide();
+            PageSettings pageSettings = new PageSettings(this);
+            pageSettings.Dock = DockStyle.Fill;
+            panel2.Controls.Add(pageSettings);
+            pageSettings.Show();
+            pageSettings.BringToFront();
+        }
+
+        private void button2button_MoreBtn_Open_Player_Click(object sender, EventArgs e)
+        {
+            panelMoreButtons.Hide();
+            VideoPlayer _ = new VideoPlayer(panel2, true, this);
+        }
+
+        private void button4button2button_MoreBtn_Open_FindItem_Click(object sender, EventArgs e)
+        {
+            panelMoreButtons.Hide();
+            flowLayoutPanelFinditem.Controls.Clear();
+            flowLayoutPanelFinditem.Hide();
+            labelFindSatus.Text = "Szukanie";
+            labelFindSatus.Hide();
+            flowLayoutPanelAll.Show();
+            panelAllitem.BringToFront();
+            panelAllitem.Show();
+        }
+
+        private void button5button2button_MoreBtn_Open_Lists_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                panelMoreButtons.Hide();
+                if (pageTitileStatusList == null)
+                {
+                    pageTitileStatusList = new PageTitileStatusList();
+                    pageTitileStatusList.Name = "pageTitileStatusList";
+                    pageTitileStatusList.Dock = DockStyle.Fill;
+                    panel2.Controls.Add(pageTitileStatusList);
+                    pageTitileStatusList.Show();
+                    pageTitileStatusList.BringToFront();
+                    pageTitileStatusList.Disposed += PageTitileStatusList_Disposed;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
         }
     }
 }

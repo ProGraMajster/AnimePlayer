@@ -173,10 +173,9 @@ namespace AnimePlayer
             {
                 Console.WriteLine(ex.ToString());
             }
-
             button_1080p.Name = "1080";
             button_720p.Name = "720";
-            button_480p.Name = "460";
+            button_480p.Name = "480";
             button_360p.Name = "360";
             panelMain.Controls.Add(button_1080p);
             panelMain.Controls.Add(button_720p);

@@ -12,6 +12,12 @@ namespace AnimePlayerLibrary
     //New Super class WebContentv2
     public static class WebContentV2
     {
+        public static class CommunityContent
+        {
+            public readonly static string Link = null;
+
+        }
+
         [Serializable]
         public class StartItemValues
         {
