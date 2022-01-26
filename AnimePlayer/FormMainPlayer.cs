@@ -30,6 +30,10 @@ namespace AnimePlayer
         public bool usedThemeColors = false;
         public string ThemePath = null;
         public ItemList_ClassItemOnStateList iList_ClassItemOnState;
+        public PerformanceCounter performanceCounter_app;
+
+        int memsize;
+
         public OknoG()  
         {
             InitializeComponent();
@@ -119,8 +123,6 @@ namespace AnimePlayer
             {
 
             }
-            labelLoadingDetails.Text = "Download Files";
-            backgroundWorkerGetSTNews.RunWorkerAsync();
             CreateBackupicon();
             if (AnimePlayer.Properties.Settings.Default.RoundingControl)
             {
@@ -191,7 +193,22 @@ namespace AnimePlayer
                     CornerRadius = 15
                 };  
             }
+            try
+            {
+                performanceCounter_app = new PerformanceCounter();
+                performanceCounter_app.CategoryName = "Process";
+                performanceCounter_app.CounterName = "Working Set - Private";
+                performanceCounter_app.InstanceName = "AnimePlayerPL";
+                memsize = Convert.ToInt32(performanceCounter_app.NextValue()) / (int)(1024);
+                timerAppPer.Start();
+            }
+            catch (Exception exPer)
+            {
+                FileLog.Write(exPer.ToString());
+            }
         }
+
+
 
         private void PanelNews_ControlAdded(object sender, ControlEventArgs e)
         {
@@ -329,6 +346,9 @@ namespace AnimePlayer
             {
                 Console.WriteLine(exx.ToString());
             }
+
+            labelLoadingDetails.Text = "Download Files";
+            backgroundWorkerGetSTNews.RunWorkerAsync();
 
             textBoxFinditem.AutoCompleteCustomSource = autoCSC_find;
             textBoxStartPagefinditem.AutoCompleteCustomSource = autoCSC_find;
@@ -1052,6 +1072,36 @@ namespace AnimePlayer
             {
                 Console.WriteLine(ex.ToString());
             }
+        }
+
+        private void button2button_MoreBtn_Open_GitHub_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                OpenLinks.Start("https://github.com/ProGraMajster/AnimePlayer");
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Wystąpił błąd :(", "Error");
+                Console.Error.WriteLine(ex.ToString());
+            }
+        }
+
+        private void button7button2button_MoreBtn_Open_twojeanimepl_Click(object sender, EventArgs e)
+        {
+            Exception ex = OpenLinks.Start("https://sites.google.com/view/twojeanimepl");
+            if(ex != null)
+            {
+                Console.Error.WriteLine(ex.ToString());
+            }
+            GC.Collect();
+            GC.KeepAlive(ex);
+        }
+
+        private void timerAppPer_Tick(object sender, EventArgs e)
+        {
+            memsize = Convert.ToInt32(performanceCounter_app.NextValue()) / (int)(1024);
+            labelAppRamUsage.Text = "Wykorzystanie pamięci RAM przez aplikację: " + (memsize / 1024).ToString() + "MB";
         }
     }
 }

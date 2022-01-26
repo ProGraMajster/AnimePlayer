@@ -127,6 +127,9 @@ namespace AnimePlayer
             this.timerAnimationError = new System.Windows.Forms.Timer(this.components);
             this.backgroundWorkerGetSTNews = new System.ComponentModel.BackgroundWorker();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.timerAppPer = new System.Windows.Forms.Timer(this.components);
+            this.panel18 = new System.Windows.Forms.Panel();
+            this.labelAppRamUsage = new System.Windows.Forms.Label();
             this.panelStartPage.SuspendLayout();
             this.panelGroup.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
@@ -163,6 +166,7 @@ namespace AnimePlayer
             this.roundedPanel2.SuspendLayout();
             this.panelNotifiError.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.panel18.SuspendLayout();
             this.SuspendLayout();
             // 
             // notifyIcon1
@@ -1075,6 +1079,7 @@ namespace AnimePlayer
             this.button2button_MoreBtn_Open_GitHub.TabIndex = 1;
             this.button2button_MoreBtn_Open_GitHub.Text = "Przejdź";
             this.button2button_MoreBtn_Open_GitHub.UseVisualStyleBackColor = false;
+            this.button2button_MoreBtn_Open_GitHub.Click += new System.EventHandler(this.button2button_MoreBtn_Open_GitHub_Click);
             // 
             // label13
             // 
@@ -1126,6 +1131,7 @@ namespace AnimePlayer
             this.button7button2button_MoreBtn_Open_twojeanimepl.TabIndex = 1;
             this.button7button2button_MoreBtn_Open_twojeanimepl.Text = "Przejdź";
             this.button7button2button_MoreBtn_Open_twojeanimepl.UseVisualStyleBackColor = false;
+            this.button7button2button_MoreBtn_Open_twojeanimepl.Click += new System.EventHandler(this.button7button2button_MoreBtn_Open_twojeanimepl_Click);
             // 
             // label15
             // 
@@ -1444,12 +1450,37 @@ namespace AnimePlayer
             // 
             this.backgroundWorkerGetSTNews.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorkerGetSTNews_DoWork);
             // 
+            // timerAppPer
+            // 
+            this.timerAppPer.Interval = 1000;
+            this.timerAppPer.Tick += new System.EventHandler(this.timerAppPer_Tick);
+            // 
+            // panel18
+            // 
+            this.panel18.Controls.Add(this.labelAppRamUsage);
+            this.panel18.Location = new System.Drawing.Point(0, 0);
+            this.panel18.Name = "panel18";
+            this.panel18.Size = new System.Drawing.Size(170, 35);
+            this.panel18.TabIndex = 7;
+            this.panel18.Visible = false;
+            // 
+            // labelAppRamUsage
+            // 
+            this.labelAppRamUsage.AutoSize = true;
+            this.labelAppRamUsage.ForeColor = System.Drawing.Color.White;
+            this.labelAppRamUsage.Location = new System.Drawing.Point(3, 12);
+            this.labelAppRamUsage.Name = "labelAppRamUsage";
+            this.labelAppRamUsage.Size = new System.Drawing.Size(110, 15);
+            this.labelAppRamUsage.TabIndex = 0;
+            this.labelAppRamUsage.Text = "labelAppRamUsage";
+            // 
             // OknoG
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.ClientSize = new System.Drawing.Size(1106, 624);
+            this.Controls.Add(this.panel18);
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panelNotifiError);
@@ -1508,6 +1539,8 @@ namespace AnimePlayer
             this.roundedPanel2.PerformLayout();
             this.panelNotifiError.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.panel18.ResumeLayout(false);
+            this.panel18.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1610,6 +1643,9 @@ namespace AnimePlayer
         private Label label16;
         private Button button1;
         private Label label17;
+        private System.Windows.Forms.Timer timerAppPer;
+        private Panel panel18;
+        public Label labelAppRamUsage;
     }
 }
 

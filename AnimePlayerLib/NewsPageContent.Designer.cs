@@ -52,10 +52,10 @@
             this.panel1.Controls.Add(this.button);
             this.panel1.Controls.Add(this.labelLoadingD);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Location = new System.Drawing.Point(30, 20);
             this.panel1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1050, 58);
+            this.panel1.Size = new System.Drawing.Size(990, 58);
             this.panel1.TabIndex = 1;
             // 
             // button
@@ -66,8 +66,8 @@
             this.button.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button.ForeColor = System.Drawing.Color.White;
-            this.button.Location = new System.Drawing.Point(933, 0);
+            this.button.ForeColor = System.Drawing.Color.Red;
+            this.button.Location = new System.Drawing.Point(873, 0);
             this.button.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.button.MaximumSize = new System.Drawing.Size(117, 52);
             this.button.Name = "button";
@@ -87,6 +87,7 @@
             this.DoubleBuffered = true;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "NewsPageContent";
+            this.Padding = new System.Windows.Forms.Padding(30, 20, 30, 0);
             this.Size = new System.Drawing.Size(1050, 635);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
