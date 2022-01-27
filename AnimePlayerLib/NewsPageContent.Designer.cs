@@ -89,6 +89,7 @@
             this.Name = "NewsPageContent";
             this.Padding = new System.Windows.Forms.Padding(30, 20, 30, 0);
             this.Size = new System.Drawing.Size(1050, 635);
+            this.Resize += new System.EventHandler(this.NewsPageContent_Resize);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

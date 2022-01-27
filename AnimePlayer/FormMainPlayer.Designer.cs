@@ -130,6 +130,10 @@ namespace AnimePlayer
             this.timerAppPer = new System.Windows.Forms.Timer(this.components);
             this.panel18 = new System.Windows.Forms.Panel();
             this.labelAppRamUsage = new System.Windows.Forms.Label();
+            this.panel19 = new System.Windows.Forms.Panel();
+            this.label18 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.label19 = new System.Windows.Forms.Label();
             this.panelStartPage.SuspendLayout();
             this.panelGroup.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
@@ -167,6 +171,7 @@ namespace AnimePlayer
             this.panelNotifiError.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel18.SuspendLayout();
+            this.panel19.SuspendLayout();
             this.SuspendLayout();
             // 
             // notifyIcon1
@@ -827,6 +832,7 @@ namespace AnimePlayer
             this.newFlowLayoutPanel1.Controls.Add(this.panel15);
             this.newFlowLayoutPanel1.Controls.Add(this.panel16);
             this.newFlowLayoutPanel1.Controls.Add(this.panel17);
+            this.newFlowLayoutPanel1.Controls.Add(this.panel19);
             this.newFlowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.newFlowLayoutPanel1.Location = new System.Drawing.Point(20, 20);
             this.newFlowLayoutPanel1.Name = "newFlowLayoutPanel1";
@@ -1474,6 +1480,57 @@ namespace AnimePlayer
             this.labelAppRamUsage.TabIndex = 0;
             this.labelAppRamUsage.Text = "labelAppRamUsage";
             // 
+            // panel19
+            // 
+            this.panel19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.panel19.Controls.Add(this.label18);
+            this.panel19.Controls.Add(this.button2);
+            this.panel19.Controls.Add(this.label19);
+            this.panel19.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel19.Location = new System.Drawing.Point(420, 134);
+            this.panel19.Name = "panel19";
+            this.panel19.Padding = new System.Windows.Forms.Padding(1);
+            this.panel19.Size = new System.Drawing.Size(200, 120);
+            this.panel19.TabIndex = 7;
+            // 
+            // label18
+            // 
+            this.label18.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label18.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label18.ForeColor = System.Drawing.Color.White;
+            this.label18.Location = new System.Drawing.Point(1, 33);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(198, 56);
+            this.label18.TabIndex = 2;
+            this.label18.Text = "Twórz tręsci dla tej aplikacji. Dodaj nowy tytuł lub waidomość";
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.button2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(1, 89);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(198, 30);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "Przejdź";
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // label19
+            // 
+            this.label19.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label19.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label19.ForeColor = System.Drawing.Color.White;
+            this.label19.Location = new System.Drawing.Point(1, 1);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(198, 32);
+            this.label19.TabIndex = 0;
+            this.label19.Text = "Narzędzia";
+            this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // OknoG
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -1541,6 +1598,7 @@ namespace AnimePlayer
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panel18.ResumeLayout(false);
             this.panel18.PerformLayout();
+            this.panel19.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1646,6 +1704,10 @@ namespace AnimePlayer
         private System.Windows.Forms.Timer timerAppPer;
         private Panel panel18;
         public Label labelAppRamUsage;
+        private Panel panel19;
+        private Label label18;
+        private Button button2;
+        private Label label19;
     }
 }
 

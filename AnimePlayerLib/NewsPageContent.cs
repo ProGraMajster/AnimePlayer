@@ -35,8 +35,15 @@ namespace AnimePlayerLibrary
             {
                 Console.WriteLine(ex.ToString());
             }
+            this.MouseWheel += NewsPageContent_MouseWheel;
         }
-            
+
+        private void NewsPageContent_MouseWheel(object sender, MouseEventArgs e)
+        {
+            Application.DoEvents();
+            this.Invalidate();
+        }
+
         public void SetContentPage()
         {
             try
@@ -196,6 +203,22 @@ namespace AnimePlayerLibrary
         {
             this.Hide();
             this.Dispose();
+        }
+
+        private void NewsPageContent_Resize(object sender, EventArgs e)
+        {
+            if(this.Width > 1050)
+            {
+                this.Padding = new System.Windows.Forms.Padding((this.Width - 1050) / 2,0, (this.Width - 1050)/2, 0);
+            }
+        }
+
+
+        protected override void OnScroll(ScrollEventArgs se)
+        {
+            Application.DoEvents();
+            this.Invalidate();
+            base.OnScroll(se);
         }
     }
 }
