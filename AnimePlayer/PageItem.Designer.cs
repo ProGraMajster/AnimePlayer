@@ -64,6 +64,7 @@ namespace AnimePlayer
             this.label_1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.flowLayoutPanelEpType = new System.Windows.Forms.FlowLayoutPanel();
             this.listBoxEpType = new System.Windows.Forms.ListBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -72,7 +73,7 @@ namespace AnimePlayer
             this.panel_com_dockWebview = new System.Windows.Forms.Panel();
             this.button_Load_Comments = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
-            this.panel11 = new System.Windows.Forms.Panel();
+            this.panelRelatedSeries = new System.Windows.Forms.Panel();
             this.flowLayoutPanelRelatedSeries = new AnimePlayerLibrary.NewFlowLayoutPanel();
             this.label6 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
@@ -104,7 +105,7 @@ namespace AnimePlayer
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel_comments.SuspendLayout();
-            this.panel11.SuspendLayout();
+            this.panelRelatedSeries.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel10.SuspendLayout();
             this.panelViewIcon.SuspendLayout();
@@ -593,6 +594,7 @@ namespace AnimePlayer
             // 
             // panel5
             // 
+            this.panel5.Controls.Add(this.flowLayoutPanelEpType);
             this.panel5.Controls.Add(this.listBoxEpType);
             this.panel5.Controls.Add(this.label5);
             this.panel5.Controls.Add(this.label3);
@@ -603,6 +605,18 @@ namespace AnimePlayer
             this.panel5.Padding = new System.Windows.Forms.Padding(0, 12, 0, 12);
             this.panel5.Size = new System.Drawing.Size(922, 300);
             this.panel5.TabIndex = 4;
+            // 
+            // flowLayoutPanelEpType
+            // 
+            this.flowLayoutPanelEpType.AutoScroll = true;
+            this.flowLayoutPanelEpType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.flowLayoutPanelEpType.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanelEpType.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.flowLayoutPanelEpType.ForeColor = System.Drawing.Color.White;
+            this.flowLayoutPanelEpType.Location = new System.Drawing.Point(0, 101);
+            this.flowLayoutPanelEpType.Name = "flowLayoutPanelEpType";
+            this.flowLayoutPanelEpType.Size = new System.Drawing.Size(922, 187);
+            this.flowLayoutPanelEpType.TabIndex = 7;
             // 
             // listBoxEpType
             // 
@@ -653,7 +667,7 @@ namespace AnimePlayer
             this.panel6.AutoScroll = true;
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
             this.panel6.Controls.Add(this.panel_comments);
-            this.panel6.Controls.Add(this.panel11);
+            this.panel6.Controls.Add(this.panelRelatedSeries);
             this.panel6.Controls.Add(this.panel5);
             this.panel6.Controls.Add(this.panel9);
             this.panel6.Controls.Add(this.panel3);
@@ -716,17 +730,17 @@ namespace AnimePlayer
             this.label8.TabIndex = 5;
             this.label8.Text = "Komentarze";
             // 
-            // panel11
+            // panelRelatedSeries
             // 
-            this.panel11.Controls.Add(this.flowLayoutPanelRelatedSeries);
-            this.panel11.Controls.Add(this.label6);
-            this.panel11.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel11.Location = new System.Drawing.Point(0, 1814);
-            this.panel11.Margin = new System.Windows.Forms.Padding(12);
-            this.panel11.Name = "panel11";
-            this.panel11.Padding = new System.Windows.Forms.Padding(0, 12, 0, 12);
-            this.panel11.Size = new System.Drawing.Size(922, 398);
-            this.panel11.TabIndex = 6;
+            this.panelRelatedSeries.Controls.Add(this.flowLayoutPanelRelatedSeries);
+            this.panelRelatedSeries.Controls.Add(this.label6);
+            this.panelRelatedSeries.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelRelatedSeries.Location = new System.Drawing.Point(0, 1814);
+            this.panelRelatedSeries.Margin = new System.Windows.Forms.Padding(12);
+            this.panelRelatedSeries.Name = "panelRelatedSeries";
+            this.panelRelatedSeries.Padding = new System.Windows.Forms.Padding(0, 12, 0, 12);
+            this.panelRelatedSeries.Size = new System.Drawing.Size(922, 398);
+            this.panelRelatedSeries.TabIndex = 6;
             // 
             // flowLayoutPanelRelatedSeries
             // 
@@ -999,6 +1013,10 @@ namespace AnimePlayer
             this.buttonViewIconClose.UseVisualStyleBackColor = true;
             this.buttonViewIconClose.Click += new System.EventHandler(this.buttonViewIconClose_Click);
             // 
+            // backgroundWorker1
+            // 
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
+            // 
             // PageItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -1026,8 +1044,8 @@ namespace AnimePlayer
             this.panel6.ResumeLayout(false);
             this.panel_comments.ResumeLayout(false);
             this.panel_comments.PerformLayout();
-            this.panel11.ResumeLayout(false);
-            this.panel11.PerformLayout();
+            this.panelRelatedSeries.ResumeLayout(false);
+            this.panelRelatedSeries.PerformLayout();
             this.panel9.ResumeLayout(false);
             this.panel10.ResumeLayout(false);
             this.panelViewIcon.ResumeLayout(false);
@@ -1091,7 +1109,6 @@ namespace AnimePlayer
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button buttonViewIconClose;
         public System.Windows.Forms.Panel panelViewIcon;
-        private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Label label6;
         public NewFlowLayoutPanel flowLayoutPanelRelatedSeries;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
@@ -1100,5 +1117,7 @@ namespace AnimePlayer
         private Panel panel_com_dockWebview;
         private Label label8;
         public Button button_Load_Comments;
+        public Panel panelRelatedSeries;
+        public FlowLayoutPanel flowLayoutPanelEpType;
     }
 }

@@ -74,7 +74,7 @@ namespace AnimePlayer
                     panel10.BackColor = okno.tchangerColors.PageItem_BackColor4;
                     panel5.BackColor = okno.tchangerColors.PageItem_BackColor;
                     listBoxEpType.BackColor = okno.tchangerColors.PageItem_BackColor4;
-                    panel11.BackColor = okno.tchangerColors.PageItem_BackColor;
+                    panelRelatedSeries.BackColor = okno.tchangerColors.PageItem_BackColor;
                     flowLayoutPanelRelatedSeries.BackColor = okno.tchangerColors.PageItem_BackColor4;
 
                     /*
@@ -108,6 +108,31 @@ namespace AnimePlayer
         {
             this.Hide();
             this.Dispose();
+        }
+
+        public void buttonEpType_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (values != null)
+                {
+                    Button btn = (Button)sender;
+                    if (File.Exists("C:\\ContentLibrarys\\OtherFiles\\WMP_OverlayApp\\Video\\" + values.name + "_list_ep.txt"))
+                    {
+                        PageEpisode pageEpisode = new PageEpisode(btn.Tag.ToString(),
+                                "C:\\ContentLibrarys\\OtherFiles\\WMP_OverlayApp\\Video\\" + values.name + "_list_ep.txt", values, oknoG.panel2, oknoG, oknoG.tchangerColors);
+
+                        oknoG.panel2.Controls.Add(pageEpisode);
+                        pageEpisode.Dock = DockStyle.Fill;
+                        pageEpisode.Show();
+                        pageEpisode.BringToFront();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -290,6 +315,11 @@ namespace AnimePlayer
                 MessageBox.Show("Wystąpił błąd!");
                 Console.WriteLine(ex.ToString());
             }
+        }
+
+        private void backgroundWorker1_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
+        {
+
         }
     }
 }

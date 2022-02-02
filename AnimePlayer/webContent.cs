@@ -1117,6 +1117,8 @@ namespace AnimePlayer
                         label.ForeColor = Color.White;
                         label.Font = new System.Drawing.Font("Comic Sans MS", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
                         pageItem1.flowLayoutPanelRelatedSeries.Controls.Add(label);
+                        pageItem1.panelRelatedSeries.Size = new Size(pageItem1.flowLayoutPanelRelatedSeries.Size.Width,
+                            105);
                     }
                 }
                 catch (Exception ex)
@@ -1173,6 +1175,17 @@ namespace AnimePlayer
                             {
                                 oknoG.labelLoadingDetails.Text = "Load page: " + values.name + "> load > episode list > "+zm;
                                 pageItem.listBoxEpType.Items.Add(zm);
+                                Button btn = new Button();
+                                btn.Name = "ButtonEpType";
+                                btn.Text = zm.Split(';')[0];
+                                btn.Tag = zm;
+                                btn.FlatAppearance.BorderSize = 0;
+                                btn.FlatStyle = FlatStyle.Flat;
+                                btn.BackColor = Color.FromArgb(38, 38, 38);
+                                btn.ForeColor = Color.White;
+                                btn.AutoSize = true;
+                                pageItem.flowLayoutPanelEpType.Controls.Add(btn);
+                                btn.Click += pageItem.buttonEpType_Click;
                             }
                         }
 

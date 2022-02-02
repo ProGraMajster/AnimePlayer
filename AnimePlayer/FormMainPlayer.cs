@@ -908,6 +908,7 @@ namespace AnimePlayer
 
         private void buttonViewFindintems_Click(object sender, EventArgs e)
         {
+            panelMenu.Hide();
             flowLayoutPanelFinditem.Controls.Clear();
             flowLayoutPanelFinditem.Hide();
             labelFindSatus.Text = "Szukanie";
@@ -1102,6 +1103,11 @@ namespace AnimePlayer
         {
             memsize = Convert.ToInt32(performanceCounter_app.NextValue()) / (int)(1024);
             labelAppRamUsage.Text = "Wykorzystanie pamięci RAM przez aplikację: " + (memsize / 1024).ToString() + "MB";
+        }
+
+        private void buttonCloseMoreButtons_Click(object sender, EventArgs e)
+        {
+            panelMoreButtons.Hide();
         }
     }
 }

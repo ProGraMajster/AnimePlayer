@@ -107,8 +107,12 @@ namespace AnimePlayer
             this.label16 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.label17 = new System.Windows.Forms.Label();
+            this.panel19 = new System.Windows.Forms.Panel();
+            this.label18 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.label19 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.buttonClose = new System.Windows.Forms.Button();
+            this.buttonCloseMoreButtons = new System.Windows.Forms.Button();
             this.panelAllitem = new System.Windows.Forms.Panel();
             this.flowLayoutPanelFinditem = new System.Windows.Forms.FlowLayoutPanel();
             this.panelTopFinder = new System.Windows.Forms.Panel();
@@ -130,10 +134,6 @@ namespace AnimePlayer
             this.timerAppPer = new System.Windows.Forms.Timer(this.components);
             this.panel18 = new System.Windows.Forms.Panel();
             this.labelAppRamUsage = new System.Windows.Forms.Label();
-            this.panel19 = new System.Windows.Forms.Panel();
-            this.label18 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label19 = new System.Windows.Forms.Label();
             this.panelStartPage.SuspendLayout();
             this.panelGroup.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
@@ -164,6 +164,7 @@ namespace AnimePlayer
             this.panel15.SuspendLayout();
             this.panel16.SuspendLayout();
             this.panel17.SuspendLayout();
+            this.panel19.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panelAllitem.SuspendLayout();
             this.panelTopFinder.SuspendLayout();
@@ -171,7 +172,6 @@ namespace AnimePlayer
             this.panelNotifiError.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel18.SuspendLayout();
-            this.panel19.SuspendLayout();
             this.SuspendLayout();
             // 
             // notifyIcon1
@@ -1202,9 +1202,60 @@ namespace AnimePlayer
             this.label17.Text = "Społeczność";
             this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // panel19
+            // 
+            this.panel19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.panel19.Controls.Add(this.label18);
+            this.panel19.Controls.Add(this.button2);
+            this.panel19.Controls.Add(this.label19);
+            this.panel19.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel19.Location = new System.Drawing.Point(420, 134);
+            this.panel19.Name = "panel19";
+            this.panel19.Padding = new System.Windows.Forms.Padding(1);
+            this.panel19.Size = new System.Drawing.Size(200, 120);
+            this.panel19.TabIndex = 7;
+            // 
+            // label18
+            // 
+            this.label18.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label18.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label18.ForeColor = System.Drawing.Color.White;
+            this.label18.Location = new System.Drawing.Point(1, 33);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(198, 56);
+            this.label18.TabIndex = 2;
+            this.label18.Text = "Twórz tręsci dla tej aplikacji. Dodaj nowy tytuł lub waidomość";
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.button2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(1, 89);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(198, 30);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "Przejdź";
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // label19
+            // 
+            this.label19.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label19.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label19.ForeColor = System.Drawing.Color.White;
+            this.label19.Location = new System.Drawing.Point(1, 1);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(198, 32);
+            this.label19.TabIndex = 0;
+            this.label19.Text = "Narzędzia";
+            this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // panel6
             // 
-            this.panel6.Controls.Add(this.buttonClose);
+            this.panel6.Controls.Add(this.buttonCloseMoreButtons);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel6.Location = new System.Drawing.Point(0, 0);
             this.panel6.Name = "panel6";
@@ -1212,19 +1263,20 @@ namespace AnimePlayer
             this.panel6.Size = new System.Drawing.Size(1106, 38);
             this.panel6.TabIndex = 0;
             // 
-            // buttonClose
+            // buttonCloseMoreButtons
             // 
-            this.buttonClose.Dock = System.Windows.Forms.DockStyle.Right;
-            this.buttonClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonClose.ForeColor = System.Drawing.Color.Red;
-            this.buttonClose.Location = new System.Drawing.Point(1055, 10);
-            this.buttonClose.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.buttonClose.MaximumSize = new System.Drawing.Size(41, 29);
-            this.buttonClose.Name = "buttonClose";
-            this.buttonClose.Size = new System.Drawing.Size(41, 28);
-            this.buttonClose.TabIndex = 6;
-            this.buttonClose.Text = "X";
-            this.buttonClose.UseVisualStyleBackColor = true;
+            this.buttonCloseMoreButtons.Dock = System.Windows.Forms.DockStyle.Right;
+            this.buttonCloseMoreButtons.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCloseMoreButtons.ForeColor = System.Drawing.Color.Red;
+            this.buttonCloseMoreButtons.Location = new System.Drawing.Point(1055, 10);
+            this.buttonCloseMoreButtons.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.buttonCloseMoreButtons.MaximumSize = new System.Drawing.Size(41, 29);
+            this.buttonCloseMoreButtons.Name = "buttonCloseMoreButtons";
+            this.buttonCloseMoreButtons.Size = new System.Drawing.Size(41, 28);
+            this.buttonCloseMoreButtons.TabIndex = 6;
+            this.buttonCloseMoreButtons.Text = "X";
+            this.buttonCloseMoreButtons.UseVisualStyleBackColor = true;
+            this.buttonCloseMoreButtons.Click += new System.EventHandler(this.buttonCloseMoreButtons_Click);
             // 
             // panelAllitem
             // 
@@ -1480,57 +1532,6 @@ namespace AnimePlayer
             this.labelAppRamUsage.TabIndex = 0;
             this.labelAppRamUsage.Text = "labelAppRamUsage";
             // 
-            // panel19
-            // 
-            this.panel19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.panel19.Controls.Add(this.label18);
-            this.panel19.Controls.Add(this.button2);
-            this.panel19.Controls.Add(this.label19);
-            this.panel19.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel19.Location = new System.Drawing.Point(420, 134);
-            this.panel19.Name = "panel19";
-            this.panel19.Padding = new System.Windows.Forms.Padding(1);
-            this.panel19.Size = new System.Drawing.Size(200, 120);
-            this.panel19.TabIndex = 7;
-            // 
-            // label18
-            // 
-            this.label18.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label18.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label18.ForeColor = System.Drawing.Color.White;
-            this.label18.Location = new System.Drawing.Point(1, 33);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(198, 56);
-            this.label18.TabIndex = 2;
-            this.label18.Text = "Twórz tręsci dla tej aplikacji. Dodaj nowy tytuł lub waidomość";
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.button2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(1, 89);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(198, 30);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Przejdź";
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // label19
-            // 
-            this.label19.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label19.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label19.ForeColor = System.Drawing.Color.White;
-            this.label19.Location = new System.Drawing.Point(1, 1);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(198, 32);
-            this.label19.TabIndex = 0;
-            this.label19.Text = "Narzędzia";
-            this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // OknoG
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -1538,8 +1539,8 @@ namespace AnimePlayer
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.ClientSize = new System.Drawing.Size(1106, 624);
             this.Controls.Add(this.panel18);
-            this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.panelNotifiError);
             this.DoubleBuffered = true;
             this.KeyPreview = true;
@@ -1589,6 +1590,7 @@ namespace AnimePlayer
             this.panel15.ResumeLayout(false);
             this.panel16.ResumeLayout(false);
             this.panel17.ResumeLayout(false);
+            this.panel19.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panelAllitem.ResumeLayout(false);
             this.panelTopFinder.ResumeLayout(false);
@@ -1598,7 +1600,6 @@ namespace AnimePlayer
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panel18.ResumeLayout(false);
             this.panel18.PerformLayout();
-            this.panel19.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1696,7 +1697,7 @@ namespace AnimePlayer
         private Label label14;
         private Button button7button2button_MoreBtn_Open_twojeanimepl;
         private Label label15;
-        private Button buttonClose;
+        private Button buttonCloseMoreButtons;
         private Panel panel17;
         private Label label16;
         private Button button1;

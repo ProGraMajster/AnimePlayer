@@ -51,6 +51,7 @@ namespace AnimePlayerLibrary
             RtbNewlinie("pathPage: "+vd.pathPage);
             RtbNewlinie("groupName: "+vd.groupName);
 
+            //MessageBox.Show("TEST");
 
             if(box != null)
             {

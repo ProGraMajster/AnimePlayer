@@ -72,7 +72,7 @@ namespace AnimePlayer
             this.panel1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(12);
-            this.panel1.Size = new System.Drawing.Size(712, 168);
+            this.panel1.Size = new System.Drawing.Size(790, 168);
             this.panel1.TabIndex = 1;
             // 
             // labelTitle
@@ -98,7 +98,7 @@ namespace AnimePlayer
             this.label1.Location = new System.Drawing.Point(172, 12);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(449, 43);
+            this.label1.Size = new System.Drawing.Size(527, 43);
             this.label1.TabIndex = 1;
             this.label1.Text = "Odcinek";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -109,7 +109,7 @@ namespace AnimePlayer
             this.button2.Dock = System.Windows.Forms.DockStyle.Right;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(621, 12);
+            this.button2.Location = new System.Drawing.Point(699, 12);
             this.button2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(38, 144);
@@ -123,7 +123,7 @@ namespace AnimePlayer
             this.buttonClose.Dock = System.Windows.Forms.DockStyle.Right;
             this.buttonClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonClose.ForeColor = System.Drawing.Color.Red;
-            this.buttonClose.Location = new System.Drawing.Point(659, 12);
+            this.buttonClose.Location = new System.Drawing.Point(737, 12);
             this.buttonClose.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.buttonClose.MaximumSize = new System.Drawing.Size(41, 29);
             this.buttonClose.Name = "buttonClose";
@@ -157,7 +157,7 @@ namespace AnimePlayer
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(12);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(12, 0, 12, 0);
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(712, 391);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(790, 391);
             this.flowLayoutPanel1.TabIndex = 2;
             this.flowLayoutPanel1.WrapContents = false;
             // 
@@ -204,7 +204,7 @@ namespace AnimePlayer
             this.panel4.Location = new System.Drawing.Point(12, 571);
             this.panel4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(712, 40);
+            this.panel4.Size = new System.Drawing.Size(790, 40);
             this.panel4.TabIndex = 0;
             // 
             // PageEpisode
@@ -221,7 +221,7 @@ namespace AnimePlayer
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "PageEpisode";
             this.Padding = new System.Windows.Forms.Padding(12);
-            this.Size = new System.Drawing.Size(641, 511);
+            this.Size = new System.Drawing.Size(814, 561);
             this.Resize += new System.EventHandler(this.PageEpisode_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);

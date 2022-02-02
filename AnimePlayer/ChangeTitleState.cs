@@ -25,7 +25,7 @@ namespace AnimePlayer
         {
             try
             {
-                MessageBox.Show("Ta jest nie dostępna\n(Jeszcze nie jest skończona)", "Error",
+                MessageBox.Show("Ta funkcja jest nie dostępna\n(Jeszcze nie jest skończona)", "Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (Exception ex)

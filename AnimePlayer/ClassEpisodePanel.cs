@@ -15,6 +15,7 @@ namespace AnimePlayer
         public Button button_720p;
         public Button button_480p;
         public Button button_360p;
+        public Button buttonOtherQuality;
         public int NumberBtn;
         public int numEp;
         string pathFile;
@@ -92,7 +93,21 @@ namespace AnimePlayer
             button_360p.Font = new System.Drawing.Font("Comic Sans MS", 10F);
             button_360p.AutoSize = true;
 
-            if (numberQuality == 1)
+
+            buttonOtherQuality = new Button();
+            buttonOtherQuality.Size = new Size(50, 30);
+            buttonOtherQuality.FlatStyle = FlatStyle.Flat;
+            buttonOtherQuality.ForeColor = Color.White;
+            buttonOtherQuality.Dock = DockStyle.Right;
+            buttonOtherQuality.Text = "Quality";
+            buttonOtherQuality.Font = new System.Drawing.Font("Comic Sans MS", 10F);
+            buttonOtherQuality.AutoSize = true;
+
+            if(numberQuality == 0)
+            {
+                buttonOtherQuality.Show();
+            }
+            else if (numberQuality == 1)
             {
                 button_360p.Show();
                 button_480p.Hide();

@@ -14,4 +14,10 @@
     <ProjectReference Include="..\AnimePlayer\AnimePlayer.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="PrzeczytajTenPlik.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
