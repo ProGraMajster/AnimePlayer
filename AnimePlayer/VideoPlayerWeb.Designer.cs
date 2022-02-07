@@ -91,7 +91,7 @@ namespace AnimePlayer
             this.webView21.Location = new System.Drawing.Point(0, 0);
             this.webView21.Name = "webView21";
             this.webView21.Size = new System.Drawing.Size(838, 620);
-            this.webView21.Source = new System.Uri("https://www.google.com", System.UriKind.Absolute);
+            this.webView21.Source = new System.Uri("https://sites.google.com/view/twojeanimepl", System.UriKind.Absolute);
             this.webView21.TabIndex = 2;
             this.webView21.ZoomFactor = 1D;
             this.webView21.NavigationStarting += new System.EventHandler<Microsoft.Web.WebView2.Core.CoreWebView2NavigationStartingEventArgs>(this.webView21_NavigationStarting);
