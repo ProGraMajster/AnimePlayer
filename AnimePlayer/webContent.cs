@@ -67,7 +67,7 @@ namespace AnimePlayer
             {
                 //MessageBox.Show("Wystąpił błąd podczas pobierania zawartości!", "Wstąpił błąd", MessageBoxButtons.OK);
                 oknoG.labelLoadingDetails.Text = "DownloadMainFile > an error occured";
-                oknoG.labelSatusWorkingApp.Text = "Status działania: Ograniczony";
+                oknoG.labelSatusWorkingApp.Text = "Status działania: Ograniczony\nSerwer: Lokalny";
                 Application.DoEvents();
                 ToolTip toolTip = new ToolTip();
                 toolTip.SetToolTip(oknoG.labelSatusWorkingApp, "Ograniczony dostęp do serwera");
@@ -92,7 +92,7 @@ namespace AnimePlayer
                 oknoG.labelLoading.Text += ".";
                 Application.DoEvents();
                 oknoG.onOnline = true;
-                oknoG.labelSatusWorkingApp.Text = "Status działania: Prawidłowy";
+                oknoG.labelSatusWorkingApp.Text = "Status działania: Prawidłowy\nSerwer nr: "+oknoG.server;
             }
 
             oknoG.panelLoading.Hide();
@@ -455,8 +455,9 @@ namespace AnimePlayer
                                 ig.layoutPanel.Controls.Add(panelItem);
                             }
                         }
-                        catch (Exception)
+                        catch (Exception exig)
                         {
+                            Console.WriteLine(exig.ToString());
                         }
                     }
                 }
@@ -1390,7 +1391,21 @@ namespace AnimePlayer
                                         }
                                         if(FindTitlesInProgram(values.name, oknoG))
                                         {
-
+                                            Console.WriteLine("FindTitlesInProgram > true");
+                                            foreach (ItemsGroup ig in oknoG.itemsGroups)
+                                            {
+                                                try
+                                                {
+                                                    if (ig.groupTitle == values.groupName)
+                                                    {
+                                                        ig.layoutPanel.Controls.Add(oknoG.ctnPanelAuxiliary.Duplication());
+                                                    }
+                                                }
+                                                catch (Exception exig)
+                                                {
+                                                    Console.WriteLine(exig.ToString());
+                                                }
+                                            }
                                         }
                                         else
                                         {
@@ -1461,9 +1476,14 @@ namespace AnimePlayer
 
                     if (content[position] == "GroupName")
                     {
+                        Console.WriteLine("content[position]: "+ content[position]);
                         position++;
+                        Console.WriteLine("content[position]: " + content[position]);
+                        Console.WriteLine("GroupName if Polecane");
                         if (content[position] == "Polecane")
                         {
+                            Console.WriteLine("true");
+                            Console.WriteLine("!Exists Dir> "+ dirpath + "Polecane");
                             oknoG.panePolecane.Show();
                             if (!Directory.Exists(dirpath + "Polecane"))
                             {
@@ -1477,9 +1497,12 @@ namespace AnimePlayer
                                 }
                             }
                             position++;
+                            Console.WriteLine("content[position]: " + content[position]);
+                            Console.WriteLine("dUri");
                             if (content[position] == "dUri")
                             {
                                 position++;
+                                Console.WriteLine("content[position]: " + content[position]);
                                 //WebContent.downloadFile(content[position], dirpath + "Polecane\\" + content[position] + ".txt");
                                 oknoG.labelLoadingDetails.Text = "Interpreter > Local > StartLocal > new Interpreter > StartLocal path:" +
                                     dirpath + "Polecane\\" + content[position] + ".txt";
@@ -1490,13 +1513,16 @@ namespace AnimePlayer
                             else if (content[position] == "oneDriveUri")
                             {
                                 position++;
+                                Console.WriteLine("content[position]: " + content[position]);
                                 Interpreter interpreter = new Interpreter(oknoG);
                                 interpreter.StartLocal(dirpath + "Polecane\\" + Download.OneDrive.onedriveUri(content[position]) + ".txt");
                             }
                         }
                         else
                         {
+                            Console.WriteLine("------OTHER GROUP-----");
                             string gname = content[position];
+                            Console.WriteLine("gname: " + gname);
                             Panel panel = new Panel();
                             panel.Show();
                             panel.Name = "panelDockGroup";
@@ -1522,19 +1548,24 @@ namespace AnimePlayer
                                 }
                             }
                             position++;
+                            Console.WriteLine("content[position]: " + content[position]);
                             if (content[position] == "dUri")
                             {
+                                Console.WriteLine("true");
                                 position++;
+                                Console.WriteLine("content[position]: " + content[position]);
                                 //WebContent.downloadFile(content[position], dirpath + "Polecane\\" + content[position] + ".txt");
                                 oknoG.labelLoadingDetails.Text = "Interpreter > Local > StartLocal > new Interpreter > StartLocal path:" +
                                     dirpath + gname + "\\" + content[position] + ".txt";
                                 Application.DoEvents();
                                 Interpreter interpreter = new Interpreter(oknoG);
+                                Console.WriteLine("StartLocal");
                                 interpreter.StartLocal(dirpath + gname + "\\" + content[position] + ".txt");
                             }
                             else if (content[position] == "oneDriveUri")
                             {
                                 position++;
+                                Console.WriteLine("content[position]: " + content[position]);
                                 Interpreter interpreter = new Interpreter(oknoG);
                                 interpreter.StartLocal(dirpath + gname + "\\" + Download.OneDrive.onedriveUri(content[position]) + ".txt");
                             }
@@ -1548,13 +1579,16 @@ namespace AnimePlayer
                             string code = content[position] + ";";
                             WebContent.Values values = new WebContent.Values(path);
                             position++;
+                            Console.WriteLine("content[position]: " + content[position]);
                             code += content[position] + ";";
                             values.name = Replacer.Names(content[position]);
                             position++;
+                            Console.WriteLine("content[position]: " + content[position]);
                             code += content[position] + ";";
                             if (content[position] == "Icon")
                             {
                                 position++;
+                                Console.WriteLine("content[position]: " + content[position]);
                                 code += content[position] + ";";
                                 values.iconLink = content[position];
                                 //"C:\\ContentLibrarys\\OtherFiles\\WMP_OverlayApp\\Icon\\" + filename + ".png"
@@ -1566,17 +1600,21 @@ namespace AnimePlayer
                                 }
 
                                 position++;
+                                Console.WriteLine("content[position]: " + content[position]);
                                 if (content[position] == "Link")
                                 {
                                     code += content[position] + ";";
                                     position++;
+                                    Console.WriteLine("content[position]: " + content[position]);
                                     code += content[position] + ";";
                                     values.siteLink = content[position];
                                     position++;
+                                    Console.WriteLine("content[position]: " + content[position]);
                                     if (content[position] == "ContentId")
                                     {
                                         code += content[position] + ";";
                                         position++;
+                                        Console.WriteLine("content[position]: " + content[position]);
                                         code += content[position] + ";";
                                         values.contentId = content[position];
                                         try
@@ -1595,17 +1633,34 @@ namespace AnimePlayer
                                         oknoG.labelLoadingDetails.Text = "Interpreter > Local > StartLocal > file:" + path+ " > Create CtnPanel";
                                         if (FindTitlesInProgram(values.name, oknoG))
                                         {
-
+                                            Console.WriteLine("FindTitlesInProgram > true");
+                                            foreach (ItemsGroup ig in oknoG.itemsGroups)
+                                            {
+                                                try
+                                                {
+                                                    if (ig.groupTitle == values.groupName)
+                                                    {
+                                                        ig.layoutPanel.Controls.Add(oknoG.ctnPanelAuxiliary.Duplication());
+                                                    }
+                                                }
+                                                catch (Exception exig)
+                                                {
+                                                    Console.WriteLine(exig.ToString());
+                                                }
+                                            }
                                         }
                                         else
                                         {
+                                            Console.WriteLine("FindTitlesInProgram > false");
                                             WebContentControls.CtnPanel panel = new WebContentControls.CtnPanel(values, oknoG, oknoG.tchangerColors);
                                         }
                                     }
                                     position++;
+                                    Console.WriteLine("content[position]: " + content[position]);
                                     if (content[position] == "ContentId_2")
                                     {
                                         position++;
+                                        Console.WriteLine("content[position]: " + content[position]);
                                         values.contentId2 = content[position];
                                     }
                                     else
@@ -1711,7 +1766,7 @@ namespace AnimePlayer
             return false;
         }
         
-        public static void AddTitleswithProgram(WebContent.Values va)
+        public static void AddTitleswithProgram(WebContent.Values va, OknoG okno)
         {
             Stopwatch stopWatch = new Stopwatch();
             stopWatch.Start();
@@ -1723,7 +1778,7 @@ namespace AnimePlayer
 
             try
             {
-                //add to group 
+                
             }
             catch (Exception eex)
             {

@@ -44,6 +44,10 @@ namespace AnimePlayer
             this.BringToFront();
             this.Show();
             button4.Visible = local;
+            axwmp = new AxWMPLib.AxWindowsMediaPlayer();
+            axwmp.MouseMoveEvent += axwmp_mouseMoveEvent;
+            this.Controls.Add(axwmp);
+            axwmp.Dock = DockStyle.Fill;
         }
 
         private void VideoPlayer_Load(object sender, EventArgs e)

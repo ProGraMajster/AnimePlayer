@@ -20,6 +20,7 @@ namespace AnimePlayer
         public Control controlAuxiliary;
         public WebContentControls.CtnPanel ctnPanelAuxiliary;
 
+        public bool debug = false;
         public bool onOnline = true;
         PanelSearchFilters panelSearch;
         NewFlowLayoutPanel panelNews;
@@ -255,6 +256,18 @@ namespace AnimePlayer
                     return;
                 }
             }
+            else if(e.KeyCode == Keys.F12)
+            {
+                if(panelCommands.Visible == false)
+                {
+                    panelCommands.BringToFront();
+                    panelCommands.Show();
+                }
+                else
+                {
+                    panelCommands.Hide();
+                }
+            }
         }
 
         private void Form1_KeyUp(object sender, KeyEventArgs e)
@@ -298,8 +311,32 @@ namespace AnimePlayer
                 {
                     onOnline = false;
                 }
+                if (arg =="-debug")
+                {
+                    debug = true;
+                }
             }
 
+            if(debug)
+            {
+                if(!Directory.Exists(DefaultAppDir.Logs))
+                {
+                    Directory.CreateDirectory(DefaultAppDir.Logs);
+                }
+                labelLoadingDetails.TextChanged += labelLoadingDetails_TextChanged;
+                try
+                {
+                    FileStream filestream = new FileStream(DefaultAppDir.Logs+ Process.GetCurrentProcess().StartTime.ToString().Replace(":", " ") + "_console_out.txt", FileMode.Append);
+                    var streamwriter = new StreamWriter(filestream);
+                    streamwriter.AutoFlush = true;
+                    Console.SetOut(streamwriter);
+                    Console.SetError(streamwriter);
+                }
+                catch(Exception exFile)
+                {
+                    Console.Error.WriteLine(exFile.ToString());
+                }
+            }
 
             if (local == false)
             {
@@ -316,8 +353,9 @@ namespace AnimePlayer
                 CenterControlInForm(labelLoading);
                 panelLoading.Show();
                 this.Show();
-                Interpreter interpreter = new Interpreter(this);
-                interpreter.Local();
+                WebContent.Initialize(this);
+                //Interpreter interpreter = new Interpreter(this);
+                //interpreter.Local();
             }
 
             /*
@@ -991,6 +1029,7 @@ namespace AnimePlayer
         {
             try
             {
+                panelMenu.Hide();
                 if(pageTitileStatusList == null)
                 {
                     pageTitileStatusList = new PageTitileStatusList();
@@ -1108,6 +1147,57 @@ namespace AnimePlayer
         private void buttonCloseMoreButtons_Click(object sender, EventArgs e)
         {
             panelMoreButtons.Hide();
+        }
+
+        private void labelLoadingDetails_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                string path = DefaultAppDir.Logs + Process.GetCurrentProcess().StartTime.ToString().Replace(":"," ") + ".txt";
+                string text = "[ " + DateTime.Now.ToString().Replace(":", " ")+" ]" + labelLoadingDetails.Text + Environment.NewLine;
+                File.AppendAllText(path, text);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+        }
+
+        private void buttonAllNewsContnet_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Funkcja nie dostęona!");
+            /*
+            PanelAllNewsContent panelAllNewsContent = new PanelAllNewsContent();
+            panelAllNewsContent.Name = "panelAllNewsContent";
+            panel2.Controls.Add(panelAllNewsContent);
+            panelAllNewsContent.Dock = DockStyle.Fill;
+            panelAllNewsContent.Show();
+            panelAllNewsContent.BringToFront();
+            */
+        }
+
+        private void backgroundWorkerLoadItems_DoWork(object sender, DoWorkEventArgs e)
+        {
+
+        }
+
+        private void textBoxCommandInput_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                ConsoleCommands(textBoxCommandInput.Text);
+                textBoxCommandInput.Text = "";
+            }
+        }
+
+        public void ConsoleCommands(string input)
+        {
+            if(input.StartsWith("videoplayerweb open type youtube;"))
+            {
+                VideoPlayerWeb videoPlayerWeb = new VideoPlayerWeb(input.Split(';')[1], VideoPlayerWeb.TypeVideo.YouTube, panel2);
+                videoPlayerWeb.Name = "videoPlayerWeb";
+                videoPlayerWeb.Show();
+            }
         }
     }
 }

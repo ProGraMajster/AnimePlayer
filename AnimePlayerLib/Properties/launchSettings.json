@@ -1,11 +1,11 @@
 {
   "profiles": {
-    "AnimePlayer.HostApp": {
+    "AnimePlayerLibrary": {
       "commandName": "Project"
     },
     "Profil 1": {
       "commandName": "Project",
-      "commandLineArgs": "-local -offline -debug"
+      "commandLineArgs": "-local -offline"
     }
   }
 }

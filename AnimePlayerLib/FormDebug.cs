@@ -125,7 +125,7 @@ namespace AnimePlayerLibrary
                 if(ctn.Name.Length > 0)
                 {
                     sub.Text = ctn.Name;
-                    sub.ToolTipText = ctn.Name+" | "+ctn.GetType().ToString();
+                    sub.ToolTipText = ctn.Name+" -- "+ctn.GetType().ToString();
                 }
                 else
                 {
@@ -228,12 +228,12 @@ namespace AnimePlayerLibrary
                     {
                         TreeNode treeNode = new TreeNode();
                         treeNode.Text = form.Name;
-                        treeNode.ToolTipText = form.Name + " | " + form.GetType().ToString();
+                        treeNode.ToolTipText = form.Name + " -- " + form.GetType().ToString();
                         foreach (Control ctn in form.Controls)
                         {
                             TreeNode sub = new TreeNode();
                             sub.Text = ctn.Name;
-                            sub.ToolTipText = ctn.Name + " | " + ctn.GetType().ToString();
+                            sub.ToolTipText = ctn.Name + " -- " + ctn.GetType().ToString();
                             this.Invoke(new Action(() => richTextBoxListControls.Text += ctn.Name + Environment.NewLine));
                             if (ctn.Controls.Count > 0)
                             {

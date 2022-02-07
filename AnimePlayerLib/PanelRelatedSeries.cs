@@ -32,7 +32,7 @@ namespace AnimePlayerLibrary
             }
             else if(typeRelated == TypeRelatedSeries.Prequel)
             {
-                labelTypetitle.Text = "Sequel";
+                labelTypetitle.Text = "Prequel";
             }
             else if(typeRelated == TypeRelatedSeries.Main_history)
             {

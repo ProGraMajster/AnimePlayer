@@ -17,5 +17,6 @@ namespace AnimePlayerLibrary
         public static String Items { get { return "C:\\ContentLibrarys\\OtherFiles\\WMP_OverlayApp\\Items\\"; } }
         public static String Web_script { get { return "C:\\ContentLibrarys\\OtherFiles\\WMP_OverlayApp\\Web_script\\"; } }
         public static String Community { get { return "C:\\ContentLibrarys\\OtherFiles\\WMP_OverlayApp\\Community\\"; } }
+        public static String Logs { get { return "C:\\ContentLibrarys\\OtherFiles\\WMP_OverlayApp\\Logs\\"; } }
     }
 }

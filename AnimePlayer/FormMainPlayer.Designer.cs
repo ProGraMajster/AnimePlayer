@@ -95,6 +95,10 @@ namespace AnimePlayer
             this.label10 = new System.Windows.Forms.Label();
             this.button5button2button_MoreBtn_Open_Lists = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
+            this.panel17 = new System.Windows.Forms.Panel();
+            this.label16 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label17 = new System.Windows.Forms.Label();
             this.panel15 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
             this.button2button_MoreBtn_Open_GitHub = new System.Windows.Forms.Button();
@@ -103,14 +107,14 @@ namespace AnimePlayer
             this.label14 = new System.Windows.Forms.Label();
             this.button7button2button_MoreBtn_Open_twojeanimepl = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
-            this.panel17 = new System.Windows.Forms.Panel();
-            this.label16 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label17 = new System.Windows.Forms.Label();
             this.panel19 = new System.Windows.Forms.Panel();
             this.label18 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.label19 = new System.Windows.Forms.Label();
+            this.panel20 = new System.Windows.Forms.Panel();
+            this.label20 = new System.Windows.Forms.Label();
+            this.buttonAllNewsContnet = new System.Windows.Forms.Button();
+            this.label21 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.buttonCloseMoreButtons = new System.Windows.Forms.Button();
             this.panelAllitem = new System.Windows.Forms.Panel();
@@ -134,6 +138,11 @@ namespace AnimePlayer
             this.timerAppPer = new System.Windows.Forms.Timer(this.components);
             this.panel18 = new System.Windows.Forms.Panel();
             this.labelAppRamUsage = new System.Windows.Forms.Label();
+            this.backgroundWorkerLoadItems = new System.ComponentModel.BackgroundWorker();
+            this.panelCommands = new System.Windows.Forms.Panel();
+            this.textBoxCommandOutput = new System.Windows.Forms.TextBox();
+            this.textBoxCommandInput = new System.Windows.Forms.TextBox();
+            this.label22 = new System.Windows.Forms.Label();
             this.panelStartPage.SuspendLayout();
             this.panelGroup.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
@@ -161,10 +170,11 @@ namespace AnimePlayer
             this.panel12.SuspendLayout();
             this.panel13.SuspendLayout();
             this.panel14.SuspendLayout();
+            this.panel17.SuspendLayout();
             this.panel15.SuspendLayout();
             this.panel16.SuspendLayout();
-            this.panel17.SuspendLayout();
             this.panel19.SuspendLayout();
+            this.panel20.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panelAllitem.SuspendLayout();
             this.panelTopFinder.SuspendLayout();
@@ -172,6 +182,7 @@ namespace AnimePlayer
             this.panelNotifiError.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel18.SuspendLayout();
+            this.panelCommands.SuspendLayout();
             this.SuspendLayout();
             // 
             // notifyIcon1
@@ -791,8 +802,8 @@ namespace AnimePlayer
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.panelMoreButtons);
             this.panel2.Controls.Add(this.panelStartPage);
+            this.panel2.Controls.Add(this.panelMoreButtons);
             this.panel2.Controls.Add(this.panelLoading);
             this.panel2.Controls.Add(this.panelAllitem);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -829,10 +840,11 @@ namespace AnimePlayer
             this.newFlowLayoutPanel1.Controls.Add(this.panel12);
             this.newFlowLayoutPanel1.Controls.Add(this.panel13);
             this.newFlowLayoutPanel1.Controls.Add(this.panel14);
+            this.newFlowLayoutPanel1.Controls.Add(this.panel17);
             this.newFlowLayoutPanel1.Controls.Add(this.panel15);
             this.newFlowLayoutPanel1.Controls.Add(this.panel16);
-            this.newFlowLayoutPanel1.Controls.Add(this.panel17);
             this.newFlowLayoutPanel1.Controls.Add(this.panel19);
+            this.newFlowLayoutPanel1.Controls.Add(this.panel20);
             this.newFlowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.newFlowLayoutPanel1.Location = new System.Drawing.Point(20, 20);
             this.newFlowLayoutPanel1.Name = "newFlowLayoutPanel1";
@@ -1047,6 +1059,57 @@ namespace AnimePlayer
             this.label11.Text = "Listy anime";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // panel17
+            // 
+            this.panel17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.panel17.Controls.Add(this.label16);
+            this.panel17.Controls.Add(this.button1);
+            this.panel17.Controls.Add(this.label17);
+            this.panel17.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel17.Location = new System.Drawing.Point(832, 8);
+            this.panel17.Name = "panel17";
+            this.panel17.Padding = new System.Windows.Forms.Padding(1);
+            this.panel17.Size = new System.Drawing.Size(200, 120);
+            this.panel17.TabIndex = 6;
+            // 
+            // label16
+            // 
+            this.label16.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label16.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label16.ForeColor = System.Drawing.Color.White;
+            this.label16.Location = new System.Drawing.Point(1, 33);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(198, 56);
+            this.label16.TabIndex = 2;
+            this.label16.Text = "Ludzie, Grupy...";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.button1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(1, 89);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(198, 30);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Przejdź";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // label17
+            // 
+            this.label17.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label17.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label17.ForeColor = System.Drawing.Color.White;
+            this.label17.Location = new System.Drawing.Point(1, 1);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(198, 32);
+            this.label17.TabIndex = 0;
+            this.label17.Text = "Społeczność";
+            this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // panel15
             // 
             this.panel15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
@@ -1054,7 +1117,7 @@ namespace AnimePlayer
             this.panel15.Controls.Add(this.button2button_MoreBtn_Open_GitHub);
             this.panel15.Controls.Add(this.label13);
             this.panel15.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel15.Location = new System.Drawing.Point(832, 8);
+            this.panel15.Location = new System.Drawing.Point(8, 134);
             this.panel15.Name = "panel15";
             this.panel15.Padding = new System.Windows.Forms.Padding(1);
             this.panel15.Size = new System.Drawing.Size(200, 120);
@@ -1106,7 +1169,7 @@ namespace AnimePlayer
             this.panel16.Controls.Add(this.button7button2button_MoreBtn_Open_twojeanimepl);
             this.panel16.Controls.Add(this.label15);
             this.panel16.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel16.Location = new System.Drawing.Point(8, 134);
+            this.panel16.Location = new System.Drawing.Point(214, 134);
             this.panel16.Name = "panel16";
             this.panel16.Padding = new System.Windows.Forms.Padding(1);
             this.panel16.Size = new System.Drawing.Size(200, 120);
@@ -1150,57 +1213,6 @@ namespace AnimePlayer
             this.label15.TabIndex = 0;
             this.label15.Text = "Twojeanimepl";
             this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panel17
-            // 
-            this.panel17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.panel17.Controls.Add(this.label16);
-            this.panel17.Controls.Add(this.button1);
-            this.panel17.Controls.Add(this.label17);
-            this.panel17.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel17.Location = new System.Drawing.Point(214, 134);
-            this.panel17.Name = "panel17";
-            this.panel17.Padding = new System.Windows.Forms.Padding(1);
-            this.panel17.Size = new System.Drawing.Size(200, 120);
-            this.panel17.TabIndex = 6;
-            // 
-            // label16
-            // 
-            this.label16.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label16.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label16.ForeColor = System.Drawing.Color.White;
-            this.label16.Location = new System.Drawing.Point(1, 33);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(198, 56);
-            this.label16.TabIndex = 2;
-            this.label16.Text = "Ludzie, Grupy...";
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.button1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(1, 89);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(198, 30);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Przejdź";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // label17
-            // 
-            this.label17.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label17.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label17.ForeColor = System.Drawing.Color.White;
-            this.label17.Location = new System.Drawing.Point(1, 1);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(198, 32);
-            this.label17.TabIndex = 0;
-            this.label17.Text = "Społeczność";
-            this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel19
             // 
@@ -1252,6 +1264,58 @@ namespace AnimePlayer
             this.label19.TabIndex = 0;
             this.label19.Text = "Narzędzia";
             this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel20
+            // 
+            this.panel20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.panel20.Controls.Add(this.label20);
+            this.panel20.Controls.Add(this.buttonAllNewsContnet);
+            this.panel20.Controls.Add(this.label21);
+            this.panel20.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel20.Location = new System.Drawing.Point(626, 134);
+            this.panel20.Name = "panel20";
+            this.panel20.Padding = new System.Windows.Forms.Padding(1);
+            this.panel20.Size = new System.Drawing.Size(200, 120);
+            this.panel20.TabIndex = 8;
+            // 
+            // label20
+            // 
+            this.label20.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label20.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label20.ForeColor = System.Drawing.Color.White;
+            this.label20.Location = new System.Drawing.Point(1, 33);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(198, 56);
+            this.label20.TabIndex = 2;
+            this.label20.Text = "Wiadmości itp.";
+            // 
+            // buttonAllNewsContnet
+            // 
+            this.buttonAllNewsContnet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.buttonAllNewsContnet.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.buttonAllNewsContnet.FlatAppearance.BorderSize = 0;
+            this.buttonAllNewsContnet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAllNewsContnet.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonAllNewsContnet.ForeColor = System.Drawing.Color.White;
+            this.buttonAllNewsContnet.Location = new System.Drawing.Point(1, 89);
+            this.buttonAllNewsContnet.Name = "buttonAllNewsContnet";
+            this.buttonAllNewsContnet.Size = new System.Drawing.Size(198, 30);
+            this.buttonAllNewsContnet.TabIndex = 1;
+            this.buttonAllNewsContnet.Text = "Przejdź";
+            this.buttonAllNewsContnet.UseVisualStyleBackColor = false;
+            this.buttonAllNewsContnet.Click += new System.EventHandler(this.buttonAllNewsContnet_Click);
+            // 
+            // label21
+            // 
+            this.label21.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label21.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label21.ForeColor = System.Drawing.Color.White;
+            this.label21.Location = new System.Drawing.Point(1, 1);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(198, 32);
+            this.label21.TabIndex = 0;
+            this.label21.Text = "Aktualności";
+            this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel6
             // 
@@ -1532,6 +1596,58 @@ namespace AnimePlayer
             this.labelAppRamUsage.TabIndex = 0;
             this.labelAppRamUsage.Text = "labelAppRamUsage";
             // 
+            // backgroundWorkerLoadItems
+            // 
+            this.backgroundWorkerLoadItems.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorkerLoadItems_DoWork);
+            // 
+            // panelCommands
+            // 
+            this.panelCommands.Controls.Add(this.textBoxCommandOutput);
+            this.panelCommands.Controls.Add(this.textBoxCommandInput);
+            this.panelCommands.Controls.Add(this.label22);
+            this.panelCommands.Location = new System.Drawing.Point(355, 216);
+            this.panelCommands.Name = "panelCommands";
+            this.panelCommands.Size = new System.Drawing.Size(357, 133);
+            this.panelCommands.TabIndex = 8;
+            this.panelCommands.Visible = false;
+            // 
+            // textBoxCommandOutput
+            // 
+            this.textBoxCommandOutput.BackColor = System.Drawing.Color.Black;
+            this.textBoxCommandOutput.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxCommandOutput.ForeColor = System.Drawing.Color.White;
+            this.textBoxCommandOutput.Location = new System.Drawing.Point(11, 27);
+            this.textBoxCommandOutput.Multiline = true;
+            this.textBoxCommandOutput.Name = "textBoxCommandOutput";
+            this.textBoxCommandOutput.ReadOnly = true;
+            this.textBoxCommandOutput.Size = new System.Drawing.Size(340, 65);
+            this.textBoxCommandOutput.TabIndex = 2;
+            // 
+            // textBoxCommandInput
+            // 
+            this.textBoxCommandInput.AutoCompleteCustomSource.AddRange(new string[] {
+            "videoplayerweb open loaclfile type youtube;"});
+            this.textBoxCommandInput.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.textBoxCommandInput.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.textBoxCommandInput.BackColor = System.Drawing.Color.Black;
+            this.textBoxCommandInput.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxCommandInput.ForeColor = System.Drawing.Color.White;
+            this.textBoxCommandInput.Location = new System.Drawing.Point(11, 101);
+            this.textBoxCommandInput.Name = "textBoxCommandInput";
+            this.textBoxCommandInput.Size = new System.Drawing.Size(340, 23);
+            this.textBoxCommandInput.TabIndex = 1;
+            this.textBoxCommandInput.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxCommandInput_KeyDown);
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.ForeColor = System.Drawing.Color.White;
+            this.label22.Location = new System.Drawing.Point(11, 9);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(94, 15);
+            this.label22.TabIndex = 0;
+            this.label22.Text = "Konsola poleceń";
+            // 
             // OknoG
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -1540,6 +1656,7 @@ namespace AnimePlayer
             this.ClientSize = new System.Drawing.Size(1106, 624);
             this.Controls.Add(this.panel18);
             this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panelCommands);
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.panelNotifiError);
             this.DoubleBuffered = true;
@@ -1587,10 +1704,11 @@ namespace AnimePlayer
             this.panel12.ResumeLayout(false);
             this.panel13.ResumeLayout(false);
             this.panel14.ResumeLayout(false);
+            this.panel17.ResumeLayout(false);
             this.panel15.ResumeLayout(false);
             this.panel16.ResumeLayout(false);
-            this.panel17.ResumeLayout(false);
             this.panel19.ResumeLayout(false);
+            this.panel20.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panelAllitem.ResumeLayout(false);
             this.panelTopFinder.ResumeLayout(false);
@@ -1600,6 +1718,8 @@ namespace AnimePlayer
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panel18.ResumeLayout(false);
             this.panel18.PerformLayout();
+            this.panelCommands.ResumeLayout(false);
+            this.panelCommands.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1709,6 +1829,15 @@ namespace AnimePlayer
         private Label label18;
         private Button button2;
         private Label label19;
+        private Panel panel20;
+        private Label label20;
+        private Button buttonAllNewsContnet;
+        private Label label21;
+        private System.ComponentModel.BackgroundWorker backgroundWorkerLoadItems;
+        private Panel panelCommands;
+        private TextBox textBoxCommandOutput;
+        private TextBox textBoxCommandInput;
+        public Label label22;
     }
 }
 

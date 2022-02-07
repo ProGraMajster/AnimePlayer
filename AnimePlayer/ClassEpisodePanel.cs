@@ -11,17 +11,22 @@ namespace AnimePlayer
         public Panel panelMain;
         public Label labelTitle;
         public Label labelEp;
+        public Label labelQua;
         public Button button_1080p;
         public Button button_720p;
         public Button button_480p;
         public Button button_360p;
         public Button buttonOtherQuality;
+        public Button buttonWatch;
         public int NumberBtn;
         public int numEp;
         string pathFile;
         private Panel panelTopv;
         Form formW;
         WebContent.Skip skipLolcal;
+
+        bool cda = false;
+        bool check = false;
 
         public ClassEpisodePanel(string text, int ep, int numberQuality, string path, string link, Panel panel, Form form, WebContent.Skip skip)
         {
@@ -36,6 +41,7 @@ namespace AnimePlayer
 
 
             labelTitle = new Label();
+            labelTitle.Name = "labelTitle";
             labelTitle.Dock = DockStyle.Left;
             labelTitle.Text = text;
             labelTitle.Size = new Size(400, 30);
@@ -47,6 +53,7 @@ namespace AnimePlayer
 
 
             labelEp = new Label();
+            labelEp.Name = "labelEp";
             labelEp.Dock = DockStyle.Left;
             labelEp.BackColor = Color.FromArgb(35, 35, 35);
             labelEp.Text = "Odcinek: " + ep;
@@ -57,7 +64,20 @@ namespace AnimePlayer
             labelEp.Font = new System.Drawing.Font("Comic Sans MS", 10F);
             labelEp.TextAlign = ContentAlignment.MiddleLeft;
 
+            labelQua = new Label();
+            labelQua.Name = "labelQua";
+            labelQua.Dock = DockStyle.Left;
+            labelQua.BackColor = Color.Transparent;
+            labelQua.Text = "";
+            labelQua.Size = new Size(110, 30);
+            labelQua.AutoEllipsis = true;
+            labelQua.ForeColor = Color.White;
+            labelQua.Font = new System.Drawing.Font("Comic Sans MS", 10F);
+            labelQua.TextAlign = ContentAlignment.MiddleCenter;
+            labelQua.Hide();
+
             button_1080p = new Button();
+            button_1080p.Name = "button_1080p";
             button_1080p.Size = new Size(50, 30);
             button_1080p.FlatStyle = FlatStyle.Flat;
             button_1080p.ForeColor = Color.White;
@@ -67,6 +87,7 @@ namespace AnimePlayer
             button_1080p.AutoSize = true;
 
             button_720p = new Button();
+            button_720p.Name = "button_720p";
             button_720p.Size = new Size(50, 30);
             button_720p.FlatStyle = FlatStyle.Flat;
             button_720p.ForeColor = Color.White;
@@ -76,6 +97,7 @@ namespace AnimePlayer
             button_720p.AutoSize = true;
 
             button_480p = new Button();
+            button_480p.Name = "button_480p";
             button_480p.Size = new Size(50, 30);
             button_480p.FlatStyle = FlatStyle.Flat;
             button_480p.ForeColor = Color.White;
@@ -86,6 +108,7 @@ namespace AnimePlayer
 
             button_360p = new Button();
             button_360p.Size = new Size(50, 30);
+            button_360p.Name = "button_360p";
             button_360p.FlatStyle = FlatStyle.Flat;
             button_360p.ForeColor = Color.White;
             button_360p.Dock = DockStyle.Right;
@@ -93,8 +116,20 @@ namespace AnimePlayer
             button_360p.Font = new System.Drawing.Font("Comic Sans MS", 10F);
             button_360p.AutoSize = true;
 
+            buttonWatch = new Button();
+            buttonWatch.Name = "buttonWatch";
+            buttonWatch.Size = new Size(50, 30);
+            buttonWatch.FlatStyle = FlatStyle.Flat;
+            buttonWatch.ForeColor = Color.White;
+            buttonWatch.Dock = DockStyle.Right;
+            buttonWatch.Text = "Oglądaj";
+            buttonWatch.Font = new System.Drawing.Font("Comic Sans MS", 10F);
+            buttonWatch.AutoSize = true;
+            buttonWatch.Hide();
+
 
             buttonOtherQuality = new Button();
+            buttonOtherQuality.Name = "buttonOtherQuality";
             buttonOtherQuality.Size = new Size(50, 30);
             buttonOtherQuality.FlatStyle = FlatStyle.Flat;
             buttonOtherQuality.ForeColor = Color.White;
@@ -178,6 +213,43 @@ namespace AnimePlayer
                         if (zm[position] != null)
                         {
                             button_360p.Tag = zm[position];
+                            if(check == false)
+                            {
+                                if(zm[position].ToLower().Contains("cda"))
+                                {
+                                    cda = true;
+                                    check = true;
+                                    buttonOtherQuality.Hide();
+                                    button_360p.Hide();
+                                    button_480p.Hide();
+                                    button_720p.Hide();
+                                    button_1080p.Hide();
+                                    buttonWatch.Tag = zm[position];
+                                    buttonWatch.Click += ButtonWatch_Click;
+                                    if(numberQuality == 4)
+                                    {
+                                        labelQua.Text = "Jakość: 1080p";
+                                    }
+                                    else if(numberQuality == 3)
+                                    {
+                                        labelQua.Text = "Jakość: 720p";
+                                    }
+                                    else if(numberQuality == 2)
+                                    {
+                                        labelQua.Text = "Jakość: 480p";
+                                    }
+                                    else if(numberQuality == 1)
+                                    {
+                                        labelQua.Text = "Jakość: 360p";
+                                    }
+                                    labelQua.Show();
+                                    buttonWatch.Show();
+                                }
+                                else
+                                {
+                                    check = true;
+                                }
+                            }
                         }
                     }
 
@@ -196,12 +268,38 @@ namespace AnimePlayer
             panelMain.Controls.Add(button_720p);
             panelMain.Controls.Add(button_480p);
             panelMain.Controls.Add(button_360p);
+            panelMain.Controls.Add(labelQua);
             panelMain.Controls.Add(labelEp);
             panelMain.Controls.Add(labelTitle);
+            panelMain.Controls.Add(buttonOtherQuality);
+            panelMain.Controls.Add(buttonWatch);
             button_1080p.Click += Button_Click;
             button_720p.Click += Button_Click;
             button_480p.Click += Button_Click;
             button_360p.Click += Button_Click;
+        }
+
+        private void ButtonWatch_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Button btn = (Button)sender;
+                if (btn.Tag != null)
+                {
+                    if (btn.Tag.ToString().Contains("cda"))
+                    {
+                        VideoPlayerWeb videoPlayerWeb = new VideoPlayerWeb(btn.Tag.ToString(), VideoPlayerWeb.TypeVideo.Cda, panelTopv);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Wystąpił błąd");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
         }
 
         private void Button_Click(object sender, EventArgs e)
@@ -229,7 +327,6 @@ namespace AnimePlayer
                         {
                             VideoPlayer videoPlayer = new VideoPlayer(CdaDownloader.GetVideoLink(btn.Tag.ToString(), CdaQuality.p360), btn.Tag.ToString(), panelTopv, pathFile, formW, skipLolcal);
                         }
-
                     }
                 }
                 else
