@@ -37,6 +37,7 @@ namespace AnimePlayer
             this.label1 = new System.Windows.Forms.Label();
             this.timerLoad = new System.Windows.Forms.Timer(this.components);
             this.timerM = new System.Windows.Forms.Timer(this.components);
+            this.timerLoadingStatus = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.webView21)).BeginInit();
             this.SuspendLayout();
@@ -104,7 +105,7 @@ namespace AnimePlayer
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(37, 56);
+            this.label1.Location = new System.Drawing.Point(3, 27);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(117, 28);
             this.label1.TabIndex = 4;
@@ -118,6 +119,10 @@ namespace AnimePlayer
             // timerM
             // 
             this.timerM.Tick += new System.EventHandler(this.timerM_Tick);
+            // 
+            // timerLoadingStatus
+            // 
+            this.timerLoadingStatus.Tick += new System.EventHandler(this.timerLoadingStatus_Tick);
             // 
             // VideoPlayerWeb
             // 
@@ -148,5 +153,6 @@ namespace AnimePlayer
         private System.Windows.Forms.Timer timerLoad;
         private System.Windows.Forms.Timer timerM;
         private Button button1;
+        private System.Windows.Forms.Timer timerLoadingStatus;
     }
 }

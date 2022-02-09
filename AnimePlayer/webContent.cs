@@ -119,19 +119,42 @@ namespace AnimePlayer
                 {
                     if (line[i] != null)
                     {
-                        oknoG.labelLoadingDetails.Text = "openMainFile > downloadFile: "+i;
-                        Application.DoEvents();
-                        if(oknoG.server == 0)
+                        if(line[i] != "Async")
                         {
-                            oknoG.labelLoadingDetails.Text = "openMainFile > downloadFile: " + i+" > server:0";
+                            oknoG.labelLoadingDetails.Text = "openMainFile > downloadFile: " + i;
                             Application.DoEvents();
-                            downloadFile(line[i]);
+                            if (oknoG.server == 0)
+                            {
+                                oknoG.labelLoadingDetails.Text = "openMainFile > downloadFile: " + i + " > server:0";
+                                Application.DoEvents();
+                                downloadFile(line[i]);
+                            }
+                            else if (oknoG.server == 1)
+                            {
+                                AnimePlayerLibrary.Download.OneDrive.downloadFile(line[i]);
+                                oknoG.labelLoadingDetails.Text = "openMainFile > downloadFile: " + i + " > server:1";
+                                Application.DoEvents();
+                            }
                         }
-                        else if(oknoG.server == 1)
+                        else
                         {
-                            AnimePlayerLibrary.Download.OneDrive.downloadFile(line[i]);
-                            oknoG.labelLoadingDetails.Text = "openMainFile > downloadFile: " + i + " > server:1";
+                            oknoG.labelLoadingDetails.Text = "openMainFile > start async download content";
                             Application.DoEvents();
+                            if(line[i + 1] == "dUri")
+                            {
+                                if (line[i + 1] == "oneDrive")
+                                {
+
+                                }
+                            }
+                            if(oknoG.server == 0)
+                            {
+
+                            }
+                            else
+                            {
+
+                            }
                         }
                     }
                 }

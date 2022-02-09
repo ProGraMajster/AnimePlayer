@@ -24,6 +24,7 @@ namespace AnimePlayer
             this.Show();
             videoLink = vlink;
             tvideo = video;
+            timerLoadingStatus.Start();
             timerLoad.Start();
             normal = Application.OpenForms[0].Size;
         }
@@ -35,6 +36,7 @@ namespace AnimePlayer
 
         private void buttonClose_Click(object sender, EventArgs e)
         {
+            webView21.Dispose();
             this.Hide();
             this.Dispose();
         }
@@ -89,11 +91,13 @@ namespace AnimePlayer
 
         private void webView21_NavigationStarting(object sender, Microsoft.Web.WebView2.Core.CoreWebView2NavigationStartingEventArgs e)
         {
+            timerLoadingStatus.Start();
             label1.Show();
         }
 
         private void webView21_NavigationCompleted(object sender, Microsoft.Web.WebView2.Core.CoreWebView2NavigationCompletedEventArgs e)
         {
+            timerLoadingStatus.Stop();
             label1.Hide();
         }
 
@@ -158,6 +162,15 @@ namespace AnimePlayer
             {
                 readkey = true;
             }
+        }
+
+        private void timerLoadingStatus_Tick(object sender, EventArgs e)
+        {
+            if(label1.Text == "Ładowanie...")
+            {
+                label1.Text = "Ładowanie";
+            }
+            label1.Text += ".";
         }
     }
 }
