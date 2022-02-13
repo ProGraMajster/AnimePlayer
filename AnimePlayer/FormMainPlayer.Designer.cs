@@ -30,6 +30,7 @@ namespace AnimePlayer
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OknoG));
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.panelStartPage = new System.Windows.Forms.Panel();
             this.panelGroup = new System.Windows.Forms.Panel();
@@ -1660,6 +1661,7 @@ namespace AnimePlayer
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.panelNotifiError);
             this.DoubleBuffered = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.MinimumSize = new System.Drawing.Size(1106, 629);

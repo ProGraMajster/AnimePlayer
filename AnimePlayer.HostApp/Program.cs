@@ -157,7 +157,7 @@ namespace AnimePlayer.HostApp
             catch (Exception ex)
             {
                 MessageBox.Show("Wyst¹pi³ krytyczny b³¹d", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                System.IO.File.WriteAllText("CrashApplogs.txt", ex.ToString() + Environment.NewLine);
+                System.IO.File.WriteAllText("CrashAppRaport.txt", ex.ToString() + Environment.NewLine);
             }
         }
     }

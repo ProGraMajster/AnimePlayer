@@ -119,6 +119,7 @@ namespace AnimePlayer
                 {
                     Directory.CreateDirectory("C:\\ContentLibrarys\\OtherFiles\\WMP_OverlayApp\\Community");
                 }
+                
             }
             catch (Exception)
             {
@@ -296,7 +297,6 @@ namespace AnimePlayer
         private void buttonCloseWeb_Click(object sender, EventArgs e)
         {
         }
-
 
         private void OknoG_Load(object sender, EventArgs e)
         {
