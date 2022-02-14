@@ -119,7 +119,9 @@ namespace AnimePlayer
                 {
                     Directory.CreateDirectory("C:\\ContentLibrarys\\OtherFiles\\WMP_OverlayApp\\Community");
                 }
-                
+                quickMove = new QuickMovePanel();
+                quickMove.Hide();   
+                this.Controls.Add(quickMove);
             }
             catch (Exception)
             {
@@ -238,6 +240,7 @@ namespace AnimePlayer
             return null;
         }
 
+        QuickMovePanel quickMove=null;
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Escape)
@@ -269,11 +272,20 @@ namespace AnimePlayer
                     panelCommands.Hide();
                 }
             }
+            else if(e.KeyCode == Keys.Tab && e.Control)
+            {
+                CenterControlInForm(quickMove);
+                quickMove.BringToFront();
+                quickMove.Show();
+            }
         }
 
         private void Form1_KeyUp(object sender, KeyEventArgs e)
         {
-
+            if(e.Control)
+            {
+                quickMove.Hide();
+            }
         }
 
         private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -1220,6 +1232,14 @@ namespace AnimePlayer
                 VideoPlayerWeb videoPlayerWeb = new VideoPlayerWeb(input.Split(';')[1], VideoPlayerWeb.TypeVideo.YouTube, panel2);
                 videoPlayerWeb.Name = "videoPlayerWeb";
                 videoPlayerWeb.Show();
+            }
+        }
+
+        private void OknoG_SizeChanged(object sender, EventArgs e)
+        {
+            if(quickMove.Visible)
+            {
+                CenterControlInForm(quickMove);
             }
         }
     }

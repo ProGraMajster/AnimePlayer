@@ -1671,6 +1671,7 @@ namespace AnimePlayer
             this.Load += new System.EventHandler(this.OknoG_Load);
             this.ResizeBegin += new System.EventHandler(this.OknoG_ResizeBegin);
             this.ResizeEnd += new System.EventHandler(this.OknoG_ResizeEnd);
+            this.SizeChanged += new System.EventHandler(this.OknoG_SizeChanged);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyUp);
             this.Resize += new System.EventHandler(this.OknoG_Resize);
