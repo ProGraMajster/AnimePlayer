@@ -1733,13 +1733,6 @@ namespace AnimePlayer
         private System.Windows.Forms.Label label;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel panelGroup;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label label3;
         public System.Windows.Forms.Panel panePolecane;
         public System.Windows.Forms.Panel panelLoading;
         private System.Windows.Forms.Button buttonMenuClose;
@@ -1840,6 +1833,13 @@ namespace AnimePlayer
         private TextBox textBoxCommandOutput;
         private TextBox textBoxCommandInput;
         public Label label22;
+        private Panel panelGroup;
+        private FlowLayoutPanel flowLayoutPanel2;
+        private Panel panel3;
+        private PictureBox pictureBox2;
+        private Button button3;
+        private Panel panel4;
+        private Label label3;
     }
 }
 

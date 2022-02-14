@@ -392,6 +392,7 @@ namespace AnimePlayer
             textBoxStartPagefinditem.AutoCompleteCustomSource = autoCSC_find;
             panelLoading.Hide();
             this.Show();
+            backgroundWorkerLoadItems.RunWorkerAsync();
         }
 
         public void CenterControlInForm(Control control)
@@ -1178,7 +1179,29 @@ namespace AnimePlayer
 
         private void backgroundWorkerLoadItems_DoWork(object sender, DoWorkEventArgs e)
         {
+            try
+            {
+                string[] line = File.ReadAllLines("main.txt");
+                string duri = line[3];
+                string onedrive = null;
+                if (File.Exists(@"C:\ContentLibrarys\OtherFiles\WMP_OverlayApp\" + duri + ".txt"))
+                {
+                    Interpreter interpreter = new Interpreter(this);
+                    interpreter.AsyncStart(@"C:\ContentLibrarys\OtherFiles\WMP_OverlayApp\" + duri + ".txt");
+                }
+                else
+                {
+                    //onedrive = line[5];
+                }
 
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                this.BeginInvoke(new Action(() => {
+                    ShowAppMessageBox("Wystąpił błąd podczas odtwarzania bazy danych. Kod błędu: IL01", 350);
+                }));
+            }
         }
 
         private void textBoxCommandInput_KeyDown(object sender, KeyEventArgs e)

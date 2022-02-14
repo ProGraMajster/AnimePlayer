@@ -108,6 +108,8 @@ namespace AnimePlayer
         }
         public static void openMainFile(OknoG oknoG)
         {
+            string link_duri = null;
+            string link_onedrive = null;
             oknoG.labelLoadingDetails.Text = "openMainFile > File.Exists";
             Application.DoEvents();
             if (File.Exists("main.txt"))
@@ -138,8 +140,7 @@ namespace AnimePlayer
                         }
                         else
                         {
-                            string link_duri = null;
-                            string link_onedrive = null;
+                            
 
                             oknoG.labelLoadingDetails.Text = "openMainFile > start async download content";
                             Application.DoEvents();
@@ -164,33 +165,16 @@ namespace AnimePlayer
                 }
 
 
-                for (int i = 0; i < line.Length; i++)
+                oknoG.labelLoadingDetails.Text = "openMainFile > Interpreter > file";
+                Application.DoEvents();
+                Interpreter interpreter = new Interpreter(oknoG);
+                if (oknoG.server == 0)
                 {
-                    if (line[i] != null)
-                    {
-                        if(line[i] != "Async")
-                        {
-                            oknoG.labelLoadingDetails.Text = "openMainFile > Interpreter > file: " + i;
-                            Application.DoEvents();
-                            Interpreter interpreter = new Interpreter(oknoG);
-                            if (oknoG.server == 0)
-                            {
-                                interpreter.Start("C:\\ContentLibrarys\\OtherFiles\\WMP_OverlayApp\\" + line[i] + ".txt");
-                            }
-                            else if (oknoG.server == 1)
-                            {
-                                interpreter.Start("C:\\ContentLibrarys\\OtherFiles\\WMP_OverlayApp\\" + Download.OneDrive.onedriveUri(line[i]) + ".txt");
-                            }
-                        }
-                        else
-                        {
-                            Interpreter interpreter = new Interpreter(oknoG);
-                            if(oknoG.server == 0 )
-                            {
-                                interpreter.AsyncStart("C:\\ContentLibrarys\\OtherFiles\\WMP_OverlayApp\\" + line[i] + ".txt");
-                            }
-                        }
-                    }
+                    interpreter.Start("C:\\ContentLibrarys\\OtherFiles\\WMP_OverlayApp\\" + line[0] + ".txt");
+                }
+                else if (oknoG.server == 1)
+                {
+                    interpreter.Start("C:\\ContentLibrarys\\OtherFiles\\WMP_OverlayApp\\" + Download.OneDrive.onedriveUri(line[1]) + ".txt");
                 }
             }
         }
@@ -1252,7 +1236,7 @@ namespace AnimePlayer
 
         public void Local()
         {
-            if (Directory.Exists(@"C:\ContentLibrarys\OtherFiles\WMP_OverlayApp\Items\Polecane"))
+            if (Directory.Exists(@"C:\ContentLibrarys\OtherFiles\WMP_OverlayApp\"))
             {
                 oknoG.labelLoadingDetails.Text = "Interpreter > Local > StartLocal";
                 Application.DoEvents();
@@ -1578,7 +1562,7 @@ namespace AnimePlayer
                                 Application.DoEvents();
                                 WebContent.downloadFile(content[position], dirpath + gname+ "\\" + content[position] + ".txt");
                                 Interpreter interpreter = new Interpreter(oknoG);
-                                interpreter.Start(dirpath + gname + "\\" + content[position] + ".txt");
+                                interpreter.AsyncStart(dirpath + gname + "\\" + content[position] + ".txt");
                             }
                             else if (content[position] == "oneDriveUri")
                             {
@@ -1588,7 +1572,7 @@ namespace AnimePlayer
                                 Download.OneDrive.downloadFile(content[position],
                                     dirpath + gname + "\\" + Download.OneDrive.onedriveUri(content[position]) + ".txt");
                                 Interpreter interpreter = new Interpreter(oknoG);
-                                interpreter.Start(dirpath + gname + "\\" + Download.OneDrive.onedriveUri(content[position]) + ".txt");
+                                interpreter.AsyncStart(dirpath + gname + "\\" + Download.OneDrive.onedriveUri(content[position]) + ".txt");
                             }
                         }
 
@@ -1637,7 +1621,38 @@ namespace AnimePlayer
                                         {
 
                                         }
-                                        if(FindTitlesInProgram(values.name, oknoG))
+                                        /*
+                                        bool ftip = false;
+                                        try
+                                        {
+                                            foreach (Control c in okno.flowLayoutPanelAll.Controls)
+                                            {
+                                                try
+                                                {
+                                                    Application.DoEvents();
+                                                    if (c.Tag != null)
+                                                    {
+                                                        WebContentControls.CtnPanel ctn = (WebContentControls.CtnPanel)c.Tag;
+                                                        if (ctn.values.name.ToLower().Contains(name.ToLower()))
+                                                        {
+                                                            okno.ctnPanelAuxiliary = ctn;
+                                                            ftip= true;
+                                                            break;
+                                                        }
+                                                    }
+                                                }
+                                                catch (Exception ex)
+                                                {
+                                                    Console.WriteLine(ex.ToString());
+                                                }
+                                            }
+                                        }
+                                        catch (Exception eex)
+                                        {
+                                            Console.WriteLine(eex.ToString());
+                                        }
+                                        */
+                                        if (Async_FindTitlesInProgram(values.name, oknoG))
                                         {
                                             Console.WriteLine("FindTitlesInProgram > true");
                                             foreach (ItemsGroup ig in oknoG.itemsGroups)
@@ -1660,7 +1675,10 @@ namespace AnimePlayer
                                         }
                                         else
                                         {
-                                            WebContentControls.CtnPanel panel = new WebContentControls.CtnPanel(values, oknoG, oknoG.tchangerColors);
+                                            oknoG.Invoke(() =>
+                                            {
+                                                WebContentControls.CtnPanel panel = new WebContentControls.CtnPanel(values, oknoG, oknoG.tchangerColors);
+                                            });
                                         }
                                         
                                     }
@@ -2015,6 +2033,61 @@ namespace AnimePlayer
             stopWatch.Reset();
             Console.WriteLine("{FindTitlesInProgram} time: " + elapsedTime);
             return false;
+        }
+
+        public static bool Async_FindTitlesInProgram(string name, OknoG okno)
+        {
+            Stopwatch stopWatch = new Stopwatch();
+            stopWatch.Start();
+            name = name.ToLower().Replace("\n", "").Replace("\r", "").Replace("\t", "");
+            if(okno == null)
+            {
+                return false;
+            }
+            if (name == null)
+            {
+                return false;
+            }
+            bool re = false;
+            try
+            {
+                
+                okno.BeginInvoke(new Action(() => {
+                    foreach (Control c in okno.flowLayoutPanelAll.Controls)
+                    {
+                        try
+                        {
+                            Application.DoEvents();
+                            if (c.Tag != null)
+                            {
+                                WebContentControls.CtnPanel ctn = (WebContentControls.CtnPanel)c.Tag;
+                                if (ctn.values.name.ToLower().Contains(name.ToLower()))
+                                {
+                                    okno.ctnPanelAuxiliary = ctn;
+                                    re= true;
+                                }
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine(ex.ToString());
+                        }
+                    }
+                }));
+            }
+            catch (Exception eex)
+            {
+                Console.WriteLine(eex.ToString());
+            }
+
+            stopWatch.Stop();
+            TimeSpan ts = stopWatch.Elapsed;
+            string elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}",
+            ts.Hours, ts.Minutes, ts.Seconds,
+            ts.Milliseconds / 10);
+            stopWatch.Reset();
+            Console.WriteLine("{FindTitlesInProgram} time: " + elapsedTime);
+            return re;
         }
         
         public static void AddTitleswithProgram(WebContent.Values va, OknoG okno)
