@@ -25,7 +25,6 @@ namespace AnimePlayerLibrary
         private void PanelAllNewsContent_Load(object sender, EventArgs e)
         {
             
-            
         }
 
         private async void buttonLoad_Click(object sender, EventArgs e)
