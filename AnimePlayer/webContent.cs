@@ -100,9 +100,7 @@ namespace AnimePlayer
             Application.DoEvents();
             stopWatch.Stop();
             TimeSpan ts = stopWatch.Elapsed;
-            string elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}",
-            ts.Hours, ts.Minutes, ts.Seconds,
-            ts.Milliseconds / 10);
+            string elapsedTime = $"{ts.Hours:00}:{ts.Minutes:00}:{ts.Seconds:00}.{ts.Milliseconds / 10:00}";
             stopWatch.Reset();
             Console.WriteLine("{WebContent.Initialize} Loading time: " + elapsedTime);
         }
