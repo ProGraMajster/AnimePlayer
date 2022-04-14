@@ -505,7 +505,7 @@ namespace AnimePlayer
             {
                 await Task.Run(() =>
                 {
-                    Process.Start("https://github.com/ProGraMajster/AnimePlayer");
+                    Process.Start("start \"\" https://github.com/ProGraMajster/AnimePlayer");
                 });
             }
             catch (Exception ex)
@@ -520,7 +520,7 @@ namespace AnimePlayer
             {
                 await Task.Run(() =>
                 {
-                    Process.Start("https://sites.google.com/view/twojeanimepl");
+                    Process.Start("start \"\" https://sites.google.com/view/twojeanimepl");
                 });
             }
             catch (Exception ex)
@@ -535,7 +535,7 @@ namespace AnimePlayer
             {
                 await Task.Run(() =>
                 {
-                    Process.Start("https://sites.google.com/view/twojeanimepl");
+                    Process.Start("start \"\" https://sites.google.com/view/twojeanimepl");
                 });
             }
             catch (Exception ex)

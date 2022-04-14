@@ -143,7 +143,7 @@ namespace AnimePlayer.HostApp
                         ProcessStartInfo psi = new ProcessStartInfo();
                         psi.FileName = Application.ExecutablePath;
                         psi.Arguments = "-checking_for_updates";
-                        Process.Start(psi);
+                        //Process.Start(psi);
                     }
                     catch (Exception exProc)
                     {
@@ -151,7 +151,7 @@ namespace AnimePlayer.HostApp
                     }
                     Application.EnableVisualStyles();
                     Application.SetCompatibleTextRenderingDefault(false);
-                    Application.Run(new OknoG());
+                    Application.Run(new FormStarter());
                 }
             }
             catch (Exception ex)
