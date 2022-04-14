@@ -1194,16 +1194,19 @@ namespace AnimePlayer
             try
             {
                 string[] line = File.ReadAllLines("main.txt");
-                string duri = line[3];
-                string onedrive = null;
-                if (File.Exists(@"C:\ContentLibrarys\OtherFiles\WMP_OverlayApp\" + duri + ".txt"))
+                if(line.Length > 1)
                 {
-                    Interpreter interpreter = new Interpreter(this);
-                    interpreter.AsyncStart(@"C:\ContentLibrarys\OtherFiles\WMP_OverlayApp\" + duri + ".txt");
-                }
-                else
-                {
-                    //onedrive = line[5];
+                    string duri = line[3];
+                    string onedrive = null;
+                    if (File.Exists(@"C:\ContentLibrarys\OtherFiles\WMP_OverlayApp\" + duri + ".txt"))
+                    {
+                        Interpreter interpreter = new Interpreter(this);
+                        interpreter.AsyncStart(@"C:\ContentLibrarys\OtherFiles\WMP_OverlayApp\" + duri + ".txt");
+                    }
+                    else
+                    {
+                        //onedrive = line[5];
+                    }
                 }
 
             }
