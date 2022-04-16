@@ -6,6 +6,10 @@
     "Profil 1": {
       "commandName": "Project",
       "commandLineArgs": "-local -offline -debug"
+    },
+    "Profil 2": {
+      "commandName": "Project",
+      "commandLineArgs": "-local -offline -debug -OpenApp"
     }
   }
 }
