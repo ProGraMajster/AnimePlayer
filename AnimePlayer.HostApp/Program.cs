@@ -16,15 +16,17 @@ namespace AnimePlayer.HostApp
         {
             try
             {
-                bool updates = false;
+                bool OpenApps = false;   
+                /*bool updates = false;
                 bool download = false;
                 string donwloadDll_link = null;
                 string donwloadDll_fileLink = null;
                 string dllname=null;
                 bool skiperrorMessagebox = false;
-
+                */
                 foreach(string a in Environment.GetCommandLineArgs())
                 {
+                    /*
                     if(a == "-checking_for_updates")
                     {
                         updates = true;
@@ -37,9 +39,22 @@ namespace AnimePlayer.HostApp
                         download = true;
                         donwloadDll_link = a.Split(";")[3];
                     }
+                    */
+                    if(a == "-Updater")
+                    {
+
+                    }
+                    else if(a == "-OpenApp")
+                    {
+                        Application.EnableVisualStyles();
+                        Application.SetCompatibleTextRenderingDefault(false);
+                        Application.Run(new OknoG());
+                        return;
+                    }
                 }
 
-                if(updates)
+
+                /*if(updates)
                 {
                     AnimePlayerLibrary.FileLog.Write("updates>");
                     AnimePlayerLibrary.FileLog.Write("DownloadFile");
@@ -149,10 +164,11 @@ namespace AnimePlayer.HostApp
                     {
                         Console.WriteLine(exProc.ToString());
                     }
-                    Application.EnableVisualStyles();
-                    Application.SetCompatibleTextRenderingDefault(false);
-                    Application.Run(new FormStarter());
-                }
+                    
+                }*/
+                Application.EnableVisualStyles();
+                Application.SetCompatibleTextRenderingDefault(false);
+                Application.Run(new FormStarter());
             }
             catch (Exception ex)
             {

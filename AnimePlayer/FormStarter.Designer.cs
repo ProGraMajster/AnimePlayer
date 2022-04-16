@@ -37,13 +37,16 @@
             this.buttonCheckUpdate = new System.Windows.Forms.Button();
             this.labelVersion = new System.Windows.Forms.Label();
             this.panelSettings = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.checkBoxOtherWindow = new System.Windows.Forms.CheckBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.checkBoxLocal = new System.Windows.Forms.CheckBox();
+            this.checkBoxOffline = new System.Windows.Forms.CheckBox();
             this.buttonCloseSettings = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.checkBoxDebug = new System.Windows.Forms.CheckBox();
+            this.labelLoadingApp = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panelSettings.SuspendLayout();
             this.SuspendLayout();
@@ -140,7 +143,7 @@
             // labelVersion
             // 
             this.labelVersion.AutoSize = true;
-            this.labelVersion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.labelVersion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.labelVersion.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.labelVersion.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelVersion.Location = new System.Drawing.Point(0, 422);
@@ -154,20 +157,41 @@
             // 
             // panelSettings
             // 
-            this.panelSettings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.panelSettings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.panelSettings.Controls.Add(this.label1);
+            this.panelSettings.Controls.Add(this.checkBoxOtherWindow);
             this.panelSettings.Controls.Add(this.label4);
             this.panelSettings.Controls.Add(this.label3);
             this.panelSettings.Controls.Add(this.label2);
-            this.panelSettings.Controls.Add(this.checkBox3);
-            this.panelSettings.Controls.Add(this.checkBox2);
+            this.panelSettings.Controls.Add(this.checkBoxLocal);
+            this.panelSettings.Controls.Add(this.checkBoxOffline);
             this.panelSettings.Controls.Add(this.buttonCloseSettings);
-            this.panelSettings.Controls.Add(this.checkBox1);
+            this.panelSettings.Controls.Add(this.checkBoxDebug);
             this.panelSettings.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelSettings.Location = new System.Drawing.Point(0, 69);
             this.panelSettings.Name = "panelSettings";
             this.panelSettings.Size = new System.Drawing.Size(782, 353);
             this.panelSettings.TabIndex = 4;
             this.panelSettings.Visible = false;
+            // 
+            // label1
+            // 
+            this.label1.Location = new System.Drawing.Point(37, 300);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(241, 37);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Inny wygląd ramki okna i dodatkowe funkcjie. Uwaga jest to eksperymentalna funkcj" +
+    "a, może działać nie prawidłowo!";
+            // 
+            // checkBoxOtherWindow
+            // 
+            this.checkBoxOtherWindow.AutoSize = true;
+            this.checkBoxOtherWindow.Location = new System.Drawing.Point(37, 278);
+            this.checkBoxOtherWindow.Name = "checkBoxOtherWindow";
+            this.checkBoxOtherWindow.Size = new System.Drawing.Size(177, 19);
+            this.checkBoxOtherWindow.TabIndex = 7;
+            this.checkBoxOtherWindow.Text = "Niestandardowa ramka okna";
+            this.checkBoxOtherWindow.UseVisualStyleBackColor = true;
             // 
             // label4
             // 
@@ -195,25 +219,25 @@
             this.label2.Text = "Włączając tą opcję aplikacja będzie zbierała pełne logi i da dostęp do specjalnyc" +
     "h funkcji";
             // 
-            // checkBox3
+            // checkBoxLocal
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(37, 114);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(89, 19);
-            this.checkBox3.TabIndex = 3;
-            this.checkBox3.Text = "Tryb lokalny";
-            this.checkBox3.UseVisualStyleBackColor = true;
+            this.checkBoxLocal.AutoSize = true;
+            this.checkBoxLocal.Location = new System.Drawing.Point(37, 114);
+            this.checkBoxLocal.Name = "checkBoxLocal";
+            this.checkBoxLocal.Size = new System.Drawing.Size(89, 19);
+            this.checkBoxLocal.TabIndex = 3;
+            this.checkBoxLocal.Text = "Tryb lokalny";
+            this.checkBoxLocal.UseVisualStyleBackColor = true;
             // 
-            // checkBox2
+            // checkBoxOffline
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(37, 211);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(85, 19);
-            this.checkBox2.TabIndex = 2;
-            this.checkBox2.Text = "Tryb offline";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBoxOffline.AutoSize = true;
+            this.checkBoxOffline.Location = new System.Drawing.Point(37, 211);
+            this.checkBoxOffline.Name = "checkBoxOffline";
+            this.checkBoxOffline.Size = new System.Drawing.Size(85, 19);
+            this.checkBoxOffline.TabIndex = 2;
+            this.checkBoxOffline.Text = "Tryb offline";
+            this.checkBoxOffline.UseVisualStyleBackColor = true;
             // 
             // buttonCloseSettings
             // 
@@ -228,15 +252,27 @@
             this.buttonCloseSettings.UseVisualStyleBackColor = true;
             this.buttonCloseSettings.Click += new System.EventHandler(this.buttonCloseSettings_Click);
             // 
-            // checkBox1
+            // checkBoxDebug
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(37, 42);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(123, 19);
-            this.checkBox1.TabIndex = 0;
-            this.checkBox1.Text = "Tryb debugowania";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBoxDebug.AutoSize = true;
+            this.checkBoxDebug.Location = new System.Drawing.Point(37, 42);
+            this.checkBoxDebug.Name = "checkBoxDebug";
+            this.checkBoxDebug.Size = new System.Drawing.Size(123, 19);
+            this.checkBoxDebug.TabIndex = 0;
+            this.checkBoxDebug.Text = "Tryb debugowania";
+            this.checkBoxDebug.UseVisualStyleBackColor = true;
+            // 
+            // labelLoadingApp
+            // 
+            this.labelLoadingApp.AutoSize = true;
+            this.labelLoadingApp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.labelLoadingApp.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelLoadingApp.Location = new System.Drawing.Point(0, 0);
+            this.labelLoadingApp.Name = "labelLoadingApp";
+            this.labelLoadingApp.Size = new System.Drawing.Size(164, 37);
+            this.labelLoadingApp.TabIndex = 5;
+            this.labelLoadingApp.Text = "Ładowanie...";
+            this.labelLoadingApp.Visible = false;
             // 
             // FormStarter
             // 
@@ -245,13 +281,14 @@
             this.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(782, 439);
+            this.Controls.Add(this.labelLoadingApp);
             this.Controls.Add(this.panelSettings);
             this.Controls.Add(this.labelVersion);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.labelTitle);
             this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.Color.White;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MaximizeBox = false;
             this.Name = "FormStarter";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormStarter";
@@ -274,11 +311,14 @@
         private Label labelVersion;
         private Panel panelSettings;
         private Button buttonCloseSettings;
-        private CheckBox checkBox1;
+        private CheckBox checkBoxDebug;
         private Label label4;
         private Label label3;
         private Label label2;
-        private CheckBox checkBox3;
-        private CheckBox checkBox2;
+        private CheckBox checkBoxLocal;
+        private CheckBox checkBoxOffline;
+        private Label label1;
+        private CheckBox checkBoxOtherWindow;
+        private Label labelLoadingApp;
     }
 }

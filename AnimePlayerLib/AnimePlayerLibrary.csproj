@@ -10,7 +10,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="microsoft.web.webview2" Version="1.0.1108.44" />
+    <PackageReference Include="microsoft.web.webview2" Version="1.0.1185.39" />
     <PackageReference Include="OpenScraping" Version="1.4.2" />
   </ItemGroup>
 
