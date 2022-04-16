@@ -35,7 +35,7 @@
             this.buttonExit = new System.Windows.Forms.Button();
             this.buttonSetting = new System.Windows.Forms.Button();
             this.buttonCheckUpdate = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelVersion = new System.Windows.Forms.Label();
             this.panelSettings = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -137,20 +137,20 @@
             this.buttonCheckUpdate.UseVisualStyleBackColor = false;
             this.buttonCheckUpdate.Click += new System.EventHandler(this.buttonCheckUpdate_Click);
             // 
-            // label1
+            // labelVersion
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label1.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(0, 422);
-            this.label1.MaximumSize = new System.Drawing.Size(0, 50);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(622, 17);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "AnimePlayer v0.0.0.0 | AnimePlayerLibrary v0.0.0.0 | AnimePlayer.HostApp v0.0.0.0" +
+            this.labelVersion.AutoSize = true;
+            this.labelVersion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.labelVersion.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.labelVersion.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelVersion.Location = new System.Drawing.Point(0, 422);
+            this.labelVersion.MaximumSize = new System.Drawing.Size(0, 50);
+            this.labelVersion.Name = "labelVersion";
+            this.labelVersion.Size = new System.Drawing.Size(622, 17);
+            this.labelVersion.TabIndex = 3;
+            this.labelVersion.Text = "AnimePlayer v0.0.0.0 | AnimePlayerLibrary v0.0.0.0 | AnimePlayer.HostApp v0.0.0.0" +
     " | AnimePlayer.Class v0.0.0.0";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelVersion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panelSettings
             // 
@@ -246,7 +246,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(782, 439);
             this.Controls.Add(this.panelSettings);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.labelVersion);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.labelTitle);
             this.DoubleBuffered = true;
@@ -271,7 +271,7 @@
         private Button buttonExit;
         private Button buttonSetting;
         private Button buttonCheckUpdate;
-        private Label label1;
+        private Label labelVersion;
         private Panel panelSettings;
         private Button buttonCloseSettings;
         private CheckBox checkBox1;
