@@ -118,19 +118,19 @@ namespace AnimePlayer
         {
             if (fullscreen == false)
             {
-                Application.OpenForms[0].Size = normal;
-                Application.OpenForms[0].WindowState = FormWindowState.Normal;
-                Application.OpenForms[0].FormBorderStyle = System.Windows.Forms.FormBorderStyle.Sizable;
+                this.ParentForm.Size = normal;
+                this.ParentForm.WindowState = FormWindowState.Normal;
+                this.ParentForm.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Sizable;
                 button1.Text = "Okno pełnoekranowe";
                 status_ws = false;
-                normal = Application.OpenForms[0].Size;
+                normal = this.ParentForm.Size;
             }
             else
             {
-                Application.OpenForms[0].WindowState = FormWindowState.Maximized;
-                Application.OpenForms[0].FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-                Application.OpenForms[0].Width = Screen.PrimaryScreen.WorkingArea.Width;
-                Application.OpenForms[0].Height = Screen.PrimaryScreen.WorkingArea.Height;
+                this.ParentForm.WindowState = FormWindowState.Maximized;
+                this.ParentForm.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+                this.ParentForm.Width = Screen.PrimaryScreen.WorkingArea.Width;
+                this.ParentForm.Height = Screen.PrimaryScreen.WorkingArea.Height;
                 button1.Text = "Zwykłe okno";
                 status_ws = true;
             }
