@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnimePlayer", "AnimePlayer\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnimePlayerLibrary", "AnimePlayerLib\AnimePlayerLibrary.csproj", "{144B7AC6-A84F-45EC-9225-7F204A217E88}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnimePlayer.Class", "AnimePlayer.Class\AnimePlayer.Class.csproj", "{35F2F018-8357-4818-BEE3-BCF4CD0FCD1D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnimePlayer.Class", "AnimePlayer.Class\AnimePlayer.Class.csproj", "{35F2F018-8357-4818-BEE3-BCF4CD0FCD1D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnimePlayer.Core", "AnimePlayer.Core\AnimePlayer.Core.csproj", "{3EAAF2CE-0EF2-4E07-8A19-257892EDC9DB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -42,6 +44,12 @@ Global
 		{35F2F018-8357-4818-BEE3-BCF4CD0FCD1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{35F2F018-8357-4818-BEE3-BCF4CD0FCD1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{35F2F018-8357-4818-BEE3-BCF4CD0FCD1D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3EAAF2CE-0EF2-4E07-8A19-257892EDC9DB}.Debug Local|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EAAF2CE-0EF2-4E07-8A19-257892EDC9DB}.Debug Local|Any CPU.Build.0 = Debug|Any CPU
+		{3EAAF2CE-0EF2-4E07-8A19-257892EDC9DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EAAF2CE-0EF2-4E07-8A19-257892EDC9DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EAAF2CE-0EF2-4E07-8A19-257892EDC9DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EAAF2CE-0EF2-4E07-8A19-257892EDC9DB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

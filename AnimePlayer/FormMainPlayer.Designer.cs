@@ -1,7 +1,7 @@
 ﻿using AnimePlayerLibrary;
 namespace AnimePlayer
 {
-    partial class OknoG
+    partial class FormMainPlayer
     {
         /// <summary>
         /// Wymagana zmienna projektanta.
@@ -30,7 +30,7 @@ namespace AnimePlayer
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OknoG));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMainPlayer));
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.panelStartPage = new System.Windows.Forms.Panel();
             this.panelGroup = new System.Windows.Forms.Panel();
@@ -42,7 +42,6 @@ namespace AnimePlayer
             this.label3 = new System.Windows.Forms.Label();
             this.panePolecane = new System.Windows.Forms.Panel();
             this.flowLayoutPanelPolecane = new AnimePlayerLibrary.NewFlowLayoutPanel();
-            this.button6 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.panelSTNewsMain = new System.Windows.Forms.Panel();
@@ -153,7 +152,6 @@ namespace AnimePlayer
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel4.SuspendLayout();
             this.panePolecane.SuspendLayout();
-            this.flowLayoutPanelPolecane.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelSTNewsMain.SuspendLayout();
             this.panelTop.SuspendLayout();
@@ -311,7 +309,6 @@ namespace AnimePlayer
             // 
             this.flowLayoutPanelPolecane.AutoScroll = true;
             this.flowLayoutPanelPolecane.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.flowLayoutPanelPolecane.Controls.Add(this.button6);
             this.flowLayoutPanelPolecane.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanelPolecane.Location = new System.Drawing.Point(0, 35);
             this.flowLayoutPanelPolecane.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -321,19 +318,6 @@ namespace AnimePlayer
             this.flowLayoutPanelPolecane.TabIndex = 5;
             this.flowLayoutPanelPolecane.WrapContents = false;
             this.flowLayoutPanelPolecane.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.flowLayoutPanel_ControlAdded);
-            // 
-            // button6
-            // 
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button6.ForeColor = System.Drawing.Color.White;
-            this.button6.Location = new System.Drawing.Point(5, 5);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(32, 25);
-            this.button6.TabIndex = 1;
-            this.button6.Text = "Schowaj";
-            this.button6.UseVisualStyleBackColor = true;
             // 
             // panel1
             // 
@@ -516,6 +500,7 @@ namespace AnimePlayer
             this.buttonProfile.TabIndex = 5;
             this.buttonProfile.Text = "Profil";
             this.buttonProfile.UseVisualStyleBackColor = true;
+            this.buttonProfile.Click += new System.EventHandler(this.buttonProfile_Click);
             // 
             // buttonMenuOpen
             // 
@@ -1685,7 +1670,7 @@ namespace AnimePlayer
             this.label22.TabIndex = 0;
             this.label22.Text = "Konsola poleceń";
             // 
-            // OknoG
+            // FormMainPlayer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -1701,16 +1686,16 @@ namespace AnimePlayer
             this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.MinimumSize = new System.Drawing.Size(1106, 629);
-            this.Name = "OknoG";
+            this.Name = "FormMainPlayer";
             this.Text = "AnimePlayer - Twojeanimepl";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.OknoG_FormClosing);
-            this.Load += new System.EventHandler(this.OknoG_Load);
-            this.ResizeBegin += new System.EventHandler(this.OknoG_ResizeBegin);
-            this.ResizeEnd += new System.EventHandler(this.OknoG_ResizeEnd);
-            this.SizeChanged += new System.EventHandler(this.OknoG_SizeChanged);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormMainPlayer_FormClosing);
+            this.Load += new System.EventHandler(this.FormMainPlayer_Load);
+            this.ResizeBegin += new System.EventHandler(this.FormMainPlayer_ResizeBegin);
+            this.ResizeEnd += new System.EventHandler(this.FormMainPlayer_ResizeEnd);
+            this.SizeChanged += new System.EventHandler(this.FormMainPlayer_SizeChanged);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyUp);
-            this.Resize += new System.EventHandler(this.OknoG_Resize);
+            this.Resize += new System.EventHandler(this.FormMainPlayer_Resize);
             this.panelStartPage.ResumeLayout(false);
             this.panelGroup.ResumeLayout(false);
             this.flowLayoutPanel2.ResumeLayout(false);
@@ -1719,7 +1704,6 @@ namespace AnimePlayer
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panePolecane.ResumeLayout(false);
-            this.flowLayoutPanelPolecane.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panelSTNewsMain.ResumeLayout(false);
@@ -1878,7 +1862,6 @@ namespace AnimePlayer
         private Button button3;
         private Panel panel4;
         private Label label3;
-        private Button button6;
         public Button buttonProfile;
     }
 }

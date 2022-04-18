@@ -7,11 +7,11 @@ namespace AnimePlayer
 {
     public partial class PageSettings : UserControl
     {
-        private OknoG oknoG;
-        public PageSettings(OknoG okno)
+        private FormMainPlayer FormMainPlayer;
+        public PageSettings(FormMainPlayer okno)
         {
             InitializeComponent();
-            oknoG = okno;
+            FormMainPlayer = okno;
             this.Dock = DockStyle.Fill;
             checkBoxRoundedEdges.Checked = AnimePlayer.Properties.Settings.Default.RoundingControl;
             labelServer.Text = "Serwer danych nr.: " + okno.server;
@@ -48,22 +48,22 @@ namespace AnimePlayer
         {
             if(openFileDialogThemeFile.ShowDialog() == DialogResult.OK)
             {
-                oknoG.panelLoading.Show();
-                oknoG.panelLoading.BringToFront();
+                FormMainPlayer.panelLoading.Show();
+                FormMainPlayer.panelLoading.BringToFront();
                 Application.DoEvents();
                 try
                 {
-                    oknoG.labelLoadingDetails.Text = "Ładowanie motywu...";
+                    FormMainPlayer.labelLoadingDetails.Text = "Ładowanie motywu...";
                     Application.DoEvents();
-                    oknoG.themeChanger.LoadThemeFile(openFileDialogThemeFile.FileName);
-                    oknoG.usedThemeColors = true;
+                    FormMainPlayer.themeChanger.LoadThemeFile(openFileDialogThemeFile.FileName);
+                    FormMainPlayer.usedThemeColors = true;
                     File.WriteAllText("C:\\ContentLibrarys\\OtherFiles\\WMP_OverlayApp\\theme.txt", openFileDialogThemeFile.FileName);
                 }
                 catch (Exception ex)
                 {
                     Console.WriteLine(ex.ToString());
                 }
-                oknoG.panelLoading.Hide();
+                FormMainPlayer.panelLoading.Hide();
             }
         }
 
@@ -76,9 +76,9 @@ namespace AnimePlayer
                 {
                     return;
                 }
-                oknoG.panelLoading.Show();
-                oknoG.panelLoading.BringToFront();
-                oknoG.labelLoadingDetails.Text = "Ładowanie motywu...";
+                FormMainPlayer.panelLoading.Show();
+                FormMainPlayer.panelLoading.BringToFront();
+                FormMainPlayer.labelLoadingDetails.Text = "Ładowanie motywu...";
                 Application.DoEvents();
                 if (File.Exists("C:\\ContentLibrarys\\OtherFiles\\WMP_OverlayApp\\theme.txt"))
                 {
@@ -90,12 +90,12 @@ namespace AnimePlayer
             {
                 Console.Write(ex.ToString());
             }
-            oknoG.panelLoading.Hide();
+            FormMainPlayer.panelLoading.Hide();
         }
 
         private void timerRefreshValue_Tick(object sender, EventArgs e)
         {
-            labelAppRamUsage_View.Text = oknoG.labelAppRamUsage.Text;
+            labelAppRamUsage_View.Text = FormMainPlayer.labelAppRamUsage.Text;
         }
     }
 }

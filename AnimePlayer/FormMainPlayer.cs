@@ -15,7 +15,7 @@ using ProfileSupportLibrary;
 
 namespace AnimePlayer
 {
-    public partial class OknoG : Form
+    public partial class FormMainPlayer : Form
     {
         string[] args = Environment.GetCommandLineArgs();
         public int server = 0;
@@ -38,7 +38,7 @@ namespace AnimePlayer
 
         int memsize;
 
-        public OknoG()  
+        public FormMainPlayer()  
         {
             InitializeComponent();
             AP_Lib aP_Lib = new AP_Lib((Form)this);
@@ -313,7 +313,7 @@ namespace AnimePlayer
         {
         }
 
-        private void OknoG_Load(object sender, EventArgs e)
+        private void FormMainPlayer_Load(object sender, EventArgs e)
         {
             bool local = false;
             foreach (string arg in Environment.GetCommandLineArgs())
@@ -547,7 +547,7 @@ namespace AnimePlayer
             }
         }
         FormWindowState LastWindowState = FormWindowState.Normal;
-        private void OknoG_Resize(object sender, EventArgs e)
+        private void FormMainPlayer_Resize(object sender, EventArgs e)
         {
             if (labelLoading.Visible)
             {
@@ -581,13 +581,13 @@ namespace AnimePlayer
             }
         }
 
-        private void OknoG_ResizeBegin(object sender, EventArgs e)
+        private void FormMainPlayer_ResizeBegin(object sender, EventArgs e)
         {
             panelMenu.Location = new Point(-100000, -100000);
             //panel2.SuspendLayout();
         }
 
-        private void OknoG_ResizeEnd(object sender, EventArgs e)
+        private void FormMainPlayer_ResizeEnd(object sender, EventArgs e)
         {
             if (labelLoading.Visible)
             {
@@ -1028,7 +1028,7 @@ namespace AnimePlayer
             return;
         }
 
-        private void OknoG_FormClosing(object sender, FormClosingEventArgs e)
+        private void FormMainPlayer_FormClosing(object sender, FormClosingEventArgs e)
         {
             try
             {
@@ -1241,12 +1241,17 @@ namespace AnimePlayer
             }
         }
 
-        private void OknoG_SizeChanged(object sender, EventArgs e)
+        private void FormMainPlayer_SizeChanged(object sender, EventArgs e)
         {
             if(quickMove.Visible)
             {
                 CenterControlInForm(quickMove);
             }
+        }
+
+        private void buttonProfile_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

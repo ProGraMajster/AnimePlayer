@@ -9,7 +9,7 @@ namespace AnimePlayer
     public partial class PageItem : UserControl
     {
         WebContent.Values values;
-        OknoG oknoG;
+        FormMainPlayer FormMainPlayer;
 
         public string linkToScriptComment = null;
 
@@ -18,10 +18,10 @@ namespace AnimePlayer
             InitializeComponent();
         }
 
-        public PageItem(WebContent.Values va, OknoG okno)
+        public PageItem(WebContent.Values va, FormMainPlayer okno)
         {
             InitializeComponent();
-            oknoG = okno;
+            FormMainPlayer = okno;
             values = va;
             panel_comments.Size = new Size(panel_comments.Width, 121);
             if (values != null)
@@ -120,9 +120,9 @@ namespace AnimePlayer
                     if (File.Exists("C:\\ContentLibrarys\\OtherFiles\\WMP_OverlayApp\\Video\\" + values.name + "_list_ep.txt"))
                     {
                         PageEpisode pageEpisode = new PageEpisode(btn.Tag.ToString(),
-                                "C:\\ContentLibrarys\\OtherFiles\\WMP_OverlayApp\\Video\\" + values.name + "_list_ep.txt", values, oknoG.panel2, oknoG, oknoG.tchangerColors);
+                                "C:\\ContentLibrarys\\OtherFiles\\WMP_OverlayApp\\Video\\" + values.name + "_list_ep.txt", values, FormMainPlayer.panel2, FormMainPlayer, FormMainPlayer.tchangerColors);
 
-                        oknoG.panel2.Controls.Add(pageEpisode);
+                        FormMainPlayer.panel2.Controls.Add(pageEpisode);
                         pageEpisode.Dock = DockStyle.Fill;
                         pageEpisode.Show();
                         pageEpisode.BringToFront();
@@ -177,9 +177,9 @@ namespace AnimePlayer
                         if (listBoxEpType.SelectedItem != null)
                         {
                             PageEpisode pageEpisode = new PageEpisode(listBoxEpType.SelectedItem.ToString(),
-                                "C:\\ContentLibrarys\\OtherFiles\\WMP_OverlayApp\\Video\\" + values.name + "_list_ep.txt", values, oknoG.panel2, oknoG, oknoG.tchangerColors);
+                                "C:\\ContentLibrarys\\OtherFiles\\WMP_OverlayApp\\Video\\" + values.name + "_list_ep.txt", values, FormMainPlayer.panel2, FormMainPlayer, FormMainPlayer.tchangerColors);
 
-                            oknoG.panel2.Controls.Add(pageEpisode);
+                            FormMainPlayer.panel2.Controls.Add(pageEpisode);
                             pageEpisode.Dock = DockStyle.Fill;
                             pageEpisode.Show();
                             pageEpisode.BringToFront();
@@ -224,13 +224,13 @@ namespace AnimePlayer
         {
             try
             {
-                oknoG.panelStartPage.Enabled = false;
-                oknoG.panelAllitem.Enabled = false;
+                FormMainPlayer.panelStartPage.Enabled = false;
+                FormMainPlayer.panelAllitem.Enabled = false;
                 this.Enabled = false;
                 changeTitleState = new ChangeTitleState(this);
                 changeTitleState.Name = "changeTitleState";
-                oknoG.panel2.Controls.Add(changeTitleState);
-                oknoG.Resize += ChangeTitleState_Resize;
+                FormMainPlayer.panel2.Controls.Add(changeTitleState);
+                FormMainPlayer.Resize += ChangeTitleState_Resize;
                 changeTitleState.Show();
                 changeTitleState.BringToFront();
                 if (AnimePlayer.Properties.Settings.Default.RoundingControl)
@@ -252,9 +252,9 @@ namespace AnimePlayer
         private void ChangeTitleState_Disposed(object sender, EventArgs e)
         {
             this.Enabled = true;
-            oknoG.panelStartPage.Enabled = true;
-            oknoG.panelAllitem.Enabled = true;
-            oknoG.Resize -= ChangeTitleState_Resize;
+            FormMainPlayer.panelStartPage.Enabled = true;
+            FormMainPlayer.panelAllitem.Enabled = true;
+            FormMainPlayer.Resize -= ChangeTitleState_Resize;
         }
 
         private void ChangeTitleState_Resize(object sender, EventArgs e)
