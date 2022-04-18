@@ -3,13 +3,17 @@
     "AnimePlayer.HostApp": {
       "commandName": "Project"
     },
-    "Profil 1": {
+    "Local Offline Debug": {
       "commandName": "Project",
       "commandLineArgs": "-local -offline -debug"
     },
-    "Profil 2": {
+    "Local Offline Debug OpenApp": {
       "commandName": "Project",
       "commandLineArgs": "-local -offline -debug -OpenApp"
+    },
+    "OpenApp": {
+      "commandName": "Project",
+      "commandLineArgs": "-OpenApp"
     }
   }
 }

@@ -42,6 +42,7 @@ namespace AnimePlayer
             this.label3 = new System.Windows.Forms.Label();
             this.panePolecane = new System.Windows.Forms.Panel();
             this.flowLayoutPanelPolecane = new AnimePlayerLibrary.NewFlowLayoutPanel();
+            this.button6 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.panelSTNewsMain = new System.Windows.Forms.Panel();
@@ -54,6 +55,7 @@ namespace AnimePlayer
             this.textBoxStartPagefinditem = new System.Windows.Forms.TextBox();
             this.buttonStartPageFinditem = new System.Windows.Forms.Button();
             this.labelSatusWorkingApp = new System.Windows.Forms.Label();
+            this.buttonProfile = new System.Windows.Forms.Button();
             this.buttonMenuOpen = new System.Windows.Forms.Button();
             this.label = new System.Windows.Forms.Label();
             this.flowLayoutPanelAll = new System.Windows.Forms.FlowLayoutPanel();
@@ -151,6 +153,7 @@ namespace AnimePlayer
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel4.SuspendLayout();
             this.panePolecane.SuspendLayout();
+            this.flowLayoutPanelPolecane.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelSTNewsMain.SuspendLayout();
             this.panelTop.SuspendLayout();
@@ -214,7 +217,7 @@ namespace AnimePlayer
             this.panelGroup.Controls.Add(this.flowLayoutPanel2);
             this.panelGroup.Controls.Add(this.panel4);
             this.panelGroup.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelGroup.Location = new System.Drawing.Point(0, 872);
+            this.panelGroup.Location = new System.Drawing.Point(0, 881);
             this.panelGroup.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panelGroup.Name = "panelGroup";
             this.panelGroup.Size = new System.Drawing.Size(1089, 342);
@@ -297,7 +300,7 @@ namespace AnimePlayer
             this.panePolecane.Controls.Add(this.flowLayoutPanelPolecane);
             this.panePolecane.Controls.Add(this.panel1);
             this.panePolecane.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panePolecane.Location = new System.Drawing.Point(0, 530);
+            this.panePolecane.Location = new System.Drawing.Point(0, 539);
             this.panePolecane.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panePolecane.Name = "panePolecane";
             this.panePolecane.Size = new System.Drawing.Size(1089, 342);
@@ -308,6 +311,7 @@ namespace AnimePlayer
             // 
             this.flowLayoutPanelPolecane.AutoScroll = true;
             this.flowLayoutPanelPolecane.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.flowLayoutPanelPolecane.Controls.Add(this.button6);
             this.flowLayoutPanelPolecane.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanelPolecane.Location = new System.Drawing.Point(0, 35);
             this.flowLayoutPanelPolecane.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -317,6 +321,19 @@ namespace AnimePlayer
             this.flowLayoutPanelPolecane.TabIndex = 5;
             this.flowLayoutPanelPolecane.WrapContents = false;
             this.flowLayoutPanelPolecane.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.flowLayoutPanel_ControlAdded);
+            // 
+            // button6
+            // 
+            this.button6.FlatAppearance.BorderSize = 0;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button6.ForeColor = System.Drawing.Color.White;
+            this.button6.Location = new System.Drawing.Point(5, 5);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(32, 25);
+            this.button6.TabIndex = 1;
+            this.button6.Text = "Schowaj";
+            this.button6.UseVisualStyleBackColor = true;
             // 
             // panel1
             // 
@@ -347,7 +364,7 @@ namespace AnimePlayer
             // 
             this.panelSTNewsMain.Controls.Add(this.label_InfoText_news);
             this.panelSTNewsMain.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSTNewsMain.Location = new System.Drawing.Point(0, 121);
+            this.panelSTNewsMain.Location = new System.Drawing.Point(0, 130);
             this.panelSTNewsMain.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panelSTNewsMain.Name = "panelSTNewsMain";
             this.panelSTNewsMain.Size = new System.Drawing.Size(1089, 409);
@@ -373,7 +390,7 @@ namespace AnimePlayer
             this.panel8.Location = new System.Drawing.Point(0, 105);
             this.panel8.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(1089, 16);
+            this.panel8.Size = new System.Drawing.Size(1089, 25);
             this.panel8.TabIndex = 3;
             // 
             // panelTop
@@ -393,6 +410,7 @@ namespace AnimePlayer
             this.roundedPanel1.ColorEdges = System.Drawing.SystemColors.ActiveCaptionText;
             this.roundedPanel1.Controls.Add(this.panel7);
             this.roundedPanel1.Controls.Add(this.labelSatusWorkingApp);
+            this.roundedPanel1.Controls.Add(this.buttonProfile);
             this.roundedPanel1.Controls.Add(this.buttonMenuOpen);
             this.roundedPanel1.Controls.Add(this.label);
             this.roundedPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -416,7 +434,7 @@ namespace AnimePlayer
             this.panel7.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panel7.Name = "panel7";
             this.panel7.Padding = new System.Windows.Forms.Padding(6, 23, 6, 17);
-            this.panel7.Size = new System.Drawing.Size(479, 67);
+            this.panel7.Size = new System.Drawing.Size(418, 67);
             this.panel7.TabIndex = 4;
             // 
             // panel9
@@ -427,7 +445,7 @@ namespace AnimePlayer
             this.panel9.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panel9.Name = "panel9";
             this.panel9.Padding = new System.Windows.Forms.Padding(0, 6, 0, 0);
-            this.panel9.Size = new System.Drawing.Size(379, 27);
+            this.panel9.Size = new System.Drawing.Size(318, 27);
             this.panel9.TabIndex = 5;
             // 
             // textBoxStartPagefinditem
@@ -444,7 +462,7 @@ namespace AnimePlayer
             this.textBoxStartPagefinditem.Location = new System.Drawing.Point(0, 6);
             this.textBoxStartPagefinditem.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.textBoxStartPagefinditem.Name = "textBoxStartPagefinditem";
-            this.textBoxStartPagefinditem.Size = new System.Drawing.Size(379, 16);
+            this.textBoxStartPagefinditem.Size = new System.Drawing.Size(318, 16);
             this.textBoxStartPagefinditem.TabIndex = 3;
             this.textBoxStartPagefinditem.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBoxStartPagefinditem.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxSPfinditem_KeyDown);
@@ -459,7 +477,7 @@ namespace AnimePlayer
             this.buttonStartPageFinditem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonStartPageFinditem.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonStartPageFinditem.ForeColor = System.Drawing.Color.White;
-            this.buttonStartPageFinditem.Location = new System.Drawing.Point(385, 23);
+            this.buttonStartPageFinditem.Location = new System.Drawing.Point(324, 23);
             this.buttonStartPageFinditem.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.buttonStartPageFinditem.Name = "buttonStartPageFinditem";
             this.buttonStartPageFinditem.Size = new System.Drawing.Size(88, 27);
@@ -473,13 +491,31 @@ namespace AnimePlayer
             this.labelSatusWorkingApp.Dock = System.Windows.Forms.DockStyle.Right;
             this.labelSatusWorkingApp.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelSatusWorkingApp.ForeColor = System.Drawing.SystemColors.Window;
-            this.labelSatusWorkingApp.Location = new System.Drawing.Point(700, 7);
+            this.labelSatusWorkingApp.Location = new System.Drawing.Point(639, 7);
             this.labelSatusWorkingApp.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelSatusWorkingApp.Name = "labelSatusWorkingApp";
             this.labelSatusWorkingApp.Size = new System.Drawing.Size(259, 67);
             this.labelSatusWorkingApp.TabIndex = 2;
             this.labelSatusWorkingApp.Text = "Satus działania:";
             this.labelSatusWorkingApp.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // buttonProfile
+            // 
+            this.buttonProfile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonProfile.Dock = System.Windows.Forms.DockStyle.Right;
+            this.buttonProfile.FlatAppearance.BorderSize = 0;
+            this.buttonProfile.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.buttonProfile.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.buttonProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonProfile.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonProfile.ForeColor = System.Drawing.Color.White;
+            this.buttonProfile.Location = new System.Drawing.Point(898, 7);
+            this.buttonProfile.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.buttonProfile.Name = "buttonProfile";
+            this.buttonProfile.Size = new System.Drawing.Size(61, 67);
+            this.buttonProfile.TabIndex = 5;
+            this.buttonProfile.Text = "Profil";
+            this.buttonProfile.UseVisualStyleBackColor = true;
             // 
             // buttonMenuOpen
             // 
@@ -1683,6 +1719,7 @@ namespace AnimePlayer
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panePolecane.ResumeLayout(false);
+            this.flowLayoutPanelPolecane.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panelSTNewsMain.ResumeLayout(false);
@@ -1841,6 +1878,8 @@ namespace AnimePlayer
         private Button button3;
         private Panel panel4;
         private Label label3;
+        private Button button6;
+        public Button buttonProfile;
     }
 }
 

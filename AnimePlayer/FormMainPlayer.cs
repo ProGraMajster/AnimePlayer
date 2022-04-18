@@ -1,4 +1,5 @@
-﻿using AnimePlayerLibrary;
+﻿global using ControlsNewMethods = AnimePlayerLibrary.ControlsNewMethods;
+using AnimePlayerLibrary;
 using System;
 using System.Diagnostics;
 using System.Drawing;
@@ -10,6 +11,8 @@ using System.ComponentModel;
 using System.Data;
 using System.Linq;
 using System.Text;
+using ProfileSupportLibrary;
+
 namespace AnimePlayer
 {
     public partial class OknoG : Form
