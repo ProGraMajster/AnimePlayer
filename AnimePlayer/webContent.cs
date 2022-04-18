@@ -6,6 +6,7 @@ using System.Net;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using AnimePlayerLibrary;
+using AnimePlayer.Class;
 
 namespace AnimePlayer
 {
@@ -35,7 +36,7 @@ namespace AnimePlayer
                 titleInformation = new TitleInformation();
             }
 
-            public TitleInformation titleInformation;
+            public AnimePlayer.Class.TitleInformation titleInformation;
 
             public string path { get; set; }
             public string name { get; set; }
@@ -352,7 +353,7 @@ namespace AnimePlayer
         public class CtnPanel
         {
             public WebContent.Values values;
-            public ValuesDebug valuesDebug;
+            //public ValuesDebug valuesDebug;
             FormMainPlayer FormMainPlayer;
 
             public Panel panelItem;
@@ -373,7 +374,7 @@ namespace AnimePlayer
                 try
                 {
                     okno.autoCSC_find.Add(va.name);
-                    valuesDebug = new ValuesDebug();
+                    /*valuesDebug = new ValuesDebug();
                     valuesDebug.path = va.path;
                     valuesDebug.name = va.name;
                     valuesDebug.iconLink = va.iconLink;
@@ -382,7 +383,7 @@ namespace AnimePlayer
                     valuesDebug.contentId = va.contentId;
                     valuesDebug.contentId2 = va.contentId2;
                     valuesDebug.pathPage = va.pathPage;
-                    valuesDebug.groupName = va.groupName;
+                    valuesDebug.groupName = va.groupName;*/
                     cms = new ContextMenuStrip();
                     cms.Name = "cms";
 
@@ -514,7 +515,7 @@ namespace AnimePlayer
 
             private void MenuItem_Click(object sender, EventArgs e)
             {
-                FormDebug fd = new FormDebug(FormMainPlayer,valuesDebug, pictureBoxItem);
+                FormDebug fd = new FormDebug();
                 fd.Show();
             }
 
@@ -1063,7 +1064,7 @@ namespace AnimePlayer
                             try
                             {
                                 if(AnimePlayerLibrary.Download.File(pageItem1.linkToScriptComment = content[position],
-                                    DefaultAppDir.Web_script + Replacer.Names(values.name) + "_script_comments.html"))
+                                    AppFolders.Web + Replacer.Names(values.name) + "_script_comments.html"))
                                 {
                                     pageItem1.button_Load_Comments.Visible = true;
                                 }

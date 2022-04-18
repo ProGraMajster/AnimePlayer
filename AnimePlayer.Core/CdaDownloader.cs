@@ -3,7 +3,7 @@ using System.Net.Http;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace AnimePlayerLibrary
+namespace AnimePlayer.Core
 {
     public enum CdaQuality
     {

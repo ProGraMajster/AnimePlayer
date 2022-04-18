@@ -21,45 +21,6 @@ namespace AnimePlayerLibrary
 
         Form form;
 
-        public FormDebug(ValuesDebug vd)
-        {
-            InitializeComponent();
-            RtbNewlinie(vd.ToString());
-            RtbNewlinie("path: " + vd.path);
-            RtbNewlinie("name: "+ vd.name);
-            RtbNewlinie("iconLink: "+vd.iconLink);
-            RtbNewlinie("iconPath: "+vd.iconPath);
-            RtbNewlinie("siteLink: "+ vd.siteLink);
-            RtbNewlinie("contentId: "+vd.contentId);
-            RtbNewlinie("contentId2: "+ vd.contentId2);
-            RtbNewlinie("pathPage: "+vd.pathPage);
-            RtbNewlinie("groupName: "+vd.groupName);
-        }
-
-        public FormDebug(Form f, ValuesDebug vd, PictureBox box)
-        {
-            InitializeComponent();
-            form = f;
-            RtbNewlinie(vd.ToString());
-            RtbNewlinie("path: " + vd.path);
-            RtbNewlinie("name: "+ vd.name);
-            RtbNewlinie("iconLink: "+vd.iconLink);
-            RtbNewlinie("iconPath: "+vd.iconPath);
-            RtbNewlinie("siteLink: "+ vd.siteLink);
-            RtbNewlinie("contentId: "+vd.contentId);
-            RtbNewlinie("contentId2: "+ vd.contentId2);
-            RtbNewlinie("pathPage: "+vd.pathPage);
-            RtbNewlinie("groupName: "+vd.groupName);
-
-            //MessageBox.Show("TEST");
-
-            if(box != null)
-            {
-                RtbNewlinie("=============  PictureBox   ===========");
-                RtbNewlinie("ImageLocation: " + box.ImageLocation);
-            }
-        }
-
         void RtbNewlinie(string text)
         {
             richTextBox.Text += Environment.NewLine+text;

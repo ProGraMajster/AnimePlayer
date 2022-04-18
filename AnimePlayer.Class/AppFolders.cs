@@ -20,11 +20,12 @@ namespace AnimePlayer.Class
             "\\AnimePlayer\\Logs";
         public static readonly string News = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) +
             "\\AnimePlayer\\News";
+        public static readonly string Web = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) +
+            "\\AnimePlayer\\News";
         public static readonly string PagesItems = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) +
             "\\AnimePlayer\\PagesItems";
         public static readonly string VideosItems = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) +
             "\\AnimePlayer\\VideosItems";
-
         public static readonly string Icons  = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) +
             "\\AnimePlayer\\Icons";
         public static readonly string IconsBackup = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) +

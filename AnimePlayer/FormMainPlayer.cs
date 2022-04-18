@@ -41,7 +41,6 @@ namespace AnimePlayer
         public FormMainPlayer()  
         {
             InitializeComponent();
-            AP_Lib aP_Lib = new AP_Lib((Form)this);
             try
             {
                 tchangerColors = new ThemeChangerColors();
@@ -54,7 +53,6 @@ namespace AnimePlayer
                 panelSearch.Hide();
                 labelLoadingDetails.Text = "Initialize";
 
-                //Do naprawy!!!!!!!!!!!!!!!!!!!!!!!
                 panelNews = new NewFlowLayoutPanel();
                 panelNews.Name = "newFlowLayoutPanel_panelNews";
                 panelNews.Dock = DockStyle.Fill;
@@ -64,6 +62,9 @@ namespace AnimePlayer
                 panelNews.WrapContents = false;
                 panelNews.AutoScroll = true;
                 panelSTNewsMain.Hide();
+
+                AnimePlayer.Core.CheckingAppFolders.CheckMainFolder();
+                //====================================================
                 Application.DoEvents();
                 if (!Directory.Exists("C:\\ContentLibrarys"))
                 {
@@ -211,7 +212,7 @@ namespace AnimePlayer
             }
             catch (Exception exPer)
             {
-                FileLog.Write(exPer.ToString());
+
             }
         }
 
@@ -334,14 +335,14 @@ namespace AnimePlayer
 
             if(debug)
             {
-                if(!Directory.Exists(DefaultAppDir.Logs))
+                if(!Directory.Exists(AnimePlayer.Class.AppFolders.Logs))
                 {
-                    Directory.CreateDirectory(DefaultAppDir.Logs);
+                    Directory.CreateDirectory(AnimePlayer.Class.AppFolders.Logs);
                 }
                 labelLoadingDetails.TextChanged += labelLoadingDetails_TextChanged;
                 try
                 {
-                    FileStream filestream = new FileStream(DefaultAppDir.Logs+ Process.GetCurrentProcess().StartTime.ToString().Replace(":", " ") + "_console_out.txt", FileMode.Append);
+                    FileStream filestream = new FileStream(AnimePlayer.Class.AppFolders.Logs+ Process.GetCurrentProcess().StartTime.ToString().Replace(":", " ") + "_console_out.txt", FileMode.Append);
                     var streamwriter = new StreamWriter(filestream);
                     streamwriter.AutoFlush = true;
                     Console.SetOut(streamwriter);
@@ -1169,7 +1170,7 @@ namespace AnimePlayer
         {
             try
             {
-                string path = DefaultAppDir.Logs + Process.GetCurrentProcess().StartTime.ToString().Replace(":"," ") + ".txt";
+                string path = AnimePlayer.Class.AppFolders.Logs + Process.GetCurrentProcess().StartTime.ToString().Replace(":"," ") + ".txt";
                 string text = "[ " + DateTime.Now.ToString().Replace(":", " ")+" ]" + labelLoadingDetails.Text + Environment.NewLine;
                 File.AppendAllText(path, text);
             }

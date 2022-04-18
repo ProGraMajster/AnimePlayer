@@ -35,5 +35,10 @@ namespace AnimePlayerLibrary
             panel.Controls.Add(button);
             flowLayoutPanel1.Controls.Add(panel);
         }
+
+        private void buttonClose_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
     }
 }

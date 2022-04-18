@@ -64,7 +64,7 @@ namespace AnimePlayerLibrary
             try
             {
                 WebClient webClient = new WebClient();
-                webClient.DownloadFile(linkContent, DefaultAppDir.Temp + "\\" + ln.ID + "_newspage.txt");
+                webClient.DownloadFile(linkContent, AnimePlayer.Class.AppFolders.Temp + "\\" + ln.ID + "_newspage.txt");
                 webClient.Dispose();
             }
             catch(Exception ex)

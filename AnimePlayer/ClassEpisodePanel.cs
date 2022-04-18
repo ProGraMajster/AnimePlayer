@@ -2,6 +2,8 @@
 using System.Drawing;
 using System.Windows.Forms;
 using AnimePlayerLibrary;
+using AnimePlayer.Class;
+using AnimePlayer.Core;
 
 namespace AnimePlayer
 {

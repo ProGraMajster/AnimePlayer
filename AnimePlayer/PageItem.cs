@@ -305,7 +305,7 @@ namespace AnimePlayer
                     btn.Tag = webView2;
                     if (webView2 != null && webView2.CoreWebView2 != null)
                     {
-                        webView2.CoreWebView2.Navigate("file:///"+ DefaultAppDir.Web_script + values.name + "_script_comments.html");
+                        webView2.CoreWebView2.Navigate("file:///"+ AnimePlayer.Class.AppFolders.Web + values.name + "_script_comments.html");
                         btn.Text = "Ukryj";
                     }
                 }

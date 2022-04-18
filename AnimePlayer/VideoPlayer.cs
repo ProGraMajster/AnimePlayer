@@ -190,9 +190,6 @@ namespace AnimePlayer
                 Console.WriteLine("Open link");
                 Console.WriteLine("> "+ orginalLink);
                 Console.WriteLine(ex.ToString());
-                AnimePlayerLibrary.FileLog.Write("Open link");
-                AnimePlayerLibrary.FileLog.Write("> "+ orginalLink);
-                AnimePlayerLibrary.FileLog.Write(ex.ToString());
             }
         }
 

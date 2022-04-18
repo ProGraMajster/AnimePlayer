@@ -33,7 +33,7 @@ namespace AnimePlayerLibrary
             }
             catch(Exception ex)
             {
-                FileLog.Write(ex.ToString());
+                //FileLog.Write(ex.ToString());
             }
         }
     }

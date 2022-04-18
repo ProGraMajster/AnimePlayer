@@ -36,7 +36,7 @@ namespace AnimePlayerLibrary
                 catch(Exception ex)
                 {
                     Console.WriteLine(ex.ToString());
-                    FileLog.Write(ex.ToString());
+                    //FileLog.Write(ex.ToString());
                     return false;
                 }
             }
@@ -53,7 +53,7 @@ namespace AnimePlayerLibrary
                 catch (Exception ex)
                 {
                     Console.WriteLine(ex.ToString());
-                    FileLog.Write(ex.ToString());
+                    //FileLog.Write(ex.ToString());
                 }
             }
 
@@ -69,7 +69,7 @@ namespace AnimePlayerLibrary
                 {
                     Console.WriteLine("{ERROR}downloadPage > \n" + link + "\n" + path);
                     Console.WriteLine(ex.ToString() + Environment.NewLine);
-                    FileLog.Write(ex.ToString());
+                    //FileLog.Write(ex.ToString());
                 }
             }
 
@@ -154,7 +154,6 @@ namespace AnimePlayerLibrary
             catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
-                FileLog.Write(ex.ToString());
                 return false;
             }
         }

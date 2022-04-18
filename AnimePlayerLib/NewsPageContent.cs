@@ -48,7 +48,7 @@ namespace AnimePlayerLibrary
         {
             try
             {
-                string path = DefaultAppDir.Temp + "\\" + news.ID + "_newspage.txt";
+                string path = AnimePlayer.Class.AppFolders.Temp + "\\" + news.ID + "_newspage.txt";
                 if (path == null)
                 {
                     return;
