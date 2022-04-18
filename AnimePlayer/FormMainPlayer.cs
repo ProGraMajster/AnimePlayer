@@ -335,10 +335,6 @@ namespace AnimePlayer
 
             if(debug)
             {
-                if(!Directory.Exists(AnimePlayer.Class.AppFolders.Logs))
-                {
-                    Directory.CreateDirectory(AnimePlayer.Class.AppFolders.Logs);
-                }
                 labelLoadingDetails.TextChanged += labelLoadingDetails_TextChanged;
                 try
                 {
@@ -354,7 +350,12 @@ namespace AnimePlayer
                 }
             }
 
-            if (local == false)
+            panelLoading.BringToFront();
+            CenterControlInForm(labelLoading);
+            panelLoading.Show();
+            this.Show();
+            WebContent.Initialize(this);
+            /*if (local == false)
             {
                 panelLoading.BringToFront();
                 CenterControlInForm(labelLoading);
@@ -372,7 +373,7 @@ namespace AnimePlayer
                 WebContent.Initialize(this);
                 //Interpreter interpreter = new Interpreter(this);
                 //interpreter.Local();
-            }
+            }*/
 
             /*
             if(panelNews.Controls.Count <= 0)
