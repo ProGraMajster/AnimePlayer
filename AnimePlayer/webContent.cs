@@ -516,6 +516,7 @@ namespace AnimePlayer
             private void MenuItem_Click(object sender, EventArgs e)
             {
                 FormDebug fd = new FormDebug();
+                fd.form=FormMainPlayer;
                 fd.Show();
             }
 

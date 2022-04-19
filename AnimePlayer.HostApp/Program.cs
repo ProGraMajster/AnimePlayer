@@ -16,6 +16,7 @@ namespace AnimePlayer.HostApp
         {
             try
             {
+                Console.WriteLine("App starting...");
                 bool OpenApps = false;   
                 /*bool updates = false;
                 bool download = false;

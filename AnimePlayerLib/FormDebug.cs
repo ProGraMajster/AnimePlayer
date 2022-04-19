@@ -19,7 +19,7 @@ namespace AnimePlayerLibrary
             InitializeComponent();
         }
 
-        Form form;
+        public Form form;
 
         void RtbNewlinie(string text)
         {
