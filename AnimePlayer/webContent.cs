@@ -14,9 +14,9 @@ namespace AnimePlayer
     public static class WebContent
     {
         /* =========== TODO ============
-         * - Rozbić klasy na osobne plii
-         * - Zrobić refrakoryzacjie
-         * - Zmineinić spośób prasowania plików
+         * Zrobić refrakoryzacje (czy jak to tam się nazywało :D)
+         * - Rozbić klasy na osobne plii 
+         * - Zmienić spośób prasowania plików
          * -- SZCZEGÓLNIE pozbyć się zbędnych powtórzeń linii kodu
          */
         public class Skip
