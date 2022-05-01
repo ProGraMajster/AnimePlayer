@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace AnimePlayer.Core
 {
-    public static class ApplicationOpenFormsHelper
+    public static class ApplicationFormsHelper
     {
         public static Control[] FindControlInAllForms(string Name)
         {
@@ -27,10 +27,12 @@ namespace AnimePlayer.Core
                         }
                     }
                 }
+                return list.ToArray();
             }
             catch (Exception ex)
             {
                 Console.Error.WriteLine(ex.ToString());
+                return null;
             }
         }
     }

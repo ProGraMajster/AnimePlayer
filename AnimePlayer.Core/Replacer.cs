@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AnimePlayer.Class
+namespace AnimePlayer.Core
 {
     public static class Replacer
     {

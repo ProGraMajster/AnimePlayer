@@ -12,6 +12,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using ProfileSupportLibrary;
+using AnimePlayer.Core;
 
 namespace AnimePlayer
 {
@@ -194,12 +195,27 @@ namespace AnimePlayer
                 {
                     TargetControl = label2,
                     CornerRadius = 15
-                };  
+                };
                 rc = new ControlsNewMethods.RoundingControl
                 {
                     TargetControl = label_InfoText_news,
                     CornerRadius = 15
-                };  
+                };
+                rc = new ControlsNewMethods.RoundingControl
+                {
+                    TargetControl = buttonProfile,
+                    CornerRadius = 15
+                };
+                rc = new ControlsNewMethods.RoundingControl
+                {
+                    TargetControl = buttonMoreBtnMenu,
+                    CornerRadius = 15
+                };
+                rc = new ControlsNewMethods.RoundingControl
+                {
+                    TargetControl = buttonShowTitleStatusList,
+                    CornerRadius = 15
+                };
             }
             try
             {
@@ -338,7 +354,7 @@ namespace AnimePlayer
                 labelLoadingDetails.TextChanged += labelLoadingDetails_TextChanged;
                 try
                 {
-                    FileStream filestream = new FileStream(AnimePlayer.Class.AppFolders.Logs+ Process.GetCurrentProcess().StartTime.ToString().Replace(":", " ") + "_console_out.txt", FileMode.Append);
+                    FileStream filestream = new FileStream(AnimePlayer.Class.AppFolders.Logs+"\\"+ Process.GetCurrentProcess().StartTime.ToString().Replace(":", " ") + "_console_out.txt", FileMode.Append);
                     var streamwriter = new StreamWriter(filestream);
                     streamwriter.AutoFlush = true;
                     Console.SetOut(streamwriter);
