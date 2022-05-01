@@ -13,12 +13,12 @@ namespace AnimePlayer
 {
     public static class WebContent
     {
-        /*
-
-        Code refactoring is needed here 
-
-        */
-
+        /* =========== TODO ============
+         * - Rozbić klasy na osobne plii
+         * - Zrobić refrakoryzacjie
+         * - Zmineinić spośób prasowania plików
+         * -- SZCZEGÓLNIE pozbyć się zbędnych powtórzeń linii kodu
+         */
         public class Skip
         {
             public double time_showButton { get; set; }
