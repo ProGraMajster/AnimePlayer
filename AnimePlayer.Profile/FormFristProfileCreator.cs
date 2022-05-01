@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace AnimePlayer.Profile
 {
-    public partial class Form1 : Form
+    public partial class FormFristProfileCreator : Form
     {
-        public Form1()
+        public FormFristProfileCreator()
         {
             InitializeComponent();
         }

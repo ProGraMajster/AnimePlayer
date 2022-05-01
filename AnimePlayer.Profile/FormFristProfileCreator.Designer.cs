@@ -1,6 +1,6 @@
 ﻿namespace AnimePlayer.Profile
 {
-    partial class Form1
+    partial class FormFristProfileCreator
     {
         /// <summary>
         /// Required designer variable.

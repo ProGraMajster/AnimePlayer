@@ -133,6 +133,10 @@ namespace AnimePlayer
 
             }
             CreateBackupicon();
+            /* ==================
+             * remove the 'if' below when the surrogate function is ready
+             * ==================
+             */
             if (AnimePlayer.Properties.Settings.Default.RoundingControl)
             {
                 ControlsNewMethods.RoundingControl rc = new ControlsNewMethods.RoundingControl();
