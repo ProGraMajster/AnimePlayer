@@ -11,6 +11,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\AnimePlayer.Class\AnimePlayer.Class.csproj" />
+    <ProjectReference Include="..\AnimePlayer.CNM\AnimePlayer.CNM.csproj" />
     <ProjectReference Include="..\AnimePlayer.Core\AnimePlayer.Core.csproj" />
     <ProjectReference Include="..\AnimePlayerLib\AnimePlayerLibrary.csproj" />
   </ItemGroup>
@@ -18,9 +19,6 @@
   <ItemGroup>
     <Reference Include="NewMessageBox">
       <HintPath>D:\NewMessageBox.dll</HintPath>
-    </Reference>
-    <Reference Include="ProfileSupportLibrary">
-      <HintPath>D:\ProfileSupportLibrary.dll</HintPath>
     </Reference>
     <Reference Include="System.Runtime.Serialization.Formatters.Soap">
       <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Runtime.Serialization.Formatters.Soap.dll</HintPath>

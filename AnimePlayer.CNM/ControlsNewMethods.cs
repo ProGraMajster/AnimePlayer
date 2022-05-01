@@ -4,7 +4,7 @@ using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
-namespace AnimePlayer.Core
+namespace AnimePlayer.CNM
 {
     public static class ControlsNewMethods
     {

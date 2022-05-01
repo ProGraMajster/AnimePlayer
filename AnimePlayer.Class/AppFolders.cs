@@ -30,5 +30,7 @@ namespace AnimePlayer.Class
             "\\AnimePlayer\\Icons\\";
         public static readonly string IconsBackup = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) +
             "\\AnimePlayer\\IconsBackup\\";
+        public static readonly string Updater = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) +
+            "\\AnimePlayer\\Updater\\";
     }
 }

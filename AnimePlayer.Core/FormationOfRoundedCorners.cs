@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AnimePlayer.Class;
+using AnimePlayer.CNM;
 
 namespace AnimePlayer.Core
 {

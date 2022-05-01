@@ -16,6 +16,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\AnimePlayer.Class\AnimePlayer.Class.csproj" />
+    <ProjectReference Include="..\AnimePlayer.CNM\AnimePlayer.CNM.csproj" />
   </ItemGroup>
 
   <ItemGroup>

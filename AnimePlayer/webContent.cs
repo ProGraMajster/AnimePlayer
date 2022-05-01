@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using AnimePlayerLibrary;
 using AnimePlayer.Class;
 using AnimePlayer.Core;
+using AnimePlayer.CNM;
 
 namespace AnimePlayer
 {
