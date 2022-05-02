@@ -1,5 +1,6 @@
-﻿
+﻿using AnimePlayer.ControlsWinForms;
 using AnimePlayerLibrary;
+using NewFlowLayoutPanel = AnimePlayer.ControlsWinForms.NewFlowLayoutPanel;
 
 namespace AnimePlayer
 {
@@ -74,7 +75,7 @@ namespace AnimePlayer
             this.button_Load_Comments = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.panelRelatedSeries = new System.Windows.Forms.Panel();
-            this.flowLayoutPanelRelatedSeries = new AnimePlayerLibrary.NewFlowLayoutPanel();
+            this.flowLayoutPanelRelatedSeries = new NewFlowLayoutPanel();
             this.label6 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();

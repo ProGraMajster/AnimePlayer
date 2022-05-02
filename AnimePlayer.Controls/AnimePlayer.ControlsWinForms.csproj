@@ -2,14 +2,15 @@
 
   <PropertyGroup>
     <TargetFramework>net6.0-windows</TargetFramework>
-    <Nullable>disable</Nullable>
+    <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\AnimePlayer.Class\AnimePlayer.Class.csproj" />
-    <ProjectReference Include="..\AnimePlayer.CNM\AnimePlayer.CNM.csproj" />
+    <Compile Update="BrowserTabPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
   </ItemGroup>
 
 </Project>

@@ -188,26 +188,6 @@ namespace AnimePlayerLibrary
         }
     }
 
-    public class NewFlowLayoutPanel : FlowLayoutPanel
-    {
-        public NewFlowLayoutPanel()
-        {
-            this.DoubleBuffered = true;
-            this.Scroll += NewFlowLayoutPanel_Scroll;
-        }
-
-        private void NewFlowLayoutPanel_Scroll(object sender, ScrollEventArgs e)
-        {
-            this.Invalidate();
-        }
-
-        protected override void OnScroll(ScrollEventArgs se)
-        {
-            Application.DoEvents();
-            this.Invalidate();
-            base.OnScroll(se);
-        }
-    }
 
     public class RoundedPanel : Panel
     {

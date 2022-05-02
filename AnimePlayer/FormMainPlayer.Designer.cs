@@ -1,4 +1,5 @@
-﻿using AnimePlayerLibrary;
+﻿using AnimePlayer.ControlsWinForms;
+using AnimePlayerLibrary;
 namespace AnimePlayer
 {
     partial class FormMainPlayer
@@ -41,7 +42,7 @@ namespace AnimePlayer
             this.panel4 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.panePolecane = new System.Windows.Forms.Panel();
-            this.flowLayoutPanelPolecane = new AnimePlayerLibrary.NewFlowLayoutPanel();
+            this.flowLayoutPanelPolecane = new AnimePlayer.ControlsWinForms.NewFlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.panelSTNewsMain = new System.Windows.Forms.Panel();
@@ -80,7 +81,7 @@ namespace AnimePlayer
             this.panel2 = new System.Windows.Forms.Panel();
             this.panelMoreButtons = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
-            this.newFlowLayoutPanel1 = new AnimePlayerLibrary.NewFlowLayoutPanel();
+            this.newFlowLayoutPanel1 = new AnimePlayer.ControlsWinForms.NewFlowLayoutPanel();
             this.panel11 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.button_MoreBtn_Open_Settings = new System.Windows.Forms.Button();
@@ -1865,4 +1866,3 @@ namespace AnimePlayer
         public Button buttonProfile;
     }
 }
-

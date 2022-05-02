@@ -12,7 +12,7 @@ using System.Linq;
 using System.Text;
 using AnimePlayer.Core;
 using AnimePlayer.CNM;
-
+using AnimePlayer.ControlsWinForms;
 namespace AnimePlayer
 {
     public partial class FormMainPlayer : Form
