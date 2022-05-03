@@ -8,6 +8,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="microsoft.web.webview2" Version="1.0.1185.39" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Update="BrowserTabPage.cs">
       <SubType>UserControl</SubType>
     </Compile>
