@@ -535,13 +535,14 @@ namespace AnimePlayer
             }
         }
 
-        private async void pictureBoxSite_Click(object sender, EventArgs e)
+        private async void pictureBoxSite_Click(object sender, EventArgss e)
         {
             try
             {
                 await Task.Run(() =>
                 {
-                    Process.Start("start \"\" https://sites.google.com/view/twojeanimepl");
+                    OpenLinks.Start("https://sites.google.com/view/twojeanimepl");
+                    //Process.Start("start \"\" https://sites.google.com/view/twojeanimepl");
                 });
             }
             catch (Exception ex)
@@ -556,7 +557,8 @@ namespace AnimePlayer
             {
                 await Task.Run(() =>
                 {
-                    Process.Start("start \"\" https://sites.google.com/view/twojeanimepl");
+                    OpenLinks.Start("https://sites.google.com/view/twojeanimepl");
+                    //Process.Start("start \"\" https://sites.google.com/view/twojeanimepl");
                 });
             }
             catch (Exception ex)
