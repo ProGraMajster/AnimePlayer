@@ -28,48 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.newFlowLayoutPanel1 = new AnimePlayer.ControlsWinForms.NewFlowLayoutPanel();
+            this.newFlowLayoutPanelPages = new AnimePlayer.ControlsWinForms.NewFlowLayoutPanel();
+            this.buttonNewPage = new System.Windows.Forms.Button();
             this.buttonViewAllPage = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.buttonNewPage = new System.Windows.Forms.Button();
-            this.newFlowLayoutPanel1.SuspendLayout();
+            this.newFlowLayoutPanelPages.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // newFlowLayoutPanel1
+            // newFlowLayoutPanelPages
             // 
-            this.newFlowLayoutPanel1.Controls.Add(this.buttonNewPage);
-            this.newFlowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.newFlowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.newFlowLayoutPanel1.Name = "newFlowLayoutPanel1";
-            this.newFlowLayoutPanel1.Padding = new System.Windows.Forms.Padding(5);
-            this.newFlowLayoutPanel1.Size = new System.Drawing.Size(638, 42);
-            this.newFlowLayoutPanel1.TabIndex = 0;
-            // 
-            // buttonViewAllPage
-            // 
-            this.buttonViewAllPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.buttonViewAllPage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonViewAllPage.FlatAppearance.BorderSize = 0;
-            this.buttonViewAllPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonViewAllPage.Font = new System.Drawing.Font("Segoe UI", 5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonViewAllPage.ForeColor = System.Drawing.Color.White;
-            this.buttonViewAllPage.Location = new System.Drawing.Point(10, 10);
-            this.buttonViewAllPage.Name = "buttonViewAllPage";
-            this.buttonViewAllPage.Size = new System.Drawing.Size(24, 22);
-            this.buttonViewAllPage.TabIndex = 0;
-            this.buttonViewAllPage.Text = "\\/";
-            this.buttonViewAllPage.UseVisualStyleBackColor = false;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.buttonViewAllPage);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(594, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(10);
-            this.panel1.Size = new System.Drawing.Size(44, 42);
-            this.panel1.TabIndex = 1;
+            this.newFlowLayoutPanelPages.Controls.Add(this.buttonNewPage);
+            this.newFlowLayoutPanelPages.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.newFlowLayoutPanelPages.Location = new System.Drawing.Point(0, 0);
+            this.newFlowLayoutPanelPages.Name = "newFlowLayoutPanelPages";
+            this.newFlowLayoutPanelPages.Padding = new System.Windows.Forms.Padding(5);
+            this.newFlowLayoutPanelPages.Size = new System.Drawing.Size(638, 42);
+            this.newFlowLayoutPanelPages.TabIndex = 0;
             // 
             // buttonNewPage
             // 
@@ -86,27 +61,51 @@
             this.buttonNewPage.UseVisualStyleBackColor = false;
             this.buttonNewPage.Click += new System.EventHandler(this.buttonNewPage_Click);
             // 
+            // buttonViewAllPage
+            // 
+            this.buttonViewAllPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.buttonViewAllPage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonViewAllPage.FlatAppearance.BorderSize = 0;
+            this.buttonViewAllPage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonViewAllPage.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonViewAllPage.ForeColor = System.Drawing.Color.White;
+            this.buttonViewAllPage.Location = new System.Drawing.Point(10, 10);
+            this.buttonViewAllPage.Name = "buttonViewAllPage";
+            this.buttonViewAllPage.Size = new System.Drawing.Size(24, 22);
+            this.buttonViewAllPage.TabIndex = 0;
+            this.buttonViewAllPage.Text = "=";
+            this.buttonViewAllPage.UseVisualStyleBackColor = false;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.buttonViewAllPage);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel1.Location = new System.Drawing.Point(594, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Padding = new System.Windows.Forms.Padding(10);
+            this.panel1.Size = new System.Drawing.Size(44, 42);
+            this.panel1.TabIndex = 1;
+            // 
             // BrowserTabPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.newFlowLayoutPanel1);
+            this.Controls.Add(this.newFlowLayoutPanelPages);
             this.DoubleBuffered = true;
             this.Name = "BrowserTabPage";
             this.Size = new System.Drawing.Size(638, 42);
-            this.newFlowLayoutPanel1.ResumeLayout(false);
+            this.newFlowLayoutPanelPages.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private NewFlowLayoutPanel newFlowLayoutPanel1;
         private Button buttonViewAllPage;
         private Panel panel1;
         private Button buttonNewPage;
+        public NewFlowLayoutPanel newFlowLayoutPanelPages;
     }
 }

@@ -21,16 +21,81 @@ namespace AnimePlayer.ControlsWinForms
             item.labelItemTitle.Text = title;
             item.Tag = controlContentPage;
             browserTabPageItems.Add(item);
+            newFlowLayoutPanelPages.Controls.Add(item);
+        }
+        
+        public BrowserTabPageItem AddPageAndRef(string title, Image image, Control controlContentPage)
+        {
+            BrowserTabPageItem item = new BrowserTabPageItem();
+            item.pictureBoxItemIcon.Image = image;
+            item.labelItemTitle.Text = title;
+            item.Tag = controlContentPage;
+            browserTabPageItems.Add(item);
+            newFlowLayoutPanelPages.Controls.Add(item);
+            return item;
         }
 
-        public bool UseRoundingControl = true;
+        public bool _UseRoundingControl = true;
         public int ValueCornerRadius = 15;
 
         List<BrowserTabPageItem> browserTabPageItems = new List<BrowserTabPageItem>();
 
+
+        [
+            Category("Appearance"),
+            Description("Zaokrąglanie rogów w wewnętrznych kontrolkach")
+        ]
+        public bool UseRoundingControl ///<summary>Wewnętrzny kolor panelu</summary>
+        {
+            get
+            {
+                return _UseRoundingControl;
+            }
+            set
+            {
+                _UseRoundingControl = value;
+                Invalidate();
+            }
+        }
+
+        [
+            Category("Appearance"),
+            Description("Promień łuku używany dla zaokrąglonych krawędzi wenęttrznych kontrolek.")
+        ]
+        public int RadiusControls ///<summary>Promień łuku używany dla zaokrąglonych krawędzi.</summary>
+        {
+            get
+            {
+                return ValueCornerRadius;
+            }
+            set
+            {
+                ValueCornerRadius = value;
+                Invalidate();
+            }
+        }
+
         public BrowserTabPage()
         {
             InitializeComponent();
+            if(_UseRoundingControl)
+            {
+                RoundingControl rc = new RoundingControl();
+                rc.TargetControl = buttonNewPage;
+                rc.CornerRadius = ValueCornerRadius;
+                rc = new RoundingControl();
+                rc.TargetControl = buttonViewAllPage;
+                rc.CornerRadius = ValueCornerRadius;
+            }
+            try
+            {
+                BrowserTabPageItem mainPage = AddPageAndRef("Strona główna", null, new BrowserTabPageHomePage());
+                mainPage.buttonCloseItem.Hide();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
         }
 
 
@@ -74,7 +139,7 @@ namespace AnimePlayer.ControlsWinForms
 
         private void buttonNewPage_Click(object sender, EventArgs e)
         {
-
+            AddPage("Strona główna", null, new BrowserTabPageHomePage());
         }
     }
 }

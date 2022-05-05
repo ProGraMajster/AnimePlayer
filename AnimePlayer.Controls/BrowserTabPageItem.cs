@@ -19,7 +19,24 @@ namespace AnimePlayer.ControlsWinForms
 
         private void labelItemTitle_Click(object sender, EventArgs e)
         {
-            CloseBrowserTabPageItem();
+            ShowPage();
+        }
+
+        public void ShowPage()
+        {
+            try
+            {
+                Control controlPage = (Control)this.Tag;
+                Control controlParent = this.ParentForm.Controls.Find("panelContent", true)[0];
+                controlParent.Controls.Add(controlPage);
+                controlPage.Dock = DockStyle.Fill;
+                controlPage.Show();
+                controlPage.BringToFront();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
         }
 
         private void buttonCloseItem_Click(object sender, EventArgs e)
@@ -29,7 +46,7 @@ namespace AnimePlayer.ControlsWinForms
 
         private void pictureBoxItemIcon_Click(object sender, EventArgs e)
         {
-            CloseBrowserTabPageItem();
+            ShowPage();
         }
 
         public void CloseBrowserTabPageItem()
@@ -46,6 +63,11 @@ namespace AnimePlayer.ControlsWinForms
             {
                 Console.Error.WriteLine(ex.ToString());
             }
+        }
+
+        private void BrowserTabPageItem_Load(object sender, EventArgs e)
+        {
+            ShowPage();
         }
     }
 }

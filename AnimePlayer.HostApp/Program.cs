@@ -49,7 +49,8 @@ namespace AnimePlayer.HostApp
                     {
                         Application.EnableVisualStyles();
                         Application.SetCompatibleTextRenderingDefault(false);
-                        Application.Run(new FormMainPlayer());
+                        Application.Run(new FormMainEx());
+                        //Application.Run(new FormMainPlayer());
                         return;
                     }
                 }

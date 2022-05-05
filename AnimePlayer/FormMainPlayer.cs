@@ -535,7 +535,7 @@ namespace AnimePlayer
             }
         }
 
-        private async void pictureBoxSite_Click(object sender, EventArgss e)
+        private async void pictureBoxSite_Click(object sender, EventArgs e)
         {
             try
             {

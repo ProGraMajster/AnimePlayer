@@ -36,10 +36,11 @@
             // 
             // pictureBoxItemIcon
             // 
+            this.pictureBoxItemIcon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.pictureBoxItemIcon.Dock = System.Windows.Forms.DockStyle.Left;
             this.pictureBoxItemIcon.Location = new System.Drawing.Point(5, 5);
             this.pictureBoxItemIcon.Name = "pictureBoxItemIcon";
-            this.pictureBoxItemIcon.Size = new System.Drawing.Size(34, 30);
+            this.pictureBoxItemIcon.Size = new System.Drawing.Size(34, 25);
             this.pictureBoxItemIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxItemIcon.TabIndex = 0;
             this.pictureBoxItemIcon.TabStop = false;
@@ -51,7 +52,7 @@
             this.labelItemTitle.Location = new System.Drawing.Point(39, 5);
             this.labelItemTitle.Name = "labelItemTitle";
             this.labelItemTitle.Padding = new System.Windows.Forms.Padding(1, 0, 0, 0);
-            this.labelItemTitle.Size = new System.Drawing.Size(129, 30);
+            this.labelItemTitle.Size = new System.Drawing.Size(159, 25);
             this.labelItemTitle.TabIndex = 1;
             this.labelItemTitle.Text = "ItemTitle";
             this.labelItemTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -64,9 +65,9 @@
             this.buttonCloseItem.FlatAppearance.BorderSize = 0;
             this.buttonCloseItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCloseItem.ForeColor = System.Drawing.Color.Red;
-            this.buttonCloseItem.Location = new System.Drawing.Point(168, 5);
+            this.buttonCloseItem.Location = new System.Drawing.Point(198, 5);
             this.buttonCloseItem.Name = "buttonCloseItem";
-            this.buttonCloseItem.Size = new System.Drawing.Size(25, 30);
+            this.buttonCloseItem.Size = new System.Drawing.Size(25, 25);
             this.buttonCloseItem.TabIndex = 2;
             this.buttonCloseItem.Text = "X";
             this.buttonCloseItem.UseVisualStyleBackColor = false;
@@ -84,7 +85,8 @@
             this.ForeColor = System.Drawing.Color.White;
             this.Name = "BrowserTabPageItem";
             this.Padding = new System.Windows.Forms.Padding(5);
-            this.Size = new System.Drawing.Size(198, 40);
+            this.Size = new System.Drawing.Size(228, 35);
+            this.Load += new System.EventHandler(this.BrowserTabPageItem_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxItemIcon)).EndInit();
             this.ResumeLayout(false);
 
