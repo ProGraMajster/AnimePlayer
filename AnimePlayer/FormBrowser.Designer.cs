@@ -1,6 +1,6 @@
 ﻿namespace AnimePlayer
 {
-    partial class FormMainEx
+    partial class FormBrowser
     {
         /// <summary>
         /// Required designer variable.

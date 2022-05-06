@@ -38,6 +38,8 @@ namespace AnimePlayer
 
         int memsize;
 
+        public ZetaIpc.Runtime.Client.IpcClient clientToBrowser;
+
         public FormMainPlayer()  
         {
             InitializeComponent();
@@ -123,6 +125,8 @@ namespace AnimePlayer
                 quickMove = new QuickMovePanel();
                 quickMove.Hide();   
                 this.Controls.Add(quickMove);
+                clientToBrowser = new ZetaIpc.Runtime.Client.IpcClient();
+                clientToBrowser.Initialize(65500);
             }
             catch (Exception)
             {

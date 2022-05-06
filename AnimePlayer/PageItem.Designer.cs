@@ -75,7 +75,7 @@ namespace AnimePlayer
             this.button_Load_Comments = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.panelRelatedSeries = new System.Windows.Forms.Panel();
-            this.flowLayoutPanelRelatedSeries = new NewFlowLayoutPanel();
+            this.flowLayoutPanelRelatedSeries = new AnimePlayer.ControlsWinForms.NewFlowLayoutPanel();
             this.label6 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();

@@ -165,11 +165,11 @@ namespace AnimePlayer
                 Interpreter interpreter = new Interpreter(FormMainPlayer);
                 if (FormMainPlayer.server == 0)
                 {
-                    interpreter.Start("C:\\ContentLibrarys\\OtherFiles\\WMP_OverlayApp\\" + line[0] + ".txt");
+                    interpreter.Start(AppFolders.AppFolder + line[0] + ".txt");
                 }
                 else if (FormMainPlayer.server == 1)
                 {
-                    interpreter.Start("C:\\ContentLibrarys\\OtherFiles\\WMP_OverlayApp\\" + Download.OneDrive.onedriveUri(line[1]) + ".txt");
+                    interpreter.Start(AppFolders.AppFolder + Download.OneDrive.onedriveUri(line[1]) + ".txt");
                 }
             }
         }
@@ -386,8 +386,20 @@ namespace AnimePlayer
                     valuesDebug.contentId2 = va.contentId2;
                     valuesDebug.pathPage = va.pathPage;
                     valuesDebug.groupName = va.groupName;*/
+
                     cms = new ContextMenuStrip();
                     cms.Name = "cms";
+                    ToolStripMenuItem toolStripMenuItemOpenInBrowserFrom = new ToolStripMenuItem();
+                    toolStripMenuItemOpenInBrowserFrom.Name ="toolStripMenuItemOpenInBrowserFrom";
+                    toolStripMenuItemOpenInBrowserFrom.Text = "Otwóz w przeglądarce";
+                    toolStripMenuItemOpenInBrowserFrom.Click += ToolStripMenuItemOpenInBrowserFrom_Click;
+
+                    cms.Items.Add(toolStripMenuItemOpenInBrowserFrom);
+
+                    ToolStripSeparator toolStripSeparator = new ToolStripSeparator();
+                    toolStripSeparator.Name = "toolStripSeparator";
+
+                    cms.Items.Add(toolStripSeparator);
 
                     menuItem = new ToolStripMenuItem();
                     menuItem.Text = "DebugInfo";
@@ -513,6 +525,11 @@ namespace AnimePlayer
                 SetInformation();
                 FormMainPlayer.labelLoadingDetails.Text = ">> Create CtnPanel > "+va.name+ "> Created";
                 Application.DoEvents();
+            }
+
+            private void ToolStripMenuItemOpenInBrowserFrom_Click(object sender, EventArgs e)
+            {
+                
             }
 
             private void MenuItem_Click(object sender, EventArgs e)

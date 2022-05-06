@@ -22,6 +22,12 @@ namespace AnimePlayer.ControlsWinForms
             item.Tag = controlContentPage;
             browserTabPageItems.Add(item);
             newFlowLayoutPanelPages.Controls.Add(item);
+            if(_UseRoundingControl)
+            {
+                RoundingControl roundingControl = new RoundingControl();
+                roundingControl.TargetControl = item;
+                roundingControl.CornerRadius = ValueCornerRadius;
+            }
         }
         
         public BrowserTabPageItem AddPageAndRef(string title, Image image, Control controlContentPage)
@@ -32,6 +38,12 @@ namespace AnimePlayer.ControlsWinForms
             item.Tag = controlContentPage;
             browserTabPageItems.Add(item);
             newFlowLayoutPanelPages.Controls.Add(item);
+            if (_UseRoundingControl)
+            {
+                RoundingControl roundingControl = new RoundingControl();
+                roundingControl.TargetControl = item;
+                roundingControl.CornerRadius = ValueCornerRadius;
+            }
             return item;
         }
 

@@ -3,6 +3,8 @@ using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 using AnimePlayer.CNM;
+using AnimePlayer.Class;
+using AnimePlayer.Core;
 using AnimePlayerLibrary;
 
 namespace AnimePlayer
@@ -14,7 +16,269 @@ namespace AnimePlayer
 
         public string linkToScriptComment = null;
 
+        #region old praser
+
+        public void SetPage(string path)
+        {
+            if (!File.Exists(path))
+            {
+                MessageBox.Show("Wystąpił błąd podczas ładowania zawartości!", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            this.Dock = DockStyle.Fill;
+            try
+            {
+#if DEBUG
+                Console.WriteLine(values.iconPath);
+#endif
+                this.pictureBoxIcon.ImageLocation =  values.iconPath;
+            }
+            catch (Exception ex)
+            {
+                this.pictureBoxIcon.Image = null;
+                Console.WriteLine(ex.ToString() + Environment.NewLine);
+            }
+
+            FormMainPlayer.labelLoadingDetails.Text = "Load page: " + values.name + " [15%]";
+            Application.DoEvents();
+
+            string[] content = File.ReadAllText(path).Split(';');
+            int limits = 0;
+            for (int i = 0; i < content.Length; i++)
+            {
+                limits = i;
+                content[i] = content[i].Replace("\n", "").Replace("\r", "").Replace("\t", "");
+            }
+            FormMainPlayer.labelLoadingDetails.Text = "Load page: " + values.name + " [20%]";
+            Application.DoEvents();
+            try
+            {
+                bool end = false;
+                int position = 0;
+                while (end != true)
+                {
+                    if (position == limits)
+                    {
+                        end = true;
+                    }
+
+                    if (content[position] == "Content")
+                    {
+                        this.labelTitle.Text = values.name;
+                    }
+                    else if (content[position] == "description")
+                    {
+                        position++;
+                        this.labelDes.Text = content[position];
+                    }
+                    else if (content[position] == "OtherName")
+                    {
+                        position++;
+                        this.labelotherTitle.Text = content[position];
+                    }
+                    else if (content[position] == "OtherTags")
+                    {
+                        position++;
+                        this.labelOtherTags.Text = content[position];
+                    }
+                    else if (content[position] == "Archetype")
+                    {
+                        position++;
+                        this.labelArchetype.Text = content[position];
+                    }
+                    else if (content[position] == "Species")
+                    {
+                        position++;
+                        this.labelSpecies.Text = content[position];
+                    }
+                    else if (content[position] == "typesOfCharacters")
+                    {
+                        position++;
+                        this.labelTypesOfCharacters.Text = content[position];
+                    }
+                    else if (content[position] == "TargetGroups")
+                    {
+                        position++;
+                        this.labelTargetGroups.Text = content[position];
+                    }
+                    else if (content[position] == "PlaceAndTime")
+                    {
+                        position++;
+                        this.labelPlaceAndTime.Text = content[position];
+                    }
+                    else if (content[position] == "Type")
+                    {
+                        position++;
+                        this.labelType.Text = content[position];
+                    }
+                    else if (content[position] == "Status")
+                    {
+                        FormMainPlayer.labelLoadingDetails.Text = "Load page: " + values.name + "> load > Status";
+                        Application.DoEvents();
+                        position++;
+                        this.labelStatus.Text = content[position];
+                    }
+                    else if (content[position] == "DateOfIssue")
+                    {
+                        FormMainPlayer.labelLoadingDetails.Text = "Load page: " + values.name + "> load > DateOfIssue";
+                        Application.DoEvents();
+                        position++;
+                        this.labelDateS.Text = content[position];
+                    }
+                    else if (content[position] == "EndOfIssue")
+                    {
+                        FormMainPlayer.labelLoadingDetails.Text = "Load page: " + values.name + "> load > EndOfIssue";
+                        Application.DoEvents();
+                        position++;
+                        this.labelDateE.Text = content[position];
+                    }
+                    else if (content[position] == "NumberOfEpisodes")
+                    {
+                        FormMainPlayer.labelLoadingDetails.Text = "Load page: " + values.name + "> load > NumberOfEpisodes";
+                        Application.DoEvents();
+                        position++;
+                        this.labelNE.Text = content[position];
+                    }
+                    else if (content[position] == "Studio")
+                    {
+                        FormMainPlayer.labelLoadingDetails.Text = "Load page: " + values.name + "> load > Studio";
+                        Application.DoEvents();
+                        position++;
+                        this.labelStudio.Text = content[position];
+                    }
+                    else if (content[position] == "EpisodeLength")
+                    {
+                        FormMainPlayer.labelLoadingDetails.Text = "Load page: " + values.name + "> load > EpisodeLength";
+                        Application.DoEvents();
+                        position++;
+                        this.labelLE.Text = content[position];
+                    }
+                    else if (content[position] == "MPAA")
+                    {
+                        FormMainPlayer.labelLoadingDetails.Text = "Load page: " + values.name + "> load > MPAA";
+                        Application.DoEvents();
+                        position++;
+                        this.labelMPAA.Text = content[position];
+                    }
+                    else if (content[position] == "EpisodeList")
+                    {
+                        FormMainPlayer.labelLoadingDetails.Text = "Load page: " + values.name + "> load > episode list";
+                        Application.DoEvents();
+                        position++;
+                        if (FormMainPlayer.onOnline)
+                        {
+                            if (FormMainPlayer.server == 0)
+                            {
+                                string zm = WebContent.downloadVideoContent(WebContent.dUri(content[position]), values.name);
+                                //GetListTypeEp(this, zm);
+                            }
+                            else if (FormMainPlayer.server == 1)
+                            {
+                                string zm = Download.OneDrive.downloadVideoContent(content[position], values.name);
+                                //GetListTypeEp(this, zm);
+                            }
+                        }
+                        else
+                        {
+                           //GetListTypeEp(this, "C:\\ContentLibrarys\\OtherFiles\\WMP_OverlayApp\\Video\\" + values.name + "_list_ep.txt");
+                        }
+                    }
+                    else if (content[position] == "LinkToScriptComment")//LinkToScriptComment
+                    {
+                        position++;
+                        try
+                        {
+                            if (AnimePlayerLibrary.Download.File(this.linkToScriptComment = content[position],
+                                AppFolders.Web + Replacer.Names(values.name) + "_script_comments.html"))
+                            {
+                                this.button_Load_Comments.Visible = true;
+                            }
+                        }
+                        catch (Exception exDwonScrCom)
+                        {
+                            Console.WriteLine(exDwonScrCom.ToString());
+                        }
+                    }
+                    else if (content[position] == "RelatedSeries")
+                    {
+                        position++;
+                        string typetitles = content[position];
+                        position++;
+                        string findname = content[position];
+                        try
+                        {
+                            if(Tag != typeof(FormMainPlayer))
+                            {
+                                return;
+                            }
+
+                            FormMainPlayer player = (FormMainPlayer)Tag;
+                            foreach (Control c in player.flowLayoutPanelAll.Controls)
+                            {
+                                try
+                                {
+                                    if (c.Tag != null)
+                                    {
+                                        WebContentControls.CtnPanel ctn = (WebContentControls.CtnPanel)c.Tag;
+                                        if (ctn.values.name.ToLower() == findname.ToLower())
+                                        {
+                                            Panel p = ctn.Duplication();
+                                            if (p != null)
+                                            {
+                                                PanelRelatedSeries _ = new PanelRelatedSeries(this.flowLayoutPanelRelatedSeries, p,
+                                                    (TypeRelatedSeries)int.Parse(typetitles));
+                                            }
+                                            else
+                                            {
+                                                p.Dispose();
+                                            }
+                                        }
+                                    }
+                                }
+                                catch (Exception ex)
+                                {
+                                    Console.WriteLine(ex.ToString());
+                                }
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine(ex.ToString());
+                        }
+                    }
+                    position++;
+                }
+
+                if (this.flowLayoutPanelRelatedSeries.Controls.Count == 0)
+                {
+                    Label label = new Label();
+                    label.Size = new Size(160, 25);
+                    label.TextAlign = ContentAlignment.MiddleCenter;
+                    label.Text = "Brak powiązanych serii.";
+                    label.BackColor = Color.FromArgb(35, 35, 35);
+                    label.ForeColor = Color.White;
+                    label.Font = new System.Drawing.Font("Comic Sans MS", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+                    this.flowLayoutPanelRelatedSeries.Controls.Add(label);
+                    this.panelRelatedSeries.Size = new Size(this.flowLayoutPanelRelatedSeries.Size.Width,
+                        105);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Start>\n" + path);
+                Console.WriteLine(ex.ToString());
+            }
+        }
+        #endregion
+
+
         public PageItem()
+        {
+            InitializeComponent();
+        }
+
+        public PageItem(string pathToFile)
         {
             InitializeComponent();
         }
