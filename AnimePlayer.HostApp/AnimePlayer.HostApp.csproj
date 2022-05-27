@@ -17,6 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\AnimePlayer.Updater\AnimePlayer.Updater.csproj" />
     <ProjectReference Include="..\AnimePlayer\AnimePlayer.csproj" />
   </ItemGroup>
 

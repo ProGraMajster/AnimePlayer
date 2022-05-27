@@ -47,8 +47,11 @@
             this.buttonCloseSettings = new System.Windows.Forms.Button();
             this.checkBoxDebug = new System.Windows.Forms.CheckBox();
             this.labelLoadingApp = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panelSettings.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelTitle
@@ -142,22 +145,20 @@
             // 
             // labelVersion
             // 
-            this.labelVersion.AutoSize = true;
-            this.labelVersion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.labelVersion.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.labelVersion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.labelVersion.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelVersion.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelVersion.Location = new System.Drawing.Point(0, 422);
-            this.labelVersion.MaximumSize = new System.Drawing.Size(0, 50);
+            this.labelVersion.Location = new System.Drawing.Point(0, 25);
             this.labelVersion.Name = "labelVersion";
-            this.labelVersion.Size = new System.Drawing.Size(622, 17);
+            this.labelVersion.Size = new System.Drawing.Size(367, 345);
             this.labelVersion.TabIndex = 3;
-            this.labelVersion.Text = "AnimePlayer v0.0.0.0 | AnimePlayerLibrary v0.0.0.0 | AnimePlayer.HostApp v0.0.0.0" +
-    " | AnimePlayer.Class v0.0.0.0";
-            this.labelVersion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelVersion.Text = "Version lib";
+            this.labelVersion.Click += new System.EventHandler(this.labelVersion_Click);
             // 
             // panelSettings
             // 
             this.panelSettings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.panelSettings.Controls.Add(this.panel2);
             this.panelSettings.Controls.Add(this.label1);
             this.panelSettings.Controls.Add(this.checkBoxOtherWindow);
             this.panelSettings.Controls.Add(this.label4);
@@ -170,7 +171,7 @@
             this.panelSettings.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelSettings.Location = new System.Drawing.Point(0, 69);
             this.panelSettings.Name = "panelSettings";
-            this.panelSettings.Size = new System.Drawing.Size(782, 353);
+            this.panelSettings.Size = new System.Drawing.Size(782, 370);
             this.panelSettings.TabIndex = 4;
             this.panelSettings.Visible = false;
             // 
@@ -274,6 +275,28 @@
             this.labelLoadingApp.Text = "Ładowanie...";
             this.labelLoadingApp.Visible = false;
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.labelVersion);
+            this.panel2.Controls.Add(this.label5);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel2.Location = new System.Drawing.Point(415, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(367, 370);
+            this.panel2.TabIndex = 9;
+            // 
+            // label5
+            // 
+            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label5.Location = new System.Drawing.Point(0, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(367, 25);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "Wersjie bibliotek dll aplikacji";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // FormStarter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -283,7 +306,6 @@
             this.ClientSize = new System.Drawing.Size(782, 439);
             this.Controls.Add(this.labelLoadingApp);
             this.Controls.Add(this.panelSettings);
-            this.Controls.Add(this.labelVersion);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.labelTitle);
             this.DoubleBuffered = true;
@@ -295,6 +317,7 @@
             this.panel1.ResumeLayout(false);
             this.panelSettings.ResumeLayout(false);
             this.panelSettings.PerformLayout();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -320,5 +343,7 @@
         private Label label1;
         private CheckBox checkBoxOtherWindow;
         private Label labelLoadingApp;
+        private Panel panel2;
+        private Label label5;
     }
 }

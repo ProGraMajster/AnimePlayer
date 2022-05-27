@@ -22,19 +22,9 @@ namespace AnimePlayer
             InitializeComponent();
             panel1.Left = (this.Width - panel1.Width) / 2;
             panel1.Top = (this.Height - panel1.Height) / 2;
-            string text = "AnimePlayer v0.0.0.0 | AnimePlayerLibrary v0.0.0.0 | AnimePlayer.HostApp v0.0.0.0 | AnimePlayer.Class v0.0.0.0";
+            string text = "";
             try
             {
-                text = "";
-                FileVersionInfo myFileVersionInfo = FileVersionInfo.GetVersionInfo(@"AnimePlayer.dll");
-                text += myFileVersionInfo.ProductName +" v"+myFileVersionInfo.FileVersion +" | ";
-                myFileVersionInfo = FileVersionInfo.GetVersionInfo(@"AnimePlayerLibrary.dll");
-                text += myFileVersionInfo.ProductName +" v"+myFileVersionInfo.FileVersion +" | ";
-                myFileVersionInfo = FileVersionInfo.GetVersionInfo(@"AnimePlayerPL.exe");
-                text += myFileVersionInfo.ProductName +" v"+myFileVersionInfo.FileVersion +" | ";
-                myFileVersionInfo = FileVersionInfo.GetVersionInfo(@"AnimePlayer.Class.dll");
-                text += myFileVersionInfo.ProductName +" v"+myFileVersionInfo.FileVersion +" | ";
-                labelVersion.Text = text;
                 ipcServerMain = new ZetaIpc.Runtime.Server.IpcServer();
                 ipcServerMain.Start(2138);
                 ipcServerMain.ReceivedRequest += IpcServer_ReceivedRequest;
@@ -52,7 +42,17 @@ namespace AnimePlayer
                 {
                     checkBoxOffline.Checked = true;
                 }
-
+                text = "";
+                DirectoryInfo directoryInfo = new DirectoryInfo(Application.StartupPath);
+                foreach (var file in directoryInfo.GetFiles())
+                {
+                    if (file.FullName.EndsWith(".dll"))
+                    {
+                        FileVersionInfo myFileVersionInfo = FileVersionInfo.GetVersionInfo(file.FullName);
+                        text += myFileVersionInfo.ProductName +" v"+myFileVersionInfo.FileVersion +"\n";
+                    }
+                }
+                labelVersion.Text = text;
             }
             catch (Exception ex)
             {
@@ -152,6 +152,11 @@ namespace AnimePlayer
         }
 
         private void buttonCheckUpdate_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelVersion_Click(object sender, EventArgs e)
         {
 
         }

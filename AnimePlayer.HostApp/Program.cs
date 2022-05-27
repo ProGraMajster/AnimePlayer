@@ -23,14 +23,15 @@ namespace AnimePlayer.HostApp
                 {
                     if(a == "-Updater")
                     {
-
+                        AnimePlayer.Updater.Instance instance = new AnimePlayer.Updater.Instance();
+                        instance.Start();
                     }
                     else if(a == "-OpenApp")
                     {
                         Application.Run(new FormMainPlayer());
                         return;
                     }
-                    else if(a == "-FormBrowser")
+                    else if(a == "-FormBrowser_true")
                     {
                         Application.Run(new FormBrowser(true));
                         return;
