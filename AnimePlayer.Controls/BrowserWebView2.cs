@@ -16,12 +16,14 @@ namespace AnimePlayer.ControlsWinForms
         public BrowserWebView2()
         {
             InitializeComponent();
+            timerRe.Start();
         }
 
         public BrowserWebView2(string address)
         {
             InitializeComponent();
             _address = address;
+            timerRe.Start();
         }
 
         private void webView_ContentLoading(object sender, Microsoft.Web.WebView2.Core.CoreWebView2ContentLoadingEventArgs e)
@@ -82,6 +84,25 @@ namespace AnimePlayer.ControlsWinForms
             {
                 webView.CoreWebView2.Reload();  
             }
+        }
+
+        private void BrowserWebView2_Resize(object sender, EventArgs e)
+        {
+            webView.Invoke(() =>
+            {
+                webView.Size = new Size(Width, this.Height - panel1.Height);
+                webView.Location = new Point(0, panel1.Height);
+                webView.Update();
+                webView.Refresh();
+            });
+        }
+
+        private void timerRe_Tick(object sender, EventArgs e)
+        {
+            webView.Size = new Size(Width, this.Height - panel1.Height);
+            webView.Location = new Point(0, panel1.Height);
+            webView.Refresh();
+
         }
     }
 }

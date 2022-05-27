@@ -87,6 +87,7 @@
             this.Padding = new System.Windows.Forms.Padding(5);
             this.Size = new System.Drawing.Size(228, 35);
             this.Load += new System.EventHandler(this.BrowserTabPageItem_Load);
+            this.Resize += new System.EventHandler(this.BrowserTabPageItem_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxItemIcon)).EndInit();
             this.ResumeLayout(false);
 

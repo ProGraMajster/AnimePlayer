@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ProfileSupportLibrary;
+using NewMessageBox;
 namespace AnimePlayer.Profile
 {
     public partial class FormFristProfileCreator : Form

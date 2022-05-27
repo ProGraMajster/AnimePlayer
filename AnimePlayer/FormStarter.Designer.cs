@@ -37,6 +37,8 @@
             this.buttonCheckUpdate = new System.Windows.Forms.Button();
             this.labelVersion = new System.Windows.Forms.Label();
             this.panelSettings = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.checkBoxOtherWindow = new System.Windows.Forms.CheckBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -47,8 +49,6 @@
             this.buttonCloseSettings = new System.Windows.Forms.Button();
             this.checkBoxDebug = new System.Windows.Forms.CheckBox();
             this.labelLoadingApp = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panelSettings.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -141,6 +141,7 @@
             this.buttonCheckUpdate.TabIndex = 2;
             this.buttonCheckUpdate.Text = "Sprawdź aktualizacje";
             this.buttonCheckUpdate.UseVisualStyleBackColor = false;
+            this.buttonCheckUpdate.Visible = false;
             this.buttonCheckUpdate.Click += new System.EventHandler(this.buttonCheckUpdate_Click);
             // 
             // labelVersion
@@ -174,6 +175,29 @@
             this.panelSettings.Size = new System.Drawing.Size(782, 370);
             this.panelSettings.TabIndex = 4;
             this.panelSettings.Visible = false;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.panel2.Controls.Add(this.labelVersion);
+            this.panel2.Controls.Add(this.label5);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel2.Location = new System.Drawing.Point(415, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(367, 370);
+            this.panel2.TabIndex = 9;
+            // 
+            // label5
+            // 
+            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label5.Location = new System.Drawing.Point(0, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(367, 25);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "Wersje bibliotek dll aplikacji";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label1
             // 
@@ -274,28 +298,6 @@
             this.labelLoadingApp.TabIndex = 5;
             this.labelLoadingApp.Text = "Ładowanie...";
             this.labelLoadingApp.Visible = false;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.labelVersion);
-            this.panel2.Controls.Add(this.label5);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(415, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(367, 370);
-            this.panel2.TabIndex = 9;
-            // 
-            // label5
-            // 
-            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(0, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(367, 25);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Wersjie bibliotek dll aplikacji";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FormStarter
             // 

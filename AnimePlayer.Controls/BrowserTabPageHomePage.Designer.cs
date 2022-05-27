@@ -167,7 +167,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(494, 151);
             this.label1.TabIndex = 1;
-            this.label1.Text = "AnimePlayer\r\nTwojeanimepl";
+            this.label1.Text = "AnimePlayer | Twojeanimepl";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox1

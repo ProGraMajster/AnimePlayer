@@ -17,12 +17,23 @@ namespace AnimePlayer
         public FormBrowser(bool startServer)
         {
             InitializeComponent();
+            /*
             if(startServer)
             {
                 ipcServer = new ZetaIpc.Runtime.Server.IpcServer();
                 ipcServer.Start(65500);
                 ipcServer.ReceivedRequest += IpcServer_ReceivedRequest;
                 ipcServer.Start();
+            }
+            */
+            try
+            {
+                var item = browserTabPage1.newFlowLayoutPanelPages.Controls.OfType<BrowserTabPageItem>().First();
+                item.pictureBoxItemIcon.Image = this.Icon.ToBitmap();
+            }
+            catch(Exception ex)
+            {
+                Console.Error.WriteLine(ex.ToString());
             }
         }
 

@@ -13,7 +13,7 @@ namespace AnimePlayer.ControlsWinForms
 {
     public partial class BrowserTabPage : UserControl
     {
-
+        int tabPageValue = 0;
         public void AddPage(string title, Image image, Control controlContentPage)
         {
             BrowserTabPageItem item = new BrowserTabPageItem();
@@ -152,6 +152,26 @@ namespace AnimePlayer.ControlsWinForms
         private void buttonNewPage_Click(object sender, EventArgs e)
         {
             AddPage("Strona główna", null, new BrowserTabPageHomePage());
+        }
+
+        private void newFlowLayoutPanelPages_ControlAdded(object sender, ControlEventArgs e)
+        {
+            if(e.Control.GetType() == typeof(BrowserTabPageHomePage) ||
+                e.Control.GetType() == typeof(BrowserTabPageItem))
+            {
+                tabPageValue++;
+                labelTabPageValue.Text = tabPageValue.ToString();
+            }
+        }
+
+        private void newFlowLayoutPanelPages_ControlRemoved(object sender, ControlEventArgs e)
+        {
+            if (e.Control.GetType() == typeof(BrowserTabPageHomePage) ||
+                e.Control.GetType() == typeof(BrowserTabPageItem))
+            {
+                tabPageValue--;
+                labelTabPageValue.Text = tabPageValue.ToString();
+            }
         }
     }
 }

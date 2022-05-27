@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="microsoft.web.webview2" Version="1.0.1185.39" />
+    <PackageReference Include="microsoft.web.webview2" Version="1.0.1210.39" />
   </ItemGroup>
 
   <ItemGroup>

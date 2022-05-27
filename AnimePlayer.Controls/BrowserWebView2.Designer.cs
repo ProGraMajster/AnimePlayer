@@ -28,33 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.webView = new Microsoft.Web.WebView2.WinForms.WebView2();
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.textBoxLink = new System.Windows.Forms.TextBox();
             this.buttonRefresh = new System.Windows.Forms.Button();
             this.buttonReundo = new System.Windows.Forms.Button();
             this.buttonUndo = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.webView)).BeginInit();
+            this.webView = new Microsoft.Web.WebView2.WinForms.WebView2();
+            this.timerRe = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.webView)).BeginInit();
             this.SuspendLayout();
-            // 
-            // webView
-            // 
-            this.webView.AllowExternalDrop = true;
-            this.webView.CreationProperties = null;
-            this.webView.DefaultBackgroundColor = System.Drawing.Color.White;
-            this.webView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.webView.Location = new System.Drawing.Point(0, 27);
-            this.webView.Name = "webView";
-            this.webView.Size = new System.Drawing.Size(881, 563);
-            this.webView.Source = new System.Uri("https://www.google.com/webhp", System.UriKind.Absolute);
-            this.webView.TabIndex = 0;
-            this.webView.ZoomFactor = 1D;
-            this.webView.CoreWebView2InitializationCompleted += new System.EventHandler<Microsoft.Web.WebView2.Core.CoreWebView2InitializationCompletedEventArgs>(this.webView_CoreWebView2InitializationCompleted);
-            this.webView.NavigationStarting += new System.EventHandler<Microsoft.Web.WebView2.Core.CoreWebView2NavigationStartingEventArgs>(this.webView_NavigationStarting);
-            this.webView.NavigationCompleted += new System.EventHandler<Microsoft.Web.WebView2.Core.CoreWebView2NavigationCompletedEventArgs>(this.webView_NavigationCompleted);
-            this.webView.SourceChanged += new System.EventHandler<Microsoft.Web.WebView2.Core.CoreWebView2SourceChangedEventArgs>(this.webView_SourceChanged);
-            this.webView.ContentLoading += new System.EventHandler<Microsoft.Web.WebView2.Core.CoreWebView2ContentLoadingEventArgs>(this.webView_ContentLoading);
             // 
             // panel1
             // 
@@ -123,6 +107,28 @@
             this.buttonUndo.UseVisualStyleBackColor = true;
             this.buttonUndo.Click += new System.EventHandler(this.buttonUndo_Click);
             // 
+            // webView
+            // 
+            this.webView.AllowExternalDrop = true;
+            this.webView.CreationProperties = null;
+            this.webView.DefaultBackgroundColor = System.Drawing.Color.White;
+            this.webView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.webView.Location = new System.Drawing.Point(0, 27);
+            this.webView.Name = "webView";
+            this.webView.Size = new System.Drawing.Size(881, 563);
+            this.webView.Source = new System.Uri("https://www.google.com/webhp", System.UriKind.Absolute);
+            this.webView.TabIndex = 0;
+            this.webView.ZoomFactor = 1D;
+            this.webView.CoreWebView2InitializationCompleted += new System.EventHandler<Microsoft.Web.WebView2.Core.CoreWebView2InitializationCompletedEventArgs>(this.webView_CoreWebView2InitializationCompleted);
+            this.webView.NavigationStarting += new System.EventHandler<Microsoft.Web.WebView2.Core.CoreWebView2NavigationStartingEventArgs>(this.webView_NavigationStarting);
+            this.webView.NavigationCompleted += new System.EventHandler<Microsoft.Web.WebView2.Core.CoreWebView2NavigationCompletedEventArgs>(this.webView_NavigationCompleted);
+            this.webView.SourceChanged += new System.EventHandler<Microsoft.Web.WebView2.Core.CoreWebView2SourceChangedEventArgs>(this.webView_SourceChanged);
+            this.webView.ContentLoading += new System.EventHandler<Microsoft.Web.WebView2.Core.CoreWebView2ContentLoadingEventArgs>(this.webView_ContentLoading);
+            // 
+            // timerRe
+            // 
+            this.timerRe.Tick += new System.EventHandler(this.timerRe_Tick);
+            // 
             // BrowserWebView2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -132,9 +138,10 @@
             this.Controls.Add(this.panel1);
             this.Name = "BrowserWebView2";
             this.Size = new System.Drawing.Size(881, 590);
-            ((System.ComponentModel.ISupportInitialize)(this.webView)).EndInit();
+            this.Resize += new System.EventHandler(this.BrowserWebView2_Resize);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.webView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -146,5 +153,6 @@
         private Button buttonUndo;
         private Button buttonRefresh;
         public Microsoft.Web.WebView2.WinForms.WebView2 webView;
+        private System.Windows.Forms.Timer timerRe;
     }
 }

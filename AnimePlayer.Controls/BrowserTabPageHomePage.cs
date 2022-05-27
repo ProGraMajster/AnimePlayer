@@ -34,10 +34,10 @@ namespace AnimePlayer.ControlsWinForms
 
         public string AddressParser(string text)
         {
-            if(text.StartsWith("https"))
+            if (text.StartsWith("https"))
                 return text;
 
-            if(comboBox1.SelectedItem.ToString() == "www.google.com")
+            if (comboBox1.SelectedItem.ToString() == "www.google.com")
             {
                 text = @"https://www.google.com/search?q="+text;
             }
@@ -57,6 +57,7 @@ namespace AnimePlayer.ControlsWinForms
                 }
                 BrowserWebView2 BrowserWebView2 = new BrowserWebView2(AddressParser(textBoxMain.Text));
                 browserTabPage.AddPage("Szukanie:"+textBoxMain.Text, null, BrowserWebView2);
+                BrowserWebView2.Dock = DockStyle.Fill;
                 BrowserWebView2.Tag = browserTabPage;
                 BrowserWebView2.webView.Source = new Uri(AddressParser(textBoxMain.Text));
             }
