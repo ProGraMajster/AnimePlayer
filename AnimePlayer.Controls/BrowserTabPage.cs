@@ -28,8 +28,34 @@ namespace AnimePlayer.ControlsWinForms
                 roundingControl.TargetControl = item;
                 roundingControl.CornerRadius = ValueCornerRadius;
             }
+            item.pictureBoxItemIcon.Click += Item_Click;
+            item.labelItemTitle.Click += Item_Click;
+            item.Click += Item_Click;
         }
-        
+
+        public void BrowserTabItemsChageBackColor(Color color)
+        {
+            try
+            {
+                foreach(var control in newFlowLayoutPanelPages.Controls.OfType<BrowserTabPageItem>())
+                {
+                    control.BackColor = color;
+                }
+            }
+            catch(Exception ex)
+            {
+                Console.Error.WriteLine(ex.ToString());
+            }
+        }
+
+        private void Item_Click(object sender, EventArgs e)
+        {
+            Control control = (Control)sender;
+            control = (Control)control.Tag;
+            control.BackColor = Color.FromArgb(55,55,55);
+            BrowserTabItemsChageBackColor(Color.FromArgb(30, 30, 30));
+        }
+
         public BrowserTabPageItem AddPageAndRef(string title, Image image, Control controlContentPage)
         {
             BrowserTabPageItem item = new BrowserTabPageItem();

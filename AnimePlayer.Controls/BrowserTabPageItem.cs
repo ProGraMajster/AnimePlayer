@@ -53,6 +53,8 @@ namespace AnimePlayer.ControlsWinForms
         public BrowserTabPageItem()
         {
             InitializeComponent();
+            pictureBoxItemIcon.Tag = this;
+            labelItemTitle.Tag = this;
         }
 
         public bool UseCornerRadius = true;
