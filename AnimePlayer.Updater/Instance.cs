@@ -15,6 +15,7 @@ namespace AnimePlayer.Updater
             Console.SetOut(streamwriter);
             Console.SetError(streamwriter);
             DownloadMainFestFile();
+            MainFeststFilesInFolders();
         }
 
         public void DownloadMainFestFile()
