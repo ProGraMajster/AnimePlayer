@@ -14,6 +14,7 @@ namespace AnimePlayer.Updater
             streamwriter.AutoFlush = true;
             Console.SetOut(streamwriter);
             Console.SetError(streamwriter);
+            DownloadMainFestFile();
         }
 
         public void DownloadMainFestFile()
