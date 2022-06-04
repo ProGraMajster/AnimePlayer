@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -15,11 +16,28 @@ namespace AnimePlayer.Updater
         public FormUpdater()
         {
             InitializeComponent();
+            FileStream filestream = new FileStream(AnimePlayer.Class.AppFolders.Logs+"\\"+ Process.GetCurrentProcess().StartTime.ToString().Replace(":", " ") + "_updater.txt", FileMode.Append);
+            var streamwriter = new StreamWriter(filestream);
+            streamwriter.AutoFlush = true;
+            Console.SetOut(streamwriter);
+            Console.SetError(streamwriter);
+            if (updaterSettingsPanel1.settingsUpdater.DevChannelUpdate)
+            {
+                DevChannel.Start();
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void FormUpdater_Load(object sender, EventArgs e)
+        {
+            timerCheckingForUpdates.Enabled = updaterSettingsPanel1.settingsUpdater.CheckingForUpdatesTimer;
+            timerReadSettingsFile.Enabled = updaterSettingsPanel1.settingsUpdater.ReadFileSettingTimer;
+            timerCheckingForUpdates.Interval = updaterSettingsPanel1.settingsUpdater.CheckingForUpdatesTimerInterval;
+            timerReadSettingsFile.Interval = updaterSettingsPanel1.settingsUpdater.ReadFileSettingsTimerInterval;
         }
     }
 }

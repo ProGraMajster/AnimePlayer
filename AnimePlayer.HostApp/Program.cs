@@ -23,8 +23,8 @@ namespace AnimePlayer.HostApp
                 {
                     if(a == "-Updater")
                     {
-                        AnimePlayer.Updater.FormUpdater formUpdater = new Updater.FormUpdater();
-                        formUpdater.Hide();
+                        Application.Run(new AnimePlayer.Updater.FormUpdater());
+                        return;
                     }
                     else if(a == "-OpenApp")
                     {

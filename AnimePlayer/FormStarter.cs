@@ -68,6 +68,10 @@ namespace AnimePlayer
 
         private void buttonExit_Click(object sender, EventArgs e)
         {
+            if(processUpdater != null)
+            {
+                processUpdater.Kill();
+            }
             Application.Exit();
         }
 
@@ -94,6 +98,11 @@ namespace AnimePlayer
             processApp = new Process();
             processApp.StartInfo.FileName = Application.ExecutablePath;
             processApp.StartInfo.UseShellExecute = true;
+            processUpdater = new Process();
+            processUpdater.StartInfo.FileName = Application.ExecutablePath;
+            processUpdater.StartInfo.UseShellExecute = true;
+            processUpdater.StartInfo.Arguments = "-Updater";
+            processUpdater.Start();
             string arg = "";
             if(checkBoxDebug.Checked)
             {

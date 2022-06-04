@@ -18,6 +18,10 @@
     "Start FormBrowser": {
       "commandName": "Project",
       "commandLineArgs": "-FormBrowser_true"
+    },
+    "Updater": {
+      "commandName": "Project",
+      "commandLineArgs": "-Updater"
     }
   }
 }

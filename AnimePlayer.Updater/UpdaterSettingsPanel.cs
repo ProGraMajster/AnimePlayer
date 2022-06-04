@@ -14,7 +14,7 @@ namespace AnimePlayer.Updater
 { 
     public partial class UpdaterSettingsPanel : UserControl
     {
-        SettingsUpdater settingsUpdater = new SettingsUpdater();
+        public SettingsUpdater settingsUpdater = new SettingsUpdater();
         public UpdaterSettingsPanel()
         {
             InitializeComponent();
