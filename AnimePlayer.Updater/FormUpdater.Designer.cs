@@ -32,6 +32,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.timerReadSettingsFile = new System.Windows.Forms.Timer(this.components);
+            this.timer = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // button1
@@ -75,5 +76,6 @@
         private Button button1;
         private RichTextBox richTextBox1;
         private System.Windows.Forms.Timer timerReadSettingsFile;
+        private System.Windows.Forms.Timer timer;
     }
 }

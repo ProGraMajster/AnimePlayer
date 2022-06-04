@@ -129,6 +129,7 @@ namespace AnimePlayer
             this.buttonfinditemReset = new System.Windows.Forms.Button();
             this.buttonfinditemF = new System.Windows.Forms.Button();
             this.buttonFindItem = new System.Windows.Forms.Button();
+            this.panel21 = new System.Windows.Forms.Panel();
             this.textBoxFinditem = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.buttonFinditemPageClose = new System.Windows.Forms.Button();
@@ -182,6 +183,7 @@ namespace AnimePlayer
             this.panelAllitem.SuspendLayout();
             this.panelTopFinder.SuspendLayout();
             this.roundedPanel2.SuspendLayout();
+            this.panel21.SuspendLayout();
             this.panelNotifiError.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel18.SuspendLayout();
@@ -541,11 +543,11 @@ namespace AnimePlayer
             this.flowLayoutPanelAll.AutoScroll = true;
             this.flowLayoutPanelAll.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.flowLayoutPanelAll.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanelAll.Location = new System.Drawing.Point(0, 115);
+            this.flowLayoutPanelAll.Location = new System.Drawing.Point(0, 100);
             this.flowLayoutPanelAll.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.flowLayoutPanelAll.Name = "flowLayoutPanelAll";
             this.flowLayoutPanelAll.Padding = new System.Windows.Forms.Padding(12, 2, 12, 2);
-            this.flowLayoutPanelAll.Size = new System.Drawing.Size(1106, 509);
+            this.flowLayoutPanelAll.Size = new System.Drawing.Size(1106, 524);
             this.flowLayoutPanelAll.TabIndex = 2;
             this.flowLayoutPanelAll.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.flowLayoutPanelAll_ControlAdded);
             // 
@@ -764,6 +766,7 @@ namespace AnimePlayer
             this.buttonShowTitleStatusList.Text = "Listy anime";
             this.toolTip.SetToolTip(this.buttonShowTitleStatusList, "Statusy: Oglądam, Planeuj,, Wstrzymane itp.");
             this.buttonShowTitleStatusList.UseVisualStyleBackColor = true;
+            this.buttonShowTitleStatusList.Visible = false;
             this.buttonShowTitleStatusList.Click += new System.EventHandler(this.buttonShowTitleStatusList_Click);
             // 
             // buttonViewFindintems
@@ -1384,16 +1387,17 @@ namespace AnimePlayer
             this.flowLayoutPanelFinditem.AutoScroll = true;
             this.flowLayoutPanelFinditem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.flowLayoutPanelFinditem.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanelFinditem.Location = new System.Drawing.Point(0, 115);
+            this.flowLayoutPanelFinditem.Location = new System.Drawing.Point(0, 100);
             this.flowLayoutPanelFinditem.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.flowLayoutPanelFinditem.Name = "flowLayoutPanelFinditem";
             this.flowLayoutPanelFinditem.Padding = new System.Windows.Forms.Padding(12, 2, 12, 2);
-            this.flowLayoutPanelFinditem.Size = new System.Drawing.Size(1106, 509);
+            this.flowLayoutPanelFinditem.Size = new System.Drawing.Size(1106, 524);
             this.flowLayoutPanelFinditem.TabIndex = 3;
             this.flowLayoutPanelFinditem.Visible = false;
             // 
             // panelTopFinder
             // 
+            this.panelTopFinder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.panelTopFinder.Controls.Add(this.labelEnableFiltres);
             this.panelTopFinder.Controls.Add(this.roundedPanel2);
             this.panelTopFinder.Dock = System.Windows.Forms.DockStyle.Top;
@@ -1401,7 +1405,7 @@ namespace AnimePlayer
             this.panelTopFinder.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panelTopFinder.Name = "panelTopFinder";
             this.panelTopFinder.Padding = new System.Windows.Forms.Padding(12);
-            this.panelTopFinder.Size = new System.Drawing.Size(1106, 115);
+            this.panelTopFinder.Size = new System.Drawing.Size(1106, 100);
             this.panelTopFinder.TabIndex = 0;
             // 
             // labelEnableFiltres
@@ -1410,7 +1414,7 @@ namespace AnimePlayer
             this.labelEnableFiltres.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.labelEnableFiltres.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelEnableFiltres.ForeColor = System.Drawing.SystemColors.Window;
-            this.labelEnableFiltres.Location = new System.Drawing.Point(12, 83);
+            this.labelEnableFiltres.Location = new System.Drawing.Point(12, 68);
             this.labelEnableFiltres.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelEnableFiltres.MaximumSize = new System.Drawing.Size(117, 35);
             this.labelEnableFiltres.Name = "labelEnableFiltres";
@@ -1428,7 +1432,7 @@ namespace AnimePlayer
             this.roundedPanel2.Controls.Add(this.buttonfinditemReset);
             this.roundedPanel2.Controls.Add(this.buttonfinditemF);
             this.roundedPanel2.Controls.Add(this.buttonFindItem);
-            this.roundedPanel2.Controls.Add(this.textBoxFinditem);
+            this.roundedPanel2.Controls.Add(this.panel21);
             this.roundedPanel2.Controls.Add(this.label4);
             this.roundedPanel2.Controls.Add(this.buttonFinditemPageClose);
             this.roundedPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -1436,9 +1440,9 @@ namespace AnimePlayer
             this.roundedPanel2.Location = new System.Drawing.Point(12, 12);
             this.roundedPanel2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.roundedPanel2.Name = "roundedPanel2";
-            this.roundedPanel2.Padding = new System.Windows.Forms.Padding(12, 35, 12, 32);
+            this.roundedPanel2.Padding = new System.Windows.Forms.Padding(12, 30, 12, 20);
             this.roundedPanel2.RadiusArcPanel = 20F;
-            this.roundedPanel2.Size = new System.Drawing.Size(1082, 91);
+            this.roundedPanel2.Size = new System.Drawing.Size(1082, 76);
             this.roundedPanel2.TabIndex = 0;
             // 
             // labelFindSatus
@@ -1446,10 +1450,10 @@ namespace AnimePlayer
             this.labelFindSatus.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelFindSatus.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelFindSatus.ForeColor = System.Drawing.Color.White;
-            this.labelFindSatus.Location = new System.Drawing.Point(869, 35);
+            this.labelFindSatus.Location = new System.Drawing.Point(901, 30);
             this.labelFindSatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelFindSatus.Name = "labelFindSatus";
-            this.labelFindSatus.Size = new System.Drawing.Size(109, 24);
+            this.labelFindSatus.Size = new System.Drawing.Size(77, 26);
             this.labelFindSatus.TabIndex = 4;
             this.labelFindSatus.Text = "Szukanie";
             this.labelFindSatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1463,10 +1467,10 @@ namespace AnimePlayer
             this.buttonfinditemReset.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.buttonfinditemReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonfinditemReset.ForeColor = System.Drawing.Color.White;
-            this.buttonfinditemReset.Location = new System.Drawing.Point(781, 35);
+            this.buttonfinditemReset.Location = new System.Drawing.Point(813, 30);
             this.buttonfinditemReset.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.buttonfinditemReset.Name = "buttonfinditemReset";
-            this.buttonfinditemReset.Size = new System.Drawing.Size(88, 24);
+            this.buttonfinditemReset.Size = new System.Drawing.Size(88, 26);
             this.buttonfinditemReset.TabIndex = 3;
             this.buttonfinditemReset.Text = "Reset";
             this.buttonfinditemReset.UseVisualStyleBackColor = true;
@@ -1480,13 +1484,14 @@ namespace AnimePlayer
             this.buttonfinditemF.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.buttonfinditemF.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonfinditemF.ForeColor = System.Drawing.Color.White;
-            this.buttonfinditemF.Location = new System.Drawing.Point(712, 35);
+            this.buttonfinditemF.Location = new System.Drawing.Point(744, 30);
             this.buttonfinditemF.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.buttonfinditemF.Name = "buttonfinditemF";
-            this.buttonfinditemF.Size = new System.Drawing.Size(69, 24);
+            this.buttonfinditemF.Size = new System.Drawing.Size(69, 26);
             this.buttonfinditemF.TabIndex = 6;
             this.buttonfinditemF.Text = "Filtry";
             this.buttonfinditemF.UseVisualStyleBackColor = true;
+            this.buttonfinditemF.Visible = false;
             this.buttonfinditemF.Click += new System.EventHandler(this.buttonfinditemF_Click);
             // 
             // buttonFindItem
@@ -1497,14 +1502,24 @@ namespace AnimePlayer
             this.buttonFindItem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.buttonFindItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonFindItem.ForeColor = System.Drawing.Color.White;
-            this.buttonFindItem.Location = new System.Drawing.Point(624, 35);
+            this.buttonFindItem.Location = new System.Drawing.Point(656, 30);
             this.buttonFindItem.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.buttonFindItem.Name = "buttonFindItem";
-            this.buttonFindItem.Size = new System.Drawing.Size(88, 24);
+            this.buttonFindItem.Size = new System.Drawing.Size(88, 26);
             this.buttonFindItem.TabIndex = 2;
             this.buttonFindItem.Text = "Szukaj";
             this.buttonFindItem.UseVisualStyleBackColor = true;
             this.buttonFindItem.Click += new System.EventHandler(this.buttonFindItem_Click);
+            // 
+            // panel21
+            // 
+            this.panel21.Controls.Add(this.textBoxFinditem);
+            this.panel21.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel21.Location = new System.Drawing.Point(216, 30);
+            this.panel21.Name = "panel21";
+            this.panel21.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
+            this.panel21.Size = new System.Drawing.Size(440, 26);
+            this.panel21.TabIndex = 7;
             // 
             // textBoxFinditem
             // 
@@ -1512,15 +1527,17 @@ namespace AnimePlayer
             this.textBoxFinditem.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.textBoxFinditem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.textBoxFinditem.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxFinditem.Dock = System.Windows.Forms.DockStyle.Left;
+            this.textBoxFinditem.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.textBoxFinditem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBoxFinditem.ForeColor = System.Drawing.Color.White;
-            this.textBoxFinditem.Location = new System.Drawing.Point(216, 35);
+            this.textBoxFinditem.Location = new System.Drawing.Point(0, 5);
             this.textBoxFinditem.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.textBoxFinditem.Name = "textBoxFinditem";
-            this.textBoxFinditem.Size = new System.Drawing.Size(408, 16);
+            this.textBoxFinditem.PlaceholderText = "Szukaj";
+            this.textBoxFinditem.Size = new System.Drawing.Size(440, 16);
             this.textBoxFinditem.TabIndex = 1;
             this.textBoxFinditem.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxFinditem.TextChanged += new System.EventHandler(this.textBoxFinditem_TextChanged);
             this.textBoxFinditem.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxFinditem_KeyDown);
             // 
             // label4
@@ -1528,10 +1545,10 @@ namespace AnimePlayer
             this.label4.Dock = System.Windows.Forms.DockStyle.Left;
             this.label4.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.SystemColors.Window;
-            this.label4.Location = new System.Drawing.Point(12, 35);
+            this.label4.Location = new System.Drawing.Point(12, 30);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(204, 24);
+            this.label4.Size = new System.Drawing.Size(204, 26);
             this.label4.TabIndex = 5;
             this.label4.Text = "Twojeanimepl - Wyszukiwarka";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1543,10 +1560,10 @@ namespace AnimePlayer
             this.buttonFinditemPageClose.FlatAppearance.BorderSize = 0;
             this.buttonFinditemPageClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonFinditemPageClose.ForeColor = System.Drawing.Color.Red;
-            this.buttonFinditemPageClose.Location = new System.Drawing.Point(978, 35);
+            this.buttonFinditemPageClose.Location = new System.Drawing.Point(978, 30);
             this.buttonFinditemPageClose.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.buttonFinditemPageClose.Name = "buttonFinditemPageClose";
-            this.buttonFinditemPageClose.Size = new System.Drawing.Size(92, 24);
+            this.buttonFinditemPageClose.Size = new System.Drawing.Size(92, 26);
             this.buttonFinditemPageClose.TabIndex = 0;
             this.buttonFinditemPageClose.Text = "Zamknij kartę";
             this.buttonFinditemPageClose.UseVisualStyleBackColor = false;
@@ -1740,7 +1757,8 @@ namespace AnimePlayer
             this.panelAllitem.ResumeLayout(false);
             this.panelTopFinder.ResumeLayout(false);
             this.roundedPanel2.ResumeLayout(false);
-            this.roundedPanel2.PerformLayout();
+            this.panel21.ResumeLayout(false);
+            this.panel21.PerformLayout();
             this.panelNotifiError.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panel18.ResumeLayout(false);
@@ -1866,5 +1884,6 @@ namespace AnimePlayer
         private Panel panel4;
         private Label label3;
         public Button buttonProfile;
+        private Panel panel21;
     }
 }

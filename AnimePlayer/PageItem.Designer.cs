@@ -159,6 +159,7 @@ namespace AnimePlayer
             this.linkLabelChangeState.TabIndex = 5;
             this.linkLabelChangeState.TabStop = true;
             this.linkLabelChangeState.Text = "Zmień status (Aktualny: brak)";
+            this.linkLabelChangeState.Visible = false;
             this.linkLabelChangeState.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelChangeState_LinkClicked);
             // 
             // labelotherTitle

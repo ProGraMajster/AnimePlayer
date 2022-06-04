@@ -283,7 +283,7 @@ namespace AnimePlayer
                     panelMenu.Hide();
                     return;
                 }
-            }
+            }/*
             else if(e.KeyCode == Keys.F12)
             {
                 if(panelCommands.Visible == false)
@@ -301,7 +301,7 @@ namespace AnimePlayer
                 CenterControlInForm(quickMove);
                 quickMove.BringToFront();
                 quickMove.Show();
-            }
+            }*/
         }
 
         private void Form1_KeyUp(object sender, KeyEventArgs e)
@@ -1247,6 +1247,26 @@ namespace AnimePlayer
                 videoPlayerWeb.Name = "videoPlayerWeb";
                 videoPlayerWeb.Show();
             }
+            else if(input.StartsWith("control.show;"))
+            {
+                try
+                {
+                    string controlName = input.Split(';')[1];
+                    string formName = input.Split(';')[2];
+                    foreach(Form form in Application.OpenForms)
+                    {
+                        if (form.Name == formName)
+                        {
+                            Control control = form.Controls.Find(controlName, true)[0];
+                            control.Show();
+                        }
+                    }
+                }
+                catch(Exception ex)
+                {
+                    Console.Error.WriteLine(ex.ToString());
+                }
+            }
         }
 
         private void FormMainPlayer_SizeChanged(object sender, EventArgs e)
@@ -1258,6 +1278,11 @@ namespace AnimePlayer
         }
 
         private void buttonProfile_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxFinditem_TextChanged(object sender, EventArgs e)
         {
 
         }
