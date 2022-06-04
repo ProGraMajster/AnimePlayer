@@ -46,6 +46,7 @@ namespace AnimePlayer
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.labelAppRamUsage_View = new System.Windows.Forms.Label();
             this.timerRefreshValue = new System.Windows.Forms.Timer(this.components);
+            this.updaterSettingsPanel1 = new AnimePlayer.Updater.UpdaterSettingsPanel();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -195,7 +196,7 @@ namespace AnimePlayer
             this.checkBox2.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.checkBox2.ForeColor = System.Drawing.Color.White;
-            this.checkBox2.Location = new System.Drawing.Point(540, 123);
+            this.checkBox2.Location = new System.Drawing.Point(523, 92);
             this.checkBox2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(167, 19);
@@ -239,12 +240,23 @@ namespace AnimePlayer
             this.timerRefreshValue.Interval = 1000;
             this.timerRefreshValue.Tick += new System.EventHandler(this.timerRefreshValue_Tick);
             // 
+            // updaterSettingsPanel1
+            // 
+            this.updaterSettingsPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.updaterSettingsPanel1.ForeColor = System.Drawing.Color.White;
+            this.updaterSettingsPanel1.Location = new System.Drawing.Point(25, 313);
+            this.updaterSettingsPanel1.Name = "updaterSettingsPanel1";
+            this.updaterSettingsPanel1.Padding = new System.Windows.Forms.Padding(5);
+            this.updaterSettingsPanel1.Size = new System.Drawing.Size(276, 247);
+            this.updaterSettingsPanel1.TabIndex = 12;
+            // 
             // PageSettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.Controls.Add(this.updaterSettingsPanel1);
             this.Controls.Add(this.labelAppRamUsage_View);
             this.Controls.Add(this.checkBox2);
             this.Controls.Add(this.labelServer);
@@ -283,5 +295,6 @@ namespace AnimePlayer
         private System.Windows.Forms.Button buttonThemeReset;
         private Label labelAppRamUsage_View;
         private System.Windows.Forms.Timer timerRefreshValue;
+        private Updater.UpdaterSettingsPanel updaterSettingsPanel1;
     }
 }

@@ -14,7 +14,7 @@ namespace AnimePlayer.Updater
         public bool ReadFileSettingTimer { get; set; }
         public List<string> SourceUpdate { get; set; }
         public int CheckingForUpdatesTimerInterval { get; set; }
-        public int ReadFileSettingsTimerInterval { get; set; }
+        public int ReadFileSettingsTimerInterval { get; set; } 
         public SettingsUpdater()
         {
             CheckingForUpdates = true;

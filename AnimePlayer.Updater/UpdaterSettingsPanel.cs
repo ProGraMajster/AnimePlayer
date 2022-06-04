@@ -7,16 +7,34 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AnimePlayer.Core;
+using AnimePlayer.Class;
 
 namespace AnimePlayer.Updater
-{
+{ 
     public partial class UpdaterSettingsPanel : UserControl
     {
+        SettingsUpdater settingsUpdater = new SettingsUpdater();
         public UpdaterSettingsPanel()
         {
             InitializeComponent();
+            try
+            {
+                if(!File.Exists(AppFolders.Settings+"settingsUpdater.dat"))
+                {
+                    SerializationAndDeserialization.Serialization(settingsUpdater, AppFolders.Settings+"settingsUpdater.dat");
+                }
+            }
+            catch(Exception ex)
+            {
+                Console.Error.WriteLine(ex.ToString());
+            }
         }
 
+        public void ReadSettings()
+        {
+            settingsUpdater = (SettingsUpdater)SerializationAndDeserialization.Deserialization(AppFolders.Settings+"settingsUpdater.dat");
+        }
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
             Math();
