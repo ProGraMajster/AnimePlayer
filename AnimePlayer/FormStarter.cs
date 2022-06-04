@@ -17,6 +17,7 @@ namespace AnimePlayer
         ZetaIpc.Runtime.Server.IpcServer ipcServerMain;
         ZetaIpc.Runtime.Client.IpcClient ipcClientMain;
         Process processApp;
+        Process processUpdater;
         public FormStarter()
         {
             InitializeComponent();

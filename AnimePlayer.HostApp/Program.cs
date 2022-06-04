@@ -23,8 +23,8 @@ namespace AnimePlayer.HostApp
                 {
                     if(a == "-Updater")
                     {
-                        AnimePlayer.Updater.Instance instance = new AnimePlayer.Updater.Instance();
-                        instance.Start();
+                        AnimePlayer.Updater.FormUpdater formUpdater = new Updater.FormUpdater();
+                        formUpdater.Hide();
                     }
                     else if(a == "-OpenApp")
                     {
