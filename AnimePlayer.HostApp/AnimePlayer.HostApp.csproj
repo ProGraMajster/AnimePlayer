@@ -17,6 +17,27 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="bin\Debug\net6.0-windows\AnimePlayer.Class.dll" />
+    <None Include="bin\Debug\net6.0-windows\AnimePlayer.CNM.dll" />
+    <None Include="bin\Debug\net6.0-windows\AnimePlayer.ControlsWinForms.dll" />
+    <None Include="bin\Debug\net6.0-windows\AnimePlayer.Core.dll" />
+    <None Include="bin\Debug\net6.0-windows\AnimePlayer.dll" />
+    <None Include="bin\Debug\net6.0-windows\AnimePlayer.Updater.dll" />
+    <None Include="bin\Debug\net6.0-windows\AnimePlayerLibrary.dll" />
+    <None Include="bin\Debug\net6.0-windows\AnimePlayerPL.dll" />
+    <None Include="bin\Debug\net6.0-windows\AxInterop.WMPLib.dll" />
+    <None Include="bin\Debug\net6.0-windows\HtmlAgilityPack.dll" />
+    <None Include="bin\Debug\net6.0-windows\Interop.WMPLib.dll" />
+    <None Include="bin\Debug\net6.0-windows\Microsoft.Web.WebView2.Core.dll" />
+    <None Include="bin\Debug\net6.0-windows\Microsoft.Web.WebView2.WinForms.dll" />
+    <None Include="bin\Debug\net6.0-windows\Microsoft.Web.WebView2.Wpf.dll" />
+    <None Include="bin\Debug\net6.0-windows\Newtonsoft.Json.dll" />
+    <None Include="bin\Debug\net6.0-windows\OpenScraping.dll" />
+    <None Include="bin\Debug\net6.0-windows\System.Xml.XPath.XmlDocument.dll" />
+    <None Include="bin\Debug\net6.0-windows\ZetaIpc.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\AnimePlayer.Updater\AnimePlayer.Updater.csproj" />
     <ProjectReference Include="..\AnimePlayer\AnimePlayer.csproj" />
   </ItemGroup>
