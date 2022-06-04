@@ -28,8 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.button1 = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.timerReadSettingsFile = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // button1
@@ -51,6 +53,10 @@
             this.richTextBox1.TabIndex = 1;
             this.richTextBox1.Text = "";
             // 
+            // timerReadSettingsFile
+            // 
+            this.timerReadSettingsFile.Interval = 10000;
+            // 
             // FormUpdater
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -68,5 +74,6 @@
 
         private Button button1;
         private RichTextBox richTextBox1;
+        private System.Windows.Forms.Timer timerReadSettingsFile;
     }
 }
