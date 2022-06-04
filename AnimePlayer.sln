@@ -21,7 +21,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnimePlayer.CNM", "AnimePla
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnimePlayer.ControlsWinForms", "AnimePlayer.Controls\AnimePlayer.ControlsWinForms.csproj", "{E91ECD9D-2E32-4B34-A0D4-C21A8957B1D5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnimePlayer.DataIndexer", "AnimePlayer.DataIndexer\AnimePlayer.DataIndexer.csproj", "{7F077E23-F281-4522-AB22-5C1EF6470D7D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnimePlayer.DataIndexer", "AnimePlayer.DataIndexer\AnimePlayer.DataIndexer.csproj", "{7F077E23-F281-4522-AB22-5C1EF6470D7D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
