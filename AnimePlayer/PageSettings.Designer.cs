@@ -35,12 +35,12 @@ namespace AnimePlayer
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.buttonThemeReset = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.buttonSetThemeFile = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.checkBoxRoundedEdges = new System.Windows.Forms.CheckBox();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.labelServer = new System.Windows.Forms.Label();
             this.openFileDialogThemeFile = new System.Windows.Forms.OpenFileDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
@@ -86,6 +86,7 @@ namespace AnimePlayer
             // 
             this.groupBox1.Controls.Add(this.buttonThemeReset);
             this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.checkBox2);
             this.groupBox1.Controls.Add(this.buttonSetThemeFile);
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.checkBoxRoundedEdges);
@@ -94,7 +95,7 @@ namespace AnimePlayer
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.groupBox1.Size = new System.Drawing.Size(471, 218);
+            this.groupBox1.Size = new System.Drawing.Size(395, 218);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Wygląd";
@@ -106,13 +107,14 @@ namespace AnimePlayer
             this.buttonThemeReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonThemeReset.Font = new System.Drawing.Font("Comic Sans MS", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonThemeReset.ForeColor = System.Drawing.Color.White;
-            this.buttonThemeReset.Location = new System.Drawing.Point(344, 104);
+            this.buttonThemeReset.Location = new System.Drawing.Point(137, 99);
             this.buttonThemeReset.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.buttonThemeReset.Name = "buttonThemeReset";
             this.buttonThemeReset.Size = new System.Drawing.Size(110, 33);
             this.buttonThemeReset.TabIndex = 10;
             this.buttonThemeReset.Text = "Reset motyw";
             this.buttonThemeReset.UseVisualStyleBackColor = false;
+            this.buttonThemeReset.Visible = false;
             this.buttonThemeReset.Click += new System.EventHandler(this.buttonThemeReset_Click);
             // 
             // label1
@@ -127,6 +129,24 @@ namespace AnimePlayer
             this.label1.TabIndex = 9;
             this.label1.Text = "Zmień motyw aplikacji wybierając plik motywu";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label1.Visible = false;
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Checked = true;
+            this.checkBox2.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.checkBox2.ForeColor = System.Drawing.Color.White;
+            this.checkBox2.Location = new System.Drawing.Point(15, 47);
+            this.checkBox2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(167, 19);
+            this.checkBox2.TabIndex = 7;
+            this.checkBox2.Text = "Sugiestie w wyszukiwarce";
+            this.toolTip.SetToolTip(this.checkBox2, "Zres");
+            this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBox2.Visible = false;
             // 
             // buttonSetThemeFile
             // 
@@ -135,13 +155,14 @@ namespace AnimePlayer
             this.buttonSetThemeFile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSetThemeFile.Font = new System.Drawing.Font("Comic Sans MS", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonSetThemeFile.ForeColor = System.Drawing.Color.White;
-            this.buttonSetThemeFile.Location = new System.Drawing.Point(344, 63);
+            this.buttonSetThemeFile.Location = new System.Drawing.Point(19, 99);
             this.buttonSetThemeFile.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.buttonSetThemeFile.Name = "buttonSetThemeFile";
             this.buttonSetThemeFile.Size = new System.Drawing.Size(110, 33);
             this.buttonSetThemeFile.TabIndex = 8;
             this.buttonSetThemeFile.Text = "Wybierz plik";
             this.buttonSetThemeFile.UseVisualStyleBackColor = false;
+            this.buttonSetThemeFile.Visible = false;
             this.buttonSetThemeFile.Click += new System.EventHandler(this.buttonSetThemeFile_Click);
             // 
             // groupBox2
@@ -153,10 +174,11 @@ namespace AnimePlayer
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.groupBox2.Size = new System.Drawing.Size(463, 77);
+            this.groupBox2.Size = new System.Drawing.Size(387, 77);
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Strona Główna";
+            this.groupBox2.Visible = false;
             // 
             // checkBox1
             // 
@@ -179,7 +201,7 @@ namespace AnimePlayer
             this.checkBoxRoundedEdges.Checked = true;
             this.checkBoxRoundedEdges.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBoxRoundedEdges.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.checkBoxRoundedEdges.Location = new System.Drawing.Point(19, 31);
+            this.checkBoxRoundedEdges.Location = new System.Drawing.Point(15, 22);
             this.checkBoxRoundedEdges.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.checkBoxRoundedEdges.Name = "checkBoxRoundedEdges";
             this.checkBoxRoundedEdges.Size = new System.Drawing.Size(179, 19);
@@ -188,22 +210,6 @@ namespace AnimePlayer
             this.toolTip.SetToolTip(this.checkBoxRoundedEdges, "Zres");
             this.checkBoxRoundedEdges.UseVisualStyleBackColor = true;
             this.checkBoxRoundedEdges.CheckedChanged += new System.EventHandler(this.checkBoxRoundedEdges_CheckedChanged);
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Checked = true;
-            this.checkBox2.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.checkBox2.ForeColor = System.Drawing.Color.White;
-            this.checkBox2.Location = new System.Drawing.Point(523, 92);
-            this.checkBox2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(167, 19);
-            this.checkBox2.TabIndex = 7;
-            this.checkBox2.Text = "Sugiestie w wyszukiwarce";
-            this.toolTip.SetToolTip(this.checkBox2, "Zres");
-            this.checkBox2.UseVisualStyleBackColor = true;
             // 
             // labelServer
             // 
@@ -244,10 +250,10 @@ namespace AnimePlayer
             // 
             this.updaterSettingsPanel1.BackColor = System.Drawing.Color.Transparent;
             this.updaterSettingsPanel1.ForeColor = System.Drawing.Color.White;
-            this.updaterSettingsPanel1.Location = new System.Drawing.Point(25, 313);
+            this.updaterSettingsPanel1.Location = new System.Drawing.Point(433, 92);
             this.updaterSettingsPanel1.Name = "updaterSettingsPanel1";
             this.updaterSettingsPanel1.Padding = new System.Windows.Forms.Padding(5);
-            this.updaterSettingsPanel1.Size = new System.Drawing.Size(276, 247);
+            this.updaterSettingsPanel1.Size = new System.Drawing.Size(276, 236);
             this.updaterSettingsPanel1.TabIndex = 12;
             // 
             // PageSettings
@@ -258,12 +264,12 @@ namespace AnimePlayer
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.Controls.Add(this.updaterSettingsPanel1);
             this.Controls.Add(this.labelAppRamUsage_View);
-            this.Controls.Add(this.checkBox2);
             this.Controls.Add(this.labelServer);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.buttonClose);
             this.DoubleBuffered = true;
+            this.ForeColor = System.Drawing.Color.White;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "PageSettings";
             this.Padding = new System.Windows.Forms.Padding(12);

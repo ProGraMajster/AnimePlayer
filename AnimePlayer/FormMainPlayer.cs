@@ -316,24 +316,6 @@ namespace AnimePlayer
         {
         }
 
-
-        private void buttonYTlinkClose_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void buttonUseYTlink_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void otwórzZlinkuToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void buttonCloseWeb_Click(object sender, EventArgs e)
-        {
-        }
-
         private void FormMainPlayer_Load(object sender, EventArgs e)
         {
             bool local = false;
@@ -423,7 +405,9 @@ namespace AnimePlayer
             }
 
             labelLoadingDetails.Text = "Download Files";
-            backgroundWorkerGetSTNews.RunWorkerAsync();
+           
+            //Tymczasowo nie używać aż do ukończenia prac związanych z powiązanymi funkcjami!
+            //backgroundWorkerGetSTNews.RunWorkerAsync();
 
             textBoxFinditem.AutoCompleteCustomSource = autoCSC_find;
             textBoxStartPagefinditem.AutoCompleteCustomSource = autoCSC_find;

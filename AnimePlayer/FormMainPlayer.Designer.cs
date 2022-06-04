@@ -501,6 +501,7 @@ namespace AnimePlayer
             this.buttonProfile.TabIndex = 5;
             this.buttonProfile.Text = "Profil";
             this.buttonProfile.UseVisualStyleBackColor = true;
+            this.buttonProfile.Visible = false;
             this.buttonProfile.Click += new System.EventHandler(this.buttonProfile_Click);
             // 
             // buttonMenuOpen
@@ -746,6 +747,7 @@ namespace AnimePlayer
             this.buttonMoreBtnMenu.Text = "Więcej..";
             this.toolTip.SetToolTip(this.buttonMoreBtnMenu, "Statusy: Oglądam, Planeuj,, Wstrzymane itp.");
             this.buttonMoreBtnMenu.UseVisualStyleBackColor = true;
+            this.buttonMoreBtnMenu.Visible = false;
             this.buttonMoreBtnMenu.Click += new System.EventHandler(this.buttonMoreBtnMenu_Click);
             // 
             // buttonShowTitleStatusList

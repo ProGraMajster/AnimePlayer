@@ -24,8 +24,18 @@ namespace AnimePlayer.Updater
                 {
                     SerializationAndDeserialization.Serialization(settingsUpdater, AppFolders.Settings+"settingsUpdater.dat");
                 }
+                else
+                {
+                    ReadSettings();
+                }
+                checkBoxDevVersion.Checked =settingsUpdater.DevChannelUpdate;
+                checkBoxUpdateOpenApp.Checked = settingsUpdater.CheckingForUpdates;
+                checkBoxBackUpdate.Checked = settingsUpdater.CheckingForUpdatesTimer;
+                numericUpDown1.Value = settingsUpdater.CheckingForUpdatesTimerInterval;
+
+                groupBoxMain.Text = "Ustawienia aktualizacji";
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Console.Error.WriteLine(ex.ToString());
             }
@@ -37,6 +47,7 @@ namespace AnimePlayer.Updater
         }
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
+            groupBoxMain.Text = "Ustawienia aktualizacji *(Nie zapisane zmiany)";
             Math();
         }
 
@@ -61,7 +72,39 @@ namespace AnimePlayer.Updater
 
         private void buttonSaveUpdaterSetting_Click(object sender, EventArgs e)
         {
+            try
+            {
+                settingsUpdater.DevChannelUpdate = checkBoxDevVersion.Checked;
+                settingsUpdater.CheckingForUpdates = checkBoxUpdateOpenApp.Checked;
+                settingsUpdater.CheckingForUpdatesTimer = checkBoxBackUpdate.Checked;
+                settingsUpdater.CheckingForUpdatesTimerInterval = int.Parse(numericUpDown1.Value.ToString());
+                SerializationAndDeserialization.Serialization(settingsUpdater, AppFolders.Settings+"settingsUpdater.dat");
+                groupBoxMain.Text = "Ustawienia aktualizacji";
+            }
+            catch (Exception ex)
+            {
+                Console.Error.Write(ex.ToString());
+            }
+        }
 
+        private void checkBoxUpdateOpenApp_CheckedChanged(object sender, EventArgs e)
+        {
+            groupBoxMain.Text = "Ustawienia aktualizacji *(Nie zapisane zmiany)";
+        }
+
+        private void checkBoxBackUpdate_CheckedChanged(object sender, EventArgs e)
+        {
+            groupBoxMain.Text = "Ustawienia aktualizacji *(Nie zapisane zmiany)";
+        }
+
+        private void checkBoxDevVersion_CheckedChanged(object sender, EventArgs e)
+        {
+            groupBoxMain.Text = "Ustawienia aktualizacji *(Nie zapisane zmiany)";
+        }
+
+        private void UpdaterSettingsPanel_ForeColorChanged(object sender, EventArgs e)
+        {
+            groupBoxMain.ForeColor = this.ForeColor;
         }
     }
 }
