@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AnimePlayer.Class;
 
 namespace AnimePlayer
 {
@@ -98,11 +99,6 @@ namespace AnimePlayer
             processApp = new Process();
             processApp.StartInfo.FileName = Application.ExecutablePath;
             processApp.StartInfo.UseShellExecute = true;
-            processUpdater = new Process();
-            processUpdater.StartInfo.FileName = Application.ExecutablePath;
-            processUpdater.StartInfo.UseShellExecute = true;
-            processUpdater.StartInfo.Arguments = "-Updater";
-            processUpdater.Start();
             string arg = "";
             if(checkBoxDebug.Checked)
             {
@@ -169,6 +165,65 @@ namespace AnimePlayer
         private void labelVersion_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void FormStarter_Load(object sender, EventArgs e)
+        {
+            timer1.Start();
+            processUpdater = new Process();
+            processUpdater.StartInfo.FileName = Application.ExecutablePath;
+            processUpdater.StartInfo.UseShellExecute = true;
+            processUpdater.StartInfo.Arguments = "-Updater";
+            processUpdater.Start();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            try
+            {
+                if (File.Exists(AppFolders.Updater+"update"))
+                {
+                    string text = File.ReadAllText(AppFolders.Updater+"update");
+                    if (text == "1")
+                    {
+                        if (processApp != null)
+                        {
+                            processApp.Kill();
+                        }
+
+                        if (processUpdater != null)
+                        {
+                            processUpdater.Kill();
+                        }
+                        File.Delete(AppFolders.Updater+"update");
+                        Application.Restart();
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                Console.Error.WriteLine(ex.ToString());
+            }
+        }
+
+        private void FormStarter_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            try
+            {
+                if (processApp != null)
+                {
+                    processApp.Kill();
+                }
+
+                if (processUpdater != null)
+                {
+                    processUpdater.Kill();
+                }
+            }
+            catch(Exception ex)
+            {
+                Console.Error.WriteLine(ex.ToString());
+            }
         }
     }
 }

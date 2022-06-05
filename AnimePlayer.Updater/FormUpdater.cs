@@ -38,6 +38,13 @@ namespace AnimePlayer.Updater
             timerReadSettingsFile.Enabled = updaterSettingsPanel1.settingsUpdater.ReadFileSettingTimer;
             timerCheckingForUpdates.Interval = updaterSettingsPanel1.settingsUpdater.CheckingForUpdatesTimerInterval;
             timerReadSettingsFile.Interval = updaterSettingsPanel1.settingsUpdater.ReadFileSettingsTimerInterval;
+            this.Hide();
+            timer1.Start();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            this.Hide();
         }
     }
 }

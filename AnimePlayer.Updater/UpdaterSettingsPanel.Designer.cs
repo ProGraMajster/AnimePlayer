@@ -151,6 +151,7 @@
             this.checkBoxDevVersion.TabIndex = 4;
             this.checkBoxDevVersion.Text = "Pobieraj wersjie z kanału deweloperskiego";
             this.checkBoxDevVersion.UseVisualStyleBackColor = true;
+            this.checkBoxDevVersion.Visible = false;
             this.checkBoxDevVersion.CheckedChanged += new System.EventHandler(this.checkBoxDevVersion_CheckedChanged);
             // 
             // UpdaterSettingsPanel

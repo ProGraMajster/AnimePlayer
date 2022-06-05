@@ -13,11 +13,14 @@ namespace AnimePlayer.Updater
 {
     public static class DevChannel
     {
+        public static bool Update = false;
         static readonly string link = @"https://github.com/ProGraMajster/AnimePlayer/archive/refs/heads/master.zip";
+        static string textContentUpdate;
         public static void Start()
         {
             try
             {
+                textContentUpdate = "Zmainy:\n";
                 if (Directory.Exists(AppFolders.Updater+"Downloaded_repo"))
                 {
                     Directory.Delete(AppFolders.Updater+"Downloaded_repo", true);
@@ -51,11 +54,28 @@ namespace AnimePlayer.Updater
                             File.Move(fileInfosC[i].FullName, fileInfosC[i].DirectoryName+"\\"+fileInfosC[i].Name.Replace(".dll", "_Old.dll"));
                             Console.WriteLine(fileInfosN[i].FullName+" > "+ Application.StartupPath +"\\"+fileInfosN[i].Name+".dll");
                             File.Move(fileInfosN[i].FullName, Application.StartupPath +"\\"+fileInfosN[i].Name+".dll");
+                            Update = true;
                         }
                     }
                     catch(Exception exFile)
                     {
                         Console.Error.Write(exFile.ToString());
+                    }
+                }
+
+                if(Update)
+                {
+                    DialogResult dialogResult = NewMessageBox.NewMessageBox.ShowDialog("Zainstalowano aktualizację programu" +
+                        " Czy chcesz zrestartować program teraz (aby skorzystać z nowej wersji)? \n\n" +textContentUpdate,
+                        "Pytanie", MessageBoxButtons.YesNo, MessageBoxIcon.Question, true);
+                    if(dialogResult == DialogResult.No)
+                    {
+                        return;
+                    }
+                    if(dialogResult == DialogResult.Yes)
+                    {
+                        File.WriteAllText(AppFolders.Updater+"update", "1");
+                        Environment.Exit(0);
                     }
                 }
             }
@@ -93,7 +113,8 @@ namespace AnimePlayer.Updater
             {
                 FileVersionInfo fileVersionInfoN = FileVersionInfo.GetVersionInfo(pathToNewFile);
                 FileVersionInfo fileVersionInfoC = FileVersionInfo.GetVersionInfo(pathToCurrent);
-                if(fileVersionInfoN.FileMajorPart > fileVersionInfoC.FileMajorPart)
+                textContentUpdate += fileVersionInfoC.FileVersion +" > "+fileVersionInfoN.FileVersion+"\n";
+                if (fileVersionInfoN.FileMajorPart > fileVersionInfoC.FileMajorPart)
                 {
                     return true;
                 }

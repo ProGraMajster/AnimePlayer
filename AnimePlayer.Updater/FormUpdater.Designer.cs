@@ -34,6 +34,7 @@
             this.timerReadSettingsFile = new System.Windows.Forms.Timer(this.components);
             this.timerCheckingForUpdates = new System.Windows.Forms.Timer(this.components);
             this.updaterSettingsPanel1 = new AnimePlayer.Updater.UpdaterSettingsPanel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // button1
@@ -72,6 +73,10 @@
             this.updaterSettingsPanel1.Size = new System.Drawing.Size(276, 234);
             this.updaterSettingsPanel1.TabIndex = 2;
             // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // FormUpdater
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -95,5 +100,6 @@
         private System.Windows.Forms.Timer timerReadSettingsFile;
         private System.Windows.Forms.Timer timerCheckingForUpdates;
         private UpdaterSettingsPanel updaterSettingsPanel1;
+        private System.Windows.Forms.Timer timer1;
     }
 }

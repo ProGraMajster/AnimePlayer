@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormStarter));
             this.labelTitle = new System.Windows.Forms.Label();
             this.buttonRunApp = new System.Windows.Forms.Button();
@@ -49,6 +50,7 @@
             this.buttonCloseSettings = new System.Windows.Forms.Button();
             this.checkBoxDebug = new System.Windows.Forms.CheckBox();
             this.labelLoadingApp = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.panelSettings.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -299,6 +301,10 @@
             this.labelLoadingApp.Text = "Ładowanie...";
             this.labelLoadingApp.Visible = false;
             // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // FormStarter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -316,6 +322,8 @@
             this.Name = "FormStarter";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormStarter";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormStarter_FormClosed);
+            this.Load += new System.EventHandler(this.FormStarter_Load);
             this.panel1.ResumeLayout(false);
             this.panelSettings.ResumeLayout(false);
             this.panelSettings.PerformLayout();
@@ -347,5 +355,6 @@
         private Label labelLoadingApp;
         private Panel panel2;
         private Label label5;
+        private System.Windows.Forms.Timer timer1;
     }
 }

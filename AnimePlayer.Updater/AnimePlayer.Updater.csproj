@@ -13,4 +13,10 @@
     <ProjectReference Include="..\AnimePlayerLib\AnimePlayerLibrary.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="NewMessageBox">
+      <HintPath>..\..\..\NewMessageBox-master\NewMessageBox\bin\Debug\net6.0-windows\NewMessageBox.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>
