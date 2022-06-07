@@ -1,5 +1,6 @@
 ﻿namespace AnimePlayer.Class
 {
+    [Serializable]
     public class PreviewTitleClass
     {
         public string Title { get; set; }
