@@ -113,7 +113,8 @@ namespace AnimePlayer.Updater
             {
                 FileVersionInfo fileVersionInfoN = FileVersionInfo.GetVersionInfo(pathToNewFile);
                 FileVersionInfo fileVersionInfoC = FileVersionInfo.GetVersionInfo(pathToCurrent);
-                textContentUpdate += fileVersionInfoC.FileVersion +" > "+fileVersionInfoN.FileVersion+"\n";
+                textContentUpdate += fileVersionInfoC.FileName+" v"+ fileVersionInfoC.FileVersion +" > "+
+                    fileVersionInfoN.FileName+" v"+fileVersionInfoN.FileVersion+"\n";
                 if (fileVersionInfoN.FileMajorPart > fileVersionInfoC.FileMajorPart)
                 {
                     return true;

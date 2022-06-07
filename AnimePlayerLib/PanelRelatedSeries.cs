@@ -54,7 +54,36 @@ namespace AnimePlayerLibrary
             panelContent.Controls.Add(panelSource);
             panelSource.Location = new System.Drawing.Point(0,0);
             panelSource.Dock = DockStyle.Fill;
-
+        }
+        
+        
+        public PanelRelatedSeries(string SID, TypeRelatedSeries typeRelated)
+        {
+            InitializeComponent();
+            if(typeRelated == TypeRelatedSeries.Sequel)
+            {
+                labelTypetitle.Text = "Sequel";
+            }
+            else if(typeRelated == TypeRelatedSeries.Prequel)
+            {
+                labelTypetitle.Text = "Prequel";
+            }
+            else if(typeRelated == TypeRelatedSeries.Main_history)
+            {
+                labelTypetitle.Text = "Główna historia";
+            }
+            else if(typeRelated == TypeRelatedSeries.Side_story)
+            {
+                labelTypetitle.Text = "Historia poboczna";
+            }
+            else if(typeRelated == TypeRelatedSeries.Summary)
+            {
+                labelTypetitle.Text = "Podsumowanie";
+            }
+            else if (typeRelated == TypeRelatedSeries.Other)
+            {
+                labelTypetitle.Text = "Inne";
+            }
         }
     }
 }
