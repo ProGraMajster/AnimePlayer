@@ -65,9 +65,9 @@ namespace AnimePlayer.Updater
 
                 if(Update)
                 {
-                    DialogResult dialogResult = NewMessageBox.NewMessageBox.ShowDialog("Zainstalowano aktualizację programu" +
+                    DialogResult dialogResult = MessageBox.Show("Zainstalowano aktualizację programu" +
                         " Czy chcesz zrestartować program teraz (aby skorzystać z nowej wersji)? \n\n" +textContentUpdate,
-                        "Pytanie", MessageBoxButtons.YesNo, MessageBoxIcon.Question, true);
+                        "Pytanie", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if(dialogResult == DialogResult.No)
                     {
                         return;
@@ -113,8 +113,8 @@ namespace AnimePlayer.Updater
             {
                 FileVersionInfo fileVersionInfoN = FileVersionInfo.GetVersionInfo(pathToNewFile);
                 FileVersionInfo fileVersionInfoC = FileVersionInfo.GetVersionInfo(pathToCurrent);
-                textContentUpdate += fileVersionInfoC.FileName+" v"+ fileVersionInfoC.FileVersion +" > "+
-                    fileVersionInfoN.FileName+" v"+fileVersionInfoN.FileVersion+"\n";
+                textContentUpdate += fileVersionInfoC.OriginalFilename+" v"+ fileVersionInfoC.FileVersion +" > "+
+                    fileVersionInfoN.OriginalFilename+" v"+fileVersionInfoN.FileVersion+"\n";
                 if (fileVersionInfoN.FileMajorPart > fileVersionInfoC.FileMajorPart)
                 {
                     return true;
@@ -167,7 +167,7 @@ namespace AnimePlayer.Updater
                 {
                     if(file.Extension == "_Old.dll")
                     {
-                        File.Move(file.FullName, pathOldLib+file.Name);
+                        File.Move(file.FullName, pathOldLib+file.Name, true);
                     }
                 }
             }
