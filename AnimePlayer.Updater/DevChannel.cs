@@ -50,10 +50,6 @@ namespace AnimePlayer.Updater
                     {
                         if (CheckingFileDLLVersion(fileInfosN[i].FullName, fileInfosC[i].FullName))
                         {
-                            Console.WriteLine(fileInfosC[i].FullName+" > "+fileInfosC[i].DirectoryName+"\\"+fileInfosC[i].Name.Replace(".dll", "_Old.dll"));
-                            File.Move(fileInfosC[i].FullName, fileInfosC[i].DirectoryName+"\\"+fileInfosC[i].Name.Replace(".dll", "_Old.dll"));
-                            Console.WriteLine(fileInfosN[i].FullName+" > "+ Application.StartupPath +"\\"+fileInfosN[i].Name+".dll");
-                            File.Move(fileInfosN[i].FullName, Application.StartupPath +"\\"+fileInfosN[i].Name+".dll");
                             Update = true;
                         }
                     }
@@ -65,7 +61,7 @@ namespace AnimePlayer.Updater
 
                 if(Update)
                 {
-                    DialogResult dialogResult = MessageBox.Show("Zainstalowano aktualizację programu" +
+                    DialogResult dialogResult = NewMessageBox.NewMessageBox.ShowDialog("Zainstalowano aktualizację programu" +
                         " Czy chcesz zrestartować program teraz (aby skorzystać z nowej wersji)? \n\n" +textContentUpdate,
                         "Pytanie", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if(dialogResult == DialogResult.No)
@@ -74,6 +70,25 @@ namespace AnimePlayer.Updater
                     }
                     if(dialogResult == DialogResult.Yes)
                     {
+                        fileInfosN = GetDLLFiles(repo_path);
+                        fileInfosC = GetDLLFiles(Application.StartupPath);
+                        for (int i = 0; i < fileInfosN.Length; i++)
+                        {
+                            try
+                            {
+                                if (CheckingFileDLLVersion(fileInfosN[i].FullName, fileInfosC[i].FullName))
+                                {
+                                    Console.WriteLine(fileInfosC[i].FullName+" > "+fileInfosC[i].DirectoryName+"\\"+fileInfosC[i].Name.Replace(".dll", "_Old.dll"));
+                                    File.Move(fileInfosC[i].FullName, fileInfosC[i].DirectoryName+"\\"+fileInfosC[i].Name.Replace(".dll", "_Old.dll"));
+                                    Console.WriteLine(fileInfosN[i].FullName+" > "+ Application.StartupPath +"\\"+fileInfosN[i].Name+".dll");
+                                    File.Move(fileInfosN[i].FullName, Application.StartupPath +"\\"+fileInfosN[i].Name+".dll");
+                                }
+                            }
+                            catch (Exception exFile)
+                            {
+                                Console.Error.Write(exFile.ToString());
+                            }
+                        }
                         File.WriteAllText(AppFolders.Updater+"update", "1");
                         Environment.Exit(0);
                     }
@@ -115,6 +130,12 @@ namespace AnimePlayer.Updater
                 FileVersionInfo fileVersionInfoC = FileVersionInfo.GetVersionInfo(pathToCurrent);
                 textContentUpdate += fileVersionInfoC.OriginalFilename+" v"+ fileVersionInfoC.FileVersion +" > "+
                     fileVersionInfoN.OriginalFilename+" v"+fileVersionInfoN.FileVersion+"\n";
+                Console.Write(fileVersionInfoC.OriginalFilename+" v"+ fileVersionInfoC.FileVersion +" > "+
+                    fileVersionInfoN.OriginalFilename+" v"+fileVersionInfoN.FileVersion+"\n");
+                if(fileVersionInfoN.ProductName != fileVersionInfoC.ProductName)
+                {
+                    return false;
+                }
                 if (fileVersionInfoN.FileMajorPart > fileVersionInfoC.FileMajorPart)
                 {
                     return true;
