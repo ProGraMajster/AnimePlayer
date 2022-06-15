@@ -22,9 +22,6 @@
     <Reference Include="NewMessageBox">
       <HintPath>D:\NewMessageBox.dll</HintPath>
     </Reference>
-    <Reference Include="System.Runtime.Serialization.Formatters.Soap">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Runtime.Serialization.Formatters.Soap.dll</HintPath>
-    </Reference>
   </ItemGroup>
 
 	<ItemGroup>

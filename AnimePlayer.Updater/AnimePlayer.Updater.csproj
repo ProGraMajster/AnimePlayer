@@ -15,7 +15,7 @@
 
   <ItemGroup>
     <Reference Include="NewMessageBox">
-      <HintPath>..\..\..\NewMessageBox-master\NewMessageBox\bin\Debug\net6.0-windows\NewMessageBox.dll</HintPath>
+      <HintPath>..\AnimePlayer\NewMessageBox.dll</HintPath>
     </Reference>
   </ItemGroup>
 
