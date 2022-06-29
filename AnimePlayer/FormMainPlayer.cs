@@ -67,7 +67,8 @@ namespace AnimePlayer
 
                 AnimePlayer.Core.CheckingAppFolders.CheckMainFolder();
                 //====================================================
-                Application.DoEvents();
+                /*Application.DoEvents();
+
                 if (!Directory.Exists("C:\\ContentLibrarys"))
                 {
                     Directory.CreateDirectory("C:\\ContentLibrarys");
@@ -121,7 +122,7 @@ namespace AnimePlayer
                 if (!Directory.Exists("C:\\ContentLibrarys\\OtherFiles\\WMP_OverlayApp\\Community"))
                 {
                     Directory.CreateDirectory("C:\\ContentLibrarys\\OtherFiles\\WMP_OverlayApp\\Community");
-                }
+                }*/
                 quickMove = new QuickMovePanel();
                 quickMove.Hide();   
                 this.Controls.Add(quickMove);
@@ -319,6 +320,7 @@ namespace AnimePlayer
         private void FormMainPlayer_Load(object sender, EventArgs e)
         {
             bool local = false;
+            bool OldIni = false;
             foreach (string arg in Environment.GetCommandLineArgs())
             {
                 if (arg == "-local")
@@ -332,6 +334,10 @@ namespace AnimePlayer
                 if (arg =="-debug")
                 {
                     debug = true;
+                }
+                if(arg =="-OldIni")
+                {
+                    OldIni = true;
                 }
             }
 
@@ -356,7 +362,14 @@ namespace AnimePlayer
             CenterControlInForm(labelLoading);
             panelLoading.Show();
             this.Show();
-            WebContent.Initialize(this);
+            if(OldIni)
+            {
+                WebContent.Initialize(this);
+            }
+            else
+            {
+
+            }
             /*if (local == false)
             {
                 panelLoading.BringToFront();
@@ -384,7 +397,7 @@ namespace AnimePlayer
             }
             */
 
-            try
+            /*try
             {
                 if (File.Exists("C:\\ContentLibrarys\\OtherFiles\\WMP_OverlayApp\\theme.txt"))
                 {
@@ -403,17 +416,17 @@ namespace AnimePlayer
             {
                 Console.WriteLine(exx.ToString());
             }
-
+*/
             labelLoadingDetails.Text = "Download Files";
            
             //Tymczasowo nie używać aż do ukończenia prac związanych z powiązanymi funkcjami!
             //backgroundWorkerGetSTNews.RunWorkerAsync();
 
-            textBoxFinditem.AutoCompleteCustomSource = autoCSC_find;
-            textBoxStartPagefinditem.AutoCompleteCustomSource = autoCSC_find;
+            //textBoxFinditem.AutoCompleteCustomSource = autoCSC_find;
+            //textBoxStartPagefinditem.AutoCompleteCustomSource = autoCSC_find;
             panelLoading.Hide();
             this.Show();
-            backgroundWorkerLoadItems.RunWorkerAsync();
+            //backgroundWorkerLoadItems.RunWorkerAsync();
         }
 
         public void CenterControlInForm(Control control)

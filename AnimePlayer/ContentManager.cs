@@ -8,6 +8,17 @@ namespace AnimePlayer
 {
     public  static class ContentManager
     {
-        
+        public void Initalize()
+        {
+            if(!CheckingIfTheContentExists())
+            {
+                Downlo
+            }
+        }
+
+        private bool CheckingIfTheContentExists()
+        {
+
+        }
     }
 }

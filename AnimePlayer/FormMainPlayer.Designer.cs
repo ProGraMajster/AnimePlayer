@@ -421,7 +421,7 @@ namespace AnimePlayer
             this.panel7.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panel7.Name = "panel7";
             this.panel7.Padding = new System.Windows.Forms.Padding(6, 23, 6, 17);
-            this.panel7.Size = new System.Drawing.Size(418, 67);
+            this.panel7.Size = new System.Drawing.Size(600, 67);
             this.panel7.TabIndex = 4;
             // 
             // panel9
@@ -432,7 +432,7 @@ namespace AnimePlayer
             this.panel9.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panel9.Name = "panel9";
             this.panel9.Padding = new System.Windows.Forms.Padding(0, 6, 0, 0);
-            this.panel9.Size = new System.Drawing.Size(318, 27);
+            this.panel9.Size = new System.Drawing.Size(500, 27);
             this.panel9.TabIndex = 5;
             // 
             // textBoxStartPagefinditem
@@ -449,7 +449,7 @@ namespace AnimePlayer
             this.textBoxStartPagefinditem.Location = new System.Drawing.Point(0, 6);
             this.textBoxStartPagefinditem.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.textBoxStartPagefinditem.Name = "textBoxStartPagefinditem";
-            this.textBoxStartPagefinditem.Size = new System.Drawing.Size(318, 16);
+            this.textBoxStartPagefinditem.Size = new System.Drawing.Size(500, 16);
             this.textBoxStartPagefinditem.TabIndex = 3;
             this.textBoxStartPagefinditem.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBoxStartPagefinditem.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxSPfinditem_KeyDown);
@@ -464,7 +464,7 @@ namespace AnimePlayer
             this.buttonStartPageFinditem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonStartPageFinditem.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonStartPageFinditem.ForeColor = System.Drawing.Color.White;
-            this.buttonStartPageFinditem.Location = new System.Drawing.Point(324, 23);
+            this.buttonStartPageFinditem.Location = new System.Drawing.Point(506, 23);
             this.buttonStartPageFinditem.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.buttonStartPageFinditem.Name = "buttonStartPageFinditem";
             this.buttonStartPageFinditem.Size = new System.Drawing.Size(88, 27);
@@ -478,13 +478,14 @@ namespace AnimePlayer
             this.labelSatusWorkingApp.Dock = System.Windows.Forms.DockStyle.Right;
             this.labelSatusWorkingApp.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelSatusWorkingApp.ForeColor = System.Drawing.SystemColors.Window;
-            this.labelSatusWorkingApp.Location = new System.Drawing.Point(639, 7);
+            this.labelSatusWorkingApp.Location = new System.Drawing.Point(821, 7);
             this.labelSatusWorkingApp.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelSatusWorkingApp.Name = "labelSatusWorkingApp";
-            this.labelSatusWorkingApp.Size = new System.Drawing.Size(259, 67);
+            this.labelSatusWorkingApp.Size = new System.Drawing.Size(77, 67);
             this.labelSatusWorkingApp.TabIndex = 2;
             this.labelSatusWorkingApp.Text = "Satus działania:";
             this.labelSatusWorkingApp.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelSatusWorkingApp.Visible = false;
             // 
             // buttonProfile
             // 

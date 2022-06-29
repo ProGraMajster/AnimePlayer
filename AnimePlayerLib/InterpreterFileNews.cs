@@ -8,6 +8,7 @@ using System.Windows.Forms;
 
 namespace AnimePlayerLibrary
 {
+    [Obsolete("Ta klasa jest przezstarzała, nieaktualny format plików")]
     public static class InterpreterFileNews
     {
         public static void Start(Control output, string path, Panel panel2, bool local = false)
