@@ -368,7 +368,7 @@ namespace AnimePlayer
             }
             else
             {
-
+                ContentManager.Initalize();
             }
             /*if (local == false)
             {

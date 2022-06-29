@@ -20,14 +20,7 @@ namespace AnimePlayerLibrary
             string link = "https://onedrive.live.com/download?cid=EA5053D1DC80D557&resid=EA5053D1DC80D557%21564&authkey=ABKI4J-thwvx6nI";
             try
             {
-                if (!Directory.Exists(@"C:\ContentLibrarys\OtherFiles\WMP_OverlayApp\News"))
-                {
-                    Directory.CreateDirectory(@"C:\ContentLibrarys\OtherFiles\WMP_OverlayApp\News");
-                }
-
-                WebClient webClient = new WebClient();
-                webClient.DownloadFile(link, @"C:\ContentLibrarys\OtherFiles\WMP_OverlayApp\News\listNews.txt");
-                webClient.Dispose();
+                Download.File(link, @"C:\ContentLibrarys\OtherFiles\WMP_OverlayApp\News\listNews.txt");
                 return true;
             }
             catch (Exception ex)
@@ -41,14 +34,7 @@ namespace AnimePlayerLibrary
         {
             try
             {
-                if(!Directory.Exists(@"C:\ContentLibrarys\OtherFiles\WMP_OverlayApp\News"))
-                {
-                    Directory.CreateDirectory(@"C:\ContentLibrarys\OtherFiles\WMP_OverlayApp\News");
-                }
-
-                WebClient webClient = new WebClient();
-                webClient.DownloadFile(Download.GoogleDrive.dUri("1izvflPLxIWyW4doIdY160Swd0ehxHcxB"), @"C:\ContentLibrarys\OtherFiles\WMP_OverlayApp\News\listNews.txt");
-                webClient.Dispose();
+                Download.File(Download.GoogleDrive.dUri("1izvflPLxIWyW4doIdY160Swd0ehxHcxB"), @"C:\ContentLibrarys\OtherFiles\WMP_OverlayApp\News\listNews.txt");
                 return true;
             }
             catch (Exception ex)

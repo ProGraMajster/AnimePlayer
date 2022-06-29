@@ -12,7 +12,10 @@ namespace AnimePlayer
         {
             foreach (string arg in Environment.GetCommandLineArgs())
             {
-
+                if(arg == "-DataIndexer")
+                {
+                    
+                }
             }
         }
     }
