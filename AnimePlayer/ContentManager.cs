@@ -7,6 +7,7 @@ using System.IO;
 
 using AnimePlayer.Core;
 using AnimePlayer.Class;
+using AnimePlayerLibrary.UI;
 
 namespace AnimePlayer
 {
@@ -16,20 +17,41 @@ namespace AnimePlayer
         static bool normalFolder = false;
         static bool updateFolder = false;
         public static Control TartgetLoadingInfo;
-        public static void Initalize()
+        private static FormMainPlayer _formMainPlayer;
+        public static void Initalize(FormMainPlayer formMainPlayer)
         {
+            _formMainPlayer =formMainPlayer;
             if(!CheckingIfTheContentExists())
             {
                 Updater.ContentUpdate.DownloadContent();
             }
             UpdateLoadingInfo("ContentManager>Initalize");
+            foreach(var item in GetAllFromFolder())
+            {
+                formMainPlayer.flowLayoutPanelPolecane.Controls.Add(
+                    CreatePreviewPanelFromData(item));
+            }
+            //Kurwa to jest zbugowane
+        }
+
+        public static Panel CreatePreviewPanelFromData(PreviewTitleClass previewTitleClass)
+        {
+            try
+            {
+                return new PanelItem(previewTitleClass).panelItem;
+            }
+            catch(Exception ex)
+            {
+                Console.Error.WriteLine(ex.ToString());
+                return null;
+            }
         }
 
         public static List<PreviewTitleClass> GetAllFromFolder()
         {
             List<PreviewTitleClass> list = new List<PreviewTitleClass>();
-            Task.Run(() =>
-            {
+            //Task.Run(() =>
+          //  {
                 DirectoryInfo directoryInfo = new DirectoryInfo(AppFolders.PreviewItems);
                 foreach(var item in directoryInfo.GetFiles())
                 {
@@ -39,7 +61,7 @@ namespace AnimePlayer
                     }
                     list.Add((PreviewTitleClass)SerializationAndDeserialization.Deserialization(item.FullName));
                 }
-            });
+            //});
             return list;
         }
 
@@ -47,8 +69,8 @@ namespace AnimePlayer
         {
             try
             {
-                TartgetLoadingInfo.BeginInvoke(new Action(() => {
-                    TartgetLoadingInfo.Text = text;
+                _formMainPlayer.labelLoadingDetails.BeginInvoke(new Action(() => {
+                    _formMainPlayer.labelLoadingDetails.Text = text;
                 }));
             }
             catch(Exception ex)

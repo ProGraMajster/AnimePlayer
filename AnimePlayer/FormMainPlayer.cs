@@ -368,7 +368,7 @@ namespace AnimePlayer
             }
             else
             {
-                ContentManager.Initalize();
+                ContentManager.Initalize(this);
             }
             /*if (local == false)
             {
@@ -629,13 +629,13 @@ namespace AnimePlayer
 
         public void flowLayoutPanelPolecane_ControlAdded(object sender, ControlEventArgs e)
         {
-            taskAddToAllList(e);
+           // taskAddToAllList(e);
         }
 
 
         public void flowLayoutPanel_ControlAdded(object sender, ControlEventArgs e)
         {
-            taskAddToAllList(e);
+            //taskAddToAllList(e);
         }
 
         public Task taskAddToAllList(ControlEventArgs e)

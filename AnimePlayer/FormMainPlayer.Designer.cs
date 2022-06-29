@@ -306,7 +306,6 @@ namespace AnimePlayer
             this.panePolecane.Name = "panePolecane";
             this.panePolecane.Size = new System.Drawing.Size(1089, 342);
             this.panePolecane.TabIndex = 3;
-            this.panePolecane.Visible = false;
             // 
             // flowLayoutPanelPolecane
             // 
