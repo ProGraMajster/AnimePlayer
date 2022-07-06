@@ -35,8 +35,8 @@ namespace AnimePlayer.Class
         public static readonly string Settings= Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) +
             "\\AnimePlayer\\Settings\\";
         //============== New downloaded content folders ====================
-        public static readonly string UpdatedContentFolder = Updater + 
-            "UpdatedContentFolder\\AnimePlayer.Content\\APC\\";
+        public static readonly string UpdatedContentFolder = Updater +
+            "UpdatedContentFolder\\AnimePlayer.Content\\APC\\AnimePlayer.Content-master\\APC\\";
         public static readonly string UpdatedPreviewItems = UpdatedContentFolder + "PreviewItems\\";
         public static readonly string UpdatedPagesItems = UpdatedContentFolder + "PagesItems\\";
         public static readonly string UpdatedCommunity = UpdatedContentFolder + "Community\\";

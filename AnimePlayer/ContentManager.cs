@@ -36,7 +36,6 @@ namespace AnimePlayer
                 Panel panel = CreatePreviewPanelFromData(item);
                 _formMainPlayer.flowLayoutPanelPolecane.Controls.Add(panel);
             }
-            //Kurwa to jest zbugowane
         }
 
 
@@ -84,7 +83,7 @@ namespace AnimePlayer
            // {
             try
             {
-                DirectoryInfo directoryInfo = new DirectoryInfo(AppFolders.PreviewItems.TrimEnd('\\'));
+                DirectoryInfo directoryInfo = new DirectoryInfo(AppFolders.UpdatedPreviewItems.TrimEnd('\\'));
                 foreach (var item in directoryInfo.GetFiles())
                 {
                     if (item.FullName.EndsWith(".dat"))

@@ -46,7 +46,6 @@ namespace AnimePlayer
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.labelAppRamUsage_View = new System.Windows.Forms.Label();
             this.timerRefreshValue = new System.Windows.Forms.Timer(this.components);
-            this.updaterSettingsPanel1 = new AnimePlayer.Updater.UpdaterSettingsPanel();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -219,9 +218,9 @@ namespace AnimePlayer
             this.labelServer.Location = new System.Drawing.Point(13, 55);
             this.labelServer.Margin = new System.Windows.Forms.Padding(0);
             this.labelServer.Name = "labelServer";
-            this.labelServer.Size = new System.Drawing.Size(128, 19);
+            this.labelServer.Size = new System.Drawing.Size(12, 19);
             this.labelServer.TabIndex = 6;
-            this.labelServer.Text = "Server danych nr.:";
+            this.labelServer.Text = ".";
             this.labelServer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // openFileDialog1
@@ -246,23 +245,12 @@ namespace AnimePlayer
             this.timerRefreshValue.Interval = 1000;
             this.timerRefreshValue.Tick += new System.EventHandler(this.timerRefreshValue_Tick);
             // 
-            // updaterSettingsPanel1
-            // 
-            this.updaterSettingsPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.updaterSettingsPanel1.ForeColor = System.Drawing.Color.White;
-            this.updaterSettingsPanel1.Location = new System.Drawing.Point(433, 92);
-            this.updaterSettingsPanel1.Name = "updaterSettingsPanel1";
-            this.updaterSettingsPanel1.Padding = new System.Windows.Forms.Padding(5);
-            this.updaterSettingsPanel1.Size = new System.Drawing.Size(276, 236);
-            this.updaterSettingsPanel1.TabIndex = 12;
-            // 
             // PageSettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.Controls.Add(this.updaterSettingsPanel1);
             this.Controls.Add(this.labelAppRamUsage_View);
             this.Controls.Add(this.labelServer);
             this.Controls.Add(this.groupBox1);
@@ -301,6 +289,5 @@ namespace AnimePlayer
         private System.Windows.Forms.Button buttonThemeReset;
         private Label labelAppRamUsage_View;
         private System.Windows.Forms.Timer timerRefreshValue;
-        private Updater.UpdaterSettingsPanel updaterSettingsPanel1;
     }
 }
