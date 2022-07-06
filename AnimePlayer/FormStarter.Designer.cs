@@ -34,10 +34,12 @@
             this.buttonRunApp = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.buttonExit = new System.Windows.Forms.Button();
+            this.buttonBrowser = new System.Windows.Forms.Button();
             this.buttonSetting = new System.Windows.Forms.Button();
             this.buttonCheckUpdate = new System.Windows.Forms.Button();
             this.labelVersion = new System.Windows.Forms.Label();
             this.panelSettings = new System.Windows.Forms.Panel();
+            this.checkBoxef = new System.Windows.Forms.CheckBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -88,6 +90,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.panel1.Controls.Add(this.buttonExit);
+            this.panel1.Controls.Add(this.buttonBrowser);
             this.panel1.Controls.Add(this.buttonSetting);
             this.panel1.Controls.Add(this.buttonCheckUpdate);
             this.panel1.Controls.Add(this.buttonRunApp);
@@ -105,13 +108,30 @@
             this.buttonExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonExit.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonExit.ForeColor = System.Drawing.Color.YellowGreen;
-            this.buttonExit.Location = new System.Drawing.Point(10, 133);
+            this.buttonExit.Location = new System.Drawing.Point(10, 174);
             this.buttonExit.Name = "buttonExit";
             this.buttonExit.Size = new System.Drawing.Size(307, 41);
             this.buttonExit.TabIndex = 4;
             this.buttonExit.Text = "Zamknij";
             this.buttonExit.UseVisualStyleBackColor = false;
             this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
+            // 
+            // buttonBrowser
+            // 
+            this.buttonBrowser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.buttonBrowser.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonBrowser.FlatAppearance.BorderSize = 0;
+            this.buttonBrowser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonBrowser.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonBrowser.ForeColor = System.Drawing.Color.YellowGreen;
+            this.buttonBrowser.Location = new System.Drawing.Point(10, 133);
+            this.buttonBrowser.Name = "buttonBrowser";
+            this.buttonBrowser.Size = new System.Drawing.Size(307, 41);
+            this.buttonBrowser.TabIndex = 5;
+            this.buttonBrowser.Text = "Przeglądarka";
+            this.buttonBrowser.UseVisualStyleBackColor = false;
+            this.buttonBrowser.Visible = false;
+            this.buttonBrowser.Click += new System.EventHandler(this.buttonBrowser_Click);
             // 
             // buttonSetting
             // 
@@ -161,6 +181,7 @@
             // panelSettings
             // 
             this.panelSettings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.panelSettings.Controls.Add(this.checkBoxef);
             this.panelSettings.Controls.Add(this.panel2);
             this.panelSettings.Controls.Add(this.label1);
             this.panelSettings.Controls.Add(this.checkBoxOtherWindow);
@@ -177,6 +198,17 @@
             this.panelSettings.Size = new System.Drawing.Size(782, 370);
             this.panelSettings.TabIndex = 4;
             this.panelSettings.Visible = false;
+            // 
+            // checkBoxef
+            // 
+            this.checkBoxef.AutoSize = true;
+            this.checkBoxef.Location = new System.Drawing.Point(12, 326);
+            this.checkBoxef.Name = "checkBoxef";
+            this.checkBoxef.Size = new System.Drawing.Size(160, 19);
+            this.checkBoxef.TabIndex = 10;
+            this.checkBoxef.Text = "Funkcja eksperymentalne";
+            this.checkBoxef.UseVisualStyleBackColor = true;
+            this.checkBoxef.CheckedChanged += new System.EventHandler(this.checkBoxef_CheckedChanged);
             // 
             // panel2
             // 
@@ -203,7 +235,7 @@
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(37, 300);
+            this.label1.Location = new System.Drawing.Point(12, 281);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(241, 37);
             this.label1.TabIndex = 8;
@@ -213,7 +245,7 @@
             // checkBoxOtherWindow
             // 
             this.checkBoxOtherWindow.AutoSize = true;
-            this.checkBoxOtherWindow.Location = new System.Drawing.Point(37, 278);
+            this.checkBoxOtherWindow.Location = new System.Drawing.Point(12, 258);
             this.checkBoxOtherWindow.Name = "checkBoxOtherWindow";
             this.checkBoxOtherWindow.Size = new System.Drawing.Size(177, 19);
             this.checkBoxOtherWindow.TabIndex = 7;
@@ -222,7 +254,7 @@
             // 
             // label4
             // 
-            this.label4.Location = new System.Drawing.Point(37, 234);
+            this.label4.Location = new System.Drawing.Point(12, 216);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(241, 37);
             this.label4.TabIndex = 6;
@@ -230,7 +262,7 @@
             // 
             // label3
             // 
-            this.label3.Location = new System.Drawing.Point(37, 137);
+            this.label3.Location = new System.Drawing.Point(12, 121);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(241, 63);
             this.label3.TabIndex = 5;
@@ -239,7 +271,7 @@
             // 
             // label2
             // 
-            this.label2.Location = new System.Drawing.Point(37, 64);
+            this.label2.Location = new System.Drawing.Point(12, 54);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(241, 37);
             this.label2.TabIndex = 4;
@@ -249,7 +281,7 @@
             // checkBoxLocal
             // 
             this.checkBoxLocal.AutoSize = true;
-            this.checkBoxLocal.Location = new System.Drawing.Point(37, 114);
+            this.checkBoxLocal.Location = new System.Drawing.Point(12, 99);
             this.checkBoxLocal.Name = "checkBoxLocal";
             this.checkBoxLocal.Size = new System.Drawing.Size(89, 19);
             this.checkBoxLocal.TabIndex = 3;
@@ -259,7 +291,7 @@
             // checkBoxOffline
             // 
             this.checkBoxOffline.AutoSize = true;
-            this.checkBoxOffline.Location = new System.Drawing.Point(37, 211);
+            this.checkBoxOffline.Location = new System.Drawing.Point(12, 192);
             this.checkBoxOffline.Name = "checkBoxOffline";
             this.checkBoxOffline.Size = new System.Drawing.Size(85, 19);
             this.checkBoxOffline.TabIndex = 2;
@@ -282,7 +314,7 @@
             // checkBoxDebug
             // 
             this.checkBoxDebug.AutoSize = true;
-            this.checkBoxDebug.Location = new System.Drawing.Point(37, 42);
+            this.checkBoxDebug.Location = new System.Drawing.Point(12, 32);
             this.checkBoxDebug.Name = "checkBoxDebug";
             this.checkBoxDebug.Size = new System.Drawing.Size(123, 19);
             this.checkBoxDebug.TabIndex = 0;
@@ -356,5 +388,7 @@
         private Panel panel2;
         private Label label5;
         private System.Windows.Forms.Timer timer1;
+        private CheckBox checkBoxef;
+        private Button buttonBrowser;
     }
 }

@@ -63,10 +63,36 @@ namespace AnimePlayer.Updater
         }
 
         static readonly string repo_path = @"C:\Users\HARDPC\AppData\Roaming\AnimePlayer\Updater\Downloaded_repo\AnimePlayer-master\AnimePlayer.HostApp\bin\Debug\net6.0-windows";
+        public static void AlternativeTempFuncUpdateOperation()
+        {
+            try
+            {
+                DirectoryInfo directoryInfo = new DirectoryInfo(repo_path);
+                foreach (FileInfo file in directoryInfo.GetFiles())
+                {
+                    Console.WriteLine("File.Move: "+file.FullName+" > "+Application.StartupPath+file.Name);
+                    if(File.Exists(Application.StartupPath+file.Name))
+                    {
+                        Console.WriteLine("File.Exists in App Startup: " +file.Name);
+                        File.Move(Application.StartupPath+file.Name, Application.StartupPath+file.Name.Replace(".dll", "_Old.dll"), true);
+                    }
+                    File.Move(file.FullName, Application.StartupPath+file.Name, true);
+                }
+            }
+            catch(Exception ex)
+            {
+                Console.Error.WriteLine("repo_path:"+repo_path);
+                Console.Error.WriteLine("app_path:"+Application.StartupPath);
+                Console.Error.WriteLine(ex.ToString());
+            }
+        }
         public static void UpdateOperation()
         {
             try
             {
+                AlternativeTempFuncUpdateOperation();
+                File.WriteAllText("recently updated.txt", DateTime.Now.ToString()); 
+                return;
                 FileInfo[] fileInfosN = GetDLLFiles(repo_path);
                 FileInfo[] fileInfosC = GetDLLFiles(Application.StartupPath);
                 for (int i=0; i < fileInfosN.Length; i++)

@@ -13,6 +13,8 @@ using System.Text;
 using AnimePlayer.Core;
 using AnimePlayer.CNM;
 using AnimePlayer.ControlsWinForms;
+using AnimePlayer.Class;
+
 namespace AnimePlayer
 {
     public partial class FormMainPlayer : Form
@@ -345,6 +347,13 @@ namespace AnimePlayer
                 if(arg =="-OldIni")
                 {
                     OldIni = true;
+                }
+                if(arg == "-updated")
+                {
+                    if(File.Exists(AppFolders.Updater+"update"))
+                    {
+                        File.Delete(AppFolders.Updater+"update");
+                    }
                 }
             }
 

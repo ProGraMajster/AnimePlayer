@@ -239,5 +239,16 @@ namespace AnimePlayer
                 Console.Error.WriteLine(ex.ToString());
             }
         }
+
+        private void checkBoxef_CheckedChanged(object sender, EventArgs e)
+        {
+            buttonBrowser.Visible = checkBoxef.Checked;
+        }
+
+        private void buttonBrowser_Click(object sender, EventArgs e)
+        {
+            FormBrowser formBrowser = new(false);
+            formBrowser.ShowDialog();
+        }
     }
 }
