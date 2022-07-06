@@ -16,24 +16,49 @@ namespace AnimePlayer.Updater
         public static bool Update = false;
         static readonly string link = @"https://github.com/ProGraMajster/AnimePlayer/archive/refs/heads/master.zip";
         static string textContentUpdate;
+        static FormProgess _FormProgess;
         public static void Start()
         {
             try
             {
+                _FormProgess = new FormProgess();
                 textContentUpdate = "Zmainy:\n";
                 if (Directory.Exists(AppFolders.Updater+"Downloaded_repo"))
                 {
                     Directory.Delete(AppFolders.Updater+"Downloaded_repo", true);
                 }
-                Download.File(link, AppFolders.Temp+"libs.zip");
-                Directory.CreateDirectory(AppFolders.Updater+"Downloaded_repo");
-                ZipFile.ExtractToDirectory(AppFolders.Temp+"libs.zip", AppFolders.Updater+"Downloaded_repo");
-                MoveOldLib();
-                UpdateOperation();
+                //Download.File(link, AppFolders.Temp+"libs.zip");
+                _FormProgess.timer1.Tick += Timer1_Tick;
+                _FormProgess.Show();
+                _FormProgess.timer1.Start();
+                _FormProgess.webClient.DownloadFileAsync(new Uri(link), AppFolders.Temp+"libs.zip");
             }
             catch(Exception ex)
             {
                     Console.Error.WriteLine(ex.ToString());
+            }
+        }
+
+        private static void Timer1_Tick(object sender, EventArgs e)
+        {
+            if (_FormProgess.downloaded)
+            {
+                if (Directory.Exists(AppFolders.Updater+"Downloaded_repo"))
+                {
+                    Directory.Delete(AppFolders.Updater+"Downloaded_repo", true);
+                }
+                _FormProgess.label1.Text = "wypakowywanie..";
+                _FormProgess.progressBar1.Style = ProgressBarStyle.Marquee;
+                Directory.CreateDirectory(AppFolders.Updater+"Downloaded_repo");
+                ZipFile.ExtractToDirectory(AppFolders.Temp+"libs.zip", AppFolders.Updater+"Downloaded_repo");
+                _FormProgess.label1.Text = "Przenoszenie...";
+                MoveOldLib();
+                _FormProgess.label1.Text = "Ostatni etap aktualizowania aplikacji";
+                UpdateOperation();
+                _FormProgess.Hide();
+                File.WriteAllText(AppFolders.Updater+"update", "1");
+                _FormProgess.Dispose();
+                Process.GetCurrentProcess().Kill();
             }
         }
 

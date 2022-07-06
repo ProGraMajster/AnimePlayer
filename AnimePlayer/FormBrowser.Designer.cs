@@ -51,7 +51,7 @@
             this.panelContent.Size = new System.Drawing.Size(800, 408);
             this.panelContent.TabIndex = 1;
             // 
-            // FormMainEx
+            // FormBrowser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -59,7 +59,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.panelContent);
             this.Controls.Add(this.browserTabPage1);
-            this.Name = "FormMainEx";
+            this.Name = "FormBrowser";
             this.Text = "FormMain";
             this.ResumeLayout(false);
 

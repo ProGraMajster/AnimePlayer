@@ -39,7 +39,6 @@ namespace AnimePlayer.HostApp
                     else if(a == "-OtherArgs")
                     {
                         OtherArgs.Start();
-                        return;
                     }
                 }
                 Application.Run(new FormStarter());

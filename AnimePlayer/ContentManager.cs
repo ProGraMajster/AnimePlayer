@@ -21,24 +21,54 @@ namespace AnimePlayer
         public static void Initalize(FormMainPlayer formMainPlayer)
         {
             _formMainPlayer =formMainPlayer;
-            if(!CheckingIfTheContentExists())
+            try
             {
                 Updater.ContentUpdate.DownloadContent();
+                ContentMove();
+            }
+            catch(Exception ex)
+            {
+
             }
             UpdateLoadingInfo("ContentManager>Initalize");
-            foreach(var item in GetAllFromFolder())
+            foreach(PreviewTitleClass item in GetAllPreviewTitleClassFromFolder().ToArray())
             {
-                formMainPlayer.flowLayoutPanelPolecane.Controls.Add(
-                    CreatePreviewPanelFromData(item));
+                Panel panel = CreatePreviewPanelFromData(item);
+                _formMainPlayer.flowLayoutPanelPolecane.Controls.Add(panel);
             }
             //Kurwa to jest zbugowane
+        }
+
+
+        public static void ContentMove()
+        {
+            DirFilesMoveToDir(AppFolders.UpdatedPreviewItems, AppFolders.PreviewItems);
+            DirFilesMoveToDir(AppFolders.UpdatedPagesItems, AppFolders.PagesItems);
+            DirFilesMoveToDir(AppFolders.UpdatedVideosItems, AppFolders.VideosItems);
+            DirFilesMoveToDir(AppFolders.UpdatedWeb, AppFolders.Web);
+            DirFilesMoveToDir(AppFolders.UpdatedCommunity, AppFolders.Community);
+        }
+
+        private static void DirFilesMoveToDir(string pathSource, string pathnewloocation)
+        {
+            DirectoryInfo directoryInfo = new DirectoryInfo(pathSource);
+            DirectoryInfo directoryInfo2 = new DirectoryInfo(pathnewloocation);
+            if(!directoryInfo.Exists)
+            {
+                return;
+            }
+            foreach (var item in directoryInfo.GetFiles())
+            {
+                item.MoveTo(pathnewloocation+item.Name, true);
+            }
         }
 
         public static Panel CreatePreviewPanelFromData(PreviewTitleClass previewTitleClass)
         {
             try
             {
-                return new PanelItem(previewTitleClass).panelItem;
+                PanelItem panelItem = new PanelItem(previewTitleClass);
+                return panelItem.panelItem;
             }
             catch(Exception ex)
             {
@@ -47,21 +77,27 @@ namespace AnimePlayer
             }
         }
 
-        public static List<PreviewTitleClass> GetAllFromFolder()
+        public static List<PreviewTitleClass> GetAllPreviewTitleClassFromFolder()
         {
             List<PreviewTitleClass> list = new List<PreviewTitleClass>();
             //Task.Run(() =>
-          //  {
-                DirectoryInfo directoryInfo = new DirectoryInfo(AppFolders.PreviewItems);
-                foreach(var item in directoryInfo.GetFiles())
+           // {
+            try
+            {
+                DirectoryInfo directoryInfo = new DirectoryInfo(AppFolders.PreviewItems.TrimEnd('\\'));
+                foreach (var item in directoryInfo.GetFiles())
                 {
-                    if(!item.FullName.EndsWith(".dat"))
+                    if (item.FullName.EndsWith(".dat"))
                     {
-                        break;
+                       list.Add((PreviewTitleClass)SerializationAndDeserialization.Deserialization(item.FullName));
                     }
-                    list.Add((PreviewTitleClass)SerializationAndDeserialization.Deserialization(item.FullName));
                 }
-            //});
+            }
+            catch(Exception ex)
+            {
+                Console.Error.WriteLine(ex.ToString());
+            }
+          //  });
             return list;
         }
 

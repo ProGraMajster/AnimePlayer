@@ -284,7 +284,14 @@ namespace AnimePlayer
                     panelMenu.Hide();
                     return;
                 }
-            }/*
+            }
+            if(e.KeyCode == Keys.F10)
+            {
+                FormDebug fd = new FormDebug();
+                fd.form=(Form)this;
+                fd.Show();
+            }
+            /*
             else if(e.KeyCode == Keys.F12)
             {
                 if(panelCommands.Visible == false)
@@ -629,13 +636,13 @@ namespace AnimePlayer
 
         public void flowLayoutPanelPolecane_ControlAdded(object sender, ControlEventArgs e)
         {
-           // taskAddToAllList(e);
+           taskAddToAllList(e);
         }
 
 
         public void flowLayoutPanel_ControlAdded(object sender, ControlEventArgs e)
         {
-            //taskAddToAllList(e);
+            taskAddToAllList(e);
         }
 
         public Task taskAddToAllList(ControlEventArgs e)

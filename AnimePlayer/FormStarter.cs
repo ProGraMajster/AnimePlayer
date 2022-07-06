@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using AnimePlayer.Class;
@@ -19,6 +20,9 @@ namespace AnimePlayer
         ZetaIpc.Runtime.Client.IpcClient ipcClientMain;
         Process processApp;
         Process processUpdater;
+
+        public bool updated = false;
+
         public FormStarter()
         {
             InitializeComponent();
@@ -44,6 +48,10 @@ namespace AnimePlayer
                 {
                     checkBoxOffline.Checked = true;
                 }
+                if(Environment.CommandLine.Contains("-updated"))
+                {
+                    updated=true;
+                }
                 text = "";
                 DirectoryInfo directoryInfo = new DirectoryInfo(Application.StartupPath);
                 foreach (var file in directoryInfo.GetFiles())
@@ -60,6 +68,7 @@ namespace AnimePlayer
             {
                 Console.WriteLine(ex.ToString());
             }
+            this.Hide();
         }
 
         private void IpcServer_ReceivedRequest(object sender, ZetaIpc.Runtime.Server.ReceivedRequestEventArgs e)
@@ -169,18 +178,22 @@ namespace AnimePlayer
 
         private void FormStarter_Load(object sender, EventArgs e)
         {
-            timer1.Start();
-            processUpdater = new Process();
-            processUpdater.StartInfo.FileName = Application.ExecutablePath;
-            processUpdater.StartInfo.UseShellExecute = true;
-            processUpdater.StartInfo.Arguments = "-Updater";
-            processUpdater.Start();
+            if(!updated)
+            {
+                timer1.Start();
+                processUpdater = new Process();
+                processUpdater.StartInfo.FileName = Application.ExecutablePath;
+                processUpdater.StartInfo.UseShellExecute = true;
+                processUpdater.StartInfo.Arguments = "-Updater";
+                processUpdater.Start();
+            }
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
             try
             {
+                this.Hide();
                 if (File.Exists(AppFolders.Updater+"update"))
                 {
                     string text = File.ReadAllText(AppFolders.Updater+"update");
@@ -196,7 +209,8 @@ namespace AnimePlayer
                             processUpdater.Kill();
                         }
                         File.Delete(AppFolders.Updater+"update");
-                        Application.Restart();
+                        System.Diagnostics.Process.Start(Application.ExecutablePath,"-updated");
+                        Process.GetCurrentProcess().Kill();
                     }
                 }
             }

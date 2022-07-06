@@ -58,7 +58,14 @@ namespace AnimePlayer.ControlsWinForms
         {
             if(e.KeyCode == Keys.Enter)
             {
-                webView.CoreWebView2.Navigate(textBoxLink.Text);
+                try
+                {
+                    webView.CoreWebView2.Navigate(textBoxLink.Text);
+                }
+                catch(Exception ex)
+                {
+                    Console.WriteLine(ex.ToString());
+                }
             }
         }
 
@@ -103,6 +110,10 @@ namespace AnimePlayer.ControlsWinForms
             webView.Location = new Point(0, panel1.Height);
             webView.Refresh();
 
+        }
+
+        private void buttonMenu_Click(object sender, EventArgs e)
+        {
         }
     }
 }
