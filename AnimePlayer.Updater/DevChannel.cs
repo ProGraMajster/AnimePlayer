@@ -62,7 +62,7 @@ namespace AnimePlayer.Updater
             }
         }
 
-        static readonly string repo_path = @"C:\Users\ssass\AppData\Roaming\AnimePlayer\Updater\Downloaded_repo\AnimePlayer-master\AnimePlayer.HostApp\bin\Debug\net6.0-windows";
+        static readonly string repo_path = @"C:\Users\HARDPC\AppData\Roaming\AnimePlayer\Updater\Downloaded_repo\AnimePlayer-master\AnimePlayer.HostApp\bin\Debug\net6.0-windows";
         public static void UpdateOperation()
         {
             try
