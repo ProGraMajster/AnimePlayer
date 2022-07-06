@@ -53,6 +53,8 @@
             this.checkBoxDebug = new System.Windows.Forms.CheckBox();
             this.labelLoadingApp = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.textBoxArgs = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panelSettings.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -174,7 +176,7 @@
             this.labelVersion.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelVersion.Location = new System.Drawing.Point(0, 25);
             this.labelVersion.Name = "labelVersion";
-            this.labelVersion.Size = new System.Drawing.Size(367, 345);
+            this.labelVersion.Size = new System.Drawing.Size(351, 345);
             this.labelVersion.TabIndex = 3;
             this.labelVersion.Text = "Version lib";
             this.labelVersion.Click += new System.EventHandler(this.labelVersion_Click);
@@ -182,6 +184,8 @@
             // panelSettings
             // 
             this.panelSettings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.panelSettings.Controls.Add(this.label6);
+            this.panelSettings.Controls.Add(this.textBoxArgs);
             this.panelSettings.Controls.Add(this.checkBoxef);
             this.panelSettings.Controls.Add(this.panel2);
             this.panelSettings.Controls.Add(this.label1);
@@ -203,7 +207,7 @@
             // checkBoxef
             // 
             this.checkBoxef.AutoSize = true;
-            this.checkBoxef.Location = new System.Drawing.Point(12, 326);
+            this.checkBoxef.Location = new System.Drawing.Point(265, 7);
             this.checkBoxef.Name = "checkBoxef";
             this.checkBoxef.Size = new System.Drawing.Size(160, 19);
             this.checkBoxef.TabIndex = 10;
@@ -218,9 +222,9 @@
             this.panel2.Controls.Add(this.labelVersion);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(415, 0);
+            this.panel2.Location = new System.Drawing.Point(431, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(367, 370);
+            this.panel2.Size = new System.Drawing.Size(351, 370);
             this.panel2.TabIndex = 9;
             // 
             // label5
@@ -230,7 +234,7 @@
             this.label5.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label5.Location = new System.Drawing.Point(0, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(367, 25);
+            this.label5.Size = new System.Drawing.Size(351, 25);
             this.label5.TabIndex = 4;
             this.label5.Text = "Wersje bibliotek dll aplikacji";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -339,6 +343,24 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // textBoxArgs
+            // 
+            this.textBoxArgs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
+            this.textBoxArgs.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxArgs.ForeColor = System.Drawing.Color.White;
+            this.textBoxArgs.Location = new System.Drawing.Point(12, 350);
+            this.textBoxArgs.Name = "textBoxArgs";
+            this.textBoxArgs.Size = new System.Drawing.Size(350, 16);
+            this.textBoxArgs.TabIndex = 11;
+            // 
+            // label6
+            // 
+            this.label6.Location = new System.Drawing.Point(12, 332);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(123, 17);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "Argumenty startowe :";
+            // 
             // FormStarter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -392,5 +414,7 @@
         private System.Windows.Forms.Timer timer1;
         private CheckBox checkBoxef;
         private Button buttonBrowser;
+        private TextBox textBoxArgs;
+        private Label label6;
     }
 }

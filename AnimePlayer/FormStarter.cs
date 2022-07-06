@@ -122,6 +122,7 @@ namespace AnimePlayer
                 arg += "-offline ";
             }
             arg += "-OpenApp";
+            arg+=" "+textBoxArgs.Text;
             processApp.StartInfo.Arguments = arg;
             processApp.EnableRaisingEvents = true;
             processApp.Exited += ProcessApp_Exited;
