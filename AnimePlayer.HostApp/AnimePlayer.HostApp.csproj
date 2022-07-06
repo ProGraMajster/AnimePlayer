@@ -43,6 +43,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Reference Include="NewMessageBox">
+      <HintPath>..\AnimePlayer\NewMessageBox.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
     <None Update="PrzeczytajTenPlik.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

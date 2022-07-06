@@ -16,6 +16,7 @@ namespace AnimePlayer.Updater
         public FormUpdater()
         {
             InitializeComponent();
+            AnimePlayer.Core.CheckingAppFolders.CheckMainFolder();
             FileStream filestream = new FileStream(AnimePlayer.Class.AppFolders.Logs+"\\"+ Process.GetCurrentProcess().StartTime.ToString().Replace(":", " ") + "_updater.txt", FileMode.Append);
             var streamwriter = new StreamWriter(filestream);
             streamwriter.AutoFlush = true;
