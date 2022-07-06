@@ -49,6 +49,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="NewMessageBox.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="PrzeczytajTenPlik.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
