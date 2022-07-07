@@ -30,8 +30,8 @@ namespace AnimePlayer
             {
 
             }
-            UpdateLoadingInfo("ContentManager>Initalize");
-            foreach(PreviewTitleClass item in GetAllPreviewTitleClassFromFolder().ToArray())
+            List<PreviewTitleClass> previewTitleClasses = GetAllPreviewTitleClassFromFolder();
+            foreach (PreviewTitleClass item in previewTitleClasses)
             {
                 Panel panel = CreatePreviewPanelFromData(item);
                 _formMainPlayer.flowLayoutPanelPolecane.Controls.Add(panel);
@@ -62,6 +62,11 @@ namespace AnimePlayer
             }
         }
 
+        public PageItemData GetPageItemDataWithContentFolderFromName(string name)
+        {
+
+        }
+
         public static Panel CreatePreviewPanelFromData(PreviewTitleClass previewTitleClass)
         {
             try
@@ -83,11 +88,14 @@ namespace AnimePlayer
            // {
             try
             {
-                DirectoryInfo directoryInfo = new DirectoryInfo(AppFolders.UpdatedPreviewItems.TrimEnd('\\'));
+                Console.WriteLine("GetAllPreviewTitleClassFromFolder()");
+                Console.WriteLine("Files:");
+                DirectoryInfo directoryInfo = new DirectoryInfo(AppFolders.PreviewItems.TrimEnd('\\'));
                 foreach (var item in directoryInfo.GetFiles())
                 {
                     if (item.FullName.EndsWith(".dat"))
                     {
+                        Console.WriteLine(item.FullName);
                        list.Add((PreviewTitleClass)SerializationAndDeserialization.Deserialization(item.FullName));
                     }
                 }

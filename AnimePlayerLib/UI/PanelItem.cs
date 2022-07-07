@@ -13,7 +13,9 @@ namespace AnimePlayerLibrary.UI
         public Panel panelItem;
         public PictureBox pictureBoxItem;
         public Button buttonItem;
-        
+        private PreviewTitleClass _previewTitleClass;
+        private Panel panelLoading;
+        private Label labelLoadingDetails;
         private void CreateElemetsUI()
         {
             // 
@@ -61,12 +63,12 @@ namespace AnimePlayerLibrary.UI
             this.panelItem.BackColor = Color.FromArgb(30, 30, 30);
         }
 
-        public void SetInformationUI(PreviewTitleClass previewTitleClass)
+        public void SetInformationUI()
         {
             try
             {
-                buttonItem.Text = previewTitleClass.Title;
-                pictureBoxItem.ImageLocation = previewTitleClass.LinkToIcon[0];
+                buttonItem.Text = _previewTitleClass.Title;
+                pictureBoxItem.ImageLocation = _previewTitleClass.LinkToIcon[0];
             }
             catch(Exception ex)
             {
@@ -74,11 +76,68 @@ namespace AnimePlayerLibrary.UI
             }
         }
 
+        public void AddEvents()
+        {
+            pictureBoxItem.Click += object_Click;
+            buttonItem.Click += object_Click;
+        }
+
+        public async void GetLoadingCotrols()
+        {
+            await Task.Run(() =>
+            {
+                panelLoading = (Panel)Application.OpenForms[0].Controls.Find("panelLoading", true)[0];
+                labelLoadingDetails = (Label)Application.OpenForms[0].Controls.Find("labelLoadingDetails", true)[0];
+            });
+        }
+
+        private void object_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                
+            }
+            catch(Exception ex)
+            {
+
+            }
+        }
+
+        private void UpdateLoadingTextdetails(string text)
+        {
+            if(text == null && labelLoadingDetails == null)
+                return;
+
+            labelLoadingDetails.Text = text;
+        }
+
+        private void ShowPanelLoading()
+        {
+            if(panelLoading != null)
+            {
+                panelLoading.Show();
+                panelLoading.BringToFront();
+            }
+        }
+        private void HidePanelLoading()
+        {
+            if(panelLoading != null)
+            {
+                panelLoading.Hide();
+            }
+        }
+
         public PanelItem(PreviewTitleClass previewTitleClass)
         {
+            _previewTitleClass = previewTitleClass;
+            if(_previewTitleClass == null)
+            {
+                new ArgumentNullException("_previewTitleClass is null");
+            }
+            GetLoadingCotrols();
             CreateElemetsUI();
-            SetInformationUI(previewTitleClass);
-
+            SetInformationUI();
+            AddEvents();
         }
     }
 }

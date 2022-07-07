@@ -36,11 +36,13 @@ namespace AnimePlayer.Class
             "\\AnimePlayer\\Settings\\";
         //============== New downloaded content folders ====================
         public static readonly string UpdatedContentFolder = Updater +
-            "UpdatedContentFolder\\AnimePlayer.Content\\APC\\AnimePlayer.Content-master\\APC\\";
-        public static readonly string UpdatedPreviewItems = UpdatedContentFolder + "PreviewItems\\";
-        public static readonly string UpdatedPagesItems = UpdatedContentFolder + "PagesItems\\";
-        public static readonly string UpdatedCommunity = UpdatedContentFolder + "Community\\";
-        public static readonly string UpdatedWeb = UpdatedContentFolder + "Web\\";
-        public static readonly string UpdatedVideosItems = UpdatedContentFolder + "VideosItems\\";
+            "UpdatedContentFolder\\";
+        public static readonly string UpdatedRepoPath = UpdatedContentFolder +
+            "AnimePlayer.Content-master\\APC\\";
+        public static readonly string UpdatedPreviewItems = UpdatedRepoPath + "PreviewItems\\";
+        public static readonly string UpdatedPagesItems = UpdatedRepoPath + "PagesItems\\";
+        public static readonly string UpdatedCommunity = UpdatedRepoPath + "Community\\";
+        public static readonly string UpdatedWeb = UpdatedRepoPath + "Web\\";
+        public static readonly string UpdatedVideosItems = UpdatedRepoPath + "VideosItems\\";
     }
 }

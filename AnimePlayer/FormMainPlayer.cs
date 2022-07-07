@@ -384,6 +384,7 @@ namespace AnimePlayer
             }
             else
             {
+                Console.WriteLine("ContentManager.Initalize...");
                 ContentManager.Initalize(this);
             }
             /*if (local == false)

@@ -17,6 +17,10 @@ namespace AnimePlayer.Updater
         {
             try
             {
+               
+                Console.WriteLine("DownloadContet > DownloadFile");
+                Console.WriteLine("Link:"+LinkToContent);
+                Console.WriteLine("path:"+AppFolders.Updater+"content.zip");
                 Download.File(LinkToContent, AppFolders.Updater+"content.zip");
                 Unpack();
             }
@@ -44,6 +48,11 @@ namespace AnimePlayer.Updater
                 if (!File.Exists(AppFolders.Updater+"content.zip"))
                 {
                     new FileNotFoundException();
+                }
+                if(Directory.Exists(AppFolders.UpdatedContentFolder))
+                {
+                    Directory.Delete(AppFolders.UpdatedContentFolder, true);
+                    Directory.CreateDirectory(AppFolders.UpdatedContentFolder); 
                 }
                 System.IO.Compression.ZipFile.ExtractToDirectory(AppFolders.Updater+"content.zip", AppFolders.UpdatedContentFolder);
             }
