@@ -62,9 +62,9 @@ namespace AnimePlayer
             }
         }
 
-        public PageItemData GetPageItemDataWithContentFolderFromName(string name)
+        public static PageItemData GetPageItemDataWithContentFolderFromName(string name)
         {
-
+            return null;
         }
 
         public static Panel CreatePreviewPanelFromData(PreviewTitleClass previewTitleClass)
@@ -96,7 +96,8 @@ namespace AnimePlayer
                     if (item.FullName.EndsWith(".dat"))
                     {
                         Console.WriteLine(item.FullName);
-                       list.Add((PreviewTitleClass)SerializationAndDeserialization.Deserialization(item.FullName));
+                        PreviewTitleClass previewTitleClass = (PreviewTitleClass)SerializationAndDeserialization.Deserialization(item.FullName);
+                       list.Add(previewTitleClass);
                     }
                 }
             }

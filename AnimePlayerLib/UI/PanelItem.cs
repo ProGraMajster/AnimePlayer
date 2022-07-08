@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using AnimePlayer.Class;
+using AnimePlayerLibrary;
 
 namespace AnimePlayerLibrary.UI
 {
@@ -95,7 +96,8 @@ namespace AnimePlayerLibrary.UI
         {
             try
             {
-                
+                UpdateLoadingTextdetails("Find Page > "+ _previewTitleClass.Title);
+                ShowPanelLoading();
             }
             catch(Exception ex)
             {
