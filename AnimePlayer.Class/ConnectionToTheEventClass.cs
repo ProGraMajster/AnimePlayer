@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace AnimePlayer.Class
 {
+    [Serializable]
     public class ConnectionToTheEventClass
     {
         public string ControlName { get; set; }

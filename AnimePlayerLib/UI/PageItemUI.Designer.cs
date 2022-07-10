@@ -1,17 +1,13 @@
-﻿using AnimePlayer.ControlsWinForms;
-using AnimePlayerLibrary;
-using NewFlowLayoutPanel = AnimePlayer.ControlsWinForms.NewFlowLayoutPanel;
-
-namespace AnimePlayer
+﻿namespace AnimePlayerLibrary.UI
 {
     partial class PageItemUI
     {
-        /// <summary> 
+        /// <summary>
         /// Wymagana zmienna projektanta.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary> 
+        /// <summary>
         /// Wyczyść wszystkie używane zasoby.
         /// </summary>
         /// <param name="disposing">prawda, jeżeli zarządzane zasoby powinny zostać zlikwidowane; Fałsz w przeciwnym wypadku.</param>
@@ -26,1100 +22,1014 @@ namespace AnimePlayer
 
         #region Kod wygenerowany przez Projektanta składników
 
-        /// <summary> 
+        /// <summary>
         /// Metoda wymagana do obsługi projektanta — nie należy modyfikować 
         /// jej zawartości w edytorze kodu.
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PageItemUI));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.linkLabelChangeState = new System.Windows.Forms.LinkLabel();
-            this.labelotherTitle = new System.Windows.Forms.Label();
-            this.labelTitle = new System.Windows.Forms.Label();
-            this.button = new System.Windows.Forms.Button();
-            this.pictureBoxIcon = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.labelDes = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.labelStudio = new System.Windows.Forms.Label();
-            this.labelNE = new System.Windows.Forms.Label();
-            this.labelLE = new System.Windows.Forms.Label();
-            this.labelMPAA = new System.Windows.Forms.Label();
-            this.labelDateE = new System.Windows.Forms.Label();
-            this.labelDateS = new System.Windows.Forms.Label();
-            this.labelStatus = new System.Windows.Forms.Label();
-            this.labelType = new System.Windows.Forms.Label();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.label_6 = new System.Windows.Forms.Label();
-            this.label_7 = new System.Windows.Forms.Label();
-            this.label_5 = new System.Windows.Forms.Label();
-            this.labeliNe = new System.Windows.Forms.Label();
-            this.label_4 = new System.Windows.Forms.Label();
-            this.label_3 = new System.Windows.Forms.Label();
-            this.label_2 = new System.Windows.Forms.Label();
-            this.label_1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.flowLayoutPanelEpType = new System.Windows.Forms.FlowLayoutPanel();
-            this.listBoxEpType = new System.Windows.Forms.ListBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.panel_comments = new System.Windows.Forms.Panel();
-            this.panel_com_dockWebview = new System.Windows.Forms.Panel();
-            this.button_Load_Comments = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
-            this.panelRelatedSeries = new System.Windows.Forms.Panel();
-            this.flowLayoutPanelRelatedSeries = new AnimePlayer.ControlsWinForms.NewFlowLayoutPanel();
-            this.label6 = new System.Windows.Forms.Label();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.labelOtherTags = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.labelArchetype = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.labelPlaceAndTime = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.labelTypesOfCharacters = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.labelTargetGroups = new System.Windows.Forms.Label();
-            this.labeliGD = new System.Windows.Forms.Label();
-            this.labelSpecies = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.panelViewIcon = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.buttonViewIconClose = new System.Windows.Forms.Button();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.pictureBoxIcon = new System.Windows.Forms.PictureBox();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.panel23 = new System.Windows.Forms.Panel();
+            this.newFlowLayoutPanel6 = new AnimePlayer.ControlsWinForms.NewFlowLayoutPanel();
+            this.label29 = new System.Windows.Forms.Label();
+            this.panel22 = new System.Windows.Forms.Panel();
+            this.newFlowLayoutPanel5 = new AnimePlayer.ControlsWinForms.NewFlowLayoutPanel();
+            this.label28 = new System.Windows.Forms.Label();
+            this.panel21 = new System.Windows.Forms.Panel();
+            this.newFlowLayoutPanel4 = new AnimePlayer.ControlsWinForms.NewFlowLayoutPanel();
+            this.label27 = new System.Windows.Forms.Label();
+            this.panel20 = new System.Windows.Forms.Panel();
+            this.newFlowLayoutPanel3 = new AnimePlayer.ControlsWinForms.NewFlowLayoutPanel();
+            this.label26 = new System.Windows.Forms.Label();
+            this.panel19 = new System.Windows.Forms.Panel();
+            this.newFlowLayoutPanel2 = new AnimePlayer.ControlsWinForms.NewFlowLayoutPanel();
+            this.label24 = new System.Windows.Forms.Label();
+            this.panel18 = new System.Windows.Forms.Panel();
+            this.newFlowLayoutPanel1 = new AnimePlayer.ControlsWinForms.NewFlowLayoutPanel();
+            this.label25 = new System.Windows.Forms.Label();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.panel17 = new System.Windows.Forms.Panel();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.panel16 = new System.Windows.Forms.Panel();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.panel15 = new System.Windows.Forms.Panel();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.panel14 = new System.Windows.Forms.Panel();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label30 = new System.Windows.Forms.Label();
+            this.newFlowLayoutPanel7 = new AnimePlayer.ControlsWinForms.NewFlowLayoutPanel();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.label31 = new System.Windows.Forms.Label();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.panel8 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIcon)).BeginInit();
             this.panel3.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
-            this.panel8.SuspendLayout();
-            this.panel7.SuspendLayout();
             this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIcon)).BeginInit();
+            this.panel4.SuspendLayout();
             this.panel6.SuspendLayout();
-            this.panel_comments.SuspendLayout();
-            this.panelRelatedSeries.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.panel23.SuspendLayout();
+            this.panel22.SuspendLayout();
+            this.panel21.SuspendLayout();
+            this.panel20.SuspendLayout();
+            this.panel19.SuspendLayout();
+            this.panel18.SuspendLayout();
             this.panel9.SuspendLayout();
+            this.panel17.SuspendLayout();
+            this.panel16.SuspendLayout();
+            this.panel15.SuspendLayout();
+            this.panel14.SuspendLayout();
+            this.panel13.SuspendLayout();
+            this.panel12.SuspendLayout();
+            this.panel11.SuspendLayout();
             this.panel10.SuspendLayout();
-            this.panelViewIcon.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.tabPage2.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            this.panel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.panel1.Controls.Add(this.linkLabel1);
-            this.panel1.Controls.Add(this.linkLabelChangeState);
-            this.panel1.Controls.Add(this.labelotherTitle);
-            this.panel1.Controls.Add(this.labelTitle);
-            this.panel1.Controls.Add(this.button);
-            this.panel1.Controls.Add(this.pictureBoxIcon);
+            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.Controls.Add(this.panel3);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.ForeColor = System.Drawing.Color.White;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(23);
-            this.panel1.Size = new System.Drawing.Size(922, 277);
-            this.panel1.TabIndex = 0;
-            // 
-            // linkLabel1
-            // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.linkLabel1.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.linkLabel1.LinkColor = System.Drawing.Color.DeepSkyBlue;
-            this.linkLabel1.Location = new System.Drawing.Point(210, 237);
-            this.linkLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.linkLabel1.Size = new System.Drawing.Size(167, 17);
-            this.linkLabel1.TabIndex = 4;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Otwóz stronę internetową";
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
-            // 
-            // linkLabelChangeState
-            // 
-            this.linkLabelChangeState.AutoSize = true;
-            this.linkLabelChangeState.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.linkLabelChangeState.LinkColor = System.Drawing.Color.DeepSkyBlue;
-            this.linkLabelChangeState.Location = new System.Drawing.Point(210, 215);
-            this.linkLabelChangeState.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.linkLabelChangeState.Name = "linkLabelChangeState";
-            this.linkLabelChangeState.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.linkLabelChangeState.Size = new System.Drawing.Size(185, 17);
-            this.linkLabelChangeState.TabIndex = 5;
-            this.linkLabelChangeState.TabStop = true;
-            this.linkLabelChangeState.Text = "Zmień status (Aktualny: brak)";
-            this.linkLabelChangeState.Visible = false;
-            this.linkLabelChangeState.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelChangeState_LinkClicked);
-            // 
-            // labelotherTitle
-            // 
-            this.labelotherTitle.AutoEllipsis = true;
-            this.labelotherTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.labelotherTitle.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelotherTitle.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelotherTitle.ForeColor = System.Drawing.Color.White;
-            this.labelotherTitle.Location = new System.Drawing.Point(210, 70);
-            this.labelotherTitle.Margin = new System.Windows.Forms.Padding(12, 0, 12, 0);
-            this.labelotherTitle.Name = "labelotherTitle";
-            this.labelotherTitle.Padding = new System.Windows.Forms.Padding(12, 12, 12, 3);
-            this.labelotherTitle.Size = new System.Drawing.Size(572, 128);
-            this.labelotherTitle.TabIndex = 3;
-            this.labelotherTitle.Text = "OtherTitle";
-            // 
-            // labelTitle
-            // 
-            this.labelTitle.AutoSize = true;
-            this.labelTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.labelTitle.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelTitle.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelTitle.ForeColor = System.Drawing.Color.White;
-            this.labelTitle.Location = new System.Drawing.Point(210, 23);
-            this.labelTitle.Margin = new System.Windows.Forms.Padding(12, 0, 12, 0);
-            this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Padding = new System.Windows.Forms.Padding(12);
-            this.labelTitle.Size = new System.Drawing.Size(70, 47);
-            this.labelTitle.TabIndex = 1;
-            this.labelTitle.Text = "Title";
-            // 
-            // button
-            // 
-            this.button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.button.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button.FlatAppearance.BorderSize = 0;
-            this.button.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button.ForeColor = System.Drawing.Color.White;
-            this.button.Location = new System.Drawing.Point(782, 23);
-            this.button.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.button.MaximumSize = new System.Drawing.Size(117, 52);
-            this.button.Name = "button";
-            this.button.Size = new System.Drawing.Size(117, 52);
-            this.button.TabIndex = 2;
-            this.button.Text = "Zamknij stronę";
-            this.button.UseVisualStyleBackColor = false;
-            this.button.Click += new System.EventHandler(this.button_Click);
-            // 
-            // pictureBoxIcon
-            // 
-            this.pictureBoxIcon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.pictureBoxIcon.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBoxIcon.Image = global::AnimePlayer.Properties.Resources.NoImage;
-            this.pictureBoxIcon.Location = new System.Drawing.Point(23, 23);
-            this.pictureBoxIcon.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.pictureBoxIcon.Name = "pictureBoxIcon";
-            this.pictureBoxIcon.Size = new System.Drawing.Size(187, 231);
-            this.pictureBoxIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxIcon.TabIndex = 0;
-            this.pictureBoxIcon.TabStop = false;
-            this.pictureBoxIcon.Click += new System.EventHandler(this.pictureBoxIcon_Click);
+            this.panel1.Padding = new System.Windows.Forms.Padding(20);
+            this.panel1.Size = new System.Drawing.Size(729, 738);
+            this.panel1.TabIndex = 1;
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.panel3.Controls.Add(this.labelDes);
-            this.panel3.Controls.Add(this.label1);
+            this.panel3.BackColor = System.Drawing.Color.Transparent;
+            this.panel3.Controls.Add(this.panel5);
             this.panel3.Controls.Add(this.panel4);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 277);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.panel3.Location = new System.Drawing.Point(20, 20);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(922, 548);
+            this.panel3.Size = new System.Drawing.Size(689, 415);
             this.panel3.TabIndex = 0;
-            // 
-            // labelDes
-            // 
-            this.labelDes.AutoEllipsis = true;
-            this.labelDes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.labelDes.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelDes.Font = new System.Drawing.Font("Comic Sans MS", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelDes.ForeColor = System.Drawing.Color.White;
-            this.labelDes.Location = new System.Drawing.Point(337, 52);
-            this.labelDes.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelDes.Name = "labelDes";
-            this.labelDes.Padding = new System.Windows.Forms.Padding(12);
-            this.labelDes.Size = new System.Drawing.Size(585, 496);
-            this.labelDes.TabIndex = 6;
-            this.labelDes.Text = "N/A";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.Font = new System.Drawing.Font("Comic Sans MS", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(337, 0);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Padding = new System.Windows.Forms.Padding(12);
-            this.label1.Size = new System.Drawing.Size(79, 52);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Opis";
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.panel4.Controls.Add(this.panel2);
-            this.panel4.Controls.Add(this.label2);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(337, 548);
-            this.panel4.TabIndex = 1;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.panel2.Controls.Add(this.tableLayoutPanel1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 51);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(337, 497);
-            this.panel2.TabIndex = 4;
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.panel8, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.panel7, 0, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(337, 497);
-            this.tableLayoutPanel1.TabIndex = 0;
-            // 
-            // panel8
-            // 
-            this.panel8.Controls.Add(this.labelStudio);
-            this.panel8.Controls.Add(this.labelNE);
-            this.panel8.Controls.Add(this.labelLE);
-            this.panel8.Controls.Add(this.labelMPAA);
-            this.panel8.Controls.Add(this.labelDateE);
-            this.panel8.Controls.Add(this.labelDateS);
-            this.panel8.Controls.Add(this.labelStatus);
-            this.panel8.Controls.Add(this.labelType);
-            this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel8.Location = new System.Drawing.Point(172, 3);
-            this.panel8.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(161, 491);
-            this.panel8.TabIndex = 1;
-            // 
-            // labelStudio
-            // 
-            this.labelStudio.AutoEllipsis = true;
-            this.labelStudio.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelStudio.Font = new System.Drawing.Font("Comic Sans MS", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelStudio.ForeColor = System.Drawing.Color.White;
-            this.labelStudio.Location = new System.Drawing.Point(0, 235);
-            this.labelStudio.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelStudio.Name = "labelStudio";
-            this.labelStudio.Padding = new System.Windows.Forms.Padding(12);
-            this.labelStudio.Size = new System.Drawing.Size(161, 162);
-            this.labelStudio.TabIndex = 9;
-            this.labelStudio.Text = "N/A";
-            // 
-            // labelNE
-            // 
-            this.labelNE.AutoEllipsis = true;
-            this.labelNE.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelNE.Font = new System.Drawing.Font("Comic Sans MS", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelNE.ForeColor = System.Drawing.Color.White;
-            this.labelNE.Location = new System.Drawing.Point(0, 188);
-            this.labelNE.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelNE.Name = "labelNE";
-            this.labelNE.Padding = new System.Windows.Forms.Padding(12);
-            this.labelNE.Size = new System.Drawing.Size(161, 47);
-            this.labelNE.TabIndex = 12;
-            this.labelNE.Text = "N/A";
-            this.labelNE.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // labelLE
-            // 
-            this.labelLE.AutoEllipsis = true;
-            this.labelLE.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.labelLE.Font = new System.Drawing.Font("Comic Sans MS", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelLE.ForeColor = System.Drawing.Color.White;
-            this.labelLE.Location = new System.Drawing.Point(0, 397);
-            this.labelLE.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelLE.Name = "labelLE";
-            this.labelLE.Padding = new System.Windows.Forms.Padding(12);
-            this.labelLE.Size = new System.Drawing.Size(161, 47);
-            this.labelLE.TabIndex = 11;
-            this.labelLE.Text = "N/A";
-            this.labelLE.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // labelMPAA
-            // 
-            this.labelMPAA.AutoEllipsis = true;
-            this.labelMPAA.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.labelMPAA.Font = new System.Drawing.Font("Comic Sans MS", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelMPAA.ForeColor = System.Drawing.Color.White;
-            this.labelMPAA.Location = new System.Drawing.Point(0, 444);
-            this.labelMPAA.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelMPAA.Name = "labelMPAA";
-            this.labelMPAA.Padding = new System.Windows.Forms.Padding(12);
-            this.labelMPAA.Size = new System.Drawing.Size(161, 47);
-            this.labelMPAA.TabIndex = 10;
-            this.labelMPAA.Text = "N/A";
-            this.labelMPAA.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // labelDateE
-            // 
-            this.labelDateE.AutoEllipsis = true;
-            this.labelDateE.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelDateE.Font = new System.Drawing.Font("Comic Sans MS", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelDateE.ForeColor = System.Drawing.Color.White;
-            this.labelDateE.Location = new System.Drawing.Point(0, 141);
-            this.labelDateE.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelDateE.Name = "labelDateE";
-            this.labelDateE.Padding = new System.Windows.Forms.Padding(12);
-            this.labelDateE.Size = new System.Drawing.Size(161, 47);
-            this.labelDateE.TabIndex = 8;
-            this.labelDateE.Text = "N/A";
-            this.labelDateE.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // labelDateS
-            // 
-            this.labelDateS.AutoEllipsis = true;
-            this.labelDateS.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelDateS.Font = new System.Drawing.Font("Comic Sans MS", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelDateS.ForeColor = System.Drawing.Color.White;
-            this.labelDateS.Location = new System.Drawing.Point(0, 94);
-            this.labelDateS.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelDateS.Name = "labelDateS";
-            this.labelDateS.Padding = new System.Windows.Forms.Padding(12);
-            this.labelDateS.Size = new System.Drawing.Size(161, 47);
-            this.labelDateS.TabIndex = 7;
-            this.labelDateS.Text = "N/A";
-            this.labelDateS.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // labelStatus
-            // 
-            this.labelStatus.AutoEllipsis = true;
-            this.labelStatus.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelStatus.Font = new System.Drawing.Font("Comic Sans MS", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelStatus.ForeColor = System.Drawing.Color.White;
-            this.labelStatus.Location = new System.Drawing.Point(0, 47);
-            this.labelStatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelStatus.Name = "labelStatus";
-            this.labelStatus.Padding = new System.Windows.Forms.Padding(12);
-            this.labelStatus.Size = new System.Drawing.Size(161, 47);
-            this.labelStatus.TabIndex = 6;
-            this.labelStatus.Text = "N/A";
-            this.labelStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // labelType
-            // 
-            this.labelType.AutoEllipsis = true;
-            this.labelType.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelType.Font = new System.Drawing.Font("Comic Sans MS", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelType.ForeColor = System.Drawing.Color.White;
-            this.labelType.Location = new System.Drawing.Point(0, 0);
-            this.labelType.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelType.Name = "labelType";
-            this.labelType.Padding = new System.Windows.Forms.Padding(12);
-            this.labelType.Size = new System.Drawing.Size(161, 47);
-            this.labelType.TabIndex = 5;
-            this.labelType.Text = "N/A";
-            this.labelType.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // panel7
-            // 
-            this.panel7.Controls.Add(this.label_6);
-            this.panel7.Controls.Add(this.label_7);
-            this.panel7.Controls.Add(this.label_5);
-            this.panel7.Controls.Add(this.labeliNe);
-            this.panel7.Controls.Add(this.label_4);
-            this.panel7.Controls.Add(this.label_3);
-            this.panel7.Controls.Add(this.label_2);
-            this.panel7.Controls.Add(this.label_1);
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel7.Location = new System.Drawing.Point(4, 3);
-            this.panel7.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(160, 491);
-            this.panel7.TabIndex = 0;
-            // 
-            // label_6
-            // 
-            this.label_6.AutoEllipsis = true;
-            this.label_6.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label_6.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label_6.ForeColor = System.Drawing.Color.White;
-            this.label_6.Location = new System.Drawing.Point(0, 397);
-            this.label_6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label_6.Name = "label_6";
-            this.label_6.Padding = new System.Windows.Forms.Padding(12);
-            this.label_6.Size = new System.Drawing.Size(160, 47);
-            this.label_6.TabIndex = 9;
-            this.label_6.Text = "Długość odcinka";
-            this.label_6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label_7
-            // 
-            this.label_7.AutoEllipsis = true;
-            this.label_7.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label_7.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label_7.ForeColor = System.Drawing.Color.White;
-            this.label_7.Location = new System.Drawing.Point(0, 444);
-            this.label_7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label_7.Name = "label_7";
-            this.label_7.Padding = new System.Windows.Forms.Padding(12);
-            this.label_7.Size = new System.Drawing.Size(160, 47);
-            this.label_7.TabIndex = 10;
-            this.label_7.Text = "MPAA";
-            this.label_7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label_5
-            // 
-            this.label_5.AutoEllipsis = true;
-            this.label_5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label_5.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label_5.ForeColor = System.Drawing.Color.White;
-            this.label_5.Location = new System.Drawing.Point(0, 235);
-            this.label_5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label_5.Name = "label_5";
-            this.label_5.Padding = new System.Windows.Forms.Padding(12);
-            this.label_5.Size = new System.Drawing.Size(160, 47);
-            this.label_5.TabIndex = 8;
-            this.label_5.Text = "Studio";
-            this.label_5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // labeliNe
-            // 
-            this.labeliNe.AutoEllipsis = true;
-            this.labeliNe.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labeliNe.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labeliNe.ForeColor = System.Drawing.Color.White;
-            this.labeliNe.Location = new System.Drawing.Point(0, 188);
-            this.labeliNe.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labeliNe.Name = "labeliNe";
-            this.labeliNe.Padding = new System.Windows.Forms.Padding(12);
-            this.labeliNe.Size = new System.Drawing.Size(160, 47);
-            this.labeliNe.TabIndex = 11;
-            this.labeliNe.Text = "Liczba odcinków";
-            this.labeliNe.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label_4
-            // 
-            this.label_4.AutoEllipsis = true;
-            this.label_4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label_4.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label_4.ForeColor = System.Drawing.Color.White;
-            this.label_4.Location = new System.Drawing.Point(0, 141);
-            this.label_4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label_4.Name = "label_4";
-            this.label_4.Padding = new System.Windows.Forms.Padding(12);
-            this.label_4.Size = new System.Drawing.Size(160, 47);
-            this.label_4.TabIndex = 7;
-            this.label_4.Text = "Koniec emisji";
-            this.label_4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label_3
-            // 
-            this.label_3.AutoEllipsis = true;
-            this.label_3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label_3.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label_3.ForeColor = System.Drawing.Color.White;
-            this.label_3.Location = new System.Drawing.Point(0, 94);
-            this.label_3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label_3.Name = "label_3";
-            this.label_3.Padding = new System.Windows.Forms.Padding(12);
-            this.label_3.Size = new System.Drawing.Size(160, 47);
-            this.label_3.TabIndex = 6;
-            this.label_3.Text = "Data emisji";
-            this.label_3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label_2
-            // 
-            this.label_2.AutoEllipsis = true;
-            this.label_2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label_2.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label_2.ForeColor = System.Drawing.Color.White;
-            this.label_2.Location = new System.Drawing.Point(0, 47);
-            this.label_2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label_2.Name = "label_2";
-            this.label_2.Padding = new System.Windows.Forms.Padding(12);
-            this.label_2.Size = new System.Drawing.Size(160, 47);
-            this.label_2.TabIndex = 5;
-            this.label_2.Text = "Status";
-            this.label_2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label_1
-            // 
-            this.label_1.AutoEllipsis = true;
-            this.label_1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label_1.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label_1.ForeColor = System.Drawing.Color.White;
-            this.label_1.Location = new System.Drawing.Point(0, 0);
-            this.label_1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label_1.Name = "label_1";
-            this.label_1.Padding = new System.Windows.Forms.Padding(12);
-            this.label_1.Size = new System.Drawing.Size(160, 47);
-            this.label_1.TabIndex = 4;
-            this.label_1.Text = "Typ";
-            this.label_1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label2
-            // 
-            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.label2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label2.Font = new System.Drawing.Font("Comic Sans MS", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(0, 0);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Padding = new System.Windows.Forms.Padding(12);
-            this.label2.Size = new System.Drawing.Size(337, 51);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Informacje";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel5
             // 
-            this.panel5.Controls.Add(this.flowLayoutPanelEpType);
-            this.panel5.Controls.Add(this.listBoxEpType);
-            this.panel5.Controls.Add(this.label5);
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.panel5.Controls.Add(this.label1);
+            this.panel5.Controls.Add(this.button5);
+            this.panel5.Controls.Add(this.button3);
+            this.panel5.Controls.Add(this.label4);
             this.panel5.Controls.Add(this.label3);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel5.Location = new System.Drawing.Point(0, 1514);
-            this.panel5.Margin = new System.Windows.Forms.Padding(12);
+            this.panel5.Controls.Add(this.label2);
+            this.panel5.Controls.Add(this.button2);
+            this.panel5.Controls.Add(this.pictureBoxIcon);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel5.Location = new System.Drawing.Point(0, 0);
             this.panel5.Name = "panel5";
-            this.panel5.Padding = new System.Windows.Forms.Padding(0, 12, 0, 12);
-            this.panel5.Size = new System.Drawing.Size(922, 300);
-            this.panel5.TabIndex = 4;
+            this.panel5.Size = new System.Drawing.Size(534, 415);
+            this.panel5.TabIndex = 3;
             // 
-            // flowLayoutPanelEpType
+            // label1
             // 
-            this.flowLayoutPanelEpType.AutoScroll = true;
-            this.flowLayoutPanelEpType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.flowLayoutPanelEpType.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanelEpType.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.flowLayoutPanelEpType.ForeColor = System.Drawing.Color.White;
-            this.flowLayoutPanelEpType.Location = new System.Drawing.Point(0, 101);
-            this.flowLayoutPanelEpType.Name = "flowLayoutPanelEpType";
-            this.flowLayoutPanelEpType.Size = new System.Drawing.Size(922, 187);
-            this.flowLayoutPanelEpType.TabIndex = 7;
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(156, 79);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(363, 50);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Alternatywny Tytuł";
             // 
-            // listBoxEpType
+            // button5
             // 
-            this.listBoxEpType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.listBoxEpType.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listBoxEpType.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listBoxEpType.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.listBoxEpType.ForeColor = System.Drawing.Color.White;
-            this.listBoxEpType.FormattingEnabled = true;
-            this.listBoxEpType.ItemHeight = 18;
-            this.listBoxEpType.Location = new System.Drawing.Point(0, 101);
-            this.listBoxEpType.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.listBoxEpType.Name = "listBoxEpType";
-            this.listBoxEpType.Size = new System.Drawing.Size(922, 187);
-            this.listBoxEpType.TabIndex = 0;
-            this.listBoxEpType.SelectedIndexChanged += new System.EventHandler(this.listBoxEpType_SelectedIndexChanged);
+            this.button5.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button5.ForeColor = System.Drawing.Color.Black;
+            this.button5.Location = new System.Drawing.Point(19, 352);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(160, 33);
+            this.button5.TabIndex = 7;
+            this.button5.Text = "Dodaj do listy +";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.ForeColor = System.Drawing.Color.Black;
+            this.button3.Location = new System.Drawing.Point(334, 269);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(160, 25);
+            this.button3.TabIndex = 5;
+            this.button3.Text = "Więcej nformacji";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // label4
+            // 
+            this.label4.Location = new System.Drawing.Point(19, 189);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(475, 77);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "Opis";
+            // 
+            // label3
+            // 
+            this.label3.AutoEllipsis = true;
+            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(19, 156);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(475, 21);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Rok: N/A, Typ: N\\A, Gatunki: N/A";
+            // 
+            // label2
+            // 
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(156, 18);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(363, 50);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Tytuł";
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button2.ForeColor = System.Drawing.Color.Black;
+            this.button2.Location = new System.Drawing.Point(403, 352);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(91, 38);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "Oglądaj >";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // pictureBoxIcon
+            // 
+            this.pictureBoxIcon.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBoxIcon.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxIcon.Image")));
+            this.pictureBoxIcon.Location = new System.Drawing.Point(0, 0);
+            this.pictureBoxIcon.MaximumSize = new System.Drawing.Size(150, 150);
+            this.pictureBoxIcon.Name = "pictureBoxIcon";
+            this.pictureBoxIcon.Size = new System.Drawing.Size(150, 150);
+            this.pictureBoxIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxIcon.TabIndex = 0;
+            this.pictureBoxIcon.TabStop = false;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.button1);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel4.Location = new System.Drawing.Point(603, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(86, 415);
+            this.panel4.TabIndex = 1;
+            // 
+            // button1
+            // 
+            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button1.ForeColor = System.Drawing.Color.Red;
+            this.button1.Location = new System.Drawing.Point(0, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(86, 23);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Zamknij";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 738);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(729, 25);
+            this.panel2.TabIndex = 2;
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.tabControl1);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel6.Location = new System.Drawing.Point(0, 763);
+            this.panel6.Name = "panel6";
+            this.panel6.Padding = new System.Windows.Forms.Padding(15, 10, 15, 0);
+            this.panel6.Size = new System.Drawing.Size(729, 708);
+            this.panel6.TabIndex = 3;
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.ItemSize = new System.Drawing.Size(100, 26);
+            this.tabControl1.Location = new System.Drawing.Point(15, 10);
+            this.tabControl1.Multiline = true;
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.Padding = new System.Drawing.Point(5, 5);
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(699, 698);
+            this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
+            this.tabControl1.TabIndex = 0;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(46)))));
+            this.tabPage1.Controls.Add(this.panel23);
+            this.tabPage1.Controls.Add(this.panel22);
+            this.tabPage1.Controls.Add(this.panel21);
+            this.tabPage1.Controls.Add(this.panel20);
+            this.tabPage1.Controls.Add(this.panel19);
+            this.tabPage1.Controls.Add(this.panel18);
+            this.tabPage1.Controls.Add(this.richTextBox1);
+            this.tabPage1.Controls.Add(this.label23);
+            this.tabPage1.Controls.Add(this.panel9);
+            this.tabPage1.ForeColor = System.Drawing.Color.White;
+            this.tabPage1.Location = new System.Drawing.Point(4, 30);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(691, 664);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Informacje";
+            // 
+            // panel23
+            // 
+            this.panel23.Controls.Add(this.newFlowLayoutPanel6);
+            this.panel23.Controls.Add(this.label29);
+            this.panel23.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel23.Location = new System.Drawing.Point(210, 598);
+            this.panel23.Name = "panel23";
+            this.panel23.Size = new System.Drawing.Size(478, 45);
+            this.panel23.TabIndex = 12;
+            // 
+            // newFlowLayoutPanel6
+            // 
+            this.newFlowLayoutPanel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.newFlowLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.newFlowLayoutPanel6.Location = new System.Drawing.Point(107, 0);
+            this.newFlowLayoutPanel6.Name = "newFlowLayoutPanel6";
+            this.newFlowLayoutPanel6.Size = new System.Drawing.Size(371, 45);
+            this.newFlowLayoutPanel6.TabIndex = 1;
+            // 
+            // label29
+            // 
+            this.label29.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label29.Font = new System.Drawing.Font("Comic Sans MS", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label29.Location = new System.Drawing.Point(0, 0);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(107, 45);
+            this.label29.TabIndex = 0;
+            this.label29.Text = "Pozostałe tagi:";
+            this.label29.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // panel22
+            // 
+            this.panel22.Controls.Add(this.newFlowLayoutPanel5);
+            this.panel22.Controls.Add(this.label28);
+            this.panel22.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel22.Location = new System.Drawing.Point(210, 553);
+            this.panel22.Name = "panel22";
+            this.panel22.Size = new System.Drawing.Size(478, 45);
+            this.panel22.TabIndex = 11;
+            // 
+            // newFlowLayoutPanel5
+            // 
+            this.newFlowLayoutPanel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.newFlowLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.newFlowLayoutPanel5.Location = new System.Drawing.Point(107, 0);
+            this.newFlowLayoutPanel5.Name = "newFlowLayoutPanel5";
+            this.newFlowLayoutPanel5.Size = new System.Drawing.Size(371, 45);
+            this.newFlowLayoutPanel5.TabIndex = 1;
+            // 
+            // label28
+            // 
+            this.label28.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label28.Font = new System.Drawing.Font("Comic Sans MS", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label28.Location = new System.Drawing.Point(0, 0);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(107, 45);
+            this.label28.TabIndex = 0;
+            this.label28.Text = "Pierwowzór:";
+            this.label28.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // panel21
+            // 
+            this.panel21.Controls.Add(this.newFlowLayoutPanel4);
+            this.panel21.Controls.Add(this.label27);
+            this.panel21.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel21.Location = new System.Drawing.Point(210, 508);
+            this.panel21.Name = "panel21";
+            this.panel21.Size = new System.Drawing.Size(478, 45);
+            this.panel21.TabIndex = 10;
+            // 
+            // newFlowLayoutPanel4
+            // 
+            this.newFlowLayoutPanel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.newFlowLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.newFlowLayoutPanel4.Location = new System.Drawing.Point(107, 0);
+            this.newFlowLayoutPanel4.Name = "newFlowLayoutPanel4";
+            this.newFlowLayoutPanel4.Size = new System.Drawing.Size(371, 45);
+            this.newFlowLayoutPanel4.TabIndex = 1;
+            // 
+            // label27
+            // 
+            this.label27.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label27.Font = new System.Drawing.Font("Comic Sans MS", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label27.Location = new System.Drawing.Point(0, 0);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(107, 45);
+            this.label27.TabIndex = 0;
+            this.label27.Text = "Miejsce i czas:";
+            this.label27.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // panel20
+            // 
+            this.panel20.Controls.Add(this.newFlowLayoutPanel3);
+            this.panel20.Controls.Add(this.label26);
+            this.panel20.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel20.Location = new System.Drawing.Point(210, 463);
+            this.panel20.Name = "panel20";
+            this.panel20.Size = new System.Drawing.Size(478, 45);
+            this.panel20.TabIndex = 10;
+            // 
+            // newFlowLayoutPanel3
+            // 
+            this.newFlowLayoutPanel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.newFlowLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.newFlowLayoutPanel3.Location = new System.Drawing.Point(107, 0);
+            this.newFlowLayoutPanel3.Name = "newFlowLayoutPanel3";
+            this.newFlowLayoutPanel3.Size = new System.Drawing.Size(371, 45);
+            this.newFlowLayoutPanel3.TabIndex = 1;
+            // 
+            // label26
+            // 
+            this.label26.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label26.Font = new System.Drawing.Font("Comic Sans MS", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label26.Location = new System.Drawing.Point(0, 0);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(107, 45);
+            this.label26.TabIndex = 0;
+            this.label26.Text = "Rodzaje postaci:";
+            this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // panel19
+            // 
+            this.panel19.Controls.Add(this.newFlowLayoutPanel2);
+            this.panel19.Controls.Add(this.label24);
+            this.panel19.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel19.Location = new System.Drawing.Point(210, 418);
+            this.panel19.Name = "panel19";
+            this.panel19.Size = new System.Drawing.Size(478, 45);
+            this.panel19.TabIndex = 9;
+            // 
+            // newFlowLayoutPanel2
+            // 
+            this.newFlowLayoutPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.newFlowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.newFlowLayoutPanel2.Location = new System.Drawing.Point(107, 0);
+            this.newFlowLayoutPanel2.Name = "newFlowLayoutPanel2";
+            this.newFlowLayoutPanel2.Size = new System.Drawing.Size(371, 45);
+            this.newFlowLayoutPanel2.TabIndex = 1;
+            // 
+            // label24
+            // 
+            this.label24.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label24.Font = new System.Drawing.Font("Comic Sans MS", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label24.Location = new System.Drawing.Point(0, 0);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(107, 45);
+            this.label24.TabIndex = 0;
+            this.label24.Text = "Grupy docelowe:";
+            this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // panel18
+            // 
+            this.panel18.Controls.Add(this.newFlowLayoutPanel1);
+            this.panel18.Controls.Add(this.label25);
+            this.panel18.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel18.Location = new System.Drawing.Point(210, 368);
+            this.panel18.Name = "panel18";
+            this.panel18.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.panel18.Size = new System.Drawing.Size(478, 50);
+            this.panel18.TabIndex = 8;
+            // 
+            // newFlowLayoutPanel1
+            // 
+            this.newFlowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.newFlowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.newFlowLayoutPanel1.Location = new System.Drawing.Point(107, 10);
+            this.newFlowLayoutPanel1.Name = "newFlowLayoutPanel1";
+            this.newFlowLayoutPanel1.Size = new System.Drawing.Size(371, 40);
+            this.newFlowLayoutPanel1.TabIndex = 1;
+            // 
+            // label25
+            // 
+            this.label25.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label25.Font = new System.Drawing.Font("Comic Sans MS", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label25.Location = new System.Drawing.Point(0, 10);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(107, 40);
+            this.label25.TabIndex = 0;
+            this.label25.Text = "Gatunki:";
+            this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.richTextBox1.ForeColor = System.Drawing.Color.White;
+            this.richTextBox1.Location = new System.Drawing.Point(210, 53);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ReadOnly = true;
+            this.richTextBox1.Size = new System.Drawing.Size(478, 315);
+            this.richTextBox1.TabIndex = 2;
+            this.richTextBox1.Text = "N/A";
+            // 
+            // label23
+            // 
+            this.label23.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label23.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label23.Location = new System.Drawing.Point(210, 3);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(478, 50);
+            this.label23.TabIndex = 1;
+            this.label23.Text = "Opis";
+            this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // panel9
+            // 
+            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.panel9.Controls.Add(this.panel17);
+            this.panel9.Controls.Add(this.panel16);
+            this.panel9.Controls.Add(this.panel15);
+            this.panel9.Controls.Add(this.panel14);
+            this.panel9.Controls.Add(this.panel13);
+            this.panel9.Controls.Add(this.panel12);
+            this.panel9.Controls.Add(this.panel11);
+            this.panel9.Controls.Add(this.panel10);
+            this.panel9.Controls.Add(this.label6);
+            this.panel9.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel9.Location = new System.Drawing.Point(3, 3);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(207, 658);
+            this.panel9.TabIndex = 0;
+            // 
+            // panel17
+            // 
+            this.panel17.Controls.Add(this.label21);
+            this.panel17.Controls.Add(this.label22);
+            this.panel17.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel17.Location = new System.Drawing.Point(0, 365);
+            this.panel17.Name = "panel17";
+            this.panel17.Size = new System.Drawing.Size(207, 293);
+            this.panel17.TabIndex = 8;
+            // 
+            // label21
+            // 
+            this.label21.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label21.Font = new System.Drawing.Font("Comic Sans MS", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label21.Location = new System.Drawing.Point(107, 0);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(100, 293);
+            this.label21.TabIndex = 1;
+            this.label21.Text = "N/A";
+            // 
+            // label22
+            // 
+            this.label22.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label22.Font = new System.Drawing.Font("Comic Sans MS", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label22.Location = new System.Drawing.Point(0, 0);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(107, 293);
+            this.label22.TabIndex = 0;
+            this.label22.Text = "Studio:";
+            this.label22.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // panel16
+            // 
+            this.panel16.Controls.Add(this.label19);
+            this.panel16.Controls.Add(this.label20);
+            this.panel16.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel16.Location = new System.Drawing.Point(0, 320);
+            this.panel16.Name = "panel16";
+            this.panel16.Size = new System.Drawing.Size(207, 45);
+            this.panel16.TabIndex = 7;
+            // 
+            // label19
+            // 
+            this.label19.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label19.Font = new System.Drawing.Font("Comic Sans MS", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label19.Location = new System.Drawing.Point(107, 0);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(100, 45);
+            this.label19.TabIndex = 1;
+            this.label19.Text = "N/A";
+            this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label20
+            // 
+            this.label20.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label20.Font = new System.Drawing.Font("Comic Sans MS", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label20.Location = new System.Drawing.Point(0, 0);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(107, 45);
+            this.label20.TabIndex = 0;
+            this.label20.Text = "MPAA:";
+            this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // panel15
+            // 
+            this.panel15.Controls.Add(this.label17);
+            this.panel15.Controls.Add(this.label18);
+            this.panel15.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel15.Location = new System.Drawing.Point(0, 275);
+            this.panel15.Name = "panel15";
+            this.panel15.Size = new System.Drawing.Size(207, 45);
+            this.panel15.TabIndex = 6;
+            // 
+            // label17
+            // 
+            this.label17.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label17.Font = new System.Drawing.Font("Comic Sans MS", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label17.Location = new System.Drawing.Point(107, 0);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(100, 45);
+            this.label17.TabIndex = 1;
+            this.label17.Text = "N/A";
+            this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label18
+            // 
+            this.label18.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label18.Font = new System.Drawing.Font("Comic Sans MS", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label18.Location = new System.Drawing.Point(0, 0);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(107, 45);
+            this.label18.TabIndex = 0;
+            this.label18.Text = "Długość odcinka:";
+            this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // panel14
+            // 
+            this.panel14.Controls.Add(this.label15);
+            this.panel14.Controls.Add(this.label16);
+            this.panel14.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel14.Location = new System.Drawing.Point(0, 230);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(207, 45);
+            this.panel14.TabIndex = 5;
+            // 
+            // label15
+            // 
+            this.label15.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label15.Font = new System.Drawing.Font("Comic Sans MS", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label15.Location = new System.Drawing.Point(107, 0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(100, 45);
+            this.label15.TabIndex = 1;
+            this.label15.Text = "N/A";
+            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label16
+            // 
+            this.label16.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label16.Font = new System.Drawing.Font("Comic Sans MS", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label16.Location = new System.Drawing.Point(0, 0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(107, 45);
+            this.label16.TabIndex = 0;
+            this.label16.Text = "Liczba odcinków:";
+            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // panel13
+            // 
+            this.panel13.Controls.Add(this.label13);
+            this.panel13.Controls.Add(this.label14);
+            this.panel13.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel13.Location = new System.Drawing.Point(0, 185);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(207, 45);
+            this.panel13.TabIndex = 4;
+            // 
+            // label13
+            // 
+            this.label13.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label13.Font = new System.Drawing.Font("Comic Sans MS", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label13.Location = new System.Drawing.Point(107, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(100, 45);
+            this.label13.TabIndex = 1;
+            this.label13.Text = "N/A";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label14
+            // 
+            this.label14.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label14.Font = new System.Drawing.Font("Comic Sans MS", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label14.Location = new System.Drawing.Point(0, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(107, 45);
+            this.label14.TabIndex = 0;
+            this.label14.Text = "Koniec emisji:";
+            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // panel12
+            // 
+            this.panel12.Controls.Add(this.label11);
+            this.panel12.Controls.Add(this.label12);
+            this.panel12.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel12.Location = new System.Drawing.Point(0, 140);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(207, 45);
+            this.panel12.TabIndex = 3;
+            // 
+            // label11
+            // 
+            this.label11.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label11.Font = new System.Drawing.Font("Comic Sans MS", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label11.Location = new System.Drawing.Point(107, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(100, 45);
+            this.label11.TabIndex = 1;
+            this.label11.Text = "N/A";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label12
+            // 
+            this.label12.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label12.Font = new System.Drawing.Font("Comic Sans MS", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label12.Location = new System.Drawing.Point(0, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(107, 45);
+            this.label12.TabIndex = 0;
+            this.label12.Text = "Data emisji:";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // panel11
+            // 
+            this.panel11.Controls.Add(this.label9);
+            this.panel11.Controls.Add(this.label10);
+            this.panel11.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel11.Location = new System.Drawing.Point(0, 95);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(207, 45);
+            this.panel11.TabIndex = 2;
+            // 
+            // label9
+            // 
+            this.label9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label9.Font = new System.Drawing.Font("Comic Sans MS", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label9.Location = new System.Drawing.Point(107, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(100, 45);
+            this.label9.TabIndex = 1;
+            this.label9.Text = "N/A";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label10
+            // 
+            this.label10.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label10.Font = new System.Drawing.Font("Comic Sans MS", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label10.Location = new System.Drawing.Point(0, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(107, 45);
+            this.label10.TabIndex = 0;
+            this.label10.Text = "Status:";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // panel10
+            // 
+            this.panel10.Controls.Add(this.label8);
+            this.panel10.Controls.Add(this.label7);
+            this.panel10.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel10.Location = new System.Drawing.Point(0, 50);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(207, 45);
+            this.panel10.TabIndex = 1;
+            // 
+            // label8
+            // 
+            this.label8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label8.Font = new System.Drawing.Font("Comic Sans MS", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label8.Location = new System.Drawing.Point(107, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(100, 45);
+            this.label8.TabIndex = 1;
+            this.label8.Text = "N/A";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label7
+            // 
+            this.label7.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label7.Font = new System.Drawing.Font("Comic Sans MS", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label7.Location = new System.Drawing.Point(0, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(107, 45);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "Typ:";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label6
+            // 
+            this.label6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label6.Font = new System.Drawing.Font("Comic Sans MS", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label6.Location = new System.Drawing.Point(0, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(207, 50);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Informacje";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.tabPage2.Controls.Add(this.label30);
+            this.tabPage2.Controls.Add(this.newFlowLayoutPanel7);
+            this.tabPage2.ForeColor = System.Drawing.Color.White;
+            this.tabPage2.Location = new System.Drawing.Point(4, 30);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(708, 664);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Odcinki";
+            // 
+            // label30
+            // 
+            this.label30.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label30.Font = new System.Drawing.Font("Comic Sans MS", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label30.Location = new System.Drawing.Point(3, 3);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(702, 28);
+            this.label30.TabIndex = 1;
+            this.label30.Text = "Wyberz tłumaczenie:";
+            this.label30.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // newFlowLayoutPanel7
+            // 
+            this.newFlowLayoutPanel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.newFlowLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.newFlowLayoutPanel7.Location = new System.Drawing.Point(3, 3);
+            this.newFlowLayoutPanel7.Name = "newFlowLayoutPanel7";
+            this.newFlowLayoutPanel7.Size = new System.Drawing.Size(702, 658);
+            this.newFlowLayoutPanel7.TabIndex = 0;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.tabPage3.Controls.Add(this.label31);
+            this.tabPage3.ForeColor = System.Drawing.Color.White;
+            this.tabPage3.Location = new System.Drawing.Point(4, 30);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(708, 664);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Bohaterowie";
+            // 
+            // label31
+            // 
+            this.label31.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label31.Font = new System.Drawing.Font("Comic Sans MS", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label31.Location = new System.Drawing.Point(0, 0);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(708, 79);
+            this.label31.TabIndex = 0;
+            this.label31.Text = "Już nie długo....";
+            this.label31.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.tabPage4.ForeColor = System.Drawing.Color.White;
+            this.tabPage4.Location = new System.Drawing.Point(4, 30);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Size = new System.Drawing.Size(708, 664);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Powiązane tytuły";
+            // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.label5);
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel7.Location = new System.Drawing.Point(0, 1496);
+            this.panel7.Name = "panel7";
+            this.panel7.Padding = new System.Windows.Forms.Padding(15, 10, 15, 0);
+            this.panel7.Size = new System.Drawing.Size(729, 500);
+            this.panel7.TabIndex = 4;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label5.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label5.Font = new System.Drawing.Font("Comic Sans MS", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(0, 60);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(15, 10);
             this.label5.Name = "label5";
-            this.label5.Padding = new System.Windows.Forms.Padding(12);
-            this.label5.Size = new System.Drawing.Size(100, 41);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "Wybierz typ";
+            this.label5.Size = new System.Drawing.Size(114, 24);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Komentarze:";
             // 
-            // label3
+            // panel8
             // 
-            this.label3.AutoSize = true;
-            this.label3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label3.Font = new System.Drawing.Font("Comic Sans MS", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(0, 12);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Padding = new System.Windows.Forms.Padding(12);
-            this.label3.Size = new System.Drawing.Size(95, 48);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Odcinki";
+            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel8.Location = new System.Drawing.Point(0, 1471);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(729, 25);
+            this.panel8.TabIndex = 5;
             // 
-            // panel6
+            // PageItemUI
             // 
-            this.panel6.AutoScroll = true;
-            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.panel6.Controls.Add(this.panel_comments);
-            this.panel6.Controls.Add(this.panelRelatedSeries);
-            this.panel6.Controls.Add(this.panel5);
-            this.panel6.Controls.Add(this.panel9);
-            this.panel6.Controls.Add(this.panel3);
-            this.panel6.Controls.Add(this.panel1);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel6.Location = new System.Drawing.Point(0, 0);
-            this.panel6.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(939, 590);
-            this.panel6.TabIndex = 2;
-            // 
-            // panel_comments
-            // 
-            this.panel_comments.Controls.Add(this.panel_com_dockWebview);
-            this.panel_comments.Controls.Add(this.button_Load_Comments);
-            this.panel_comments.Controls.Add(this.label8);
-            this.panel_comments.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel_comments.Location = new System.Drawing.Point(0, 2212);
-            this.panel_comments.Margin = new System.Windows.Forms.Padding(12);
-            this.panel_comments.Name = "panel_comments";
-            this.panel_comments.Padding = new System.Windows.Forms.Padding(0, 12, 0, 12);
-            this.panel_comments.Size = new System.Drawing.Size(922, 521);
-            this.panel_comments.TabIndex = 7;
-            // 
-            // panel_com_dockWebview
-            // 
-            this.panel_com_dockWebview.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.panel_com_dockWebview.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_com_dockWebview.Location = new System.Drawing.Point(0, 60);
-            this.panel_com_dockWebview.Name = "panel_com_dockWebview";
-            this.panel_com_dockWebview.Size = new System.Drawing.Size(922, 449);
-            this.panel_com_dockWebview.TabIndex = 6;
-            // 
-            // button_Load_Comments
-            // 
-            this.button_Load_Comments.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.button_Load_Comments.FlatAppearance.BorderSize = 0;
-            this.button_Load_Comments.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_Load_Comments.ForeColor = System.Drawing.Color.White;
-            this.button_Load_Comments.Location = new System.Drawing.Point(135, 27);
-            this.button_Load_Comments.Name = "button_Load_Comments";
-            this.button_Load_Comments.Size = new System.Drawing.Size(75, 23);
-            this.button_Load_Comments.TabIndex = 7;
-            this.button_Load_Comments.Text = "Załaduj";
-            this.button_Load_Comments.UseVisualStyleBackColor = false;
-            this.button_Load_Comments.Visible = false;
-            this.button_Load_Comments.Click += new System.EventHandler(this.button_Load_Comments_Click);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label8.Font = new System.Drawing.Font("Comic Sans MS", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(0, 12);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label8.Name = "label8";
-            this.label8.Padding = new System.Windows.Forms.Padding(12);
-            this.label8.Size = new System.Drawing.Size(133, 48);
-            this.label8.TabIndex = 5;
-            this.label8.Text = "Komentarze";
-            // 
-            // panelRelatedSeries
-            // 
-            this.panelRelatedSeries.Controls.Add(this.flowLayoutPanelRelatedSeries);
-            this.panelRelatedSeries.Controls.Add(this.label6);
-            this.panelRelatedSeries.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelRelatedSeries.Location = new System.Drawing.Point(0, 1814);
-            this.panelRelatedSeries.Margin = new System.Windows.Forms.Padding(12);
-            this.panelRelatedSeries.Name = "panelRelatedSeries";
-            this.panelRelatedSeries.Padding = new System.Windows.Forms.Padding(0, 12, 0, 12);
-            this.panelRelatedSeries.Size = new System.Drawing.Size(922, 398);
-            this.panelRelatedSeries.TabIndex = 6;
-            // 
-            // flowLayoutPanelRelatedSeries
-            // 
-            this.flowLayoutPanelRelatedSeries.AutoScroll = true;
-            this.flowLayoutPanelRelatedSeries.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.flowLayoutPanelRelatedSeries.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanelRelatedSeries.Location = new System.Drawing.Point(0, 60);
-            this.flowLayoutPanelRelatedSeries.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.flowLayoutPanelRelatedSeries.Name = "flowLayoutPanelRelatedSeries";
-            this.flowLayoutPanelRelatedSeries.Padding = new System.Windows.Forms.Padding(14, 2, 14, 2);
-            this.flowLayoutPanelRelatedSeries.Size = new System.Drawing.Size(922, 326);
-            this.flowLayoutPanelRelatedSeries.TabIndex = 6;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label6.Font = new System.Drawing.Font("Comic Sans MS", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(0, 12);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Padding = new System.Windows.Forms.Padding(12);
-            this.label6.Size = new System.Drawing.Size(163, 48);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "Powiązane serie";
-            // 
-            // panel9
-            // 
-            this.panel9.Controls.Add(this.panel10);
-            this.panel9.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel9.Location = new System.Drawing.Point(0, 825);
-            this.panel9.Margin = new System.Windows.Forms.Padding(12);
-            this.panel9.Name = "panel9";
-            this.panel9.Padding = new System.Windows.Forms.Padding(0, 23, 0, 23);
-            this.panel9.Size = new System.Drawing.Size(922, 689);
-            this.panel9.TabIndex = 5;
-            // 
-            // panel10
-            // 
-            this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.panel10.Controls.Add(this.labelOtherTags);
-            this.panel10.Controls.Add(this.label13);
-            this.panel10.Controls.Add(this.labelArchetype);
-            this.panel10.Controls.Add(this.label11);
-            this.panel10.Controls.Add(this.labelPlaceAndTime);
-            this.panel10.Controls.Add(this.label9);
-            this.panel10.Controls.Add(this.labelTypesOfCharacters);
-            this.panel10.Controls.Add(this.label7);
-            this.panel10.Controls.Add(this.labelTargetGroups);
-            this.panel10.Controls.Add(this.labeliGD);
-            this.panel10.Controls.Add(this.labelSpecies);
-            this.panel10.Controls.Add(this.label4);
-            this.panel10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel10.Location = new System.Drawing.Point(0, 23);
-            this.panel10.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(922, 643);
-            this.panel10.TabIndex = 5;
-            // 
-            // labelOtherTags
-            // 
-            this.labelOtherTags.AutoEllipsis = true;
-            this.labelOtherTags.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelOtherTags.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelOtherTags.ForeColor = System.Drawing.Color.White;
-            this.labelOtherTags.Location = new System.Drawing.Point(0, 510);
-            this.labelOtherTags.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelOtherTags.Name = "labelOtherTags";
-            this.labelOtherTags.Padding = new System.Windows.Forms.Padding(12);
-            this.labelOtherTags.Size = new System.Drawing.Size(922, 45);
-            this.labelOtherTags.TabIndex = 16;
-            this.labelOtherTags.Text = "N/A";
-            // 
-            // label13
-            // 
-            this.label13.AutoEllipsis = true;
-            this.label13.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label13.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(0, 463);
-            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label13.Name = "label13";
-            this.label13.Padding = new System.Windows.Forms.Padding(12);
-            this.label13.Size = new System.Drawing.Size(922, 47);
-            this.label13.TabIndex = 15;
-            this.label13.Text = "Pozostałe tagi:";
-            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // labelArchetype
-            // 
-            this.labelArchetype.AutoEllipsis = true;
-            this.labelArchetype.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelArchetype.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelArchetype.ForeColor = System.Drawing.Color.White;
-            this.labelArchetype.Location = new System.Drawing.Point(0, 418);
-            this.labelArchetype.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelArchetype.Name = "labelArchetype";
-            this.labelArchetype.Padding = new System.Windows.Forms.Padding(12);
-            this.labelArchetype.Size = new System.Drawing.Size(922, 45);
-            this.labelArchetype.TabIndex = 14;
-            this.labelArchetype.Text = "N/A";
-            // 
-            // label11
-            // 
-            this.label11.AutoEllipsis = true;
-            this.label11.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label11.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(0, 371);
-            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label11.Name = "label11";
-            this.label11.Padding = new System.Windows.Forms.Padding(12);
-            this.label11.Size = new System.Drawing.Size(922, 47);
-            this.label11.TabIndex = 13;
-            this.label11.Text = "Pierwowzór:";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // labelPlaceAndTime
-            // 
-            this.labelPlaceAndTime.AutoEllipsis = true;
-            this.labelPlaceAndTime.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelPlaceAndTime.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelPlaceAndTime.ForeColor = System.Drawing.Color.White;
-            this.labelPlaceAndTime.Location = new System.Drawing.Point(0, 325);
-            this.labelPlaceAndTime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelPlaceAndTime.Name = "labelPlaceAndTime";
-            this.labelPlaceAndTime.Padding = new System.Windows.Forms.Padding(12);
-            this.labelPlaceAndTime.Size = new System.Drawing.Size(922, 46);
-            this.labelPlaceAndTime.TabIndex = 12;
-            this.labelPlaceAndTime.Text = "N/A";
-            // 
-            // label9
-            // 
-            this.label9.AutoEllipsis = true;
-            this.label9.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label9.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(0, 278);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label9.Name = "label9";
-            this.label9.Padding = new System.Windows.Forms.Padding(12);
-            this.label9.Size = new System.Drawing.Size(922, 47);
-            this.label9.TabIndex = 11;
-            this.label9.Text = "Miejsce i czas:";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // labelTypesOfCharacters
-            // 
-            this.labelTypesOfCharacters.AutoEllipsis = true;
-            this.labelTypesOfCharacters.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelTypesOfCharacters.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelTypesOfCharacters.ForeColor = System.Drawing.Color.White;
-            this.labelTypesOfCharacters.Location = new System.Drawing.Point(0, 232);
-            this.labelTypesOfCharacters.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelTypesOfCharacters.Name = "labelTypesOfCharacters";
-            this.labelTypesOfCharacters.Padding = new System.Windows.Forms.Padding(12);
-            this.labelTypesOfCharacters.Size = new System.Drawing.Size(922, 46);
-            this.labelTypesOfCharacters.TabIndex = 10;
-            this.labelTypesOfCharacters.Text = "N/A";
-            // 
-            // label7
-            // 
-            this.label7.AutoEllipsis = true;
-            this.label7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label7.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(0, 185);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Padding = new System.Windows.Forms.Padding(12);
-            this.label7.Size = new System.Drawing.Size(922, 47);
-            this.label7.TabIndex = 9;
-            this.label7.Text = "Rodzaje postaci";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // labelTargetGroups
-            // 
-            this.labelTargetGroups.AutoEllipsis = true;
-            this.labelTargetGroups.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelTargetGroups.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelTargetGroups.ForeColor = System.Drawing.Color.White;
-            this.labelTargetGroups.Location = new System.Drawing.Point(0, 140);
-            this.labelTargetGroups.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelTargetGroups.Name = "labelTargetGroups";
-            this.labelTargetGroups.Padding = new System.Windows.Forms.Padding(12);
-            this.labelTargetGroups.Size = new System.Drawing.Size(922, 45);
-            this.labelTargetGroups.TabIndex = 8;
-            this.labelTargetGroups.Text = "N/A";
-            // 
-            // labeliGD
-            // 
-            this.labeliGD.AutoEllipsis = true;
-            this.labeliGD.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labeliGD.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labeliGD.ForeColor = System.Drawing.Color.White;
-            this.labeliGD.Location = new System.Drawing.Point(0, 93);
-            this.labeliGD.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labeliGD.Name = "labeliGD";
-            this.labeliGD.Padding = new System.Windows.Forms.Padding(12);
-            this.labeliGD.Size = new System.Drawing.Size(922, 47);
-            this.labeliGD.TabIndex = 7;
-            this.labeliGD.Text = "Grupy docelowe:";
-            this.labeliGD.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // labelSpecies
-            // 
-            this.labelSpecies.AutoEllipsis = true;
-            this.labelSpecies.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelSpecies.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelSpecies.ForeColor = System.Drawing.Color.White;
-            this.labelSpecies.Location = new System.Drawing.Point(0, 47);
-            this.labelSpecies.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelSpecies.Name = "labelSpecies";
-            this.labelSpecies.Padding = new System.Windows.Forms.Padding(12);
-            this.labelSpecies.Size = new System.Drawing.Size(922, 46);
-            this.labelSpecies.TabIndex = 6;
-            this.labelSpecies.Text = "N/A";
-            // 
-            // label4
-            // 
-            this.label4.AutoEllipsis = true;
-            this.label4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label4.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(0, 0);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Padding = new System.Windows.Forms.Padding(12);
-            this.label4.Size = new System.Drawing.Size(922, 47);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Gatunki:";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // panelViewIcon
-            // 
-            this.panelViewIcon.Controls.Add(this.pictureBox2);
-            this.panelViewIcon.Controls.Add(this.buttonViewIconClose);
-            this.panelViewIcon.Location = new System.Drawing.Point(136, 15);
-            this.panelViewIcon.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.panelViewIcon.Name = "panelViewIcon";
-            this.panelViewIcon.Size = new System.Drawing.Size(666, 560);
-            this.panelViewIcon.TabIndex = 6;
-            this.panelViewIcon.Visible = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(625, 560);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
-            // 
-            // buttonViewIconClose
-            // 
-            this.buttonViewIconClose.Dock = System.Windows.Forms.DockStyle.Right;
-            this.buttonViewIconClose.FlatAppearance.BorderSize = 0;
-            this.buttonViewIconClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonViewIconClose.ForeColor = System.Drawing.Color.White;
-            this.buttonViewIconClose.Location = new System.Drawing.Point(625, 0);
-            this.buttonViewIconClose.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.buttonViewIconClose.MaximumSize = new System.Drawing.Size(41, 29);
-            this.buttonViewIconClose.Name = "buttonViewIconClose";
-            this.buttonViewIconClose.Size = new System.Drawing.Size(41, 29);
-            this.buttonViewIconClose.TabIndex = 6;
-            this.buttonViewIconClose.Text = "X";
-            this.buttonViewIconClose.UseVisualStyleBackColor = true;
-            this.buttonViewIconClose.Click += new System.EventHandler(this.buttonViewIconClose_Click);
-            // 
-            // backgroundWorker1
-            // 
-            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
-            // 
-            // PageItem
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.AutoScroll = true;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.Controls.Add(this.panel7);
+            this.Controls.Add(this.panel8);
             this.Controls.Add(this.panel6);
-            this.Controls.Add(this.panelViewIcon);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
             this.DoubleBuffered = true;
-            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.Name = "PageItem";
-            this.Size = new System.Drawing.Size(939, 590);
-            this.Resize += new System.EventHandler(this.PageItem_Resize);
+            this.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Name = "PageItemUI";
+            this.Size = new System.Drawing.Size(729, 598);
+            this.Load += new System.EventHandler(this.PageItemUI_Load);
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIcon)).EndInit();
             this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.panel8.ResumeLayout(false);
-            this.panel7.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIcon)).EndInit();
+            this.panel4.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
-            this.panel_comments.ResumeLayout(false);
-            this.panel_comments.PerformLayout();
-            this.panelRelatedSeries.ResumeLayout(false);
-            this.panelRelatedSeries.PerformLayout();
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.panel23.ResumeLayout(false);
+            this.panel22.ResumeLayout(false);
+            this.panel21.ResumeLayout(false);
+            this.panel20.ResumeLayout(false);
+            this.panel19.ResumeLayout(false);
+            this.panel18.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
+            this.panel17.ResumeLayout(false);
+            this.panel16.ResumeLayout(false);
+            this.panel15.ResumeLayout(false);
+            this.panel14.ResumeLayout(false);
+            this.panel13.ResumeLayout(false);
+            this.panel12.ResumeLayout(false);
+            this.panel11.ResumeLayout(false);
             this.panel10.ResumeLayout(false);
-            this.panelViewIcon.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage3.ResumeLayout(false);
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel1;
-        public System.Windows.Forms.Label labelTitle;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Button button;
-        public System.Windows.Forms.PictureBox pictureBoxIcon;
-        public System.Windows.Forms.Label labelotherTitle;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Label label_6;
-        private System.Windows.Forms.Label label_7;
-        private System.Windows.Forms.Label label_5;
-        private System.Windows.Forms.Label label_4;
-        private System.Windows.Forms.Label label_3;
-        private System.Windows.Forms.Label label_2;
-        private System.Windows.Forms.Label label_1;
-        private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label labeliGD;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label7;
-        public System.Windows.Forms.Label labelSpecies;
-        public System.Windows.Forms.Label labelOtherTags;
-        public System.Windows.Forms.Label labelArchetype;
-        public System.Windows.Forms.Label labelPlaceAndTime;
-        public System.Windows.Forms.Label labelTypesOfCharacters;
-        public System.Windows.Forms.Label labelTargetGroups;
-        public System.Windows.Forms.Label labelStudio;
-        public System.Windows.Forms.Label labelLE;
-        public System.Windows.Forms.Label labelMPAA;
-        public System.Windows.Forms.Label labelDateE;
-        public System.Windows.Forms.Label labelDateS;
-        public System.Windows.Forms.Label labelStatus;
-        public System.Windows.Forms.Label labelType;
-        public System.Windows.Forms.Label labelNE;
-        private System.Windows.Forms.Label labeliNe;
-        public System.Windows.Forms.Label labelDes;
-        private System.Windows.Forms.Label label5;
-        public System.Windows.Forms.ListBox listBoxEpType;
-        public System.Windows.Forms.LinkLabel linkLabel1;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Button buttonViewIconClose;
-        public System.Windows.Forms.Panel panelViewIcon;
-        private System.Windows.Forms.Label label6;
-        public NewFlowLayoutPanel flowLayoutPanelRelatedSeries;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        public System.Windows.Forms.LinkLabel linkLabelChangeState;
-        private Panel panel_comments;
-        private Panel panel_com_dockWebview;
+        private Panel panel1;
+        private Panel panel2;
+        private Panel panel3;
+        private Panel panel4;
+        private Button button1;
+        private PictureBox pictureBoxIcon;
+        private Panel panel5;
+        private Button button3;
+        private Label label4;
+        private Label label3;
+        private Label label2;
+        private Button button2;
+        private Panel panel6;
+        private Panel panel7;
+        private Label label5;
+        private Button button5;
+        private TabControl tabControl1;
+        private TabPage tabPage1;
+        private TabPage tabPage2;
+        private Panel panel8;
+        private Label label1;
+        private TabPage tabPage3;
+        private TabPage tabPage4;
+        private Panel panel9;
+        private Label label6;
+        private Panel panel19;
+        private AnimePlayer.ControlsWinForms.NewFlowLayoutPanel newFlowLayoutPanel2;
+        private Label label24;
+        private Panel panel18;
+        private AnimePlayer.ControlsWinForms.NewFlowLayoutPanel newFlowLayoutPanel1;
+        private Label label25;
+        private RichTextBox richTextBox1;
+        private Label label23;
+        private Panel panel17;
+        private Label label21;
+        private Label label22;
+        private Panel panel16;
+        private Label label19;
+        private Label label20;
+        private Panel panel15;
+        private Label label17;
+        private Label label18;
+        private Panel panel14;
+        private Label label15;
+        private Label label16;
+        private Panel panel13;
+        private Label label13;
+        private Label label14;
+        private Panel panel12;
+        private Label label11;
+        private Label label12;
+        private Panel panel11;
+        private Label label9;
+        private Label label10;
+        private Panel panel10;
         private Label label8;
-        public Button button_Load_Comments;
-        public Panel panelRelatedSeries;
-        public FlowLayoutPanel flowLayoutPanelEpType;
+        private Label label7;
+        private Panel panel21;
+        private AnimePlayer.ControlsWinForms.NewFlowLayoutPanel newFlowLayoutPanel4;
+        private Label label27;
+        private Panel panel20;
+        private AnimePlayer.ControlsWinForms.NewFlowLayoutPanel newFlowLayoutPanel3;
+        private Label label26;
+        private Panel panel23;
+        private AnimePlayer.ControlsWinForms.NewFlowLayoutPanel newFlowLayoutPanel6;
+        private Label label29;
+        private Panel panel22;
+        private AnimePlayer.ControlsWinForms.NewFlowLayoutPanel newFlowLayoutPanel5;
+        private Label label28;
+        private Label label30;
+        private AnimePlayer.ControlsWinForms.NewFlowLayoutPanel newFlowLayoutPanel7;
+        private Label label31;
     }
 }

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace AnimePlayer.Class
 {
+    [Serializable]
     public class TitleInformation
     {
         public string Title { get; set; }

@@ -12,6 +12,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\AnimePlayer.CNM\AnimePlayer.CNM.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Update="BrowserTabPage.cs">
       <SubType>UserControl</SubType>
     </Compile>

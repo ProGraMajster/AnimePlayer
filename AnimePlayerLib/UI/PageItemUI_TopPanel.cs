@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace AnimePlayerLibrary.UI
 {
-    public partial class PageItemUI : UserControl
+    public partial class PageItemUI_TopPanel : UserControl
     {
-        public PageItemUI()
+        public PageItemUI_TopPanel()
         {
             InitializeComponent();
         }
@@ -22,12 +22,7 @@ namespace AnimePlayerLibrary.UI
 
         }
 
-        private async void PageItemUI_Load(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void panelGradient1_Load(object sender, EventArgs e)
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
 
         }

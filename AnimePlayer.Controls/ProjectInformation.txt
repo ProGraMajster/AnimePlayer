@@ -1,3 +1,0 @@
-﻿AnimePlayer.Controls
-
-W tym projekcie znajdują się niestandardowe kontrolki bez zależności do innych projektów

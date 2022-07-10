@@ -17,6 +17,7 @@ namespace AnimePlayerLibrary.UI
         private PreviewTitleClass _previewTitleClass;
         private Panel panelLoading;
         private Label labelLoadingDetails;
+        private Panel panelFromMainContent = (Panel)Application.OpenForms[0].Controls.Find("panel2",true)[0];
         private void CreateElemetsUI()
         {
             // 
@@ -97,7 +98,12 @@ namespace AnimePlayerLibrary.UI
             try
             {
                 UpdateLoadingTextdetails("Find Page > "+ _previewTitleClass.Title);
-                ShowPanelLoading();
+                //ShowPanelLoading();
+                PageItemUI pageItemUI = new PageItemUI();
+                panelFromMainContent.Controls.Add(pageItemUI);
+                pageItemUI.Dock = DockStyle.Fill;
+                pageItemUI.Show();
+                pageItemUI.BringToFront();
             }
             catch(Exception ex)
             {
@@ -140,6 +146,9 @@ namespace AnimePlayerLibrary.UI
             CreateElemetsUI();
             SetInformationUI();
             AddEvents();
+            AnimePlayer.CNM.ExtensionsControl.RoundingTheCorners(panelItem, 15);
+            AnimePlayer.CNM.ExtensionsControl.RoundingTheCorners(buttonItem, 15);
+            AnimePlayer.CNM.ExtensionsControl.RoundingTheCorners(pictureBoxItem, 15);
         }
     }
 }
