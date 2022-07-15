@@ -138,7 +138,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(20);
-            this.panel1.Size = new System.Drawing.Size(729, 738);
+            this.panel1.Size = new System.Drawing.Size(627, 738);
             this.panel1.TabIndex = 1;
             // 
             // panel3
@@ -149,7 +149,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(20, 20);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(689, 415);
+            this.panel3.Size = new System.Drawing.Size(587, 415);
             this.panel3.TabIndex = 0;
             // 
             // panel5
@@ -256,7 +256,7 @@
             // 
             this.panel4.Controls.Add(this.button1);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel4.Location = new System.Drawing.Point(603, 0);
+            this.panel4.Location = new System.Drawing.Point(501, 0);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(86, 415);
             this.panel4.TabIndex = 1;
@@ -278,7 +278,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 738);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(729, 25);
+            this.panel2.Size = new System.Drawing.Size(627, 25);
             this.panel2.TabIndex = 2;
             // 
             // panel6
@@ -288,7 +288,7 @@
             this.panel6.Location = new System.Drawing.Point(0, 763);
             this.panel6.Name = "panel6";
             this.panel6.Padding = new System.Windows.Forms.Padding(15, 10, 15, 0);
-            this.panel6.Size = new System.Drawing.Size(729, 708);
+            this.panel6.Size = new System.Drawing.Size(627, 708);
             this.panel6.TabIndex = 3;
             // 
             // tabControl1
@@ -304,7 +304,7 @@
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.Padding = new System.Drawing.Point(5, 5);
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(699, 698);
+            this.tabControl1.Size = new System.Drawing.Size(597, 698);
             this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControl1.TabIndex = 0;
             // 
@@ -324,7 +324,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 30);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(691, 664);
+            this.tabPage1.Size = new System.Drawing.Size(589, 664);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Informacje";
             // 
@@ -335,7 +335,7 @@
             this.panel23.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel23.Location = new System.Drawing.Point(210, 598);
             this.panel23.Name = "panel23";
-            this.panel23.Size = new System.Drawing.Size(478, 45);
+            this.panel23.Size = new System.Drawing.Size(376, 45);
             this.panel23.TabIndex = 12;
             // 
             // newFlowLayoutPanel6
@@ -344,7 +344,7 @@
             this.newFlowLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.newFlowLayoutPanel6.Location = new System.Drawing.Point(107, 0);
             this.newFlowLayoutPanel6.Name = "newFlowLayoutPanel6";
-            this.newFlowLayoutPanel6.Size = new System.Drawing.Size(371, 45);
+            this.newFlowLayoutPanel6.Size = new System.Drawing.Size(269, 45);
             this.newFlowLayoutPanel6.TabIndex = 1;
             // 
             // label29
@@ -365,7 +365,7 @@
             this.panel22.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel22.Location = new System.Drawing.Point(210, 553);
             this.panel22.Name = "panel22";
-            this.panel22.Size = new System.Drawing.Size(478, 45);
+            this.panel22.Size = new System.Drawing.Size(376, 45);
             this.panel22.TabIndex = 11;
             // 
             // newFlowLayoutPanel5
@@ -374,7 +374,7 @@
             this.newFlowLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.newFlowLayoutPanel5.Location = new System.Drawing.Point(107, 0);
             this.newFlowLayoutPanel5.Name = "newFlowLayoutPanel5";
-            this.newFlowLayoutPanel5.Size = new System.Drawing.Size(371, 45);
+            this.newFlowLayoutPanel5.Size = new System.Drawing.Size(269, 45);
             this.newFlowLayoutPanel5.TabIndex = 1;
             // 
             // label28
@@ -395,7 +395,7 @@
             this.panel21.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel21.Location = new System.Drawing.Point(210, 508);
             this.panel21.Name = "panel21";
-            this.panel21.Size = new System.Drawing.Size(478, 45);
+            this.panel21.Size = new System.Drawing.Size(376, 45);
             this.panel21.TabIndex = 10;
             // 
             // newFlowLayoutPanel4
@@ -404,7 +404,7 @@
             this.newFlowLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.newFlowLayoutPanel4.Location = new System.Drawing.Point(107, 0);
             this.newFlowLayoutPanel4.Name = "newFlowLayoutPanel4";
-            this.newFlowLayoutPanel4.Size = new System.Drawing.Size(371, 45);
+            this.newFlowLayoutPanel4.Size = new System.Drawing.Size(269, 45);
             this.newFlowLayoutPanel4.TabIndex = 1;
             // 
             // label27
@@ -425,7 +425,7 @@
             this.panel20.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel20.Location = new System.Drawing.Point(210, 463);
             this.panel20.Name = "panel20";
-            this.panel20.Size = new System.Drawing.Size(478, 45);
+            this.panel20.Size = new System.Drawing.Size(376, 45);
             this.panel20.TabIndex = 10;
             // 
             // newFlowLayoutPanel3
@@ -434,7 +434,7 @@
             this.newFlowLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.newFlowLayoutPanel3.Location = new System.Drawing.Point(107, 0);
             this.newFlowLayoutPanel3.Name = "newFlowLayoutPanel3";
-            this.newFlowLayoutPanel3.Size = new System.Drawing.Size(371, 45);
+            this.newFlowLayoutPanel3.Size = new System.Drawing.Size(269, 45);
             this.newFlowLayoutPanel3.TabIndex = 1;
             // 
             // label26
@@ -455,7 +455,7 @@
             this.panel19.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel19.Location = new System.Drawing.Point(210, 418);
             this.panel19.Name = "panel19";
-            this.panel19.Size = new System.Drawing.Size(478, 45);
+            this.panel19.Size = new System.Drawing.Size(376, 45);
             this.panel19.TabIndex = 9;
             // 
             // newFlowLayoutPanel2
@@ -464,7 +464,7 @@
             this.newFlowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.newFlowLayoutPanel2.Location = new System.Drawing.Point(107, 0);
             this.newFlowLayoutPanel2.Name = "newFlowLayoutPanel2";
-            this.newFlowLayoutPanel2.Size = new System.Drawing.Size(371, 45);
+            this.newFlowLayoutPanel2.Size = new System.Drawing.Size(269, 45);
             this.newFlowLayoutPanel2.TabIndex = 1;
             // 
             // label24
@@ -486,7 +486,7 @@
             this.panel18.Location = new System.Drawing.Point(210, 368);
             this.panel18.Name = "panel18";
             this.panel18.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.panel18.Size = new System.Drawing.Size(478, 50);
+            this.panel18.Size = new System.Drawing.Size(376, 50);
             this.panel18.TabIndex = 8;
             // 
             // newFlowLayoutPanel1
@@ -495,7 +495,7 @@
             this.newFlowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.newFlowLayoutPanel1.Location = new System.Drawing.Point(107, 10);
             this.newFlowLayoutPanel1.Name = "newFlowLayoutPanel1";
-            this.newFlowLayoutPanel1.Size = new System.Drawing.Size(371, 40);
+            this.newFlowLayoutPanel1.Size = new System.Drawing.Size(269, 40);
             this.newFlowLayoutPanel1.TabIndex = 1;
             // 
             // label25
@@ -518,7 +518,7 @@
             this.richTextBox1.Location = new System.Drawing.Point(210, 53);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(478, 315);
+            this.richTextBox1.Size = new System.Drawing.Size(376, 315);
             this.richTextBox1.TabIndex = 2;
             this.richTextBox1.Text = "N/A";
             // 
@@ -528,7 +528,7 @@
             this.label23.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label23.Location = new System.Drawing.Point(210, 3);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(478, 50);
+            this.label23.Size = new System.Drawing.Size(376, 50);
             this.label23.TabIndex = 1;
             this.label23.Text = "Opis";
             this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -826,7 +826,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 30);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(708, 664);
+            this.tabPage2.Size = new System.Drawing.Size(606, 664);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Odcinki";
             // 
@@ -836,7 +836,7 @@
             this.label30.Font = new System.Drawing.Font("Comic Sans MS", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label30.Location = new System.Drawing.Point(3, 3);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(702, 28);
+            this.label30.Size = new System.Drawing.Size(600, 28);
             this.label30.TabIndex = 1;
             this.label30.Text = "Wyberz tłumaczenie:";
             this.label30.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -847,7 +847,7 @@
             this.newFlowLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.newFlowLayoutPanel7.Location = new System.Drawing.Point(3, 3);
             this.newFlowLayoutPanel7.Name = "newFlowLayoutPanel7";
-            this.newFlowLayoutPanel7.Size = new System.Drawing.Size(702, 658);
+            this.newFlowLayoutPanel7.Size = new System.Drawing.Size(600, 658);
             this.newFlowLayoutPanel7.TabIndex = 0;
             // 
             // tabPage3
@@ -857,7 +857,7 @@
             this.tabPage3.ForeColor = System.Drawing.Color.White;
             this.tabPage3.Location = new System.Drawing.Point(4, 30);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(708, 664);
+            this.tabPage3.Size = new System.Drawing.Size(606, 664);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Bohaterowie";
             // 
@@ -867,7 +867,7 @@
             this.label31.Font = new System.Drawing.Font("Comic Sans MS", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label31.Location = new System.Drawing.Point(0, 0);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(708, 79);
+            this.label31.Size = new System.Drawing.Size(606, 79);
             this.label31.TabIndex = 0;
             this.label31.Text = "Już nie długo....";
             this.label31.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -878,7 +878,7 @@
             this.tabPage4.ForeColor = System.Drawing.Color.White;
             this.tabPage4.Location = new System.Drawing.Point(4, 30);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(708, 664);
+            this.tabPage4.Size = new System.Drawing.Size(606, 664);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Powiązane tytuły";
             // 
@@ -889,7 +889,7 @@
             this.panel7.Location = new System.Drawing.Point(0, 1496);
             this.panel7.Name = "panel7";
             this.panel7.Padding = new System.Windows.Forms.Padding(15, 10, 15, 0);
-            this.panel7.Size = new System.Drawing.Size(729, 500);
+            this.panel7.Size = new System.Drawing.Size(627, 500);
             this.panel7.TabIndex = 4;
             // 
             // label5
@@ -910,7 +910,7 @@
             this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel8.Location = new System.Drawing.Point(0, 1471);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(729, 25);
+            this.panel8.Size = new System.Drawing.Size(627, 25);
             this.panel8.TabIndex = 5;
             // 
             // PageItemUI
@@ -925,7 +925,7 @@
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Name = "PageItemUI";
-            this.Size = new System.Drawing.Size(729, 598);
+            this.Size = new System.Drawing.Size(627, 598);
             this.Load += new System.EventHandler(this.PageItemUI_Load);
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);

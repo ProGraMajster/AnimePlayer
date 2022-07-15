@@ -97,9 +97,10 @@ namespace AnimePlayerLibrary.UI
         {
             try
             {
-                UpdateLoadingTextdetails("Find Page > "+ _previewTitleClass.Title);
+                //UpdateLoadingTextdetails("Find Page > "+ _previewTitleClass.Title);
                 //ShowPanelLoading();
                 PageItemUI pageItemUI = new PageItemUI();
+                pageItemUI.Name ="pageItemUI";
                 panelFromMainContent.Controls.Add(pageItemUI);
                 pageItemUI.Dock = DockStyle.Fill;
                 pageItemUI.Show();
