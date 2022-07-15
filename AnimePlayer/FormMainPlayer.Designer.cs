@@ -74,6 +74,7 @@ namespace AnimePlayer
             this.panelSep = new System.Windows.Forms.Panel();
             this.buttonMoreBtnMenu = new System.Windows.Forms.Button();
             this.buttonShowTitleStatusList = new System.Windows.Forms.Button();
+            this.buttonDefined = new System.Windows.Forms.Button();
             this.buttonViewFindintems = new System.Windows.Forms.Button();
             this.buttonPlayer = new System.Windows.Forms.Button();
             this.buttonSetting = new System.Windows.Forms.Button();
@@ -629,6 +630,7 @@ namespace AnimePlayer
             this.panelMenu.Controls.Add(this.panelSep);
             this.panelMenu.Controls.Add(this.buttonMoreBtnMenu);
             this.panelMenu.Controls.Add(this.buttonShowTitleStatusList);
+            this.panelMenu.Controls.Add(this.buttonDefined);
             this.panelMenu.Controls.Add(this.buttonViewFindintems);
             this.panelMenu.Controls.Add(this.buttonPlayer);
             this.panelMenu.Controls.Add(this.buttonSetting);
@@ -702,7 +704,7 @@ namespace AnimePlayer
             this.buttonExitApp.FlatAppearance.BorderSize = 0;
             this.buttonExitApp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonExitApp.ForeColor = System.Drawing.Color.White;
-            this.buttonExitApp.Location = new System.Drawing.Point(12, 325);
+            this.buttonExitApp.Location = new System.Drawing.Point(12, 371);
             this.buttonExitApp.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.buttonExitApp.Name = "buttonExitApp";
             this.buttonExitApp.Size = new System.Drawing.Size(209, 46);
@@ -717,7 +719,7 @@ namespace AnimePlayer
             this.buttonRestartApp.FlatAppearance.BorderSize = 0;
             this.buttonRestartApp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonRestartApp.ForeColor = System.Drawing.Color.White;
-            this.buttonRestartApp.Location = new System.Drawing.Point(12, 279);
+            this.buttonRestartApp.Location = new System.Drawing.Point(12, 325);
             this.buttonRestartApp.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.buttonRestartApp.Name = "buttonRestartApp";
             this.buttonRestartApp.Size = new System.Drawing.Size(209, 46);
@@ -730,7 +732,7 @@ namespace AnimePlayer
             // 
             this.panelSep.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
             this.panelSep.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSep.Location = new System.Drawing.Point(12, 274);
+            this.panelSep.Location = new System.Drawing.Point(12, 320);
             this.panelSep.Name = "panelSep";
             this.panelSep.Size = new System.Drawing.Size(209, 5);
             this.panelSep.TabIndex = 9;
@@ -741,7 +743,7 @@ namespace AnimePlayer
             this.buttonMoreBtnMenu.FlatAppearance.BorderSize = 0;
             this.buttonMoreBtnMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonMoreBtnMenu.ForeColor = System.Drawing.Color.White;
-            this.buttonMoreBtnMenu.Location = new System.Drawing.Point(12, 228);
+            this.buttonMoreBtnMenu.Location = new System.Drawing.Point(12, 274);
             this.buttonMoreBtnMenu.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.buttonMoreBtnMenu.Name = "buttonMoreBtnMenu";
             this.buttonMoreBtnMenu.Size = new System.Drawing.Size(209, 46);
@@ -758,7 +760,7 @@ namespace AnimePlayer
             this.buttonShowTitleStatusList.FlatAppearance.BorderSize = 0;
             this.buttonShowTitleStatusList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonShowTitleStatusList.ForeColor = System.Drawing.Color.White;
-            this.buttonShowTitleStatusList.Location = new System.Drawing.Point(12, 182);
+            this.buttonShowTitleStatusList.Location = new System.Drawing.Point(12, 228);
             this.buttonShowTitleStatusList.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.buttonShowTitleStatusList.Name = "buttonShowTitleStatusList";
             this.buttonShowTitleStatusList.Size = new System.Drawing.Size(209, 46);
@@ -768,6 +770,23 @@ namespace AnimePlayer
             this.buttonShowTitleStatusList.UseVisualStyleBackColor = true;
             this.buttonShowTitleStatusList.Visible = false;
             this.buttonShowTitleStatusList.Click += new System.EventHandler(this.buttonShowTitleStatusList_Click);
+            // 
+            // buttonDefined
+            // 
+            this.buttonDefined.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonDefined.FlatAppearance.BorderSize = 0;
+            this.buttonDefined.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonDefined.ForeColor = System.Drawing.Color.White;
+            this.buttonDefined.Location = new System.Drawing.Point(12, 182);
+            this.buttonDefined.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.buttonDefined.Name = "buttonDefined";
+            this.buttonDefined.Size = new System.Drawing.Size(209, 46);
+            this.buttonDefined.TabIndex = 10;
+            this.buttonDefined.Text = "Definicje";
+            this.toolTip.SetToolTip(this.buttonDefined, "Statusy: Oglądam, Planeuj,, Wstrzymane itp.");
+            this.buttonDefined.UseVisualStyleBackColor = true;
+            this.buttonDefined.Visible = false;
+            this.buttonDefined.Click += new System.EventHandler(this.buttonDefined_Click);
             // 
             // buttonViewFindintems
             // 
@@ -1697,9 +1716,9 @@ namespace AnimePlayer
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.ClientSize = new System.Drawing.Size(1106, 624);
             this.Controls.Add(this.panel18);
+            this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panelCommands);
-            this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.panelNotifiError);
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -1885,5 +1904,6 @@ namespace AnimePlayer
         private Label label3;
         public Button buttonProfile;
         private Panel panel21;
+        private Button buttonDefined;
     }
 }

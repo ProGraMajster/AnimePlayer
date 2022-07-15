@@ -1,5 +1,4 @@
-﻿using AnimePlayerLibrary;
-using System;
+﻿using System;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
@@ -10,6 +9,9 @@ using System.ComponentModel;
 using System.Data;
 using System.Linq;
 using System.Text;
+
+using AnimePlayerLibrary;
+using AnimePlayerLibrary.UI;
 using AnimePlayer.Core;
 using AnimePlayer.CNM;
 using AnimePlayer.ControlsWinForms;
@@ -1315,6 +1317,16 @@ namespace AnimePlayer
         private void textBoxFinditem_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void buttonDefined_Click(object sender, EventArgs e)
+        {
+            DefinitionsPage definitionsPage = new DefinitionsPage();
+            definitionsPage.Name = "definitionsPage";
+            definitionsPage.Dock = DockStyle.Fill;
+            panel2.Controls.Add(definitionsPage);
+            definitionsPage.Show();
+            definitionsPage.BringToFront();
         }
     }
 }
