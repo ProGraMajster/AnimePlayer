@@ -8,6 +8,16 @@ namespace AnimePlayer.ControlsWinForms
 {
     public class TransparentPanel : Panel
     {
+        public TransparentPanel()
+        {
+            this.DoubleBuffered = true;
+        }
+
+        protected override void OnResize(EventArgs eventargs)
+        {
+            this.Invalidate();
+            base.OnResize(eventargs);
+        }
 
         protected override CreateParams CreateParams
         {

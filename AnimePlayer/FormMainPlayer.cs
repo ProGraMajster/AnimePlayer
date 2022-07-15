@@ -668,16 +668,17 @@ namespace AnimePlayer
                     {
                         add = false;
                     }
-                    WebContentControls.CtnPanel ctn = (WebContentControls.CtnPanel)c.Tag;
-                    if(ctn.panelItem.Name == e.Control.Name)
+                    PanelItem panelItem = (PanelItem)c.Tag;
+                    if(panelItem._previewTitleClass.Title== e.Control.Name)
                     {
                         add=false;
                     }
                 }
                 if(add)
                 {
-                    WebContentControls.CtnPanel panel = (WebContentControls.CtnPanel)e.Control.Tag;
-                    flowLayoutPanelAll.Controls.Add(panel.Duplication());
+                    PanelItem panelItem = (PanelItem)e.Control.Tag;
+                    PanelItem item = new PanelItem(panelItem._previewTitleClass);
+                    flowLayoutPanelAll.Controls.Add(item.panelItem);
                 }
             }
             catch (Exception ex)
@@ -734,7 +735,6 @@ namespace AnimePlayer
                 labelFindSatus.Text = "Szukanie";
                 Application.DoEvents();
                 List<string> unList = new List<string>();
-                List<WebContent.Values> list = new List<WebContent.Values>();
                 foreach (CheckBox box in panelSearch.panelAllS.Controls.OfType<CheckBox>())
                 {
                     if (box.CheckState == CheckState.Unchecked)
@@ -749,25 +749,26 @@ namespace AnimePlayer
                     labelFindSatus.Text += ".";
                     Application.DoEvents();
                     add = true;
-                    WebContentControls.CtnPanel cp = (WebContentControls.CtnPanel)c.Tag;
+                    PanelItem panelItem = (PanelItem)c.Tag;
                     if (findText != null && findText != "")
                     {
-                        if(!cp.values.name.ToLower().Contains(findText.ToLower()))
+                        if(!panelItem._previewTitleClass.Title.ToLower().Contains(findText.ToLower()))
                         {
                             break;
                         }
                     }
                     foreach (string x in unList)
                     {
-                        if (cp.values.titleInformation.Species.Contains(x))
+                        /*if (cp.values.titleInformation.Species.Contains(x))
                         {
                             add = false;
-                        }
+                        }*/
                     }
 
                     if(add)
                     {
-                        flowLayoutPanelFinditem.Controls.Add(cp.Duplication());
+                        PanelItem pi = new PanelItem(panelItem._previewTitleClass);
+                        flowLayoutPanelFinditem.Controls.Add(pi.panelItem);
                         i++;
                     }
                 }
@@ -781,6 +782,30 @@ namespace AnimePlayer
             Application.DoEvents();
             flowLayoutPanelFinditem.Show();
             flags_findItem = false;
+            if (flowLayoutPanelFinditem.Controls.Count == 0)
+            {
+                Panel panel = new Panel();
+                panel.Size = new Size(300, 300);
+                panel.Show();
+                Label label = new Label();
+                label.AutoSize = false;
+                label.AutoEllipsis = true;
+                label.TextAlign = ContentAlignment.MiddleCenter;
+                label.Text = "Podana fraza - "+ findText+" - nie została odnaleziona.";
+                label.Dock = DockStyle.Bottom;
+                label.ForeColor = Color.White;
+                label.Size = new Size(300, 100);
+                label.Font = new Font(label.Font.FontFamily, 12);
+                PictureBox pictureBox = new PictureBox();
+                pictureBox.ImageLocation =@"https://cdn-icons-png.flaticon.com/512/6134/6134065.png";
+                pictureBox.Size = new Size(200, 200);
+                pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
+                pictureBox.Show();
+                pictureBox.Dock = DockStyle.Fill;
+                panel.Controls.Add(pictureBox);
+                panel.Controls.Add(label);
+                flowLayoutPanelFinditem.Controls.Add(panel);
+            }
         }
 
 
@@ -822,10 +847,11 @@ namespace AnimePlayer
                         Application.DoEvents();
                         if (c.Tag != null)
                         {
-                            WebContentControls.CtnPanel ctn = (WebContentControls.CtnPanel)c.Tag;
-                            if (ctn.values.name.ToLower().Contains(findText.ToLower()))
+                            PanelItem panelItem = (PanelItem)c.Tag;
+                            if (panelItem._previewTitleClass.Title.ToLower().Contains(findText.ToLower()))
                             {
-                                flowLayoutPanelFinditem.Controls.Add(ctn.Duplication());
+                                PanelItem item = new PanelItem(panelItem._previewTitleClass);
+                                flowLayoutPanelFinditem.Controls.Add(item.panelItem);
                                 i++;
                             }
                         }
@@ -843,6 +869,30 @@ namespace AnimePlayer
             catch (Exception eex)
             {
                 Console.WriteLine(eex.ToString());
+            }
+            if (flowLayoutPanelFinditem.Controls.Count == 0)
+            {
+                Panel panel = new Panel();
+                panel.Size = new Size(300, 300);
+                panel.Show();
+                Label label = new Label();
+                label.AutoSize = false;
+                label.AutoEllipsis = true;
+                label.TextAlign = ContentAlignment.MiddleCenter;
+                label.Text = "Podana fraza - "+ findText+" - nie została odnaleziona.";
+                label.Dock = DockStyle.Bottom;
+                label.ForeColor = Color.White;
+                label.Size = new Size(300, 100);
+                label.Font = new Font(label.Font.FontFamily, 12);
+                PictureBox pictureBox = new PictureBox();
+                pictureBox.ImageLocation =@"https://cdn-icons-png.flaticon.com/512/6134/6134065.png";
+                pictureBox.Size = new Size(200, 200);
+                pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
+                pictureBox.Show();
+                pictureBox.Dock = DockStyle.Fill;
+                panel.Controls.Add(pictureBox);
+                panel.Controls.Add(label);
+                flowLayoutPanelFinditem.Controls.Add(panel);
             }
             stopWatch.Stop();
             TimeSpan ts = stopWatch.Elapsed;
@@ -923,10 +973,11 @@ namespace AnimePlayer
                         Application.DoEvents();
                         if (c.Tag != null)
                         {
-                            WebContentControls.CtnPanel ctn = (WebContentControls.CtnPanel)c.Tag;
-                            if (ctn.values.name.ToLower().Contains(findText.ToLower()))
+                            PanelItem panelItem = (PanelItem)c.Tag;
+                            if (panelItem._previewTitleClass.Title.ToLower().Contains(findText.ToLower()))
                             {
-                                flowLayoutPanelFinditem.Controls.Add(ctn.Duplication());
+                                PanelItem item = new PanelItem(panelItem._previewTitleClass);
+                                flowLayoutPanelFinditem.Controls.Add(item.panelItem);
                                 i++;
                             }
                         }
@@ -942,6 +993,30 @@ namespace AnimePlayer
             catch (Exception eex)
             {
                 Console.WriteLine(eex.ToString());
+            }
+            if(flowLayoutPanelFinditem.Controls.Count == 0)
+            {
+                Panel panel = new Panel();
+                panel.Size = new Size(300, 300);
+                panel.Show();
+                Label label = new Label();
+                label.AutoSize = false;
+                label.AutoEllipsis = true;
+                label.TextAlign = ContentAlignment.MiddleCenter;
+                label.Text = "Podana fraza - "+ findText+" - nie została odnaleziona.";
+                label.Dock = DockStyle.Bottom;
+                label.ForeColor = Color.White;
+                label.Size = new Size(300, 100);
+                label.Font = new Font(label.Font.FontFamily,12);
+                PictureBox pictureBox = new PictureBox();
+                pictureBox.ImageLocation =@"https://cdn-icons-png.flaticon.com/512/6134/6134065.png";
+                pictureBox.Size = new Size(200,200);
+                pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
+                pictureBox.Show();
+                pictureBox.Dock = DockStyle.Fill;
+                panel.Controls.Add(pictureBox);
+                panel.Controls.Add(label);
+                flowLayoutPanelFinditem.Controls.Add(panel);
             }
 
             stopWatch.Stop();
@@ -1321,6 +1396,7 @@ namespace AnimePlayer
 
         private void buttonDefined_Click(object sender, EventArgs e)
         {
+            panelMenu.Hide();
             DefinitionsPage definitionsPage = new DefinitionsPage();
             definitionsPage.Name = "definitionsPage";
             definitionsPage.Dock = DockStyle.Fill;

@@ -32,16 +32,16 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelAlternativeTitle = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.labelDes = new System.Windows.Forms.Label();
+            this.labelQuickInfo = new System.Windows.Forms.Label();
+            this.labelTitle = new System.Windows.Forms.Label();
+            this.buttonWatch = new System.Windows.Forms.Button();
             this.pictureBoxIcon = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonClosePageItemUI = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
@@ -98,8 +98,7 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.label31 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
+            this.buttonBackToPanel1 = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -126,7 +125,6 @@
             this.panel10.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
-            this.panel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -138,7 +136,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(20);
-            this.panel1.Size = new System.Drawing.Size(593, 738);
+            this.panel1.Size = new System.Drawing.Size(976, 738);
             this.panel1.TabIndex = 1;
             // 
             // panel3
@@ -149,19 +147,19 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(20, 20);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(553, 415);
+            this.panel3.Size = new System.Drawing.Size(936, 415);
             this.panel3.TabIndex = 0;
             // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.panel5.Controls.Add(this.label1);
+            this.panel5.Controls.Add(this.labelAlternativeTitle);
             this.panel5.Controls.Add(this.button5);
             this.panel5.Controls.Add(this.button3);
-            this.panel5.Controls.Add(this.label4);
-            this.panel5.Controls.Add(this.label3);
-            this.panel5.Controls.Add(this.label2);
-            this.panel5.Controls.Add(this.button2);
+            this.panel5.Controls.Add(this.labelDes);
+            this.panel5.Controls.Add(this.labelQuickInfo);
+            this.panel5.Controls.Add(this.labelTitle);
+            this.panel5.Controls.Add(this.buttonWatch);
             this.panel5.Controls.Add(this.pictureBoxIcon);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel5.Location = new System.Drawing.Point(0, 0);
@@ -169,15 +167,15 @@
             this.panel5.Size = new System.Drawing.Size(534, 415);
             this.panel5.TabIndex = 3;
             // 
-            // label1
+            // labelAlternativeTitle
             // 
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(156, 79);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(363, 50);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Alternatywny Tytuł";
+            this.labelAlternativeTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.labelAlternativeTitle.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelAlternativeTitle.Location = new System.Drawing.Point(156, 79);
+            this.labelAlternativeTitle.Name = "labelAlternativeTitle";
+            this.labelAlternativeTitle.Size = new System.Drawing.Size(363, 50);
+            this.labelAlternativeTitle.TabIndex = 8;
+            this.labelAlternativeTitle.Text = "Alternatywny Tytuł";
             // 
             // button5
             // 
@@ -200,45 +198,46 @@
             this.button3.Text = "Więcej nformacji";
             this.button3.UseVisualStyleBackColor = true;
             // 
-            // label4
+            // labelDes
             // 
-            this.label4.Location = new System.Drawing.Point(19, 189);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(475, 77);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Opis";
+            this.labelDes.Location = new System.Drawing.Point(19, 189);
+            this.labelDes.Name = "labelDes";
+            this.labelDes.Size = new System.Drawing.Size(475, 77);
+            this.labelDes.TabIndex = 4;
+            this.labelDes.Text = "Opis";
             // 
-            // label3
+            // labelQuickInfo
             // 
-            this.label3.AutoEllipsis = true;
-            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(19, 156);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(475, 21);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Rok: N/A, Typ: N\\A, Gatunki: N/A";
+            this.labelQuickInfo.AutoEllipsis = true;
+            this.labelQuickInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.labelQuickInfo.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelQuickInfo.Location = new System.Drawing.Point(19, 156);
+            this.labelQuickInfo.Name = "labelQuickInfo";
+            this.labelQuickInfo.Size = new System.Drawing.Size(475, 21);
+            this.labelQuickInfo.TabIndex = 3;
+            this.labelQuickInfo.Text = "Rok: N/A, Typ: N\\A, Gatunki: N/A";
             // 
-            // label2
+            // labelTitle
             // 
-            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(156, 18);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(363, 50);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Tytuł";
+            this.labelTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.labelTitle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelTitle.Location = new System.Drawing.Point(156, 18);
+            this.labelTitle.Name = "labelTitle";
+            this.labelTitle.Size = new System.Drawing.Size(363, 50);
+            this.labelTitle.TabIndex = 2;
+            this.labelTitle.Text = "Tytuł";
             // 
-            // button2
+            // buttonWatch
             // 
-            this.button2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button2.ForeColor = System.Drawing.Color.Black;
-            this.button2.Location = new System.Drawing.Point(403, 352);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(91, 38);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Oglądaj >";
-            this.button2.UseVisualStyleBackColor = true;
+            this.buttonWatch.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonWatch.ForeColor = System.Drawing.Color.Black;
+            this.buttonWatch.Location = new System.Drawing.Point(403, 352);
+            this.buttonWatch.Name = "buttonWatch";
+            this.buttonWatch.Size = new System.Drawing.Size(91, 38);
+            this.buttonWatch.TabIndex = 1;
+            this.buttonWatch.Text = "Oglądaj >";
+            this.buttonWatch.UseVisualStyleBackColor = true;
+            this.buttonWatch.Click += new System.EventHandler(this.buttonWatch_Click);
             // 
             // pictureBoxIcon
             // 
@@ -254,23 +253,24 @@
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.button1);
+            this.panel4.Controls.Add(this.buttonClosePageItemUI);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel4.Location = new System.Drawing.Point(467, 0);
+            this.panel4.Location = new System.Drawing.Point(850, 0);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(86, 415);
             this.panel4.TabIndex = 1;
             // 
-            // button1
+            // buttonClosePageItemUI
             // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.ForeColor = System.Drawing.Color.Red;
-            this.button1.Location = new System.Drawing.Point(0, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(86, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Zamknij";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonClosePageItemUI.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonClosePageItemUI.ForeColor = System.Drawing.Color.Red;
+            this.buttonClosePageItemUI.Location = new System.Drawing.Point(0, 0);
+            this.buttonClosePageItemUI.Name = "buttonClosePageItemUI";
+            this.buttonClosePageItemUI.Size = new System.Drawing.Size(86, 23);
+            this.buttonClosePageItemUI.TabIndex = 2;
+            this.buttonClosePageItemUI.Text = "Zamknij";
+            this.buttonClosePageItemUI.UseVisualStyleBackColor = true;
+            this.buttonClosePageItemUI.Click += new System.EventHandler(this.buttonClosePageItemUI_Click);
             // 
             // panel2
             // 
@@ -278,18 +278,20 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 738);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(593, 25);
+            this.panel2.Size = new System.Drawing.Size(976, 25);
             this.panel2.TabIndex = 2;
             // 
             // panel6
             // 
             this.panel6.Controls.Add(this.tabControl1);
+            this.panel6.Controls.Add(this.buttonBackToPanel1);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel6.Location = new System.Drawing.Point(0, 763);
             this.panel6.Name = "panel6";
             this.panel6.Padding = new System.Windows.Forms.Padding(15, 10, 15, 0);
-            this.panel6.Size = new System.Drawing.Size(593, 708);
+            this.panel6.Size = new System.Drawing.Size(976, 708);
             this.panel6.TabIndex = 3;
+            this.panel6.Visible = false;
             // 
             // tabControl1
             // 
@@ -299,12 +301,12 @@
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.ItemSize = new System.Drawing.Size(100, 26);
-            this.tabControl1.Location = new System.Drawing.Point(15, 10);
+            this.tabControl1.Location = new System.Drawing.Point(15, 47);
             this.tabControl1.Multiline = true;
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.Padding = new System.Drawing.Point(5, 5);
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(563, 698);
+            this.tabControl1.Size = new System.Drawing.Size(946, 661);
             this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControl1.TabIndex = 0;
             // 
@@ -324,7 +326,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 30);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(555, 664);
+            this.tabPage1.Size = new System.Drawing.Size(938, 627);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Informacje";
             // 
@@ -335,7 +337,7 @@
             this.panel23.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel23.Location = new System.Drawing.Point(210, 598);
             this.panel23.Name = "panel23";
-            this.panel23.Size = new System.Drawing.Size(342, 45);
+            this.panel23.Size = new System.Drawing.Size(725, 45);
             this.panel23.TabIndex = 12;
             // 
             // newFlowLayoutPanel6
@@ -344,7 +346,7 @@
             this.newFlowLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.newFlowLayoutPanel6.Location = new System.Drawing.Point(107, 0);
             this.newFlowLayoutPanel6.Name = "newFlowLayoutPanel6";
-            this.newFlowLayoutPanel6.Size = new System.Drawing.Size(235, 45);
+            this.newFlowLayoutPanel6.Size = new System.Drawing.Size(618, 45);
             this.newFlowLayoutPanel6.TabIndex = 1;
             // 
             // label29
@@ -365,7 +367,7 @@
             this.panel22.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel22.Location = new System.Drawing.Point(210, 553);
             this.panel22.Name = "panel22";
-            this.panel22.Size = new System.Drawing.Size(342, 45);
+            this.panel22.Size = new System.Drawing.Size(725, 45);
             this.panel22.TabIndex = 11;
             // 
             // newFlowLayoutPanel5
@@ -374,7 +376,7 @@
             this.newFlowLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.newFlowLayoutPanel5.Location = new System.Drawing.Point(107, 0);
             this.newFlowLayoutPanel5.Name = "newFlowLayoutPanel5";
-            this.newFlowLayoutPanel5.Size = new System.Drawing.Size(235, 45);
+            this.newFlowLayoutPanel5.Size = new System.Drawing.Size(618, 45);
             this.newFlowLayoutPanel5.TabIndex = 1;
             // 
             // label28
@@ -395,7 +397,7 @@
             this.panel21.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel21.Location = new System.Drawing.Point(210, 508);
             this.panel21.Name = "panel21";
-            this.panel21.Size = new System.Drawing.Size(342, 45);
+            this.panel21.Size = new System.Drawing.Size(725, 45);
             this.panel21.TabIndex = 10;
             // 
             // newFlowLayoutPanel4
@@ -404,7 +406,7 @@
             this.newFlowLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.newFlowLayoutPanel4.Location = new System.Drawing.Point(107, 0);
             this.newFlowLayoutPanel4.Name = "newFlowLayoutPanel4";
-            this.newFlowLayoutPanel4.Size = new System.Drawing.Size(235, 45);
+            this.newFlowLayoutPanel4.Size = new System.Drawing.Size(618, 45);
             this.newFlowLayoutPanel4.TabIndex = 1;
             // 
             // label27
@@ -425,7 +427,7 @@
             this.panel20.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel20.Location = new System.Drawing.Point(210, 463);
             this.panel20.Name = "panel20";
-            this.panel20.Size = new System.Drawing.Size(342, 45);
+            this.panel20.Size = new System.Drawing.Size(725, 45);
             this.panel20.TabIndex = 10;
             // 
             // newFlowLayoutPanel3
@@ -434,7 +436,7 @@
             this.newFlowLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.newFlowLayoutPanel3.Location = new System.Drawing.Point(107, 0);
             this.newFlowLayoutPanel3.Name = "newFlowLayoutPanel3";
-            this.newFlowLayoutPanel3.Size = new System.Drawing.Size(235, 45);
+            this.newFlowLayoutPanel3.Size = new System.Drawing.Size(618, 45);
             this.newFlowLayoutPanel3.TabIndex = 1;
             // 
             // label26
@@ -455,7 +457,7 @@
             this.panel19.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel19.Location = new System.Drawing.Point(210, 418);
             this.panel19.Name = "panel19";
-            this.panel19.Size = new System.Drawing.Size(342, 45);
+            this.panel19.Size = new System.Drawing.Size(725, 45);
             this.panel19.TabIndex = 9;
             // 
             // newFlowLayoutPanel2
@@ -464,7 +466,7 @@
             this.newFlowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.newFlowLayoutPanel2.Location = new System.Drawing.Point(107, 0);
             this.newFlowLayoutPanel2.Name = "newFlowLayoutPanel2";
-            this.newFlowLayoutPanel2.Size = new System.Drawing.Size(235, 45);
+            this.newFlowLayoutPanel2.Size = new System.Drawing.Size(618, 45);
             this.newFlowLayoutPanel2.TabIndex = 1;
             // 
             // label24
@@ -486,7 +488,7 @@
             this.panel18.Location = new System.Drawing.Point(210, 368);
             this.panel18.Name = "panel18";
             this.panel18.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.panel18.Size = new System.Drawing.Size(342, 50);
+            this.panel18.Size = new System.Drawing.Size(725, 50);
             this.panel18.TabIndex = 8;
             // 
             // newFlowLayoutPanel1
@@ -495,7 +497,7 @@
             this.newFlowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.newFlowLayoutPanel1.Location = new System.Drawing.Point(107, 10);
             this.newFlowLayoutPanel1.Name = "newFlowLayoutPanel1";
-            this.newFlowLayoutPanel1.Size = new System.Drawing.Size(235, 40);
+            this.newFlowLayoutPanel1.Size = new System.Drawing.Size(618, 40);
             this.newFlowLayoutPanel1.TabIndex = 1;
             // 
             // label25
@@ -518,7 +520,7 @@
             this.richTextBox1.Location = new System.Drawing.Point(210, 53);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(342, 315);
+            this.richTextBox1.Size = new System.Drawing.Size(725, 315);
             this.richTextBox1.TabIndex = 2;
             this.richTextBox1.Text = "N/A";
             // 
@@ -528,7 +530,7 @@
             this.label23.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label23.Location = new System.Drawing.Point(210, 3);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(342, 50);
+            this.label23.Size = new System.Drawing.Size(725, 50);
             this.label23.TabIndex = 1;
             this.label23.Text = "Opis";
             this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -548,7 +550,7 @@
             this.panel9.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel9.Location = new System.Drawing.Point(3, 3);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(207, 658);
+            this.panel9.Size = new System.Drawing.Size(207, 621);
             this.panel9.TabIndex = 0;
             // 
             // panel17
@@ -558,7 +560,7 @@
             this.panel17.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel17.Location = new System.Drawing.Point(0, 365);
             this.panel17.Name = "panel17";
-            this.panel17.Size = new System.Drawing.Size(207, 293);
+            this.panel17.Size = new System.Drawing.Size(207, 256);
             this.panel17.TabIndex = 8;
             // 
             // label21
@@ -567,7 +569,7 @@
             this.label21.Font = new System.Drawing.Font("Comic Sans MS", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label21.Location = new System.Drawing.Point(107, 0);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(100, 293);
+            this.label21.Size = new System.Drawing.Size(100, 256);
             this.label21.TabIndex = 1;
             this.label21.Text = "N/A";
             // 
@@ -577,7 +579,7 @@
             this.label22.Font = new System.Drawing.Font("Comic Sans MS", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label22.Location = new System.Drawing.Point(0, 0);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(107, 293);
+            this.label22.Size = new System.Drawing.Size(107, 256);
             this.label22.TabIndex = 0;
             this.label22.Text = "Studio:";
             this.label22.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -826,7 +828,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 30);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(572, 664);
+            this.tabPage2.Size = new System.Drawing.Size(938, 627);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Odcinki";
             // 
@@ -836,7 +838,7 @@
             this.label30.Font = new System.Drawing.Font("Comic Sans MS", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label30.Location = new System.Drawing.Point(3, 3);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(566, 28);
+            this.label30.Size = new System.Drawing.Size(932, 28);
             this.label30.TabIndex = 1;
             this.label30.Text = "Wyberz tłumaczenie:";
             this.label30.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -847,7 +849,7 @@
             this.newFlowLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.newFlowLayoutPanel7.Location = new System.Drawing.Point(3, 3);
             this.newFlowLayoutPanel7.Name = "newFlowLayoutPanel7";
-            this.newFlowLayoutPanel7.Size = new System.Drawing.Size(566, 658);
+            this.newFlowLayoutPanel7.Size = new System.Drawing.Size(932, 621);
             this.newFlowLayoutPanel7.TabIndex = 0;
             // 
             // tabPage3
@@ -857,7 +859,7 @@
             this.tabPage3.ForeColor = System.Drawing.Color.White;
             this.tabPage3.Location = new System.Drawing.Point(4, 30);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(572, 664);
+            this.tabPage3.Size = new System.Drawing.Size(938, 627);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Bohaterowie";
             // 
@@ -867,7 +869,7 @@
             this.label31.Font = new System.Drawing.Font("Comic Sans MS", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label31.Location = new System.Drawing.Point(0, 0);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(572, 79);
+            this.label31.Size = new System.Drawing.Size(938, 79);
             this.label31.TabIndex = 0;
             this.label31.Text = "Już nie długo....";
             this.label31.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -878,31 +880,21 @@
             this.tabPage4.ForeColor = System.Drawing.Color.White;
             this.tabPage4.Location = new System.Drawing.Point(4, 30);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(572, 664);
+            this.tabPage4.Size = new System.Drawing.Size(938, 627);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Powiązane tytuły";
             // 
-            // panel7
+            // buttonBackToPanel1
             // 
-            this.panel7.Controls.Add(this.label5);
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel7.Location = new System.Drawing.Point(0, 1496);
-            this.panel7.Name = "panel7";
-            this.panel7.Padding = new System.Windows.Forms.Padding(15, 10, 15, 0);
-            this.panel7.Size = new System.Drawing.Size(593, 500);
-            this.panel7.TabIndex = 4;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label5.Font = new System.Drawing.Font("Comic Sans MS", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(15, 10);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(114, 24);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Komentarze:";
+            this.buttonBackToPanel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonBackToPanel1.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonBackToPanel1.Location = new System.Drawing.Point(15, 10);
+            this.buttonBackToPanel1.Name = "buttonBackToPanel1";
+            this.buttonBackToPanel1.Size = new System.Drawing.Size(946, 37);
+            this.buttonBackToPanel1.TabIndex = 13;
+            this.buttonBackToPanel1.Text = "Wróć";
+            this.buttonBackToPanel1.UseVisualStyleBackColor = true;
+            this.buttonBackToPanel1.Click += new System.EventHandler(this.buttonBackToPanel1_Click);
             // 
             // panel8
             // 
@@ -910,14 +902,12 @@
             this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel8.Location = new System.Drawing.Point(0, 1471);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(593, 25);
+            this.panel8.Size = new System.Drawing.Size(976, 25);
             this.panel8.TabIndex = 5;
             // 
             // PageItemUI
             // 
-            this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel8);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel2);
@@ -925,7 +915,7 @@
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Name = "PageItemUI";
-            this.Size = new System.Drawing.Size(593, 598);
+            this.Size = new System.Drawing.Size(976, 569);
             this.Load += new System.EventHandler(this.PageItemUI_Load);
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
@@ -952,8 +942,6 @@
             this.panel10.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -963,23 +951,21 @@
         private Panel panel2;
         private Panel panel3;
         private Panel panel4;
-        private Button button1;
+        private Button buttonClosePageItemUI;
         private PictureBox pictureBoxIcon;
         private Panel panel5;
         private Button button3;
-        private Label label4;
-        private Label label3;
-        private Label label2;
-        private Button button2;
+        private Label labelDes;
+        private Label labelQuickInfo;
+        private Label labelTitle;
+        private Button buttonWatch;
         private Panel panel6;
-        private Panel panel7;
-        private Label label5;
         private Button button5;
         private TabControl tabControl1;
         private TabPage tabPage1;
         private TabPage tabPage2;
         private Panel panel8;
-        private Label label1;
+        private Label labelAlternativeTitle;
         private TabPage tabPage3;
         private TabPage tabPage4;
         private Panel panel9;
@@ -1031,5 +1017,6 @@
         private Label label30;
         private AnimePlayer.ControlsWinForms.NewFlowLayoutPanel newFlowLayoutPanel7;
         private Label label31;
+        private Button buttonBackToPanel1;
     }
 }

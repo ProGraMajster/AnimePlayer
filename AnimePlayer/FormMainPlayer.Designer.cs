@@ -785,7 +785,6 @@ namespace AnimePlayer
             this.buttonDefined.Text = "Definicje";
             this.toolTip.SetToolTip(this.buttonDefined, "Statusy: Oglądam, Planeuj,, Wstrzymane itp.");
             this.buttonDefined.UseVisualStyleBackColor = true;
-            this.buttonDefined.Visible = false;
             this.buttonDefined.Click += new System.EventHandler(this.buttonDefined_Click);
             // 
             // buttonViewFindintems

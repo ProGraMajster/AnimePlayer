@@ -20,7 +20,6 @@ namespace AnimePlayer
         ZetaIpc.Runtime.Client.IpcClient ipcClientMain;
         Process processApp;
         Process processUpdater;
-
         public bool updated = false;
 
         public FormStarter()

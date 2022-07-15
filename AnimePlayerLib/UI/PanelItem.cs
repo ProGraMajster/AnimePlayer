@@ -14,7 +14,7 @@ namespace AnimePlayerLibrary.UI
         public Panel panelItem;
         public PictureBox pictureBoxItem;
         public Button buttonItem;
-        private PreviewTitleClass _previewTitleClass;
+        public PreviewTitleClass _previewTitleClass;
         private Panel panelLoading;
         private Label labelLoadingDetails;
         private Panel panelFromMainContent = (Panel)Application.OpenForms[0].Controls.Find("panel2",true)[0];
@@ -99,7 +99,7 @@ namespace AnimePlayerLibrary.UI
             {
                 //UpdateLoadingTextdetails("Find Page > "+ _previewTitleClass.Title);
                 //ShowPanelLoading();
-                PageItemUI pageItemUI = new PageItemUI();
+                PageItemUI pageItemUI = new PageItemUI(this);
                 pageItemUI.Name ="pageItemUI";
                 panelFromMainContent.Controls.Add(pageItemUI);
                 pageItemUI.Dock = DockStyle.Fill;
@@ -150,6 +150,7 @@ namespace AnimePlayerLibrary.UI
             AnimePlayer.CNM.ExtensionsControl.RoundingTheCorners(panelItem, 15);
             AnimePlayer.CNM.ExtensionsControl.RoundingTheCorners(buttonItem, 15);
             AnimePlayer.CNM.ExtensionsControl.RoundingTheCorners(pictureBoxItem, 15);
+            panelItem.Tag=this;
         }
     }
 }
