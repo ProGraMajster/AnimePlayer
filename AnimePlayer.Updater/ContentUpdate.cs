@@ -14,7 +14,6 @@ namespace AnimePlayer.Updater
     {
         public static readonly string LinkToContent = @"https://github.com/ProGraMajster/AnimePlayer.Content/archive/refs/heads/master.zip";
 
-        
         public static void DownloadContent()
         {
             try
