@@ -19,7 +19,6 @@ namespace AnimePlayer.Updater
         {
             try
             {
-               
                 Console.WriteLine("DownloadContet > DownloadFile");
                 Console.WriteLine("Link:"+LinkToContent);
                 Console.WriteLine("path:"+AppFolders.Updater+"content.zip");
