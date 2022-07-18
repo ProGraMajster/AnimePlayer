@@ -1,4 +1,6 @@
-﻿namespace AnimePlayer.Updater
+﻿using System.Windows.Forms;
+
+namespace AnimePlayer.Updater
 {
     partial class FormProgess
     {

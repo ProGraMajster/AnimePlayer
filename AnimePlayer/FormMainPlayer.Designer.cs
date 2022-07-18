@@ -1,5 +1,7 @@
 ﻿using AnimePlayer.ControlsWinForms;
 using AnimePlayerLibrary;
+using System.Windows.Forms;
+
 namespace AnimePlayer
 {
     partial class FormMainPlayer

@@ -8,6 +8,7 @@ using System.IO.Compression;
 using AnimePlayerLibrary;
 using AnimePlayer.Class;
 using System.Diagnostics;
+using System.Windows.Forms;
 
 namespace AnimePlayer.Updater
 {

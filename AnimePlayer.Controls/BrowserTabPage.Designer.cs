@@ -1,4 +1,6 @@
-﻿namespace AnimePlayer.ControlsWinForms
+﻿using System.Windows.Forms;
+
+namespace AnimePlayer.ControlsWinForms
 {
     partial class BrowserTabPage
     {

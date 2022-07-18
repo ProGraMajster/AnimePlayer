@@ -1,4 +1,6 @@
-﻿namespace AnimePlayerLibrary.UI
+﻿using System.Windows.Forms;
+
+namespace AnimePlayerLibrary.UI
 {
     partial class PageItemUI_TopPanel
     {

@@ -1,4 +1,6 @@
 ﻿
+using System.Windows.Forms;
+
 namespace AnimePlayer
 {
     partial class VideoPlayerWeb

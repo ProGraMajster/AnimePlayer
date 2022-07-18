@@ -1,4 +1,6 @@
-﻿namespace AnimePlayerLibrary
+﻿using System.Windows.Forms;
+
+namespace AnimePlayerLibrary
 {
     partial class PanelAllNewsContent
     {

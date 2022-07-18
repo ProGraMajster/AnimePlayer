@@ -1,5 +1,6 @@
 ﻿using AnimePlayer.ControlsWinForms;
 using AnimePlayerLibrary;
+using System.Windows.Forms;
 using NewFlowLayoutPanel = AnimePlayer.ControlsWinForms.NewFlowLayoutPanel;
 
 namespace AnimePlayer

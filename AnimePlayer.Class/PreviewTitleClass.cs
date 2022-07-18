@@ -1,4 +1,7 @@
-﻿namespace AnimePlayer.Class
+﻿using System;
+using System.Collections.Generic;
+
+namespace AnimePlayer.Class
 {
     [Serializable]
     public class PreviewTitleClass
