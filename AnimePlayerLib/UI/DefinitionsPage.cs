@@ -97,19 +97,43 @@ namespace AnimePlayerLibrary.UI
                 return;
             }
 
-            if (e.Node.Tag == null)
+
+            if(e.Node.Text ==  "Miejsce i czas")
             {
-                return;
+                label1.Text = "Miejsce i czas\nOpis:\n" +
+                    "Miejsce i/bądź czas, w którym rozgrywa się dane anime lub manga," +
+                    " może to być np. średniowieczna Europa, kosmos itp.\n\n" +e.Node.Nodes.Count +"Tagi(ów)";
             }
-
-            if (!File.Exists(e.Node.Tag.ToString()))
+            else if(e.Node.Text=="Gatunki")
             {
-                return;
+                label1.Text = "Gatunki\nOpis:\n" +
+                    "Gatunki najczęściej występujące w anime i mandze\n\n"+e.Node.Nodes.Count +"Tagi(ów)"; ;
             }
+            else if(e.Node.Text=="Grupa docelowa")
+            {
+                label1.Text = "Grupa docelowa\nOpis:\n" +
+                    "Grupy, do których adresowane są serie, zawierają głównie grupy wiekowe\n\n"+e.Node.Nodes.Count +"Tagi(ów)"; ;
+            }
+            else if(e.Node.Text == "Rodzaje postaci")
+            {
+                label1.Text = "Rodzaje postaci\nOpis:\n" +
+                    "Typy postaci występujące w anime i mandze, do tej kategorii mogą należeć np. wampiry lub postacie chibi\n\n"+e.Node.Nodes.Count +"Tagi(ów)"; ;
+            }
+            else
+            {
+                if (e.Node.Tag == null)
+                {
+                    return;
+                }
+                if (!File.Exists(e.Node.Tag.ToString()))
+                {
+                    return;
+                }
+                Definition definition = (Definition)SerializationAndDeserialization.Deserialization(e.Node.Tag.ToString());
 
-            Definition definition = (Definition)SerializationAndDeserialization.Deserialization(e.Node.Tag.ToString());
-
-            label1.Text = definition.Name+"\nOpis:\n"+definition.Description;
+                label1.Text = definition.Name+"\nOpis:\n"+definition.Description;
+            }
+            
         }
 
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
@@ -119,19 +143,42 @@ namespace AnimePlayerLibrary.UI
                 return;
             }
 
-            if (e.Node.Tag == null)
+
+            if (e.Node.Text ==  "Miejsce i czas")
             {
-                return;
+                label1.Text = "Miejsce i czas\nOpis:\n" +
+                    "Miejsce i/bądź czas, w którym rozgrywa się dane anime lub manga," +
+                    " może to być np. średniowieczna Europa, kosmos itp.\n\n" +e.Node.Nodes.Count +"Tagi(ów)";
             }
-
-            if (!File.Exists(e.Node.Tag.ToString()))
+            else if (e.Node.Text=="Gatunki")
             {
-                return;
+                label1.Text = "Gatunki\nOpis:\n" +
+                    "Gatunki najczęściej występujące w anime i mandze\n\n"+e.Node.Nodes.Count +"Tagi(ów)"; ;
             }
+            else if (e.Node.Text=="Grupa docelowa")
+            {
+                label1.Text = "Grupa docelowa\nOpis:\n" +
+                    "Grupy, do których adresowane są serie, zawierają głównie grupy wiekowe\n\n"+e.Node.Nodes.Count +"Tagi(ów)"; ;
+            }
+            else if (e.Node.Text == "Rodzaje postaci")
+            {
+                label1.Text = "Rodzaje postaci\nOpis:\n" +
+                    "Typy postaci występujące w anime i mandze, do tej kategorii mogą należeć np. wampiry lub postacie chibi\n\n"+e.Node.Nodes.Count +"Tagi(ów)"; ;
+            }
+            else
+            {
+                if (e.Node.Tag == null)
+                {
+                    return;
+                }
+                if (!File.Exists(e.Node.Tag.ToString()))
+                {
+                    return;
+                }
+                Definition definition = (Definition)SerializationAndDeserialization.Deserialization(e.Node.Tag.ToString());
 
-            Definition definition = (Definition)SerializationAndDeserialization.Deserialization(e.Node.Tag.ToString());
-
-            label1.Text = definition.Name+"\nOpis:\n"+definition.Description;
+                label1.Text = definition.Name+"\nOpis:\n"+definition.Description;
+            }
         }
 
         private void buttonCloseDefinitionsPage_Click(object sender, EventArgs e)
