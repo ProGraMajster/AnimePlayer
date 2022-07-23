@@ -1,6 +1,8 @@
 ﻿using AnimePlayer.Class;
 using System.IO;
 using System.Diagnostics;
+using System.Windows.Forms;
+using System;
 
 namespace AnimePlayer.DataIndexer
 {

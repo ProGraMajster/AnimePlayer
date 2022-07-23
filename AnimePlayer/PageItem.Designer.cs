@@ -34,7 +34,6 @@ namespace AnimePlayer
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.linkLabelChangeState = new System.Windows.Forms.LinkLabel();
             this.labelotherTitle = new System.Windows.Forms.Label();
             this.labelTitle = new System.Windows.Forms.Label();
@@ -67,7 +66,6 @@ namespace AnimePlayer
             this.label2 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.flowLayoutPanelEpType = new System.Windows.Forms.FlowLayoutPanel();
-            this.listBoxEpType = new System.Windows.Forms.ListBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -117,7 +115,6 @@ namespace AnimePlayer
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.panel1.Controls.Add(this.linkLabel1);
             this.panel1.Controls.Add(this.linkLabelChangeState);
             this.panel1.Controls.Add(this.labelotherTitle);
             this.panel1.Controls.Add(this.labelTitle);
@@ -130,22 +127,6 @@ namespace AnimePlayer
             this.panel1.Padding = new System.Windows.Forms.Padding(23);
             this.panel1.Size = new System.Drawing.Size(922, 277);
             this.panel1.TabIndex = 0;
-            // 
-            // linkLabel1
-            // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.linkLabel1.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.linkLabel1.LinkColor = System.Drawing.Color.DeepSkyBlue;
-            this.linkLabel1.Location = new System.Drawing.Point(210, 237);
-            this.linkLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.linkLabel1.Size = new System.Drawing.Size(167, 17);
-            this.linkLabel1.TabIndex = 4;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Otwóz stronę internetową";
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // linkLabelChangeState
             // 
@@ -598,7 +579,6 @@ namespace AnimePlayer
             // panel5
             // 
             this.panel5.Controls.Add(this.flowLayoutPanelEpType);
-            this.panel5.Controls.Add(this.listBoxEpType);
             this.panel5.Controls.Add(this.label5);
             this.panel5.Controls.Add(this.label3);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
@@ -620,22 +600,6 @@ namespace AnimePlayer
             this.flowLayoutPanelEpType.Name = "flowLayoutPanelEpType";
             this.flowLayoutPanelEpType.Size = new System.Drawing.Size(922, 187);
             this.flowLayoutPanelEpType.TabIndex = 7;
-            // 
-            // listBoxEpType
-            // 
-            this.listBoxEpType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.listBoxEpType.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listBoxEpType.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listBoxEpType.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.listBoxEpType.ForeColor = System.Drawing.Color.White;
-            this.listBoxEpType.FormattingEnabled = true;
-            this.listBoxEpType.ItemHeight = 18;
-            this.listBoxEpType.Location = new System.Drawing.Point(0, 101);
-            this.listBoxEpType.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.listBoxEpType.Name = "listBoxEpType";
-            this.listBoxEpType.Size = new System.Drawing.Size(922, 187);
-            this.listBoxEpType.TabIndex = 0;
-            this.listBoxEpType.SelectedIndexChanged += new System.EventHandler(this.listBoxEpType_SelectedIndexChanged);
             // 
             // label5
             // 
@@ -1107,8 +1071,6 @@ namespace AnimePlayer
         private System.Windows.Forms.Label labeliNe;
         public System.Windows.Forms.Label labelDes;
         private System.Windows.Forms.Label label5;
-        public System.Windows.Forms.ListBox listBoxEpType;
-        public System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button buttonViewIconClose;
         public System.Windows.Forms.Panel panelViewIcon;

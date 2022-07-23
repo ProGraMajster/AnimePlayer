@@ -9,8 +9,8 @@ namespace AnimePlayer.Class
     [Serializable]
     public class PageItemData
     {
-        public TitleInformation titleInformation { get; set; }
-        public List<string> RelatedSeries_SID { get; set; }
+        public TitleInformation TitleInformation { get; set; }
+        public List<RelatedTitle> RelatedTitles { get; set; }
         public string S_ID { get; set; }
     }
 }

@@ -23,17 +23,9 @@
       "commandName": "Project",
       "commandLineArgs": "-Updater"
     },
-    "-local -offline -debug -OpenApp -OldIni": {
-      "commandName": "Project",
-      "commandLineArgs": "-local -offline -debug -OpenApp -OldIni"
-    },
     "-OtherArgs -Console -OpenApp": {
       "commandName": "Project",
       "commandLineArgs": "-OtherArgs -Console -OpenApp"
-    },
-    "-OtherArgs -Console -OpenApp -OldIni": {
-      "commandName": "Project",
-      "commandLineArgs": "-OtherArgs -Console -OpenApp -OldIni"
     },
     "OpenApp debug": {
       "commandName": "Project",

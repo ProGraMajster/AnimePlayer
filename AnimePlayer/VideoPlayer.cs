@@ -11,43 +11,19 @@ namespace AnimePlayer
         public string orginalLink;
         public double ShowSkipIntroTime = double.NaN;
         public double SkipIntro = double.NaN;
-        Form form;
         AxWMPLib.AxWindowsMediaPlayer axwmp;
-        public VideoPlayer(string vlink,string olink, Panel panel, string path, Form f, WebContent.Skip skip)
+        public VideoPlayer()
         {
             InitializeComponent();
             axwmp = new AxWMPLib.AxWindowsMediaPlayer();
             axwmp.MouseMoveEvent += axwmp_mouseMoveEvent;
             this.Controls.Add(axwmp);
             axwmp.Dock = DockStyle.Fill;
-            form = f;
-            pathToFile = path;
-            videoLink = vlink;
-            orginalLink = olink;
-            panel.Controls.Add(this);
             this.Dock = DockStyle.Fill;
             this.BringToFront();
             this.Show();
-            axwmp.URL = videoLink;
-            label1.Text = "Status: Odtwarzanie";
-            ShowSkipIntroTime = skip.time_showButton;
-            SkipIntro = skip.time_skipIntro;    
-            axwmp.Ctlcontrols.pause();
-        }
-
-        public VideoPlayer(Panel panel, bool local, Form f)
-        {
-            InitializeComponent();
-            form = f;
-            panel.Controls.Add(this);
-            this.Dock = DockStyle.Fill;
-            this.BringToFront();
-            this.Show();
-            button4.Visible = local;
-            axwmp = new AxWMPLib.AxWindowsMediaPlayer();
-            axwmp.MouseMoveEvent += axwmp_mouseMoveEvent;
-            this.Controls.Add(axwmp);
-            axwmp.Dock = DockStyle.Fill;
+            /*
+            label1.Text = "Status: Odtwarzanie";*/
         }
 
         private void VideoPlayer_Load(object sender, EventArgs e)
@@ -57,8 +33,8 @@ namespace AnimePlayer
 
         private void buttonClose_Click(object sender, EventArgs e)
         {
-            form.Size = sizeform;
-            form.FormBorderStyle = FormBorderStyle.Sizable;
+            this.ParentForm.Size = sizeform;
+            this.ParentForm.FormBorderStyle = FormBorderStyle.Sizable;
             this.Hide();
             this.Dispose();
         }
@@ -69,31 +45,31 @@ namespace AnimePlayer
 
         private void button1_Click(object sender, EventArgs e)
         {
-            form.SuspendLayout();
+            this.ParentForm.SuspendLayout();
             if (full)
             {
-                form.Size = sizeform;
-                form.FormBorderStyle = FormBorderStyle.Sizable;
+                this.ParentForm.Size = sizeform;
+                this.ParentForm.FormBorderStyle = FormBorderStyle.Sizable;
                 full = false;
                 timer.Start();
                 panel1.Show();
-                form.ResumeLayout(true);
+                this.ParentForm.ResumeLayout(true);
                 return;
             }
             else
             {
-                sizeform = form.Size;
-                if (form.WindowState == FormWindowState.Maximized)
+                sizeform = this.ParentForm.Size;
+                if (this.ParentForm.WindowState == FormWindowState.Maximized)
                 {
-                    form.WindowState = FormWindowState.Normal;
+                    this.ParentForm.WindowState = FormWindowState.Normal;
                 }
                 full = true;
                 timer.Stop();
                 panel1.Hide();
-                form.FormBorderStyle = FormBorderStyle.None;
-                form.Size = new Size(Screen.PrimaryScreen.WorkingArea.Width, Screen.PrimaryScreen.WorkingArea.Height);
-                form.Location = new Point(0, 0);
-                form.ResumeLayout(true);
+                this.ParentForm.FormBorderStyle = FormBorderStyle.None;
+                this.ParentForm.Size = new Size(Screen.PrimaryScreen.WorkingArea.Width, Screen.PrimaryScreen.WorkingArea.Height);
+                this.ParentForm.Location = new Point(0, 0);
+                this.ParentForm.ResumeLayout(true);
                 return;
             }
         }
@@ -183,7 +159,7 @@ namespace AnimePlayer
         {
             try
             {
-                System.Diagnostics.Process.Start(orginalLink);
+                System.Diagnostics.Process.Start("cmd.exe /C start \"\" "+orginalLink);
             }
             catch(Exception ex)
             {

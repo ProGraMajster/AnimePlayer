@@ -25,7 +25,6 @@ namespace AnimePlayer
         public int server = 0;
 
         public Control controlAuxiliary;
-        public WebContentControls.CtnPanel ctnPanelAuxiliary;
 
         public bool debug = false;
         public bool onOnline = true;
@@ -33,8 +32,6 @@ namespace AnimePlayer
         NewFlowLayoutPanel panelNews;
         public AutoCompleteStringCollection autoCSC_find;
         public List<ItemsGroup> itemsGroups = new List<ItemsGroup>();
-        public  ThemeChanger themeChanger;
-        public ThemeChangerColors tchangerColors;
         public bool usedThemeColors = false;
         public string ThemePath = null;
         public ItemList_ClassItemOnStateList iList_ClassItemOnState;
@@ -49,9 +46,7 @@ namespace AnimePlayer
             InitializeComponent();
             try
             {
-                tchangerColors = new ThemeChangerColors();
                 autoCSC_find = new AutoCompleteStringCollection();
-                themeChanger = new ThemeChanger(this, tchangerColors, autoCSC_find);
                 panelSearch = new PanelSearchFilters(flowLayoutPanelAll, flowLayoutPanelFinditem, AnimePlayer.Properties.Settings.Default.RoundingControl);
                 panelSearch.Dock = DockStyle.None;
                 panelAllitem.Controls.Add(panelSearch);
@@ -331,7 +326,6 @@ namespace AnimePlayer
         private void FormMainPlayer_Load(object sender, EventArgs e)
         {
             bool local = false;
-            bool OldIni = false;
             foreach (string arg in Environment.GetCommandLineArgs())
             {
                 if (arg == "-local")
@@ -345,10 +339,6 @@ namespace AnimePlayer
                 if (arg =="-debug")
                 {
                     debug = true;
-                }
-                if(arg =="-OldIni")
-                {
-                    OldIni = true;
                 }
                 if(arg == "-updated")
                 {
@@ -380,62 +370,8 @@ namespace AnimePlayer
             CenterControlInForm(labelLoading);
             panelLoading.Show();
             this.Show();
-            if(OldIni)
-            {
-                WebContent.Initialize(this);
-            }
-            else
-            {
-                Console.WriteLine("ContentManager.Initalize...");
-                ContentManager.Initalize(this);
-            }
-            /*if (local == false)
-            {
-                panelLoading.BringToFront();
-                CenterControlInForm(labelLoading);
-                panelLoading.Show();
-                this.Show();
-                Application.DoEvents();
-                WebContent.Initialize(this);
-            }
-            else
-            {
-                panelLoading.BringToFront();
-                CenterControlInForm(labelLoading);
-                panelLoading.Show();
-                this.Show();
-                WebContent.Initialize(this);
-                //Interpreter interpreter = new Interpreter(this);
-                //interpreter.Local();
-            }*/
-
-            /*
-            if(panelNews.Controls.Count <= 0)
-            {
-                panelSTNewsMain.Hide();
-            }
-            */
-
-            /*try
-            {
-                if (File.Exists("C:\\ContentLibrarys\\OtherFiles\\WMP_OverlayApp\\theme.txt"))
-                {
-                    labelLoadingDetails.Text = "Ładowanie motywu.";
-                    Application.DoEvents();
-                    string txt = File.ReadAllLines("C:\\ContentLibrarys\\OtherFiles\\WMP_OverlayApp\\theme.txt")[0];
-                    labelLoadingDetails.Text = "Ładowanie motywu..";
-                    Application.DoEvents();
-                    themeChanger.LoadThemeFile(txt);
-                    labelLoadingDetails.Text = "Ładowanie motywu...";
-                    Application.DoEvents();
-                    usedThemeColors = true;
-                }
-            }
-            catch (Exception exx)
-            {
-                Console.WriteLine(exx.ToString());
-            }
-*/
+            Console.WriteLine("ContentManager.Initalize...");
+            ContentManager.Initalize(this);
             labelLoadingDetails.Text = "Download Files";
            
             //Tymczasowo nie używać aż do ukończenia prac związanych z powiązanymi funkcjami!
@@ -506,7 +442,11 @@ namespace AnimePlayer
         private void buttonPlayer_Click(object sender, EventArgs e)
         {
             panelMenu.Hide();
-            VideoPlayer _ = new VideoPlayer(panel2, true, this);
+            VideoPlayer _ = new VideoPlayer();
+            panel2.Controls.Add(_);
+            _.Dock = DockStyle.Fill;
+            _.Show();
+            _.BringToFront();
         }
 
         private void buttonExitApp_Click(object sender, EventArgs e)
@@ -904,45 +844,6 @@ namespace AnimePlayer
             flags_findItem = false;
         }
 
-        public List<Control> findItemsRetrunListControl(string findText)
-        {
-            findText = findText.ToLower().Replace("\n", "").Replace("\r", "").Replace("\t", "");
-            List<Control> list = new List<Control>();
-            if (findText == null)
-            {
-                return null;
-            }
-            try
-            {
-                foreach (Control c in flowLayoutPanelAll.Controls)
-                {
-                    try
-                    {
-                        Application.DoEvents();
-                        if (c.Tag != null)
-                        {
-                            WebContentControls.CtnPanel ctn = (WebContentControls.CtnPanel)c.Tag;
-                            if (ctn.values.name.ToLower().Contains(findText.ToLower()))
-                            {
-                                list.Add(ctn.Duplication());
-                            }
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        Console.WriteLine(ex.ToString());
-                    }
-                }
-
-                return list;
-            }
-            catch (Exception eex)
-            {
-                Console.WriteLine(eex.ToString());
-                return null;
-            }
-        }
-        
         public void findItems(string findText)
         {
             flags_findItem = true;
@@ -1208,7 +1109,11 @@ namespace AnimePlayer
         private void button2button_MoreBtn_Open_Player_Click(object sender, EventArgs e)
         {
             panelMoreButtons.Hide();
-            VideoPlayer _ = new VideoPlayer(panel2, true, this);
+            VideoPlayer _ = new VideoPlayer();
+            panel2.Controls.Add(_);
+            _.Dock = DockStyle.Fill;
+            _.Show();
+            _.BringToFront();
         }
 
         private void button4button2button_MoreBtn_Open_FindItem_Click(object sender, EventArgs e)
@@ -1311,21 +1216,6 @@ namespace AnimePlayer
         {
             try
             {
-                string[] line = File.ReadAllLines("main.txt");
-                if(line.Length > 1)
-                {
-                    string duri = line[3];
-                    string onedrive = null;
-                    if (File.Exists(@"C:\ContentLibrarys\OtherFiles\WMP_OverlayApp\" + duri + ".txt"))
-                    {
-                        Interpreter interpreter = new Interpreter(this);
-                        interpreter.AsyncStart(@"C:\ContentLibrarys\OtherFiles\WMP_OverlayApp\" + duri + ".txt");
-                    }
-                    else
-                    {
-                        //onedrive = line[5];
-                    }
-                }
 
             }
             catch (Exception ex)
@@ -1341,12 +1231,12 @@ namespace AnimePlayer
         {
             if(e.KeyCode == Keys.Enter)
             {
-                ConsoleCommands(textBoxCommandInput.Text);
+                ConsolePlayer(textBoxCommandInput.Text);
                 textBoxCommandInput.Text = "";
             }
         }
 
-        public void ConsoleCommands(string input)
+        public void ConsolePlayer(string input)
         {
             if(input.StartsWith("videoplayerweb open type youtube;"))
             {

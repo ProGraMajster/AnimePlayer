@@ -1,4 +1,6 @@
-﻿namespace AnimePlayer.Profile
+﻿using System.Windows.Forms;
+
+namespace AnimePlayer.Profile
 {
     partial class FormFristProfileCreator
     {
