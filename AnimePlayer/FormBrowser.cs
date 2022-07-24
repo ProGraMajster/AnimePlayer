@@ -77,7 +77,7 @@ namespace AnimePlayer
         public void Find(BrowserTabPageSearchResult searchResult)
         {
             //List<Control> controls = new List<Control>();
-            for(int i = 0; i < 1000; i++)
+            for(int i = 0; i < 10; i++)
             {
                 PanelSearchResult panelSearchResult = new PanelSearchResult();
                 panelSearchResult.labelDes.Text = "Przykładowy opis";

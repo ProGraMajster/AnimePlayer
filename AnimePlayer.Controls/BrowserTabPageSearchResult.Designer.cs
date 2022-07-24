@@ -30,6 +30,8 @@
         {
             this.newFlowLayoutPanel = new AnimePlayer.ControlsWinForms.NewFlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.labelResultValue = new System.Windows.Forms.Label();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // newFlowLayoutPanel
@@ -41,15 +43,27 @@
             this.newFlowLayoutPanel.Name = "newFlowLayoutPanel";
             this.newFlowLayoutPanel.Size = new System.Drawing.Size(673, 643);
             this.newFlowLayoutPanel.TabIndex = 0;
+            this.newFlowLayoutPanel.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.newFlowLayoutPanel_ControlAdded);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.panel1.Controls.Add(this.labelResultValue);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel1.Location = new System.Drawing.Point(683, 10);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(200, 643);
             this.panel1.TabIndex = 1;
+            // 
+            // labelResultValue
+            // 
+            this.labelResultValue.Dock = System.Windows.Forms.DockStyle.Top;
+            this.labelResultValue.Location = new System.Drawing.Point(0, 0);
+            this.labelResultValue.Name = "labelResultValue";
+            this.labelResultValue.Padding = new System.Windows.Forms.Padding(5, 10, 0, 0);
+            this.labelResultValue.Size = new System.Drawing.Size(200, 33);
+            this.labelResultValue.TabIndex = 0;
+            this.labelResultValue.Text = "Zanleziono:";
             // 
             // BrowserTabPageSearchResult
             // 
@@ -62,6 +76,7 @@
             this.Name = "BrowserTabPageSearchResult";
             this.Padding = new System.Windows.Forms.Padding(10);
             this.Size = new System.Drawing.Size(893, 663);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -69,5 +84,6 @@
         #endregion
         private System.Windows.Forms.Panel panel1;
         public NewFlowLayoutPanel newFlowLayoutPanel;
+        private System.Windows.Forms.Label labelResultValue;
     }
 }

@@ -16,5 +16,10 @@ namespace AnimePlayer.ControlsWinForms
         {
             InitializeComponent();
         }
+
+        private void newFlowLayoutPanel_ControlAdded(object sender, ControlEventArgs e)
+        {
+            labelResultValue.Text = "Zanleziono: "+newFlowLayoutPanel.Controls.Count;
+        }
     }
 }
