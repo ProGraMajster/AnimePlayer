@@ -29,6 +29,7 @@ namespace AnimePlayer.ControlsWinForms
             rc = new RoundingControl();
             rc.TargetControl = comboBox1;
             rc.CornerRadius = 15;
+            buttonFindInApp.Tag =(BrowserTabPageHomePage)this;
 
         }
 
@@ -102,6 +103,16 @@ namespace AnimePlayer.ControlsWinForms
                         _cntrl.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, _cntrl.Width, _cntrl.Height, _CornerRadius, _CornerRadius));
                 }
             }
+        }
+
+        private void buttonFindInApp_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void BrowserTabPageHomePage_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 }

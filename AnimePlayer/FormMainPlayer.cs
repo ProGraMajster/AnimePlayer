@@ -22,7 +22,6 @@ namespace AnimePlayer
     public partial class FormMainPlayer : Form
     {
         string[] args = Environment.GetCommandLineArgs();
-        public int server = 0;
 
         public Control controlAuxiliary;
 

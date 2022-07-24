@@ -15,7 +15,6 @@ namespace AnimePlayer
             FormMainPlayer = okno;
             this.Dock = DockStyle.Fill;
             checkBoxRoundedEdges.Checked = AnimePlayer.Properties.Settings.Default.RoundingControl;
-            labelServer.Text = "Serwer danych nr.: " + okno.server;
             timerRefreshValue.Start();
             labelAppRamUsage_View.Text = okno.labelAppRamUsage.Text;
             if (AnimePlayer.Properties.Settings.Default.RoundingControl)

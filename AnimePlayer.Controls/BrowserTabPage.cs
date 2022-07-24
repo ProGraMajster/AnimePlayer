@@ -13,6 +13,7 @@ namespace AnimePlayer.ControlsWinForms
 {
     public partial class BrowserTabPage : UserControl
     {
+        public EventHandler eventHandler;
         int tabPageValue = 0;
         public void AddPage(string title, Image image, Control controlContentPage)
         {
@@ -127,15 +128,20 @@ namespace AnimePlayer.ControlsWinForms
             }
             try
             {
-                BrowserTabPageItem mainPage = AddPageAndRef("Strona główna", null, new BrowserTabPageHomePage());
+
+                homePage.buttonFindInApp.Click += eventHandler;
+                mainPage = AddPageAndRef("Strona główna", null, homePage);
                 mainPage.buttonCloseItem.Hide();
+                Timer timer = new Timer();
+                timer.Tick+=Timer_Tick;
+                timer.Start();
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
             }
         }
-
+        BrowserTabPageItem mainPage;
 
 
         private class RoundingControl : Component
@@ -175,9 +181,12 @@ namespace AnimePlayer.ControlsWinForms
             }
         }
 
+        public BrowserTabPageHomePage browserTabPageHomePage;
         private void buttonNewPage_Click(object sender, EventArgs e)
         {
-            AddPage("Strona główna", null, new BrowserTabPageHomePage());
+            browserTabPageHomePage =new BrowserTabPageHomePage();
+            browserTabPageHomePage.buttonFindInApp.Click += eventHandler;
+            AddPage("Strona główna", null, browserTabPageHomePage);
         }
 
         private void newFlowLayoutPanelPages_ControlAdded(object sender, ControlEventArgs e)
@@ -197,6 +206,21 @@ namespace AnimePlayer.ControlsWinForms
             {
                 tabPageValue--;
                 labelTabPageValue.Text = tabPageValue.ToString();
+            }
+        }
+        BrowserTabPageHomePage homePage = new BrowserTabPageHomePage();
+        private void BrowserTabPage_Load(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            if(eventHandler !=null)
+            {
+                homePage.buttonFindInApp.Click += eventHandler;
+                Timer timer = (Timer)sender;
+                timer.Stop();
             }
         }
     }

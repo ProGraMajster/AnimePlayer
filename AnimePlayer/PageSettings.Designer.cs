@@ -43,7 +43,6 @@ namespace AnimePlayer
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.checkBoxRoundedEdges = new System.Windows.Forms.CheckBox();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.labelServer = new System.Windows.Forms.Label();
             this.openFileDialogThemeFile = new System.Windows.Forms.OpenFileDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.labelAppRamUsage_View = new System.Windows.Forms.Label();
@@ -92,7 +91,7 @@ namespace AnimePlayer
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.checkBoxRoundedEdges);
             this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(18, 92);
+            this.groupBox1.Location = new System.Drawing.Point(16, 306);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -100,6 +99,7 @@ namespace AnimePlayer
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Wygląd";
+            this.groupBox1.Visible = false;
             // 
             // buttonThemeReset
             // 
@@ -212,19 +212,6 @@ namespace AnimePlayer
             this.checkBoxRoundedEdges.UseVisualStyleBackColor = true;
             this.checkBoxRoundedEdges.CheckedChanged += new System.EventHandler(this.checkBoxRoundedEdges_CheckedChanged);
             // 
-            // labelServer
-            // 
-            this.labelServer.AutoSize = true;
-            this.labelServer.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelServer.ForeColor = System.Drawing.Color.White;
-            this.labelServer.Location = new System.Drawing.Point(13, 55);
-            this.labelServer.Margin = new System.Windows.Forms.Padding(0);
-            this.labelServer.Name = "labelServer";
-            this.labelServer.Size = new System.Drawing.Size(12, 19);
-            this.labelServer.TabIndex = 6;
-            this.labelServer.Text = ".";
-            this.labelServer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
@@ -254,7 +241,6 @@ namespace AnimePlayer
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.Controls.Add(this.labelAppRamUsage_View);
-            this.Controls.Add(this.labelServer);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.buttonClose);
@@ -280,7 +266,6 @@ namespace AnimePlayer
         private System.Windows.Forms.GroupBox groupBox1;
         public System.Windows.Forms.CheckBox checkBoxRoundedEdges;
         private System.Windows.Forms.ToolTip toolTip;
-        private System.Windows.Forms.Label labelServer;
         private System.Windows.Forms.GroupBox groupBox2;
         public System.Windows.Forms.CheckBox checkBox1;
         public System.Windows.Forms.CheckBox checkBox2;

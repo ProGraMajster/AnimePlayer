@@ -143,6 +143,7 @@ namespace AnimePlayer.ControlsWinForms
             this.DoubleBuffered = true;
             this.Name = "BrowserTabPage";
             this.Size = new System.Drawing.Size(638, 42);
+            this.Load += new System.EventHandler(this.BrowserTabPage_Load);
             this.newFlowLayoutPanelPages.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);

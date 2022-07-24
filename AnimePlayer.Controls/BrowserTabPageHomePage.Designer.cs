@@ -169,7 +169,7 @@ namespace AnimePlayer.ControlsWinForms
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(494, 151);
             this.label1.TabIndex = 1;
-            this.label1.Text = "AnimePlayer | Twojeanimepl";
+            this.label1.Text = "AnimePlayer";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox1
@@ -213,6 +213,7 @@ namespace AnimePlayer.ControlsWinForms
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "BrowserTabPageHomePage";
             this.Size = new System.Drawing.Size(845, 469);
+            this.Load += new System.EventHandler(this.BrowserTabPageHomePage_Load);
             this.panel1.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
@@ -231,13 +232,13 @@ namespace AnimePlayer.ControlsWinForms
         private Panel panel4;
         private Panel panel2;
         private Panel panel5;
-        private TextBox textBoxMain;
         private PictureBox pictureBox1;
         private Label label1;
         private TableLayoutPanel tableLayoutPanel1;
         private Panel panel6;
         private Button buttonFindInInternet;
-        private Button buttonFindInApp;
         private ComboBox comboBox1;
+        public Button buttonFindInApp;
+        public TextBox textBoxMain;
     }
 }
