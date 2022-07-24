@@ -67,7 +67,7 @@ namespace AnimePlayer
 
         public void OpenANewTabOnTheSite(string text)
         {
-            browserTabPage1.AddPage("NewPage", null, new PageItem());
+           // browserTabPage1.AddPage("NewPage", null, new PageItem());
         }
     }
 }

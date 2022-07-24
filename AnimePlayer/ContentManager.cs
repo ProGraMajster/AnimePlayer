@@ -63,8 +63,30 @@ namespace AnimePlayer
             }
         }
 
-        public static PageItemData GetPageItemDataWithContentFolderFromName(string name)
+        public static PageItemData GetPageItemDataWithContentFolderFromTitle(string title)
         {
+            if(title == null)
+            {
+                return null;
+            }
+            try
+            {
+                DirectoryInfo directoryInfo = new DirectoryInfo(AppFolders.UpdatedPagesItems);
+                foreach(var item in directoryInfo.GetFiles())
+                {
+                    if(item.Name.EndsWith(".dat"))
+                    {
+                        if(title.ToLower() == item.Name.ToLower())
+                        {
+                            return (PageItemData)SerializationAndDeserialization.Deserialization(item.FullName);
+                        }
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                Console.Error.WriteLine(ex.ToString());
+            }
             return null;
         }
 

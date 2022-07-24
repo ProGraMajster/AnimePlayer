@@ -98,14 +98,21 @@ namespace AnimePlayerLibrary.UI
         {
             try
             {
-                //UpdateLoadingTextdetails("Find Page > "+ _previewTitleClass.Title);
-                //ShowPanelLoading();
-                PageItemUI pageItemUI = new PageItemUI(this);
+                UpdateLoadingTextdetails("Find Page > "+ _previewTitleClass.Title);
+                ShowPanelLoading();
+
+                PageItem pageItem = new PageItem(this);
+                pageItem.Name = "pageItem";
+                panelFromMainContent.Controls.Add(pageItem);
+                pageItem.Dock = DockStyle.Fill;
+                pageItem.Show();
+                pageItem.BringToFront();
+                /*PageItemUI pageItemUI = new PageItemUI(this);
                 pageItemUI.Name ="pageItemUI";
                 panelFromMainContent.Controls.Add(pageItemUI);
                 pageItemUI.Dock = DockStyle.Fill;
                 pageItemUI.Show();
-                pageItemUI.BringToFront();
+                pageItemUI.BringToFront();*/
             }
             catch(Exception ex)
             {
@@ -117,7 +124,7 @@ namespace AnimePlayerLibrary.UI
         {
             if(text == null && labelLoadingDetails == null)
                 return;
-
+            Application.DoEvents();
             labelLoadingDetails.Text = text;
         }
 
@@ -127,6 +134,7 @@ namespace AnimePlayerLibrary.UI
             {
                 panelLoading.Show();
                 panelLoading.BringToFront();
+                Application.DoEvents();
             }
         }
         private void HidePanelLoading()
