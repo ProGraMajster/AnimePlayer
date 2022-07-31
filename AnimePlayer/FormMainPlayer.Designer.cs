@@ -538,7 +538,7 @@ namespace AnimePlayer
             this.label.Name = "label";
             this.label.Size = new System.Drawing.Size(198, 67);
             this.label.TabIndex = 0;
-            this.label.Text = "Twoje anime pl";
+            this.label.Text = "Anime Player";
             this.label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // flowLayoutPanelAll
@@ -1727,7 +1727,7 @@ namespace AnimePlayer
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.MinimumSize = new System.Drawing.Size(1106, 629);
             this.Name = "FormMainPlayer";
-            this.Text = "AnimePlayer - Twojeanimepl";
+            this.Text = "AnimePlayer";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormMainPlayer_FormClosing);
             this.Load += new System.EventHandler(this.FormMainPlayer_Load);
             this.ResizeBegin += new System.EventHandler(this.FormMainPlayer_ResizeBegin);

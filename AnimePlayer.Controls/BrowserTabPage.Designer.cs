@@ -84,6 +84,7 @@ namespace AnimePlayer.ControlsWinForms
             this.buttonViewAllPage.TabIndex = 0;
             this.buttonViewAllPage.Text = "=";
             this.buttonViewAllPage.UseVisualStyleBackColor = false;
+            this.buttonViewAllPage.Click += new System.EventHandler(this.buttonViewAllPage_Click);
             // 
             // panel1
             // 

@@ -38,7 +38,7 @@ namespace AnimePlayer.ControlsWinForms
             // 
             // pictureBoxItemIcon
             // 
-            this.pictureBoxItemIcon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.pictureBoxItemIcon.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxItemIcon.Dock = System.Windows.Forms.DockStyle.Left;
             this.pictureBoxItemIcon.Location = new System.Drawing.Point(5, 5);
             this.pictureBoxItemIcon.Name = "pictureBoxItemIcon";

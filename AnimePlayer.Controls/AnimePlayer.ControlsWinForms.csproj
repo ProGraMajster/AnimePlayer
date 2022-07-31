@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\AnimePlayer.CNM\AnimePlayer.CNM.csproj" />
+    <ProjectReference Include="..\AnimePlayer.Core\AnimePlayer.Core.csproj" />
   </ItemGroup>
 
   <ItemGroup>

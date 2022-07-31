@@ -223,5 +223,10 @@ namespace AnimePlayer.ControlsWinForms
                 timer.Stop();
             }
         }
+
+        private void buttonViewAllPage_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

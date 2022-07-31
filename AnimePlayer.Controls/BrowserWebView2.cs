@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Net;
 
 namespace AnimePlayer.ControlsWinForms
 {
@@ -51,7 +52,22 @@ namespace AnimePlayer.ControlsWinForms
 
         private void webView_SourceChanged(object sender, Microsoft.Web.WebView2.Core.CoreWebView2SourceChangedEventArgs e)
         {
+            BrowserTabPageItem item = ((BrowserTabPageItem)webView.Tag);
+                item.labelItemTitle.Text = webView.CoreWebView2.DocumentTitle;
 
+            item.pictureBoxItemIcon.ImageLocation =@"http://www.google.com/s2/favicons?domain="+webView.CoreWebView2.Source;
+            if (webView.CoreWebView2.Source != null)
+            {
+                if(webView.CoreWebView2.Source.StartsWith(@"https://www.cda.pl/video/"))
+                {
+                    panelCda.Show();
+                    textBoxCdaUrl.Text = webView.CoreWebView2.Source;
+                }
+                else
+                {
+                    panelMenu.Hide();
+                }
+            }
         }
 
         private void textBoxLink_KeyDown(object sender, KeyEventArgs e)
@@ -114,6 +130,81 @@ namespace AnimePlayer.ControlsWinForms
 
         private void buttonMenu_Click(object sender, EventArgs e)
         {
+            panelMenu.Visible = !panelMenu.Visible;
+        }
+
+        private void BrowserWebView2_SizeChanged(object sender, EventArgs e)
+        {
+            panelMenu.Left = this.Width-panelMenu.Width;
+        }
+
+        private void webView_Click(object sender, EventArgs e)
+        {
+            panelMenu.Hide();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            panelMenu.Hide();
+        }
+
+        private void panelCda_VisibleChanged(object sender, EventArgs e)
+        {
+            comboBoxCdaQualityVideo.SelectedIndex=0;
+        }
+
+        private void buttonCdaDwonload_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog();
+                if(folderBrowserDialog.ShowDialog() == DialogResult.OK)
+                {
+                    string link = AnimePlayer.Core.CdaDownloader.GetVideoLink(textBoxCdaUrl.Text,
+                        (Core.CdaQuality)comboBoxCdaQualityVideo.SelectedIndex);
+                    WebClient webClient = new WebClient();
+                    webClient.DownloadProgressChanged += WebClient_DownloadProgressChanged;
+                    webClient.DownloadFileCompleted += WebClient_DownloadFileCompleted;
+                    webClient.DownloadFileAsync(new Uri(link), folderBrowserDialog.SelectedPath+"\\"+
+                        webView.CoreWebView2.DocumentTitle +".mp4");
+                    webClient.Dispose();
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Wystąpił błąd:\n"+ex.ToString(), "Error", 
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void WebClient_DownloadFileCompleted(object sender, AsyncCompletedEventArgs e)
+        {
+            if (e.Cancelled)
+            {
+                labelCdaDownloadProgres.Text= "File download cancelled.";
+            }
+
+            if (e.Error != null)
+            {
+                labelCdaDownloadProgres.Text =e.Error.Message;
+                Console.Error.WriteLine(e.Error.ToString());
+            }
+            labelCdaDownloadProgres.Text = "Pobrano!";
+        }
+
+        private void WebClient_DownloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
+        {
+            labelCdaDownloadProgres.Text = String.Format("Pobrano {0} z {1} bajtów. Ukończono {2}%...",
+        e.BytesReceived,
+        e.TotalBytesToReceive,
+        e.ProgressPercentage);
+            progressBarCdaDownload.Value = e.ProgressPercentage;
+        }
+
+        private void textBoxCdaUrl_TextChanged(object sender, EventArgs e)
+        {
+            labelCdaDownloadProgres.Text=":";
+            progressBarCdaDownload.Value = 0;
         }
     }
 }

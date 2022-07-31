@@ -66,7 +66,7 @@ namespace AnimePlayerLibrary.UI
             this.label_1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.flowLayoutPanelEpType = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanelEpisode = new System.Windows.Forms.FlowLayoutPanel();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -578,7 +578,7 @@ namespace AnimePlayerLibrary.UI
             // 
             // panel5
             // 
-            this.panel5.Controls.Add(this.flowLayoutPanelEpType);
+            this.panel5.Controls.Add(this.flowLayoutPanelEpisode);
             this.panel5.Controls.Add(this.label5);
             this.panel5.Controls.Add(this.label3);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
@@ -589,17 +589,17 @@ namespace AnimePlayerLibrary.UI
             this.panel5.Size = new System.Drawing.Size(922, 300);
             this.panel5.TabIndex = 4;
             // 
-            // flowLayoutPanelEpType
+            // flowLayoutPanelEpisode
             // 
-            this.flowLayoutPanelEpType.AutoScroll = true;
-            this.flowLayoutPanelEpType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.flowLayoutPanelEpType.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanelEpType.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.flowLayoutPanelEpType.ForeColor = System.Drawing.Color.White;
-            this.flowLayoutPanelEpType.Location = new System.Drawing.Point(0, 101);
-            this.flowLayoutPanelEpType.Name = "flowLayoutPanelEpType";
-            this.flowLayoutPanelEpType.Size = new System.Drawing.Size(922, 187);
-            this.flowLayoutPanelEpType.TabIndex = 7;
+            this.flowLayoutPanelEpisode.AutoScroll = true;
+            this.flowLayoutPanelEpisode.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.flowLayoutPanelEpisode.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanelEpisode.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.flowLayoutPanelEpisode.ForeColor = System.Drawing.Color.White;
+            this.flowLayoutPanelEpisode.Location = new System.Drawing.Point(0, 101);
+            this.flowLayoutPanelEpisode.Name = "flowLayoutPanelEpisode";
+            this.flowLayoutPanelEpisode.Size = new System.Drawing.Size(922, 187);
+            this.flowLayoutPanelEpisode.TabIndex = 7;
             // 
             // label5
             // 
@@ -611,9 +611,9 @@ namespace AnimePlayerLibrary.UI
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Padding = new System.Windows.Forms.Padding(12);
-            this.label5.Size = new System.Drawing.Size(100, 41);
+            this.label5.Size = new System.Drawing.Size(122, 41);
             this.label5.TabIndex = 5;
-            this.label5.Text = "Wybierz typ";
+            this.label5.Text = "Wybierz odcinek";
             // 
             // label3
             // 
@@ -995,6 +995,7 @@ namespace AnimePlayerLibrary.UI
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "PageItem";
             this.Size = new System.Drawing.Size(939, 590);
+            this.Load += new System.EventHandler(this.PageItem_Load);
             this.Resize += new System.EventHandler(this.PageItem_Resize);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -1083,6 +1084,6 @@ namespace AnimePlayerLibrary.UI
         private Label label8;
         public Button button_Load_Comments;
         public Panel panelRelatedSeries;
-        public FlowLayoutPanel flowLayoutPanelEpType;
+        public FlowLayoutPanel flowLayoutPanelEpisode;
     }
 }

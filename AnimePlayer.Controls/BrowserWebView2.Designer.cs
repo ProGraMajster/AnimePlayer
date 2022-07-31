@@ -40,9 +40,26 @@ namespace AnimePlayer.ControlsWinForms
             this.buttonUndo = new System.Windows.Forms.Button();
             this.webView = new Microsoft.Web.WebView2.WinForms.WebView2();
             this.timerRe = new System.Windows.Forms.Timer(this.components);
+            this.button1 = new System.Windows.Forms.Button();
+            this.panelMenu = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panelCda = new System.Windows.Forms.Panel();
+            this.labelCdaDownloadProgres = new System.Windows.Forms.Label();
+            this.progressBarCdaDownload = new System.Windows.Forms.ProgressBar();
+            this.buttonCdaDwonload = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.comboBoxCdaQualityVideo = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBoxCdaUrl = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.webView)).BeginInit();
+            this.panelMenu.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panelCda.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -156,25 +173,181 @@ namespace AnimePlayer.ControlsWinForms
             this.webView.NavigationCompleted += new System.EventHandler<Microsoft.Web.WebView2.Core.CoreWebView2NavigationCompletedEventArgs>(this.webView_NavigationCompleted);
             this.webView.SourceChanged += new System.EventHandler<Microsoft.Web.WebView2.Core.CoreWebView2SourceChangedEventArgs>(this.webView_SourceChanged);
             this.webView.ContentLoading += new System.EventHandler<Microsoft.Web.WebView2.Core.CoreWebView2ContentLoadingEventArgs>(this.webView_ContentLoading);
+            this.webView.Click += new System.EventHandler(this.webView_Click);
             // 
             // timerRe
             // 
             this.timerRe.Tick += new System.EventHandler(this.timerRe_Tick);
+            // 
+            // button1
+            // 
+            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button1.Location = new System.Drawing.Point(10, 33);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(228, 23);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Ustawienia przeglądarki WebView2";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // panelMenu
+            // 
+            this.panelMenu.Controls.Add(this.panel4);
+            this.panelMenu.Controls.Add(this.button2);
+            this.panelMenu.Controls.Add(this.button1);
+            this.panelMenu.Controls.Add(this.button4);
+            this.panelMenu.Location = new System.Drawing.Point(633, 21);
+            this.panelMenu.Name = "panelMenu";
+            this.panelMenu.Padding = new System.Windows.Forms.Padding(10);
+            this.panelMenu.Size = new System.Drawing.Size(248, 311);
+            this.panelMenu.TabIndex = 1;
+            this.panelMenu.Visible = false;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.panelCda);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel4.Location = new System.Drawing.Point(10, 143);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(228, 158);
+            this.panel4.TabIndex = 2;
+            // 
+            // panelCda
+            // 
+            this.panelCda.Controls.Add(this.labelCdaDownloadProgres);
+            this.panelCda.Controls.Add(this.progressBarCdaDownload);
+            this.panelCda.Controls.Add(this.buttonCdaDwonload);
+            this.panelCda.Controls.Add(this.label3);
+            this.panelCda.Controls.Add(this.comboBoxCdaQualityVideo);
+            this.panelCda.Controls.Add(this.label2);
+            this.panelCda.Controls.Add(this.textBoxCdaUrl);
+            this.panelCda.Controls.Add(this.label1);
+            this.panelCda.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelCda.ForeColor = System.Drawing.Color.White;
+            this.panelCda.Location = new System.Drawing.Point(0, 0);
+            this.panelCda.Name = "panelCda";
+            this.panelCda.Size = new System.Drawing.Size(228, 158);
+            this.panelCda.TabIndex = 0;
+            this.panelCda.Visible = false;
+            this.panelCda.VisibleChanged += new System.EventHandler(this.panelCda_VisibleChanged);
+            // 
+            // labelCdaDownloadProgres
+            // 
+            this.labelCdaDownloadProgres.AutoEllipsis = true;
+            this.labelCdaDownloadProgres.AutoSize = true;
+            this.labelCdaDownloadProgres.Location = new System.Drawing.Point(0, 125);
+            this.labelCdaDownloadProgres.Name = "labelCdaDownloadProgres";
+            this.labelCdaDownloadProgres.Size = new System.Drawing.Size(10, 15);
+            this.labelCdaDownloadProgres.TabIndex = 7;
+            this.labelCdaDownloadProgres.Text = ":";
+            // 
+            // progressBarCdaDownload
+            // 
+            this.progressBarCdaDownload.Location = new System.Drawing.Point(4, 143);
+            this.progressBarCdaDownload.Name = "progressBarCdaDownload";
+            this.progressBarCdaDownload.Size = new System.Drawing.Size(221, 15);
+            this.progressBarCdaDownload.TabIndex = 6;
+            // 
+            // buttonCdaDwonload
+            // 
+            this.buttonCdaDwonload.ForeColor = System.Drawing.Color.Black;
+            this.buttonCdaDwonload.Location = new System.Drawing.Point(126, 99);
+            this.buttonCdaDwonload.Name = "buttonCdaDwonload";
+            this.buttonCdaDwonload.Size = new System.Drawing.Size(75, 23);
+            this.buttonCdaDwonload.TabIndex = 5;
+            this.buttonCdaDwonload.Text = "Pobierz";
+            this.buttonCdaDwonload.UseVisualStyleBackColor = true;
+            this.buttonCdaDwonload.Click += new System.EventHandler(this.buttonCdaDwonload_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(9, 81);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(44, 15);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Jakość:";
+            // 
+            // comboBoxCdaQualityVideo
+            // 
+            this.comboBoxCdaQualityVideo.FormattingEnabled = true;
+            this.comboBoxCdaQualityVideo.Items.AddRange(new object[] {
+            "360p",
+            "480p",
+            "720p",
+            "1080p"});
+            this.comboBoxCdaQualityVideo.Location = new System.Drawing.Point(9, 99);
+            this.comboBoxCdaQualityVideo.Name = "comboBoxCdaQualityVideo";
+            this.comboBoxCdaQualityVideo.Size = new System.Drawing.Size(86, 23);
+            this.comboBoxCdaQualityVideo.TabIndex = 3;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(9, 37);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(64, 15);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Adres URL:";
+            // 
+            // textBoxCdaUrl
+            // 
+            this.textBoxCdaUrl.Location = new System.Drawing.Point(9, 55);
+            this.textBoxCdaUrl.Name = "textBoxCdaUrl";
+            this.textBoxCdaUrl.Size = new System.Drawing.Size(216, 23);
+            this.textBoxCdaUrl.TabIndex = 1;
+            this.textBoxCdaUrl.TextChanged += new System.EventHandler(this.textBoxCdaUrl_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(9, 10);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(80, 15);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Pobieracz cda";
+            // 
+            // button2
+            // 
+            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button2.Location = new System.Drawing.Point(10, 56);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(228, 23);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "Histria przeglądarki WebView2";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button4.Location = new System.Drawing.Point(10, 10);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(228, 23);
+            this.button4.TabIndex = 3;
+            this.button4.Text = "Zamknij menu";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // BrowserWebView2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
+            this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.webView);
             this.Controls.Add(this.panel1);
             this.Name = "BrowserWebView2";
             this.Size = new System.Drawing.Size(881, 590);
+            this.SizeChanged += new System.EventHandler(this.BrowserWebView2_SizeChanged);
             this.Resize += new System.EventHandler(this.BrowserWebView2_Resize);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.webView)).EndInit();
+            this.panelMenu.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            this.panelCda.ResumeLayout(false);
+            this.panelCda.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -189,5 +362,19 @@ namespace AnimePlayer.ControlsWinForms
         private System.Windows.Forms.Timer timerRe;
         private Panel panel2;
         private Button buttonMenu;
+        private Button button1;
+        private Panel panelMenu;
+        private Panel panel4;
+        private Button button2;
+        private Panel panelCda;
+        private Label label2;
+        private TextBox textBoxCdaUrl;
+        private Label label1;
+        private Button buttonCdaDwonload;
+        private Label label3;
+        private ComboBox comboBoxCdaQualityVideo;
+        private Button button4;
+        private Label labelCdaDownloadProgres;
+        private ProgressBar progressBarCdaDownload;
     }
 }

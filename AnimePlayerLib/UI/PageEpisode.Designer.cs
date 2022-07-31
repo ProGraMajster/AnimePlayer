@@ -1,5 +1,5 @@
 ﻿
-namespace AnimePlayer
+namespace AnimePlayerLibrary.UI
 {
     partial class PageEpisode
     {
@@ -31,11 +31,12 @@ namespace AnimePlayer
         {
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.labelEpTitle = new System.Windows.Forms.Label();
+            this.labelEpNumber = new System.Windows.Forms.Label();
             this.labelTitle = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.buttonForwardEp = new System.Windows.Forms.Button();
             this.buttonClose = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonBackEp = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panelViewIcon = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -57,15 +58,17 @@ namespace AnimePlayer
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Visible = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.labelEpTitle);
+            this.panel1.Controls.Add(this.labelEpNumber);
             this.panel1.Controls.Add(this.labelTitle);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.buttonForwardEp);
             this.panel1.Controls.Add(this.buttonClose);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.buttonBackEp);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(12, 12);
@@ -75,48 +78,63 @@ namespace AnimePlayer
             this.panel1.Size = new System.Drawing.Size(712, 168);
             this.panel1.TabIndex = 1;
             // 
+            // labelEpTitle
+            // 
+            this.labelEpTitle.Dock = System.Windows.Forms.DockStyle.Top;
+            this.labelEpTitle.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelEpTitle.ForeColor = System.Drawing.Color.White;
+            this.labelEpTitle.Location = new System.Drawing.Point(172, 79);
+            this.labelEpTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelEpTitle.Name = "labelEpTitle";
+            this.labelEpTitle.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.labelEpTitle.Size = new System.Drawing.Size(449, 43);
+            this.labelEpTitle.TabIndex = 6;
+            this.labelEpTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelEpTitle.Visible = false;
+            // 
+            // labelEpNumber
+            // 
+            this.labelEpNumber.Dock = System.Windows.Forms.DockStyle.Top;
+            this.labelEpNumber.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelEpNumber.ForeColor = System.Drawing.Color.White;
+            this.labelEpNumber.Location = new System.Drawing.Point(172, 36);
+            this.labelEpNumber.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelEpNumber.Name = "labelEpNumber";
+            this.labelEpNumber.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.labelEpNumber.Size = new System.Drawing.Size(449, 43);
+            this.labelEpNumber.TabIndex = 1;
+            this.labelEpNumber.Text = "Odcinek";
+            this.labelEpNumber.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // labelTitle
             // 
             this.labelTitle.AutoSize = true;
-            this.labelTitle.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.labelTitle.Font = new System.Drawing.Font("Comic Sans MS", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelTitle.Dock = System.Windows.Forms.DockStyle.Top;
+            this.labelTitle.Font = new System.Drawing.Font("Comic Sans MS", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelTitle.ForeColor = System.Drawing.Color.White;
-            this.labelTitle.Location = new System.Drawing.Point(172, 136);
+            this.labelTitle.Location = new System.Drawing.Point(172, 12);
             this.labelTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelTitle.Name = "labelTitle";
             this.labelTitle.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.labelTitle.Size = new System.Drawing.Size(54, 20);
+            this.labelTitle.Size = new System.Drawing.Size(61, 24);
             this.labelTitle.TabIndex = 4;
             this.labelTitle.Text = "Title";
             this.labelTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label1
+            // buttonForwardEp
             // 
-            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.Font = new System.Drawing.Font("Comic Sans MS", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(172, 12);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(449, 43);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Odcinek";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label1.Visible = false;
-            // 
-            // button2
-            // 
-            this.button2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(621, 12);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(38, 144);
-            this.button2.TabIndex = 3;
-            this.button2.Text = ">";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Visible = false;
+            this.buttonForwardEp.Dock = System.Windows.Forms.DockStyle.Right;
+            this.buttonForwardEp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonForwardEp.ForeColor = System.Drawing.Color.White;
+            this.buttonForwardEp.Location = new System.Drawing.Point(621, 12);
+            this.buttonForwardEp.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.buttonForwardEp.Name = "buttonForwardEp";
+            this.buttonForwardEp.Size = new System.Drawing.Size(38, 144);
+            this.buttonForwardEp.TabIndex = 3;
+            this.buttonForwardEp.Text = ">";
+            this.buttonForwardEp.UseVisualStyleBackColor = true;
+            this.buttonForwardEp.Visible = false;
+            this.buttonForwardEp.Click += new System.EventHandler(this.buttonForwardEp_Click);
             // 
             // buttonClose
             // 
@@ -133,19 +151,20 @@ namespace AnimePlayer
             this.buttonClose.UseVisualStyleBackColor = true;
             this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
             // 
-            // button1
+            // buttonBackEp
             // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(134, 12);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(38, 144);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "<";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Visible = false;
+            this.buttonBackEp.Dock = System.Windows.Forms.DockStyle.Left;
+            this.buttonBackEp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonBackEp.ForeColor = System.Drawing.Color.White;
+            this.buttonBackEp.Location = new System.Drawing.Point(134, 12);
+            this.buttonBackEp.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.buttonBackEp.Name = "buttonBackEp";
+            this.buttonBackEp.Size = new System.Drawing.Size(38, 144);
+            this.buttonBackEp.TabIndex = 2;
+            this.buttonBackEp.Text = "<";
+            this.buttonBackEp.UseVisualStyleBackColor = true;
+            this.buttonBackEp.Visible = false;
+            this.buttonBackEp.Click += new System.EventHandler(this.buttonBackEp_Click);
             // 
             // flowLayoutPanel1
             // 
@@ -221,7 +240,7 @@ namespace AnimePlayer
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "PageEpisode";
             this.Padding = new System.Windows.Forms.Padding(12);
-            this.Size = new System.Drawing.Size(593, 408);
+            this.Size = new System.Drawing.Size(732, 564);
             this.Resize += new System.EventHandler(this.PageEpisode_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
@@ -237,14 +256,15 @@ namespace AnimePlayer
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label labelTitle;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label labelEpNumber;
+        private System.Windows.Forms.Button buttonForwardEp;
+        private System.Windows.Forms.Button buttonBackEp;
         private System.Windows.Forms.Button buttonClose;
         public System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Panel panelViewIcon;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button buttonViewIconClose;
         private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label labelEpTitle;
     }
 }

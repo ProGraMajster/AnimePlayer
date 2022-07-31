@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
+using System.IO;
 
 using AnimePlayer.ControlsWinForms;
 using AnimePlayer.Class;
@@ -68,26 +69,64 @@ namespace AnimePlayer
                 searchResult);
             Thread thread = new Thread(() =>
             {
-                Find(searchResult);
+                Find(searchResult, page.textBoxMain.Text);
             });
             thread.Name = "ThreadSearch";
             thread.Start();
         }
         
-        public void Find(BrowserTabPageSearchResult searchResult)
+        public void Find(BrowserTabPageSearchResult searchResult,string textFind)
         {
-            //List<Control> controls = new List<Control>();
-            for(int i = 0; i < 10; i++)
+            try
             {
-                PanelSearchResult panelSearchResult = new PanelSearchResult();
-                panelSearchResult.labelDes.Text = "Przykładowy opis";
-                panelSearchResult.linkLabelTitle.Text = "Przykładowy tytuł_"+i;
-                Thread.Sleep(500);
-                searchResult.Invoke(() =>
+
+                List<PreviewTitleClass> previewTitleClasses = GetAllPreviewTitleClassFromFolder();
+                foreach (PreviewTitleClass item in previewTitleClasses)
                 {
-                    searchResult.newFlowLayoutPanel.Controls.Add(panelSearchResult);
-                });
+                    if(item.Title.Contains(textFind))
+                    {
+                        PanelSearchResult panelSearchResult = new PanelSearchResult();
+                        panelSearchResult.labelDes.Text = "Opis";
+                        panelSearchResult.linkLabelTitle.Text = item.Title;
+                        panelSearchResult.pictureBoxIcon.ImageLocation = item.LinkToIcon[0];
+                        searchResult.Invoke(() =>
+                        {
+                            searchResult.newFlowLayoutPanel.Controls.Add(panelSearchResult);
+                        });
+                    }
+                }
             }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+        }
+        static List<PreviewTitleClass> GetAllPreviewTitleClassFromFolder()
+        {
+            List<PreviewTitleClass> list = new List<PreviewTitleClass>();
+            //Task.Run(() =>
+            // {
+            try
+            {
+                Console.WriteLine("GetAllPreviewTitleClassFromFolder()");
+                Console.WriteLine("Files:");
+                DirectoryInfo directoryInfo = new DirectoryInfo(AppFolders.PreviewItems.TrimEnd('\\'));
+                foreach (var item in directoryInfo.GetFiles())
+                {
+                    if (item.FullName.EndsWith(".dat"))
+                    {
+                        Console.WriteLine(item.FullName);
+                        PreviewTitleClass previewTitleClass = (PreviewTitleClass)SerializationAndDeserialization.Deserialization(item.FullName);
+                        list.Add(previewTitleClass);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.Error.WriteLine(ex.ToString());
+            }
+            //  });
+            return list;
         }
 
         private void IpcServer_ReceivedRequest(object sender, ZetaIpc.Runtime.Server.ReceivedRequestEventArgs e)

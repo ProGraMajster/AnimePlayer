@@ -57,10 +57,11 @@ namespace AnimePlayer.ControlsWinForms
                     return;
                 }
                 BrowserWebView2 BrowserWebView2 = new BrowserWebView2(AddressParser(textBoxMain.Text));
-                browserTabPage.AddPage("Szukanie:"+textBoxMain.Text, null, BrowserWebView2);
+                BrowserTabPageItem browserTabPageItem= browserTabPage.AddPageAndRef("Szukanie:"+textBoxMain.Text, null, BrowserWebView2);
                 BrowserWebView2.Dock = DockStyle.Fill;
                 BrowserWebView2.Tag = browserTabPage;
                 BrowserWebView2.webView.Source = new Uri(AddressParser(textBoxMain.Text));
+                BrowserWebView2.webView.Tag = browserTabPageItem;
             }
             catch (Exception ex)
             {

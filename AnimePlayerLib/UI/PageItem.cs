@@ -18,6 +18,7 @@ namespace AnimePlayerLibrary.UI
 
         private Panel PanelLoading;
         private Label LabelLoadingDetails;
+        private Panel panelFromMainContent = (Panel)Application.OpenForms[0].Controls.Find("panel2", true)[0];
         public PageItem(PanelItem panelItem)
         {
             InitializeComponent();
@@ -90,6 +91,8 @@ namespace AnimePlayerLibrary.UI
             }
         }
 
+        PageItemData _PageItemData;
+
         public void LoadPageItem(PageItemData pageItemData)
         {
             try
@@ -98,6 +101,7 @@ namespace AnimePlayerLibrary.UI
                 {
                     return;
                 }
+                _PageItemData=pageItemData;
                 SettingLabelFormArryStringData(labelotherTitle, pageItemData.TitleInformation.OtherTitle);
                 SettingLabelFormStringData(labelDes, pageItemData.TitleInformation.Description);
                 SettingLabelFormStringData(labelType, pageItemData.TitleInformation.Type);
@@ -259,6 +263,51 @@ namespace AnimePlayerLibrary.UI
         private void backgroundWorker1_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
         {
 
+        }
+
+        private void PageItem_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                int ep = int.Parse(_PageItemData.TitleInformation.NumberOfEpisodes);
+                for(int i = 1; i <=ep ; i++)
+                {
+                    Button button = new Button();
+                    button.AutoSize = false;
+                    button.Size = new Size(120, 40);
+                    button.Font = new Font(Font.FontFamily, 13f);
+                    button.FlatStyle = FlatStyle.Flat;
+                    button.FlatAppearance.BorderSize =0;
+                    button.Text = "Odcinek "+i.ToString();
+                    button.BackColor = Color.FromArgb(35, 35, 35);
+                    button.Tag = i;
+                    button.Click+=Button_Click;
+                    flowLayoutPanelEpisode.Controls.Add(button);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.Error.WriteLine(ex.ToString());
+            }
+        }
+
+        private void Button_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                PageEpisode pageEpisode = new PageEpisode(_PageItemData, (int)((Control)sender).Tag);
+                pageEpisode.Name = "pageEpisode";
+                pageEpisode.Dock = DockStyle.Fill;
+                panelFromMainContent.Controls.Add(pageEpisode);
+                pageEpisode.Show();
+                pageEpisode.BringToFront();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Wystąpił błąd podczas ładowania.", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Console.Error.WriteLine(ex.ToString());
+            }
         }
     }
 }
