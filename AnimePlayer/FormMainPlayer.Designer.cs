@@ -103,7 +103,7 @@ namespace AnimePlayer
             this.label11 = new System.Windows.Forms.Label();
             this.panel17 = new System.Windows.Forms.Panel();
             this.label16 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonCommunity = new System.Windows.Forms.Button();
             this.label17 = new System.Windows.Forms.Label();
             this.panel15 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
@@ -1111,7 +1111,7 @@ namespace AnimePlayer
             // 
             this.panel17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
             this.panel17.Controls.Add(this.label16);
-            this.panel17.Controls.Add(this.button1);
+            this.panel17.Controls.Add(this.buttonCommunity);
             this.panel17.Controls.Add(this.label17);
             this.panel17.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel17.Location = new System.Drawing.Point(832, 8);
@@ -1131,20 +1131,21 @@ namespace AnimePlayer
             this.label16.TabIndex = 2;
             this.label16.Text = "Ludzie, Grupy...";
             // 
-            // button1
+            // buttonCommunity
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.button1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(1, 89);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(198, 30);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Przejdź";
-            this.button1.UseVisualStyleBackColor = false;
+            this.buttonCommunity.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.buttonCommunity.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.buttonCommunity.FlatAppearance.BorderSize = 0;
+            this.buttonCommunity.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCommunity.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonCommunity.ForeColor = System.Drawing.Color.White;
+            this.buttonCommunity.Location = new System.Drawing.Point(1, 89);
+            this.buttonCommunity.Name = "buttonCommunity";
+            this.buttonCommunity.Size = new System.Drawing.Size(198, 30);
+            this.buttonCommunity.TabIndex = 1;
+            this.buttonCommunity.Text = "Przejdź";
+            this.buttonCommunity.UseVisualStyleBackColor = false;
+            this.buttonCommunity.Click += new System.EventHandler(this.buttonCommunity_Click);
             // 
             // label17
             // 
@@ -1878,7 +1879,7 @@ namespace AnimePlayer
         private Button buttonCloseMoreButtons;
         private Panel panel17;
         private Label label16;
-        private Button button1;
+        private Button buttonCommunity;
         private Label label17;
         private System.Windows.Forms.Timer timerAppPer;
         private Panel panel18;

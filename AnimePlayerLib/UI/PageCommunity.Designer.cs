@@ -34,9 +34,9 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.buttonFind = new System.Windows.Forms.Button();
             this.buttonClosePage = new System.Windows.Forms.Button();
-            this.newFlowLayoutPanel1 = new AnimePlayer.ControlsWinForms.NewFlowLayoutPanel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.newFlowLayoutPanelAll = new AnimePlayer.ControlsWinForms.NewFlowLayoutPanel();
+            this.panelAll = new System.Windows.Forms.Panel();
+            this.panelView = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.newFlowLayoutPanel2 = new AnimePlayer.ControlsWinForms.NewFlowLayoutPanel();
@@ -47,8 +47,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelTop.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
+            this.panelAll.SuspendLayout();
+            this.panelView.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -116,33 +116,33 @@
             this.buttonClosePage.Text = "Zamknij";
             this.buttonClosePage.UseVisualStyleBackColor = true;
             // 
-            // newFlowLayoutPanel1
+            // newFlowLayoutPanelAll
             // 
-            this.newFlowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.newFlowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.newFlowLayoutPanel1.Name = "newFlowLayoutPanel1";
-            this.newFlowLayoutPanel1.Size = new System.Drawing.Size(815, 608);
-            this.newFlowLayoutPanel1.TabIndex = 1;
+            this.newFlowLayoutPanelAll.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.newFlowLayoutPanelAll.Location = new System.Drawing.Point(0, 0);
+            this.newFlowLayoutPanelAll.Name = "newFlowLayoutPanelAll";
+            this.newFlowLayoutPanelAll.Size = new System.Drawing.Size(815, 608);
+            this.newFlowLayoutPanelAll.TabIndex = 1;
             // 
-            // panel2
+            // panelAll
             // 
-            this.panel2.Controls.Add(this.newFlowLayoutPanel1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(10, 61);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(815, 608);
-            this.panel2.TabIndex = 2;
+            this.panelAll.Controls.Add(this.newFlowLayoutPanelAll);
+            this.panelAll.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelAll.Location = new System.Drawing.Point(10, 61);
+            this.panelAll.Name = "panelAll";
+            this.panelAll.Size = new System.Drawing.Size(815, 608);
+            this.panelAll.TabIndex = 2;
             // 
-            // panel3
+            // panelView
             // 
-            this.panel3.Controls.Add(this.panel5);
-            this.panel3.Controls.Add(this.panel4);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(10, 61);
-            this.panel3.Name = "panel3";
-            this.panel3.Padding = new System.Windows.Forms.Padding(10, 11, 10, 11);
-            this.panel3.Size = new System.Drawing.Size(815, 608);
-            this.panel3.TabIndex = 0;
+            this.panelView.Controls.Add(this.panel5);
+            this.panelView.Controls.Add(this.panel4);
+            this.panelView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelView.Location = new System.Drawing.Point(10, 61);
+            this.panelView.Name = "panelView";
+            this.panelView.Padding = new System.Windows.Forms.Padding(10, 11, 10, 11);
+            this.panelView.Size = new System.Drawing.Size(815, 608);
+            this.panelView.TabIndex = 0;
             // 
             // panel5
             // 
@@ -240,19 +240,20 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panelAll);
+            this.Controls.Add(this.panelView);
             this.Controls.Add(this.panelTop);
             this.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ForeColor = System.Drawing.Color.White;
             this.Name = "PageCommunity";
             this.Padding = new System.Windows.Forms.Padding(10, 11, 10, 11);
             this.Size = new System.Drawing.Size(835, 680);
+            this.Load += new System.EventHandler(this.PageCommunity_Load);
             this.panelTop.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
+            this.panelAll.ResumeLayout(false);
+            this.panelView.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
@@ -269,10 +270,10 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button buttonFind;
         private System.Windows.Forms.Button buttonClosePage;
-        private AnimePlayer.ControlsWinForms.NewFlowLayoutPanel newFlowLayoutPanel1;
-        private System.Windows.Forms.Panel panel2;
+        private AnimePlayer.ControlsWinForms.NewFlowLayoutPanel newFlowLayoutPanelAll;
+        private System.Windows.Forms.Panel panelAll;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panelView;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;

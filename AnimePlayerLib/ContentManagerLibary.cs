@@ -27,6 +27,30 @@ namespace AnimePlayerLibrary
             }
         }
 
+        public static List<ItemCommunity> GetAllItemCommunities()
+        {
+            List<ItemCommunity> items = new List<ItemCommunity>();
+            try
+            {
+                DirectoryInfo directoryInfo = new DirectoryInfo(AppFolders.Community);
+                foreach(var item in directoryInfo.GetFiles())
+                {
+                    if(item.FullName.EndsWith(".dat"))
+                    {
+                        ItemCommunity itemCommunity =
+                            (ItemCommunity)SerializationAndDeserialization.Deserialization(item.FullName);
+                        items.Add(itemCommunity);
+                    }
+                }
+                return items;
+            }
+            catch(Exception ex)
+            {
+                Console.Error.WriteLine(ex.ToString());
+                return null;
+            }
+        }
+
         public static PageItemData GetPageItemDataWithContentFolderFromTitle(string title)
         {
             if(title == null)
@@ -64,6 +88,7 @@ namespace AnimePlayerLibrary
             }
             return null;
         }
+
 
         public static Panel CreatePreviewPanelFromData(PreviewTitleClass previewTitleClass)
         {

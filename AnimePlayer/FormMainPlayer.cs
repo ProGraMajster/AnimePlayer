@@ -289,25 +289,28 @@ namespace AnimePlayer
                 fd.form=(Form)this;
                 fd.Show();
             }
-            /*
-            else if(e.KeyCode == Keys.F12)
+            
+            if(debug)
             {
-                if(panelCommands.Visible == false)
+                if (e.KeyCode == Keys.F12)
                 {
-                    panelCommands.BringToFront();
-                    panelCommands.Show();
+                    if (panelCommands.Visible == false)
+                    {
+                        panelCommands.BringToFront();
+                        panelCommands.Show();
+                    }
+                    else
+                    {
+                        panelCommands.Hide();
+                    }
                 }
-                else
+                else if (e.KeyCode == Keys.Tab && e.Control)
                 {
-                    panelCommands.Hide();
+                    CenterControlInForm(quickMove);
+                    quickMove.BringToFront();
+                    quickMove.Show();
                 }
             }
-            else if(e.KeyCode == Keys.Tab && e.Control)
-            {
-                CenterControlInForm(quickMove);
-                quickMove.BringToFront();
-                quickMove.Show();
-            }*/
         }
 
         private void Form1_KeyUp(object sender, KeyEventArgs e)
@@ -1248,15 +1251,8 @@ namespace AnimePlayer
                 try
                 {
                     string controlName = input.Split(';')[1];
-                    string formName = input.Split(';')[2];
-                    foreach(Form form in Application.OpenForms)
-                    {
-                        if (form.Name == formName)
-                        {
-                            Control control = form.Controls.Find(controlName, true)[0];
-                            control.Show();
-                        }
-                    }
+                    Control control = this.Controls.Find(controlName, true)[0];
+                    control.Show();
                 }
                 catch(Exception ex)
                 {
@@ -1292,6 +1288,15 @@ namespace AnimePlayer
             panel2.Controls.Add(definitionsPage);
             definitionsPage.Show();
             definitionsPage.BringToFront();
+        }
+
+        private void buttonCommunity_Click(object sender, EventArgs e)
+        {
+            PageCommunity pageCommunity = new PageCommunity();
+            pageCommunity.Dock = DockStyle.Fill;
+            panel2.Controls.Add(pageCommunity);
+            pageCommunity.Show();
+            pageCommunity.BringToFront();
         }
     }
 }
