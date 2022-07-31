@@ -44,7 +44,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.This_Click);
             // 
             // labelName
             // 
@@ -57,7 +56,6 @@
             this.labelName.Size = new System.Drawing.Size(58, 30);
             this.labelName.TabIndex = 1;
             this.labelName.Text = "Name";
-            this.labelName.Click += new System.EventHandler(this.This_Click);
             // 
             // PanelPreviewItemCommunity
             // 
@@ -70,7 +68,6 @@
             this.Name = "PanelPreviewItemCommunity";
             this.Size = new System.Drawing.Size(325, 82);
             this.Load += new System.EventHandler(this.PanelPreviewItemCommunity_Load);
-            this.Click += new System.EventHandler(this.This_Click);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -79,7 +76,7 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label labelName;
+        public System.Windows.Forms.PictureBox pictureBox1;
+        public System.Windows.Forms.Label labelName;
     }
 }

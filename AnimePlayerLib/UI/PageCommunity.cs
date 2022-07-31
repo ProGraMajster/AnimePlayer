@@ -25,6 +25,9 @@ namespace AnimePlayerLibrary.UI
                 foreach(var item in ContentManagerLibary.GetAllItemCommunities())
                 {
                     PanelPreviewItemCommunity panel = new PanelPreviewItemCommunity(item);
+                    panel.Click+=Item_Click;
+                    panel.labelName.Click+=Item_Click;
+                    panel.pictureBox1.Click+=Item_Click;
                     this.Invoke(() =>
                     {
                         newFlowLayoutPanelAll.Controls.Add(panel);
@@ -33,6 +36,12 @@ namespace AnimePlayerLibrary.UI
                 }
             });
             thread.Start();
+        }
+
+        private void Item_Click(object sender, EventArgs e)
+        {
+            //Zmana panelu
+            //Klasa już jest tylko prtzypisać wartośći do kontrolek
         }
 
         private void PageCommunity_Load(object sender, EventArgs e)

@@ -32,11 +32,6 @@ namespace AnimePlayerLibrary.UI
             }
         }
 
-        private void This_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void PanelPreviewItemCommunity_Load(object sender, EventArgs e)
         {
 
