@@ -39,20 +39,20 @@
             this.panelView = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.newFlowLayoutPanel2 = new AnimePlayer.ControlsWinForms.NewFlowLayoutPanel();
+            this.newFlowLayoutPanelLinks = new AnimePlayer.ControlsWinForms.NewFlowLayoutPanel();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panelViewBack = new System.Windows.Forms.Panel();
+            this.labelName = new System.Windows.Forms.Label();
+            this.pictureBoxIcon = new System.Windows.Forms.PictureBox();
             this.panelTop.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelAll.SuspendLayout();
             this.panelView.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
-            this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panelViewBack.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIcon)).BeginInit();
             this.SuspendLayout();
             // 
             // panelTop
@@ -137,7 +137,7 @@
             // panelView
             // 
             this.panelView.Controls.Add(this.panel5);
-            this.panelView.Controls.Add(this.panel4);
+            this.panelView.Controls.Add(this.panelViewBack);
             this.panelView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelView.Location = new System.Drawing.Point(20, 70);
             this.panelView.Name = "panelView";
@@ -158,7 +158,7 @@
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.panel6.Controls.Add(this.newFlowLayoutPanel2);
+            this.panel6.Controls.Add(this.newFlowLayoutPanelLinks);
             this.panel6.Controls.Add(this.label3);
             this.panel6.Controls.Add(this.label2);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -168,13 +168,13 @@
             this.panel6.Size = new System.Drawing.Size(765, 362);
             this.panel6.TabIndex = 0;
             // 
-            // newFlowLayoutPanel2
+            // newFlowLayoutPanelLinks
             // 
-            this.newFlowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.newFlowLayoutPanel2.Location = new System.Drawing.Point(10, 63);
-            this.newFlowLayoutPanel2.Name = "newFlowLayoutPanel2";
-            this.newFlowLayoutPanel2.Size = new System.Drawing.Size(755, 60);
-            this.newFlowLayoutPanel2.TabIndex = 2;
+            this.newFlowLayoutPanelLinks.Dock = System.Windows.Forms.DockStyle.Top;
+            this.newFlowLayoutPanelLinks.Location = new System.Drawing.Point(10, 63);
+            this.newFlowLayoutPanelLinks.Name = "newFlowLayoutPanelLinks";
+            this.newFlowLayoutPanelLinks.Size = new System.Drawing.Size(755, 60);
+            this.newFlowLayoutPanelLinks.TabIndex = 2;
             // 
             // label3
             // 
@@ -200,49 +200,50 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Inforamcje";
             // 
-            // panel4
+            // panelViewBack
             // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.panel4.Controls.Add(this.label1);
-            this.panel4.Controls.Add(this.pictureBox1);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(10, 11);
-            this.panel4.Name = "panel4";
-            this.panel4.Padding = new System.Windows.Forms.Padding(10, 57, 0, 11);
-            this.panel4.Size = new System.Drawing.Size(775, 181);
-            this.panel4.TabIndex = 0;
+            this.panelViewBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.panelViewBack.Controls.Add(this.labelName);
+            this.panelViewBack.Controls.Add(this.pictureBoxIcon);
+            this.panelViewBack.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelViewBack.Location = new System.Drawing.Point(10, 11);
+            this.panelViewBack.Name = "panelViewBack";
+            this.panelViewBack.Padding = new System.Windows.Forms.Padding(10, 57, 0, 11);
+            this.panelViewBack.Size = new System.Drawing.Size(775, 181);
+            this.panelViewBack.TabIndex = 0;
             // 
-            // label1
+            // labelName
             // 
-            this.label1.AutoSize = true;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label1.Font = new System.Drawing.Font("Comic Sans MS", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(138, 146);
-            this.label1.Name = "label1";
-            this.label1.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.label1.Size = new System.Drawing.Size(67, 24);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Name";
+            this.labelName.AutoSize = true;
+            this.labelName.BackColor = System.Drawing.Color.Transparent;
+            this.labelName.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.labelName.Font = new System.Drawing.Font("Comic Sans MS", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelName.Location = new System.Drawing.Point(138, 146);
+            this.labelName.Name = "labelName";
+            this.labelName.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.labelName.Size = new System.Drawing.Size(67, 24);
+            this.labelName.TabIndex = 1;
+            this.labelName.Text = "Name";
             // 
-            // pictureBox1
+            // pictureBoxIcon
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(10, 57);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(128, 113);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.pictureBoxIcon.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxIcon.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBoxIcon.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxIcon.Image")));
+            this.pictureBoxIcon.Location = new System.Drawing.Point(10, 57);
+            this.pictureBoxIcon.Name = "pictureBoxIcon";
+            this.pictureBoxIcon.Size = new System.Drawing.Size(128, 113);
+            this.pictureBoxIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxIcon.TabIndex = 0;
+            this.pictureBoxIcon.TabStop = false;
             // 
             // PageCommunity
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.Controls.Add(this.panelAll);
             this.Controls.Add(this.panelView);
+            this.Controls.Add(this.panelAll);
             this.Controls.Add(this.panelTop);
             this.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ForeColor = System.Drawing.Color.White;
@@ -258,9 +259,9 @@
             this.panel5.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panelViewBack.ResumeLayout(false);
+            this.panelViewBack.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIcon)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -275,13 +276,13 @@
         private System.Windows.Forms.Panel panelAll;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panelView;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel panelViewBack;
+        private System.Windows.Forms.Label labelName;
+        private System.Windows.Forms.PictureBox pictureBoxIcon;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label2;
-        private AnimePlayer.ControlsWinForms.NewFlowLayoutPanel newFlowLayoutPanel2;
+        private AnimePlayer.ControlsWinForms.NewFlowLayoutPanel newFlowLayoutPanelLinks;
         private System.Windows.Forms.Label label3;
     }
 }

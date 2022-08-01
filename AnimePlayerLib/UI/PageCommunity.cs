@@ -28,6 +28,9 @@ namespace AnimePlayerLibrary.UI
                     panel.Click+=Item_Click;
                     panel.labelName.Click+=Item_Click;
                     panel.pictureBox1.Click+=Item_Click;
+                    panel.Tag = item;
+                    panel.labelName.Tag = item;
+                    panel.pictureBox1.Tag = item;
                     this.Invoke(() =>
                     {
                         newFlowLayoutPanelAll.Controls.Add(panel);
@@ -40,8 +43,50 @@ namespace AnimePlayerLibrary.UI
 
         private void Item_Click(object sender, EventArgs e)
         {
-            //Zmana panelu
-            //Klasa już jest tylko prtzypisać wartośći do kontrolek
+            try
+            {
+                Control control = (Control)sender;
+                AnimePlayer.Class.ItemCommunity itemCommunity = (AnimePlayer.Class.ItemCommunity)control.Tag;
+                panelAll.Hide();
+                panelView.Show();
+                labelName.Text = itemCommunity.Name;
+                if(itemCommunity.IconLinks.Length >0 && itemCommunity.IconLinks != null)
+                {
+                    pictureBoxIcon.ImageLocation = itemCommunity.IconLinks[0];
+                }
+                if(itemCommunity.banners.Length >0 && itemCommunity.banners != null)
+                {
+                    PictureBox pictureBox = new PictureBox();
+                    pictureBox.ImageLocation = itemCommunity.banners[0];
+                    panelViewBack.BackgroundImage = pictureBox.Image;
+                    pictureBox.Dispose();
+                }
+                foreach(var item in itemCommunity.URLs)
+                {
+                    LinkLabel linkLabel = new LinkLabel();
+                    linkLabel.Text = item.Key.ToString();
+                    linkLabel.Tag = item.Value.ToString();
+                    linkLabel.LinkClicked +=LinkLabel_LinkClicked;
+                    linkLabel.LinkColor = Color.Aqua;
+                    newFlowLayoutPanelLinks.Controls.Add(linkLabel);
+                }
+            } 
+            catch(Exception ex)
+            {
+                Console.Error.WriteLine(ex.ToString());
+            }
+        }
+
+        private void LinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            try
+            {
+                AnimePlayer.Core.OpenLinks.Start((string)((Control)sender).Tag);
+            }
+            catch(Exception ex)
+            {
+                Console.Error.WriteLine(ex.ToString());
+            }
         }
 
         private void PageCommunity_Load(object sender, EventArgs e)
