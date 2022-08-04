@@ -1135,7 +1135,7 @@ namespace AnimePlayer
             try
             {
                 panelMoreButtons.Hide();
-                if (pageTitileStatusList == null)
+                if (pageTitileStatusList == null && debug)
                 {
                     pageTitileStatusList = new PageTitileStatusList();
                     pageTitileStatusList.Name = "pageTitileStatusList";
@@ -1144,6 +1144,10 @@ namespace AnimePlayer
                     pageTitileStatusList.Show();
                     pageTitileStatusList.BringToFront();
                     pageTitileStatusList.Disposed += PageTitileStatusList_Disposed;
+                }
+                else
+                {
+                    MessageBox.Show("Brak dostępu.\n Ta funkcjia nie jest jeszce gotowa!", "Inforamcja");
                 }
             }
             catch (Exception ex)
@@ -1297,6 +1301,17 @@ namespace AnimePlayer
             panel2.Controls.Add(pageCommunity);
             pageCommunity.Show();
             pageCommunity.BringToFront();
+        }
+
+        private void buttonHomePage_Click(object sender, EventArgs e)
+        {
+            panelStartPage.Show();
+            panelStartPage.BringToFront();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Funkcja nie dostęona!");
         }
     }
 }

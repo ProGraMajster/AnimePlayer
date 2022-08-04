@@ -93,5 +93,10 @@ namespace AnimePlayerLibrary.UI
         {
 
         }
+
+        private void buttonClosePage_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }

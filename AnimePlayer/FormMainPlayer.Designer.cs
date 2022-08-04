@@ -80,6 +80,7 @@ namespace AnimePlayer
             this.buttonViewFindintems = new System.Windows.Forms.Button();
             this.buttonPlayer = new System.Windows.Forms.Button();
             this.buttonSetting = new System.Windows.Forms.Button();
+            this.buttonHomePage = new System.Windows.Forms.Button();
             this.buttonMenuClose = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panelMoreButtons = new System.Windows.Forms.Panel();
@@ -403,7 +404,7 @@ namespace AnimePlayer
             this.roundedPanel1.Controls.Add(this.buttonMenuOpen);
             this.roundedPanel1.Controls.Add(this.label);
             this.roundedPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.roundedPanel1.ExBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.roundedPanel1.ExBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.roundedPanel1.Location = new System.Drawing.Point(12, 12);
             this.roundedPanel1.Margin = new System.Windows.Forms.Padding(12);
             this.roundedPanel1.Name = "roundedPanel1";
@@ -636,6 +637,7 @@ namespace AnimePlayer
             this.panelMenu.Controls.Add(this.buttonViewFindintems);
             this.panelMenu.Controls.Add(this.buttonPlayer);
             this.panelMenu.Controls.Add(this.buttonSetting);
+            this.panelMenu.Controls.Add(this.buttonHomePage);
             this.panelMenu.Controls.Add(this.buttonMenuClose);
             this.panelMenu.Location = new System.Drawing.Point(875, 0);
             this.panelMenu.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -706,7 +708,7 @@ namespace AnimePlayer
             this.buttonExitApp.FlatAppearance.BorderSize = 0;
             this.buttonExitApp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonExitApp.ForeColor = System.Drawing.Color.White;
-            this.buttonExitApp.Location = new System.Drawing.Point(12, 371);
+            this.buttonExitApp.Location = new System.Drawing.Point(12, 417);
             this.buttonExitApp.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.buttonExitApp.Name = "buttonExitApp";
             this.buttonExitApp.Size = new System.Drawing.Size(209, 46);
@@ -721,7 +723,7 @@ namespace AnimePlayer
             this.buttonRestartApp.FlatAppearance.BorderSize = 0;
             this.buttonRestartApp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonRestartApp.ForeColor = System.Drawing.Color.White;
-            this.buttonRestartApp.Location = new System.Drawing.Point(12, 325);
+            this.buttonRestartApp.Location = new System.Drawing.Point(12, 371);
             this.buttonRestartApp.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.buttonRestartApp.Name = "buttonRestartApp";
             this.buttonRestartApp.Size = new System.Drawing.Size(209, 46);
@@ -732,9 +734,9 @@ namespace AnimePlayer
             // 
             // panelSep
             // 
-            this.panelSep.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.panelSep.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.panelSep.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSep.Location = new System.Drawing.Point(12, 320);
+            this.panelSep.Location = new System.Drawing.Point(12, 366);
             this.panelSep.Name = "panelSep";
             this.panelSep.Size = new System.Drawing.Size(209, 5);
             this.panelSep.TabIndex = 9;
@@ -745,7 +747,7 @@ namespace AnimePlayer
             this.buttonMoreBtnMenu.FlatAppearance.BorderSize = 0;
             this.buttonMoreBtnMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonMoreBtnMenu.ForeColor = System.Drawing.Color.White;
-            this.buttonMoreBtnMenu.Location = new System.Drawing.Point(12, 274);
+            this.buttonMoreBtnMenu.Location = new System.Drawing.Point(12, 320);
             this.buttonMoreBtnMenu.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.buttonMoreBtnMenu.Name = "buttonMoreBtnMenu";
             this.buttonMoreBtnMenu.Size = new System.Drawing.Size(209, 46);
@@ -753,7 +755,6 @@ namespace AnimePlayer
             this.buttonMoreBtnMenu.Text = "Więcej..";
             this.toolTip.SetToolTip(this.buttonMoreBtnMenu, "Statusy: Oglądam, Planeuj,, Wstrzymane itp.");
             this.buttonMoreBtnMenu.UseVisualStyleBackColor = true;
-            this.buttonMoreBtnMenu.Visible = false;
             this.buttonMoreBtnMenu.Click += new System.EventHandler(this.buttonMoreBtnMenu_Click);
             // 
             // buttonShowTitleStatusList
@@ -762,7 +763,7 @@ namespace AnimePlayer
             this.buttonShowTitleStatusList.FlatAppearance.BorderSize = 0;
             this.buttonShowTitleStatusList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonShowTitleStatusList.ForeColor = System.Drawing.Color.White;
-            this.buttonShowTitleStatusList.Location = new System.Drawing.Point(12, 228);
+            this.buttonShowTitleStatusList.Location = new System.Drawing.Point(12, 274);
             this.buttonShowTitleStatusList.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.buttonShowTitleStatusList.Name = "buttonShowTitleStatusList";
             this.buttonShowTitleStatusList.Size = new System.Drawing.Size(209, 46);
@@ -779,7 +780,7 @@ namespace AnimePlayer
             this.buttonDefined.FlatAppearance.BorderSize = 0;
             this.buttonDefined.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDefined.ForeColor = System.Drawing.Color.White;
-            this.buttonDefined.Location = new System.Drawing.Point(12, 182);
+            this.buttonDefined.Location = new System.Drawing.Point(12, 228);
             this.buttonDefined.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.buttonDefined.Name = "buttonDefined";
             this.buttonDefined.Size = new System.Drawing.Size(209, 46);
@@ -795,7 +796,7 @@ namespace AnimePlayer
             this.buttonViewFindintems.FlatAppearance.BorderSize = 0;
             this.buttonViewFindintems.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonViewFindintems.ForeColor = System.Drawing.Color.White;
-            this.buttonViewFindintems.Location = new System.Drawing.Point(12, 136);
+            this.buttonViewFindintems.Location = new System.Drawing.Point(12, 182);
             this.buttonViewFindintems.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.buttonViewFindintems.Name = "buttonViewFindintems";
             this.buttonViewFindintems.Size = new System.Drawing.Size(209, 46);
@@ -810,7 +811,7 @@ namespace AnimePlayer
             this.buttonPlayer.FlatAppearance.BorderSize = 0;
             this.buttonPlayer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonPlayer.ForeColor = System.Drawing.Color.White;
-            this.buttonPlayer.Location = new System.Drawing.Point(12, 90);
+            this.buttonPlayer.Location = new System.Drawing.Point(12, 136);
             this.buttonPlayer.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.buttonPlayer.Name = "buttonPlayer";
             this.buttonPlayer.Size = new System.Drawing.Size(209, 46);
@@ -825,7 +826,7 @@ namespace AnimePlayer
             this.buttonSetting.FlatAppearance.BorderSize = 0;
             this.buttonSetting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSetting.ForeColor = System.Drawing.Color.White;
-            this.buttonSetting.Location = new System.Drawing.Point(12, 44);
+            this.buttonSetting.Location = new System.Drawing.Point(12, 90);
             this.buttonSetting.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.buttonSetting.Name = "buttonSetting";
             this.buttonSetting.Size = new System.Drawing.Size(209, 46);
@@ -833,6 +834,21 @@ namespace AnimePlayer
             this.buttonSetting.Text = "Ustawienia";
             this.buttonSetting.UseVisualStyleBackColor = true;
             this.buttonSetting.Click += new System.EventHandler(this.buttonSetting_Click);
+            // 
+            // buttonHomePage
+            // 
+            this.buttonHomePage.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonHomePage.FlatAppearance.BorderSize = 0;
+            this.buttonHomePage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonHomePage.ForeColor = System.Drawing.Color.White;
+            this.buttonHomePage.Location = new System.Drawing.Point(12, 44);
+            this.buttonHomePage.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.buttonHomePage.Name = "buttonHomePage";
+            this.buttonHomePage.Size = new System.Drawing.Size(209, 46);
+            this.buttonHomePage.TabIndex = 11;
+            this.buttonHomePage.Text = "Strona główna";
+            this.buttonHomePage.UseVisualStyleBackColor = true;
+            this.buttonHomePage.Click += new System.EventHandler(this.buttonHomePage_Click);
             // 
             // buttonMenuClose
             // 
@@ -850,8 +866,8 @@ namespace AnimePlayer
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.panelStartPage);
             this.panel2.Controls.Add(this.panelMoreButtons);
+            this.panel2.Controls.Add(this.panelStartPage);
             this.panel2.Controls.Add(this.panelLoading);
             this.panel2.Controls.Add(this.panelAllitem);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -1285,7 +1301,8 @@ namespace AnimePlayer
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(198, 56);
             this.label18.TabIndex = 2;
-            this.label18.Text = "Twórz tręsci dla tej aplikacji. Dodaj nowy tytuł lub waidomość";
+            this.label18.Text = "Twórz tręsci dla tej aplikacji. Zestaw aplikacji dla ludzi którzy chcą pomoć w ro" +
+    "zwijaniu player\'a";
             // 
             // button2
             // 
@@ -1301,6 +1318,7 @@ namespace AnimePlayer
             this.button2.TabIndex = 1;
             this.button2.Text = "Przejdź";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label19
             // 
@@ -1907,5 +1925,6 @@ namespace AnimePlayer
         public Button buttonProfile;
         private Panel panel21;
         private Button buttonDefined;
+        private Button buttonHomePage;
     }
 }
