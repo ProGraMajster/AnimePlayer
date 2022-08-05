@@ -2,32 +2,23 @@
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace AnimePlayer
+using AnimePlayer.Class;
+
+namespace AnimePlayerLibrary
 {
     public partial class VideoPlayerWeb : UserControl
     {
-        public string videoLink;
-        public TypeVideo tvideo;
-        public enum TypeVideo : int
-        {
-            YouTube = 0,
-            GoogleDrive = 1,
-            Cda = 2,
-            Mega = 3
-        }
-
-        public VideoPlayerWeb(string vlink, TypeVideo video, Panel panel)
+        Episode _Episode;
+        public VideoPlayerWeb(Episode episode)
         {
             InitializeComponent();
-            panel.Controls.Add(this);
             this.Dock = DockStyle.Fill;
             this.BringToFront();
             this.Show();
-            videoLink = vlink;
-            tvideo = video;
             timerLoadingStatus.Start();
             timerLoad.Start();
             normal = Application.OpenForms[0].Size;
+            _Episode=episode;
         }
 
         private void VideoPlayer_Load(object sender, EventArgs e)
@@ -46,25 +37,14 @@ namespace AnimePlayer
         {
             if (webView21 != null && webView21.CoreWebView2 != null)
             {
-                if (tvideo == TypeVideo.YouTube)
+                if(_Episode.LinkToEpisode.Contains("https://www.cda.pl"))
                 {
-                    var url = videoLink.Replace("watch?v=", "embed/");
-                    webView21.NavigateToString(url);
+                    string url = _Episode.LinkToEpisode.Replace("https://www.cda.pl/video/", "https://ebd.cda.pl/620x395/");
+                    webView21.CoreWebView2.Navigate(url);
                 }
-                else if(tvideo == TypeVideo.Cda)
+                else
                 {
-                    videoLink = videoLink.Replace("https://www.cda.pl/video/", "https://ebd.cda.pl/620x395/");
-                    webView21.CoreWebView2.Navigate(videoLink);
-                }
-                else if (tvideo == TypeVideo.GoogleDrive)
-                {
-                    //vlink = https://drive.google.com/file/d/1UQu5rXnwpJPirhCIBocszJpX7YCjGDeJ/preview\
-                    var embed = "<html><head>" +
-                    "<meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\"/>" +
-                    "</head><body>" +
-                    "<iframe src=\"https://drive.google.com/file/d/" + videoLink + "/view" + "\" width=\"640\" height=\"480\"" +
-                    " allow=\"autoplay\"></iframe>";
-                    webView21.NavigateToString(embed);
+                    webView21.NavigateToString(_Episode.LinkToEpisode);
                 }
                 label1.Hide();
                 timerLoad.Stop();

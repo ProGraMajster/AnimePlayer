@@ -1244,13 +1244,7 @@ namespace AnimePlayer
 
         public void ConsolePlayer(string input)
         {
-            if(input.StartsWith("videoplayerweb open type youtube;"))
-            {
-                VideoPlayerWeb videoPlayerWeb = new VideoPlayerWeb(input.Split(';')[1], VideoPlayerWeb.TypeVideo.YouTube, panel2);
-                videoPlayerWeb.Name = "videoPlayerWeb";
-                videoPlayerWeb.Show();
-            }
-            else if(input.StartsWith("control.show;"))
+            if(input.StartsWith("control.show;"))
             {
                 try
                 {

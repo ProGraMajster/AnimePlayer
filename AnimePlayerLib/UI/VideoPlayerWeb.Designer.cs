@@ -1,7 +1,7 @@
 ﻿
 using System.Windows.Forms;
 
-namespace AnimePlayer
+namespace AnimePlayerLibrary
 {
     partial class VideoPlayerWeb
     {

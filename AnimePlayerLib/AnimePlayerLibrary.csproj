@@ -41,6 +41,9 @@
     <Compile Update="UI\PageItemUI.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="UI\VideoPlayerWeb.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>

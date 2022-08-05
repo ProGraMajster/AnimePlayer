@@ -13,6 +13,7 @@ namespace AnimePlayerLibrary
 {
     public static class ContentManagerLibary
     {
+        /*
         private static void DirFilesMoveToDir(string pathSource, string pathnewloocation)
         {
             DirectoryInfo directoryInfo = new DirectoryInfo(pathSource);
@@ -26,6 +27,7 @@ namespace AnimePlayerLibrary
                 item.MoveTo(pathnewloocation+item.Name, true);
             }
         }
+        */
 
         public static List<ItemCommunity> GetAllItemCommunities()
         {
@@ -89,7 +91,6 @@ namespace AnimePlayerLibrary
             return null;
         }
 
-
         public static Panel CreatePreviewPanelFromData(PreviewTitleClass previewTitleClass)
         {
             try
@@ -132,6 +133,30 @@ namespace AnimePlayerLibrary
             return list;
         }
 
+        public static List<Episode> GetEpisode(int number, string title)
+        {
+            List<Episode> list = new List<Episode>();
+            try
+            {
+                DirectoryInfo directoryInfo = new DirectoryInfo(AppFolders.VideosItems);
+                foreach(var item in directoryInfo.GetFiles())
+                {
+                    Episode episode = (Episode)SerializationAndDeserialization.Deserialization(item.FullName);
+                    if(episode.NumberEpisode == number.ToString() && episode.Title == title)
+                    {
+                        list.Add(episode);
+                    }
+                }
+                return list;
+            }
+            catch(Exception ex)
+            {
+                Console.Error.WriteLine(ex.ToString());
+            }
+            return null;
+        }
+
+        /*
         private static bool CheckingIfTheContentExists()
         {
             try
@@ -153,5 +178,6 @@ namespace AnimePlayerLibrary
                 return false;
             }
         }
+        */
     }
 }

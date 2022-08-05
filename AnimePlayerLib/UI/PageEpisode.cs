@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using AnimePlayerLibrary;
 using AnimePlayer.Class;
+using System.Threading;
 
 namespace AnimePlayerLibrary.UI
 {
@@ -53,8 +54,48 @@ namespace AnimePlayerLibrary.UI
                 Console.Error.WriteLine("ex1\n"+ex1.ToString());
             }
 
-            labelTitle.Text = _PageItemData.TitleInformation.Title;
-            labelEpNumber.Text = "Odcinek "+numberEp.ToString();
+            try
+            {
+                labelTitle.Text = _PageItemData.TitleInformation.Title;
+                labelEpNumber.Text = "Odcinek "+numberEp.ToString();
+                Thread thread = new Thread(() =>
+                {
+                    foreach (var item in ContentManagerLibary.GetEpisode(numberEp, _PageItemData.TitleInformation.Title))
+                    {
+                        flowLayoutPanel1.Invoke(() =>
+                        {
+                            PanelItemEpisode panel = new PanelItemEpisode(item);
+                            panel.buttonPlayEpisode.Click +=ButtonPlayEpisode_Click;
+                            flowLayoutPanel1.Controls.Add(panel);
+                        });
+                    }
+                });
+                thread.Start();
+            }
+            catch(Exception ex)
+            {
+                Console.Error.WriteLine(ex.ToString());
+            }
+        }
+
+        private void ButtonPlayEpisode_Click(object sender, EventArgs e)    
+        {
+            try
+            {
+                Control control = (Control)sender;
+                Episode episode = (Episode)control.Tag;
+                VideoPlayerWeb videoPlayerWeb = new VideoPlayerWeb(episode);
+                this.Parent.Controls.Add(videoPlayerWeb);
+                videoPlayerWeb.Dock = DockStyle.Fill;
+                videoPlayerWeb.Show();
+                videoPlayerWeb.BringToFront();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Wystąpił błąd podczas ładowania!", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Console.Error.WriteLine(ex.ToString());
+            }
         }
 
         private void buttonClose_Click(object sender, EventArgs e)
