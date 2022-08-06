@@ -13,11 +13,12 @@ namespace AnimePlayer.ControlsWinForms
 {
     public partial class BrowserWebView2 : UserControl
     {
-        string _address;
+        string _address= "https://www.google.com/webhp";
         public BrowserWebView2()
         {
             InitializeComponent();
             timerRe.Start();
+            
         }
 
         public BrowserWebView2(string address)
@@ -25,6 +26,26 @@ namespace AnimePlayer.ControlsWinForms
             InitializeComponent();
             _address = address;
             timerRe.Start();
+        }
+
+        private void CoreWebView2_NewWindowRequested(object sender, Microsoft.Web.WebView2.Core.CoreWebView2NewWindowRequestedEventArgs e)
+        {
+            try
+            {
+                BrowserTabPage browserTabPage = (BrowserTabPage)this.Tag;
+                if(browserTabPage == null)
+                {
+                    return;
+                }
+                BrowserWebView2 browserWebView = new BrowserWebView2(e.Uri);
+                BrowserTabPageItem item = browserTabPage.AddPageAndRef("Nowe okno", null, browserWebView);
+                browserWebView.webView.Tag =item;
+                e.Handled=false;
+            }
+            catch(Exception ex)
+            {
+                Console.Error.WriteLine(ex.ToString());
+            }
         }
 
         private void webView_ContentLoading(object sender, Microsoft.Web.WebView2.Core.CoreWebView2ContentLoadingEventArgs e)
@@ -37,6 +58,7 @@ namespace AnimePlayer.ControlsWinForms
             if (webView != null && webView.CoreWebView2 != null)
             {
                 webView.CoreWebView2.Navigate(_address);
+                webView.CoreWebView2.NewWindowRequested+=CoreWebView2_NewWindowRequested;
             }
         }
 

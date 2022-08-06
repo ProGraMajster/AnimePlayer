@@ -60,7 +60,6 @@ namespace AnimePlayer
             this.buttonProfile = new System.Windows.Forms.Button();
             this.buttonMenuOpen = new System.Windows.Forms.Button();
             this.label = new System.Windows.Forms.Label();
-            this.flowLayoutPanelAll = new System.Windows.Forms.FlowLayoutPanel();
             this.panelLoading = new System.Windows.Forms.Panel();
             this.labelLoadingA = new System.Windows.Forms.Label();
             this.labelLoadingDetails = new System.Windows.Forms.Label();
@@ -125,7 +124,8 @@ namespace AnimePlayer
             this.panel6 = new System.Windows.Forms.Panel();
             this.buttonCloseMoreButtons = new System.Windows.Forms.Button();
             this.panelAllitem = new System.Windows.Forms.Panel();
-            this.flowLayoutPanelFinditem = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanelFinditem = new AnimePlayer.ControlsWinForms.NewFlowLayoutPanel();
+            this.flowLayoutPanelAll = new AnimePlayer.ControlsWinForms.NewFlowLayoutPanel();
             this.panelTopFinder = new System.Windows.Forms.Panel();
             this.labelEnableFiltres = new System.Windows.Forms.Label();
             this.roundedPanel2 = new AnimePlayerLibrary.RoundedPanel();
@@ -542,19 +542,6 @@ namespace AnimePlayer
             this.label.Text = "Anime Player";
             this.label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // flowLayoutPanelAll
-            // 
-            this.flowLayoutPanelAll.AutoScroll = true;
-            this.flowLayoutPanelAll.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.flowLayoutPanelAll.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanelAll.Location = new System.Drawing.Point(0, 100);
-            this.flowLayoutPanelAll.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.flowLayoutPanelAll.Name = "flowLayoutPanelAll";
-            this.flowLayoutPanelAll.Padding = new System.Windows.Forms.Padding(12, 2, 12, 2);
-            this.flowLayoutPanelAll.Size = new System.Drawing.Size(1106, 524);
-            this.flowLayoutPanelAll.TabIndex = 2;
-            this.flowLayoutPanelAll.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.flowLayoutPanelAll_ControlAdded);
-            // 
             // panelLoading
             // 
             this.panelLoading.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -866,10 +853,10 @@ namespace AnimePlayer
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.panelMoreButtons);
             this.panel2.Controls.Add(this.panelStartPage);
-            this.panel2.Controls.Add(this.panelLoading);
+            this.panel2.Controls.Add(this.panelMoreButtons);
             this.panel2.Controls.Add(this.panelAllitem);
+            this.panel2.Controls.Add(this.panelLoading);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -1424,15 +1411,22 @@ namespace AnimePlayer
             // flowLayoutPanelFinditem
             // 
             this.flowLayoutPanelFinditem.AutoScroll = true;
-            this.flowLayoutPanelFinditem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.flowLayoutPanelFinditem.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanelFinditem.Location = new System.Drawing.Point(0, 100);
-            this.flowLayoutPanelFinditem.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.flowLayoutPanelFinditem.Name = "flowLayoutPanelFinditem";
             this.flowLayoutPanelFinditem.Padding = new System.Windows.Forms.Padding(12, 2, 12, 2);
             this.flowLayoutPanelFinditem.Size = new System.Drawing.Size(1106, 524);
-            this.flowLayoutPanelFinditem.TabIndex = 3;
-            this.flowLayoutPanelFinditem.Visible = false;
+            this.flowLayoutPanelFinditem.TabIndex = 0;
+            // 
+            // flowLayoutPanelAll
+            // 
+            this.flowLayoutPanelAll.AutoScroll = true;
+            this.flowLayoutPanelAll.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanelAll.Location = new System.Drawing.Point(0, 100);
+            this.flowLayoutPanelAll.Name = "flowLayoutPanelAll";
+            this.flowLayoutPanelAll.Padding = new System.Windows.Forms.Padding(12, 2, 12, 2);
+            this.flowLayoutPanelAll.Size = new System.Drawing.Size(1106, 524);
+            this.flowLayoutPanelAll.TabIndex = 0;
             // 
             // panelTopFinder
             // 
@@ -1831,8 +1825,6 @@ namespace AnimePlayer
         private System.Windows.Forms.PictureBox pictureBoxGithub;
         private System.Windows.Forms.PictureBox pictureBoxSite;
         private System.Windows.Forms.Button buttonSite;
-        public System.Windows.Forms.FlowLayoutPanel flowLayoutPanelAll;
-        public System.Windows.Forms.FlowLayoutPanel flowLayoutPanelFinditem;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Button buttonViewFindintems;
@@ -1926,5 +1918,7 @@ namespace AnimePlayer
         private Panel panel21;
         private Button buttonDefined;
         private Button buttonHomePage;
+        public NewFlowLayoutPanel flowLayoutPanelFinditem;
+        private NewFlowLayoutPanel flowLayoutPanelAll;
     }
 }

@@ -30,7 +30,14 @@ namespace AnimePlayer.ControlsWinForms
             rc.TargetControl = comboBox1;
             rc.CornerRadius = 15;
             buttonFindInApp.Tag =(BrowserTabPageHomePage)this;
-
+            Bookmarks bookmarks = new Bookmarks();
+            bookmarks.pictureBox1.Hide();
+            bookmarks.label1.Text = "+";
+            bookmarks.label1.Font = new Font(bookmarks.Font.FontFamily, 18);
+            bookmarks.label1.Dock = DockStyle.Fill;
+            newFlowLayoutPanel1.Controls.Add(bookmarks);
+            AnimePlayer.CNM.ExtensionsControl.RoundingTheCorners(bookmarks, 500);
+            
         }
 
         public string AddressParser(string text)

@@ -63,7 +63,7 @@ namespace AnimePlayerLibrary.UI
             this.panelItem.Name = "panelItem";
             this.panelItem.Size = new System.Drawing.Size(160, 240);
             this.panelItem.Font = new Font("Comic Sans MS", 9F);
-            this.panelItem.BackColor = Color.FromArgb(30, 30, 30);
+            this.panelItem.BackColor = Color.FromArgb(40, 40, 40);
         }
 
         public void SetInformationUI()

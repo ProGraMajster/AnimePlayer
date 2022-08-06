@@ -32,6 +32,7 @@ namespace AnimePlayer.ControlsWinForms
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.newFlowLayoutPanel1 = new AnimePlayer.ControlsWinForms.NewFlowLayoutPanel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -44,6 +45,7 @@ namespace AnimePlayer.ControlsWinForms
             this.panel2 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -65,11 +67,21 @@ namespace AnimePlayer.ControlsWinForms
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.newFlowLayoutPanel1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 298);
             this.panel3.Name = "panel3";
+            this.panel3.Padding = new System.Windows.Forms.Padding(0, 15, 0, 0);
             this.panel3.Size = new System.Drawing.Size(594, 151);
             this.panel3.TabIndex = 1;
+            // 
+            // newFlowLayoutPanel1
+            // 
+            this.newFlowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.newFlowLayoutPanel1.Location = new System.Drawing.Point(0, 15);
+            this.newFlowLayoutPanel1.Name = "newFlowLayoutPanel1";
+            this.newFlowLayoutPanel1.Size = new System.Drawing.Size(594, 136);
+            this.newFlowLayoutPanel1.TabIndex = 0;
             // 
             // panel5
             // 
@@ -215,6 +227,7 @@ namespace AnimePlayer.ControlsWinForms
             this.Size = new System.Drawing.Size(845, 469);
             this.Load += new System.EventHandler(this.BrowserTabPageHomePage_Load);
             this.panel1.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panel6.ResumeLayout(false);
@@ -240,5 +253,6 @@ namespace AnimePlayer.ControlsWinForms
         private ComboBox comboBox1;
         public Button buttonFindInApp;
         public TextBox textBoxMain;
+        private NewFlowLayoutPanel newFlowLayoutPanel1;
     }
 }
