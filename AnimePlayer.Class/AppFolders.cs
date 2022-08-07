@@ -34,6 +34,8 @@ namespace AnimePlayer.Class
             "\\AnimePlayer\\Updater\\";
         public static readonly string Settings= Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) +
             "\\AnimePlayer\\Settings\\";
+        public static readonly string ItemGroups = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) +
+            "\\AnimePlayer\\ItemGroups\\";
         //============== New downloaded content folders ====================
         public static readonly string UpdatedContentFolder = Updater +
             "UpdatedContentFolder\\";
@@ -44,6 +46,7 @@ namespace AnimePlayer.Class
         public static readonly string UpdatedCommunity = UpdatedRepoPath + "Community\\";
         public static readonly string UpdatedWeb = UpdatedRepoPath + "Web\\";
         public static readonly string UpdatedVideosItems = UpdatedRepoPath + "VideosItems\\";
+        public static readonly string UpdatedItemGroups = UpdatedRepoPath + "ItemGroups\\";
         
         public static readonly string UpdatedDefined = UpdatedRepoPath + "Defined\\";
             public static readonly string UpdatedDefined_PlaceAndTime = UpdatedDefined + "PlaceAndTime\\";

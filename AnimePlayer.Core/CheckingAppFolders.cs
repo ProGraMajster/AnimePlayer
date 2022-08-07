@@ -35,6 +35,7 @@ namespace AnimePlayer.Core
                 Directory.CreateDirectory(AppFolders.IconsBackup);
                 Directory.CreateDirectory(AppFolders.Updater);
                 Directory.CreateDirectory(AppFolders.Settings);
+                Directory.CreateDirectory(AppFolders.ItemGroups);
             }
             catch(Exception ex)
             {
