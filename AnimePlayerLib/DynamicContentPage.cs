@@ -21,7 +21,7 @@ namespace AnimePlayerLibrary
             bWLoadContnt.RunWorkerAsync();
         }
 
-        private void bWLoadContnt_DoWork(object sender, DoWorkEventArgs e)
+        private void BWLoadContnt_DoWork(object sender, DoWorkEventArgs e)
         {
             if (PathToFile == null)
             {
@@ -58,8 +58,10 @@ namespace AnimePlayerLibrary
                         if (content[position] == "Link")
                         {
                             position++;
-                            PictureBox pictureBox = new PictureBox();
-                            pictureBox.ImageLocation = content[position];
+                            PictureBox pictureBox = new()
+                            {
+                                ImageLocation = content[position]
+                            };
                             position++;
                             pictureBox.Dock = DockStyle.Top;
                             pictureBox.SizeMode = PictureBoxSizeMode.AutoSize;
@@ -71,7 +73,7 @@ namespace AnimePlayerLibrary
                     else if (content[position] == "Label")
                     {
                         Application.DoEvents();
-                        Label label = new Label();
+                        Label label = new();
                         position++;
                         if (content[position] == "Text")
                         {
@@ -120,9 +122,11 @@ namespace AnimePlayerLibrary
                     {
                         Application.DoEvents();
                         position++;
-                        Button button = new Button();
-                        button.ForeColor = Color.White;
-                        button.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+                        Button button = new Button
+                        {
+                            ForeColor = Color.White,
+                            Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+                        };
                         button.Click += ButtonOpenP_Click;
                         button.FlatStyle = FlatStyle.Flat;
                         button.FlatAppearance.BorderSize = 0;

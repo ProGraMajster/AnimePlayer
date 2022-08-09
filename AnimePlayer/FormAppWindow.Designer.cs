@@ -66,9 +66,9 @@ namespace AnimePlayer
             this.panelNavigation.Name = "panelNavigation";
             this.panelNavigation.Size = new System.Drawing.Size(800, 24);
             this.panelNavigation.TabIndex = 0;
-            this.panelNavigation.DoubleClick += new System.EventHandler(this.panelNavigation_DoubleClick);
-            this.panelNavigation.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelNavigation_MouseDown);
-            this.panelNavigation.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelNavigation_MouseMove);
+            this.panelNavigation.DoubleClick += new System.EventHandler(this.PanelNavigation_DoubleClick);
+            this.panelNavigation.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PanelNavigation_MouseDown);
+            this.panelNavigation.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PanelNavigation_MouseMove);
             this.panelNavigation.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panelNavigation_MouseUp);
             // 
             // buttonOptions
@@ -83,7 +83,7 @@ namespace AnimePlayer
             this.buttonOptions.TabIndex = 5;
             this.buttonOptions.Text = "=";
             this.buttonOptions.UseVisualStyleBackColor = false;
-            this.buttonOptions.Click += new System.EventHandler(this.buttonOptions_Click);
+            this.buttonOptions.Click += new System.EventHandler(this.ButtonOptions_Click);
             // 
             // buttonMin
             // 
@@ -111,7 +111,7 @@ namespace AnimePlayer
             this.buttonMax.TabIndex = 3;
             this.buttonMax.Text = "[ ]";
             this.buttonMax.UseVisualStyleBackColor = false;
-            this.buttonMax.Click += new System.EventHandler(this.buttonMax_Click);
+            this.buttonMax.Click += new System.EventHandler(this.ButtonMax_Click);
             // 
             // buttonClose
             // 
@@ -138,8 +138,8 @@ namespace AnimePlayer
             this.labelWindowText.Size = new System.Drawing.Size(72, 25);
             this.labelWindowText.TabIndex = 1;
             this.labelWindowText.Text = "WindowText";
-            this.labelWindowText.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelNavigation_MouseDown);
-            this.labelWindowText.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelNavigation_MouseMove);
+            this.labelWindowText.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PanelNavigation_MouseDown);
+            this.labelWindowText.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PanelNavigation_MouseMove);
             this.labelWindowText.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panelNavigation_MouseUp);
             // 
             // pictureBoxIcon
@@ -181,9 +181,9 @@ namespace AnimePlayer
             this.panelRightBottom.Name = "panelRightBottom";
             this.panelRightBottom.Size = new System.Drawing.Size(5, 5);
             this.panelRightBottom.TabIndex = 1;
-            this.panelRightBottom.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelLeftBottom_MouseDown);
-            this.panelRightBottom.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelLeftBottom_MouseMove);
-            this.panelRightBottom.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panelLeftBottom_MouseUp);
+            this.panelRightBottom.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PanelLeftBottom_MouseDown);
+            this.panelRightBottom.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PanelLeftBottom_MouseMove);
+            this.panelRightBottom.MouseUp += new System.Windows.Forms.MouseEventHandler(this.PanelLeftBottom_MouseUp);
             // 
             // panelLeftBottom
             // 
@@ -193,9 +193,9 @@ namespace AnimePlayer
             this.panelLeftBottom.Name = "panelLeftBottom";
             this.panelLeftBottom.Size = new System.Drawing.Size(5, 5);
             this.panelLeftBottom.TabIndex = 0;
-            this.panelLeftBottom.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelLeftBottom_MouseDown);
-            this.panelLeftBottom.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelLeftBottom_MouseMove);
-            this.panelLeftBottom.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panelLeftBottom_MouseUp);
+            this.panelLeftBottom.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PanelLeftBottom_MouseDown);
+            this.panelLeftBottom.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PanelLeftBottom_MouseMove);
+            this.panelLeftBottom.MouseUp += new System.Windows.Forms.MouseEventHandler(this.PanelLeftBottom_MouseUp);
             // 
             // panelWindowMenu
             // 
@@ -221,7 +221,7 @@ namespace AnimePlayer
             this.buttonContentReload.TabIndex = 2;
             this.buttonContentReload.Text = "Załaduj ponownie zawartość okna";
             this.buttonContentReload.UseVisualStyleBackColor = true;
-            this.buttonContentReload.Click += new System.EventHandler(this.buttonContentReload_Click);
+            this.buttonContentReload.Click += new System.EventHandler(this.ButtonContentReload_Click);
             // 
             // checkBoxTopMost
             // 
@@ -233,7 +233,7 @@ namespace AnimePlayer
             this.checkBoxTopMost.TabIndex = 0;
             this.checkBoxTopMost.Text = "Zawsze na wierzchu";
             this.checkBoxTopMost.UseVisualStyleBackColor = true;
-            this.checkBoxTopMost.CheckedChanged += new System.EventHandler(this.checkBoxTopMost_CheckedChanged);
+            this.checkBoxTopMost.CheckedChanged += new System.EventHandler(this.CheckBoxTopMost_CheckedChanged);
             // 
             // buttonHideMenu
             // 
@@ -246,7 +246,7 @@ namespace AnimePlayer
             this.buttonHideMenu.TabIndex = 1;
             this.buttonHideMenu.Text = "X";
             this.buttonHideMenu.UseVisualStyleBackColor = true;
-            this.buttonHideMenu.Click += new System.EventHandler(this.buttonHideMenu_Click);
+            this.buttonHideMenu.Click += new System.EventHandler(this.ButtonHideMenu_Click);
             // 
             // FormAppWindow
             // 

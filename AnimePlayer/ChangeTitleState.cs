@@ -9,20 +9,20 @@ namespace AnimePlayer
 {
     public partial class ChangeTitleState : UserControl
     {
-        PageItem pageItem;
+        readonly PageItem pageItem;
         public ChangeTitleState(PageItem page)
         {
             InitializeComponent();
             pageItem = page;
         }
 
-        private void buttonClose_Click(object sender, EventArgs e)
+        private void ButtonClose_Click(object sender, EventArgs e)
         {
             this.Hide();
             this.Dispose();
         }
 
-        private void buttonSaveChangeState_Click(object sender, EventArgs e)
+        private void ButtonSaveChangeState_Click(object sender, EventArgs e)
         {
             try
             {

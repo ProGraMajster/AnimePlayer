@@ -33,7 +33,7 @@ namespace AnimePlayer
             this.Close();
         }
 
-        private void buttonMax_Click(object sender, EventArgs e)
+        private void ButtonMax_Click(object sender, EventArgs e)
         {
             if (this.WindowState == FormWindowState.Normal)
             {
@@ -58,14 +58,14 @@ namespace AnimePlayer
         private bool dragging = false;
         private Point dragCursorPoint;
         private Point dragFormPoint;
-        private void panelNavigation_MouseDown(object sender, MouseEventArgs e)
+        private void PanelNavigation_MouseDown(object sender, MouseEventArgs e)
         {
             dragging = true;
             dragCursorPoint = Cursor.Position;
             dragFormPoint = this.Location;
         }
 
-        private void panelNavigation_MouseMove(object sender, MouseEventArgs e)
+        private void PanelNavigation_MouseMove(object sender, MouseEventArgs e)
         {
             if (dragging)
             {
@@ -104,7 +104,7 @@ namespace AnimePlayer
 
         bool mov;
 
-        private void panelLeftBottom_MouseDown(object sender, MouseEventArgs e)
+        private void PanelLeftBottom_MouseDown(object sender, MouseEventArgs e)
         {
             mov = true;
             My = MousePosition.Y;
@@ -113,7 +113,7 @@ namespace AnimePlayer
             Sh = Height;
         }
 
-        private void panelLeftBottom_MouseMove(object sender, MouseEventArgs e)
+        private void PanelLeftBottom_MouseMove(object sender, MouseEventArgs e)
         {
             if (mov == true)
             {
@@ -122,12 +122,12 @@ namespace AnimePlayer
             }
         }
 
-        private void panelLeftBottom_MouseUp(object sender, MouseEventArgs e)
+        private void PanelLeftBottom_MouseUp(object sender, MouseEventArgs e)
         {
             mov = false;
         }
 
-        private void panelNavigation_DoubleClick(object sender, EventArgs e)
+        private void PanelNavigation_DoubleClick(object sender, EventArgs e)
         {
             if (this.WindowState == FormWindowState.Normal)
             {
@@ -149,24 +149,24 @@ namespace AnimePlayer
             labelWindowText.Text = this.Text;
         }
 
-        private void checkBoxTopMost_CheckedChanged(object sender, EventArgs e)
+        private void CheckBoxTopMost_CheckedChanged(object sender, EventArgs e)
         {
             TopMost= checkBoxTopMost.Checked;
         }
 
-        private void buttonHideMenu_Click(object sender, EventArgs e)
+        private void ButtonHideMenu_Click(object sender, EventArgs e)
         {
             panelWindowMenu.Hide();
         }
 
-        private void buttonOptions_Click(object sender, EventArgs e)
+        private void ButtonOptions_Click(object sender, EventArgs e)
         {
             panelWindowMenu.Location = new Point(buttonOptions.Left - panelWindowMenu.Width, buttonOptions.Top);
             panelWindowMenu.Show();
             panelWindowMenu.BringToFront();
         }
 
-        private void buttonContentReload_Click(object sender, EventArgs e)
+        private void ButtonContentReload_Click(object sender, EventArgs e)
         {
             Process processApp = (Process)this.Tag;
 

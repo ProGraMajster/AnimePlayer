@@ -33,7 +33,7 @@
             // 
             // bWLoadContnt
             // 
-            this.bWLoadContnt.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bWLoadContnt_DoWork);
+            this.bWLoadContnt.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BWLoadContnt_DoWork);
             // 
             // DynamicContentPage
             // 

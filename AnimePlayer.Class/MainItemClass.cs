@@ -10,7 +10,7 @@ namespace AnimePlayer.Class
     public class MainItemClass
     {
         public string Name { get; set; }
-        public string S_ID { get; set; }
+        public string SID { get; set; }
         public PageItemData PageItemData { get; set; }
         public PreviewTitleClass PreviewTitleClass { get; set; }
     }

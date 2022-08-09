@@ -87,7 +87,7 @@ namespace AnimePlayer
             this.buttonSaveChangeState.TabIndex = 3;
             this.buttonSaveChangeState.Text = "Zapisz";
             this.buttonSaveChangeState.UseVisualStyleBackColor = false;
-            this.buttonSaveChangeState.Click += new System.EventHandler(this.buttonSaveChangeState_Click);
+            this.buttonSaveChangeState.Click += new System.EventHandler(this.ButtonSaveChangeState_Click);
             // 
             // buttonClose
             // 
@@ -100,7 +100,7 @@ namespace AnimePlayer
             this.buttonClose.Size = new System.Drawing.Size(27, 23);
             this.buttonClose.TabIndex = 2;
             this.buttonClose.Text = "X";
-            this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
+            this.buttonClose.Click += new System.EventHandler(this.ButtonClose_Click);
             // 
             // comboBoxNewState
             // 
