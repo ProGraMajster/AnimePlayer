@@ -44,7 +44,7 @@ namespace AnimePlayerLibrary
                 }
                 else
                 {
-                    webView21.NavigateToString(_Episode.LinkToEpisode);
+                    webView21.CoreWebView2.Navigate(_Episode.LinkToEpisode);
                 }
                 label1.Hide();
                 timerLoad.Stop();
