@@ -21,16 +21,15 @@ namespace AnimePlayer
 {
     public partial class FormMainPlayer : Form
     {
-        string[] args = Environment.GetCommandLineArgs();
 
         public Control controlAuxiliary;
 
         public bool debug = false;
         public bool onOnline = true;
-        PanelSearchFilters panelSearch;
-        NewFlowLayoutPanel panelNews;
+        readonly PanelSearchFilters panelSearch;
+        readonly NewFlowLayoutPanel panelNews;
         public AutoCompleteStringCollection autoCSC_find;
-        public List<ItemsGroup> itemsGroups = new List<ItemsGroup>();
+        public List<ItemsGroup> itemsGroups = new();
         public bool usedThemeColors = false;
         public string ThemePath = null;
         public ItemList_ClassItemOnStateList iList_ClassItemOnState;
@@ -46,16 +45,20 @@ namespace AnimePlayer
             try
             {
                 autoCSC_find = new AutoCompleteStringCollection();
-                panelSearch = new PanelSearchFilters(flowLayoutPanelAll, flowLayoutPanelFinditem, AnimePlayer.Properties.Settings.Default.RoundingControl);
-                panelSearch.Dock = DockStyle.None;
+                panelSearch = new PanelSearchFilters(flowLayoutPanelAll, flowLayoutPanelFinditem, AnimePlayer.Properties.Settings.Default.RoundingControl)
+                {
+                    Dock = DockStyle.None
+                };
                 panelAllitem.Controls.Add(panelSearch);
                 panelSearch.Location = new Point(0, 110);
                 panelSearch.Hide();
                 labelLoadingDetails.Text = "Initialize";
 
-                panelNews = new NewFlowLayoutPanel();
-                panelNews.Name = "newFlowLayoutPanel_panelNews";
-                panelNews.Dock = DockStyle.Fill;
+                panelNews = new NewFlowLayoutPanel
+                {
+                    Name = "newFlowLayoutPanel_panelNews",
+                    Dock = DockStyle.Fill
+                };
                 panelSTNewsMain.Controls.Add(panelNews);
                 panelNews.Show();
                 panelNews.ControlAdded += PanelNews_ControlAdded;
@@ -64,174 +67,31 @@ namespace AnimePlayer
                 panelSTNewsMain.Hide();
 
                 AnimePlayer.Core.CheckingAppFolders.CheckMainFolder();
-                //====================================================
-                /*Application.DoEvents();
-
-                if (!Directory.Exists("C:\\ContentLibrarys"))
-                {
-                    Directory.CreateDirectory("C:\\ContentLibrarys");
-                }
-                if (!Directory.Exists("C:\\ContentLibrarys\\OtherFiles"))
-                {
-                    Directory.CreateDirectory("C:\\ContentLibrarys\\OtherFiles");
-                }
-                if (!Directory.Exists("C:\\ContentLibrarys\\OtherFiles\\WMP_OverlayApp"))
-                {
-                    Directory.CreateDirectory("C:\\ContentLibrarys\\OtherFiles\\WMP_OverlayApp");
-                }
-                if(!File.Exists("C:\\ContentLibrarys\\OtherFiles\\WMP_OverlayApp\\NoImage.png"))
-                {
-                    Image img = Properties.Resources.NoImage;
-                    img.Save("C:\\ContentLibrarys\\OtherFiles\\WMP_OverlayApp\\NoImage.png");
-                }
-
-                if (!Directory.Exists("C:\\ContentLibrarys\\OtherFiles\\WMP_OverlayApp\\Icon"))
-                {
-                    Directory.CreateDirectory("C:\\ContentLibrarys\\OtherFiles\\WMP_OverlayApp\\Icon");
-                }
-                if (!Directory.Exists("C:\\ContentLibrarys\\OtherFiles\\WMP_OverlayApp\\IconBackup"))
-                {
-                    Directory.CreateDirectory("C:\\ContentLibrarys\\OtherFiles\\WMP_OverlayApp\\IconBackup");
-                }
-                if (!Directory.Exists("C:\\ContentLibrarys\\OtherFiles\\WMP_OverlayApp\\Page"))
-                {
-                    Directory.CreateDirectory("C:\\ContentLibrarys\\OtherFiles\\WMP_OverlayApp\\Page");
-                }
-                if (!Directory.Exists("C:\\ContentLibrarys\\OtherFiles\\WMP_OverlayApp\\Video"))
-                {
-                    Directory.CreateDirectory("C:\\ContentLibrarys\\OtherFiles\\WMP_OverlayApp\\Video");
-                }
-                if (!Directory.Exists("C:\\ContentLibrarys\\OtherFiles\\WMP_OverlayApp\\DatabaseOftitles"))
-                {
-                    Directory.CreateDirectory("C:\\ContentLibrarys\\OtherFiles\\WMP_OverlayApp\\DatabaseOftitles");
-                }
-                if (!Directory.Exists("C:\\ContentLibrarys\\OtherFiles\\WMP_OverlayApp\\Temp"))
-                {
-                    Directory.CreateDirectory("C:\\ContentLibrarys\\OtherFiles\\WMP_OverlayApp\\Temp");
-                }
-                if (!Directory.Exists("C:\\ContentLibrarys\\OtherFiles\\WMP_OverlayApp\\Items"))
-                {
-                    Directory.CreateDirectory("C:\\ContentLibrarys\\OtherFiles\\WMP_OverlayApp\\Items");
-                }
-                if (!Directory.Exists("C:\\ContentLibrarys\\OtherFiles\\WMP_OverlayApp\\Web_script"))
-                {
-                    Directory.CreateDirectory("C:\\ContentLibrarys\\OtherFiles\\WMP_OverlayApp\\Web_script");
-                }
-                if (!Directory.Exists("C:\\ContentLibrarys\\OtherFiles\\WMP_OverlayApp\\Community"))
-                {
-                    Directory.CreateDirectory("C:\\ContentLibrarys\\OtherFiles\\WMP_OverlayApp\\Community");
-                }*/
                 quickMove = new QuickMovePanel();
                 quickMove.Hide();   
                 this.Controls.Add(quickMove);
                 clientToBrowser = new ZetaIpc.Runtime.Client.IpcClient();
                 clientToBrowser.Initialize(65500);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                Console.Error.WriteLine(ex);
             }
             CreateBackupicon();
-            /* ==================
-             * remove the 'if' below when the surrogate function is ready
-             * ==================
-             */
-            if (AnimePlayer.Properties.Settings.Default.RoundingControl)
-            {
-                ControlsNewMethods.RoundingControl rc = new ControlsNewMethods.RoundingControl();
-                rc.TargetControl = buttonStartPageFinditem;
-                rc.CornerRadius = 15;
-                rc = new ControlsNewMethods.RoundingControl();
-                rc.TargetControl = buttonMenuOpen;
-                rc.CornerRadius = 15;
-                rc = new ControlsNewMethods.RoundingControl();
-                rc.TargetControl = textBoxStartPagefinditem;
-                rc.CornerRadius = 15;
-
-                rc = new ControlsNewMethods.RoundingControl();
-                rc.TargetControl = textBoxFinditem;
-                rc.CornerRadius = 15;
-                rc = new ControlsNewMethods.RoundingControl();
-                rc.TargetControl = buttonFindItem;
-                rc.CornerRadius = 15;
-                rc = new ControlsNewMethods.RoundingControl();
-                rc.TargetControl = buttonfinditemReset;
-                rc.CornerRadius = 15;
-                rc = new ControlsNewMethods.RoundingControl();
-                rc.TargetControl = buttonFinditemPageClose;
-                rc.CornerRadius = 15;
-                rc = new ControlsNewMethods.RoundingControl();
-                rc.TargetControl = panelMenu;
-                rc.CornerRadius = 15;
-                rc = new ControlsNewMethods.RoundingControl();
-                rc.TargetControl = buttonfinditemF;
-                rc.CornerRadius = 15;
-                rc = new ControlsNewMethods.RoundingControl();
-                rc.TargetControl = labelEnableFiltres;
-                rc.CornerRadius = 15;
-                rc = new ControlsNewMethods.RoundingControl
-                {
-                    TargetControl = buttonSetting,
-                    CornerRadius = 15
-                };
-                rc = new ControlsNewMethods.RoundingControl
-                {
-                    TargetControl = buttonPlayer,
-                    CornerRadius = 15
-                };
-                rc = new ControlsNewMethods.RoundingControl
-                {
-                    TargetControl = buttonViewFindintems,
-                    CornerRadius = 15
-                };
-                rc = new ControlsNewMethods.RoundingControl
-                {
-                    TargetControl = buttonRestartApp,
-                    CornerRadius = 15
-                };
-                rc = new ControlsNewMethods.RoundingControl
-                {
-                    TargetControl = buttonExitApp,
-                    CornerRadius = 15
-                };
-                rc = new ControlsNewMethods.RoundingControl
-                {
-                    TargetControl = label2,
-                    CornerRadius = 15
-                };
-                rc = new ControlsNewMethods.RoundingControl
-                {
-                    TargetControl = label_InfoText_news,
-                    CornerRadius = 15
-                };
-                rc = new ControlsNewMethods.RoundingControl
-                {
-                    TargetControl = buttonProfile,
-                    CornerRadius = 15
-                };
-                rc = new ControlsNewMethods.RoundingControl
-                {
-                    TargetControl = buttonMoreBtnMenu,
-                    CornerRadius = 15
-                };
-                rc = new ControlsNewMethods.RoundingControl
-                {
-                    TargetControl = buttonShowTitleStatusList,
-                    CornerRadius = 15
-                };
-            }
             try
             {
-                performanceCounter_app = new PerformanceCounter();
-                performanceCounter_app.CategoryName = "Process";
-                performanceCounter_app.CounterName = "Working Set - Private";
-                performanceCounter_app.InstanceName = "AnimePlayerPL";
+                performanceCounter_app = new PerformanceCounter
+                {
+                    CategoryName = "Process",
+                    CounterName = "Working Set - Private",
+                    InstanceName = "AnimePlayerPL"
+                };
                 memsize = Convert.ToInt32(performanceCounter_app.NextValue()) / (int)(1024);
                 timerAppPer.Start();
             }
             catch (Exception exPer)
             {
-
+                Console.Error.WriteLine(exPer.ToString());
             }
         }
 
@@ -244,11 +104,11 @@ namespace AnimePlayer
             panelStartPage.Controls.SetChildIndex(panelSTNewsMain, 2);
         }
 
-        Task CreateBackupicon()
+        static Task CreateBackupicon()
         {
             try
             {
-                DirectoryInfo directoryInfo = new DirectoryInfo("C:\\ContentLibrarys\\OtherFiles\\WMP_OverlayApp\\Icon");
+                DirectoryInfo directoryInfo = new("C:\\ContentLibrarys\\OtherFiles\\WMP_OverlayApp\\Icon");
 
                 foreach (FileInfo fileInfo in directoryInfo.GetFiles())
                 {
@@ -263,7 +123,7 @@ namespace AnimePlayer
             return null;
         }
 
-        QuickMovePanel quickMove=null;
+        readonly QuickMovePanel quickMove=null;
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Escape)
@@ -285,8 +145,10 @@ namespace AnimePlayer
             }
             if(e.KeyCode == Keys.F10)
             {
-                FormDebug fd = new FormDebug();
-                fd.form=(Form)this;
+                FormDebug fd = new()
+                {
+                    form=(Form)this
+                };
                 fd.Show();
             }
             
@@ -321,7 +183,7 @@ namespace AnimePlayer
             }
         }
 
-        private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
+        private void NotifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
         }
 
@@ -353,12 +215,14 @@ namespace AnimePlayer
 
             if(debug)
             {
-                labelLoadingDetails.TextChanged += labelLoadingDetails_TextChanged;
+                labelLoadingDetails.TextChanged += LabelLoadingDetails_TextChanged;
                 try
                 {
-                    FileStream filestream = new FileStream(AnimePlayer.Class.AppFolders.Logs+"\\"+ Process.GetCurrentProcess().StartTime.ToString().Replace(":", " ") + "_console_out.txt", FileMode.Append);
-                    var streamwriter = new StreamWriter(filestream);
-                    streamwriter.AutoFlush = true;
+                    FileStream filestream = new(AnimePlayer.Class.AppFolders.Logs+"\\"+ Process.GetCurrentProcess().StartTime.ToString().Replace(":", " ") + "_console_out.txt", FileMode.Append);
+                    var streamwriter = new StreamWriter(filestream)
+                    {
+                        AutoFlush = true
+                    };
                     Console.SetOut(streamwriter);
                     Console.SetError(streamwriter);
                 }
@@ -406,12 +270,12 @@ namespace AnimePlayer
             panel.Refresh();
         }
 
-        private void buttonMenuClose_Click(object sender, EventArgs e)
+        private void ButtonMenuClose_Click(object sender, EventArgs e)
         {
             panelMenu.Hide();
         }
 
-        private void buttonMenuOpen_Click(object sender, EventArgs e)
+        private void ButtonMenuOpen_Click(object sender, EventArgs e)
         {
             panelMenu.Location = new Point(this.ClientSize.Width - panelMenu.Width, 0);
             panelMenu.Size = new Size(panelMenu.Width, this.ClientSize.Height);
@@ -421,37 +285,39 @@ namespace AnimePlayer
         }
 
 
-        private void labelLoading_VisibleChanged(object sender, EventArgs e)
+        private void LabelLoading_VisibleChanged(object sender, EventArgs e)
         {
             CenterControlInForm(labelLoading);
         }
 
-        private void panelLoading_VisibleChanged(object sender, EventArgs e)
+        private void PanelLoading_VisibleChanged(object sender, EventArgs e)
         {
             CenterControlInForm(labelLoading);
         }
 
-        private void buttonSetting_Click(object sender, EventArgs e)
+        private void ButtonSetting_Click(object sender, EventArgs e)
         {
             panelMenu.Hide();
-            PageSettings pageSettings = new PageSettings(this);
-            pageSettings.Dock = DockStyle.Fill;
+            PageSettings pageSettings = new(this)
+            {
+                Dock = DockStyle.Fill
+            };
             panel2.Controls.Add(pageSettings);
             pageSettings.Show();
             pageSettings.BringToFront();
         }
 
-        private void buttonPlayer_Click(object sender, EventArgs e)
+        private void ButtonPlayer_Click(object sender, EventArgs e)
         {
             panelMenu.Hide();
-            VideoPlayer _ = new VideoPlayer();
+            VideoPlayer _ = new();
             panel2.Controls.Add(_);
             _.Dock = DockStyle.Fill;
             _.Show();
             _.BringToFront();
         }
 
-        private void buttonExitApp_Click(object sender, EventArgs e)
+        private void ButtonExitApp_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
@@ -466,7 +332,7 @@ namespace AnimePlayer
             timerAnimationError.Start();
         }
 
-        private void timerAnimationError_Tick(object sender, EventArgs e)
+        private void TimerAnimationError_Tick(object sender, EventArgs e)
         {
 
             timer_i++;
@@ -482,7 +348,7 @@ namespace AnimePlayer
             }
         }
 
-        private async void pictureBoxGithub_Click(object sender, EventArgs e)
+        private async void PictureBoxGithub_Click(object sender, EventArgs e)
         {
             try
             {
@@ -497,7 +363,7 @@ namespace AnimePlayer
             }
         }
 
-        private async void pictureBoxSite_Click(object sender, EventArgs e)
+        private async void PictureBoxSite_Click(object sender, EventArgs e)
         {
             try
             {
@@ -513,7 +379,7 @@ namespace AnimePlayer
             }
         }
 
-        private async void buttonSite_Click(object sender, EventArgs e)
+        private async void ButtonSite_Click(object sender, EventArgs e)
         {
             try
             {
@@ -588,18 +454,18 @@ namespace AnimePlayer
             //panel2.ResumeLayout(true);
         }
 
-        public void flowLayoutPanelPolecane_ControlAdded(object sender, ControlEventArgs e)
+        public void FlowLayoutPanelPolecane_ControlAdded(object sender, ControlEventArgs e)
         {
-           taskAddToAllList(e);
+           TaskAddToAllList(e);
         }
 
 
-        public void flowLayoutPanel_ControlAdded(object sender, ControlEventArgs e)
+        public void FlowLayoutPanelControlAdded(object sender, ControlEventArgs e)
         {
-            taskAddToAllList(e);
+            TaskAddToAllList(e);
         }
 
-        public Task taskAddToAllList(ControlEventArgs e)
+        public Task TaskAddToAllList(ControlEventArgs e)
         {
             try
             {
@@ -619,7 +485,7 @@ namespace AnimePlayer
                 if(add)
                 {
                     PanelItem panelItem = (PanelItem)e.Control.Tag;
-                    PanelItem item = new PanelItem(panelItem._previewTitleClass);
+                    PanelItem item = new(panelItem._previewTitleClass);
                     flowLayoutPanelAll.Controls.Add(item.panelItem);
                 }
             }
@@ -630,7 +496,7 @@ namespace AnimePlayer
             return null;
         }
 
-        private void flowLayoutPanelAll_ControlAdded(object sender, ControlEventArgs e)
+        private void FlowLayoutPanelAll_ControlAdded(object sender, ControlEventArgs e)
         {
 
         }
@@ -638,13 +504,13 @@ namespace AnimePlayer
 
         bool flags_findItem = false;
 
-        private void buttonFindItem_Click(object sender, EventArgs e)
+        private void ButtonFindItem_Click(object sender, EventArgs e)
         {
             if(flags_findItem == false)
             {
                 flowLayoutPanelFinditem.Controls.Clear();
                 flowLayoutPanelFinditem.Enabled = false;
-                findItems();
+                FindItems();
                 flowLayoutPanelFinditem.Enabled = true;
             }
             else
@@ -655,7 +521,7 @@ namespace AnimePlayer
 
 
 
-        public void findItemsF()
+        public void FindItemsF()
         {
             SetInfofilersLabel();
             string findText = textBoxFinditem.Text.ToLower().Replace("\n", "").Replace("\r", "").Replace("\t", "");
@@ -668,7 +534,6 @@ namespace AnimePlayer
                 return;
             }
             int i = 0;
-            bool add = true;
             flowLayoutPanelFinditem.Controls.Clear();
             labelFindSatus.Show();
             flowLayoutPanelAll.Hide();
@@ -676,7 +541,7 @@ namespace AnimePlayer
             {
                 labelFindSatus.Text = "Szukanie";
                 Application.DoEvents();
-                List<string> unList = new List<string>();
+                List<string> unList = new();
                 foreach (CheckBox box in panelSearch.panelAllS.Controls.OfType<CheckBox>())
                 {
                     if (box.CheckState == CheckState.Unchecked)
@@ -690,7 +555,7 @@ namespace AnimePlayer
                 {
                     labelFindSatus.Text += ".";
                     Application.DoEvents();
-                    add = true;
+                    bool add = true;
                     PanelItem panelItem = (PanelItem)c.Tag;
                     if (findText != null && findText != "")
                     {
@@ -709,7 +574,7 @@ namespace AnimePlayer
 
                     if(add)
                     {
-                        PanelItem pi = new PanelItem(panelItem._previewTitleClass);
+                        PanelItem pi = new(panelItem._previewTitleClass);
                         flowLayoutPanelFinditem.Controls.Add(pi.panelItem);
                         i++;
                     }
@@ -726,22 +591,28 @@ namespace AnimePlayer
             flags_findItem = false;
             if (flowLayoutPanelFinditem.Controls.Count == 0)
             {
-                Panel panel = new Panel();
-                panel.Size = new Size(300, 300);
+                Panel panel = new()
+                {
+                    Size = new Size(300, 300)
+                };
                 panel.Show();
-                Label label = new Label();
-                label.AutoSize = false;
-                label.AutoEllipsis = true;
-                label.TextAlign = ContentAlignment.MiddleCenter;
-                label.Text = "Podana fraza - "+ findText+" - nie została odnaleziona.";
-                label.Dock = DockStyle.Bottom;
-                label.ForeColor = Color.White;
-                label.Size = new Size(300, 100);
+                Label label = new()
+                {
+                    AutoSize = false,
+                    AutoEllipsis = true,
+                    TextAlign = ContentAlignment.MiddleCenter,
+                    Text = "Podana fraza - "+ findText+" - nie została odnaleziona.",
+                    Dock = DockStyle.Bottom,
+                    ForeColor = Color.White,
+                    Size = new Size(300, 100)
+                };
                 label.Font = new Font(label.Font.FontFamily, 12);
-                PictureBox pictureBox = new PictureBox();
-                pictureBox.ImageLocation =@"https://cdn-icons-png.flaticon.com/512/6134/6134065.png";
-                pictureBox.Size = new Size(200, 200);
-                pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
+                PictureBox pictureBox = new()
+                {
+                    ImageLocation =@"https://cdn-icons-png.flaticon.com/512/6134/6134065.png",
+                    Size = new Size(200, 200),
+                    SizeMode = PictureBoxSizeMode.Zoom
+                };
                 pictureBox.Show();
                 pictureBox.Dock = DockStyle.Fill;
                 panel.Controls.Add(pictureBox);
@@ -751,18 +622,18 @@ namespace AnimePlayer
         }
 
 
-        public void findItems()
+        public void FindItems()
         {
             SetInfofilersLabel();
             flags_findItem = true;
             if(panelSearch.use)
             {
-                findItemsF();
+                FindItemsF();
                 flags_findItem = false;
                 return;
             }
             
-            Stopwatch stopWatch = new Stopwatch();
+            Stopwatch stopWatch = new();
             stopWatch.Start();
             string findText = textBoxFinditem.Text.ToLower().Replace("\n", "").Replace("\r", "").Replace("\t", "");
             if (textBoxFinditem.Text == null)
@@ -792,7 +663,7 @@ namespace AnimePlayer
                             PanelItem panelItem = (PanelItem)c.Tag;
                             if (panelItem._previewTitleClass.Title.ToLower().Contains(findText.ToLower()))
                             {
-                                PanelItem item = new PanelItem(panelItem._previewTitleClass);
+                                PanelItem item = new(panelItem._previewTitleClass);
                                 flowLayoutPanelFinditem.Controls.Add(item.panelItem);
                                 i++;
                             }
@@ -814,22 +685,28 @@ namespace AnimePlayer
             }
             if (flowLayoutPanelFinditem.Controls.Count == 0)
             {
-                Panel panel = new Panel();
-                panel.Size = new Size(300, 300);
+                Panel panel = new()
+                {
+                    Size = new Size(300, 300)
+                };
                 panel.Show();
-                Label label = new Label();
-                label.AutoSize = false;
-                label.AutoEllipsis = true;
-                label.TextAlign = ContentAlignment.MiddleCenter;
-                label.Text = "Podana fraza - "+ findText+" - nie została odnaleziona.";
-                label.Dock = DockStyle.Bottom;
-                label.ForeColor = Color.White;
-                label.Size = new Size(300, 100);
+                Label label = new()
+                {
+                    AutoSize = false,
+                    AutoEllipsis = true,
+                    TextAlign = ContentAlignment.MiddleCenter,
+                    Text = "Podana fraza - "+ findText+" - nie została odnaleziona.",
+                    Dock = DockStyle.Bottom,
+                    ForeColor = Color.White,
+                    Size = new Size(300, 100)
+                };
                 label.Font = new Font(label.Font.FontFamily, 12);
-                PictureBox pictureBox = new PictureBox();
-                pictureBox.ImageLocation =@"https://cdn-icons-png.flaticon.com/512/6134/6134065.png";
-                pictureBox.Size = new Size(200, 200);
-                pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
+                PictureBox pictureBox = new()
+                {
+                    ImageLocation =@"https://cdn-icons-png.flaticon.com/512/6134/6134065.png",
+                    Size = new Size(200, 200),
+                    SizeMode = PictureBoxSizeMode.Zoom
+                };
                 pictureBox.Show();
                 pictureBox.Dock = DockStyle.Fill;
                 panel.Controls.Add(pictureBox);
@@ -846,10 +723,10 @@ namespace AnimePlayer
             flags_findItem = false;
         }
 
-        public void findItems(string findText)
+        public void FindItems(string findText)
         {
             flags_findItem = true;
-            Stopwatch stopWatch = new Stopwatch();
+            Stopwatch stopWatch = new();
             findText = findText.ToLower().Replace("\n", "").Replace("\r", "").Replace("\t", "");
             if (findText == null)
             {
@@ -879,7 +756,7 @@ namespace AnimePlayer
                             PanelItem panelItem = (PanelItem)c.Tag;
                             if (panelItem._previewTitleClass.Title.ToLower().Contains(findText.ToLower()))
                             {
-                                PanelItem item = new PanelItem(panelItem._previewTitleClass);
+                                PanelItem item = new(panelItem._previewTitleClass);
                                 flowLayoutPanelFinditem.Controls.Add(item.panelItem);
                                 i++;
                             }
@@ -899,22 +776,28 @@ namespace AnimePlayer
             }
             if(flowLayoutPanelFinditem.Controls.Count == 0)
             {
-                Panel panel = new Panel();
-                panel.Size = new Size(300, 300);
+                Panel panel = new()
+                {
+                    Size = new Size(300, 300)
+                };
                 panel.Show();
-                Label label = new Label();
-                label.AutoSize = false;
-                label.AutoEllipsis = true;
-                label.TextAlign = ContentAlignment.MiddleCenter;
-                label.Text = "Podana fraza - "+ findText+" - nie została odnaleziona.";
-                label.Dock = DockStyle.Bottom;
-                label.ForeColor = Color.White;
-                label.Size = new Size(300, 100);
+                Label label = new()
+                {
+                    AutoSize = false,
+                    AutoEllipsis = true,
+                    TextAlign = ContentAlignment.MiddleCenter,
+                    Text = "Podana fraza - "+ findText+" - nie została odnaleziona.",
+                    Dock = DockStyle.Bottom,
+                    ForeColor = Color.White,
+                    Size = new Size(300, 100)
+                };
                 label.Font = new Font(label.Font.FontFamily,12);
-                PictureBox pictureBox = new PictureBox();
-                pictureBox.ImageLocation =@"https://cdn-icons-png.flaticon.com/512/6134/6134065.png";
-                pictureBox.Size = new Size(200,200);
-                pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
+                PictureBox pictureBox = new()
+                {
+                    ImageLocation =@"https://cdn-icons-png.flaticon.com/512/6134/6134065.png",
+                    Size = new Size(200, 200),
+                    SizeMode = PictureBoxSizeMode.Zoom
+                };
                 pictureBox.Show();
                 pictureBox.Dock = DockStyle.Fill;
                 panel.Controls.Add(pictureBox);
@@ -932,7 +815,7 @@ namespace AnimePlayer
             flags_findItem = false;
         }
 
-        private void buttonfinditemReset_Click(object sender, EventArgs e)
+        private void ButtonfinditemReset_Click(object sender, EventArgs e)
         {
             flowLayoutPanelFinditem.Controls.Clear();
             flowLayoutPanelFinditem.Hide();
@@ -944,41 +827,41 @@ namespace AnimePlayer
         }
 
 
-        private void buttonFinditemPageClose_Click(object sender, EventArgs e)
+        private void ButtonFinditemPageClose_Click(object sender, EventArgs e)
         {
             panelAllitem.Hide();
         }
 
-        private void textBoxFinditem_KeyDown(object sender, KeyEventArgs e)
+        private void TextBoxFinditem_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
-                findItems();
+                FindItems();
             }
         }
 
-        private void textBoxSPfinditem_KeyDown(object sender, KeyEventArgs e)
+        private void TextBoxSPfinditem_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
                 panelAllitem.BringToFront();
                 panelAllitem.Show();
                 textBoxFinditem.Text = textBoxStartPagefinditem.Text;
-                findItems(textBoxStartPagefinditem.Text);
+                FindItems(textBoxStartPagefinditem.Text);
                 textBoxStartPagefinditem.Text = "";
             }
         }
 
-        private void buttonStartPageFinditem_Click(object sender, EventArgs e)
+        private void ButtonStartPageFinditem_Click(object sender, EventArgs e)
         {
             panelAllitem.BringToFront();
             panelAllitem.Show();
             textBoxFinditem.Text = textBoxStartPagefinditem.Text;
-            findItems(textBoxStartPagefinditem.Text);
+            FindItems(textBoxStartPagefinditem.Text);
             textBoxStartPagefinditem.Text = "";
         }
 
-        private void buttonViewFindintems_Click(object sender, EventArgs e)
+        private void ButtonViewFindintems_Click(object sender, EventArgs e)
         {
             panelMenu.Hide();
             flowLayoutPanelFinditem.Controls.Clear();
@@ -990,7 +873,7 @@ namespace AnimePlayer
             panelAllitem.Show();
         }
 
-        private void buttonRestartApp_Click(object sender, EventArgs e)
+        private void ButtonRestartApp_Click(object sender, EventArgs e)
         {
             Application.Restart();
         }
@@ -1007,7 +890,7 @@ namespace AnimePlayer
             }
         }
 
-        private void buttonfinditemF_Click(object sender, EventArgs e)
+        private void ButtonfinditemF_Click(object sender, EventArgs e)
         {
             SetInfofilersLabel();
             if(panelSearch.Visible == true)
@@ -1023,7 +906,7 @@ namespace AnimePlayer
             }
         }
 
-        private void backgroundWorkerGetSTNews_DoWork(object sender, DoWorkEventArgs e)
+        private void BackgroundWorkerGetSTNews_DoWork(object sender, DoWorkEventArgs e)
         {
             
             if(onOnline)
@@ -1059,16 +942,18 @@ namespace AnimePlayer
         }
 
         PageTitileStatusList pageTitileStatusList;
-        private void buttonShowTitleStatusList_Click(object sender, EventArgs e)
+        private void ButtonShowTitleStatusList_Click(object sender, EventArgs e)
         {
             try
             {
                 panelMenu.Hide();
                 if(pageTitileStatusList == null)
                 {
-                    pageTitileStatusList = new PageTitileStatusList();
-                    pageTitileStatusList.Name = "pageTitileStatusList";
-                    pageTitileStatusList.Dock = DockStyle.Fill;
+                    pageTitileStatusList = new PageTitileStatusList
+                    {
+                        Name = "pageTitileStatusList",
+                        Dock = DockStyle.Fill
+                    };
                     panel2.Controls.Add(pageTitileStatusList);
                     pageTitileStatusList.Show();
                     pageTitileStatusList.BringToFront();
@@ -1086,39 +971,41 @@ namespace AnimePlayer
             pageTitileStatusList = null;
         }
 
-        private void panelStartPage_ControlAdded(object sender, ControlEventArgs e)
+        private void PanelStartPage_ControlAdded(object sender, ControlEventArgs e)
         {
             panelStartPage.Controls.SetChildIndex(panelSTNewsMain, 2);
         }
 
-        private void buttonMoreBtnMenu_Click(object sender, EventArgs e)
+        private void ButtonMoreBtnMenu_Click(object sender, EventArgs e)
         {
             panelMenu.Hide();
             panelMoreButtons.Show();
             panelMoreButtons.BringToFront();
         }
 
-        private void button_MoreBtn_Open_Settings_Click(object sender, EventArgs e)
+        private void Button_MoreBtn_Open_Settings_Click(object sender, EventArgs e)
         {
             panelMoreButtons.Hide();
-            PageSettings pageSettings = new PageSettings(this);
-            pageSettings.Dock = DockStyle.Fill;
+            PageSettings pageSettings = new(this)
+            {
+                Dock = DockStyle.Fill
+            };
             panel2.Controls.Add(pageSettings);
             pageSettings.Show();
             pageSettings.BringToFront();
         }
 
-        private void button2button_MoreBtn_Open_Player_Click(object sender, EventArgs e)
+        private void Button2button_MoreBtn_Open_Player_Click(object sender, EventArgs e)
         {
             panelMoreButtons.Hide();
-            VideoPlayer _ = new VideoPlayer();
+            VideoPlayer _ = new();
             panel2.Controls.Add(_);
             _.Dock = DockStyle.Fill;
             _.Show();
             _.BringToFront();
         }
 
-        private void button4button2button_MoreBtn_Open_FindItem_Click(object sender, EventArgs e)
+        private void Button4button2button_MoreBtn_Open_FindItem_Click(object sender, EventArgs e)
         {
             panelMoreButtons.Hide();
             flowLayoutPanelFinditem.Controls.Clear();
@@ -1130,16 +1017,18 @@ namespace AnimePlayer
             panelAllitem.Show();
         }
 
-        private void button5button2button_MoreBtn_Open_Lists_Click(object sender, EventArgs e)
+        private void Button5button2button_MoreBtn_Open_Lists_Click(object sender, EventArgs e)
         {
             try
             {
                 panelMoreButtons.Hide();
                 if (pageTitileStatusList == null && debug)
                 {
-                    pageTitileStatusList = new PageTitileStatusList();
-                    pageTitileStatusList.Name = "pageTitileStatusList";
-                    pageTitileStatusList.Dock = DockStyle.Fill;
+                    pageTitileStatusList = new PageTitileStatusList
+                    {
+                        Name = "pageTitileStatusList",
+                        Dock = DockStyle.Fill
+                    };
                     panel2.Controls.Add(pageTitileStatusList);
                     pageTitileStatusList.Show();
                     pageTitileStatusList.BringToFront();
@@ -1156,7 +1045,7 @@ namespace AnimePlayer
             }
         }
 
-        private void button2button_MoreBtn_Open_GitHub_Click(object sender, EventArgs e)
+        private void Button2button_MoreBtn_Open_GitHub_Click(object sender, EventArgs e)
         {
             try
             {
@@ -1169,7 +1058,7 @@ namespace AnimePlayer
             }
         }
 
-        private void button7button2button_MoreBtn_Open_twojeanimepl_Click(object sender, EventArgs e)
+        private void Button7button2button_MoreBtn_Open_twojeanimepl_Click(object sender, EventArgs e)
         {
             Exception ex = OpenLinks.Start("https://sites.google.com/view/twojeanimepl");
             if(ex != null)
@@ -1180,18 +1069,18 @@ namespace AnimePlayer
             GC.KeepAlive(ex);
         }
 
-        private void timerAppPer_Tick(object sender, EventArgs e)
+        private void TimerAppPer_Tick(object sender, EventArgs e)
         {
             memsize = Convert.ToInt32(performanceCounter_app.NextValue()) / (int)(1024);
             labelAppRamUsage.Text = "Wykorzystanie pamięci RAM przez aplikację: " + (memsize / 1024).ToString() + "MB";
         }
 
-        private void buttonCloseMoreButtons_Click(object sender, EventArgs e)
+        private void ButtonCloseMoreButtons_Click(object sender, EventArgs e)
         {
             panelMoreButtons.Hide();
         }
 
-        private void labelLoadingDetails_TextChanged(object sender, EventArgs e)
+        private void LabelLoadingDetails_TextChanged(object sender, EventArgs e)
         {
             try
             {
@@ -1205,7 +1094,7 @@ namespace AnimePlayer
             }
         }
 
-        private void buttonAllNewsContnet_Click(object sender, EventArgs e)
+        private void ButtonAllNewsContnet_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Funkcja nie dostęona!");
             /*
@@ -1218,7 +1107,7 @@ namespace AnimePlayer
             */
         }
 
-        private void backgroundWorkerLoadItems_DoWork(object sender, DoWorkEventArgs e)
+        private void BackgroundWorkerLoadItems_DoWork(object sender, DoWorkEventArgs e)
         {
             try
             {
@@ -1233,7 +1122,7 @@ namespace AnimePlayer
             }
         }
 
-        private void textBoxCommandInput_KeyDown(object sender, KeyEventArgs e)
+        private void TextBoxCommandInput_KeyDown(object sender, KeyEventArgs e)
         {
             if(e.KeyCode == Keys.Enter)
             {
@@ -1267,43 +1156,47 @@ namespace AnimePlayer
             }
         }
 
-        private void buttonProfile_Click(object sender, EventArgs e)
+        private void ButtonProfile_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void textBoxFinditem_TextChanged(object sender, EventArgs e)
+        private void TextBoxFinditem_TextChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void buttonDefined_Click(object sender, EventArgs e)
+        private void ButtonDefined_Click(object sender, EventArgs e)
         {
             panelMenu.Hide();
-            DefinitionsPage definitionsPage = new DefinitionsPage();
-            definitionsPage.Name = "definitionsPage";
-            definitionsPage.Dock = DockStyle.Fill;
+            DefinitionsPage definitionsPage = new()
+            {
+                Name = "definitionsPage",
+                Dock = DockStyle.Fill
+            };
             panel2.Controls.Add(definitionsPage);
             definitionsPage.Show();
             definitionsPage.BringToFront();
         }
 
-        private void buttonCommunity_Click(object sender, EventArgs e)
+        private void ButtonCommunity_Click(object sender, EventArgs e)
         {
-            PageCommunity pageCommunity = new PageCommunity();
-            pageCommunity.Dock = DockStyle.Fill;
+            PageCommunity pageCommunity = new()
+            {
+                Dock = DockStyle.Fill
+            };
             panel2.Controls.Add(pageCommunity);
             pageCommunity.Show();
             pageCommunity.BringToFront();
         }
 
-        private void buttonHomePage_Click(object sender, EventArgs e)
+        private void ButtonHomePage_Click(object sender, EventArgs e)
         {
             panelStartPage.Show();
             panelStartPage.BringToFront();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void Button2_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Funkcja nie dostęona!");
         }

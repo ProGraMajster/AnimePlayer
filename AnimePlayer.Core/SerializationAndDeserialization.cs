@@ -37,7 +37,7 @@ namespace AnimePlayer.Core
         {
 
             Stream stream = new FileStream(path, FileMode.Open, FileAccess.Read);
-            System.Runtime.Serialization.Json.DataContractJsonSerializer dataContractJsonSerializer = new DataContractJsonSerializer(type);
+            System.Runtime.Serialization.Json.DataContractJsonSerializer dataContractJsonSerializer = new(type);
             object obj = dataContractJsonSerializer.ReadObject(stream);
             stream.Close();
             stream.Dispose();
@@ -45,7 +45,7 @@ namespace AnimePlayer.Core
         }
         public static object DeserializationJsonFromString(string text, Type type)
         {
-            System.Runtime.Serialization.Json.DataContractJsonSerializer dataContractJsonSerializer = new DataContractJsonSerializer(type);
+            System.Runtime.Serialization.Json.DataContractJsonSerializer dataContractJsonSerializer = new(type);
             object obj = dataContractJsonSerializer.ReadObject(XmlReader.Create(new StringReader(text)));
             return obj;
         }
@@ -53,7 +53,7 @@ namespace AnimePlayer.Core
         public static void SerializationJson(object obj, string path, Type type)
         {
             Stream stream = new FileStream(path, FileMode.Create, FileAccess.Write);
-            DataContractJsonSerializer dataContractJsonSerializer = new DataContractJsonSerializer(type);
+            DataContractJsonSerializer dataContractJsonSerializer = new(type);
             dataContractJsonSerializer.WriteObject(stream, obj);
             stream.Close();
             stream.Dispose();

@@ -14,11 +14,11 @@ namespace AnimePlayerLibrary.UI
     public partial class PageItem : UserControl
     {
         public string linkToScriptComment = null;
-        private PanelItem _PanelItem;
+        private readonly PanelItem _PanelItem;
 
         private Panel PanelLoading;
         private Label LabelLoadingDetails;
-        private Panel panelFromMainContent = (Panel)Application.OpenForms[0].Controls.Find("panel2", true)[0];
+        private readonly Panel panelFromMainContent = (Panel)Application.OpenForms[0].Controls.Find("panel2", true)[0];
         public PageItem(PanelItem panelItem)
         {
             InitializeComponent();
@@ -62,7 +62,7 @@ namespace AnimePlayerLibrary.UI
         }
 
 
-        private void SettingLabelFormStringData(Label label, string text)
+        private static void SettingLabelFormStringData(Label label, string text)
         {
             if (text != null &&
                     text.Length != 0)
@@ -75,7 +75,7 @@ namespace AnimePlayerLibrary.UI
             }
         }
 
-        private void SettingLabelFormArryStringData(Label label, string[] text)
+        private static void SettingLabelFormArryStringData(Label label, string[] text)
         {
             if (text != null &&
                     text.Length != 0)
@@ -131,13 +131,13 @@ namespace AnimePlayerLibrary.UI
             labelTitle.Text = _PanelItem._previewTitleClass.Title;
         }
 
-        private void button_Click(object sender, EventArgs e)
+        private void Button_Click(object sender, EventArgs e)
         {
             this.Hide();
             this.Dispose();
         }
 
-        private void pictureBoxIcon_Click(object sender, EventArgs e)
+        private void PictureBoxIcon_Click(object sender, EventArgs e)
         {
             panelViewIcon.Size = new Size(this.Size.Width - 200, this.Size.Height - 100);
             panelViewIcon.Left = (this.ClientSize.Width - panelViewIcon.Width) / 2;
@@ -147,7 +147,7 @@ namespace AnimePlayerLibrary.UI
             pictureBox2.Image = pictureBoxIcon.Image;
         }
 
-        private void buttonViewIconClose_Click(object sender, EventArgs e)
+        private void ButtonViewIconClose_Click(object sender, EventArgs e)
         {
             pictureBox2.Image = null;
             panelViewIcon.Hide();
@@ -214,7 +214,7 @@ namespace AnimePlayerLibrary.UI
             }
         }        
 
-        private async void button_Load_Comments_Click(object sender, EventArgs e)
+        private async void Button_Load_Comments_Click(object sender, EventArgs e)
         {
             try
             {
@@ -240,8 +240,10 @@ namespace AnimePlayerLibrary.UI
                 else
                 {
                     panel_comments.Size = new Size(panel_comments.Width, 521);
-                    Microsoft.Web.WebView2.WinForms.WebView2 webView2 = new Microsoft.Web.WebView2.WinForms.WebView2();
-                    webView2.Name = "webView2";
+                    Microsoft.Web.WebView2.WinForms.WebView2 webView2 = new()
+                    {
+                        Name = "webView2"
+                    };
                     await webView2.EnsureCoreWebView2Async(default);
                     panel_com_dockWebview.Controls.Add(webView2);
                     webView2.Dock = DockStyle.Fill;
@@ -261,7 +263,7 @@ namespace AnimePlayerLibrary.UI
             }
         }
 
-        private void backgroundWorker1_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
+        private void BackgroundWorker1_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
         {
 
         }
@@ -273,16 +275,18 @@ namespace AnimePlayerLibrary.UI
                 int ep = int.Parse(_PageItemData.TitleInformation.NumberOfEpisodes);
                 for(int i = 1; i <=ep ; i++)
                 {
-                    Button button = new Button();
-                    button.AutoSize = false;
-                    button.Size = new Size(120, 40);
-                    button.Font = new Font(Font.FontFamily, 13f);
-                    button.FlatStyle = FlatStyle.Flat;
+                    Button button = new()
+                    {
+                        AutoSize = false,
+                        Size = new Size(120, 40),
+                        Font = new Font(Font.FontFamily, 13f),
+                        FlatStyle = FlatStyle.Flat
+                    };
                     button.FlatAppearance.BorderSize =0;
                     button.Text = "Odcinek "+i.ToString();
                     button.BackColor = Color.FromArgb(35, 35, 35);
                     button.Tag = i;
-                    button.Click+=Button_Click;
+                    button.Click+=ButtonEpisode_Click;
                     flowLayoutPanelEpisode.Controls.Add(button);
                 }
             }
@@ -292,13 +296,15 @@ namespace AnimePlayerLibrary.UI
             }
         }
 
-        private void Button_Click(object sender, EventArgs e)
+        private void ButtonEpisode_Click(object sender, EventArgs e)
         {
             try
             {
-                PageEpisode pageEpisode = new PageEpisode(_PageItemData, (int)((Control)sender).Tag);
-                pageEpisode.Name = "pageEpisode";
-                pageEpisode.Dock = DockStyle.Fill;
+                PageEpisode pageEpisode = new(_PageItemData, (int)((Control)sender).Tag)
+                {
+                    Name = "pageEpisode",
+                    Dock = DockStyle.Fill
+                };
                 panelFromMainContent.Controls.Add(pageEpisode);
                 pageEpisode.Show();
                 pageEpisode.BringToFront();

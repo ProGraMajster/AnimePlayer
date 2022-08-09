@@ -191,7 +191,7 @@ namespace AnimePlayerLibrary.UI
             this.button.TabIndex = 2;
             this.button.Text = "Zamknij stronę";
             this.button.UseVisualStyleBackColor = false;
-            this.button.Click += new System.EventHandler(this.button_Click);
+            this.button.Click += new System.EventHandler(this.Button_Click);
             // 
             // pictureBoxIcon
             // 
@@ -205,7 +205,7 @@ namespace AnimePlayerLibrary.UI
             this.pictureBoxIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxIcon.TabIndex = 0;
             this.pictureBoxIcon.TabStop = false;
-            this.pictureBoxIcon.Click += new System.EventHandler(this.pictureBoxIcon_Click);
+            this.pictureBoxIcon.Click += new System.EventHandler(this.PictureBoxIcon_Click);
             // 
             // panel3
             // 
@@ -681,7 +681,7 @@ namespace AnimePlayerLibrary.UI
             this.button_Load_Comments.Text = "Załaduj";
             this.button_Load_Comments.UseVisualStyleBackColor = false;
             this.button_Load_Comments.Visible = false;
-            this.button_Load_Comments.Click += new System.EventHandler(this.button_Load_Comments_Click);
+            this.button_Load_Comments.Click += new System.EventHandler(this.Button_Load_Comments_Click);
             // 
             // label8
             // 
@@ -978,11 +978,11 @@ namespace AnimePlayerLibrary.UI
             this.buttonViewIconClose.TabIndex = 6;
             this.buttonViewIconClose.Text = "X";
             this.buttonViewIconClose.UseVisualStyleBackColor = true;
-            this.buttonViewIconClose.Click += new System.EventHandler(this.buttonViewIconClose_Click);
+            this.buttonViewIconClose.Click += new System.EventHandler(this.ButtonViewIconClose_Click);
             // 
             // backgroundWorker1
             // 
-            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BackgroundWorker1_DoWork);
             // 
             // PageItem
             // 

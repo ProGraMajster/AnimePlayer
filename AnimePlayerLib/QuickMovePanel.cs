@@ -20,23 +20,29 @@ namespace AnimePlayerLibrary
 
         void CreatePanel()
         {
-            Panel panel = new Panel();
-            panel.BackColor=Color.FromArgb(30,30,30);
-            panel.Name = "ItemQuickMove";
-            panel.Size = new Size(50, 50);
-            PictureBox pictureBox = new PictureBox();
-            pictureBox.Name = "pBox";
-            pictureBox.Size = new Size(50, 40);
-            pictureBox.Dock = DockStyle.Fill;
-            Button button = new Button();
-            button.Name = "btn";
-            button.Text = "NameSite";
+            Panel panel = new()
+            {
+                BackColor=Color.FromArgb(30, 30, 30),
+                Name = "ItemQuickMove",
+                Size = new Size(50, 50)
+            };
+            PictureBox pictureBox = new()
+            {
+                Name = "pBox",
+                Size = new Size(50, 40),
+                Dock = DockStyle.Fill
+            };
+            Button button = new()
+            {
+                Name = "btn",
+                Text = "NameSite"
+            };
             panel.Controls.Add(pictureBox);
             panel.Controls.Add(button);
             flowLayoutPanel1.Controls.Add(panel);
         }
 
-        private void buttonClose_Click(object sender, EventArgs e)
+        private void ButtonClose_Click(object sender, EventArgs e)
         {
             this.Hide();
         }

@@ -71,7 +71,7 @@ namespace AnimePlayerLibrary
             this.buttonClose.TabIndex = 1;
             this.buttonClose.Text = "Zamknij";
             this.buttonClose.UseVisualStyleBackColor = true;
-            this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
+            this.buttonClose.Click += new System.EventHandler(this.ButtonClose_Click);
             // 
             // panel2
             // 

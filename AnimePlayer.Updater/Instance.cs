@@ -12,16 +12,18 @@ namespace AnimePlayer.Updater
     {
         public void Start()
         {
-            FileStream filestream = new FileStream(AnimePlayer.Class.AppFolders.Logs+"\\"+ Process.GetCurrentProcess().StartTime.ToString().Replace(":", " ") + "_updater.txt", FileMode.Append);
-            var streamwriter = new StreamWriter(filestream);
-            streamwriter.AutoFlush = true;
+            FileStream filestream = new(AnimePlayer.Class.AppFolders.Logs+"\\"+ Process.GetCurrentProcess().StartTime.ToString().Replace(":", " ") + "_updater.txt", FileMode.Append);
+            var streamwriter = new StreamWriter(filestream)
+            {
+                AutoFlush = true
+            };
             Console.SetOut(streamwriter);
             Console.SetError(streamwriter);
             DownloadMainFestFile();
             MainFeststFilesInFolders();
         }
 
-        public void DownloadMainFestFile()
+        public static void DownloadMainFestFile()
         {
             try
             {
@@ -30,7 +32,7 @@ namespace AnimePlayer.Updater
                 {
                     try
                     {
-                        WebClient webClient = new WebClient();
+                        WebClient webClient = new();
                         webClient.DownloadFile(link, "updater_links_mainfest_"+number+".tzt");
                         webClient.Dispose();
                     }
@@ -51,7 +53,7 @@ namespace AnimePlayer.Updater
         {
             try
             {
-                DirectoryInfo directoryInfo = new DirectoryInfo(AppFolders.Updater);
+                DirectoryInfo directoryInfo = new(AppFolders.Updater);
 
                 foreach(var file in directoryInfo.GetFiles())
                 {
@@ -64,7 +66,7 @@ namespace AnimePlayer.Updater
             }
         }
 
-        List<string> list = new List<string>();
+        readonly List<string> list = new();
 
         private void ReadFileWithMainfestLinks(string path)
         {

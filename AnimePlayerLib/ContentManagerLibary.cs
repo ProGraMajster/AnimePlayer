@@ -31,10 +31,10 @@ namespace AnimePlayerLibrary
 
         public static List<ItemCommunity> GetAllItemCommunities()
         {
-            List<ItemCommunity> items = new List<ItemCommunity>();
+            List<ItemCommunity> items = new();
             try
             {
-                DirectoryInfo directoryInfo = new DirectoryInfo(AppFolders.Community);
+                DirectoryInfo directoryInfo = new(AppFolders.Community);
                 foreach(var item in directoryInfo.GetFiles())
                 {
                     if(item.FullName.EndsWith(".dat"))
@@ -61,7 +61,7 @@ namespace AnimePlayerLibrary
             }
             try
             {
-                DirectoryInfo directoryInfo = new DirectoryInfo(AppFolders.UpdatedPagesItems);
+                DirectoryInfo directoryInfo = new(AppFolders.UpdatedPagesItems);
                 foreach(var item in directoryInfo.GetFiles())
                 {
                     if(item.Name.EndsWith(".dat"))
@@ -103,7 +103,7 @@ namespace AnimePlayerLibrary
         {
             try
             {
-                PanelItem panelItem = new PanelItem(previewTitleClass);
+                PanelItem panelItem = new(previewTitleClass);
                 return panelItem.panelItem;
             }
             catch(Exception ex)
@@ -115,14 +115,14 @@ namespace AnimePlayerLibrary
 
         public static List<PreviewTitleClass> GetAllPreviewTitleClassFromFolder()
         {
-            List<PreviewTitleClass> list = new List<PreviewTitleClass>();
+            List<PreviewTitleClass> list = new();
             //Task.Run(() =>
            // {
             try
             {
                 Console.WriteLine("GetAllPreviewTitleClassFromFolder()");
                 Console.WriteLine("Files:");
-                DirectoryInfo directoryInfo = new DirectoryInfo(AppFolders.PreviewItems.TrimEnd('\\'));
+                DirectoryInfo directoryInfo = new(AppFolders.PreviewItems.TrimEnd('\\'));
                 foreach (var item in directoryInfo.GetFiles())
                 {
                     if (item.FullName.EndsWith(".dat"))
@@ -143,11 +143,11 @@ namespace AnimePlayerLibrary
 
         public static List<Episode> GetEpisode(int number, string title)
         {
-            List<Episode> list = new List<Episode>();
+            List<Episode> list = new();
             title = Replacer.Names(title);
             try
             {
-                DirectoryInfo directoryInfo = new DirectoryInfo(AppFolders.VideosItems);
+                DirectoryInfo directoryInfo = new(AppFolders.VideosItems);
                 foreach(var item in directoryInfo.GetFiles())
                 {
                     Episode episode = (Episode)SerializationAndDeserialization.Deserialization(item.FullName);

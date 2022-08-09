@@ -198,7 +198,7 @@ namespace AnimePlayer
             // 
             this.notifyIcon1.Text = "WMP_OverlayApp";
             this.notifyIcon1.Visible = true;
-            this.notifyIcon1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseDoubleClick);
+            this.notifyIcon1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.NotifyIcon1_MouseDoubleClick);
             // 
             // panelStartPage
             // 
@@ -215,7 +215,7 @@ namespace AnimePlayer
             this.panelStartPage.Name = "panelStartPage";
             this.panelStartPage.Size = new System.Drawing.Size(1106, 624);
             this.panelStartPage.TabIndex = 6;
-            this.panelStartPage.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.panelStartPage_ControlAdded);
+            this.panelStartPage.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.PanelStartPage_ControlAdded);
             // 
             // panelGroup
             // 
@@ -323,7 +323,7 @@ namespace AnimePlayer
             this.flowLayoutPanelPolecane.Size = new System.Drawing.Size(1089, 307);
             this.flowLayoutPanelPolecane.TabIndex = 5;
             this.flowLayoutPanelPolecane.WrapContents = false;
-            this.flowLayoutPanelPolecane.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.flowLayoutPanel_ControlAdded);
+            this.flowLayoutPanelPolecane.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.FlowLayoutPanelControlAdded);
             // 
             // panel1
             // 
@@ -455,7 +455,7 @@ namespace AnimePlayer
             this.textBoxStartPagefinditem.Size = new System.Drawing.Size(500, 16);
             this.textBoxStartPagefinditem.TabIndex = 3;
             this.textBoxStartPagefinditem.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBoxStartPagefinditem.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxSPfinditem_KeyDown);
+            this.textBoxStartPagefinditem.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextBoxSPfinditem_KeyDown);
             // 
             // buttonStartPageFinditem
             // 
@@ -474,7 +474,7 @@ namespace AnimePlayer
             this.buttonStartPageFinditem.TabIndex = 4;
             this.buttonStartPageFinditem.Text = "Szukaj";
             this.buttonStartPageFinditem.UseVisualStyleBackColor = false;
-            this.buttonStartPageFinditem.Click += new System.EventHandler(this.buttonStartPageFinditem_Click);
+            this.buttonStartPageFinditem.Click += new System.EventHandler(this.ButtonStartPageFinditem_Click);
             // 
             // labelSatusWorkingApp
             // 
@@ -508,7 +508,7 @@ namespace AnimePlayer
             this.buttonProfile.Text = "Profil";
             this.buttonProfile.UseVisualStyleBackColor = true;
             this.buttonProfile.Visible = false;
-            this.buttonProfile.Click += new System.EventHandler(this.buttonProfile_Click);
+            this.buttonProfile.Click += new System.EventHandler(this.ButtonProfile_Click);
             // 
             // buttonMenuOpen
             // 
@@ -527,7 +527,7 @@ namespace AnimePlayer
             this.buttonMenuOpen.Size = new System.Drawing.Size(83, 67);
             this.buttonMenuOpen.TabIndex = 1;
             this.buttonMenuOpen.UseVisualStyleBackColor = true;
-            this.buttonMenuOpen.Click += new System.EventHandler(this.buttonMenuOpen_Click);
+            this.buttonMenuOpen.Click += new System.EventHandler(this.ButtonMenuOpen_Click);
             // 
             // label
             // 
@@ -555,7 +555,7 @@ namespace AnimePlayer
             this.panelLoading.Name = "panelLoading";
             this.panelLoading.Size = new System.Drawing.Size(1106, 624);
             this.panelLoading.TabIndex = 2;
-            this.panelLoading.VisibleChanged += new System.EventHandler(this.panelLoading_VisibleChanged);
+            this.panelLoading.VisibleChanged += new System.EventHandler(this.PanelLoading_VisibleChanged);
             // 
             // labelLoadingA
             // 
@@ -597,7 +597,7 @@ namespace AnimePlayer
             this.labelLoading.TabIndex = 0;
             this.labelLoading.Text = "Ładowanie";
             this.labelLoading.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.labelLoading.VisibleChanged += new System.EventHandler(this.labelLoading_VisibleChanged);
+            this.labelLoading.VisibleChanged += new System.EventHandler(this.LabelLoading_VisibleChanged);
             // 
             // pictureBoxLoading
             // 
@@ -657,7 +657,7 @@ namespace AnimePlayer
             this.pictureBoxGithub.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxGithub.TabIndex = 0;
             this.pictureBoxGithub.TabStop = false;
-            this.pictureBoxGithub.Click += new System.EventHandler(this.pictureBoxGithub_Click);
+            this.pictureBoxGithub.Click += new System.EventHandler(this.PictureBoxGithub_Click);
             // 
             // pictureBoxSite
             // 
@@ -670,7 +670,7 @@ namespace AnimePlayer
             this.pictureBoxSite.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxSite.TabIndex = 2;
             this.pictureBoxSite.TabStop = false;
-            this.pictureBoxSite.Click += new System.EventHandler(this.pictureBoxSite_Click);
+            this.pictureBoxSite.Click += new System.EventHandler(this.PictureBoxSite_Click);
             // 
             // buttonSite
             // 
@@ -687,7 +687,7 @@ namespace AnimePlayer
             this.buttonSite.TabIndex = 4;
             this.buttonSite.Text = "Twojanimepl";
             this.buttonSite.UseVisualStyleBackColor = true;
-            this.buttonSite.Click += new System.EventHandler(this.buttonSite_Click);
+            this.buttonSite.Click += new System.EventHandler(this.ButtonSite_Click);
             // 
             // buttonExitApp
             // 
@@ -702,7 +702,7 @@ namespace AnimePlayer
             this.buttonExitApp.TabIndex = 3;
             this.buttonExitApp.Text = "Zamknij aplikacje";
             this.buttonExitApp.UseVisualStyleBackColor = true;
-            this.buttonExitApp.Click += new System.EventHandler(this.buttonExitApp_Click);
+            this.buttonExitApp.Click += new System.EventHandler(this.ButtonExitApp_Click);
             // 
             // buttonRestartApp
             // 
@@ -717,7 +717,7 @@ namespace AnimePlayer
             this.buttonRestartApp.TabIndex = 6;
             this.buttonRestartApp.Text = "Zrestartuj aplikacjie";
             this.buttonRestartApp.UseVisualStyleBackColor = true;
-            this.buttonRestartApp.Click += new System.EventHandler(this.buttonRestartApp_Click);
+            this.buttonRestartApp.Click += new System.EventHandler(this.ButtonRestartApp_Click);
             // 
             // panelSep
             // 
@@ -742,7 +742,7 @@ namespace AnimePlayer
             this.buttonMoreBtnMenu.Text = "Więcej..";
             this.toolTip.SetToolTip(this.buttonMoreBtnMenu, "Statusy: Oglądam, Planeuj,, Wstrzymane itp.");
             this.buttonMoreBtnMenu.UseVisualStyleBackColor = true;
-            this.buttonMoreBtnMenu.Click += new System.EventHandler(this.buttonMoreBtnMenu_Click);
+            this.buttonMoreBtnMenu.Click += new System.EventHandler(this.ButtonMoreBtnMenu_Click);
             // 
             // buttonShowTitleStatusList
             // 
@@ -759,7 +759,7 @@ namespace AnimePlayer
             this.toolTip.SetToolTip(this.buttonShowTitleStatusList, "Statusy: Oglądam, Planeuj,, Wstrzymane itp.");
             this.buttonShowTitleStatusList.UseVisualStyleBackColor = true;
             this.buttonShowTitleStatusList.Visible = false;
-            this.buttonShowTitleStatusList.Click += new System.EventHandler(this.buttonShowTitleStatusList_Click);
+            this.buttonShowTitleStatusList.Click += new System.EventHandler(this.ButtonShowTitleStatusList_Click);
             // 
             // buttonDefined
             // 
@@ -775,7 +775,7 @@ namespace AnimePlayer
             this.buttonDefined.Text = "Definicje";
             this.toolTip.SetToolTip(this.buttonDefined, "Definicje tagów");
             this.buttonDefined.UseVisualStyleBackColor = true;
-            this.buttonDefined.Click += new System.EventHandler(this.buttonDefined_Click);
+            this.buttonDefined.Click += new System.EventHandler(this.ButtonDefined_Click);
             // 
             // buttonViewFindintems
             // 
@@ -790,7 +790,7 @@ namespace AnimePlayer
             this.buttonViewFindintems.TabIndex = 5;
             this.buttonViewFindintems.Text = "Wyszukiwarka";
             this.buttonViewFindintems.UseVisualStyleBackColor = true;
-            this.buttonViewFindintems.Click += new System.EventHandler(this.buttonViewFindintems_Click);
+            this.buttonViewFindintems.Click += new System.EventHandler(this.ButtonViewFindintems_Click);
             // 
             // buttonPlayer
             // 
@@ -805,7 +805,7 @@ namespace AnimePlayer
             this.buttonPlayer.TabIndex = 2;
             this.buttonPlayer.Text = "Odtwarzacz";
             this.buttonPlayer.UseVisualStyleBackColor = true;
-            this.buttonPlayer.Click += new System.EventHandler(this.buttonPlayer_Click);
+            this.buttonPlayer.Click += new System.EventHandler(this.ButtonPlayer_Click);
             // 
             // buttonSetting
             // 
@@ -820,7 +820,7 @@ namespace AnimePlayer
             this.buttonSetting.TabIndex = 1;
             this.buttonSetting.Text = "Ustawienia";
             this.buttonSetting.UseVisualStyleBackColor = true;
-            this.buttonSetting.Click += new System.EventHandler(this.buttonSetting_Click);
+            this.buttonSetting.Click += new System.EventHandler(this.ButtonSetting_Click);
             // 
             // buttonHomePage
             // 
@@ -835,7 +835,7 @@ namespace AnimePlayer
             this.buttonHomePage.TabIndex = 11;
             this.buttonHomePage.Text = "Strona główna";
             this.buttonHomePage.UseVisualStyleBackColor = true;
-            this.buttonHomePage.Click += new System.EventHandler(this.buttonHomePage_Click);
+            this.buttonHomePage.Click += new System.EventHandler(this.ButtonHomePage_Click);
             // 
             // buttonMenuClose
             // 
@@ -849,7 +849,7 @@ namespace AnimePlayer
             this.buttonMenuClose.TabIndex = 0;
             this.buttonMenuClose.Text = "X";
             this.buttonMenuClose.UseVisualStyleBackColor = true;
-            this.buttonMenuClose.Click += new System.EventHandler(this.buttonMenuClose_Click);
+            this.buttonMenuClose.Click += new System.EventHandler(this.ButtonMenuClose_Click);
             // 
             // panel2
             // 
@@ -940,7 +940,7 @@ namespace AnimePlayer
             this.button_MoreBtn_Open_Settings.TabIndex = 1;
             this.button_MoreBtn_Open_Settings.Text = "Przejdź";
             this.button_MoreBtn_Open_Settings.UseVisualStyleBackColor = false;
-            this.button_MoreBtn_Open_Settings.Click += new System.EventHandler(this.button_MoreBtn_Open_Settings_Click);
+            this.button_MoreBtn_Open_Settings.Click += new System.EventHandler(this.Button_MoreBtn_Open_Settings_Click);
             // 
             // label1
             // 
@@ -992,7 +992,7 @@ namespace AnimePlayer
             this.button2button_MoreBtn_Open_Player.TabIndex = 1;
             this.button2button_MoreBtn_Open_Player.Text = "Przejdź";
             this.button2button_MoreBtn_Open_Player.UseVisualStyleBackColor = false;
-            this.button2button_MoreBtn_Open_Player.Click += new System.EventHandler(this.button2button_MoreBtn_Open_Player_Click);
+            this.button2button_MoreBtn_Open_Player.Click += new System.EventHandler(this.Button2button_MoreBtn_Open_Player_Click);
             // 
             // label7
             // 
@@ -1044,7 +1044,7 @@ namespace AnimePlayer
             this.button4button2button_MoreBtn_Open_FindItem.TabIndex = 1;
             this.button4button2button_MoreBtn_Open_FindItem.Text = "Przejdź";
             this.button4button2button_MoreBtn_Open_FindItem.UseVisualStyleBackColor = false;
-            this.button4button2button_MoreBtn_Open_FindItem.Click += new System.EventHandler(this.button4button2button_MoreBtn_Open_FindItem_Click);
+            this.button4button2button_MoreBtn_Open_FindItem.Click += new System.EventHandler(this.Button4button2button_MoreBtn_Open_FindItem_Click);
             // 
             // label9
             // 
@@ -1096,7 +1096,7 @@ namespace AnimePlayer
             this.button5button2button_MoreBtn_Open_Lists.TabIndex = 1;
             this.button5button2button_MoreBtn_Open_Lists.Text = "Przejdź";
             this.button5button2button_MoreBtn_Open_Lists.UseVisualStyleBackColor = false;
-            this.button5button2button_MoreBtn_Open_Lists.Click += new System.EventHandler(this.button5button2button_MoreBtn_Open_Lists_Click);
+            this.button5button2button_MoreBtn_Open_Lists.Click += new System.EventHandler(this.Button5button2button_MoreBtn_Open_Lists_Click);
             // 
             // label11
             // 
@@ -1148,7 +1148,7 @@ namespace AnimePlayer
             this.buttonCommunity.TabIndex = 1;
             this.buttonCommunity.Text = "Przejdź";
             this.buttonCommunity.UseVisualStyleBackColor = false;
-            this.buttonCommunity.Click += new System.EventHandler(this.buttonCommunity_Click);
+            this.buttonCommunity.Click += new System.EventHandler(this.ButtonCommunity_Click);
             // 
             // label17
             // 
@@ -1200,7 +1200,7 @@ namespace AnimePlayer
             this.button2button_MoreBtn_Open_GitHub.TabIndex = 1;
             this.button2button_MoreBtn_Open_GitHub.Text = "Przejdź";
             this.button2button_MoreBtn_Open_GitHub.UseVisualStyleBackColor = false;
-            this.button2button_MoreBtn_Open_GitHub.Click += new System.EventHandler(this.button2button_MoreBtn_Open_GitHub_Click);
+            this.button2button_MoreBtn_Open_GitHub.Click += new System.EventHandler(this.Button2button_MoreBtn_Open_GitHub_Click);
             // 
             // label13
             // 
@@ -1252,7 +1252,7 @@ namespace AnimePlayer
             this.button7button2button_MoreBtn_Open_twojeanimepl.TabIndex = 1;
             this.button7button2button_MoreBtn_Open_twojeanimepl.Text = "Przejdź";
             this.button7button2button_MoreBtn_Open_twojeanimepl.UseVisualStyleBackColor = false;
-            this.button7button2button_MoreBtn_Open_twojeanimepl.Click += new System.EventHandler(this.button7button2button_MoreBtn_Open_twojeanimepl_Click);
+            this.button7button2button_MoreBtn_Open_twojeanimepl.Click += new System.EventHandler(this.Button7button2button_MoreBtn_Open_twojeanimepl_Click);
             // 
             // label15
             // 
@@ -1305,7 +1305,7 @@ namespace AnimePlayer
             this.button2.TabIndex = 1;
             this.button2.Text = "Przejdź";
             this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.Click += new System.EventHandler(this.Button2_Click);
             // 
             // label19
             // 
@@ -1357,7 +1357,7 @@ namespace AnimePlayer
             this.buttonAllNewsContnet.TabIndex = 1;
             this.buttonAllNewsContnet.Text = "Przejdź";
             this.buttonAllNewsContnet.UseVisualStyleBackColor = false;
-            this.buttonAllNewsContnet.Click += new System.EventHandler(this.buttonAllNewsContnet_Click);
+            this.buttonAllNewsContnet.Click += new System.EventHandler(this.ButtonAllNewsContnet_Click);
             // 
             // label21
             // 
@@ -1394,7 +1394,7 @@ namespace AnimePlayer
             this.buttonCloseMoreButtons.TabIndex = 6;
             this.buttonCloseMoreButtons.Text = "X";
             this.buttonCloseMoreButtons.UseVisualStyleBackColor = true;
-            this.buttonCloseMoreButtons.Click += new System.EventHandler(this.buttonCloseMoreButtons_Click);
+            this.buttonCloseMoreButtons.Click += new System.EventHandler(this.ButtonCloseMoreButtons_Click);
             // 
             // panelAllitem
             // 
@@ -1507,7 +1507,7 @@ namespace AnimePlayer
             this.buttonfinditemReset.TabIndex = 3;
             this.buttonfinditemReset.Text = "Reset";
             this.buttonfinditemReset.UseVisualStyleBackColor = true;
-            this.buttonfinditemReset.Click += new System.EventHandler(this.buttonfinditemReset_Click);
+            this.buttonfinditemReset.Click += new System.EventHandler(this.ButtonfinditemReset_Click);
             // 
             // buttonfinditemF
             // 
@@ -1525,7 +1525,7 @@ namespace AnimePlayer
             this.buttonfinditemF.Text = "Filtry";
             this.buttonfinditemF.UseVisualStyleBackColor = true;
             this.buttonfinditemF.Visible = false;
-            this.buttonfinditemF.Click += new System.EventHandler(this.buttonfinditemF_Click);
+            this.buttonfinditemF.Click += new System.EventHandler(this.ButtonfinditemF_Click);
             // 
             // buttonFindItem
             // 
@@ -1542,7 +1542,7 @@ namespace AnimePlayer
             this.buttonFindItem.TabIndex = 2;
             this.buttonFindItem.Text = "Szukaj";
             this.buttonFindItem.UseVisualStyleBackColor = true;
-            this.buttonFindItem.Click += new System.EventHandler(this.buttonFindItem_Click);
+            this.buttonFindItem.Click += new System.EventHandler(this.ButtonFindItem_Click);
             // 
             // panel21
             // 
@@ -1570,8 +1570,8 @@ namespace AnimePlayer
             this.textBoxFinditem.Size = new System.Drawing.Size(440, 16);
             this.textBoxFinditem.TabIndex = 1;
             this.textBoxFinditem.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBoxFinditem.TextChanged += new System.EventHandler(this.textBoxFinditem_TextChanged);
-            this.textBoxFinditem.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxFinditem_KeyDown);
+            this.textBoxFinditem.TextChanged += new System.EventHandler(this.TextBoxFinditem_TextChanged);
+            this.textBoxFinditem.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextBoxFinditem_KeyDown);
             // 
             // label4
             // 
@@ -1600,7 +1600,7 @@ namespace AnimePlayer
             this.buttonFinditemPageClose.TabIndex = 0;
             this.buttonFinditemPageClose.Text = "Zamknij kartę";
             this.buttonFinditemPageClose.UseVisualStyleBackColor = false;
-            this.buttonFinditemPageClose.Click += new System.EventHandler(this.buttonFinditemPageClose_Click);
+            this.buttonFinditemPageClose.Click += new System.EventHandler(this.ButtonFinditemPageClose_Click);
             // 
             // panelNotifiError
             // 
@@ -1641,16 +1641,16 @@ namespace AnimePlayer
             // timerAnimationError
             // 
             this.timerAnimationError.Interval = 1;
-            this.timerAnimationError.Tick += new System.EventHandler(this.timerAnimationError_Tick);
+            this.timerAnimationError.Tick += new System.EventHandler(this.TimerAnimationError_Tick);
             // 
             // backgroundWorkerGetSTNews
             // 
-            this.backgroundWorkerGetSTNews.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorkerGetSTNews_DoWork);
+            this.backgroundWorkerGetSTNews.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BackgroundWorkerGetSTNews_DoWork);
             // 
             // timerAppPer
             // 
             this.timerAppPer.Interval = 1000;
-            this.timerAppPer.Tick += new System.EventHandler(this.timerAppPer_Tick);
+            this.timerAppPer.Tick += new System.EventHandler(this.TimerAppPer_Tick);
             // 
             // panel18
             // 
@@ -1673,7 +1673,7 @@ namespace AnimePlayer
             // 
             // backgroundWorkerLoadItems
             // 
-            this.backgroundWorkerLoadItems.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorkerLoadItems_DoWork);
+            this.backgroundWorkerLoadItems.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BackgroundWorkerLoadItems_DoWork);
             // 
             // panelCommands
             // 
@@ -1711,7 +1711,7 @@ namespace AnimePlayer
             this.textBoxCommandInput.Name = "textBoxCommandInput";
             this.textBoxCommandInput.Size = new System.Drawing.Size(340, 23);
             this.textBoxCommandInput.TabIndex = 1;
-            this.textBoxCommandInput.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxCommandInput_KeyDown);
+            this.textBoxCommandInput.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextBoxCommandInput_KeyDown);
             // 
             // label22
             // 
