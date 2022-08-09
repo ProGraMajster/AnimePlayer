@@ -66,9 +66,13 @@ namespace AnimePlayerLibrary
                 {
                     if(item.Name.EndsWith(".dat"))
                     {
-                        if(title.ToLower() == item.Name.ToLower())
+                        PageItemData pageItemData = (PageItemData)SerializationAndDeserialization.Deserialization(item.FullName);
+                        if(pageItemData != null)
                         {
-                            return (PageItemData)SerializationAndDeserialization.Deserialization(item.FullName);
+                            if(title == pageItemData.TitleInformation.Title)
+                            {
+                                return pageItemData;
+                            }
                         }
                     }
                 }
@@ -77,9 +81,13 @@ namespace AnimePlayerLibrary
                 {
                     if (item.Name.EndsWith(".dat"))
                     {
-                        if (title.ToLower() == item.Name.ToLower().Replace(".dat",""))
+                        PageItemData pageItemData = (PageItemData)SerializationAndDeserialization.Deserialization(item.FullName);
+                        if(pageItemData != null)
                         {
-                            return (PageItemData)SerializationAndDeserialization.Deserialization(item.FullName);
+                            if(title == pageItemData.TitleInformation.Title)
+                            {
+                                return pageItemData;
+                            }
                         }
                     }
                 }
@@ -136,6 +144,7 @@ namespace AnimePlayerLibrary
         public static List<Episode> GetEpisode(int number, string title)
         {
             List<Episode> list = new List<Episode>();
+            title = Replacer.Names(title);
             try
             {
                 DirectoryInfo directoryInfo = new DirectoryInfo(AppFolders.VideosItems);

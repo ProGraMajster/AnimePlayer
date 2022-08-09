@@ -117,6 +117,7 @@ namespace AnimePlayerLibrary.UI
                 SettingLabelFormArryStringData(labelPlaceAndTime, pageItemData.TitleInformation.PlaceAndTime);
                 SettingLabelFormStringData(labelArchetype, pageItemData.TitleInformation.Archetype);
                 SettingLabelFormArryStringData(labelOtherTags, pageItemData.TitleInformation.OtherTags);
+                SettingLabelFormStringData(labelTargetGroups, pageItemData.TitleInformation.TargetGroups);
             }
             catch(Exception ex)
             {
