@@ -13,7 +13,7 @@ namespace AnimePlayer.Core
         {
             try
             {
-                List<Control> list = new List<Control>();
+                List<Control> list = new();
                 foreach (Form form in Application.OpenForms)
                 {
                     foreach (Control control in form.Controls)

@@ -132,7 +132,7 @@ namespace AnimePlayer.ControlsWinForms
             this.buttonFindInInternet.TabIndex = 1;
             this.buttonFindInInternet.Text = "Szukaj w internecie";
             this.buttonFindInInternet.UseVisualStyleBackColor = false;
-            this.buttonFindInInternet.Click += new System.EventHandler(this.buttonFindInInternet_Click);
+            this.buttonFindInInternet.Click += new System.EventHandler(this.ButtonFindInInternet_Click);
             // 
             // buttonFindInApp
             // 

@@ -22,21 +22,23 @@ namespace AnimePlayerLibrary.UI
             definitionsPage = (DefinitionsPage)this;
         }
 
-        DefinitionsPage definitionsPage;
+        readonly DefinitionsPage definitionsPage;
         public void GetAllDefinitions()
         {
-            Task.Run(() =>
+            _=Task.Run(() =>
             {
-                if(!Directory.Exists(AppFolders.UpdatedDefined))
+                if (!Directory.Exists(AppFolders.UpdatedDefined))
                 {
                     return;
                 }
-                DirectoryInfo directoryInfo = new DirectoryInfo(AppFolders.UpdatedDefined_PlaceAndTime);
-                TreeNode treeNode = new TreeNode("Miejsce i czas");
-                foreach(var item in directoryInfo.GetFiles())
+                DirectoryInfo directoryInfo = new(AppFolders.UpdatedDefined_PlaceAndTime);
+                TreeNode treeNode = new("Miejsce i czas");
+                foreach (var item in directoryInfo.GetFiles())
                 {
-                    TreeNode treeNodeItem = new TreeNode(item.Name.Replace(".dat", ""));
-                    treeNodeItem.Tag = item.FullName;
+                    TreeNode treeNodeItem = new(item.Name.Replace(".dat", ""))
+                    {
+                        Tag = item.FullName
+                    };
                     treeNode.Nodes.Add(treeNodeItem);
                 }
                 this.Invoke(() =>
@@ -46,10 +48,12 @@ namespace AnimePlayerLibrary.UI
 
                 directoryInfo = new DirectoryInfo(AppFolders.UpdatedDefined_Species);
                 treeNode = new TreeNode("Gatunki");
-                foreach(var item in directoryInfo.GetFiles())
+                foreach (var item in directoryInfo.GetFiles())
                 {
-                    TreeNode treeNodeItem = new TreeNode(item.Name.Replace(".dat",""));
-                    treeNodeItem.Tag = item.FullName;
+                    TreeNode treeNodeItem = new(item.Name.Replace(".dat", ""))
+                    {
+                        Tag = item.FullName
+                    };
                     treeNode.Nodes.Add(treeNodeItem);
                 }
                 this.Invoke(() =>
@@ -59,10 +63,12 @@ namespace AnimePlayerLibrary.UI
 
                 directoryInfo = new DirectoryInfo(AppFolders.UpdatedDefined_TargetGroups);
                 treeNode = new TreeNode("Grupa docelowa");
-                foreach(var item in directoryInfo.GetFiles())
+                foreach (var item in directoryInfo.GetFiles())
                 {
-                    TreeNode treeNodeItem = new TreeNode(item.Name.Replace(".dat", ""));
-                    treeNodeItem.Tag = item.FullName;
+                    TreeNode treeNodeItem = new(item.Name.Replace(".dat", ""))
+                    {
+                        Tag = item.FullName
+                    };
                     treeNode.Nodes.Add(treeNodeItem);
                 }
                 this.Invoke(() =>
@@ -72,10 +78,12 @@ namespace AnimePlayerLibrary.UI
 
                 directoryInfo = new DirectoryInfo(AppFolders.UpdatedDefined_TypesOfCharacters);
                 treeNode = new TreeNode("Rodzaje postaci");
-                foreach(var item in directoryInfo.GetFiles())
+                foreach (var item in directoryInfo.GetFiles())
                 {
-                    TreeNode treeNodeItem = new TreeNode(item.Name.Replace(".dat", ""));
-                    treeNodeItem.Tag = item.FullName;
+                    TreeNode treeNodeItem = new(item.Name.Replace(".dat", ""))
+                    {
+                        Tag = item.FullName
+                    };
                     treeNode.Nodes.Add(treeNodeItem);
                 }
                 this.Invoke(() =>
@@ -90,7 +98,7 @@ namespace AnimePlayerLibrary.UI
             GetAllDefinitions();
         }
 
-        private void treeView1_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
+        private void TreeView1_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
         {
             if (e.Node == null)
             {
@@ -136,7 +144,7 @@ namespace AnimePlayerLibrary.UI
             
         }
 
-        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
+        private void TreeView1_AfterSelect(object sender, TreeViewEventArgs e)
         {
             if (e.Node == null)
             {
@@ -181,12 +189,12 @@ namespace AnimePlayerLibrary.UI
             }
         }
 
-        private void buttonCloseDefinitionsPage_Click(object sender, EventArgs e)
+        private void ButtonCloseDefinitionsPage_Click(object sender, EventArgs e)
         {
             definitionsPage.Dispose();
         }
 
-        private void buttonFindDefinion_Click(object sender, EventArgs e)
+        private void ButtonFindDefinion_Click(object sender, EventArgs e)
         {
             try
             {

@@ -17,8 +17,8 @@ namespace AnimePlayer
 {
     public partial class FormStarter : Form
     {
-        ZetaIpc.Runtime.Server.IpcServer ipcServerMain;
-        ZetaIpc.Runtime.Client.IpcClient ipcClientMain;
+        readonly ZetaIpc.Runtime.Server.IpcServer ipcServerMain;
+        readonly ZetaIpc.Runtime.Client.IpcClient ipcClientMain;
         Process processApp;
         Process processUpdater;
         public bool updated = false;
@@ -53,7 +53,7 @@ namespace AnimePlayer
                     updated=true;
                 }
                 text = "";
-                DirectoryInfo directoryInfo = new DirectoryInfo(Application.StartupPath);
+                DirectoryInfo directoryInfo = new(Application.StartupPath);
                 foreach (var file in directoryInfo.GetFiles())
                 {
                     if (file.FullName.EndsWith(".dll"))
@@ -76,7 +76,7 @@ namespace AnimePlayer
             throw new NotImplementedException();
         }
 
-        private void buttonExit_Click(object sender, EventArgs e)
+        private void ButtonExit_Click(object sender, EventArgs e)
         {
             if(processUpdater != null)
             {
@@ -85,19 +85,19 @@ namespace AnimePlayer
             Application.Exit();
         }
 
-        private void buttonSetting_Click(object sender, EventArgs e)
+        private void ButtonSetting_Click(object sender, EventArgs e)
         {
             panel1.Hide();
             panelSettings.Show();
         }
 
-        private void buttonCloseSettings_Click(object sender, EventArgs e)
+        private void ButtonCloseSettings_Click(object sender, EventArgs e)
         {
             panelSettings.Hide();
             panel1.Show();
         }
 
-        private void buttonRunApp_Click(object sender, EventArgs e)
+        private void ButtonRunApp_Click(object sender, EventArgs e)
         {
             panel1.Hide();
             labelLoadingApp.Left = (this.Width - labelLoadingApp.Width) / 2;
@@ -131,9 +131,12 @@ namespace AnimePlayer
             Application.DoEvents();
             if (checkBoxOtherWindow.Checked)
             {
-                FormAppWindow _ = new FormAppWindow() { MinimumSize = new Size(1106, 629) };
-                _.Tag = processApp;
-                _.IsMdiContainer = true;
+                FormAppWindow _ = new()
+                {
+                    MinimumSize = new Size(1106, 629),
+                    Tag = processApp,
+                    IsMdiContainer = true
+                };
                 _.Show();
                 Thread.Sleep(500);
                 DLLApi.SetWindowPos(processApp.MainWindowHandle, processApp.MainWindowHandle, 0, 0, 300, 300, 0x0080000);
@@ -145,7 +148,9 @@ namespace AnimePlayer
                 CenterToScreen();
                 DLLApi.MoveWindow(processApp.MainWindowHandle, 1, 1, _.panelContent.Width, _.panelContent.Height, true);
                 //childForm.WindowState = FormWindowState.Normal;
+#pragma warning disable CA1806 // Nie ignoruj wyników metody
                 DLLApi.SetWindowLong(processApp.MainWindowHandle, DLLApi.GWL_STYLE, DLLApi.WS_VISIBLE);
+#pragma warning restore CA1806 // Nie ignoruj wyników metody
                 _.MainWindowHandle = processApp.MainWindowHandle;
                 _.Text = processApp.MainWindowTitle;
                 _.Icon = DLLApi.GetAppIcon(processApp.MainWindowHandle);
@@ -167,12 +172,12 @@ namespace AnimePlayer
             this.Invoke(() => { this.Show(); this.Activate(); this.Focus(); labelLoadingApp.Hide(); panel1.Show(); });
         }
 
-        private void buttonCheckUpdate_Click(object sender, EventArgs e)
+        private void ButtonCheckUpdate_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void labelVersion_Click(object sender, EventArgs e)
+        private void LabelVersion_Click(object sender, EventArgs e)
         {
 
         }
@@ -190,7 +195,7 @@ namespace AnimePlayer
             }
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+        private void Timer1_Tick(object sender, EventArgs e)
         {
             try
             {
@@ -241,12 +246,12 @@ namespace AnimePlayer
             }
         }
 
-        private void checkBoxef_CheckedChanged(object sender, EventArgs e)
+        private void CheckBoxef_CheckedChanged(object sender, EventArgs e)
         {
             buttonBrowser.Visible = checkBoxef.Checked;
         }
 
-        private void buttonBrowser_Click(object sender, EventArgs e)
+        private void ButtonBrowser_Click(object sender, EventArgs e)
         {
             FormBrowser formBrowser = new(false);
             formBrowser.ShowDialog();

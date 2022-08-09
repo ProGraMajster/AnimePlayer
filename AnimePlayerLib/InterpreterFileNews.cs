@@ -19,7 +19,7 @@ namespace AnimePlayerLibrary
 
             foreach(ListNews ln in SetFile(path))
             {
-                PanelNews panelNews = new PanelNews(ln, panel2, local);
+                PanelNews panelNews = new(ln, panel2, local);
                 panelNews.Show();
                 output.Invoke((Action)(() => output.Controls.Add(panelNews)));
             }
@@ -27,7 +27,7 @@ namespace AnimePlayerLibrary
 
         public static List<ListNews> SetFile(string path)
         {
-            List<ListNews> listNews = new List<ListNews>();
+            List<ListNews> listNews = new();
             if (path == null)
             {
                 return listNews;
@@ -59,7 +59,7 @@ namespace AnimePlayerLibrary
 
                     if (content[position] == "NewItem_ListNews")
                     {
-                        ListNews news = new ListNews();
+                        ListNews news = new();
                         position++;
                         if(content[position] =="ID")
                         {

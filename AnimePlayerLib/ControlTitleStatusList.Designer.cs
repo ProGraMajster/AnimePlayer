@@ -124,7 +124,7 @@
             // 
             // bWresiezItem
             // 
-            this.bWresiezItem.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bWresiezItem_DoWork);
+            this.bWresiezItem.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BWresiezItem_DoWork);
             // 
             // ControlTitleStatusList
             // 

@@ -13,7 +13,7 @@ namespace AnimePlayerLibrary
         public static class OneDrive
         {
 
-            public static string onedriveUri(string link)
+            public static string OnedriveUri(string link)
             {
                 if(string.IsNullOrEmpty(link))
                 {
@@ -28,7 +28,7 @@ namespace AnimePlayerLibrary
                 try
                 {
                     string link = "https://onedrive.live.com/download?cid=EA5053D1DC80D557&resid=EA5053D1DC80D557%21555&authkey=AI-xt2ueGPifUzo";
-                    WebClient webClient = new WebClient();
+                    WebClient webClient = new();
                     webClient.DownloadFile(link, "main.txt");
                     webClient.Dispose();
                     return true;
@@ -41,13 +41,13 @@ namespace AnimePlayerLibrary
                 }
             }
 
-            public static void downloadFile(string link)
+            public static void DownloadFile(string link)
             {
                 try
                 {
-                    WebClient webClient = new WebClient();
+                    WebClient webClient = new();
                     webClient.DownloadFile(link,
-                        "C:\\ContentLibrarys\\OtherFiles\\WMP_OverlayApp\\" + onedriveUri(link) + ".txt");
+                        "C:\\ContentLibrarys\\OtherFiles\\WMP_OverlayApp\\" + OnedriveUri(link) + ".txt");
                     webClient.Dispose();
                 }
                 catch (Exception ex)
@@ -57,11 +57,11 @@ namespace AnimePlayerLibrary
                 }
             }
 
-            public static void downloadFile(string link, string path)
+            public static void DownloadFile(string link, string path)
             {
                 try
                 {
-                    WebClient webClient = new WebClient();
+                    WebClient webClient = new();
                     webClient.DownloadFile(link, path);
                     webClient.Dispose();
                 }
@@ -73,12 +73,12 @@ namespace AnimePlayerLibrary
                 }
             }
 
-            public static string downloadPage(string link, string filename)
+            public static string DownloadPage(string link, string filename)
             {
                 try
                 {
-                    WebClient webClient = new WebClient();
-                    webClient.DownloadFile(onedriveUri(link), "C:\\ContentLibrarys\\OtherFiles\\WMP_OverlayApp\\Page\\" + filename + ".txt");
+                    WebClient webClient = new();
+                    webClient.DownloadFile(OnedriveUri(link), "C:\\ContentLibrarys\\OtherFiles\\WMP_OverlayApp\\Page\\" + filename + ".txt");
                     webClient.Dispose();
                     return "C:\\ContentLibrarys\\OtherFiles\\WMP_OverlayApp\\Page\\" + filename + ".txt";
                 }
@@ -90,12 +90,12 @@ namespace AnimePlayerLibrary
                 }
             }
 
-            public static string downloadIcon(string link, string filename)
+            public static string DownloadIcon(string link, string filename)
             {
                 try
                 {
 
-                    WebClient webClient = new WebClient();
+                    WebClient webClient = new();
                     webClient.DownloadFile(link, "C:\\ContentLibrarys\\OtherFiles\\WMP_OverlayApp\\Icon\\" + filename.Replace(":", " ") + ".png");
                     webClient.Dispose();
                     return "C:\\ContentLibrarys\\OtherFiles\\WMP_OverlayApp\\Icon\\" + filename.Replace(":", " ") + ".png";
@@ -110,7 +110,7 @@ namespace AnimePlayerLibrary
                 }
             }
 
-            public static string downloadVideoContent(string link, string filename)
+            public static string DownloadVideoContent(string link, string filename)
             {
                 try
                 {
@@ -118,7 +118,7 @@ namespace AnimePlayerLibrary
                     {
                         Directory.CreateDirectory("C:\\ContentLibrarys\\OtherFiles\\WMP_OverlayApp\\Video");
                     }
-                    WebClient webClient = new WebClient();
+                    WebClient webClient = new();
                     webClient.DownloadFile(link, "C:\\ContentLibrarys\\OtherFiles\\WMP_OverlayApp\\Video\\" + filename + "_list_ep.txt");
                     webClient.Dispose();
                     return "C:\\ContentLibrarys\\OtherFiles\\WMP_OverlayApp\\Video\\" + filename + "_list_ep.txt";
@@ -135,7 +135,7 @@ namespace AnimePlayerLibrary
 
         public static class GoogleDrive
         {
-            public static string dUri(string id)
+            public static string DUri(string id)
             {
                 id = "https://drive.google.com/uc?export=download&id=" + id;
                 return id;
@@ -146,7 +146,7 @@ namespace AnimePlayerLibrary
         {
             try
             {
-                WebClient webClient = new WebClient();
+                WebClient webClient = new();
                 webClient.DownloadFile(link, path);
                 webClient.Dispose();
                 return true;

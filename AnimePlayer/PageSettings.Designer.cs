@@ -80,7 +80,7 @@ namespace AnimePlayer
             this.buttonClose.TabIndex = 4;
             this.buttonClose.Text = "Zamknij stronę";
             this.buttonClose.UseVisualStyleBackColor = true;
-            this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
+            this.buttonClose.Click += new System.EventHandler(this.ButtonClose_Click);
             // 
             // groupBox1
             // 
@@ -116,7 +116,7 @@ namespace AnimePlayer
             this.buttonThemeReset.Text = "Reset motyw";
             this.buttonThemeReset.UseVisualStyleBackColor = false;
             this.buttonThemeReset.Visible = false;
-            this.buttonThemeReset.Click += new System.EventHandler(this.buttonThemeReset_Click);
+            this.buttonThemeReset.Click += new System.EventHandler(this.ButtonThemeReset_Click);
             // 
             // label1
             // 
@@ -164,7 +164,7 @@ namespace AnimePlayer
             this.buttonSetThemeFile.Text = "Wybierz plik";
             this.buttonSetThemeFile.UseVisualStyleBackColor = false;
             this.buttonSetThemeFile.Visible = false;
-            this.buttonSetThemeFile.Click += new System.EventHandler(this.buttonSetThemeFile_Click);
+            this.buttonSetThemeFile.Click += new System.EventHandler(this.ButtonSetThemeFile_Click);
             // 
             // groupBox2
             // 
@@ -210,7 +210,7 @@ namespace AnimePlayer
             this.checkBoxRoundedEdges.Text = "Zaokrąglone kanty kontrolek";
             this.toolTip.SetToolTip(this.checkBoxRoundedEdges, "Zres");
             this.checkBoxRoundedEdges.UseVisualStyleBackColor = true;
-            this.checkBoxRoundedEdges.CheckedChanged += new System.EventHandler(this.checkBoxRoundedEdges_CheckedChanged);
+            this.checkBoxRoundedEdges.CheckedChanged += new System.EventHandler(this.CheckBoxRoundedEdges_CheckedChanged);
             // 
             // openFileDialog1
             // 
@@ -232,7 +232,7 @@ namespace AnimePlayer
             // timerRefreshValue
             // 
             this.timerRefreshValue.Interval = 1000;
-            this.timerRefreshValue.Tick += new System.EventHandler(this.timerRefreshValue_Tick);
+            this.timerRefreshValue.Tick += new System.EventHandler(this.TimerRefreshValue_Tick);
             // 
             // PageSettings
             // 

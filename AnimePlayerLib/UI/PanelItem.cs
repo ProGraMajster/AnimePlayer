@@ -18,7 +18,7 @@ namespace AnimePlayerLibrary.UI
         public PreviewTitleClass _previewTitleClass;
         private Panel panelLoading;
         private Label labelLoadingDetails;
-        private Panel panelFromMainContent = (Panel)Application.OpenForms[0].Controls.Find("panel2",true)[0];
+        private readonly Panel panelFromMainContent = (Panel)Application.OpenForms[0].Controls.Find("panel2",true)[0];
         private void CreateElemetsUI()
         {
             // 
@@ -55,8 +55,10 @@ namespace AnimePlayerLibrary.UI
             // 
             // panelItem
             // 
-            this.panelItem = new Panel();
-            this.panelItem.Tag = this;
+            this.panelItem = new Panel
+            {
+                Tag = this
+            };
             this.panelItem.Controls.Add(pictureBoxItem);
             this.panelItem.Controls.Add(buttonItem);
             this.panelItem.Location = new System.Drawing.Point(13, 5);
@@ -81,8 +83,8 @@ namespace AnimePlayerLibrary.UI
 
         public void AddEvents()
         {
-            pictureBoxItem.Click += object_Click;
-            buttonItem.Click += object_Click;
+            pictureBoxItem.Click += Object_Click;
+            buttonItem.Click += Object_Click;
         }
 
         public async void GetLoadingCotrols()
@@ -94,29 +96,26 @@ namespace AnimePlayerLibrary.UI
             });
         }
 
-        private void object_Click(object sender, EventArgs e)
+        private void Object_Click(object sender, EventArgs e)
         {
             try
             {
                 UpdateLoadingTextdetails("Find Page > "+ _previewTitleClass.Title);
                 ShowPanelLoading();
 
-                PageItem pageItem = new PageItem(this);
-                pageItem.Name = "pageItem";
+                PageItem pageItem = new(this)
+                {
+                    Name = "pageItem",
+                    Dock = DockStyle.Fill,
+                };
                 panelFromMainContent.Controls.Add(pageItem);
-                pageItem.Dock = DockStyle.Fill;
                 pageItem.Show();
                 pageItem.BringToFront();
-                /*PageItemUI pageItemUI = new PageItemUI(this);
-                pageItemUI.Name ="pageItemUI";
-                panelFromMainContent.Controls.Add(pageItemUI);
-                pageItemUI.Dock = DockStyle.Fill;
-                pageItemUI.Show();
-                pageItemUI.BringToFront();*/
+                HidePanelLoading();
             }
             catch(Exception ex)
             {
-
+                Console.Error.WriteLine(ex.ToString());
             }
         }
 
@@ -148,10 +147,6 @@ namespace AnimePlayerLibrary.UI
         public PanelItem(PreviewTitleClass previewTitleClass)
         {
             _previewTitleClass = previewTitleClass;
-            if(_previewTitleClass == null)
-            {
-                new ArgumentNullException("_previewTitleClass is null");
-            }
             GetLoadingCotrols();
             CreateElemetsUI();
             SetInformationUI();

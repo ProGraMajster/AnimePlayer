@@ -59,7 +59,7 @@ namespace AnimePlayer.ControlsWinForms
 
         public bool UseCornerRadius = true;
 
-        private void labelItemTitle_Click(object sender, EventArgs e)
+        private void LabelItemTitle_Click(object sender, EventArgs e)
         {
             ShowPage();
         }
@@ -81,12 +81,12 @@ namespace AnimePlayer.ControlsWinForms
             }
         }
 
-        private void buttonCloseItem_Click(object sender, EventArgs e)
+        private void ButtonCloseItem_Click(object sender, EventArgs e)
         {
             CloseBrowserTabPageItem();
         }
 
-        private void pictureBoxItemIcon_Click(object sender, EventArgs e)
+        private void PictureBoxItemIcon_Click(object sender, EventArgs e)
         {
             ShowPage();
         }

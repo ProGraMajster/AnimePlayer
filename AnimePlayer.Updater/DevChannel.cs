@@ -14,7 +14,6 @@ namespace AnimePlayer.Updater
 {
     public static class DevChannel
     {
-        public static bool Update = false;
         static readonly string link = @"https://github.com/ProGraMajster/AnimePlayer/archive/refs/heads/master.zip";
         static string textContentUpdate;
         static FormProgess _FormProgess;
@@ -68,7 +67,7 @@ namespace AnimePlayer.Updater
         {
             try
             {
-                DirectoryInfo directoryInfo = new DirectoryInfo(repo_path);
+                DirectoryInfo directoryInfo = new(repo_path);
                 foreach (FileInfo file in directoryInfo.GetFiles())
                 {
                     Console.WriteLine("File.Move: "+file.FullName+" > "+Application.StartupPath+file.Name);
@@ -91,6 +90,7 @@ namespace AnimePlayer.Updater
         {
             try
             {
+                bool Update = false;
                 AlternativeTempFuncUpdateOperation();
                 File.WriteAllText("recently updated.txt", DateTime.Now.ToString()); 
                 return;
@@ -156,8 +156,8 @@ namespace AnimePlayer.Updater
         {
             try
             {
-                List<FileInfo> fileInfos = new List<FileInfo>();
-                DirectoryInfo directoryInfo = new DirectoryInfo(pathToFolder);
+                List<FileInfo> fileInfos = new();
+                DirectoryInfo directoryInfo = new(pathToFolder);
                 foreach(FileInfo fileInfo in directoryInfo.GetFiles())
                 {
                     if(fileInfo.Extension == ".dll")
@@ -235,7 +235,7 @@ namespace AnimePlayer.Updater
                     Directory.Delete(pathOldLib,true);
 
                 Directory.CreateDirectory(pathOldLib);
-                DirectoryInfo directoryInfo = new DirectoryInfo(Application.StartupPath);
+                DirectoryInfo directoryInfo = new(Application.StartupPath);
                 foreach(var file in directoryInfo.GetFiles())
                 {
                     if(file.Extension == "_Old.dll")

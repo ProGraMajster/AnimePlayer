@@ -15,7 +15,7 @@ namespace AnimePlayer.Updater
 { 
     public partial class UpdaterSettingsPanel : UserControl
     {
-        public SettingsUpdater settingsUpdater = new SettingsUpdater();
+        public SettingsUpdater settingsUpdater = new();
         public UpdaterSettingsPanel()
         {
             InitializeComponent();
@@ -46,7 +46,7 @@ namespace AnimePlayer.Updater
         {
             settingsUpdater = (SettingsUpdater)SerializationAndDeserialization.Deserialization(AppFolders.Settings+"settingsUpdater.dat");
         }
-        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        private void NumericUpDown1_ValueChanged(object sender, EventArgs e)
         {
             groupBoxMain.Text = "Ustawienia aktualizacji *(Nie zapisane zmiany)";
             Math();
@@ -71,7 +71,7 @@ namespace AnimePlayer.Updater
             }
         }
 
-        private void buttonSaveUpdaterSetting_Click(object sender, EventArgs e)
+        private void ButtonSaveUpdaterSetting_Click(object sender, EventArgs e)
         {
             try
             {
@@ -88,17 +88,17 @@ namespace AnimePlayer.Updater
             }
         }
 
-        private void checkBoxUpdateOpenApp_CheckedChanged(object sender, EventArgs e)
+        private void CheckBoxUpdateOpenApp_CheckedChanged(object sender, EventArgs e)
         {
             groupBoxMain.Text = "Ustawienia aktualizacji *(Nie zapisane zmiany)";
         }
 
-        private void checkBoxBackUpdate_CheckedChanged(object sender, EventArgs e)
+        private void CheckBoxBackUpdate_CheckedChanged(object sender, EventArgs e)
         {
             groupBoxMain.Text = "Ustawienia aktualizacji *(Nie zapisane zmiany)";
         }
 
-        private void checkBoxDevVersion_CheckedChanged(object sender, EventArgs e)
+        private void CheckBoxDevVersion_CheckedChanged(object sender, EventArgs e)
         {
             groupBoxMain.Text = "Ustawienia aktualizacji *(Nie zapisane zmiany)";
         }

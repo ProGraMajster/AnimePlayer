@@ -16,9 +16,9 @@ namespace AnimePlayer.Core
 
     public static class CdaDownloader
     {
-        static HttpClient web = new HttpClient();
-        static Regex regex_link = new Regex(@"https:\/\/www.cda.pl\/video\/([^\/\s]+)");
-        static Regex regex_file = new Regex(@"""file"":""(.*?)(?:"")");
+        static readonly HttpClient web = new();
+        static readonly Regex regex_link = new(@"https:\/\/www.cda.pl\/video\/([^\/\s]+)");
+        static readonly Regex regex_file = new(@"""file"":""(.*?)(?:"")");
 
         /* spytaj sie cda o co im chodzi nie mnie */
         static readonly string[] remove_keys = { "_XDDD", "_CDA", "_ADC", "_CXD", "_QWE", "_Q5", "_IKSDE" };
@@ -52,13 +52,13 @@ namespace AnimePlayer.Core
         public static string GetVideoLink(string link, CdaQuality quality = CdaQuality.auto, bool https = false)
         {
             if (link.EndsWith("/vfilm"))
-                link = link.Substring(0, link.Length - 5);
+                link = link[..^5];
 
             if (link.EndsWith("/"))
-                link = link.Substring(0, link.Length - 1);
+                link = link[..^1];
 
             if (link.StartsWith("http://"))
-                link = "https://" + link.Substring(7, link.Length - 7);
+                link = string.Concat("https://", link.AsSpan(7, link.Length - 7));
 
             if (!regex_link.Match(link).Success)
                 return null;

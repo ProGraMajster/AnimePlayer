@@ -34,7 +34,7 @@ namespace AnimePlayerLibrary
         {
             try
             {
-                Download.File(Download.GoogleDrive.dUri("1izvflPLxIWyW4doIdY160Swd0ehxHcxB"), @"C:\ContentLibrarys\OtherFiles\WMP_OverlayApp\News\listNews.txt");
+                Download.File(Download.GoogleDrive.DUri("1izvflPLxIWyW4doIdY160Swd0ehxHcxB"), @"C:\ContentLibrarys\OtherFiles\WMP_OverlayApp\News\listNews.txt");
                 return true;
             }
             catch (Exception ex)

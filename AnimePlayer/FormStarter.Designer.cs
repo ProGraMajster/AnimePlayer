@@ -88,7 +88,7 @@ namespace AnimePlayer
             this.buttonRunApp.TabIndex = 1;
             this.buttonRunApp.Text = "Kliknij by uruchomić";
             this.buttonRunApp.UseVisualStyleBackColor = false;
-            this.buttonRunApp.Click += new System.EventHandler(this.buttonRunApp_Click);
+            this.buttonRunApp.Click += new System.EventHandler(this.ButtonRunApp_Click);
             // 
             // panel1
             // 
@@ -118,7 +118,7 @@ namespace AnimePlayer
             this.buttonExit.TabIndex = 4;
             this.buttonExit.Text = "Zamknij";
             this.buttonExit.UseVisualStyleBackColor = false;
-            this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
+            this.buttonExit.Click += new System.EventHandler(this.ButtonExit_Click);
             // 
             // buttonBrowser
             // 
@@ -135,7 +135,7 @@ namespace AnimePlayer
             this.buttonBrowser.Text = "Przeglądarka";
             this.buttonBrowser.UseVisualStyleBackColor = false;
             this.buttonBrowser.Visible = false;
-            this.buttonBrowser.Click += new System.EventHandler(this.buttonBrowser_Click);
+            this.buttonBrowser.Click += new System.EventHandler(this.ButtonBrowser_Click);
             // 
             // buttonSetting
             // 
@@ -151,7 +151,7 @@ namespace AnimePlayer
             this.buttonSetting.TabIndex = 3;
             this.buttonSetting.Text = "Ustawienia";
             this.buttonSetting.UseVisualStyleBackColor = false;
-            this.buttonSetting.Click += new System.EventHandler(this.buttonSetting_Click);
+            this.buttonSetting.Click += new System.EventHandler(this.ButtonSetting_Click);
             // 
             // buttonCheckUpdate
             // 
@@ -168,7 +168,7 @@ namespace AnimePlayer
             this.buttonCheckUpdate.Text = "Sprawdź aktualizacje";
             this.buttonCheckUpdate.UseVisualStyleBackColor = false;
             this.buttonCheckUpdate.Visible = false;
-            this.buttonCheckUpdate.Click += new System.EventHandler(this.buttonCheckUpdate_Click);
+            this.buttonCheckUpdate.Click += new System.EventHandler(this.ButtonCheckUpdate_Click);
             // 
             // labelVersion
             // 
@@ -181,7 +181,7 @@ namespace AnimePlayer
             this.labelVersion.Size = new System.Drawing.Size(351, 345);
             this.labelVersion.TabIndex = 3;
             this.labelVersion.Text = "Version lib";
-            this.labelVersion.Click += new System.EventHandler(this.labelVersion_Click);
+            this.labelVersion.Click += new System.EventHandler(this.LabelVersion_Click);
             // 
             // panelSettings
             // 
@@ -215,7 +215,7 @@ namespace AnimePlayer
             this.checkBoxef.TabIndex = 10;
             this.checkBoxef.Text = "Funkcja eksperymentalne";
             this.checkBoxef.UseVisualStyleBackColor = true;
-            this.checkBoxef.CheckedChanged += new System.EventHandler(this.checkBoxef_CheckedChanged);
+            this.checkBoxef.CheckedChanged += new System.EventHandler(this.CheckBoxef_CheckedChanged);
             // 
             // panel2
             // 
@@ -317,7 +317,7 @@ namespace AnimePlayer
             this.buttonCloseSettings.TabIndex = 1;
             this.buttonCloseSettings.Text = "<- Wróć";
             this.buttonCloseSettings.UseVisualStyleBackColor = true;
-            this.buttonCloseSettings.Click += new System.EventHandler(this.buttonCloseSettings_Click);
+            this.buttonCloseSettings.Click += new System.EventHandler(this.ButtonCloseSettings_Click);
             // 
             // checkBoxDebug
             // 
@@ -343,7 +343,7 @@ namespace AnimePlayer
             // 
             // timer1
             // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
             // 
             // textBoxArgs
             // 

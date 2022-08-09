@@ -137,7 +137,7 @@
             this.buttonViewChange.TabIndex = 0;
             this.buttonViewChange.Text = "\\/";
             this.buttonViewChange.UseVisualStyleBackColor = true;
-            this.buttonViewChange.Click += new System.EventHandler(this.buttonViewChange_Click);
+            this.buttonViewChange.Click += new System.EventHandler(this.ButtonViewChange_Click);
             // 
             // panel4
             // 

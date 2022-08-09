@@ -13,7 +13,7 @@ namespace AnimePlayer.ControlsWinForms
 {
     public partial class BrowserWebView2 : UserControl
     {
-        string _address= "https://www.google.com/webhp";
+        readonly string _address = "https://www.google.com/webhp";
         public BrowserWebView2()
         {
             InitializeComponent();
@@ -37,7 +37,7 @@ namespace AnimePlayer.ControlsWinForms
                 {
                     return;
                 }
-                BrowserWebView2 browserWebView = new BrowserWebView2(e.Uri);
+                BrowserWebView2 browserWebView = new(e.Uri);
                 BrowserTabPageItem item = browserTabPage.AddPageAndRef("Nowe okno", null, browserWebView);
                 browserWebView.webView.Tag =item;
                 e.Handled=false;
@@ -48,12 +48,12 @@ namespace AnimePlayer.ControlsWinForms
             }
         }
 
-        private void webView_ContentLoading(object sender, Microsoft.Web.WebView2.Core.CoreWebView2ContentLoadingEventArgs e)
+        private void WebView_ContentLoading(object sender, Microsoft.Web.WebView2.Core.CoreWebView2ContentLoadingEventArgs e)
         {
 
         }
 
-        private void webView_CoreWebView2InitializationCompleted(object sender, Microsoft.Web.WebView2.Core.CoreWebView2InitializationCompletedEventArgs e)
+        private void WebView_CoreWebView2InitializationCompleted(object sender, Microsoft.Web.WebView2.Core.CoreWebView2InitializationCompletedEventArgs e)
         {
             if (webView != null && webView.CoreWebView2 != null)
             {
@@ -62,17 +62,17 @@ namespace AnimePlayer.ControlsWinForms
             }
         }
 
-        private void webView_NavigationCompleted(object sender, Microsoft.Web.WebView2.Core.CoreWebView2NavigationCompletedEventArgs e)
+        private void WebView_NavigationCompleted(object sender, Microsoft.Web.WebView2.Core.CoreWebView2NavigationCompletedEventArgs e)
         {
             textBoxLink.Text = webView.Source.ToString();
         }
 
-        private void webView_NavigationStarting(object sender, Microsoft.Web.WebView2.Core.CoreWebView2NavigationStartingEventArgs e)
+        private void WebView_NavigationStarting(object sender, Microsoft.Web.WebView2.Core.CoreWebView2NavigationStartingEventArgs e)
         {
 
         }
 
-        private void webView_SourceChanged(object sender, Microsoft.Web.WebView2.Core.CoreWebView2SourceChangedEventArgs e)
+        private void WebView_SourceChanged(object sender, Microsoft.Web.WebView2.Core.CoreWebView2SourceChangedEventArgs e)
         {
             BrowserTabPageItem item = ((BrowserTabPageItem)webView.Tag);
                 item.labelItemTitle.Text = webView.CoreWebView2.DocumentTitle;
@@ -92,7 +92,7 @@ namespace AnimePlayer.ControlsWinForms
             }
         }
 
-        private void textBoxLink_KeyDown(object sender, KeyEventArgs e)
+        private void TextBoxLink_KeyDown(object sender, KeyEventArgs e)
         {
             if(e.KeyCode == Keys.Enter)
             {
@@ -107,7 +107,7 @@ namespace AnimePlayer.ControlsWinForms
             }
         }
 
-        private void buttonUndo_Click(object sender, EventArgs e)
+        private void ButtonUndo_Click(object sender, EventArgs e)
         {
             if (webView != null && webView.CoreWebView2 != null)
             {
@@ -115,7 +115,7 @@ namespace AnimePlayer.ControlsWinForms
             }
         }
 
-        private void buttonReundo_Click(object sender, EventArgs e)
+        private void ButtonReundo_Click(object sender, EventArgs e)
         {
             if (webView != null && webView.CoreWebView2 != null)
             {
@@ -123,7 +123,7 @@ namespace AnimePlayer.ControlsWinForms
             }
         }
 
-        private void buttonRefresh_Click(object sender, EventArgs e)
+        private void ButtonRefresh_Click(object sender, EventArgs e)
         {
             if (webView != null && webView.CoreWebView2 != null)
             {
@@ -142,7 +142,7 @@ namespace AnimePlayer.ControlsWinForms
             });
         }
 
-        private void timerRe_Tick(object sender, EventArgs e)
+        private void TimerRe_Tick(object sender, EventArgs e)
         {
             webView.Size = new Size(Width, this.Height - panel1.Height);
             webView.Location = new Point(0, panel1.Height);
@@ -150,7 +150,7 @@ namespace AnimePlayer.ControlsWinForms
 
         }
 
-        private void buttonMenu_Click(object sender, EventArgs e)
+        private void ButtonMenu_Click(object sender, EventArgs e)
         {
             panelMenu.Visible = !panelMenu.Visible;
         }
@@ -160,31 +160,31 @@ namespace AnimePlayer.ControlsWinForms
             panelMenu.Left = this.Width-panelMenu.Width;
         }
 
-        private void webView_Click(object sender, EventArgs e)
+        private void WebView_Click(object sender, EventArgs e)
         {
             panelMenu.Hide();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void Button4_Click(object sender, EventArgs e)
         {
             panelMenu.Hide();
         }
 
-        private void panelCda_VisibleChanged(object sender, EventArgs e)
+        private void PanelCda_VisibleChanged(object sender, EventArgs e)
         {
             comboBoxCdaQualityVideo.SelectedIndex=0;
         }
 
-        private void buttonCdaDwonload_Click(object sender, EventArgs e)
+        private void ButtonCdaDwonload_Click(object sender, EventArgs e)
         {
             try
             {
-                FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog();
+                FolderBrowserDialog folderBrowserDialog = new();
                 if(folderBrowserDialog.ShowDialog() == DialogResult.OK)
                 {
                     string link = AnimePlayer.Core.CdaDownloader.GetVideoLink(textBoxCdaUrl.Text,
                         (Core.CdaQuality)comboBoxCdaQualityVideo.SelectedIndex);
-                    WebClient webClient = new WebClient();
+                    WebClient webClient = new();
                     webClient.DownloadProgressChanged += WebClient_DownloadProgressChanged;
                     webClient.DownloadFileCompleted += WebClient_DownloadFileCompleted;
                     webClient.DownloadFileAsync(new Uri(link), folderBrowserDialog.SelectedPath+"\\"+
@@ -223,7 +223,7 @@ namespace AnimePlayer.ControlsWinForms
             progressBarCdaDownload.Value = e.ProgressPercentage;
         }
 
-        private void textBoxCdaUrl_TextChanged(object sender, EventArgs e)
+        private void TextBoxCdaUrl_TextChanged(object sender, EventArgs e)
         {
             labelCdaDownloadProgres.Text=":";
             progressBarCdaDownload.Value = 0;

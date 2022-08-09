@@ -8,7 +8,7 @@ namespace AnimePlayerLibrary
 {
     public partial class VideoPlayerWeb : UserControl
     {
-        Episode _Episode;
+        readonly Episode _Episode;
         public VideoPlayerWeb(Episode episode)
         {
             InitializeComponent();
@@ -26,14 +26,14 @@ namespace AnimePlayerLibrary
             
         }
 
-        private void buttonClose_Click(object sender, EventArgs e)
+        private void ButtonClose_Click(object sender, EventArgs e)
         {
             webView21.Dispose();
             this.Hide();
             this.Dispose();
         }
 
-        private void timerLoad_Tick(object sender, EventArgs e)
+        private void TimerLoad_Tick(object sender, EventArgs e)
         {
             if (webView21 != null && webView21.CoreWebView2 != null)
             {
@@ -52,12 +52,12 @@ namespace AnimePlayerLibrary
             }
         }
 
-        private void webView21_MouseMove(object sender, MouseEventArgs e)
+        private void WebView21_MouseMove(object sender, MouseEventArgs e)
         {
             
         }
 
-        private void timerM_Tick(object sender, EventArgs e)
+        private void TimerM_Tick(object sender, EventArgs e)
         {
             var relativePoint = this.PointToClient(Cursor.Position);
             if (relativePoint.Y < 30)
@@ -70,19 +70,19 @@ namespace AnimePlayerLibrary
             }
         }
 
-        private void webView21_NavigationStarting(object sender, Microsoft.Web.WebView2.Core.CoreWebView2NavigationStartingEventArgs e)
+        private void WebView21_NavigationStarting(object sender, Microsoft.Web.WebView2.Core.CoreWebView2NavigationStartingEventArgs e)
         {
             timerLoadingStatus.Start();
             label1.Show();
         }
 
-        private void webView21_NavigationCompleted(object sender, Microsoft.Web.WebView2.Core.CoreWebView2NavigationCompletedEventArgs e)
+        private void WebView21_NavigationCompleted(object sender, Microsoft.Web.WebView2.Core.CoreWebView2NavigationCompletedEventArgs e)
         {
             timerLoadingStatus.Stop();
             label1.Hide();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Button1_Click(object sender, EventArgs e)
         {
             if(status_ws)
             {
@@ -145,7 +145,7 @@ namespace AnimePlayerLibrary
             }
         }
 
-        private void timerLoadingStatus_Tick(object sender, EventArgs e)
+        private void TimerLoadingStatus_Tick(object sender, EventArgs e)
         {
             if(label1.Text == "Ładowanie...")
             {

@@ -75,7 +75,7 @@ namespace AnimePlayerLibrary.UI
             this.buttonFindDefinion.TabIndex = 2;
             this.buttonFindDefinion.Text = "Szukaj";
             this.buttonFindDefinion.UseVisualStyleBackColor = true;
-            this.buttonFindDefinion.Click += new System.EventHandler(this.buttonFindDefinion_Click);
+            this.buttonFindDefinion.Click += new System.EventHandler(this.ButtonFindDefinion_Click);
             // 
             // buttonCloseDefinitionsPage
             // 
@@ -88,7 +88,7 @@ namespace AnimePlayerLibrary.UI
             this.buttonCloseDefinitionsPage.TabIndex = 1;
             this.buttonCloseDefinitionsPage.Text = "Zamknij";
             this.buttonCloseDefinitionsPage.UseVisualStyleBackColor = true;
-            this.buttonCloseDefinitionsPage.Click += new System.EventHandler(this.buttonCloseDefinitionsPage_Click);
+            this.buttonCloseDefinitionsPage.Click += new System.EventHandler(this.ButtonCloseDefinitionsPage_Click);
             // 
             // treeView1
             // 
@@ -101,8 +101,8 @@ namespace AnimePlayerLibrary.UI
             this.treeView1.Name = "treeView1";
             this.treeView1.Size = new System.Drawing.Size(252, 519);
             this.treeView1.TabIndex = 2;
-            this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
-            this.treeView1.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeView1_NodeMouseClick);
+            this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.TreeView1_AfterSelect);
+            this.treeView1.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.TreeView1_NodeMouseClick);
             // 
             // label1
             // 

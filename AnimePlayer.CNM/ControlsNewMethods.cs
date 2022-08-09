@@ -11,7 +11,9 @@ namespace AnimePlayer.CNM
         public class RoundingControl : Component
         {
             [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+#pragma warning disable CA1401 // Elementy P/Invoke nie powinny być widoczne
             public static extern IntPtr CreateRoundRectRgn
+#pragma warning restore CA1401 // Elementy P/Invoke nie powinny być widoczne
                 (
                    int nLeftRect,
                    int nTopRect,

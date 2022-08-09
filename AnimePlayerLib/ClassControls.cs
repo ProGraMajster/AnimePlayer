@@ -14,7 +14,7 @@ namespace AnimePlayerLibrary
             float radius)
         {
             float diameter;
-            GraphicsPath path = new GraphicsPath();
+            GraphicsPath path = new();
             if (radius <= 0.0F)
             {
                 path.AddRectangle(rectangle);
@@ -26,8 +26,8 @@ namespace AnimePlayerLibrary
                 if (radius >= (Math.Min(rectangle.Width, rectangle.Height)) / 2.0)
                     return graphics.GenerateCapsule(rectangle);
                 diameter = radius * 2.0F;
-                SizeF sizeF = new SizeF(diameter, diameter);
-                RectangleF arc = new RectangleF(rectangle.Location, sizeF);
+                SizeF sizeF = new(diameter, diameter);
+                RectangleF arc = new(rectangle.Location, sizeF);
                 path.AddArc(arc, 180, 90);
                 arc.X = rectangle.Right - diameter;
                 path.AddArc(arc, 270, 90);
@@ -40,18 +40,20 @@ namespace AnimePlayerLibrary
             return path;
         }
         private static GraphicsPath GenerateCapsule(
+#pragma warning disable IDE0060 // Usuń nieużywany parametr
             this Graphics graphics,
+#pragma warning restore IDE0060 // Usuń nieużywany parametr
             RectangleF baseRect)
         {
             float diameter;
             RectangleF arc;
-            GraphicsPath path = new GraphicsPath();
+            GraphicsPath path = new();
             try
             {
                 if (baseRect.Width > baseRect.Height)
                 {
                     diameter = baseRect.Height;
-                    SizeF sizeF = new SizeF(diameter, diameter);
+                    SizeF sizeF = new(diameter, diameter);
                     arc = new RectangleF(baseRect.Location, sizeF);
                     path.AddArc(arc, 90, 180);
                     arc.X = baseRect.Right - diameter;
@@ -60,7 +62,7 @@ namespace AnimePlayerLibrary
                 else if (baseRect.Width < baseRect.Height)
                 {
                     diameter = baseRect.Width;
-                    SizeF sizeF = new SizeF(diameter, diameter);
+                    SizeF sizeF = new(diameter, diameter);
                     arc = new RectangleF(baseRect.Location, sizeF);
                     path.AddArc(arc, 180, 180);
                     arc.Y = baseRect.Bottom - diameter;
@@ -93,7 +95,7 @@ namespace AnimePlayerLibrary
             float height,
             float radius)
         {
-            RectangleF rectangle = new RectangleF(x, y, width, height);
+            RectangleF rectangle = new(x, y, width, height);
             GraphicsPath path = graphics.GenerateRoundedRectangle(rectangle, radius);
             SmoothingMode old = graphics.SmoothingMode;
             graphics.SmoothingMode = SmoothingMode.AntiAlias;
@@ -150,7 +152,7 @@ namespace AnimePlayerLibrary
             float height,
             float radius)
         {
-            RectangleF rectangle = new RectangleF(x, y, width, height);
+            RectangleF rectangle = new(x, y, width, height);
             GraphicsPath path = graphics.GenerateRoundedRectangle(rectangle, radius);
             SmoothingMode old = graphics.SmoothingMode;
             graphics.SmoothingMode = SmoothingMode.AntiAlias;
@@ -263,7 +265,7 @@ namespace AnimePlayerLibrary
             */
             g.SmoothingMode = SmoothingMode.AntiAlias;
             g.FillRoundedRectangle(new SolidBrush(colEdges), 2, 2, this.Width - 4, this.Height - 4, radius);
-            SolidBrush brush = new SolidBrush(
+            SolidBrush brush = new(
                 InColor
                 );
             g.FillRoundedRectangle(brush, 4, 4, this.Width - 8, this.Height - 8, radius);

@@ -19,9 +19,11 @@ namespace AnimePlayer
 {
     public partial class FormBrowser : Form
     {
-        ZetaIpc.Runtime.Server.IpcServer ipcServer;
-        ZetaIpc.Runtime.Client.IpcClient ipcClient;
-        public FormBrowser(bool startServer= true)
+        readonly ZetaIpc.Runtime.Server.IpcServer ipcServer;
+#pragma warning disable IDE0052 // Usuń nieodczytywane składowe prywatne
+        private readonly ZetaIpc.Runtime.Client.IpcClient ipcClient;
+#pragma warning restore IDE0052 // Usuń nieodczytywane składowe prywatne
+        public FormBrowser(bool startServer = true)
         {
             InitializeComponent();
             ipcClient = new ZetaIpc.Runtime.Client.IpcClient();
@@ -33,7 +35,7 @@ namespace AnimePlayer
             }
             try
             {
-                System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
+                System.Windows.Forms.Timer timer = new();
                 timer.Tick+=Timer_Tick;
                 timer.Start();
                 var item = browserTabPage1.newFlowLayoutPanelPages.Controls.OfType<BrowserTabPageItem>().First();
@@ -60,22 +62,26 @@ namespace AnimePlayer
 
         private void ButtonFindInApp_Click(object sender, EventArgs e)
         {
-             BrowserTabPageSearchResult searchResult = new BrowserTabPageSearchResult();
-            searchResult.Dock = DockStyle.Fill;
-            searchResult.Name = "searchResult";
+            BrowserTabPageSearchResult searchResult = new()
+            {
+                Dock = DockStyle.Fill,
+                Name = "searchResult"
+            };
             BrowserTabPageHomePage page = (BrowserTabPageHomePage)((Button)sender).Tag;
             browserTabPage1.AddPage("Wynik wyszukiwania frazy:"+page.textBoxMain.Text,
                 null,
                 searchResult);
-            Thread thread = new Thread(() =>
+            Thread thread = new(() =>
             {
                 Find(searchResult, page.textBoxMain.Text);
-            });
-            thread.Name = "ThreadSearch";
+            })
+            {
+                Name = "ThreadSearch"
+            };
             thread.Start();
         }
         
-        public void Find(BrowserTabPageSearchResult searchResult,string textFind)
+        public static void Find(BrowserTabPageSearchResult searchResult,string textFind)
         {
             try
             {
@@ -85,7 +91,7 @@ namespace AnimePlayer
                 {
                     if(item.Title.Contains(textFind))
                     {
-                        PanelSearchResult panelSearchResult = new PanelSearchResult();
+                        PanelSearchResult panelSearchResult = new();
                         panelSearchResult.labelDes.Text = "Opis";
                         panelSearchResult.linkLabelTitle.Text = item.Title;
                         panelSearchResult.pictureBoxIcon.ImageLocation = item.LinkToIcon[0];
@@ -103,14 +109,14 @@ namespace AnimePlayer
         }
         static List<PreviewTitleClass> GetAllPreviewTitleClassFromFolder()
         {
-            List<PreviewTitleClass> list = new List<PreviewTitleClass>();
+            List<PreviewTitleClass> list = new();
             //Task.Run(() =>
             // {
             try
             {
                 Console.WriteLine("GetAllPreviewTitleClassFromFolder()");
                 Console.WriteLine("Files:");
-                DirectoryInfo directoryInfo = new DirectoryInfo(AppFolders.PreviewItems.TrimEnd('\\'));
+                DirectoryInfo directoryInfo = new(AppFolders.PreviewItems.TrimEnd('\\'));
                 foreach (var item in directoryInfo.GetFiles())
                 {
                     if (item.FullName.EndsWith(".dat"))
@@ -136,7 +142,7 @@ namespace AnimePlayer
             e.Handled=true;
         }
 
-        public void CommandPraser(string text)
+        public static void CommandPraser(string text)
         {
             try
             {
@@ -158,35 +164,11 @@ namespace AnimePlayer
             }
             catch (Exception ex)
             {
-
-            }
-        }
-
-
-        private void RequestPOST(IpcMessage ipcMessage)
-        {
-            try
-            {
-                if (ipcMessage.MessageString.StartsWith("CreateControl"))
-                {
-                    
-                }
-            }
-            catch(Exception ex)
-            {
                 Console.Error.WriteLine(ex.ToString());
-                ipcClient.Initialize(ipcMessage.FromThePort);
-                ipcClient.Send("Error{;}RequestPOST{;}"+ex.Message);
             }
         }
 
-
-        public void OpenANewTabOnTheSite(string text)
-        {
-           // browserTabPage1.AddPage("NewPage", null, new PageItem());
-        }
-
-        private void panelContent_Paint(object sender, PaintEventArgs e)
+        private void PanelContent_Paint(object sender, PaintEventArgs e)
         {
 
         }

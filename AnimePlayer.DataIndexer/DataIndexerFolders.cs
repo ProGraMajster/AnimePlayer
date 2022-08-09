@@ -20,7 +20,7 @@ namespace AnimePlayer.DataIndexer
             bool end = false;
             while(end)
             {
-                DirectoryInfo directoryInfo = new DirectoryInfo(AppFolders.Icons);
+               // DirectoryInfo directoryInfo = new DirectoryInfo(AppFolders.Icons);
             }
         }
 

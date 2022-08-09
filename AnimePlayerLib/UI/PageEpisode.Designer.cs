@@ -59,7 +59,7 @@ namespace AnimePlayerLibrary.UI
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Visible = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.pictureBox1.Click += new System.EventHandler(this.PictureBox1_Click);
             // 
             // panel1
             // 
@@ -134,7 +134,7 @@ namespace AnimePlayerLibrary.UI
             this.buttonForwardEp.Text = ">";
             this.buttonForwardEp.UseVisualStyleBackColor = true;
             this.buttonForwardEp.Visible = false;
-            this.buttonForwardEp.Click += new System.EventHandler(this.buttonForwardEp_Click);
+            this.buttonForwardEp.Click += new System.EventHandler(this.ButtonForwardEp_Click);
             // 
             // buttonClose
             // 
@@ -149,7 +149,7 @@ namespace AnimePlayerLibrary.UI
             this.buttonClose.TabIndex = 5;
             this.buttonClose.Text = "X";
             this.buttonClose.UseVisualStyleBackColor = true;
-            this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
+            this.buttonClose.Click += new System.EventHandler(this.ButtonClose_Click);
             // 
             // buttonBackEp
             // 
@@ -164,7 +164,7 @@ namespace AnimePlayerLibrary.UI
             this.buttonBackEp.Text = "<";
             this.buttonBackEp.UseVisualStyleBackColor = true;
             this.buttonBackEp.Visible = false;
-            this.buttonBackEp.Click += new System.EventHandler(this.buttonBackEp_Click);
+            this.buttonBackEp.Click += new System.EventHandler(this.ButtonBackEp_Click);
             // 
             // flowLayoutPanel1
             // 
@@ -215,7 +215,7 @@ namespace AnimePlayerLibrary.UI
             this.buttonViewIconClose.TabIndex = 6;
             this.buttonViewIconClose.Text = "X";
             this.buttonViewIconClose.UseVisualStyleBackColor = true;
-            this.buttonViewIconClose.Click += new System.EventHandler(this.buttonViewIconClose_Click);
+            this.buttonViewIconClose.Click += new System.EventHandler(this.ButtonViewIconClose_Click);
             // 
             // panel4
             // 

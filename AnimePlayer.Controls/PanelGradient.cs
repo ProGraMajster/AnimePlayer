@@ -23,15 +23,13 @@ namespace AnimePlayer.ControlsWinForms
                     return;
                 }
                 var rc = new Rectangle(0, 0, this.ClientSize.Width, this.ClientSize.Height);
-                using (var brush = new System.Drawing.Drawing2D.LinearGradientBrush(
+                using var brush = new System.Drawing.Drawing2D.LinearGradientBrush(
                     rc,
                     Color.FromArgb(255, Color.Black),
                     Color.FromArgb(0, Color.Black),
-                    0f))
-                {
-                    g.PixelOffsetMode = System.Drawing.Drawing2D.PixelOffsetMode.Half;
-                    g.FillRectangle(brush, rc);
-                }
+                    0f);
+                g.PixelOffsetMode = System.Drawing.Drawing2D.PixelOffsetMode.Half;
+                g.FillRectangle(brush, rc);
             }
             catch(Exception ex)
             {

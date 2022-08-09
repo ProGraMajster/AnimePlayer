@@ -54,7 +54,7 @@ namespace AnimePlayer.Updater
             this.checkBoxUpdateOpenApp.TabIndex = 0;
             this.checkBoxUpdateOpenApp.Text = "Sprawdż czy jest dostępna aktualizacja";
             this.checkBoxUpdateOpenApp.UseVisualStyleBackColor = true;
-            this.checkBoxUpdateOpenApp.CheckedChanged += new System.EventHandler(this.checkBoxUpdateOpenApp_CheckedChanged);
+            this.checkBoxUpdateOpenApp.CheckedChanged += new System.EventHandler(this.CheckBoxUpdateOpenApp_CheckedChanged);
             // 
             // checkBoxBackUpdate
             // 
@@ -65,7 +65,7 @@ namespace AnimePlayer.Updater
             this.checkBoxBackUpdate.TabIndex = 1;
             this.checkBoxBackUpdate.Text = "Sprawdzaj w tle czy jest dostępna aktualizacja (gdy aplikacja jest uruchomiona)";
             this.checkBoxBackUpdate.UseVisualStyleBackColor = true;
-            this.checkBoxBackUpdate.CheckedChanged += new System.EventHandler(this.checkBoxBackUpdate_CheckedChanged);
+            this.checkBoxBackUpdate.CheckedChanged += new System.EventHandler(this.CheckBoxBackUpdate_CheckedChanged);
             // 
             // labelUpdateTimerInterval
             // 
@@ -102,7 +102,7 @@ namespace AnimePlayer.Updater
             this.buttonSaveUpdaterSetting.TabIndex = 4;
             this.buttonSaveUpdaterSetting.Text = "Zapisz ustawienia sekcji";
             this.buttonSaveUpdaterSetting.UseVisualStyleBackColor = false;
-            this.buttonSaveUpdaterSetting.Click += new System.EventHandler(this.buttonSaveUpdaterSetting_Click);
+            this.buttonSaveUpdaterSetting.Click += new System.EventHandler(this.ButtonSaveUpdaterSetting_Click);
             // 
             // numericUpDown1
             // 
@@ -126,7 +126,7 @@ namespace AnimePlayer.Updater
             0,
             0,
             0});
-            this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
+            this.numericUpDown1.ValueChanged += new System.EventHandler(this.NumericUpDown1_ValueChanged);
             // 
             // groupBoxMain
             // 
@@ -154,7 +154,7 @@ namespace AnimePlayer.Updater
             this.checkBoxDevVersion.Text = "Pobieraj wersjie z kanału deweloperskiego";
             this.checkBoxDevVersion.UseVisualStyleBackColor = true;
             this.checkBoxDevVersion.Visible = false;
-            this.checkBoxDevVersion.CheckedChanged += new System.EventHandler(this.checkBoxDevVersion_CheckedChanged);
+            this.checkBoxDevVersion.CheckedChanged += new System.EventHandler(this.CheckBoxDevVersion_CheckedChanged);
             // 
             // UpdaterSettingsPanel
             // 

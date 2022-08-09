@@ -11,7 +11,7 @@ namespace AnimePlayerLibrary.UI
 {
     public partial class PageEpisode : UserControl
     {
-        PageItemData _PageItemData;
+        readonly PageItemData _PageItemData;
         int numberEp;
         public PageEpisode(PageItemData pageItemData, int number)
         {
@@ -58,13 +58,13 @@ namespace AnimePlayerLibrary.UI
             {
                 labelTitle.Text = _PageItemData.TitleInformation.Title;
                 labelEpNumber.Text = "Odcinek "+numberEp.ToString();
-                Thread thread = new Thread(() =>
+                Thread thread = new(() =>
                 {
                     foreach (var item in ContentManagerLibary.GetEpisode(numberEp, _PageItemData.TitleInformation.Title))
                     {
                         flowLayoutPanel1.Invoke(() =>
                         {
-                            PanelItemEpisode panel = new PanelItemEpisode(item);
+                            PanelItemEpisode panel = new(item);
                             panel.buttonPlayEpisode.Click +=ButtonPlayEpisode_Click;
                             flowLayoutPanel1.Controls.Add(panel);
                         });
@@ -84,7 +84,7 @@ namespace AnimePlayerLibrary.UI
             {
                 Control control = (Control)sender;
                 Episode episode = (Episode)control.Tag;
-                VideoPlayerWeb videoPlayerWeb = new VideoPlayerWeb(episode);
+                VideoPlayerWeb videoPlayerWeb = new(episode);
                 this.Parent.Controls.Add(videoPlayerWeb);
                 videoPlayerWeb.Dock = DockStyle.Fill;
                 videoPlayerWeb.Show();
@@ -98,13 +98,13 @@ namespace AnimePlayerLibrary.UI
             }
         }
 
-        private void buttonClose_Click(object sender, EventArgs e)
+        private void ButtonClose_Click(object sender, EventArgs e)
         {
             this.Hide();
             this.Dispose();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void PictureBox1_Click(object sender, EventArgs e)
         {
             panelViewIcon.Size = new Size(this.Size.Width - 200, this.Size.Height - 100);
             panelViewIcon.Left = (this.ClientSize.Width - panelViewIcon.Width) / 2;
@@ -115,7 +115,7 @@ namespace AnimePlayerLibrary.UI
             pictureBox2.Image = pictureBox1.Image;
         }
 
-        private void buttonViewIconClose_Click(object sender, EventArgs e)
+        private void ButtonViewIconClose_Click(object sender, EventArgs e)
         {
             pictureBox2.Image = null;
             panelViewIcon.Hide();
@@ -131,24 +131,28 @@ namespace AnimePlayerLibrary.UI
             }
         }
 
-        private void buttonBackEp_Click(object sender, EventArgs e)
+        private void ButtonBackEp_Click(object sender, EventArgs e)
         {
             if(numberEp==1)
             {
                 return;
             }
-            PageEpisode pageEpisode = new PageEpisode(_PageItemData, numberEp-=1);
-            pageEpisode.Dock = DockStyle.Fill;
+            PageEpisode pageEpisode = new(_PageItemData, numberEp-=1)
+            {
+                Dock = DockStyle.Fill
+            };
             this.Parent.Controls.Add(pageEpisode);
             pageEpisode.Show();
             pageEpisode.BringToFront();
             this.Dispose();
         }
 
-        private void buttonForwardEp_Click(object sender, EventArgs e)
+        private void ButtonForwardEp_Click(object sender, EventArgs e)
         {
-            PageEpisode pageEpisode = new PageEpisode(_PageItemData, numberEp+=1);
-            pageEpisode.Dock = DockStyle.Fill;
+            PageEpisode pageEpisode = new(_PageItemData, numberEp+=1)
+            {
+                Dock = DockStyle.Fill
+            };
             this.Parent.Controls.Add(pageEpisode);
             pageEpisode.Show();
             pageEpisode.BringToFront();

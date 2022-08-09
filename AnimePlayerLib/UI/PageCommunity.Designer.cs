@@ -115,7 +115,7 @@
             this.buttonClosePage.TabIndex = 0;
             this.buttonClosePage.Text = "Zamknij";
             this.buttonClosePage.UseVisualStyleBackColor = true;
-            this.buttonClosePage.Click += new System.EventHandler(this.buttonClosePage_Click);
+            this.buttonClosePage.Click += new System.EventHandler(this.ButtonClosePage_Click);
             // 
             // newFlowLayoutPanelAll
             // 

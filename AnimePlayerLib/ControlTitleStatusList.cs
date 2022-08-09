@@ -14,17 +14,19 @@ namespace AnimePlayerLibrary
 {
     public partial class ControlTitleStatusList : UserControl
     {
-        NewFlowLayoutPanel newFlowLayoutPanel;
+        readonly NewFlowLayoutPanel newFlowLayoutPanel;
         public ControlTitleStatusList()
         {
             InitializeComponent();
-            newFlowLayoutPanel = new NewFlowLayoutPanel();
-            newFlowLayoutPanel.Dock = DockStyle.Fill;
-            newFlowLayoutPanel.Name = "newFlowLayoutPanel_Titles";
-            newFlowLayoutPanel.AutoScroll = true;
+            newFlowLayoutPanel = new NewFlowLayoutPanel
+            {
+                Dock = DockStyle.Fill,
+                Name = "newFlowLayoutPanel_Titles",
+                AutoScroll = true,
+                FlowDirection = FlowDirection.TopDown,
+                WrapContents = false
+            };
             newFlowLayoutPanel.Resize += NewFlowLayoutPanel_Resize;
-            newFlowLayoutPanel.FlowDirection = FlowDirection.TopDown;
-            newFlowLayoutPanel.WrapContents = false;
             panelDock.Controls.Add(newFlowLayoutPanel);
             newFlowLayoutPanel.Show();
 
@@ -32,8 +34,10 @@ namespace AnimePlayerLibrary
             {
                 for(int i = 0; i < 20; i++)
                 {
-                    ControlTitleStatusList_Item item = new ControlTitleStatusList_Item();
-                    item.Name = "item_";
+                    ControlTitleStatusList_Item item = new()
+                    {
+                        Name = "item_"
+                    };
                     item.SetWidth(newFlowLayoutPanel.Width-35);
                     newFlowLayoutPanel.Controls.Add(item);
                 }
@@ -52,7 +56,7 @@ namespace AnimePlayerLibrary
             }
         }
 
-        private void bWresiezItem_DoWork(object sender, DoWorkEventArgs e)
+        private void BWresiezItem_DoWork(object sender, DoWorkEventArgs e)
         {
             try
             {

@@ -11,12 +11,12 @@ namespace AnimePlayer
         public string orginalLink;
         public double ShowSkipIntroTime = double.NaN;
         public double SkipIntro = double.NaN;
-        AxWMPLib.AxWindowsMediaPlayer axwmp;
+        readonly AxWMPLib.AxWindowsMediaPlayer axwmp;
         public VideoPlayer()
         {
             InitializeComponent();
             axwmp = new AxWMPLib.AxWindowsMediaPlayer();
-            axwmp.MouseMoveEvent += axwmp_mouseMoveEvent;
+            axwmp.MouseMoveEvent += Axwmp_mouseMoveEvent;
             this.Controls.Add(axwmp);
             axwmp.Dock = DockStyle.Fill;
             this.Dock = DockStyle.Fill;
@@ -31,7 +31,7 @@ namespace AnimePlayer
 
         }
 
-        private void buttonClose_Click(object sender, EventArgs e)
+        private void ButtonClose_Click(object sender, EventArgs e)
         {
             this.ParentForm.Size = sizeform;
             this.ParentForm.FormBorderStyle = FormBorderStyle.Sizable;
@@ -43,7 +43,7 @@ namespace AnimePlayer
 
         Size sizeform;
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Button1_Click(object sender, EventArgs e)
         {
             this.ParentForm.SuspendLayout();
             if (full)
@@ -74,7 +74,7 @@ namespace AnimePlayer
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void Button2_Click(object sender, EventArgs e)
         {
             axwmp.Ctlcontrols.play();
             label1.Text = "Status: Odtwarzanie";
@@ -82,18 +82,18 @@ namespace AnimePlayer
             timerShowSkipButton.Start();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void Button3_Click(object sender, EventArgs e)
         {
             axwmp.Ctlcontrols.pause();
             label1.Text = "Status: Wstrzymano";
             timer.Stop();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void Button4_Click(object sender, EventArgs e)
         {
             try
             {
-                OpenFileDialog openFileDialog = new OpenFileDialog();
+                OpenFileDialog openFileDialog = new();
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
                     if (System.IO.File.Exists(openFileDialog.FileName))
@@ -108,12 +108,12 @@ namespace AnimePlayer
             }
         }
 
-        private void timer_Tick(object sender, EventArgs e)
+        private void Timer_Tick(object sender, EventArgs e)
         {
             
         }
 
-        private void timerShowSkipButton_Tick(object sender, EventArgs e)
+        private void TimerShowSkipButton_Tick(object sender, EventArgs e)
         {
             if (axwmp.Ctlcontrols.currentPosition == ShowSkipIntroTime)
             {
@@ -123,18 +123,18 @@ namespace AnimePlayer
             }
         }
 
-        private void buttonSkip_Click(object sender, EventArgs e)
+        private void ButtonSkip_Click(object sender, EventArgs e)
         {
             axwmp.Ctlcontrols.currentPosition = SkipIntro;
             buttonSkip.Hide();
         }
 
-        private void timerHidebuttonSkip_Tick(object sender, EventArgs e)
+        private void TimerHidebuttonSkip_Tick(object sender, EventArgs e)
         {
             buttonSkip.Hide();
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (comboBox1.SelectedItem.ToString() == "PlayerType_0")
             {
@@ -155,7 +155,7 @@ namespace AnimePlayer
             
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void Button5_Click(object sender, EventArgs e)
         {
             try
             {
@@ -169,7 +169,7 @@ namespace AnimePlayer
             }
         }
 
-        private void axwmp_mouseMoveEvent(object sender, AxWMPLib._WMPOCXEvents_MouseMoveEvent e)
+        private void Axwmp_mouseMoveEvent(object sender, AxWMPLib._WMPOCXEvents_MouseMoveEvent e)
         {
             if(full)
             {

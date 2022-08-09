@@ -47,7 +47,7 @@ namespace AnimePlayer.Updater
             this.button1.TabIndex = 0;
             this.button1.Text = "Włącz podgląd logów";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // richTextBox1
             // 
@@ -77,7 +77,7 @@ namespace AnimePlayer.Updater
             // 
             // timer1
             // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
             // 
             // FormUpdater
             // 

@@ -46,7 +46,7 @@ namespace AnimePlayer.ControlsWinForms
             this.pictureBoxItemIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxItemIcon.TabIndex = 0;
             this.pictureBoxItemIcon.TabStop = false;
-            this.pictureBoxItemIcon.Click += new System.EventHandler(this.pictureBoxItemIcon_Click);
+            this.pictureBoxItemIcon.Click += new System.EventHandler(this.PictureBoxItemIcon_Click);
             // 
             // labelItemTitle
             // 
@@ -58,7 +58,7 @@ namespace AnimePlayer.ControlsWinForms
             this.labelItemTitle.TabIndex = 1;
             this.labelItemTitle.Text = "ItemTitle";
             this.labelItemTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.labelItemTitle.Click += new System.EventHandler(this.labelItemTitle_Click);
+            this.labelItemTitle.Click += new System.EventHandler(this.LabelItemTitle_Click);
             // 
             // buttonCloseItem
             // 
@@ -73,7 +73,7 @@ namespace AnimePlayer.ControlsWinForms
             this.buttonCloseItem.TabIndex = 2;
             this.buttonCloseItem.Text = "X";
             this.buttonCloseItem.UseVisualStyleBackColor = false;
-            this.buttonCloseItem.Click += new System.EventHandler(this.buttonCloseItem_Click);
+            this.buttonCloseItem.Click += new System.EventHandler(this.ButtonCloseItem_Click);
             // 
             // BrowserTabPageItem
             // 

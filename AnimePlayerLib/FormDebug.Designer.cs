@@ -151,9 +151,9 @@ namespace AnimePlayerLibrary
             this.treeView1.ShowNodeToolTips = true;
             this.treeView1.Size = new System.Drawing.Size(381, 555);
             this.treeView1.TabIndex = 0;
-            this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
-            this.treeView1.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeView1_NodeMouseDoubleClick);
-            this.treeView1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.treeView1_KeyDown);
+            this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.TreeView1_AfterSelect);
+            this.treeView1.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.TreeView1_NodeMouseDoubleClick);
+            this.treeView1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TreeView1_KeyDown);
             // 
             // textBox1
             // 
@@ -165,7 +165,7 @@ namespace AnimePlayerLibrary
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(1192, 23);
             this.textBox1.TabIndex = 1;
-            this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
+            this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextBox1_KeyDown);
             // 
             // tabPage3
             // 
@@ -191,7 +191,7 @@ namespace AnimePlayerLibrary
             this.richTextBoxListControls.Size = new System.Drawing.Size(1192, 578);
             this.richTextBoxListControls.TabIndex = 0;
             this.richTextBoxListControls.Text = "";
-            this.richTextBoxListControls.KeyDown += new System.Windows.Forms.KeyEventHandler(this.richTextBoxListControls_KeyDown);
+            this.richTextBoxListControls.KeyDown += new System.Windows.Forms.KeyEventHandler(this.RichTextBoxListControls_KeyDown);
             // 
             // tabPage4
             // 
@@ -214,15 +214,15 @@ namespace AnimePlayerLibrary
             this.buttonSaveControlList.TabIndex = 0;
             this.buttonSaveControlList.Text = "Zapisz listę kontrolek";
             this.buttonSaveControlList.UseVisualStyleBackColor = true;
-            this.buttonSaveControlList.Click += new System.EventHandler(this.buttonSaveConsoleLogs_Click);
+            this.buttonSaveControlList.Click += new System.EventHandler(this.ButtonSaveConsoleLogs_Click);
             // 
             // bWLoadListControls
             // 
-            this.bWLoadListControls.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bWLoadListControls_DoWork);
+            this.bWLoadListControls.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BWLoadListControls_DoWork);
             // 
             // timerCheckCountControlsInForm
             // 
-            this.timerCheckCountControlsInForm.Tick += new System.EventHandler(this.timerCheckCountControlsInForm_Tick);
+            this.timerCheckCountControlsInForm.Tick += new System.EventHandler(this.TimerCheckCountControlsInForm_Tick);
             // 
             // FormDebug
             // 

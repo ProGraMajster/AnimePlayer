@@ -62,7 +62,7 @@ namespace AnimePlayer.Profile
             this.buttonCreateProfile.TabIndex = 1;
             this.buttonCreateProfile.Text = "Utwórz profil";
             this.buttonCreateProfile.UseVisualStyleBackColor = true;
-            this.buttonCreateProfile.Click += new System.EventHandler(this.buttonCreateProfile_Click);
+            this.buttonCreateProfile.Click += new System.EventHandler(this.ButtonCreateProfile_Click);
             // 
             // label2
             // 

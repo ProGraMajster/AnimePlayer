@@ -78,7 +78,7 @@ namespace AnimePlayer
             this.button5.TabIndex = 10;
             this.button5.Text = "Źródło filmu";
             this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.button5.Click += new System.EventHandler(this.Button5_Click);
             // 
             // comboBox1
             // 
@@ -97,7 +97,7 @@ namespace AnimePlayer
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(170, 23);
             this.comboBox1.TabIndex = 9;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.ComboBox1_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -125,7 +125,7 @@ namespace AnimePlayer
             this.button4.TabIndex = 7;
             this.button4.Text = "Otwórz lokalny plik";
             this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.button4.Click += new System.EventHandler(this.Button4_Click);
             // 
             // button3
             // 
@@ -140,7 +140,7 @@ namespace AnimePlayer
             this.button3.TabIndex = 6;
             this.button3.Text = "Wstrzymaj";
             this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.button3.Click += new System.EventHandler(this.Button3_Click);
             // 
             // button2
             // 
@@ -155,7 +155,7 @@ namespace AnimePlayer
             this.button2.TabIndex = 5;
             this.button2.Text = "Odtwórz";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.Click += new System.EventHandler(this.Button2_Click);
             // 
             // button1
             // 
@@ -170,7 +170,7 @@ namespace AnimePlayer
             this.button1.TabIndex = 4;
             this.button1.Text = "Pełen ekran";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // buttonClose
             // 
@@ -185,7 +185,7 @@ namespace AnimePlayer
             this.buttonClose.TabIndex = 3;
             this.buttonClose.Text = "X";
             this.buttonClose.UseVisualStyleBackColor = true;
-            this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
+            this.buttonClose.Click += new System.EventHandler(this.ButtonClose_Click);
             // 
             // buttonSkip
             // 
@@ -201,22 +201,22 @@ namespace AnimePlayer
             this.buttonSkip.Text = "Pomiń wstęp";
             this.buttonSkip.UseVisualStyleBackColor = false;
             this.buttonSkip.Visible = false;
-            this.buttonSkip.Click += new System.EventHandler(this.buttonSkip_Click);
+            this.buttonSkip.Click += new System.EventHandler(this.ButtonSkip_Click);
             // 
             // timer
             // 
             this.timer.Interval = 1;
-            this.timer.Tick += new System.EventHandler(this.timer_Tick);
+            this.timer.Tick += new System.EventHandler(this.Timer_Tick);
             // 
             // timerShowSkipButton
             // 
             this.timerShowSkipButton.Interval = 1;
-            this.timerShowSkipButton.Tick += new System.EventHandler(this.timerShowSkipButton_Tick);
+            this.timerShowSkipButton.Tick += new System.EventHandler(this.TimerShowSkipButton_Tick);
             // 
             // timerHidebuttonSkip
             // 
             this.timerHidebuttonSkip.Interval = 30000;
-            this.timerHidebuttonSkip.Tick += new System.EventHandler(this.timerHidebuttonSkip_Tick);
+            this.timerHidebuttonSkip.Tick += new System.EventHandler(this.TimerHidebuttonSkip_Tick);
             // 
             // VideoPlayer
             // 

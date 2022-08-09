@@ -17,7 +17,7 @@ namespace AnimePlayer.ControlsWinForms
         int tabPageValue = 0;
         public void AddPage(string title, Image image, Control controlContentPage)
         {
-            BrowserTabPageItem item = new BrowserTabPageItem();
+            BrowserTabPageItem item = new();
             item.pictureBoxItemIcon.Image = image;
             item.labelItemTitle.Text = title;
             item.Tag = controlContentPage;
@@ -25,9 +25,11 @@ namespace AnimePlayer.ControlsWinForms
             newFlowLayoutPanelPages.Controls.Add(item);
             if(_UseRoundingControl)
             {
-                RoundingControl roundingControl = new RoundingControl();
-                roundingControl.TargetControl = item;
-                roundingControl.CornerRadius = ValueCornerRadius;
+                RoundingControl roundingControl = new()
+                {
+                    TargetControl = item,
+                    CornerRadius = ValueCornerRadius
+                };
             }
             item.pictureBoxItemIcon.Click += Item_Click;
             item.labelItemTitle.Click += Item_Click;
@@ -59,7 +61,7 @@ namespace AnimePlayer.ControlsWinForms
 
         public BrowserTabPageItem AddPageAndRef(string title, Image image, Control controlContentPage)
         {
-            BrowserTabPageItem item = new BrowserTabPageItem();
+            BrowserTabPageItem item = new();
             item.pictureBoxItemIcon.Image = image;
             item.labelItemTitle.Text = title;
             item.Tag = controlContentPage;
@@ -67,17 +69,18 @@ namespace AnimePlayer.ControlsWinForms
             newFlowLayoutPanelPages.Controls.Add(item);
             if (_UseRoundingControl)
             {
-                RoundingControl roundingControl = new RoundingControl();
-                roundingControl.TargetControl = item;
-                roundingControl.CornerRadius = ValueCornerRadius;
+                _ = new RoundingControl()
+                {
+                    TargetControl = item,
+                    CornerRadius = ValueCornerRadius
+                };
             }
             return item;
         }
 
         public bool _UseRoundingControl = true;
         public int ValueCornerRadius = 15;
-
-        List<BrowserTabPageItem> browserTabPageItems = new List<BrowserTabPageItem>();
+        readonly List<BrowserTabPageItem> browserTabPageItems = new();
 
 
         [
@@ -119,12 +122,16 @@ namespace AnimePlayer.ControlsWinForms
             InitializeComponent();
             if(_UseRoundingControl)
             {
-                RoundingControl rc = new RoundingControl();
-                rc.TargetControl = buttonNewPage;
-                rc.CornerRadius = ValueCornerRadius;
-                rc = new RoundingControl();
-                rc.TargetControl = buttonViewAllPage;
-                rc.CornerRadius = ValueCornerRadius;
+                _ = new RoundingControl()
+                {
+                    TargetControl = buttonNewPage,
+                    CornerRadius = ValueCornerRadius
+                };
+                _ = new RoundingControl()
+                {
+                    TargetControl = buttonViewAllPage,
+                    CornerRadius = ValueCornerRadius
+                };
             }
             try
             {
@@ -132,7 +139,7 @@ namespace AnimePlayer.ControlsWinForms
                 homePage.buttonFindInApp.Click += eventHandler;
                 mainPage = AddPageAndRef("Strona główna", null, homePage);
                 mainPage.buttonCloseItem.Hide();
-                Timer timer = new Timer();
+                Timer timer = new();
                 timer.Tick+=Timer_Tick;
                 timer.Start();
             }
@@ -141,7 +148,8 @@ namespace AnimePlayer.ControlsWinForms
                 Console.WriteLine(ex.ToString());
             }
         }
-        BrowserTabPageItem mainPage;
+
+        readonly BrowserTabPageItem mainPage;
 
 
         private class RoundingControl : Component
@@ -182,14 +190,14 @@ namespace AnimePlayer.ControlsWinForms
         }
 
         public BrowserTabPageHomePage browserTabPageHomePage;
-        private void buttonNewPage_Click(object sender, EventArgs e)
+        private void ButtonNewPage_Click(object sender, EventArgs e)
         {
             browserTabPageHomePage =new BrowserTabPageHomePage();
             browserTabPageHomePage.buttonFindInApp.Click += eventHandler;
             AddPage("Strona główna", null, browserTabPageHomePage);
         }
 
-        private void newFlowLayoutPanelPages_ControlAdded(object sender, ControlEventArgs e)
+        private void NewFlowLayoutPanelPages_ControlAdded(object sender, ControlEventArgs e)
         {
             if(e.Control.GetType() == typeof(BrowserTabPageHomePage) ||
                 e.Control.GetType() == typeof(BrowserTabPageItem))
@@ -199,7 +207,7 @@ namespace AnimePlayer.ControlsWinForms
             }
         }
 
-        private void newFlowLayoutPanelPages_ControlRemoved(object sender, ControlEventArgs e)
+        private void NewFlowLayoutPanelPages_ControlRemoved(object sender, ControlEventArgs e)
         {
             if (e.Control.GetType() == typeof(BrowserTabPageHomePage) ||
                 e.Control.GetType() == typeof(BrowserTabPageItem))
@@ -208,7 +216,8 @@ namespace AnimePlayer.ControlsWinForms
                 labelTabPageValue.Text = tabPageValue.ToString();
             }
         }
-        BrowserTabPageHomePage homePage = new BrowserTabPageHomePage();
+
+        readonly BrowserTabPageHomePage homePage = new();
         private void BrowserTabPage_Load(object sender, EventArgs e)
         {
             
@@ -224,7 +233,7 @@ namespace AnimePlayer.ControlsWinForms
             }
         }
 
-        private void buttonViewAllPage_Click(object sender, EventArgs e)
+        private void ButtonViewAllPage_Click(object sender, EventArgs e)
         {
 
         }

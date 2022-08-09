@@ -47,7 +47,7 @@ namespace AnimePlayer.Updater
             {
                 if (!File.Exists(AppFolders.Updater+"content.zip"))
                 {
-                    new FileNotFoundException();
+                    _=new FileNotFoundException();
                 }
                 if(Directory.Exists(AppFolders.UpdatedContentFolder))
                 {

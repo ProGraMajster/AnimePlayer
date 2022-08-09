@@ -21,12 +21,7 @@ namespace AnimePlayerLibrary
 
         public Form form;
 
-        void RtbNewlinie(string text)
-        {
-            richTextBox.Text += Environment.NewLine+text;
-        }
-
-        private void textBox1_KeyDown(object sender, KeyEventArgs e)
+        private void TextBox1_KeyDown(object sender, KeyEventArgs e)
         {
             try
             {
@@ -42,7 +37,7 @@ namespace AnimePlayerLibrary
             }
         }
 
-        private void bWLoadListControls_DoWork(object sender, DoWorkEventArgs e)
+        private void BWLoadListControls_DoWork(object sender, DoWorkEventArgs e)
         {
             try
             {
@@ -51,14 +46,18 @@ namespace AnimePlayerLibrary
                 treeView1.Nodes.Clear();
                 if (form != null)
                 {
-                    TreeNode treeNode = new TreeNode();
-                    treeNode.Text = form.Name;
-                    treeNode.ToolTipText = form.Name + " | " + form.GetType().ToString();
+                    TreeNode treeNode = new()
+                    {
+                        Text = form.Name,
+                        ToolTipText = form.Name + " | " + form.GetType().ToString()
+                    };
                     foreach (Control ctn in form.Controls)
                     {
-                        TreeNode sub = new TreeNode();
-                        sub.Text = ctn.Name;
-                        sub.ToolTipText = ctn.Name + " | " + ctn.GetType().ToString();
+                        TreeNode sub = new()
+                        {
+                            Text = ctn.Name,
+                            ToolTipText = ctn.Name + " | " + ctn.GetType().ToString()
+                        };
                         this.Invoke(new Action(() => richTextBoxListControls.Text += ctn.Name+Environment.NewLine));
                         if(ctn.Controls.Count > 0)
                         {
@@ -82,7 +81,7 @@ namespace AnimePlayerLibrary
             v++;
             foreach (Control ctn in c.Controls)
             {
-                TreeNode sub = new TreeNode();
+                TreeNode sub = new();
                 if(ctn.Name.Length > 0)
                 {
                     sub.Text = ctn.Name;
@@ -106,7 +105,7 @@ namespace AnimePlayerLibrary
             }
         }
 
-        public string GetTab(int t)
+        public static string GetTab(int t)
         {
             string r = null;
             for(int i = 0; i < t; i++)
@@ -128,7 +127,7 @@ namespace AnimePlayerLibrary
 
         int count;
 
-        private void timerCheckCountControlsInForm_Tick(object sender, EventArgs e)
+        private void TimerCheckCountControlsInForm_Tick(object sender, EventArgs e)
         {
             if(form != null)
             {
@@ -139,7 +138,7 @@ namespace AnimePlayerLibrary
             }
         }
 
-        private void richTextBoxListControls_KeyDown(object sender, KeyEventArgs e)
+        private void RichTextBoxListControls_KeyDown(object sender, KeyEventArgs e)
         {
             switch(e.KeyCode)
             {
@@ -154,17 +153,17 @@ namespace AnimePlayerLibrary
             }
         }
 
-        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
+        private void TreeView1_AfterSelect(object sender, TreeViewEventArgs e)
         {
             
         }
 
-        private void treeView1_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
+        private void TreeView1_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
         {
             
         }
 
-        private void buttonSaveConsoleLogs_Click(object sender, EventArgs e)
+        private void ButtonSaveConsoleLogs_Click(object sender, EventArgs e)
         {
             try
             {
@@ -187,14 +186,18 @@ namespace AnimePlayerLibrary
                     treeView1.Nodes.Clear();
                     if (form != null)
                     {
-                        TreeNode treeNode = new TreeNode();
-                        treeNode.Text = form.Name;
-                        treeNode.ToolTipText = form.Name + " -- " + form.GetType().ToString();
+                        TreeNode treeNode = new()
+                        {
+                            Text = form.Name,
+                            ToolTipText = form.Name + " -- " + form.GetType().ToString()
+                        };
                         foreach (Control ctn in form.Controls)
                         {
-                            TreeNode sub = new TreeNode();
-                            sub.Text = ctn.Name;
-                            sub.ToolTipText = ctn.Name + " -- " + ctn.GetType().ToString();
+                            TreeNode sub = new()
+                            {
+                                Text = ctn.Name,
+                                ToolTipText = ctn.Name + " -- " + ctn.GetType().ToString()
+                            };
                             this.Invoke(new Action(() => richTextBoxListControls.Text += ctn.Name + Environment.NewLine));
                             if (ctn.Controls.Count > 0)
                             {
@@ -212,7 +215,7 @@ namespace AnimePlayerLibrary
             }
         }
 
-        private void treeView1_KeyDown(object sender, KeyEventArgs e)
+        private void TreeView1_KeyDown(object sender, KeyEventArgs e)
         {
             try
             {

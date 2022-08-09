@@ -8,7 +8,7 @@ namespace AnimePlayer
 {
     public partial class PageSettings : UserControl
     {
-        private FormMainPlayer FormMainPlayer;
+        private readonly FormMainPlayer FormMainPlayer;
         public PageSettings(FormMainPlayer okno)
         {
             InitializeComponent();
@@ -19,19 +19,21 @@ namespace AnimePlayer
             labelAppRamUsage_View.Text = okno.labelAppRamUsage.Text;
             if (AnimePlayer.Properties.Settings.Default.RoundingControl)
             {
-                ControlsNewMethods.RoundingControl rc = new ControlsNewMethods.RoundingControl();
-                rc.TargetControl = buttonClose;
-                rc.CornerRadius = 15;
+                _ = new ControlsNewMethods.RoundingControl
+                {
+                    TargetControl = buttonClose,
+                    CornerRadius = 15
+                };
             }
         }
 
-        private void buttonClose_Click(object sender, EventArgs e)
+        private void ButtonClose_Click(object sender, EventArgs e)
         {
             this.Hide();
             this.Dispose();
         }
 
-        private void checkBoxRoundedEdges_CheckedChanged(object sender, EventArgs e)
+        private void CheckBoxRoundedEdges_CheckedChanged(object sender, EventArgs e)
         {
             try
             {
@@ -44,7 +46,7 @@ namespace AnimePlayer
             }
         }
 
-        private void buttonSetThemeFile_Click(object sender, EventArgs e)
+        private void ButtonSetThemeFile_Click(object sender, EventArgs e)
         {
             if(openFileDialogThemeFile.ShowDialog() == DialogResult.OK)
             {
@@ -66,7 +68,7 @@ namespace AnimePlayer
             }
         }
 
-        private void buttonThemeReset_Click(object sender, EventArgs e)
+        private void ButtonThemeReset_Click(object sender, EventArgs e)
         {
             try
             {
@@ -92,7 +94,7 @@ namespace AnimePlayer
             FormMainPlayer.panelLoading.Hide();
         }
 
-        private void timerRefreshValue_Tick(object sender, EventArgs e)
+        private void TimerRefreshValue_Tick(object sender, EventArgs e)
         {
             labelAppRamUsage_View.Text = FormMainPlayer.labelAppRamUsage.Text;
         }

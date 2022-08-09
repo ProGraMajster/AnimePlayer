@@ -16,7 +16,7 @@ namespace AnimePlayerLibrary
     [Serializable]
     public class ItemList_ClassItemOnStateList
     {
-        public ClassItemOnStateList[] stateLists { get; set; }
+        public ClassItemOnStateList[] StateLists { get; set; }
 
     }
 }

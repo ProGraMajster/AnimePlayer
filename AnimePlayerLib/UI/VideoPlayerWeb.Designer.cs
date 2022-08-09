@@ -69,7 +69,7 @@ namespace AnimePlayerLibrary
             this.button1.TabIndex = 4;
             this.button1.Text = "Okno pełnoekranowe";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // buttonClose
             // 
@@ -84,7 +84,7 @@ namespace AnimePlayerLibrary
             this.buttonClose.TabIndex = 3;
             this.buttonClose.Text = "Zamknij odtwarzacz";
             this.buttonClose.UseVisualStyleBackColor = true;
-            this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
+            this.buttonClose.Click += new System.EventHandler(this.ButtonClose_Click);
             // 
             // webView21
             // 
@@ -97,9 +97,9 @@ namespace AnimePlayerLibrary
             this.webView21.Source = new System.Uri("https://sites.google.com/view/twojeanimepl", System.UriKind.Absolute);
             this.webView21.TabIndex = 2;
             this.webView21.ZoomFactor = 1D;
-            this.webView21.NavigationStarting += new System.EventHandler<Microsoft.Web.WebView2.Core.CoreWebView2NavigationStartingEventArgs>(this.webView21_NavigationStarting);
-            this.webView21.NavigationCompleted += new System.EventHandler<Microsoft.Web.WebView2.Core.CoreWebView2NavigationCompletedEventArgs>(this.webView21_NavigationCompleted);
-            this.webView21.MouseMove += new System.Windows.Forms.MouseEventHandler(this.webView21_MouseMove);
+            this.webView21.NavigationStarting += new System.EventHandler<Microsoft.Web.WebView2.Core.CoreWebView2NavigationStartingEventArgs>(this.WebView21_NavigationStarting);
+            this.webView21.NavigationCompleted += new System.EventHandler<Microsoft.Web.WebView2.Core.CoreWebView2NavigationCompletedEventArgs>(this.WebView21_NavigationCompleted);
+            this.webView21.MouseMove += new System.Windows.Forms.MouseEventHandler(this.WebView21_MouseMove);
             // 
             // label1
             // 
@@ -116,15 +116,15 @@ namespace AnimePlayerLibrary
             // timerLoad
             // 
             this.timerLoad.Interval = 1000;
-            this.timerLoad.Tick += new System.EventHandler(this.timerLoad_Tick);
+            this.timerLoad.Tick += new System.EventHandler(this.TimerLoad_Tick);
             // 
             // timerM
             // 
-            this.timerM.Tick += new System.EventHandler(this.timerM_Tick);
+            this.timerM.Tick += new System.EventHandler(this.TimerM_Tick);
             // 
             // timerLoadingStatus
             // 
-            this.timerLoadingStatus.Tick += new System.EventHandler(this.timerLoadingStatus_Tick);
+            this.timerLoadingStatus.Tick += new System.EventHandler(this.TimerLoadingStatus_Tick);
             // 
             // VideoPlayerWeb
             // 

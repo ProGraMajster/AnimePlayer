@@ -19,12 +19,12 @@ namespace AnimePlayerLibrary.UI
             InitializeComponent();
             panelView.Hide();
             panelAll.Show();
-            Thread thread = new Thread(() =>
+            Thread thread = new(() =>
             {
                 Thread.Sleep(200);
                 foreach(var item in ContentManagerLibary.GetAllItemCommunities())
                 {
-                    PanelPreviewItemCommunity panel = new PanelPreviewItemCommunity(item);
+                    PanelPreviewItemCommunity panel = new(item);
                     panel.Click+=Item_Click;
                     panel.labelName.Click+=Item_Click;
                     panel.pictureBox1.Click+=Item_Click;
@@ -56,18 +56,22 @@ namespace AnimePlayerLibrary.UI
                 }
                 if(itemCommunity.banners.Length >0 && itemCommunity.banners != null)
                 {
-                    PictureBox pictureBox = new PictureBox();
-                    pictureBox.ImageLocation = itemCommunity.banners[0];
+                    PictureBox pictureBox = new()
+                    {
+                        ImageLocation = itemCommunity.banners[0]
+                    };
                     panelViewBack.BackgroundImage = pictureBox.Image;
                     pictureBox.Dispose();
                 }
                 foreach(var item in itemCommunity.URLs)
                 {
-                    LinkLabel linkLabel = new LinkLabel();
-                    linkLabel.Text = item.Key.ToString();
-                    linkLabel.Tag = item.Value.ToString();
+                    LinkLabel linkLabel = new()
+                    {
+                        Text = item.Key.ToString(),
+                        Tag = item.Value.ToString(),
+                        LinkColor = Color.Aqua
+                    };
                     linkLabel.LinkClicked +=LinkLabel_LinkClicked;
-                    linkLabel.LinkColor = Color.Aqua;
                     newFlowLayoutPanelLinks.Controls.Add(linkLabel);
                 }
             } 
@@ -94,7 +98,7 @@ namespace AnimePlayerLibrary.UI
 
         }
 
-        private void buttonClosePage_Click(object sender, EventArgs e)
+        private void ButtonClosePage_Click(object sender, EventArgs e)
         {
             this.Dispose();
         }

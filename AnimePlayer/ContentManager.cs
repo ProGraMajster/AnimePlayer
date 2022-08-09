@@ -14,10 +14,6 @@ namespace AnimePlayer
 {
     public static class ContentManager
     {
-        public static List<MainItemClass> mainItemClasses;
-        static bool normalFolder = false;
-        static bool updateFolder = false;
-        public static Control TartgetLoadingInfo;
         private static FormMainPlayer _formMainPlayer;
         public static void Initalize(FormMainPlayer formMainPlayer)
         {
@@ -29,7 +25,7 @@ namespace AnimePlayer
             }
             catch(Exception ex)
             {
-
+                Console.Error.WriteLine(ex.ToString());
             }
             List<PreviewTitleClass> previewTitleClasses = GetAllPreviewTitleClassFromFolder();
             foreach (PreviewTitleClass item in previewTitleClasses)
@@ -51,9 +47,13 @@ namespace AnimePlayer
 
         private static void DirFilesMoveToDir(string pathSource, string pathnewloocation)
         {
-            DirectoryInfo directoryInfo = new DirectoryInfo(pathSource);
-            DirectoryInfo directoryInfo2 = new DirectoryInfo(pathnewloocation);
+            DirectoryInfo directoryInfo = new(pathSource);
+            DirectoryInfo directoryInfo2 = new(pathnewloocation);
             if(!directoryInfo.Exists)
+            {
+                return;
+            }
+            if(!directoryInfo2.Exists)
             {
                 return;
             }
@@ -71,7 +71,7 @@ namespace AnimePlayer
             }
             try
             {
-                DirectoryInfo directoryInfo = new DirectoryInfo(AppFolders.UpdatedPagesItems);
+                DirectoryInfo directoryInfo = new(AppFolders.UpdatedPagesItems);
                 foreach(var item in directoryInfo.GetFiles())
                 {
                     if(item.Name.EndsWith(".dat"))
@@ -94,7 +94,7 @@ namespace AnimePlayer
         {
             try
             {
-                PanelItem panelItem = new PanelItem(previewTitleClass);
+                PanelItem panelItem = new(previewTitleClass);
                 return panelItem.panelItem;
             }
             catch(Exception ex)
@@ -106,14 +106,14 @@ namespace AnimePlayer
 
         public static List<PreviewTitleClass> GetAllPreviewTitleClassFromFolder()
         {
-            List<PreviewTitleClass> list = new List<PreviewTitleClass>();
+            List<PreviewTitleClass> list = new();
             //Task.Run(() =>
            // {
             try
             {
                 Console.WriteLine("GetAllPreviewTitleClassFromFolder()");
                 Console.WriteLine("Files:");
-                DirectoryInfo directoryInfo = new DirectoryInfo(AppFolders.PreviewItems.TrimEnd('\\'));
+                DirectoryInfo directoryInfo = new(AppFolders.PreviewItems.TrimEnd('\\'));
                 foreach (var item in directoryInfo.GetFiles())
                 {
                     if (item.FullName.EndsWith(".dat"))
@@ -130,42 +130,6 @@ namespace AnimePlayer
             }
           //  });
             return list;
-        }
-
-        private static void UpdateLoadingInfo(string text)
-        {
-            try
-            {
-                _formMainPlayer.labelLoadingDetails.BeginInvoke(new Action(() => {
-                    _formMainPlayer.labelLoadingDetails.Text = text;
-                }));
-            }
-            catch(Exception ex)
-            {
-                Console.Error.WriteLine(ex.ToString());
-            }
-        }
-
-        private static bool CheckingIfTheContentExists()
-        {
-            try
-            {
-                DirectoryInfo directoryInfo = new DirectoryInfo(AppFolders.PreviewItems);
-                if(directoryInfo.Exists)
-                {
-                    var items = directoryInfo.GetFiles();
-                    if(items.Length < 1)
-                    {
-                        return false;
-                    }
-                }
-                return true;
-            }
-            catch(Exception ex)
-            {
-                Console.Error.WriteLine(ex.ToString());
-                return false;
-            }
         }
     }
 }

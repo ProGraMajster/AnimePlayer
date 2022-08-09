@@ -17,20 +17,28 @@ namespace AnimePlayer.ControlsWinForms
         {
             InitializeComponent();
             comboBox1.SelectedIndex = 0;
-            RoundingControl rc = new RoundingControl();
-            rc.TargetControl = textBoxMain;
-            rc.CornerRadius = 15;
-            rc = new RoundingControl();
-            rc.TargetControl = buttonFindInInternet;
-            rc.CornerRadius = 15;
-            rc = new RoundingControl();
-            rc.TargetControl = buttonFindInApp;
-            rc.CornerRadius = 15;
-            rc = new RoundingControl();
-            rc.TargetControl = comboBox1;
-            rc.CornerRadius = 15;
+            _ = new RoundingControl()
+            {
+                TargetControl = textBoxMain,
+                CornerRadius = 15
+            };
+            _ = new RoundingControl()
+            {
+                TargetControl = buttonFindInInternet,
+                CornerRadius = 15
+            };
+            _ = new RoundingControl
+            {
+                TargetControl = buttonFindInApp,
+                CornerRadius = 15
+            };
+            _ = new RoundingControl
+            {
+                TargetControl = comboBox1,
+                CornerRadius = 15
+            };
             buttonFindInApp.Tag =(BrowserTabPageHomePage)this;
-            Bookmarks bookmarks = new Bookmarks();
+            Bookmarks bookmarks = new();
             bookmarks.pictureBox1.Hide();
             bookmarks.label1.Text = "+";
             bookmarks.label1.Font = new Font(bookmarks.Font.FontFamily, 18);
@@ -52,7 +60,7 @@ namespace AnimePlayer.ControlsWinForms
             return text;
         }
 
-        private void buttonFindInInternet_Click(object sender, EventArgs e)
+        private void ButtonFindInInternet_Click(object sender, EventArgs e)
         {
             try
             {
@@ -63,7 +71,7 @@ namespace AnimePlayer.ControlsWinForms
                     Console.Error.WriteLine("browserTabPage is null {Find in parent form}");
                     return;
                 }
-                BrowserWebView2 BrowserWebView2 = new BrowserWebView2(AddressParser(textBoxMain.Text));
+                BrowserWebView2 BrowserWebView2 = new(AddressParser(textBoxMain.Text));
                 BrowserTabPageItem browserTabPageItem= browserTabPage.AddPageAndRef("Szukanie:"+textBoxMain.Text, null, BrowserWebView2);
                 BrowserWebView2.Dock = DockStyle.Fill;
                 BrowserWebView2.Tag = browserTabPage;
@@ -113,7 +121,7 @@ namespace AnimePlayer.ControlsWinForms
             }
         }
 
-        private void buttonFindInApp_Click(object sender, EventArgs e)
+        private void ButtonFindInApp_Click(object sender, EventArgs e)
         {
             
         }

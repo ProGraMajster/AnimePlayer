@@ -86,7 +86,7 @@ namespace AnimePlayer.ControlsWinForms
             this.textBoxLink.Name = "textBoxLink";
             this.textBoxLink.Size = new System.Drawing.Size(670, 18);
             this.textBoxLink.TabIndex = 0;
-            this.textBoxLink.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxLink_KeyDown);
+            this.textBoxLink.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextBoxLink_KeyDown);
             // 
             // panel2
             // 
@@ -109,7 +109,7 @@ namespace AnimePlayer.ControlsWinForms
             this.buttonMenu.TabIndex = 0;
             this.buttonMenu.Text = ":";
             this.buttonMenu.UseVisualStyleBackColor = true;
-            this.buttonMenu.Click += new System.EventHandler(this.buttonMenu_Click);
+            this.buttonMenu.Click += new System.EventHandler(this.ButtonMenu_Click);
             // 
             // buttonRefresh
             // 
@@ -124,7 +124,7 @@ namespace AnimePlayer.ControlsWinForms
             this.buttonRefresh.TabIndex = 3;
             this.buttonRefresh.Text = "↻";
             this.buttonRefresh.UseVisualStyleBackColor = true;
-            this.buttonRefresh.Click += new System.EventHandler(this.buttonRefresh_Click);
+            this.buttonRefresh.Click += new System.EventHandler(this.ButtonRefresh_Click);
             // 
             // buttonReundo
             // 
@@ -139,7 +139,7 @@ namespace AnimePlayer.ControlsWinForms
             this.buttonReundo.TabIndex = 2;
             this.buttonReundo.Text = "->";
             this.buttonReundo.UseVisualStyleBackColor = true;
-            this.buttonReundo.Click += new System.EventHandler(this.buttonReundo_Click);
+            this.buttonReundo.Click += new System.EventHandler(this.ButtonReundo_Click);
             // 
             // buttonUndo
             // 
@@ -154,7 +154,7 @@ namespace AnimePlayer.ControlsWinForms
             this.buttonUndo.TabIndex = 1;
             this.buttonUndo.Text = "<-";
             this.buttonUndo.UseVisualStyleBackColor = true;
-            this.buttonUndo.Click += new System.EventHandler(this.buttonUndo_Click);
+            this.buttonUndo.Click += new System.EventHandler(this.ButtonUndo_Click);
             // 
             // webView
             // 
@@ -168,16 +168,16 @@ namespace AnimePlayer.ControlsWinForms
             this.webView.Source = new System.Uri("https://www.google.com/webhp", System.UriKind.Absolute);
             this.webView.TabIndex = 0;
             this.webView.ZoomFactor = 1D;
-            this.webView.CoreWebView2InitializationCompleted += new System.EventHandler<Microsoft.Web.WebView2.Core.CoreWebView2InitializationCompletedEventArgs>(this.webView_CoreWebView2InitializationCompleted);
-            this.webView.NavigationStarting += new System.EventHandler<Microsoft.Web.WebView2.Core.CoreWebView2NavigationStartingEventArgs>(this.webView_NavigationStarting);
-            this.webView.NavigationCompleted += new System.EventHandler<Microsoft.Web.WebView2.Core.CoreWebView2NavigationCompletedEventArgs>(this.webView_NavigationCompleted);
-            this.webView.SourceChanged += new System.EventHandler<Microsoft.Web.WebView2.Core.CoreWebView2SourceChangedEventArgs>(this.webView_SourceChanged);
-            this.webView.ContentLoading += new System.EventHandler<Microsoft.Web.WebView2.Core.CoreWebView2ContentLoadingEventArgs>(this.webView_ContentLoading);
-            this.webView.Click += new System.EventHandler(this.webView_Click);
+            this.webView.CoreWebView2InitializationCompleted += new System.EventHandler<Microsoft.Web.WebView2.Core.CoreWebView2InitializationCompletedEventArgs>(this.WebView_CoreWebView2InitializationCompleted);
+            this.webView.NavigationStarting += new System.EventHandler<Microsoft.Web.WebView2.Core.CoreWebView2NavigationStartingEventArgs>(this.WebView_NavigationStarting);
+            this.webView.NavigationCompleted += new System.EventHandler<Microsoft.Web.WebView2.Core.CoreWebView2NavigationCompletedEventArgs>(this.WebView_NavigationCompleted);
+            this.webView.SourceChanged += new System.EventHandler<Microsoft.Web.WebView2.Core.CoreWebView2SourceChangedEventArgs>(this.WebView_SourceChanged);
+            this.webView.ContentLoading += new System.EventHandler<Microsoft.Web.WebView2.Core.CoreWebView2ContentLoadingEventArgs>(this.WebView_ContentLoading);
+            this.webView.Click += new System.EventHandler(this.WebView_Click);
             // 
             // timerRe
             // 
-            this.timerRe.Tick += new System.EventHandler(this.timerRe_Tick);
+            this.timerRe.Tick += new System.EventHandler(this.TimerRe_Tick);
             // 
             // button1
             // 
@@ -228,7 +228,7 @@ namespace AnimePlayer.ControlsWinForms
             this.panelCda.Size = new System.Drawing.Size(228, 158);
             this.panelCda.TabIndex = 0;
             this.panelCda.Visible = false;
-            this.panelCda.VisibleChanged += new System.EventHandler(this.panelCda_VisibleChanged);
+            this.panelCda.VisibleChanged += new System.EventHandler(this.PanelCda_VisibleChanged);
             // 
             // labelCdaDownloadProgres
             // 
@@ -256,7 +256,7 @@ namespace AnimePlayer.ControlsWinForms
             this.buttonCdaDwonload.TabIndex = 5;
             this.buttonCdaDwonload.Text = "Pobierz";
             this.buttonCdaDwonload.UseVisualStyleBackColor = true;
-            this.buttonCdaDwonload.Click += new System.EventHandler(this.buttonCdaDwonload_Click);
+            this.buttonCdaDwonload.Click += new System.EventHandler(this.ButtonCdaDwonload_Click);
             // 
             // label3
             // 
@@ -295,7 +295,7 @@ namespace AnimePlayer.ControlsWinForms
             this.textBoxCdaUrl.Name = "textBoxCdaUrl";
             this.textBoxCdaUrl.Size = new System.Drawing.Size(216, 23);
             this.textBoxCdaUrl.TabIndex = 1;
-            this.textBoxCdaUrl.TextChanged += new System.EventHandler(this.textBoxCdaUrl_TextChanged);
+            this.textBoxCdaUrl.TextChanged += new System.EventHandler(this.TextBoxCdaUrl_TextChanged);
             // 
             // label1
             // 
@@ -326,7 +326,7 @@ namespace AnimePlayer.ControlsWinForms
             this.button4.TabIndex = 3;
             this.button4.Text = "Zamknij menu";
             this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.button4.Click += new System.EventHandler(this.Button4_Click);
             // 
             // BrowserWebView2
             // 

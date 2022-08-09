@@ -26,9 +26,11 @@ namespace AnimePlayer.Core
                     {
                         try
                         {
-                            ControlsNewMethods.RoundingControl rc = new ControlsNewMethods.RoundingControl();
-                            rc.TargetControl = item;
-                            rc.CornerRadius = int.Parse(simplifiedElementSetting.Value.ToString());
+                            ControlsNewMethods.RoundingControl rc = new()
+                            {
+                                TargetControl = item,
+                                CornerRadius = int.Parse(simplifiedElementSetting.Value.ToString())
+                            };
                         }
                         catch (Exception exParse)
                         {

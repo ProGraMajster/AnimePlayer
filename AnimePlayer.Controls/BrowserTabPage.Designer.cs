@@ -52,8 +52,8 @@ namespace AnimePlayer.ControlsWinForms
             this.newFlowLayoutPanelPages.Size = new System.Drawing.Size(544, 42);
             this.newFlowLayoutPanelPages.TabIndex = 0;
             this.newFlowLayoutPanelPages.WrapContents = false;
-            this.newFlowLayoutPanelPages.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.newFlowLayoutPanelPages_ControlAdded);
-            this.newFlowLayoutPanelPages.ControlRemoved += new System.Windows.Forms.ControlEventHandler(this.newFlowLayoutPanelPages_ControlRemoved);
+            this.newFlowLayoutPanelPages.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.NewFlowLayoutPanelPages_ControlAdded);
+            this.newFlowLayoutPanelPages.ControlRemoved += new System.Windows.Forms.ControlEventHandler(this.NewFlowLayoutPanelPages_ControlRemoved);
             // 
             // buttonNewPage
             // 
@@ -68,7 +68,7 @@ namespace AnimePlayer.ControlsWinForms
             this.buttonNewPage.TabIndex = 1;
             this.buttonNewPage.Text = "+";
             this.buttonNewPage.UseVisualStyleBackColor = false;
-            this.buttonNewPage.Click += new System.EventHandler(this.buttonNewPage_Click);
+            this.buttonNewPage.Click += new System.EventHandler(this.ButtonNewPage_Click);
             // 
             // buttonViewAllPage
             // 
@@ -84,7 +84,7 @@ namespace AnimePlayer.ControlsWinForms
             this.buttonViewAllPage.TabIndex = 0;
             this.buttonViewAllPage.Text = "=";
             this.buttonViewAllPage.UseVisualStyleBackColor = false;
-            this.buttonViewAllPage.Click += new System.EventHandler(this.buttonViewAllPage_Click);
+            this.buttonViewAllPage.Click += new System.EventHandler(this.ButtonViewAllPage_Click);
             // 
             // panel1
             // 

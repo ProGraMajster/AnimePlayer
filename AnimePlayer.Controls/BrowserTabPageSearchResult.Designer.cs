@@ -43,7 +43,7 @@
             this.newFlowLayoutPanel.Name = "newFlowLayoutPanel";
             this.newFlowLayoutPanel.Size = new System.Drawing.Size(673, 643);
             this.newFlowLayoutPanel.TabIndex = 0;
-            this.newFlowLayoutPanel.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.newFlowLayoutPanel_ControlAdded);
+            this.newFlowLayoutPanel.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.NewFlowLayoutPanel_ControlAdded);
             // 
             // panel1
             // 

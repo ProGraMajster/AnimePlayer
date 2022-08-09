@@ -52,7 +52,7 @@ namespace AnimePlayer
             this.panelContent.Name = "panelContent";
             this.panelContent.Size = new System.Drawing.Size(800, 408);
             this.panelContent.TabIndex = 1;
-            this.panelContent.Paint += new System.Windows.Forms.PaintEventHandler(this.panelContent_Paint);
+            this.panelContent.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelContent_Paint);
             // 
             // FormBrowser
             // 

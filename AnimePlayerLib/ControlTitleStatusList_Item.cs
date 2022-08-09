@@ -52,10 +52,10 @@ namespace AnimePlayerLibrary
         }
 
         bool View2 = false;
-        int hView1 = 55;
-        int hView2 = 400;
+        readonly int hView1 = 55;
+        readonly int hView2 = 400;
 
-        private void buttonViewChange_Click(object sender, EventArgs e)
+        private void ButtonViewChange_Click(object sender, EventArgs e)
         {
             if(View2)
             {
