@@ -38,12 +38,14 @@ namespace AnimePlayer
         int memsize;
 
         public ZetaIpc.Runtime.Client.IpcClient clientToBrowser;
-
+        private FormLoading formLoading;
         public FormMainPlayer()  
         {
             InitializeComponent();
             try
             {
+                formLoading = new FormLoading();
+                formLoading.Show();
                 autoCSC_find = new AutoCompleteStringCollection();
                 panelSearch = new PanelSearchFilters(flowLayoutPanelAll, flowLayoutPanelFinditem, AnimePlayer.Properties.Settings.Default.RoundingControl)
                 {
@@ -231,7 +233,11 @@ namespace AnimePlayer
                     Console.Error.WriteLine(exFile.ToString());
                 }
             }
-
+            if (formLoading!=null)
+            {
+                formLoading.Hide();
+                formLoading.Dispose();
+            }
             panelLoading.BringToFront();
             CenterControlInForm(labelLoading);
             panelLoading.Show();
