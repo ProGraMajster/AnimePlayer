@@ -19,18 +19,41 @@ namespace AnimePlayerLibrary.UI
             InitializeComponent();
             try
             {
-                labelTitleAndNumber.Text = episode.TitleOfEpisode+ " Odcinek"+episode.NumberEpisode;
-                labelType.Text = episode.Type;
-                labelAudio.Text = "Audio:"+episode.AudioLanguage;
-                labelSubtitle.Text = "Napisy:"+episode.SubtitleLanguage;
-                linkLabel1.Text = "Tłumacz:"+episode.TranslationCreator;
+                labelTitleAndNumber.Text ="Odcinek: "+episode.NumberEpisode+" | "+ episode.TitleOfEpisode;
+                labelType.Text = "Typ:    "+episode.Type;
+                labelAudio.Text = "Audio:   "+episode.AudioLanguage;
+                labelSubtitle.Text = "Napisy:   "+episode.SubtitleLanguage;
+                linkLabel1.Text = "Tłumacz:    "+episode.TranslationCreator;
+                linkLabel1.LinkArea = new LinkArea(12, 1000);
                 richTextBox1.Text = episode.TranslationCreatorAdditionalInformation;
                 buttonPlayEpisode.Tag = episode;
+
+                if(episode.LinkToEpisode.Contains("cda"))
+                {
+                    labelType.Text+="   | Serwis: CDA";
+                }
+                else if(episode.LinkToEpisode.Contains("drive.google"))
+                {
+                    labelType.Text+="   | Serwis: Google";
+                }
+                else if(episode.LinkToEpisode.Contains("mega"))
+                {
+                    labelType.Text+="   | Serwis: Mega";
+                }
+                else if (episode.LinkToEpisode.Contains("sibnet.ru"))
+                {
+                    labelType.Text += "   | Serwis: Sibnet";
+                }
             }
             catch(Exception ex)
             {
                 Console.Error.WriteLine(ex.ToString());
             }
+        }
+
+        private void richTextBox1_LinkClicked(object sender, LinkClickedEventArgs e)
+        {
+            AnimePlayer.Core.OpenLinks.Start(e.LinkText);
         }
     }
 }

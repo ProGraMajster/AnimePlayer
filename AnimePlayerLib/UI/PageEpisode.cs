@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using AnimePlayerLibrary;
 using AnimePlayer.Class;
 using System.Threading;
+using System.Collections.Generic;
 
 namespace AnimePlayerLibrary.UI
 {
@@ -13,6 +14,7 @@ namespace AnimePlayerLibrary.UI
     {
         readonly PageItemData _PageItemData;
         int numberEp;
+        private List<string> linksToIcon;
         public PageEpisode(PageItemData pageItemData, int number)
         {
             InitializeComponent();
@@ -70,7 +72,27 @@ namespace AnimePlayerLibrary.UI
                         });
                     }
                 });
+                {
+                    Name="Thread_LoadEpisode";
+                }
                 thread.Start();
+                Thread thread2 = new(() =>
+                {
+                    List<string> strings = ContentManagerLibary.GetLinkToIcon(_PageItemData.TitleInformation.Title);
+                    if(strings == null)
+                    {
+                        return;
+                    }
+                    linksToIcon = strings;
+                    pictureBox1.Invoke(() =>
+                    {
+                        pictureBox1.ImageLocation = strings[0];
+                    });
+                });
+                {
+                    Name = "Thread_LoadIcon";
+                }
+                thread2.Start();
             }
             catch(Exception ex)
             {

@@ -35,6 +35,7 @@
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.buttonPlayEpisode = new System.Windows.Forms.Button();
+            this.buttonMoreInformation = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labelTitleAndNumber
@@ -90,6 +91,7 @@
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.linkLabel1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.linkLabel1.LinkArea = new System.Windows.Forms.LinkArea(0, 10);
             this.linkLabel1.LinkColor = System.Drawing.Color.Aqua;
             this.linkLabel1.Location = new System.Drawing.Point(5, 125);
             this.linkLabel1.Name = "linkLabel1";
@@ -108,27 +110,43 @@
             this.richTextBox1.Location = new System.Drawing.Point(5, 154);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(520, 40);
+            this.richTextBox1.Size = new System.Drawing.Size(490, 69);
             this.richTextBox1.TabIndex = 8;
             this.richTextBox1.Text = "";
+            this.richTextBox1.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.richTextBox1_LinkClicked);
             // 
             // buttonPlayEpisode
             // 
             this.buttonPlayEpisode.BackColor = System.Drawing.Color.Black;
             this.buttonPlayEpisode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonPlayEpisode.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonPlayEpisode.Location = new System.Drawing.Point(422, 114);
+            this.buttonPlayEpisode.Location = new System.Drawing.Point(395, 114);
             this.buttonPlayEpisode.Name = "buttonPlayEpisode";
             this.buttonPlayEpisode.Size = new System.Drawing.Size(100, 34);
             this.buttonPlayEpisode.TabIndex = 9;
             this.buttonPlayEpisode.Text = "Oglądaj >";
             this.buttonPlayEpisode.UseVisualStyleBackColor = false;
             // 
+            // buttonMoreInformation
+            // 
+            this.buttonMoreInformation.BackColor = System.Drawing.Color.Black;
+            this.buttonMoreInformation.FlatAppearance.BorderSize = 0;
+            this.buttonMoreInformation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonMoreInformation.Font = new System.Drawing.Font("Comic Sans MS", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonMoreInformation.Location = new System.Drawing.Point(273, 114);
+            this.buttonMoreInformation.Name = "buttonMoreInformation";
+            this.buttonMoreInformation.Size = new System.Drawing.Size(116, 34);
+            this.buttonMoreInformation.TabIndex = 10;
+            this.buttonMoreInformation.Text = "Więcej informacji";
+            this.buttonMoreInformation.UseVisualStyleBackColor = false;
+            this.buttonMoreInformation.Visible = false;
+            // 
             // PanelItemEpisode
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.Controls.Add(this.buttonMoreInformation);
             this.Controls.Add(this.buttonPlayEpisode);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.linkLabel1);
@@ -139,7 +157,7 @@
             this.ForeColor = System.Drawing.Color.White;
             this.Name = "PanelItemEpisode";
             this.Padding = new System.Windows.Forms.Padding(5);
-            this.Size = new System.Drawing.Size(530, 199);
+            this.Size = new System.Drawing.Size(500, 228);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -153,5 +171,6 @@
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.RichTextBox richTextBox1;
         public System.Windows.Forms.Button buttonPlayEpisode;
+        public System.Windows.Forms.Button buttonMoreInformation;
     }
 }

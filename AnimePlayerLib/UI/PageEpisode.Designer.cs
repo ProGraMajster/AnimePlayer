@@ -58,7 +58,6 @@ namespace AnimePlayerLibrary.UI
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Visible = false;
             this.pictureBox1.Click += new System.EventHandler(this.PictureBox1_Click);
             // 
             // panel1
@@ -171,14 +170,12 @@ namespace AnimePlayerLibrary.UI
             this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(12, 180);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(12);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(12, 0, 12, 0);
             this.flowLayoutPanel1.Size = new System.Drawing.Size(712, 391);
             this.flowLayoutPanel1.TabIndex = 2;
-            this.flowLayoutPanel1.WrapContents = false;
             // 
             // panelViewIcon
             // 
@@ -240,7 +237,7 @@ namespace AnimePlayerLibrary.UI
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "PageEpisode";
             this.Padding = new System.Windows.Forms.Padding(12);
-            this.Size = new System.Drawing.Size(722, 514);
+            this.Size = new System.Drawing.Size(736, 610);
             this.Resize += new System.EventHandler(this.PageEpisode_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);

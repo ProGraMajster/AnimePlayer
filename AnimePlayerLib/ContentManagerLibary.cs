@@ -151,7 +151,8 @@ namespace AnimePlayerLibrary
                 foreach(var item in directoryInfo.GetFiles())
                 {
                     Episode episode = (Episode)SerializationAndDeserialization.Deserialization(item.FullName);
-                    if(episode.NumberEpisode == number.ToString() && episode.Title == title)
+                    if(episode.NumberEpisode == number.ToString() &&
+                        Replacer.Names(episode.Title) == Replacer.Names(title))
                     {
                         list.Add(episode);
                     }
@@ -165,6 +166,31 @@ namespace AnimePlayerLibrary
             return null;
         }
 
+        public static List<string> GetLinkToIcon(string title)
+        {
+            try
+            {
+                DirectoryInfo dirInfo = new(AppFolders.PreviewItems);
+                foreach(var item in dirInfo.GetFiles())
+                {
+                    if(item.Exists&&item.FullName.EndsWith(".dat"))
+                    {
+                        PreviewTitleClass previewTitleClass = (PreviewTitleClass)SerializationAndDeserialization.Deserialization(
+                            item.FullName);
+                        if(previewTitleClass != null&& title == previewTitleClass.Title)
+                        {
+                            return previewTitleClass.LinkToIcon;
+                        }
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                Console.Error.WriteLine(ex.ToString());
+                return null;
+            }
+            return null;
+        }
         /*
         private static bool CheckingIfTheContentExists()
         {

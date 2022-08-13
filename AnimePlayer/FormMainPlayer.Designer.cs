@@ -213,7 +213,7 @@ namespace AnimePlayer
             this.panelStartPage.Location = new System.Drawing.Point(0, 0);
             this.panelStartPage.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panelStartPage.Name = "panelStartPage";
-            this.panelStartPage.Size = new System.Drawing.Size(1106, 624);
+            this.panelStartPage.Size = new System.Drawing.Size(1090, 624);
             this.panelStartPage.TabIndex = 6;
             this.panelStartPage.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.PanelStartPage_ControlAdded);
             // 
@@ -225,7 +225,7 @@ namespace AnimePlayer
             this.panelGroup.Location = new System.Drawing.Point(0, 881);
             this.panelGroup.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panelGroup.Name = "panelGroup";
-            this.panelGroup.Size = new System.Drawing.Size(1089, 342);
+            this.panelGroup.Size = new System.Drawing.Size(1073, 342);
             this.panelGroup.TabIndex = 4;
             this.panelGroup.Visible = false;
             // 
@@ -239,7 +239,7 @@ namespace AnimePlayer
             this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Padding = new System.Windows.Forms.Padding(12, 2, 12, 2);
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(1089, 307);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(1073, 307);
             this.flowLayoutPanel2.TabIndex = 1;
             this.flowLayoutPanel2.WrapContents = false;
             // 
@@ -283,7 +283,7 @@ namespace AnimePlayer
             this.panel4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panel4.Name = "panel4";
             this.panel4.Padding = new System.Windows.Forms.Padding(12, 0, 12, 0);
-            this.panel4.Size = new System.Drawing.Size(1089, 35);
+            this.panel4.Size = new System.Drawing.Size(1073, 35);
             this.panel4.TabIndex = 2;
             // 
             // label3
@@ -308,7 +308,7 @@ namespace AnimePlayer
             this.panePolecane.Location = new System.Drawing.Point(0, 539);
             this.panePolecane.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panePolecane.Name = "panePolecane";
-            this.panePolecane.Size = new System.Drawing.Size(1089, 342);
+            this.panePolecane.Size = new System.Drawing.Size(1073, 342);
             this.panePolecane.TabIndex = 3;
             // 
             // flowLayoutPanelPolecane
@@ -320,7 +320,7 @@ namespace AnimePlayer
             this.flowLayoutPanelPolecane.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.flowLayoutPanelPolecane.Name = "flowLayoutPanelPolecane";
             this.flowLayoutPanelPolecane.Padding = new System.Windows.Forms.Padding(2);
-            this.flowLayoutPanelPolecane.Size = new System.Drawing.Size(1089, 307);
+            this.flowLayoutPanelPolecane.Size = new System.Drawing.Size(1073, 307);
             this.flowLayoutPanelPolecane.TabIndex = 5;
             this.flowLayoutPanelPolecane.WrapContents = false;
             this.flowLayoutPanelPolecane.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.FlowLayoutPanelControlAdded);
@@ -333,7 +333,7 @@ namespace AnimePlayer
             this.panel1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(12, 0, 12, 0);
-            this.panel1.Size = new System.Drawing.Size(1089, 35);
+            this.panel1.Size = new System.Drawing.Size(1073, 35);
             this.panel1.TabIndex = 2;
             // 
             // label2
@@ -357,7 +357,7 @@ namespace AnimePlayer
             this.panelSTNewsMain.Location = new System.Drawing.Point(0, 130);
             this.panelSTNewsMain.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panelSTNewsMain.Name = "panelSTNewsMain";
-            this.panelSTNewsMain.Size = new System.Drawing.Size(1089, 409);
+            this.panelSTNewsMain.Size = new System.Drawing.Size(1073, 409);
             this.panelSTNewsMain.TabIndex = 4;
             // 
             // label_InfoText_news
@@ -380,7 +380,7 @@ namespace AnimePlayer
             this.panel8.Location = new System.Drawing.Point(0, 105);
             this.panel8.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(1089, 25);
+            this.panel8.Size = new System.Drawing.Size(1073, 25);
             this.panel8.TabIndex = 3;
             // 
             // panelTop
@@ -391,7 +391,7 @@ namespace AnimePlayer
             this.panelTop.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panelTop.Name = "panelTop";
             this.panelTop.Padding = new System.Windows.Forms.Padding(12);
-            this.panelTop.Size = new System.Drawing.Size(1089, 105);
+            this.panelTop.Size = new System.Drawing.Size(1073, 105);
             this.panelTop.TabIndex = 0;
             // 
             // roundedPanel1
@@ -410,7 +410,7 @@ namespace AnimePlayer
             this.roundedPanel1.Name = "roundedPanel1";
             this.roundedPanel1.Padding = new System.Windows.Forms.Padding(23, 7, 23, 7);
             this.roundedPanel1.RadiusArcPanel = 15F;
-            this.roundedPanel1.Size = new System.Drawing.Size(1065, 81);
+            this.roundedPanel1.Size = new System.Drawing.Size(1049, 81);
             this.roundedPanel1.TabIndex = 0;
             this.roundedPanel1.Resize += new System.EventHandler(this.Panel_Resize);
             // 
@@ -424,7 +424,7 @@ namespace AnimePlayer
             this.panel7.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panel7.Name = "panel7";
             this.panel7.Padding = new System.Windows.Forms.Padding(6, 23, 6, 17);
-            this.panel7.Size = new System.Drawing.Size(600, 67);
+            this.panel7.Size = new System.Drawing.Size(584, 67);
             this.panel7.TabIndex = 4;
             // 
             // panel9
@@ -435,7 +435,7 @@ namespace AnimePlayer
             this.panel9.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panel9.Name = "panel9";
             this.panel9.Padding = new System.Windows.Forms.Padding(0, 6, 0, 0);
-            this.panel9.Size = new System.Drawing.Size(500, 27);
+            this.panel9.Size = new System.Drawing.Size(484, 27);
             this.panel9.TabIndex = 5;
             // 
             // textBoxStartPagefinditem
@@ -452,7 +452,7 @@ namespace AnimePlayer
             this.textBoxStartPagefinditem.Location = new System.Drawing.Point(0, 6);
             this.textBoxStartPagefinditem.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.textBoxStartPagefinditem.Name = "textBoxStartPagefinditem";
-            this.textBoxStartPagefinditem.Size = new System.Drawing.Size(500, 16);
+            this.textBoxStartPagefinditem.Size = new System.Drawing.Size(484, 16);
             this.textBoxStartPagefinditem.TabIndex = 3;
             this.textBoxStartPagefinditem.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBoxStartPagefinditem.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextBoxSPfinditem_KeyDown);
@@ -467,7 +467,7 @@ namespace AnimePlayer
             this.buttonStartPageFinditem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonStartPageFinditem.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonStartPageFinditem.ForeColor = System.Drawing.Color.White;
-            this.buttonStartPageFinditem.Location = new System.Drawing.Point(506, 23);
+            this.buttonStartPageFinditem.Location = new System.Drawing.Point(490, 23);
             this.buttonStartPageFinditem.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.buttonStartPageFinditem.Name = "buttonStartPageFinditem";
             this.buttonStartPageFinditem.Size = new System.Drawing.Size(88, 27);
@@ -481,7 +481,7 @@ namespace AnimePlayer
             this.labelSatusWorkingApp.Dock = System.Windows.Forms.DockStyle.Right;
             this.labelSatusWorkingApp.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelSatusWorkingApp.ForeColor = System.Drawing.SystemColors.Window;
-            this.labelSatusWorkingApp.Location = new System.Drawing.Point(821, 7);
+            this.labelSatusWorkingApp.Location = new System.Drawing.Point(805, 7);
             this.labelSatusWorkingApp.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelSatusWorkingApp.Name = "labelSatusWorkingApp";
             this.labelSatusWorkingApp.Size = new System.Drawing.Size(77, 67);
@@ -500,7 +500,7 @@ namespace AnimePlayer
             this.buttonProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonProfile.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonProfile.ForeColor = System.Drawing.Color.White;
-            this.buttonProfile.Location = new System.Drawing.Point(898, 7);
+            this.buttonProfile.Location = new System.Drawing.Point(882, 7);
             this.buttonProfile.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.buttonProfile.Name = "buttonProfile";
             this.buttonProfile.Size = new System.Drawing.Size(61, 67);
@@ -521,7 +521,7 @@ namespace AnimePlayer
             this.buttonMenuOpen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonMenuOpen.Font = new System.Drawing.Font("Comic Sans MS", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonMenuOpen.ForeColor = System.Drawing.Color.White;
-            this.buttonMenuOpen.Location = new System.Drawing.Point(959, 7);
+            this.buttonMenuOpen.Location = new System.Drawing.Point(943, 7);
             this.buttonMenuOpen.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.buttonMenuOpen.Name = "buttonMenuOpen";
             this.buttonMenuOpen.Size = new System.Drawing.Size(83, 67);
@@ -553,7 +553,7 @@ namespace AnimePlayer
             this.panelLoading.Location = new System.Drawing.Point(0, 0);
             this.panelLoading.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panelLoading.Name = "panelLoading";
-            this.panelLoading.Size = new System.Drawing.Size(1106, 624);
+            this.panelLoading.Size = new System.Drawing.Size(1090, 624);
             this.panelLoading.TabIndex = 2;
             this.panelLoading.VisibleChanged += new System.EventHandler(this.PanelLoading_VisibleChanged);
             // 
@@ -566,7 +566,7 @@ namespace AnimePlayer
             this.labelLoadingA.Location = new System.Drawing.Point(0, 0);
             this.labelLoadingA.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelLoadingA.Name = "labelLoadingA";
-            this.labelLoadingA.Size = new System.Drawing.Size(1106, 32);
+            this.labelLoadingA.Size = new System.Drawing.Size(1090, 32);
             this.labelLoadingA.TabIndex = 2;
             this.labelLoadingA.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -579,7 +579,7 @@ namespace AnimePlayer
             this.labelLoadingDetails.Location = new System.Drawing.Point(0, 592);
             this.labelLoadingDetails.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelLoadingDetails.Name = "labelLoadingDetails";
-            this.labelLoadingDetails.Size = new System.Drawing.Size(1106, 32);
+            this.labelLoadingDetails.Size = new System.Drawing.Size(1090, 32);
             this.labelLoadingDetails.TabIndex = 1;
             this.labelLoadingDetails.Text = ":";
             this.labelLoadingDetails.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -606,7 +606,7 @@ namespace AnimePlayer
             this.pictureBoxLoading.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxLoading.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pictureBoxLoading.Name = "pictureBoxLoading";
-            this.pictureBoxLoading.Size = new System.Drawing.Size(1106, 624);
+            this.pictureBoxLoading.Size = new System.Drawing.Size(1090, 624);
             this.pictureBoxLoading.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxLoading.TabIndex = 3;
             this.pictureBoxLoading.TabStop = false;
@@ -861,7 +861,7 @@ namespace AnimePlayer
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1106, 624);
+            this.panel2.Size = new System.Drawing.Size(1090, 624);
             this.panel2.TabIndex = 5;
             // 
             // panelMoreButtons
@@ -871,7 +871,7 @@ namespace AnimePlayer
             this.panelMoreButtons.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMoreButtons.Location = new System.Drawing.Point(0, 0);
             this.panelMoreButtons.Name = "panelMoreButtons";
-            this.panelMoreButtons.Size = new System.Drawing.Size(1106, 624);
+            this.panelMoreButtons.Size = new System.Drawing.Size(1090, 624);
             this.panelMoreButtons.TabIndex = 2;
             this.panelMoreButtons.Visible = false;
             // 
@@ -882,7 +882,7 @@ namespace AnimePlayer
             this.panel10.Location = new System.Drawing.Point(0, 38);
             this.panel10.Name = "panel10";
             this.panel10.Padding = new System.Windows.Forms.Padding(20, 20, 20, 0);
-            this.panel10.Size = new System.Drawing.Size(1106, 586);
+            this.panel10.Size = new System.Drawing.Size(1090, 586);
             this.panel10.TabIndex = 1;
             // 
             // newFlowLayoutPanel1
@@ -900,7 +900,7 @@ namespace AnimePlayer
             this.newFlowLayoutPanel1.Location = new System.Drawing.Point(20, 20);
             this.newFlowLayoutPanel1.Name = "newFlowLayoutPanel1";
             this.newFlowLayoutPanel1.Padding = new System.Windows.Forms.Padding(5);
-            this.newFlowLayoutPanel1.Size = new System.Drawing.Size(1066, 566);
+            this.newFlowLayoutPanel1.Size = new System.Drawing.Size(1050, 566);
             this.newFlowLayoutPanel1.TabIndex = 1;
             // 
             // panel11
@@ -1378,7 +1378,7 @@ namespace AnimePlayer
             this.panel6.Location = new System.Drawing.Point(0, 0);
             this.panel6.Name = "panel6";
             this.panel6.Padding = new System.Windows.Forms.Padding(0, 10, 10, 0);
-            this.panel6.Size = new System.Drawing.Size(1106, 38);
+            this.panel6.Size = new System.Drawing.Size(1090, 38);
             this.panel6.TabIndex = 0;
             // 
             // buttonCloseMoreButtons
@@ -1386,7 +1386,7 @@ namespace AnimePlayer
             this.buttonCloseMoreButtons.Dock = System.Windows.Forms.DockStyle.Right;
             this.buttonCloseMoreButtons.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCloseMoreButtons.ForeColor = System.Drawing.Color.Red;
-            this.buttonCloseMoreButtons.Location = new System.Drawing.Point(1055, 10);
+            this.buttonCloseMoreButtons.Location = new System.Drawing.Point(1039, 10);
             this.buttonCloseMoreButtons.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.buttonCloseMoreButtons.MaximumSize = new System.Drawing.Size(41, 29);
             this.buttonCloseMoreButtons.Name = "buttonCloseMoreButtons";
@@ -1405,7 +1405,7 @@ namespace AnimePlayer
             this.panelAllitem.Location = new System.Drawing.Point(0, 0);
             this.panelAllitem.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panelAllitem.Name = "panelAllitem";
-            this.panelAllitem.Size = new System.Drawing.Size(1106, 624);
+            this.panelAllitem.Size = new System.Drawing.Size(1090, 624);
             this.panelAllitem.TabIndex = 0;
             // 
             // flowLayoutPanelFinditem
@@ -1415,7 +1415,7 @@ namespace AnimePlayer
             this.flowLayoutPanelFinditem.Location = new System.Drawing.Point(0, 100);
             this.flowLayoutPanelFinditem.Name = "flowLayoutPanelFinditem";
             this.flowLayoutPanelFinditem.Padding = new System.Windows.Forms.Padding(12, 2, 12, 2);
-            this.flowLayoutPanelFinditem.Size = new System.Drawing.Size(1106, 524);
+            this.flowLayoutPanelFinditem.Size = new System.Drawing.Size(1090, 524);
             this.flowLayoutPanelFinditem.TabIndex = 0;
             // 
             // flowLayoutPanelAll
@@ -1425,7 +1425,7 @@ namespace AnimePlayer
             this.flowLayoutPanelAll.Location = new System.Drawing.Point(0, 100);
             this.flowLayoutPanelAll.Name = "flowLayoutPanelAll";
             this.flowLayoutPanelAll.Padding = new System.Windows.Forms.Padding(12, 2, 12, 2);
-            this.flowLayoutPanelAll.Size = new System.Drawing.Size(1106, 524);
+            this.flowLayoutPanelAll.Size = new System.Drawing.Size(1090, 524);
             this.flowLayoutPanelAll.TabIndex = 0;
             // 
             // panelTopFinder
@@ -1438,7 +1438,7 @@ namespace AnimePlayer
             this.panelTopFinder.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panelTopFinder.Name = "panelTopFinder";
             this.panelTopFinder.Padding = new System.Windows.Forms.Padding(12);
-            this.panelTopFinder.Size = new System.Drawing.Size(1106, 100);
+            this.panelTopFinder.Size = new System.Drawing.Size(1090, 100);
             this.panelTopFinder.TabIndex = 0;
             // 
             // labelEnableFiltres
@@ -1475,7 +1475,7 @@ namespace AnimePlayer
             this.roundedPanel2.Name = "roundedPanel2";
             this.roundedPanel2.Padding = new System.Windows.Forms.Padding(12, 30, 12, 20);
             this.roundedPanel2.RadiusArcPanel = 20F;
-            this.roundedPanel2.Size = new System.Drawing.Size(1082, 76);
+            this.roundedPanel2.Size = new System.Drawing.Size(1066, 76);
             this.roundedPanel2.TabIndex = 0;
             // 
             // labelFindSatus
@@ -1486,7 +1486,7 @@ namespace AnimePlayer
             this.labelFindSatus.Location = new System.Drawing.Point(901, 30);
             this.labelFindSatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelFindSatus.Name = "labelFindSatus";
-            this.labelFindSatus.Size = new System.Drawing.Size(77, 26);
+            this.labelFindSatus.Size = new System.Drawing.Size(61, 26);
             this.labelFindSatus.TabIndex = 4;
             this.labelFindSatus.Text = "Szukanie";
             this.labelFindSatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1593,7 +1593,7 @@ namespace AnimePlayer
             this.buttonFinditemPageClose.FlatAppearance.BorderSize = 0;
             this.buttonFinditemPageClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonFinditemPageClose.ForeColor = System.Drawing.Color.Red;
-            this.buttonFinditemPageClose.Location = new System.Drawing.Point(978, 30);
+            this.buttonFinditemPageClose.Location = new System.Drawing.Point(962, 30);
             this.buttonFinditemPageClose.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.buttonFinditemPageClose.Name = "buttonFinditemPageClose";
             this.buttonFinditemPageClose.Size = new System.Drawing.Size(92, 26);
@@ -1728,7 +1728,7 @@ namespace AnimePlayer
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.ClientSize = new System.Drawing.Size(1106, 624);
+            this.ClientSize = new System.Drawing.Size(1090, 624);
             this.Controls.Add(this.panel18);
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.panel2);
