@@ -71,6 +71,21 @@ namespace AnimePlayerLibrary.UI
                             flowLayoutPanel1.Controls.Add(panel);
                         });
                     }
+
+                    if(flowLayoutPanel1.Controls.Count == 0)
+                    {
+                        Label label = new()
+                        {
+                            Text = " Brak dostępnych odcinków... ಥ_ಥ",
+                            ForeColor = Color.White,
+                            AutoSize = true
+                        };
+                        label.Font = new(label.Font.FontFamily, 18);
+                        flowLayoutPanel1.Invoke(() =>
+                        {
+                            flowLayoutPanel1.Controls.Add(label);
+                        });
+                    }
                 });
                 {
                     Name="Thread_LoadEpisode";
