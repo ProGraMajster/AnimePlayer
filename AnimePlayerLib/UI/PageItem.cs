@@ -27,7 +27,8 @@ namespace AnimePlayerLibrary.UI
             UpdateLoadingTextdetails("Ładowanie strony...");
             ShowPanelLoading();
             SettingInofrmationUIFromPanelItem();
-            LoadPageItem(ContentManagerLibary.GetPageItemDataWithContentFolderFromTitle(panelItem._previewTitleClass.Title));
+            pageItemData = ContentManagerLibary.GetPageItemDataWithContentFolderFromTitle(panelItem._previewTitleClass.Title);
+            LoadPageItem(pageItemData);
             HidePanelLoading();
         }
 
@@ -91,7 +92,7 @@ namespace AnimePlayerLibrary.UI
             }
         }
 
-        PageItemData _PageItemData;
+        public PageItemData pageItemData;
 
         public void LoadPageItem(PageItemData pageItemData)
         {
@@ -101,7 +102,6 @@ namespace AnimePlayerLibrary.UI
                 {
                     return;
                 }
-                _PageItemData=pageItemData;
                 SettingLabelFormArryStringData(labelotherTitle, pageItemData.TitleInformation.OtherTitle);
                 SettingLabelFormStringData(labelDes, pageItemData.TitleInformation.Description);
                 SettingLabelFormStringData(labelType, pageItemData.TitleInformation.Type);
@@ -272,7 +272,7 @@ namespace AnimePlayerLibrary.UI
         {
             try
             {
-                int ep = int.Parse(_PageItemData.TitleInformation.NumberOfEpisodes);
+                int ep = int.Parse(pageItemData.TitleInformation.NumberOfEpisodes);
                 for(int i = 1; i <=ep ; i++)
                 {
                     Button button = new()
@@ -300,7 +300,7 @@ namespace AnimePlayerLibrary.UI
         {
             try
             {
-                PageEpisode pageEpisode = new(_PageItemData, (int)((Control)sender).Tag)
+                PageEpisode pageEpisode = new(pageItemData, (int)((Control)sender).Tag)
                 {
                     Name = "pageEpisode",
                     Dock = DockStyle.Fill

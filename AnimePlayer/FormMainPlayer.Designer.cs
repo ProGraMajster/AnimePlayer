@@ -820,6 +820,7 @@ namespace AnimePlayer
             this.buttonSetting.TabIndex = 1;
             this.buttonSetting.Text = "Ustawienia";
             this.buttonSetting.UseVisualStyleBackColor = true;
+            this.buttonSetting.Visible = false;
             this.buttonSetting.Click += new System.EventHandler(this.ButtonSetting_Click);
             // 
             // buttonHomePage
@@ -1070,6 +1071,7 @@ namespace AnimePlayer
             this.panel14.Padding = new System.Windows.Forms.Padding(1);
             this.panel14.Size = new System.Drawing.Size(200, 120);
             this.panel14.TabIndex = 3;
+            this.panel14.Visible = false;
             // 
             // label10
             // 
