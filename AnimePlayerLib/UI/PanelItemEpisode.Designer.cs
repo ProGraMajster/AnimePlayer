@@ -40,6 +40,7 @@
             // 
             // labelTitleAndNumber
             // 
+            this.labelTitleAndNumber.AutoEllipsis = true;
             this.labelTitleAndNumber.AutoSize = true;
             this.labelTitleAndNumber.Dock = System.Windows.Forms.DockStyle.Top;
             this.labelTitleAndNumber.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
