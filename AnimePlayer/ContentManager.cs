@@ -9,6 +9,8 @@ using AnimePlayer.Core;
 using AnimePlayer.Class;
 using AnimePlayerLibrary.UI;
 using System.Windows.Forms;
+using System.Diagnostics;
+using System.Threading;
 
 namespace AnimePlayer
 {
@@ -22,19 +24,109 @@ namespace AnimePlayer
             {
                 Updater.ContentUpdate.DownloadContent();
                 ContentMove();
+                List<PreviewTitleClass> previewTitleClasses = GetAllPreviewTitleClassFromFolder();
+                foreach (PreviewTitleClass item in previewTitleClasses)
+                {
+                    Panel panel = CreatePreviewPanelFromData(item);
+                    _formMainPlayer.flowLayoutPanelPolecane.Controls.Add(panel);
+                }
+                List<GroupClass> groups = GetGroups();
+                foreach(GroupClass group in groups)
+                {
+                    Thread thread = new(() =>
+                    {
+                        CreateGroup(_formMainPlayer, group);
+                    })
+                    {
+                        Name = "Thread_CreateGroup"
+                    };
+                    thread.Start();
+                }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
+                Debug.WriteLine(ex.ToString());
                 Console.Error.WriteLine(ex.ToString());
-            }
-            List<PreviewTitleClass> previewTitleClasses = GetAllPreviewTitleClassFromFolder();
-            foreach (PreviewTitleClass item in previewTitleClasses)
-            {
-                Panel panel = CreatePreviewPanelFromData(item);
-                _formMainPlayer.flowLayoutPanelPolecane.Controls.Add(panel);
             }
         }
 
+        public static bool CheckingItemSortFromString(string sortingtype, object obj)
+        {
+            try
+            {
+                if(sortingtype.StartsWith("DateOfIssue"))
+                {
+                    if(sortingtype.Contains(";"))
+                    {
+                        string s = sortingtype.Split(";")[1];
+                        int val;
+                        bool res = int.TryParse(s, out val);
+                        if(res)
+                        {
+                            if(obj.GetType() == typeof(PageItemData))
+                            {
+                                PageItemData item = (PageItemData)obj;
+                                if(!string.IsNullOrEmpty(item.TitleInformation.DateOfIssue))
+                                {
+                                    DateTime dateTime = DateTime.Parse(item.TitleInformation.DateOfIssue);
+                                    if(dateTime.Year == val)
+                                    {
+                                        return true;
+                                    }
+                                    else
+                                    {
+                                        return false;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                Debug.WriteLine(ex.ToString());
+                Console.Error.WriteLine(ex.ToString());
+            }
+            return false;
+        }
+
+        public static void CreateGroup(FormMainPlayer formMainPlayer, GroupClass groupClass)
+        {
+            try
+            {
+
+                List<PreviewTitleClass> previewTitlesInGroup = new List<PreviewTitleClass>();
+                List<PreviewTitleClass> previewTitleClassesAll = GetAllPreviewTitleClassFromFolder();
+                foreach(PreviewTitleClass item in previewTitleClassesAll)
+                {
+                    
+                    PageItemData pageItemData = AnimePlayerLibrary.ContentManagerLibary.GetPageItemDataWithContentFolderFromTitle(item.Title);
+                    if (CheckingItemSortFromString(groupClass.GetFromSortingContent, pageItemData))
+                    {
+                        previewTitlesInGroup.Add(item);
+                    }
+                }
+                AnimePlayerLibrary.ItemsGroup itemsGroup = new AnimePlayerLibrary.ItemsGroup(groupClass);
+                foreach(var item in previewTitlesInGroup)
+                {
+                    PanelItem panelItem = new PanelItem(item);
+                    itemsGroup.layoutPanel.Controls.Add(panelItem.panelItem);
+                }
+                formMainPlayer.Invoke(() =>
+                {
+                    itemsGroup.Dock = DockStyle.Top;
+                    itemsGroup.Show();
+                    formMainPlayer.panelStartPage.Controls.Add(itemsGroup);
+                    formMainPlayer.panelStartPage.Controls.SetChildIndex(itemsGroup, 0);
+                });
+            }
+            catch(Exception ex)
+            {
+                Debug.WriteLine(ex.ToString());
+                Console.Error.WriteLine(ex.ToString());
+            }
+        }
 
         public static void ContentMove()
         {
@@ -76,7 +168,7 @@ namespace AnimePlayer
                 {
                     if(item.Name.EndsWith(".dat"))
                     {
-                        if(title.ToLower() == item.Name.ToLower())
+                        if(Replacer.Names(title.ToLower()) == Replacer.Names(item.Name.ToLower()))
                         {
                             return (PageItemData)SerializationAndDeserialization.Deserialization(item.FullName);
                         }
@@ -130,6 +222,31 @@ namespace AnimePlayer
             }
           //  });
             return list;
+        }
+
+        public static List<GroupClass> GetGroups()
+        {
+            try
+            {
+                List<GroupClass> list = new();
+                DirectoryInfo directoryInfo = new(AppFolders.UpdatedItemGroups);
+                foreach(FileInfo fileInfo in directoryInfo.GetFiles())
+                {
+                    if (fileInfo.FullName.EndsWith(".dat"))
+                    {
+                        GroupClass groupClass = (GroupClass)Core.SerializationAndDeserialization
+                            .Deserialization(fileInfo.FullName);
+                        list.Add(groupClass);
+                    }
+                }
+                return list;
+            }
+            catch(Exception ex)
+            {
+                Debug.WriteLine(ex.ToString());
+                Console.Error.WriteLine(ex.ToString());
+            }
+            return null;
         }
     }
 }

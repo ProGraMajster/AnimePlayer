@@ -39,18 +39,20 @@ namespace AnimePlayerLibrary
             this.panelTop.Controls.Add(this.labelTitleGroup);
             this.panelTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTop.Location = new System.Drawing.Point(0, 0);
+            this.panelTop.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panelTop.Name = "panelTop";
-            this.panelTop.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.panelTop.Size = new System.Drawing.Size(931, 30);
+            this.panelTop.Padding = new System.Windows.Forms.Padding(12, 0, 12, 0);
+            this.panelTop.Size = new System.Drawing.Size(1086, 35);
             this.panelTop.TabIndex = 3;
             // 
             // labelTitleGroup
             // 
             this.labelTitleGroup.AutoSize = true;
             this.labelTitleGroup.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelTitleGroup.Font = new System.Drawing.Font("Comic Sans MS", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelTitleGroup.Font = new System.Drawing.Font("Comic Sans MS", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelTitleGroup.ForeColor = System.Drawing.Color.White;
-            this.labelTitleGroup.Location = new System.Drawing.Point(10, 0);
+            this.labelTitleGroup.Location = new System.Drawing.Point(12, 0);
+            this.labelTitleGroup.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelTitleGroup.Name = "labelTitleGroup";
             this.labelTitleGroup.Size = new System.Drawing.Size(112, 28);
             this.labelTitleGroup.TabIndex = 0;
@@ -59,14 +61,15 @@ namespace AnimePlayerLibrary
             // 
             // ItemsGroup
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.Controls.Add(this.panelTop);
             this.DoubleBuffered = true;
+            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "ItemsGroup";
-            this.Size = new System.Drawing.Size(931, 296);
+            this.Size = new System.Drawing.Size(1086, 342);
             this.panelTop.ResumeLayout(false);
             this.panelTop.PerformLayout();
             this.ResumeLayout(false);
