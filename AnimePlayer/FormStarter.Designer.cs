@@ -41,6 +41,8 @@ namespace AnimePlayer
             this.buttonCheckUpdate = new System.Windows.Forms.Button();
             this.labelVersion = new System.Windows.Forms.Label();
             this.panelSettings = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textBoxArgs = new System.Windows.Forms.TextBox();
             this.checkBoxef = new System.Windows.Forms.CheckBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
@@ -55,8 +57,6 @@ namespace AnimePlayer
             this.checkBoxDebug = new System.Windows.Forms.CheckBox();
             this.labelLoadingApp = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.textBoxArgs = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panelSettings.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -206,6 +206,24 @@ namespace AnimePlayer
             this.panelSettings.TabIndex = 4;
             this.panelSettings.Visible = false;
             // 
+            // label6
+            // 
+            this.label6.Location = new System.Drawing.Point(12, 332);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(123, 17);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "Argumenty startowe :";
+            // 
+            // textBoxArgs
+            // 
+            this.textBoxArgs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
+            this.textBoxArgs.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxArgs.ForeColor = System.Drawing.Color.White;
+            this.textBoxArgs.Location = new System.Drawing.Point(12, 350);
+            this.textBoxArgs.Name = "textBoxArgs";
+            this.textBoxArgs.Size = new System.Drawing.Size(350, 16);
+            this.textBoxArgs.TabIndex = 11;
+            // 
             // checkBoxef
             // 
             this.checkBoxef.AutoSize = true;
@@ -267,6 +285,7 @@ namespace AnimePlayer
             this.label4.Size = new System.Drawing.Size(241, 37);
             this.label4.TabIndex = 6;
             this.label4.Text = "Włączając tą opcję aplikacja nie będzie korzystać z internetu.";
+            this.label4.Visible = false;
             // 
             // label3
             // 
@@ -276,6 +295,7 @@ namespace AnimePlayer
             this.label3.TabIndex = 5;
             this.label3.Text = "Włączając tą opcję aplikacja będzie ładować główną zawartość tylko z lokalnych pl" +
     "ików. Uwaga, aplikacja dalej będzie mogła korzystać z internetu!";
+            this.label3.Visible = false;
             // 
             // label2
             // 
@@ -285,6 +305,7 @@ namespace AnimePlayer
             this.label2.TabIndex = 4;
             this.label2.Text = "Włączając tą opcję aplikacja będzie zbierała pełne logi i da dostęp do specjalnyc" +
     "h funkcji";
+            this.label2.Visible = false;
             // 
             // checkBoxLocal
             // 
@@ -295,6 +316,7 @@ namespace AnimePlayer
             this.checkBoxLocal.TabIndex = 3;
             this.checkBoxLocal.Text = "Tryb lokalny";
             this.checkBoxLocal.UseVisualStyleBackColor = true;
+            this.checkBoxLocal.Visible = false;
             // 
             // checkBoxOffline
             // 
@@ -305,6 +327,7 @@ namespace AnimePlayer
             this.checkBoxOffline.TabIndex = 2;
             this.checkBoxOffline.Text = "Tryb offline";
             this.checkBoxOffline.UseVisualStyleBackColor = true;
+            this.checkBoxOffline.Visible = false;
             // 
             // buttonCloseSettings
             // 
@@ -328,6 +351,7 @@ namespace AnimePlayer
             this.checkBoxDebug.TabIndex = 0;
             this.checkBoxDebug.Text = "Tryb debugowania";
             this.checkBoxDebug.UseVisualStyleBackColor = true;
+            this.checkBoxDebug.Visible = false;
             // 
             // labelLoadingApp
             // 
@@ -344,24 +368,6 @@ namespace AnimePlayer
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
-            // 
-            // textBoxArgs
-            // 
-            this.textBoxArgs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(31)))), ((int)(((byte)(48)))));
-            this.textBoxArgs.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxArgs.ForeColor = System.Drawing.Color.White;
-            this.textBoxArgs.Location = new System.Drawing.Point(12, 350);
-            this.textBoxArgs.Name = "textBoxArgs";
-            this.textBoxArgs.Size = new System.Drawing.Size(350, 16);
-            this.textBoxArgs.TabIndex = 11;
-            // 
-            // label6
-            // 
-            this.label6.Location = new System.Drawing.Point(12, 332);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(123, 17);
-            this.label6.TabIndex = 12;
-            this.label6.Text = "Argumenty startowe :";
             // 
             // FormStarter
             // 

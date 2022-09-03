@@ -35,7 +35,7 @@
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.buttonPlayEpisode = new System.Windows.Forms.Button();
-            this.buttonMoreInformation = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labelTitleAndNumber
@@ -45,6 +45,7 @@
             this.labelTitleAndNumber.Dock = System.Windows.Forms.DockStyle.Top;
             this.labelTitleAndNumber.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelTitleAndNumber.Location = new System.Drawing.Point(5, 5);
+            this.labelTitleAndNumber.MaximumSize = new System.Drawing.Size(490, 0);
             this.labelTitleAndNumber.Name = "labelTitleAndNumber";
             this.labelTitleAndNumber.Padding = new System.Windows.Forms.Padding(5, 5, 0, 5);
             this.labelTitleAndNumber.Size = new System.Drawing.Size(87, 30);
@@ -128,26 +129,26 @@
             this.buttonPlayEpisode.Text = "Oglądaj >";
             this.buttonPlayEpisode.UseVisualStyleBackColor = false;
             // 
-            // buttonMoreInformation
+            // button1
             // 
-            this.buttonMoreInformation.BackColor = System.Drawing.Color.Black;
-            this.buttonMoreInformation.FlatAppearance.BorderSize = 0;
-            this.buttonMoreInformation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonMoreInformation.Font = new System.Drawing.Font("Comic Sans MS", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonMoreInformation.Location = new System.Drawing.Point(273, 114);
-            this.buttonMoreInformation.Name = "buttonMoreInformation";
-            this.buttonMoreInformation.Size = new System.Drawing.Size(116, 34);
-            this.buttonMoreInformation.TabIndex = 10;
-            this.buttonMoreInformation.Text = "Więcej informacji";
-            this.buttonMoreInformation.UseVisualStyleBackColor = false;
-            this.buttonMoreInformation.Visible = false;
+            this.button1.BackColor = System.Drawing.Color.Black;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Comic Sans MS", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button1.Location = new System.Drawing.Point(305, 114);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 34);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "Pobierz";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Visible = false;
             // 
             // PanelItemEpisode
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.Controls.Add(this.buttonMoreInformation);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.buttonPlayEpisode);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.linkLabel1);
@@ -159,6 +160,7 @@
             this.Name = "PanelItemEpisode";
             this.Padding = new System.Windows.Forms.Padding(5);
             this.Size = new System.Drawing.Size(500, 228);
+            this.Load += new System.EventHandler(this.PanelItemEpisode_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -172,6 +174,6 @@
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.RichTextBox richTextBox1;
         public System.Windows.Forms.Button buttonPlayEpisode;
-        public System.Windows.Forms.Button buttonMoreInformation;
+        public System.Windows.Forms.Button button1;
     }
 }

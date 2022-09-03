@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -54,6 +56,19 @@ namespace AnimePlayerLibrary.UI
         private void richTextBox1_LinkClicked(object sender, LinkClickedEventArgs e)
         {
             AnimePlayer.Core.OpenLinks.Start(e.LinkText);
+        }
+
+        private void PanelItemEpisode_Load(object sender, EventArgs e)
+        {
+            /*try
+            {
+                var status = new Ping().Send("www.google.com.mx").Status == IPStatus.Success;
+                Debug.WriteLine(status.ToString());
+            }
+            catch(Exception ex)
+            {
+                Debug.WriteLine(ex.ToString());
+            }*/
         }
     }
 }
