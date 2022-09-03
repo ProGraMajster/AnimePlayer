@@ -351,7 +351,6 @@ namespace AnimePlayer
             this.checkBoxDebug.TabIndex = 0;
             this.checkBoxDebug.Text = "Tryb debugowania";
             this.checkBoxDebug.UseVisualStyleBackColor = true;
-            this.checkBoxDebug.Visible = false;
             // 
             // labelLoadingApp
             // 
