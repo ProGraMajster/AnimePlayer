@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Linq;
 using System.Net.NetworkInformation;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -16,11 +17,13 @@ namespace AnimePlayerLibrary.UI
 {
     public partial class PanelItemEpisode : UserControl
     {
+        public Episode Episode;
         public PanelItemEpisode(Episode episode)
         {
             InitializeComponent();
             try
             {
+                Episode = episode;
                 labelTitleAndNumber.Text ="Odcinek: "+episode.NumberEpisode+" | "+ episode.TitleOfEpisode;
                 labelType.Text = "Typ:    "+episode.Type;
                 labelAudio.Text = "Audio:   "+episode.AudioLanguage;
@@ -60,15 +63,25 @@ namespace AnimePlayerLibrary.UI
 
         private void PanelItemEpisode_Load(object sender, EventArgs e)
         {
-            /*try
+            try
             {
-                var status = new Ping().Send("www.google.com.mx").Status == IPStatus.Success;
-                Debug.WriteLine(status.ToString());
+                
+                /*var status = new Ping().Send("www.google.com.mx").Status == IPStatus.Success;
+                Debug.WriteLine(status.ToString());*/
             }
             catch(Exception ex)
             {
                 Debug.WriteLine(ex.ToString());
-            }*/
+            }
+        }
+
+        private void PanelItemEpisode_DoubleClick(object sender, EventArgs e)
+        {
+            PageEpisodeDetails pageEpisodeDetails = new(this);
+            pageEpisodeDetails.Dock = DockStyle.Fill;
+            this.Parent.Parent.Controls.Add(pageEpisodeDetails);
+            pageEpisodeDetails.Show();
+            pageEpisodeDetails.BringToFront();
         }
     }
 }

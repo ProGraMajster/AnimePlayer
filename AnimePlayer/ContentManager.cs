@@ -157,7 +157,8 @@ namespace AnimePlayer
 
         public static PageItemData GetPageItemDataWithContentFolderFromTitle(string title)
         {
-            if(title == null)
+            return AnimePlayerLibrary.ContentManagerLibary.GetPageItemDataWithContentFolderFromTitle(title);
+            /*if(title == null)
             {
                 return null;
             }
@@ -179,7 +180,7 @@ namespace AnimePlayer
             {
                 Console.Error.WriteLine(ex.ToString());
             }
-            return null;
+            return null;*/
         }
 
         public static Panel CreatePreviewPanelFromData(PreviewTitleClass previewTitleClass)

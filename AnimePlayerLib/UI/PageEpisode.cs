@@ -87,9 +87,7 @@ namespace AnimePlayerLibrary.UI
                         });
                     }
                 });
-                {
-                    Name="Thread_LoadEpisode";
-                }
+                thread.Name="Thread_LoadEpisode";
                 thread.Start();
                 Thread thread2 = new(() =>
                 {
@@ -104,9 +102,7 @@ namespace AnimePlayerLibrary.UI
                         pictureBox1.ImageLocation = strings[0];
                     });
                 });
-                {
-                    Name = "Thread_LoadIcon";
-                }
+                thread2.Name = "Thread_LoadIcon";
                 thread2.Start();
             }
             catch(Exception ex)

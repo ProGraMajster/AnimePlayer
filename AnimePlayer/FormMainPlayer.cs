@@ -253,6 +253,8 @@ namespace AnimePlayer
             //textBoxStartPagefinditem.AutoCompleteCustomSource = autoCSC_find;
             panelLoading.Hide();
             this.Show();
+            /*FormStatisticData formStatisticData = new FormStatisticData();
+            formStatisticData.Show();*/
             //backgroundWorkerLoadItems.RunWorkerAsync();
         }
 

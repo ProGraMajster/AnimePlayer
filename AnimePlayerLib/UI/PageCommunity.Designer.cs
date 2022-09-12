@@ -32,6 +32,7 @@
             this.panelTop = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.buttonBack = new System.Windows.Forms.Button();
             this.buttonFind = new System.Windows.Forms.Button();
             this.buttonClosePage = new System.Windows.Forms.Button();
             this.newFlowLayoutPanelAll = new AnimePlayer.ControlsWinForms.NewFlowLayoutPanel();
@@ -59,6 +60,7 @@
             // 
             this.panelTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.panelTop.Controls.Add(this.panel1);
+            this.panelTop.Controls.Add(this.buttonBack);
             this.panelTop.Controls.Add(this.buttonFind);
             this.panelTop.Controls.Add(this.buttonClosePage);
             this.panelTop.Dock = System.Windows.Forms.DockStyle.Top;
@@ -72,10 +74,10 @@
             // 
             this.panel1.Controls.Add(this.textBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(10, 11);
+            this.panel1.Location = new System.Drawing.Point(85, 11);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(0, 6, 0, 0);
-            this.panel1.Size = new System.Drawing.Size(625, 28);
+            this.panel1.Size = new System.Drawing.Size(550, 28);
             this.panel1.TabIndex = 3;
             // 
             // textBox1
@@ -86,10 +88,24 @@
             this.textBox1.ForeColor = System.Drawing.Color.White;
             this.textBox1.Location = new System.Drawing.Point(0, 6);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(625, 17);
+            this.textBox1.Size = new System.Drawing.Size(550, 17);
             this.textBox1.TabIndex = 1;
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox1.Visible = false;
+            // 
+            // buttonBack
+            // 
+            this.buttonBack.Dock = System.Windows.Forms.DockStyle.Left;
+            this.buttonBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonBack.ForeColor = System.Drawing.Color.White;
+            this.buttonBack.Location = new System.Drawing.Point(10, 11);
+            this.buttonBack.Name = "buttonBack";
+            this.buttonBack.Size = new System.Drawing.Size(75, 28);
+            this.buttonBack.TabIndex = 4;
+            this.buttonBack.Text = "<- Wróć";
+            this.buttonBack.UseVisualStyleBackColor = true;
+            this.buttonBack.Visible = false;
+            this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
             // 
             // buttonFind
             // 
@@ -145,6 +161,7 @@
             this.panelView.Padding = new System.Windows.Forms.Padding(10, 11, 10, 11);
             this.panelView.Size = new System.Drawing.Size(795, 590);
             this.panelView.TabIndex = 0;
+            this.panelView.VisibleChanged += new System.EventHandler(this.panelView_VisibleChanged);
             // 
             // panel5
             // 
@@ -171,10 +188,11 @@
             // 
             // newFlowLayoutPanelLinks
             // 
+            this.newFlowLayoutPanelLinks.AutoScroll = true;
             this.newFlowLayoutPanelLinks.Dock = System.Windows.Forms.DockStyle.Top;
             this.newFlowLayoutPanelLinks.Location = new System.Drawing.Point(10, 63);
             this.newFlowLayoutPanelLinks.Name = "newFlowLayoutPanelLinks";
-            this.newFlowLayoutPanelLinks.Size = new System.Drawing.Size(755, 60);
+            this.newFlowLayoutPanelLinks.Size = new System.Drawing.Size(755, 78);
             this.newFlowLayoutPanelLinks.TabIndex = 2;
             // 
             // label3
@@ -285,5 +303,6 @@
         private System.Windows.Forms.Label label2;
         private AnimePlayer.ControlsWinForms.NewFlowLayoutPanel newFlowLayoutPanelLinks;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button buttonBack;
     }
 }

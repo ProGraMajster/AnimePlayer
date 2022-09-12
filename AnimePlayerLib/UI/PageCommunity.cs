@@ -49,6 +49,7 @@ namespace AnimePlayerLibrary.UI
                 AnimePlayer.Class.ItemCommunity itemCommunity = (AnimePlayer.Class.ItemCommunity)control.Tag;
                 panelAll.Hide();
                 panelView.Show();
+                buttonBack.Show();
                 labelName.Text = itemCommunity.Name;
                 if(itemCommunity.IconLinks.Length >0 && itemCommunity.IconLinks != null)
                 {
@@ -101,6 +102,23 @@ namespace AnimePlayerLibrary.UI
         private void ButtonClosePage_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+
+        private void buttonBack_Click(object sender, EventArgs e)
+        {
+            panelAll.Show();
+            panelView.Hide();
+            buttonBack.Hide();
+        }
+
+        private void panelView_VisibleChanged(object sender, EventArgs e)
+        {
+            if(panelView.Visible==false)
+            {
+                labelName.Text = "";
+                pictureBoxIcon.Image = null;
+                newFlowLayoutPanelLinks.Controls.Clear();
+            }
         }
     }
 }
