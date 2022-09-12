@@ -14,9 +14,6 @@
     <Reference Include="NewMessageBox">
       <HintPath>..\AnimePlayer\NewMessageBox.dll</HintPath>
     </Reference>
-    <Reference Include="ProfileSupportLibrary">
-      <HintPath>ProfileSupportLibrary.dll</HintPath>
-    </Reference>
   </ItemGroup>
 
   <ItemGroup>

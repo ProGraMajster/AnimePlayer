@@ -8,6 +8,7 @@ using AnimePlayer.Core;
 using AnimePlayerLibrary;
 using AnimePlayerLibrary.UI;
 using System.Threading.Tasks;
+using System.Diagnostics;
 
 namespace AnimePlayerLibrary.UI
 {
