@@ -11,6 +11,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\AnimePlayer.Controls\AnimePlayer.ControlsWinForms.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Reference Include="NewMessageBox">
       <HintPath>..\AnimePlayer\NewMessageBox.dll</HintPath>
     </Reference>

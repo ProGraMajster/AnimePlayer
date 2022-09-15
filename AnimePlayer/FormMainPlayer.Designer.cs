@@ -56,8 +56,10 @@ namespace AnimePlayer
             this.panel9 = new System.Windows.Forms.Panel();
             this.textBoxStartPagefinditem = new System.Windows.Forms.TextBox();
             this.buttonStartPageFinditem = new System.Windows.Forms.Button();
+            this.panel22 = new System.Windows.Forms.Panel();
+            this.pictureBoxProfileIcon = new System.Windows.Forms.PictureBox();
+            this.label23 = new System.Windows.Forms.Label();
             this.labelSatusWorkingApp = new System.Windows.Forms.Label();
-            this.buttonProfile = new System.Windows.Forms.Button();
             this.buttonMenuOpen = new System.Windows.Forms.Button();
             this.label = new System.Windows.Forms.Label();
             this.panelLoading = new System.Windows.Forms.Panel();
@@ -164,6 +166,8 @@ namespace AnimePlayer
             this.roundedPanel1.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel9.SuspendLayout();
+            this.panel22.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProfileIcon)).BeginInit();
             this.panelLoading.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoading)).BeginInit();
             this.panelMenu.SuspendLayout();
@@ -399,8 +403,8 @@ namespace AnimePlayer
             this.roundedPanel1.BackColor = System.Drawing.Color.Transparent;
             this.roundedPanel1.ColorEdges = System.Drawing.SystemColors.ActiveCaptionText;
             this.roundedPanel1.Controls.Add(this.panel7);
+            this.roundedPanel1.Controls.Add(this.panel22);
             this.roundedPanel1.Controls.Add(this.labelSatusWorkingApp);
-            this.roundedPanel1.Controls.Add(this.buttonProfile);
             this.roundedPanel1.Controls.Add(this.buttonMenuOpen);
             this.roundedPanel1.Controls.Add(this.label);
             this.roundedPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -424,7 +428,7 @@ namespace AnimePlayer
             this.panel7.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panel7.Name = "panel7";
             this.panel7.Padding = new System.Windows.Forms.Padding(6, 23, 6, 17);
-            this.panel7.Size = new System.Drawing.Size(584, 67);
+            this.panel7.Size = new System.Drawing.Size(565, 67);
             this.panel7.TabIndex = 4;
             // 
             // panel9
@@ -435,7 +439,7 @@ namespace AnimePlayer
             this.panel9.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panel9.Name = "panel9";
             this.panel9.Padding = new System.Windows.Forms.Padding(0, 6, 0, 0);
-            this.panel9.Size = new System.Drawing.Size(484, 27);
+            this.panel9.Size = new System.Drawing.Size(465, 27);
             this.panel9.TabIndex = 5;
             // 
             // textBoxStartPagefinditem
@@ -452,7 +456,7 @@ namespace AnimePlayer
             this.textBoxStartPagefinditem.Location = new System.Drawing.Point(0, 6);
             this.textBoxStartPagefinditem.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.textBoxStartPagefinditem.Name = "textBoxStartPagefinditem";
-            this.textBoxStartPagefinditem.Size = new System.Drawing.Size(484, 16);
+            this.textBoxStartPagefinditem.Size = new System.Drawing.Size(465, 16);
             this.textBoxStartPagefinditem.TabIndex = 3;
             this.textBoxStartPagefinditem.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBoxStartPagefinditem.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextBoxSPfinditem_KeyDown);
@@ -467,7 +471,7 @@ namespace AnimePlayer
             this.buttonStartPageFinditem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonStartPageFinditem.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonStartPageFinditem.ForeColor = System.Drawing.Color.White;
-            this.buttonStartPageFinditem.Location = new System.Drawing.Point(490, 23);
+            this.buttonStartPageFinditem.Location = new System.Drawing.Point(471, 23);
             this.buttonStartPageFinditem.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.buttonStartPageFinditem.Name = "buttonStartPageFinditem";
             this.buttonStartPageFinditem.Size = new System.Drawing.Size(88, 27);
@@ -476,12 +480,43 @@ namespace AnimePlayer
             this.buttonStartPageFinditem.UseVisualStyleBackColor = false;
             this.buttonStartPageFinditem.Click += new System.EventHandler(this.ButtonStartPageFinditem_Click);
             // 
+            // panel22
+            // 
+            this.panel22.Controls.Add(this.pictureBoxProfileIcon);
+            this.panel22.Controls.Add(this.label23);
+            this.panel22.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel22.Location = new System.Drawing.Point(786, 7);
+            this.panel22.Name = "panel22";
+            this.panel22.Size = new System.Drawing.Size(80, 67);
+            this.panel22.TabIndex = 5;
+            // 
+            // pictureBoxProfileIcon
+            // 
+            this.pictureBoxProfileIcon.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBoxProfileIcon.Location = new System.Drawing.Point(0, 15);
+            this.pictureBoxProfileIcon.Name = "pictureBoxProfileIcon";
+            this.pictureBoxProfileIcon.Size = new System.Drawing.Size(80, 52);
+            this.pictureBoxProfileIcon.TabIndex = 6;
+            this.pictureBoxProfileIcon.TabStop = false;
+            this.pictureBoxProfileIcon.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBoxProfileIcon_Paint);
+            // 
+            // label23
+            // 
+            this.label23.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label23.ForeColor = System.Drawing.Color.White;
+            this.label23.Location = new System.Drawing.Point(0, 0);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(80, 15);
+            this.label23.TabIndex = 7;
+            this.label23.Text = "Profil";
+            this.label23.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // labelSatusWorkingApp
             // 
             this.labelSatusWorkingApp.Dock = System.Windows.Forms.DockStyle.Right;
             this.labelSatusWorkingApp.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelSatusWorkingApp.ForeColor = System.Drawing.SystemColors.Window;
-            this.labelSatusWorkingApp.Location = new System.Drawing.Point(805, 7);
+            this.labelSatusWorkingApp.Location = new System.Drawing.Point(866, 7);
             this.labelSatusWorkingApp.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelSatusWorkingApp.Name = "labelSatusWorkingApp";
             this.labelSatusWorkingApp.Size = new System.Drawing.Size(77, 67);
@@ -489,26 +524,6 @@ namespace AnimePlayer
             this.labelSatusWorkingApp.Text = "Satus działania:";
             this.labelSatusWorkingApp.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.labelSatusWorkingApp.Visible = false;
-            // 
-            // buttonProfile
-            // 
-            this.buttonProfile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonProfile.Dock = System.Windows.Forms.DockStyle.Right;
-            this.buttonProfile.FlatAppearance.BorderSize = 0;
-            this.buttonProfile.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.buttonProfile.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.buttonProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonProfile.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonProfile.ForeColor = System.Drawing.Color.White;
-            this.buttonProfile.Location = new System.Drawing.Point(882, 7);
-            this.buttonProfile.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.buttonProfile.Name = "buttonProfile";
-            this.buttonProfile.Size = new System.Drawing.Size(61, 67);
-            this.buttonProfile.TabIndex = 5;
-            this.buttonProfile.Text = "Profil";
-            this.buttonProfile.UseVisualStyleBackColor = true;
-            this.buttonProfile.Visible = false;
-            this.buttonProfile.Click += new System.EventHandler(this.ButtonProfile_Click);
             // 
             // buttonMenuOpen
             // 
@@ -1732,8 +1747,8 @@ namespace AnimePlayer
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.ClientSize = new System.Drawing.Size(1090, 624);
             this.Controls.Add(this.panel18);
-            this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.panelCommands);
             this.Controls.Add(this.panelNotifiError);
             this.DoubleBuffered = true;
@@ -1768,6 +1783,8 @@ namespace AnimePlayer
             this.panel7.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
+            this.panel22.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProfileIcon)).EndInit();
             this.panelLoading.ResumeLayout(false);
             this.panelLoading.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoading)).EndInit();
@@ -1916,11 +1933,13 @@ namespace AnimePlayer
         private Button button3;
         private Panel panel4;
         private Label label3;
-        public Button buttonProfile;
         private Panel panel21;
         private Button buttonDefined;
         private Button buttonHomePage;
         public NewFlowLayoutPanel flowLayoutPanelFinditem;
         private NewFlowLayoutPanel flowLayoutPanelAll;
+        private Panel panel22;
+        private PictureBox pictureBoxProfileIcon;
+        private Label label23;
     }
 }

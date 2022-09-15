@@ -36,6 +36,9 @@ namespace AnimePlayer.Class
             "\\AnimePlayer\\Settings\\";
         public static readonly string ItemGroups = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) +
             "\\AnimePlayer\\ItemGroups\\";
+        //========================
+        public static readonly string Profiles = AppFolder + "Profiles\\";
+
         //============== New downloaded content folders ====================
         public static readonly string UpdatedContentFolder = Updater +
             "UpdatedContentFolder\\";

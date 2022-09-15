@@ -16,7 +16,8 @@ namespace AnimePlayer.Profile
         public Bitmap IconProfile { get; set; }
         public DateTime YearOfBirth { get; set; }
         public bool PassState { get; set; }
-        public SecureString Password { get; set; }
+        public string K { get; set; }
+        public string Password { get; set; }
         public string HelperQuestion {get; set; }
     }
 }

@@ -256,6 +256,11 @@ namespace AnimePlayer
             /*FormStatisticData formStatisticData = new FormStatisticData();
             formStatisticData.Show();*/
             //backgroundWorkerLoadItems.RunWorkerAsync();
+            AnimePlayer.Profile.ProfileSelectionPanel profileSelectionPanel = new AnimePlayer.Profile.ProfileSelectionPanel();
+            this.Controls.Add(profileSelectionPanel);
+            profileSelectionPanel.Dock = DockStyle.Fill;
+            profileSelectionPanel.Show();
+            profileSelectionPanel.BringToFront();
         }
 
         public void CenterControlInForm(Control control)
@@ -1207,6 +1212,11 @@ namespace AnimePlayer
         private void Button2_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Funkcja nie dostęona!");
+        }
+
+        private void pictureBoxProfileIcon_Paint(object sender, PaintEventArgs e)
+        {
+            AnimePlayer.CNM.ExtensionsControl.RoundingTheCorners(pictureBoxProfileIcon, 100);
         }
     }
 }
