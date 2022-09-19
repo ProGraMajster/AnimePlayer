@@ -35,5 +35,6 @@ namespace AnimePlayer.Core
                 return null;
             }
         }
+
     }
 }

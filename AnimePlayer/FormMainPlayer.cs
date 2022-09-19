@@ -16,6 +16,8 @@ using AnimePlayer.Core;
 using AnimePlayer.CNM;
 using AnimePlayer.ControlsWinForms;
 using AnimePlayer.Class;
+using Newtonsoft.Json;
+using AnimePlayer.Profile;
 
 namespace AnimePlayer
 {
@@ -34,6 +36,8 @@ namespace AnimePlayer
         public string ThemePath = null;
         public ItemList_ClassItemOnStateList iList_ClassItemOnState;
         public PerformanceCounter performanceCounter_app;
+
+        private ProfileClass currentProfile=null;
 
         int memsize;
 
@@ -256,11 +260,31 @@ namespace AnimePlayer
             /*FormStatisticData formStatisticData = new FormStatisticData();
             formStatisticData.Show();*/
             //backgroundWorkerLoadItems.RunWorkerAsync();
-            AnimePlayer.Profile.ProfileSelectionPanel profileSelectionPanel = new AnimePlayer.Profile.ProfileSelectionPanel();
+            profileSelectionPanel = new AnimePlayer.Profile.ProfileSelectionPanel();
             this.Controls.Add(profileSelectionPanel);
+            profileSelectionPanel.eventHandler += ProfileSelect_Click;
             profileSelectionPanel.Dock = DockStyle.Fill;
             profileSelectionPanel.Show();
             profileSelectionPanel.BringToFront();
+        }
+        AnimePlayer.Profile.ProfileSelectionPanel profileSelectionPanel;
+
+        private void ProfileSelect_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Control control = (Control)sender;
+                ProfileClass profileClass = (ProfileClass)control.Tag;
+                currentProfile = profileClass;
+                profileSelectionPanel.Hide();
+                pictureBoxProfileIcon.Image = profileClass.IconProfile;
+                AnimePlayer.CNM.ExtensionsControl.RoundingTheCorners(pictureBoxProfileIcon, 100);
+            }
+            catch(Exception ex)
+            {
+                Debug.WriteLine(ex.ToString());
+                Console.Error.WriteLine(ex.ToString());
+            }
         }
 
         public void CenterControlInForm(Control control)

@@ -16,13 +16,14 @@ namespace AnimePlayer.Profile
 {
     public partial class ProfileSelectionPanel : UserControl
     {
+        public EventHandler eventHandler;
         public ProfileSelectionPanel()
         {
             InitializeComponent();
             AnimePlayer.CNM.ExtensionsControl.RoundingTheCorners(buttonCreate, 100);
             AnimePlayer.CNM.ExtensionsControl.RoundingTheCorners(pictureBoxIcon, 100);
             SetLocationChildControl();
-            CenterChildControlPanelCreate();
+            CenterChildControlPanelCreate();   
         }
 
         private void SetLocationChildControl()
@@ -207,8 +208,10 @@ namespace AnimePlayer.Profile
                             .Deserialization(fileInfo.FullName);
                         if (profileClass != null)
                         {
-                            Panel panel = new Panel();
-                            panel.Size = new Size(100, 125);
+                            Panel p = new Panel();
+                            p.MouseMove += Panel_MouseMove;
+                            p.MouseLeave += Panel_MouseLeave;
+                            p.Size = new Size(100, 125);
                             PictureBox pictureBox = new PictureBox();
                             if(profileClass.IconProfile !=null)
                             {
@@ -221,13 +224,100 @@ namespace AnimePlayer.Profile
                             label.TextAlign = ContentAlignment.MiddleCenter;
                             label.Text = profileClass.Name;
                             label.Dock = DockStyle.Bottom;
-                            panel.Controls.Add(pictureBox);
-                            panel.Controls.Add(label);
+                            p.Controls.Add(pictureBox);
+                            p.Controls.Add(label);
+                            pictureBox.MouseMove += PictureBox_MouseMove;
+                            pictureBox.MouseLeave += PictureBox_MouseLeave;
+                            label.MouseMove += PictureBox_MouseMove;
+                            label.MouseLeave+=PictureBox_MouseLeave;
+                            p.Tag = profileClass;
+                            pictureBox.Tag = profileClass;
+                            label.Tag = profileClass;
+                            p.Click += P_Click;
+                            pictureBox.Click += P_Click;
+                            label.Click += P_Click;
                             AnimePlayer.CNM.ExtensionsControl.RoundingTheCorners(pictureBox, 100);
-                            newFlowLayoutPanel1.Controls.Add(panel);
+                            newFlowLayoutPanel1.Controls.Add(p);
                         }
                     }
                 }
+            }
+        }
+
+        private void P_Click(object sender, EventArgs e)
+        {
+            eventHandler.Invoke(sender, EventArgs.Empty);
+        }
+
+        private void PictureBox_MouseLeave(object sender, EventArgs e)
+        {
+            try
+            {
+                Control control = (Control)sender;
+                control.Parent.BackColor = Color.Transparent;
+                foreach (Control c in control.Parent.Controls)
+                {
+                    c.BackColor = control.BackColor;
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.ToString());
+                Console.Error.WriteLine(ex.ToString());
+            }
+        }
+
+        private void PictureBox_MouseMove(object sender, MouseEventArgs e)
+        {
+            try
+            {
+                Control control = (Control)sender;
+                control.Parent.BackColor = Color.FromArgb(50, 50, 50);
+                foreach (Control c in control.Parent.Controls)
+                {
+                    c.BackColor = control.BackColor;
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.ToString());
+                Console.Error.WriteLine(ex.ToString());
+            }
+        }
+
+        private void Panel_MouseLeave(object sender, EventArgs e)
+        {
+            try
+            {
+                Control control = (Control)sender;
+                control.BackColor = Color.Transparent;
+                foreach (Control c in control.Controls)
+                {
+                    c.BackColor = control.BackColor;
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.ToString());
+                Console.Error.WriteLine(ex.ToString());
+            }
+        }
+
+        private void Panel_MouseMove(object sender, MouseEventArgs e)
+        {
+            try
+            {
+                Control control = (Control)sender;
+                control.BackColor = Color.FromArgb(50, 50, 50);
+                foreach (Control c in control.Controls)
+                {
+                    c.BackColor=control.BackColor;
+                }
+            }
+            catch(Exception ex)
+            {
+                Debug.WriteLine(ex.ToString());
+                Console.Error.WriteLine(ex.ToString());
             }
         }
 
@@ -245,6 +335,17 @@ namespace AnimePlayer.Profile
             {
                 Debug.WriteLine(ex.ToString());
                 Console.Error.WriteLine(ex.ToString());
+            }
+        }
+
+        private void newFlowLayoutPanel1_VisibleChanged(object sender, EventArgs e)
+        {
+            if(!this.Visible)
+            {
+                foreach(Panel p in newFlowLayoutPanel1.Controls.OfType<Panel>())
+                {
+                    p.Dispose();
+                }
             }
         }
     }

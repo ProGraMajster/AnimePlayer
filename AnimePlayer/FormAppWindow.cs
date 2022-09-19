@@ -28,7 +28,8 @@ namespace AnimePlayer
             }
             catch (Exception ex)
             {
-
+                Debug.WriteLine(ex.Message);
+                Console.Error.WriteLine(ex.ToString());
             }
             this.Close();
         }

@@ -107,6 +107,7 @@
             this.newFlowLayoutPanel1.Size = new System.Drawing.Size(737, 150);
             this.newFlowLayoutPanel1.TabIndex = 0;
             this.newFlowLayoutPanel1.SizeChanged += new System.EventHandler(this.newFlowLayoutPanel1_SizeChanged);
+            this.newFlowLayoutPanel1.VisibleChanged += new System.EventHandler(this.newFlowLayoutPanel1_VisibleChanged);
             this.newFlowLayoutPanel1.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.newFlowLayoutPanel1_ControlAdded);
             this.newFlowLayoutPanel1.ControlRemoved += new System.Windows.Forms.ControlEventHandler(this.newFlowLayoutPanel1_ControlRemoved);
             // 

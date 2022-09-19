@@ -496,6 +496,7 @@ namespace AnimePlayer
             this.pictureBoxProfileIcon.Location = new System.Drawing.Point(0, 15);
             this.pictureBoxProfileIcon.Name = "pictureBoxProfileIcon";
             this.pictureBoxProfileIcon.Size = new System.Drawing.Size(80, 52);
+            this.pictureBoxProfileIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxProfileIcon.TabIndex = 6;
             this.pictureBoxProfileIcon.TabStop = false;
             this.pictureBoxProfileIcon.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBoxProfileIcon_Paint);
