@@ -466,8 +466,8 @@ namespace AnimePlayer
             this.buttonStartPageFinditem.BackColor = System.Drawing.Color.Transparent;
             this.buttonStartPageFinditem.Dock = System.Windows.Forms.DockStyle.Right;
             this.buttonStartPageFinditem.FlatAppearance.BorderSize = 0;
-            this.buttonStartPageFinditem.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.buttonStartPageFinditem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.buttonStartPageFinditem.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
+            this.buttonStartPageFinditem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(65)))), ((int)(((byte)(65)))));
             this.buttonStartPageFinditem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonStartPageFinditem.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonStartPageFinditem.ForeColor = System.Drawing.Color.White;
@@ -477,7 +477,7 @@ namespace AnimePlayer
             this.buttonStartPageFinditem.Size = new System.Drawing.Size(88, 27);
             this.buttonStartPageFinditem.TabIndex = 4;
             this.buttonStartPageFinditem.Text = "Szukaj";
-            this.buttonStartPageFinditem.UseVisualStyleBackColor = false;
+            this.buttonStartPageFinditem.UseVisualStyleBackColor = true;
             this.buttonStartPageFinditem.Click += new System.EventHandler(this.ButtonStartPageFinditem_Click);
             // 
             // panel22
@@ -733,6 +733,7 @@ namespace AnimePlayer
             this.buttonRestartApp.TabIndex = 6;
             this.buttonRestartApp.Text = "Zrestartuj aplikacjie";
             this.buttonRestartApp.UseVisualStyleBackColor = true;
+            this.buttonRestartApp.Visible = false;
             this.buttonRestartApp.Click += new System.EventHandler(this.ButtonRestartApp_Click);
             // 
             // panelSep

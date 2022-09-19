@@ -54,6 +54,10 @@ namespace AnimePlayer
         {
             try
             {
+                if(obj == null)
+                {
+                    return false;
+                }
                 if(sortingtype.StartsWith("DateOfIssue"))
                 {
                     if(sortingtype.Contains(";"))

@@ -173,10 +173,19 @@ namespace AnimePlayerLibrary
                 DirectoryInfo dirInfo = new(AppFolders.PreviewItems);
                 foreach(var item in dirInfo.GetFiles())
                 {
-                    if(item.Exists&&item.FullName.EndsWith(".dat"))
+                    if(item.Exists)
                     {
-                        PreviewTitleClass previewTitleClass = (PreviewTitleClass)SerializationAndDeserialization.Deserialization(
+                        PreviewTitleClass previewTitleClass = null;
+                        if (item.FullName.EndsWith(".dat"))
+                        {
+                            previewTitleClass = (PreviewTitleClass)SerializationAndDeserialization.Deserialization(
                             item.FullName);
+                        }
+                        else if(item.FullName.EndsWith(".json"))
+                        {
+                            previewTitleClass= (PreviewTitleClass)SerializationAndDeserialization.DeserializationJson(
+                            item.FullName, typeof(PreviewTitleClass));
+                        }
                         if(previewTitleClass != null&& title == previewTitleClass.Title)
                         {
                             return previewTitleClass.LinkToIcon;

@@ -273,6 +273,10 @@ namespace AnimePlayerLibrary.UI
         {
             try
             {
+                if(pageItemData == null)
+                {
+                    return;
+                }
                 int ep = int.Parse(pageItemData.TitleInformation.NumberOfEpisodes);
                 for(int i = 1; i <=ep ; i++)
                 {
