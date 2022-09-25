@@ -46,5 +46,35 @@ namespace AnimePlayerLibrary
             }
             return null;
         }
+
+        public static PanelItem[] GetPanelSortByCountEpisode(bool revarse)
+        {
+            try
+            {
+                List<PreviewTitleClass> previews = ContentManagerLibary.GetAllPreviewTitleClassFromFolder();
+                List<PanelItem> panelItems = new List<PanelItem>();
+
+                foreach (PreviewTitleClass item in previews)
+                {
+                    panelItems.Add(new PanelItem(item));
+                }
+
+                if (revarse)
+                {
+                    panelItems.Reverse();
+                    return panelItems.ToArray();
+                }
+                else
+                {
+                    return panelItems.ToArray();
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.ToString());
+                Console.WriteLine(ex.ToString());
+            }
+            return null;
+        }
     }
 }

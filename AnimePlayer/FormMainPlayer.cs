@@ -40,7 +40,7 @@ namespace AnimePlayer
         private ProfileClass currentProfile=null;
 
         int memsize;
-
+        public ZetaIpc.Runtime.Server.IpcServer IpcServerData;
         public ZetaIpc.Runtime.Client.IpcClient clientToBrowser;
         private FormLoading formLoading;
         public FormMainPlayer()  
@@ -49,6 +49,8 @@ namespace AnimePlayer
             try
             {
                 formLoading = new FormLoading();
+                IpcServerData.Start();
+                IpcServerData.ReceivedRequest += IpcServerData_ReceivedRequest;
                 formLoading.Show();
                 autoCSC_find = new AutoCompleteStringCollection();
                 panelSearch = new PanelSearchFilters(flowLayoutPanelAll, flowLayoutPanelFinditem, AnimePlayer.Properties.Settings.Default.RoundingControl)
@@ -78,6 +80,7 @@ namespace AnimePlayer
                 this.Controls.Add(quickMove);
                 clientToBrowser = new ZetaIpc.Runtime.Client.IpcClient();
                 clientToBrowser.Initialize(65500);
+                File.WriteAllText("IpcServerData_port.txt", IpcServerData.Port.ToString());
             }
             catch (Exception ex)
             {
@@ -101,7 +104,18 @@ namespace AnimePlayer
             }
         }
 
-
+        private void IpcServerData_ReceivedRequest(object sender, ZetaIpc.Runtime.Server.ReceivedRequestEventArgs e)
+        {
+            if(e.Request == "get;c;ProfileClass")
+            {
+                if(currentProfile == null)
+                {
+                    return;
+                }
+                e.Response = Core.SerializationAndDeserialization.SerializationJsonGetString(currentProfile, typeof(ProfileClass));
+                e.Handled = true;
+            }
+        }
 
         private void PanelNews_ControlAdded(object sender, ControlEventArgs e)
         {

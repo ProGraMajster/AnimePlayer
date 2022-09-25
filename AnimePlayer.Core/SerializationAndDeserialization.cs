@@ -6,6 +6,7 @@ using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Runtime.Serialization.Json;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using System.Xml;
 
@@ -59,6 +60,18 @@ namespace AnimePlayer.Core
             stream.Dispose();
         }
 
+        public static string SerializationJsonGetString(object obj, Type type)
+        {
+            string str = null;
+            str= JsonSerializer.Serialize(obj);
 
+            return str;
+        }
+
+        public static object DeserializationJsonFromStringEx(string text, Type type)
+        {
+            object obj = JsonSerializer.Deserialize(text, type);
+            return obj;
+        }
     }
 }

@@ -95,6 +95,19 @@ namespace AnimePlayerLibrary.UI
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.buttonViewIconClose = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.panelNoDataSite = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.buttonBack = new System.Windows.Forms.Button();
+            this.panelAdultContentMessage = new System.Windows.Forms.Panel();
+            this.buttonAyes = new System.Windows.Forms.Button();
+            this.label14 = new System.Windows.Forms.Label();
+            this.buttonAno = new System.Windows.Forms.Button();
+            this.buttonBackA = new System.Windows.Forms.Button();
+            this.label12 = new System.Windows.Forms.Label();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIcon)).BeginInit();
             this.panel3.SuspendLayout();
@@ -111,6 +124,9 @@ namespace AnimePlayerLibrary.UI
             this.panel10.SuspendLayout();
             this.panelViewIcon.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panelNoDataSite.SuspendLayout();
+            this.panelAdultContentMessage.SuspendLayout();
+            this.panel11.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -984,12 +1000,168 @@ namespace AnimePlayerLibrary.UI
             // 
             this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BackgroundWorker1_DoWork);
             // 
+            // panelNoDataSite
+            // 
+            this.panelNoDataSite.Controls.Add(this.label10);
+            this.panelNoDataSite.Controls.Add(this.buttonBack);
+            this.panelNoDataSite.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelNoDataSite.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.panelNoDataSite.Location = new System.Drawing.Point(0, 0);
+            this.panelNoDataSite.Name = "panelNoDataSite";
+            this.panelNoDataSite.Size = new System.Drawing.Size(939, 590);
+            this.panelNoDataSite.TabIndex = 7;
+            this.panelNoDataSite.Visible = false;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(20, 70);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(122, 25);
+            this.label10.TabIndex = 1;
+            this.label10.Text = "Już wkrótce...";
+            // 
+            // buttonBack
+            // 
+            this.buttonBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonBack.ForeColor = System.Drawing.Color.White;
+            this.buttonBack.Location = new System.Drawing.Point(20, 20);
+            this.buttonBack.Name = "buttonBack";
+            this.buttonBack.Size = new System.Drawing.Size(102, 24);
+            this.buttonBack.TabIndex = 0;
+            this.buttonBack.Text = "<- Powrót";
+            this.buttonBack.UseVisualStyleBackColor = true;
+            this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
+            // 
+            // panelAdultContentMessage
+            // 
+            this.panelAdultContentMessage.Controls.Add(this.buttonAyes);
+            this.panelAdultContentMessage.Controls.Add(this.label14);
+            this.panelAdultContentMessage.Controls.Add(this.buttonAno);
+            this.panelAdultContentMessage.Controls.Add(this.buttonBackA);
+            this.panelAdultContentMessage.Controls.Add(this.label12);
+            this.panelAdultContentMessage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelAdultContentMessage.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.panelAdultContentMessage.ForeColor = System.Drawing.Color.White;
+            this.panelAdultContentMessage.Location = new System.Drawing.Point(0, 0);
+            this.panelAdultContentMessage.Name = "panelAdultContentMessage";
+            this.panelAdultContentMessage.Size = new System.Drawing.Size(939, 590);
+            this.panelAdultContentMessage.TabIndex = 7;
+            this.panelAdultContentMessage.Visible = false;
+            // 
+            // buttonAyes
+            // 
+            this.buttonAyes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAyes.ForeColor = System.Drawing.Color.White;
+            this.buttonAyes.Location = new System.Drawing.Point(20, 168);
+            this.buttonAyes.Name = "buttonAyes";
+            this.buttonAyes.Size = new System.Drawing.Size(110, 30);
+            this.buttonAyes.TabIndex = 5;
+            this.buttonAyes.Text = "Tak";
+            this.buttonAyes.UseVisualStyleBackColor = true;
+            this.buttonAyes.Click += new System.EventHandler(this.buttonAyes_Click);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(20, 132);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(540, 17);
+            this.label14.TabIndex = 4;
+            this.label14.Text = "(Jeśli jesteś pełnoletni(a) i nie chcesz widzieć tego komunikatu utwórz profil i " +
+    "ustaw swój wiek.)";
+            // 
+            // buttonAno
+            // 
+            this.buttonAno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAno.ForeColor = System.Drawing.Color.White;
+            this.buttonAno.Location = new System.Drawing.Point(170, 168);
+            this.buttonAno.Name = "buttonAno";
+            this.buttonAno.Size = new System.Drawing.Size(110, 30);
+            this.buttonAno.TabIndex = 3;
+            this.buttonAno.Text = "Nie";
+            this.buttonAno.UseVisualStyleBackColor = true;
+            this.buttonAno.Click += new System.EventHandler(this.buttonAno_Click);
+            // 
+            // buttonBackA
+            // 
+            this.buttonBackA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonBackA.ForeColor = System.Drawing.Color.White;
+            this.buttonBackA.Location = new System.Drawing.Point(20, 20);
+            this.buttonBackA.Name = "buttonBackA";
+            this.buttonBackA.Size = new System.Drawing.Size(110, 30);
+            this.buttonBackA.TabIndex = 2;
+            this.buttonBackA.Text = "<- Powrót";
+            this.buttonBackA.UseVisualStyleBackColor = true;
+            this.buttonBackA.Click += new System.EventHandler(this.buttonBackA_Click);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Comic Sans MS", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label12.Location = new System.Drawing.Point(20, 70);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(536, 48);
+            this.label12.TabIndex = 1;
+            this.label12.Text = "Ten tytuł zawiera materiały przeznaczone dla osób pełnoletnich. \r\nCzy oświadczasz" +
+    ", że ukończyłeś(aś) 18 lat?";
+            // 
+            // panel11
+            // 
+            this.panel11.Controls.Add(this.label15);
+            this.panel11.Controls.Add(this.label16);
+            this.panel11.Controls.Add(this.button3);
+            this.panel11.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel11.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.panel11.ForeColor = System.Drawing.Color.White;
+            this.panel11.Location = new System.Drawing.Point(0, 0);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(939, 590);
+            this.panel11.TabIndex = 8;
+            this.panel11.Visible = false;
+            // 
+            // button3
+            // 
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.Location = new System.Drawing.Point(20, 20);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(110, 30);
+            this.button3.TabIndex = 2;
+            this.button3.Text = "<- Powrót";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Comic Sans MS", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label16.Location = new System.Drawing.Point(20, 112);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(211, 20);
+            this.label16.TabIndex = 3;
+            this.label16.Text = "Powód: ograniczenie wiekowe";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Comic Sans MS", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label15.Location = new System.Drawing.Point(20, 71);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(272, 24);
+            this.label15.TabIndex = 4;
+            this.label15.Text = "Tytuł aktualnie jest niedostepny";
+            // 
             // PageItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.Controls.Add(this.panel11);
             this.Controls.Add(this.panel6);
+            this.Controls.Add(this.panelAdultContentMessage);
+            this.Controls.Add(this.panelNoDataSite);
             this.Controls.Add(this.panelViewIcon);
             this.DoubleBuffered = true;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -1018,6 +1190,12 @@ namespace AnimePlayerLibrary.UI
             this.panel10.ResumeLayout(false);
             this.panelViewIcon.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.panelNoDataSite.ResumeLayout(false);
+            this.panelNoDataSite.PerformLayout();
+            this.panelAdultContentMessage.ResumeLayout(false);
+            this.panelAdultContentMessage.PerformLayout();
+            this.panel11.ResumeLayout(false);
+            this.panel11.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1085,5 +1263,18 @@ namespace AnimePlayerLibrary.UI
         public Button button_Load_Comments;
         public Panel panelRelatedSeries;
         public FlowLayoutPanel flowLayoutPanelEpisode;
+        private Panel panelNoDataSite;
+        private Button buttonBack;
+        private Label label10;
+        private Panel panelAdultContentMessage;
+        private Button buttonAyes;
+        private Label label14;
+        private Button buttonAno;
+        private Button buttonBackA;
+        private Label label12;
+        private Panel panel11;
+        private Label label15;
+        private Label label16;
+        private Button button3;
     }
 }

@@ -2,18 +2,25 @@
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
+using System.Threading.Tasks;
+using System.Diagnostics;
+using System.Linq;
+
 using AnimePlayer.CNM;
 using AnimePlayer.Class;
 using AnimePlayer.Core;
 using AnimePlayerLibrary;
 using AnimePlayerLibrary.UI;
-using System.Threading.Tasks;
-using System.Diagnostics;
+using AnimePlayer.Profile;
+using ZetaIpc.Runtime.Client;
+using System.Net.Sockets;
 
 namespace AnimePlayerLibrary.UI
 {
     public partial class PageItem : UserControl
     {
+        private ProfileClass profileClass { get; set; }
+        private ZetaIpc.Runtime.Client.IpcClient ipcClient;
         public string linkToScriptComment = null;
         private readonly PanelItem _PanelItem;
 
@@ -31,6 +38,22 @@ namespace AnimePlayerLibrary.UI
             pageItemData = ContentManagerLibary.GetPageItemDataWithContentFolderFromTitle(panelItem._previewTitleClass.Title);
             LoadPageItem(pageItemData);
             HidePanelLoading();
+            try
+            {
+                ipcClient = new IpcClient();
+                int port = int.Parse(File.ReadAllText("IpcServerData_port.txt"));
+                ipcClient.Initialize(port);
+                string txt = ipcClient.Send("get;c;ProfileClass");
+                if(!string.IsNullOrEmpty(txt) && txt != "null")
+                {
+                    profileClass = (ProfileClass)SerializationAndDeserialization.DeserializationJsonFromStringEx(txt, typeof(ProfileClass)); 
+                }
+            }
+            catch(Exception ex)
+            {
+                Debug.WriteLine(ex.ToString());
+                Console.Error.WriteLine(ex.ToString());
+            }
         }
 
         private void UpdateLoadingTextdetails(string text)
@@ -275,7 +298,34 @@ namespace AnimePlayerLibrary.UI
             {
                 if(pageItemData == null)
                 {
+                    panelNoDataSite.Show();
+                    panelNoDataSite.BringToFront();
                     return;
+                }
+                bool adultContent = false;
+                foreach(string item in pageItemData.TitleInformation.Species)
+                {
+                    if (item.ToLower() == "akcja")
+                        adultContent = true;
+                }
+
+
+                if (adultContent)
+                {
+                    if(profileClass != null)
+                    {
+                        var age = GetAge(profileClass.YearOfBirth);
+                        if (age < 18)
+                        {
+                            MessageBox.Show("Invalid Birth Day");
+                        }
+                    }
+                    else
+                    {
+                        panelAdultContentMessage.Show();
+                        panelAdultContentMessage.BringToFront();
+                    }
+                    
                 }
                 int ep = int.Parse(pageItemData.TitleInformation.NumberOfEpisodes);
                 for(int i = 1; i <=ep ; i++)
@@ -300,7 +350,15 @@ namespace AnimePlayerLibrary.UI
                 Console.Error.WriteLine(ex.ToString());
             }
         }
+        int GetAge(DateTime bornDate)
+        {
+            DateTime today = DateTime.Today;
+            int age = today.Year - bornDate.Year;
+            if (bornDate > today.AddYears(-age))
+                age--;
 
+            return age;
+        }
         private void ButtonEpisode_Click(object sender, EventArgs e)
         {
             try
@@ -320,6 +378,29 @@ namespace AnimePlayerLibrary.UI
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Console.Error.WriteLine(ex.ToString());
             }
+        }
+
+        private void buttonBack_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            this.Dispose();
+        }
+
+        private void buttonBackA_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            this.Dispose();
+        }
+
+        private void buttonAno_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            this.Dispose();
+        }
+
+        private void buttonAyes_Click(object sender, EventArgs e)
+        {
+            panelAdultContentMessage.Hide();
         }
     }
 }

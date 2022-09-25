@@ -18,6 +18,7 @@
     <ProjectReference Include="..\AnimePlayer.CNM\AnimePlayer.CNM.csproj" />
     <ProjectReference Include="..\AnimePlayer.Controls\AnimePlayer.ControlsWinForms.csproj" />
     <ProjectReference Include="..\AnimePlayer.Core\AnimePlayer.Core.csproj" />
+    <ProjectReference Include="..\AnimePlayer.Profile\AnimePlayer.Profile.csproj" />
   </ItemGroup>
 
   <ItemGroup>
