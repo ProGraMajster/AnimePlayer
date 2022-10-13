@@ -49,6 +49,7 @@ namespace AnimePlayer
             try
             {
                 formLoading = new FormLoading();
+                IpcServerData = new ZetaIpc.Runtime.Server.IpcServer();
                 IpcServerData.Start();
                 IpcServerData.ReceivedRequest += IpcServerData_ReceivedRequest;
                 formLoading.Show();
@@ -106,13 +107,16 @@ namespace AnimePlayer
 
         private void IpcServerData_ReceivedRequest(object sender, ZetaIpc.Runtime.Server.ReceivedRequestEventArgs e)
         {
-            if(e.Request == "get;c;ProfileClass")
+            if(e.Request == "get;c;ProfileClass;YearOfBirth")
             {
-                if(currentProfile == null)
+                if(currentProfile!=null)
                 {
-                    return;
+                    e.Response = currentProfile.YearOfBirth.ToString();
                 }
-                e.Response = Core.SerializationAndDeserialization.SerializationJsonGetString(currentProfile, typeof(ProfileClass));
+                else
+                {
+                    e.Response = "null";
+                }
                 e.Handled = true;
             }
         }
@@ -1255,6 +1259,11 @@ namespace AnimePlayer
         private void pictureBoxProfileIcon_Paint(object sender, PaintEventArgs e)
         {
             AnimePlayer.CNM.ExtensionsControl.RoundingTheCorners(pictureBoxProfileIcon, 100);
+        }
+
+        private void panel2_ControlAdded(object sender, ControlEventArgs e)
+        {
+           //
         }
     }
 }

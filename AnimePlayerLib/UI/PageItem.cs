@@ -43,11 +43,6 @@ namespace AnimePlayerLibrary.UI
                 ipcClient = new IpcClient();
                 int port = int.Parse(File.ReadAllText("IpcServerData_port.txt"));
                 ipcClient.Initialize(port);
-                string txt = ipcClient.Send("get;c;ProfileClass");
-                if(!string.IsNullOrEmpty(txt) && txt != "null")
-                {
-                    profileClass = (ProfileClass)SerializationAndDeserialization.DeserializationJsonFromStringEx(txt, typeof(ProfileClass)); 
-                }
             }
             catch(Exception ex)
             {
@@ -305,19 +300,31 @@ namespace AnimePlayerLibrary.UI
                 bool adultContent = false;
                 foreach(string item in pageItemData.TitleInformation.Species)
                 {
-                    if (item.ToLower() == "akcja")
+                    if (item.ToLower() == "hentai")
                         adultContent = true;
                 }
 
 
                 if (adultContent)
                 {
-                    if(profileClass != null)
+                    string resoult = ipcClient.Send("get;c;ProfileClass;YearOfBirth");
+                    if(!string.IsNullOrEmpty(resoult) && resoult != "null")
                     {
-                        var age = GetAge(profileClass.YearOfBirth);
-                        if (age < 18)
+                        DateTime dt;
+                        bool status = DateTime.TryParse(resoult, out dt);
+                        if (status)
                         {
-                            MessageBox.Show("Invalid Birth Day");
+                            var age = GetAge(dt);
+                            if (age < 18)
+                            {
+                                panelNoAccess.Show();
+                                panelNoAccess.BringToFront();
+                            }
+                        }
+                        else
+                        {
+                            panelAdultContentMessage.Show();
+                            panelAdultContentMessage.BringToFront();
                         }
                     }
                     else
@@ -401,6 +408,12 @@ namespace AnimePlayerLibrary.UI
         private void buttonAyes_Click(object sender, EventArgs e)
         {
             panelAdultContentMessage.Hide();
+        }
+
+        private void buttonBack2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            this.Dispose();
         }
     }
 }

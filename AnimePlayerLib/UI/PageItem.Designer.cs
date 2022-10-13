@@ -104,10 +104,10 @@ namespace AnimePlayerLibrary.UI
             this.buttonAno = new System.Windows.Forms.Button();
             this.buttonBackA = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
-            this.label16 = new System.Windows.Forms.Label();
+            this.panelNoAccess = new System.Windows.Forms.Panel();
             this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.buttonBack2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIcon)).BeginInit();
             this.panel3.SuspendLayout();
@@ -126,7 +126,7 @@ namespace AnimePlayerLibrary.UI
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panelNoDataSite.SuspendLayout();
             this.panelAdultContentMessage.SuspendLayout();
-            this.panel11.SuspendLayout();
+            this.panelNoAccess.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -1108,40 +1108,19 @@ namespace AnimePlayerLibrary.UI
             this.label12.Text = "Ten tytuł zawiera materiały przeznaczone dla osób pełnoletnich. \r\nCzy oświadczasz" +
     ", że ukończyłeś(aś) 18 lat?";
             // 
-            // panel11
+            // panelNoAccess
             // 
-            this.panel11.Controls.Add(this.label15);
-            this.panel11.Controls.Add(this.label16);
-            this.panel11.Controls.Add(this.button3);
-            this.panel11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel11.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.panel11.ForeColor = System.Drawing.Color.White;
-            this.panel11.Location = new System.Drawing.Point(0, 0);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(939, 590);
-            this.panel11.TabIndex = 8;
-            this.panel11.Visible = false;
-            // 
-            // button3
-            // 
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(20, 20);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(110, 30);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "<- Powrót";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Comic Sans MS", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label16.Location = new System.Drawing.Point(20, 112);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(211, 20);
-            this.label16.TabIndex = 3;
-            this.label16.Text = "Powód: ograniczenie wiekowe";
+            this.panelNoAccess.Controls.Add(this.label15);
+            this.panelNoAccess.Controls.Add(this.label16);
+            this.panelNoAccess.Controls.Add(this.buttonBack2);
+            this.panelNoAccess.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelNoAccess.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.panelNoAccess.ForeColor = System.Drawing.Color.White;
+            this.panelNoAccess.Location = new System.Drawing.Point(0, 0);
+            this.panelNoAccess.Name = "panelNoAccess";
+            this.panelNoAccess.Size = new System.Drawing.Size(939, 590);
+            this.panelNoAccess.TabIndex = 8;
+            this.panelNoAccess.Visible = false;
             // 
             // label15
             // 
@@ -1153,15 +1132,37 @@ namespace AnimePlayerLibrary.UI
             this.label15.TabIndex = 4;
             this.label15.Text = "Tytuł aktualnie jest niedostepny";
             // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Comic Sans MS", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label16.Location = new System.Drawing.Point(20, 112);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(211, 20);
+            this.label16.TabIndex = 3;
+            this.label16.Text = "Powód: ograniczenie wiekowe";
+            // 
+            // buttonBack2
+            // 
+            this.buttonBack2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonBack2.ForeColor = System.Drawing.Color.White;
+            this.buttonBack2.Location = new System.Drawing.Point(20, 20);
+            this.buttonBack2.Name = "buttonBack2";
+            this.buttonBack2.Size = new System.Drawing.Size(110, 30);
+            this.buttonBack2.TabIndex = 2;
+            this.buttonBack2.Text = "<- Powrót";
+            this.buttonBack2.UseVisualStyleBackColor = true;
+            this.buttonBack2.Click += new System.EventHandler(this.buttonBack2_Click);
+            // 
             // PageItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.Controls.Add(this.panel11);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panelAdultContentMessage);
             this.Controls.Add(this.panelNoDataSite);
+            this.Controls.Add(this.panelNoAccess);
             this.Controls.Add(this.panelViewIcon);
             this.DoubleBuffered = true;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -1194,8 +1195,8 @@ namespace AnimePlayerLibrary.UI
             this.panelNoDataSite.PerformLayout();
             this.panelAdultContentMessage.ResumeLayout(false);
             this.panelAdultContentMessage.PerformLayout();
-            this.panel11.ResumeLayout(false);
-            this.panel11.PerformLayout();
+            this.panelNoAccess.ResumeLayout(false);
+            this.panelNoAccess.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1272,9 +1273,9 @@ namespace AnimePlayerLibrary.UI
         private Button buttonAno;
         private Button buttonBackA;
         private Label label12;
-        private Panel panel11;
+        private Panel panelNoAccess;
         private Label label15;
         private Label label16;
-        private Button button3;
+        private Button buttonBack2;
     }
 }

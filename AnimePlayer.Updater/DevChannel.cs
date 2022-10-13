@@ -93,7 +93,7 @@ namespace AnimePlayer.Updater
                 bool Update = false;
                 AlternativeTempFuncUpdateOperation();
                 File.WriteAllText("recently updated.txt", DateTime.Now.ToString()); 
-                return;
+                return;/*
                 FileInfo[] fileInfosN = GetDLLFiles(repo_path);
                 FileInfo[] fileInfosC = GetDLLFiles(Application.StartupPath);
                 for (int i=0; i < fileInfosN.Length; i++)
@@ -144,7 +144,7 @@ namespace AnimePlayer.Updater
                         File.WriteAllText(AppFolders.Updater+"update", "1");
                         Environment.Exit(0);
                     }
-                }
+                }*/
             }
             catch(Exception ex)
             {

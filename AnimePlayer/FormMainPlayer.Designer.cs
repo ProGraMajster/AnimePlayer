@@ -881,6 +881,7 @@ namespace AnimePlayer
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1090, 624);
             this.panel2.TabIndex = 5;
+            this.panel2.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.panel2_ControlAdded);
             // 
             // panelMoreButtons
             // 

@@ -151,7 +151,7 @@ namespace AnimePlayer
                 }
                 else
                 {
-                    IpcMessage ipcMessage = (IpcMessage)SerializationAndDeserialization.DeserializationJsonFromString(text, typeof(IpcMessage));
+                    /*IpcMessage ipcMessage = (IpcMessage)SerializationAndDeserialization.DeserializationJsonFromString(text, typeof(IpcMessage));
                     if(ipcMessage == null)
                     {
                         return;
@@ -160,6 +160,7 @@ namespace AnimePlayer
                     {
 
                     }
+                    */
                 }
             }
             catch (Exception ex)
