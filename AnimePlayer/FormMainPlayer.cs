@@ -42,6 +42,9 @@ namespace AnimePlayer
         int memsize;
         public ZetaIpc.Runtime.Server.IpcServer IpcServerData;
         public ZetaIpc.Runtime.Client.IpcClient clientToBrowser;
+
+        public HelpPage helpPage;
+
         private FormLoading formLoading;
         public FormMainPlayer()  
         {
@@ -167,7 +170,11 @@ namespace AnimePlayer
                     return;
                 }
             }
-            if(e.KeyCode == Keys.F10)
+            else if(e.KeyCode == Keys.F1)
+            {
+
+            }
+            else if(e.KeyCode == Keys.F10)
             {
                 FormDebug fd = new()
                 {
@@ -266,6 +273,9 @@ namespace AnimePlayer
             this.Show();
             Console.WriteLine("ContentManager.Initalize...");
             ContentManager.Initalize(this);
+            helpPage = new HelpPage();
+            helpPage.DelegateLoadContentToForm = ContentManager.LoadContentToForm;
+            ContentManager.Start();
             labelLoadingDetails.Text = "Download Files";
            
             //Tymczasowo nie używać aż do ukończenia prac związanych z powiązanymi funkcjami!
@@ -1264,6 +1274,11 @@ namespace AnimePlayer
         private void panel2_ControlAdded(object sender, ControlEventArgs e)
         {
            //
+        }
+
+        private void buttonHelp_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

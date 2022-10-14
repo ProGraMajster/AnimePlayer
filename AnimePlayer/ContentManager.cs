@@ -17,9 +17,8 @@ namespace AnimePlayer
     public static class ContentManager
     {
         private static FormMainPlayer _formMainPlayer;
-        public static void Initalize(FormMainPlayer formMainPlayer)
+        public static void Start()
         {
-            _formMainPlayer =formMainPlayer;
             try
             {
                 Updater.ContentUpdate.DownloadContent();
@@ -31,7 +30,41 @@ namespace AnimePlayer
                     _formMainPlayer.flowLayoutPanelPolecane.Controls.Add(panel);
                 }
                 List<GroupClass> groups = GetGroups();
-                foreach(GroupClass group in groups)
+                foreach (GroupClass group in groups)
+                {
+                    Thread thread = new(() =>
+                    {
+                        CreateGroup(_formMainPlayer, group);
+                    })
+                    {
+                        Name = "Thread_CreateGroup"
+                    };
+                    thread.Start();
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.ToString());
+                Console.Error.WriteLine(ex.ToString());
+            }
+        }
+        public static void Initalize(FormMainPlayer formMainPlayer)
+        {
+            _formMainPlayer =formMainPlayer;
+        }
+
+        public static void LoadContentToForm()
+        {
+            try
+            {
+                List<PreviewTitleClass> previewTitleClasses = GetAllPreviewTitleClassFromFolder();
+                foreach (PreviewTitleClass item in previewTitleClasses)
+                {
+                    Panel panel = CreatePreviewPanelFromData(item);
+                    _formMainPlayer.flowLayoutPanelPolecane.Controls.Add(panel);
+                }
+                List<GroupClass> groups = GetGroups();
+                foreach (GroupClass group in groups)
                 {
                     Thread thread = new(() =>
                     {
