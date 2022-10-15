@@ -49,5 +49,10 @@ namespace AnimePlayerLibrary.UI
                 Console.Error.WriteLine(ex.ToString());
             }
         }
+
+        private void buttonBack_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
     }
 }

@@ -63,6 +63,7 @@
             this.buttonBack.TabIndex = 0;
             this.buttonBack.Text = "<- Wróć";
             this.buttonBack.UseVisualStyleBackColor = false;
+            this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
             // 
             // panel1
             // 

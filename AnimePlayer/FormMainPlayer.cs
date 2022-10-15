@@ -172,7 +172,8 @@ namespace AnimePlayer
             }
             else if(e.KeyCode == Keys.F1)
             {
-
+                helpPage.Show();
+                helpPage.BringToFront();
             }
             else if(e.KeyCode == Keys.F10)
             {
@@ -274,6 +275,8 @@ namespace AnimePlayer
             Console.WriteLine("ContentManager.Initalize...");
             ContentManager.Initalize(this);
             helpPage = new HelpPage();
+            helpPage.Dock = DockStyle.Fill;
+            panel2.Controls.Add(helpPage);
             helpPage.DelegateLoadContentToForm = ContentManager.LoadContentToForm;
             ContentManager.Start();
             labelLoadingDetails.Text = "Download Files";
@@ -1278,7 +1281,8 @@ namespace AnimePlayer
 
         private void buttonHelp_Click(object sender, EventArgs e)
         {
-
+            helpPage.Show();
+            helpPage.BringToFront();
         }
     }
 }
