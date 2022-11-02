@@ -74,7 +74,7 @@ namespace AnimePlayerLibrary.UI
             this.panel1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(12);
-            this.panel1.Size = new System.Drawing.Size(712, 168);
+            this.panel1.Size = new System.Drawing.Size(818, 168);
             this.panel1.TabIndex = 1;
             // 
             // labelEpTitle
@@ -86,7 +86,7 @@ namespace AnimePlayerLibrary.UI
             this.labelEpTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelEpTitle.Name = "labelEpTitle";
             this.labelEpTitle.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.labelEpTitle.Size = new System.Drawing.Size(449, 43);
+            this.labelEpTitle.Size = new System.Drawing.Size(555, 43);
             this.labelEpTitle.TabIndex = 6;
             this.labelEpTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.labelEpTitle.Visible = false;
@@ -100,7 +100,7 @@ namespace AnimePlayerLibrary.UI
             this.labelEpNumber.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelEpNumber.Name = "labelEpNumber";
             this.labelEpNumber.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.labelEpNumber.Size = new System.Drawing.Size(449, 43);
+            this.labelEpNumber.Size = new System.Drawing.Size(555, 43);
             this.labelEpNumber.TabIndex = 1;
             this.labelEpNumber.Text = "Odcinek";
             this.labelEpNumber.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -125,7 +125,7 @@ namespace AnimePlayerLibrary.UI
             this.buttonForwardEp.Dock = System.Windows.Forms.DockStyle.Right;
             this.buttonForwardEp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonForwardEp.ForeColor = System.Drawing.Color.White;
-            this.buttonForwardEp.Location = new System.Drawing.Point(621, 12);
+            this.buttonForwardEp.Location = new System.Drawing.Point(727, 12);
             this.buttonForwardEp.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.buttonForwardEp.Name = "buttonForwardEp";
             this.buttonForwardEp.Size = new System.Drawing.Size(38, 144);
@@ -140,7 +140,7 @@ namespace AnimePlayerLibrary.UI
             this.buttonClose.Dock = System.Windows.Forms.DockStyle.Right;
             this.buttonClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonClose.ForeColor = System.Drawing.Color.Red;
-            this.buttonClose.Location = new System.Drawing.Point(659, 12);
+            this.buttonClose.Location = new System.Drawing.Point(765, 12);
             this.buttonClose.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.buttonClose.MaximumSize = new System.Drawing.Size(41, 29);
             this.buttonClose.Name = "buttonClose";
@@ -174,7 +174,7 @@ namespace AnimePlayerLibrary.UI
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(12);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(12, 0, 12, 0);
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(712, 391);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(818, 391);
             this.flowLayoutPanel1.TabIndex = 2;
             // 
             // panelViewIcon
@@ -220,7 +220,7 @@ namespace AnimePlayerLibrary.UI
             this.panel4.Location = new System.Drawing.Point(12, 571);
             this.panel4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(712, 40);
+            this.panel4.Size = new System.Drawing.Size(818, 40);
             this.panel4.TabIndex = 0;
             // 
             // PageEpisode
@@ -237,7 +237,7 @@ namespace AnimePlayerLibrary.UI
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "PageEpisode";
             this.Padding = new System.Windows.Forms.Padding(12);
-            this.Size = new System.Drawing.Size(651, 525);
+            this.Size = new System.Drawing.Size(842, 591);
             this.Resize += new System.EventHandler(this.PageEpisode_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
