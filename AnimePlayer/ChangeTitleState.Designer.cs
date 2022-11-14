@@ -37,7 +37,10 @@ namespace AnimePlayer
             this.buttonSaveChangeState = new System.Windows.Forms.Button();
             this.buttonClose = new System.Windows.Forms.Button();
             this.comboBoxNewState = new System.Windows.Forms.ComboBox();
+            this.Loading = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel.SuspendLayout();
+            this.Loading.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelState
@@ -120,14 +123,38 @@ namespace AnimePlayer
             this.comboBoxNewState.Size = new System.Drawing.Size(200, 25);
             this.comboBoxNewState.TabIndex = 5;
             // 
+            // Loading
+            // 
+            this.Loading.Controls.Add(this.label2);
+            this.Loading.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Loading.Location = new System.Drawing.Point(0, 0);
+            this.Loading.Name = "Loading";
+            this.Loading.Size = new System.Drawing.Size(360, 210);
+            this.Loading.TabIndex = 6;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(18, 24);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(84, 19);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Ładowanie...";
+            // 
             // ChangeTitleState
             // 
             this.BackColor = System.Drawing.Color.Black;
+            this.Controls.Add(this.Loading);
             this.Controls.Add(this.panel);
+            this.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ForeColor = System.Drawing.Color.White;
             this.Name = "ChangeTitleState";
             this.Size = new System.Drawing.Size(360, 210);
+            this.Load += new System.EventHandler(this.ChangeTitleState_Load);
             this.panel.ResumeLayout(false);
+            this.Loading.ResumeLayout(false);
+            this.Loading.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -140,5 +167,8 @@ namespace AnimePlayer
         private System.Windows.Forms.Label label1;
 
         #endregion
+
+        private System.Windows.Forms.Panel Loading;
+        private System.Windows.Forms.Label label2;
     }
 }

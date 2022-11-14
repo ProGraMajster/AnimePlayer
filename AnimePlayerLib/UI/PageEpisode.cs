@@ -7,6 +7,8 @@ using AnimePlayerLibrary;
 using AnimePlayer.Class;
 using System.Threading;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
 
 namespace AnimePlayerLibrary.UI
 {
@@ -84,6 +86,15 @@ namespace AnimePlayerLibrary.UI
                         flowLayoutPanel1.Invoke(() =>
                         {
                             flowLayoutPanel1.Controls.Add(label);
+                        });
+                    }
+                    else
+                    {
+                        this.Invoke(() =>
+                        {
+                            comboBoxSort.SelectedIndex = 0;
+                            panelSort.Show();
+                            comboBoxSort_Working = true;
                         });
                     }
                 });
@@ -190,6 +201,49 @@ namespace AnimePlayerLibrary.UI
             pageEpisode.Show();
             pageEpisode.BringToFront();
             this.Dispose();
+        }
+            
+        bool comboBoxSort_Working = false;
+
+        private void comboBoxSort_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if(comboBoxSort_Working != true)
+                {
+                    return;
+                }
+                labelSortLoading.Show();
+                flowLayoutPanel1.Enabled = false;
+                comboBoxSort.Enabled = false;
+                int index = comboBoxSort.SelectedIndex;
+                foreach (var ctn in flowLayoutPanel1.Controls.OfType<PanelItemEpisode>())
+                {
+                    ctn.Show();
+                    if (index == 2)
+                    {
+                        if (ctn.Episode.Type != "Lektor PL")
+                        {
+                            ctn.Hide();
+                        }
+                    }
+                    else if (index == 1)
+                    {
+                        if (ctn.Episode.Type != "Napisy PL")
+                        {
+                            ctn.Hide();
+                        }
+                    }
+                }
+                labelSortLoading.Hide();
+                flowLayoutPanel1.Enabled = true;
+                comboBoxSort.Enabled = true;
+            }
+            catch(Exception ex)
+            {
+                Debug.WriteLine(ex.ToString());
+                Console.Error.WriteLine(ex.ToString());
+            }
         }
     }
 }

@@ -9,11 +9,9 @@ namespace AnimePlayer
 {
     public partial class ChangeTitleState : UserControl
     {
-        readonly PageItem pageItem;
-        public ChangeTitleState(PageItem page)
+        public ChangeTitleState()
         {
             InitializeComponent();
-            pageItem = page;
         }
 
         private void ButtonClose_Click(object sender, EventArgs e)
@@ -34,6 +32,11 @@ namespace AnimePlayer
                 Console.WriteLine(ex.ToString());
                 MessageBox.Show("Wystąpił błąd podczas zmieniania listy", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void ChangeTitleState_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

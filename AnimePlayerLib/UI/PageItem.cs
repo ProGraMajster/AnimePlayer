@@ -14,6 +14,8 @@ using AnimePlayerLibrary.UI;
 using AnimePlayer.Profile;
 using ZetaIpc.Runtime.Client;
 using System.Net.Sockets;
+//using Newtonsoft.Json;
+using System.Text.Json;
 
 namespace AnimePlayerLibrary.UI
 {
@@ -351,9 +353,24 @@ namespace AnimePlayerLibrary.UI
                     button.Click+=ButtonEpisode_Click;
                     flowLayoutPanelEpisode.Controls.Add(button);
                 }
+
+                string resoultRequestProfile = ipcClient.Send("get;c;ProfileClass");
+                if (!string.IsNullOrEmpty(resoultRequestProfile))
+                {
+                    if(resoultRequestProfile != "null")
+                    {   
+                        ProfileClass profile = Newtonsoft.Json.JsonConvert.DeserializeObject<ProfileClass>(resoultRequestProfile);
+                        if (profile != null)
+                        {
+                            profileClass = profile;
+                            linkLabelChangeState.Show();
+                        }
+                    }
+                }
             }
             catch (Exception ex)
             {
+                Debug.WriteLine(ex.ToString());
                 Console.Error.WriteLine(ex.ToString());
             }
         }

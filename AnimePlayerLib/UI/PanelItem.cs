@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -19,6 +20,7 @@ namespace AnimePlayerLibrary.UI
         private Panel panelLoading;
         private Label labelLoadingDetails;
         private readonly Panel panelFromMainContent = (Panel)Application.OpenForms[0].Controls.Find("panel2",true)[0];
+        private int UsedLinkIcon = 0;
         private void CreateElemetsUI()
         {
             // 
@@ -85,6 +87,27 @@ namespace AnimePlayerLibrary.UI
         {
             pictureBoxItem.Click += Object_Click;
             buttonItem.Click += Object_Click;
+            pictureBoxItem.LoadCompleted += PictureBoxItem_LoadCompleted;
+        }
+
+        private void PictureBoxItem_LoadCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
+        {
+            try
+            {
+                if(e.Error != null)
+                {
+                    UsedLinkIcon++;
+                    pictureBoxItem.ImageLocation = _previewTitleClass.LinkToIcon[UsedLinkIcon];
+                    #if DEBUG
+                        Debug.WriteLine(e.Error.ToString()+"\n UsedLinkIcon:"+UsedLinkIcon);
+                    #endif
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.ToString());
+                Console.Error.WriteLine(ex.ToString());
+            }
         }
 
         public async void GetLoadingCotrols()

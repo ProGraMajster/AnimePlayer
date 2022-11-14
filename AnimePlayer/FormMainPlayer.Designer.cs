@@ -550,7 +550,7 @@ namespace AnimePlayer
             // 
             this.label.Dock = System.Windows.Forms.DockStyle.Left;
             this.label.Font = new System.Drawing.Font("Comic Sans MS", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label.ForeColor = System.Drawing.SystemColors.Window;
+            this.label.ForeColor = System.Drawing.Color.White;
             this.label.Location = new System.Drawing.Point(23, 7);
             this.label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label.Name = "label";

@@ -110,17 +110,36 @@ namespace AnimePlayer
 
         private void IpcServerData_ReceivedRequest(object sender, ZetaIpc.Runtime.Server.ReceivedRequestEventArgs e)
         {
-            if(e.Request == "get;c;ProfileClass;YearOfBirth")
+            try
             {
-                if(currentProfile!=null)
+                if (e.Request == "get;c;ProfileClass")
                 {
-                    e.Response = currentProfile.YearOfBirth.ToString();
+                    if (currentProfile != null)
+                    {
+                        e.Response = Core.SerializationAndDeserialization.SerializationJsonGetString(currentProfile, typeof(ProfileClass));
+                    }
+                    else
+                    {
+                        e.Response = "null";
+                    }
                 }
-                else
+                else if (e.Request == "get;c;ProfileClass;YearOfBirth")
                 {
-                    e.Response = "null";
+                    if (currentProfile != null)
+                    {
+                        e.Response = currentProfile.YearOfBirth.ToString();
+                    }
+                    else
+                    {
+                        e.Response = "null";
+                    }
                 }
                 e.Handled = true;
+            }
+            catch(Exception ex)
+            {
+                Debug.WriteLine(ex.ToString());
+                Console.Error.WriteLine(ex.ToString());
             }
         }
 
