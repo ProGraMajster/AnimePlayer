@@ -329,6 +329,7 @@ namespace AnimePlayer
                 profileSelectionPanel.Hide();
                 pictureBoxProfileIcon.Image = profileClass.IconProfile;
                 AnimePlayer.CNM.ExtensionsControl.RoundingTheCorners(pictureBoxProfileIcon, 100);
+                ProfileManager.Init(profileClass);
             }
             catch(Exception ex)
             {
