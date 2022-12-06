@@ -10,13 +10,14 @@ using System.Data;
 using System.Linq;
 using System.Text;
 
+using Newtonsoft.Json;
+
 using AnimePlayerLibrary;
 using AnimePlayerLibrary.UI;
 using AnimePlayer.Core;
 using AnimePlayer.CNM;
 using AnimePlayer.ControlsWinForms;
 using AnimePlayer.Class;
-using Newtonsoft.Json;
 using AnimePlayer.Profile;
 
 namespace AnimePlayer

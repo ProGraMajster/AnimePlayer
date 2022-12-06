@@ -8,6 +8,7 @@ using AnimePlayer.Core;
 using AnimePlayer.Class;
 using AnimePlayerLibrary.UI;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace AnimePlayerLibrary
 {
@@ -152,7 +153,8 @@ namespace AnimePlayerLibrary
                 {
                     Episode episode = (Episode)SerializationAndDeserialization.Deserialization(item.FullName);
                     if(episode.NumberEpisode == number.ToString() &&
-                        Replacer.Names(episode.Title) == Replacer.Names(title))
+                        Replacer.Names(episode.Title) == Replacer.Names(title)&&
+                        episode != null)
                     {
                         list.Add(episode);
                     }
@@ -162,6 +164,7 @@ namespace AnimePlayerLibrary
             catch(Exception ex)
             {
                 Console.Error.WriteLine(ex.ToString());
+                Debug.WriteLine(ex.ToString());
             }
             return null;
         }

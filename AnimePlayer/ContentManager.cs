@@ -176,6 +176,11 @@ namespace AnimePlayer
 
         private static void DirFilesMoveToDir(string pathSource, string pathnewloocation)
         {
+            if(Directory.Exists(pathnewloocation))
+            {
+                Directory.Delete(pathnewloocation, true);
+                Directory.CreateDirectory(pathnewloocation);
+            }
             DirectoryInfo directoryInfo = new(pathSource);
             DirectoryInfo directoryInfo2 = new(pathnewloocation);
             if(!directoryInfo.Exists)

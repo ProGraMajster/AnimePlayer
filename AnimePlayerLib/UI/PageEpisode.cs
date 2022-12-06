@@ -64,14 +64,18 @@ namespace AnimePlayerLibrary.UI
                 labelEpNumber.Text = "Odcinek "+numberEp.ToString();
                 Thread thread = new(() =>
                 {
-                    foreach (var item in ContentManagerLibary.GetEpisode(numberEp, _PageItemData.TitleInformation.Title))
+                    List<Episode> episodes = ContentManagerLibary.GetEpisode(numberEp, _PageItemData.TitleInformation.Title);
+                    if(episodes != null&& episodes.Count > 0)
                     {
-                        flowLayoutPanel1.Invoke(() =>
+                        foreach (var item in episodes)
                         {
-                            PanelItemEpisode panel = new(item);
-                            panel.buttonPlayEpisode.Click +=ButtonPlayEpisode_Click;
-                            flowLayoutPanel1.Controls.Add(panel);
-                        });
+                            flowLayoutPanel1.Invoke(() =>
+                            {
+                                PanelItemEpisode panel = new(item);
+                                panel.buttonPlayEpisode.Click += ButtonPlayEpisode_Click;
+                                flowLayoutPanel1.Controls.Add(panel);
+                            });
+                        }
                     }
 
                     if(flowLayoutPanel1.Controls.Count == 0)

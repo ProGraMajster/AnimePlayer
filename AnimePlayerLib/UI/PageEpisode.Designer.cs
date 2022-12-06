@@ -29,6 +29,7 @@ namespace AnimePlayerLibrary.UI
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.labelEpTitle = new System.Windows.Forms.Label();
@@ -47,6 +48,7 @@ namespace AnimePlayerLibrary.UI
             this.labelSortLoading = new System.Windows.Forms.Label();
             this.comboBoxSort = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panelViewIcon.SuspendLayout();
@@ -81,7 +83,7 @@ namespace AnimePlayerLibrary.UI
             this.panel1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(12);
-            this.panel1.Size = new System.Drawing.Size(786, 168);
+            this.panel1.Size = new System.Drawing.Size(712, 168);
             this.panel1.TabIndex = 1;
             // 
             // labelEpTitle
@@ -93,7 +95,7 @@ namespace AnimePlayerLibrary.UI
             this.labelEpTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelEpTitle.Name = "labelEpTitle";
             this.labelEpTitle.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.labelEpTitle.Size = new System.Drawing.Size(523, 43);
+            this.labelEpTitle.Size = new System.Drawing.Size(449, 43);
             this.labelEpTitle.TabIndex = 6;
             this.labelEpTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.labelEpTitle.Visible = false;
@@ -107,7 +109,7 @@ namespace AnimePlayerLibrary.UI
             this.labelEpNumber.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelEpNumber.Name = "labelEpNumber";
             this.labelEpNumber.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.labelEpNumber.Size = new System.Drawing.Size(523, 43);
+            this.labelEpNumber.Size = new System.Drawing.Size(449, 43);
             this.labelEpNumber.TabIndex = 1;
             this.labelEpNumber.Text = "Odcinek";
             this.labelEpNumber.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -132,12 +134,13 @@ namespace AnimePlayerLibrary.UI
             this.buttonForwardEp.Dock = System.Windows.Forms.DockStyle.Right;
             this.buttonForwardEp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonForwardEp.ForeColor = System.Drawing.Color.White;
-            this.buttonForwardEp.Location = new System.Drawing.Point(695, 12);
+            this.buttonForwardEp.Location = new System.Drawing.Point(621, 12);
             this.buttonForwardEp.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.buttonForwardEp.Name = "buttonForwardEp";
             this.buttonForwardEp.Size = new System.Drawing.Size(38, 144);
             this.buttonForwardEp.TabIndex = 3;
             this.buttonForwardEp.Text = ">";
+            this.toolTip1.SetToolTip(this.buttonForwardEp, "Następny odcinek");
             this.buttonForwardEp.UseVisualStyleBackColor = true;
             this.buttonForwardEp.Visible = false;
             this.buttonForwardEp.Click += new System.EventHandler(this.ButtonForwardEp_Click);
@@ -147,7 +150,7 @@ namespace AnimePlayerLibrary.UI
             this.buttonClose.Dock = System.Windows.Forms.DockStyle.Right;
             this.buttonClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonClose.ForeColor = System.Drawing.Color.Red;
-            this.buttonClose.Location = new System.Drawing.Point(733, 12);
+            this.buttonClose.Location = new System.Drawing.Point(659, 12);
             this.buttonClose.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.buttonClose.MaximumSize = new System.Drawing.Size(41, 29);
             this.buttonClose.Name = "buttonClose";
@@ -168,6 +171,7 @@ namespace AnimePlayerLibrary.UI
             this.buttonBackEp.Size = new System.Drawing.Size(38, 144);
             this.buttonBackEp.TabIndex = 2;
             this.buttonBackEp.Text = "<";
+            this.toolTip1.SetToolTip(this.buttonBackEp, "Poprzedni odcinek");
             this.buttonBackEp.UseVisualStyleBackColor = true;
             this.buttonBackEp.Visible = false;
             this.buttonBackEp.Click += new System.EventHandler(this.ButtonBackEp_Click);
@@ -181,7 +185,7 @@ namespace AnimePlayerLibrary.UI
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(12);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(12, 0, 12, 0);
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(786, 361);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(712, 361);
             this.flowLayoutPanel1.TabIndex = 2;
             // 
             // panelViewIcon
@@ -227,7 +231,7 @@ namespace AnimePlayerLibrary.UI
             this.panel4.Location = new System.Drawing.Point(12, 571);
             this.panel4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(786, 40);
+            this.panel4.Size = new System.Drawing.Size(712, 40);
             this.panel4.TabIndex = 0;
             // 
             // panel2
@@ -237,7 +241,7 @@ namespace AnimePlayerLibrary.UI
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(12, 180);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(786, 391);
+            this.panel2.Size = new System.Drawing.Size(712, 391);
             this.panel2.TabIndex = 0;
             // 
             // panelSort
@@ -249,7 +253,7 @@ namespace AnimePlayerLibrary.UI
             this.panelSort.Location = new System.Drawing.Point(0, 0);
             this.panelSort.Name = "panelSort";
             this.panelSort.Padding = new System.Windows.Forms.Padding(15, 5, 0, 5);
-            this.panelSort.Size = new System.Drawing.Size(786, 30);
+            this.panelSort.Size = new System.Drawing.Size(712, 30);
             this.panelSort.TabIndex = 0;
             this.panelSort.Visible = false;
             // 
@@ -283,6 +287,7 @@ namespace AnimePlayerLibrary.UI
             this.comboBoxSort.Name = "comboBoxSort";
             this.comboBoxSort.Size = new System.Drawing.Size(94, 23);
             this.comboBoxSort.TabIndex = 1;
+            this.toolTip1.SetToolTip(this.comboBoxSort, "Sortowanie odcinków");
             this.comboBoxSort.SelectedIndexChanged += new System.EventHandler(this.comboBoxSort_SelectedIndexChanged);
             // 
             // label1
@@ -311,7 +316,7 @@ namespace AnimePlayerLibrary.UI
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "PageEpisode";
             this.Padding = new System.Windows.Forms.Padding(12);
-            this.Size = new System.Drawing.Size(810, 557);
+            this.Size = new System.Drawing.Size(674, 489);
             this.Resize += new System.EventHandler(this.PageEpisode_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
@@ -344,5 +349,6 @@ namespace AnimePlayerLibrary.UI
         private System.Windows.Forms.ComboBox comboBoxSort;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label labelSortLoading;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
