@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 using AnimePlayer.Class;
+using AnimePlayer.Core;
 using AnimePlayerLibrary.UI;
 
 namespace AnimePlayerLibrary
@@ -75,6 +77,32 @@ namespace AnimePlayerLibrary
                 Console.WriteLine(ex.ToString());
             }
             return null;
+        }
+
+        public static PreviewTitleClass[] GetAllWithContains(string text)
+        {
+            List<PreviewTitleClass> previewTitleClasses= new List<PreviewTitleClass>();
+            string pathToDir = AppFolders.PreviewItems.TrimEnd('\\');
+            if (!Directory.Exists(pathToDir))
+            {
+                Console.WriteLine($"{pathToDir} does not exist.");
+                return null;
+            }
+
+            DirectoryInfo directory= new DirectoryInfo(pathToDir);
+            foreach(FileInfo fileInfo in directory.GetFiles())
+            {
+                if(fileInfo.Exists)
+                {
+                    PreviewTitleClass previewTitleClass = (PreviewTitleClass)SerializationAndDeserialization
+                        .Deserialization(fileInfo.FullName);
+                    if(previewTitleClass.Title.Contains(text))
+                    {
+                        previewTitleClasses.Add(previewTitleClass);
+                    }
+                }
+            }
+            return previewTitleClasses.ToArray();
         }
     }
 }

@@ -7,6 +7,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using System.Xml.Serialization;
 
 namespace AnimePlayer.Profile
@@ -56,7 +57,7 @@ namespace AnimePlayer.Profile
                 }
                 if(ChecikingAllDefaultLists()== false)
                 {
-
+                    CreateDefaultAnimeLists();
                 }
             }
             catch(Exception ex)
@@ -78,13 +79,43 @@ namespace AnimePlayer.Profile
                 {
                     return false;
                 }
-                ProfileIAnimeList animeList = null;
-                foreach(string name in defaultLists)
+                Dictionary<string,bool> dict = new Dictionary<string, bool>()
                 {
-                    if (File.Exists(PathToProfiles + CurrentProfile.Name + "\\Lists\\" + name + ".dat"))
+                    { "Oglądane",false },
+                    { "Zakończone", false},
+                    { "W oczekiwaniu",false },
+                    { "Porzucone", false },
+                    { "Planowane", false }
+                };
+                foreach(var item in dict)
+                {
+                    if (File.Exists(PathToProfiles + CurrentProfile.Name + "\\Lists\\" + item.Key + ".dat"))
                     {
-
+                        var alist = SerializationAndDeserialization.DeserializationJson(
+                            PathToProfiles + CurrentProfile.Name + "\\Lists\\" + item.Key + ".dat",
+                            typeof(ProfileIAnimeList));
+                        if(alist != null)
+                        {
+                            dict[item.Key] = true;
+                        }
                     }
+                }
+                int max = dict.Count;
+                int c = 0;
+                foreach(bool val in dict.Values)
+                {
+                    if(val)
+                    {
+                        c++;
+                    }
+                }
+                if(c >= max)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
                 }
             }
             catch(Exception ex)
@@ -103,6 +134,21 @@ namespace AnimePlayer.Profile
             return PathToProfiles + CurrentProfile.Name + "\\";
         }
 
+        public static void CreateDefaultAnimeLists()
+        {
+            try
+            {
+                foreach(string name in defaultLists)
+                {
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error",MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Debug.WriteLine(ex.ToString());
+            }
+        }
 
         private static ProfileIAnimeList GetWatchingAnimeList()
         {
