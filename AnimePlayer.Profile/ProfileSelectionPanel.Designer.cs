@@ -188,7 +188,7 @@
             this.buttonProfileCreate.Name = "buttonProfileCreate";
             this.buttonProfileCreate.Size = new System.Drawing.Size(300, 25);
             this.buttonProfileCreate.TabIndex = 14;
-            this.buttonProfileCreate.Text = "Utwóz";
+            this.buttonProfileCreate.Text = "Utwórz";
             this.buttonProfileCreate.UseVisualStyleBackColor = true;
             this.buttonProfileCreate.Click += new System.EventHandler(this.buttonProfileCreate_Click);
             // 

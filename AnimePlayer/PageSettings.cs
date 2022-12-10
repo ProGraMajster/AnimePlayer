@@ -14,17 +14,8 @@ namespace AnimePlayer
             InitializeComponent();
             FormMainPlayer = okno;
             this.Dock = DockStyle.Fill;
-            checkBoxRoundedEdges.Checked = AnimePlayer.Properties.Settings.Default.RoundingControl;
             timerRefreshValue.Start();
             labelAppRamUsage_View.Text = okno.labelAppRamUsage.Text;
-            if (AnimePlayer.Properties.Settings.Default.RoundingControl)
-            {
-                _ = new ControlsNewMethods.RoundingControl
-                {
-                    TargetControl = buttonClose,
-                    CornerRadius = 15
-                };
-            }
         }
 
         private void ButtonClose_Click(object sender, EventArgs e)
@@ -37,8 +28,6 @@ namespace AnimePlayer
         {
             try
             {
-                AnimePlayer.Properties.Settings.Default.RoundingControl = checkBoxRoundedEdges.Checked;
-                AnimePlayer.Properties.Settings.Default.Save();
             }
             catch(Exception ex)
             {

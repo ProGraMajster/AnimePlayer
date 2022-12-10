@@ -21,6 +21,7 @@ namespace AnimePlayerLibrary.UI
         private Label labelLoadingDetails;
         private readonly Panel panelFromMainContent = (Panel)Application.OpenForms[0].Controls.Find("panel2",true)[0];
         private int UsedLinkIcon = 0;
+        private Button buttonAddToList;
         private void CreateElemetsUI()
         {
             // 
@@ -61,6 +62,18 @@ namespace AnimePlayerLibrary.UI
             {
                 Tag = this
             };
+            buttonAddToList = new Button();
+            buttonAddToList.Text = "+";
+            buttonAddToList.Size = new Size(25, 25);
+            buttonAddToList.FlatStyle = FlatStyle.Flat;
+            buttonAddToList.ForeColor = Color.White;
+            buttonAddToList.FlatAppearance.BorderSize=0;
+            buttonAddToList.Font = new Font(buttonAddToList.Font.FontFamily, 12);
+            buttonAddToList.BackColor = Color.FromArgb(35,35,35);
+            buttonAddToList.Visible= false;
+            this.panelItem.Controls.Add(buttonAddToList);
+            buttonAddToList.Location= new Point(135, 0);
+
             this.panelItem.Controls.Add(pictureBoxItem);
             this.panelItem.Controls.Add(buttonItem);
             this.panelItem.Location = new System.Drawing.Point(13, 5);
@@ -88,6 +101,19 @@ namespace AnimePlayerLibrary.UI
             pictureBoxItem.Click += Object_Click;
             buttonItem.Click += Object_Click;
             pictureBoxItem.LoadCompleted += PictureBoxItem_LoadCompleted;
+            pictureBoxItem.MouseMove += PictureBoxItem_MouseMove;
+            pictureBoxItem.MouseLeave += PictureBoxItem_MouseLeave;
+        }
+
+        private void PictureBoxItem_MouseLeave(object sender, EventArgs e)
+        {
+            buttonAddToList.Hide();
+        }
+
+        private void PictureBoxItem_MouseMove(object sender, MouseEventArgs e)
+        {
+            //Coming soon...
+            //buttonAddToList.Show();
         }
 
         private void PictureBoxItem_LoadCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)

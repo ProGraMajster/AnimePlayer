@@ -58,7 +58,7 @@ namespace AnimePlayer
                 IpcServerData.ReceivedRequest += IpcServerData_ReceivedRequest;
                 formLoading.Show();
                 autoCSC_find = new AutoCompleteStringCollection();
-                panelSearch = new PanelSearchFilters(flowLayoutPanelAll, flowLayoutPanelFinditem, AnimePlayer.Properties.Settings.Default.RoundingControl)
+                panelSearch = new PanelSearchFilters(flowLayoutPanelAll, flowLayoutPanelFinditem)
                 {
                     Dock = DockStyle.None
                 };
@@ -301,7 +301,7 @@ namespace AnimePlayer
             ContentManager.Start();
             labelLoadingDetails.Text = "Download Files";
            
-            //Tymczasowo nie używać aż do ukończenia prac związanych z powiązanymi funkcjami!
+            //Nie używać aż do ukończenia prac związanych z powiązanymi funkcjami!
             //backgroundWorkerGetSTNews.RunWorkerAsync();
 
             //textBoxFinditem.AutoCompleteCustomSource = autoCSC_find;
@@ -311,12 +311,12 @@ namespace AnimePlayer
             /*FormStatisticData formStatisticData = new FormStatisticData();
             formStatisticData.Show();*/
             //backgroundWorkerLoadItems.RunWorkerAsync();
-            profileSelectionPanel = new AnimePlayer.Profile.ProfileSelectionPanel();
+            /*profileSelectionPanel = new AnimePlayer.Profile.ProfileSelectionPanel();
             this.Controls.Add(profileSelectionPanel);
             profileSelectionPanel.eventHandler += ProfileSelect_Click;
             profileSelectionPanel.Dock = DockStyle.Fill;
             profileSelectionPanel.Show();
-            profileSelectionPanel.BringToFront();
+            profileSelectionPanel.BringToFront();*/
         }
         AnimePlayer.Profile.ProfileSelectionPanel profileSelectionPanel;
 
@@ -1304,6 +1304,13 @@ namespace AnimePlayer
         {
             helpPage.Show();
             helpPage.BringToFront();
+        }
+        private void comboBoxViewtype_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(comboBoxViewtype.SelectedIndex == 0)
+            {
+
+            }
         }
     }
 }
