@@ -370,6 +370,7 @@ namespace AnimePlayer
             this.panelSTNewsMain.Name = "panelSTNewsMain";
             this.panelSTNewsMain.Size = new System.Drawing.Size(1073, 409);
             this.panelSTNewsMain.TabIndex = 4;
+            this.panelSTNewsMain.Visible = false;
             // 
             // label_InfoText_news
             // 
