@@ -18,7 +18,7 @@ namespace AnimePlayerLibrary.UI
         public Button buttonItem;
         public PreviewTitleClass _previewTitleClass;
         private Panel panelLoading;
-        private Label labelLoadingDetails;
+        private Label labelLoadingDetails;  
         private readonly Panel panelFromMainContent = (Panel)Application.OpenForms[0].Controls.Find("panel2",true)[0];
         private int UsedLinkIcon = 0;
         private Button buttonAddToList;
