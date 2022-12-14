@@ -132,7 +132,6 @@ namespace AnimePlayer
         {
             try
             {
-
                 List<PreviewTitleClass> previewTitlesInGroup = new List<PreviewTitleClass>();
                 List<PreviewTitleClass> previewTitleClassesAll = GetAllPreviewTitleClassFromFolder();
                 foreach(PreviewTitleClass item in previewTitleClassesAll)
@@ -164,7 +163,7 @@ namespace AnimePlayer
                 Console.Error.WriteLine(ex.ToString());
             }
         }
-
+            
         public static void ContentMove()
         {
             DirFilesMoveToDir(AppFolders.UpdatedPreviewItems, AppFolders.PreviewItems);
@@ -173,7 +172,7 @@ namespace AnimePlayer
             DirFilesMoveToDir(AppFolders.UpdatedWeb, AppFolders.Web);
             DirFilesMoveToDir(AppFolders.UpdatedCommunity, AppFolders.Community);
         }
-
+         
         private static void DirFilesMoveToDir(string pathSource, string pathnewloocation)
         {
             if(Directory.Exists(pathnewloocation))

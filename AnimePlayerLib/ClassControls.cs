@@ -248,10 +248,15 @@ namespace AnimePlayerLibrary
             }
         }
 
+        public bool DrawRoundedRectangle = true;
         private Color colEdges = Color.Black;
 
         protected override void OnPaint(PaintEventArgs e)
         {
+            if(DrawRoundedRectangle==false)
+            {
+                return;
+            }
             Graphics g = e.Graphics;
             /*
             g.SmoothingMode = SmoothingMode.AntiAlias;
