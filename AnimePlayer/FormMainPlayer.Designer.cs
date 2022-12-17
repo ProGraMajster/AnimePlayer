@@ -1166,7 +1166,7 @@ namespace AnimePlayer
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(204, 26);
             this.label4.TabIndex = 5;
-            this.label4.Text = "Twojeanimepl - Wyszukiwarka";
+            this.label4.Text = "AnimePlayer - Wyszukiwarka";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // buttonFinditemPageClose
