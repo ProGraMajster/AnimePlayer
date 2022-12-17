@@ -19,6 +19,7 @@ using AnimePlayer.CNM;
 using AnimePlayer.ControlsWinForms;
 using AnimePlayer.Class;
 using AnimePlayer.Profile;
+using AnimePlayer.StatisticsData;
 
 namespace AnimePlayer
 {
@@ -46,6 +47,7 @@ namespace AnimePlayer
         public HelpPage helpPage;
 
         private FormLoading formLoading;
+
         public FormMainPlayer()  
         {
             InitializeComponent();
@@ -316,7 +318,9 @@ namespace AnimePlayer
             profileSelectionPanel.Dock = DockStyle.Fill;
             profileSelectionPanel.Show();
             profileSelectionPanel.BringToFront();*/
+            managerStatistics = new();
         }
+        AnimePlayer.StatisticsData.ManagerStatisticsData managerStatistics;
         AnimePlayer.Profile.ProfileSelectionPanel profileSelectionPanel;
 
         private void ProfileSelect_Click(object sender, EventArgs e)
@@ -348,7 +352,6 @@ namespace AnimePlayer
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message + Environment.NewLine);
-                //MessageBox.Show(ex.Message, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -371,7 +374,6 @@ namespace AnimePlayer
             panelMenu.Show();
             panelMenu.BringToFront();
         }
-
 
         private void LabelLoading_VisibleChanged(object sender, EventArgs e)
         {
@@ -1021,6 +1023,11 @@ namespace AnimePlayer
         {
             try
             {
+                if(managerStatistics!=null)
+                {
+                    managerStatistics.Exit();
+                }
+                
                 //Directory.Delete(DefaultAppDir.Temp, true);
             }
             catch(Exception ex)

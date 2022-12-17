@@ -339,6 +339,7 @@ namespace AnimePlayerLibrary.UI
                 int ep = int.Parse(pageItemData.TitleInformation.NumberOfEpisodes);
                 for(int i = 1; i <=ep ; i++)
                 {
+                    /*
                     Button button = new()
                     {
                         AutoSize = false,
@@ -351,7 +352,13 @@ namespace AnimePlayerLibrary.UI
                     button.BackColor = Color.FromArgb(35, 35, 35);
                     button.Tag = i;
                     button.Click+=ButtonEpisode_Click;
-                    flowLayoutPanelEpisode.Controls.Add(button);
+                    flowLayoutPanelEpisode.Controls.Add(button);*/
+                    PanelEpisodeNumber panelEpisodeNumber = new();
+                    panelEpisodeNumber.AutoSize = false;
+                    panelEpisodeNumber.button.Text = "Odcinek " + i.ToString();
+                    panelEpisodeNumber.button.Tag = i;
+                    panelEpisodeNumber.button.Click += ButtonEpisode_Click;
+                    flowLayoutPanelEpisode.Controls.Add(panelEpisodeNumber);
                 }
 
                 string resoultRequestProfile = ipcClient.Send("get;c;ProfileClass");

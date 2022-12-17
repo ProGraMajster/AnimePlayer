@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using System.Runtime.InteropServices;
+using System.Windows.Forms;
 
 namespace AnimePlayer
 {
@@ -24,6 +25,11 @@ namespace AnimePlayer
                 if(arg == "-Console")
                 {
                     AllocConsole();
+                }
+                if(arg == "-AnimePlayerStatisticsData")
+                {
+                    Application.Run(new AnimePlayer.StatisticsData.FormWebsite());
+                    return;
                 }
             }
         }
