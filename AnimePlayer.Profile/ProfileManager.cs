@@ -1,5 +1,6 @@
 ﻿using AnimePlayer.Core;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
@@ -87,19 +88,24 @@ namespace AnimePlayer.Profile
                     { "Porzucone", false },
                     { "Planowane", false }
                 };
-                foreach(var item in dict)
+
+                DirectoryInfo directoryInfo = new DirectoryInfo(PathToProfiles + CurrentProfile.Name + "\\Lists");
+                foreach(FileInfo file in directoryInfo.GetFiles())
                 {
-                    if (File.Exists(PathToProfiles + CurrentProfile.Name + "\\Lists\\" + item.Key + ".dat"))
+                    foreach (var item in dict)
                     {
-                        var alist = SerializationAndDeserialization.DeserializationJson(
-                            PathToProfiles + CurrentProfile.Name + "\\Lists\\" + item.Key + ".dat",
-                            typeof(ProfileIAnimeList));
-                        if(alist != null)
+                        ProfileIAnimeList alist = (ProfileIAnimeList)SerializationAndDeserialization.DeserializationJson(
+                            file.FullName,typeof(ProfileIAnimeList));
+                        if (alist != null)
                         {
-                            dict[item.Key] = true;
+                            if(alist.Name == item.Key)
+                            {
+                                dict[item.Key] = true;
+                            }
                         }
                     }
                 }
+
                 int max = dict.Count;
                 int c = 0;
                 foreach(bool val in dict.Values)
@@ -140,13 +146,32 @@ namespace AnimePlayer.Profile
             {
                 foreach(string name in defaultLists)
                 {
-
+                    CreateAnimeList(name, "");
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error",MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Debug.WriteLine(ex.ToString());
+            }
+        }
+
+        public static void CreateAnimeList(string name, string description)
+        {
+            try
+            {
+                string path = GetPathCurrentProfile() + "\\Lists\\";
+                path += Guid.NewGuid().ToString();
+                ProfileIAnimeList profileIAnimeList = new ProfileIAnimeList();
+                profileIAnimeList.Name = name;
+                profileIAnimeList.Description = description;
+                profileIAnimeList.itemToLists = new List<ItemToList>();
+                SerializationAndDeserialization.SerializationJson(profileIAnimeList, path, typeof(ProfileIAnimeList));
+            }
+            catch(Exception ex)
+            {
+                Debug.WriteLine(ex.ToString());
+                Console.Error.WriteLine(ex.ToString());
             }
         }
 

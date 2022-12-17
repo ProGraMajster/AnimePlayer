@@ -312,12 +312,12 @@ namespace AnimePlayer
             /*FormStatisticData formStatisticData = new FormStatisticData();
             formStatisticData.Show();*/
             //backgroundWorkerLoadItems.RunWorkerAsync();
-            /*profileSelectionPanel = new AnimePlayer.Profile.ProfileSelectionPanel();
+            profileSelectionPanel = new AnimePlayer.Profile.ProfileSelectionPanel();
             this.Controls.Add(profileSelectionPanel);
             profileSelectionPanel.eventHandler += ProfileSelect_Click;
             profileSelectionPanel.Dock = DockStyle.Fill;
             profileSelectionPanel.Show();
-            profileSelectionPanel.BringToFront();*/
+            profileSelectionPanel.BringToFront();
             managerStatistics = new();
         }
         AnimePlayer.StatisticsData.ManagerStatisticsData managerStatistics;
