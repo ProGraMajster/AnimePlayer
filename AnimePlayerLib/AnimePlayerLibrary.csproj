@@ -33,6 +33,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Update="UI\ChangeTitleState.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="UI\PageEpisode.cs">
       <SubType>UserControl</SubType>
     </Compile>

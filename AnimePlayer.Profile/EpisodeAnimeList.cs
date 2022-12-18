@@ -12,6 +12,7 @@ namespace AnimePlayer.Profile
         public string NameAnime { get; set; }
         public string NameEpisode { get; set;}
         public int NumberEpisode { get; set;}
+        public bool EpisodeWatched { get; set;}
         public DateTime DateTimeWatched { get; set;}    
     }
 }

@@ -9,15 +9,18 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using AnimePlayer.ControlsWinForms;
+using AnimePlayer.Profile;
 
 namespace AnimePlayerLibrary
 {
     public partial class ControlTitleStatusList : UserControl
     {
         readonly NewFlowLayoutPanel newFlowLayoutPanel;
-        public ControlTitleStatusList()
+        public ProfileIAnimeList ProfileIAnimeList;
+        public ControlTitleStatusList(ProfileIAnimeList profileIAnimeList)
         {
             InitializeComponent();
+            ProfileIAnimeList= profileIAnimeList;
             newFlowLayoutPanel = new NewFlowLayoutPanel
             {
                 Dock = DockStyle.Fill,
@@ -32,15 +35,7 @@ namespace AnimePlayerLibrary
 
             try
             {
-                for(int i = 0; i < 20; i++)
-                {
-                    ControlTitleStatusList_Item item = new()
-                    {
-                        Name = "item_"
-                    };
-                    item.SetWidth(newFlowLayoutPanel.Width-35);
-                    newFlowLayoutPanel.Controls.Add(item);
-                }
+
             }
             catch(Exception ex)
             {

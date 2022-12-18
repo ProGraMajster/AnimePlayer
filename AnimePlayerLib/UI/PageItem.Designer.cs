@@ -91,6 +91,7 @@ namespace AnimePlayerLibrary.UI
             this.labeliGD = new System.Windows.Forms.Label();
             this.labelSpecies = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.panelChangeStatus = new System.Windows.Forms.Panel();
             this.panelViewIcon = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.buttonViewIconClose = new System.Windows.Forms.Button();
@@ -148,17 +149,17 @@ namespace AnimePlayerLibrary.UI
             // linkLabelChangeState
             // 
             this.linkLabelChangeState.AutoSize = true;
-            this.linkLabelChangeState.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.linkLabelChangeState.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.linkLabelChangeState.LinkColor = System.Drawing.Color.DeepSkyBlue;
             this.linkLabelChangeState.Location = new System.Drawing.Point(218, 237);
             this.linkLabelChangeState.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.linkLabelChangeState.Name = "linkLabelChangeState";
             this.linkLabelChangeState.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.linkLabelChangeState.Size = new System.Drawing.Size(185, 17);
+            this.linkLabelChangeState.Size = new System.Drawing.Size(215, 19);
             this.linkLabelChangeState.TabIndex = 5;
             this.linkLabelChangeState.TabStop = true;
             this.linkLabelChangeState.Text = "Zmień status (Aktualny: brak)";
-            this.linkLabelChangeState.Visible = false;
+            this.linkLabelChangeState.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelChangeState_LinkClicked);
             // 
             // labelotherTitle
             // 
@@ -230,7 +231,7 @@ namespace AnimePlayerLibrary.UI
             this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.panel4);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 277);
+            this.panel3.Location = new System.Drawing.Point(0, 527);
             this.panel3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(922, 548);
@@ -598,7 +599,7 @@ namespace AnimePlayerLibrary.UI
             this.panel5.Controls.Add(this.label5);
             this.panel5.Controls.Add(this.label3);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel5.Location = new System.Drawing.Point(0, 1514);
+            this.panel5.Location = new System.Drawing.Point(0, 1764);
             this.panel5.Margin = new System.Windows.Forms.Padding(12);
             this.panel5.Name = "panel5";
             this.panel5.Padding = new System.Windows.Forms.Padding(0, 12, 0, 12);
@@ -654,6 +655,7 @@ namespace AnimePlayerLibrary.UI
             this.panel6.Controls.Add(this.panel5);
             this.panel6.Controls.Add(this.panel9);
             this.panel6.Controls.Add(this.panel3);
+            this.panel6.Controls.Add(this.panelChangeStatus);
             this.panel6.Controls.Add(this.panel1);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel6.Location = new System.Drawing.Point(0, 0);
@@ -668,7 +670,7 @@ namespace AnimePlayerLibrary.UI
             this.panel_comments.Controls.Add(this.button_Load_Comments);
             this.panel_comments.Controls.Add(this.label8);
             this.panel_comments.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel_comments.Location = new System.Drawing.Point(0, 2212);
+            this.panel_comments.Location = new System.Drawing.Point(0, 2462);
             this.panel_comments.Margin = new System.Windows.Forms.Padding(12);
             this.panel_comments.Name = "panel_comments";
             this.panel_comments.Padding = new System.Windows.Forms.Padding(0, 12, 0, 12);
@@ -718,7 +720,7 @@ namespace AnimePlayerLibrary.UI
             this.panelRelatedSeries.Controls.Add(this.flowLayoutPanelRelatedSeries);
             this.panelRelatedSeries.Controls.Add(this.label6);
             this.panelRelatedSeries.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelRelatedSeries.Location = new System.Drawing.Point(0, 1814);
+            this.panelRelatedSeries.Location = new System.Drawing.Point(0, 2064);
             this.panelRelatedSeries.Margin = new System.Windows.Forms.Padding(12);
             this.panelRelatedSeries.Name = "panelRelatedSeries";
             this.panelRelatedSeries.Padding = new System.Windows.Forms.Padding(0, 12, 0, 12);
@@ -755,7 +757,7 @@ namespace AnimePlayerLibrary.UI
             // 
             this.panel9.Controls.Add(this.panel10);
             this.panel9.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel9.Location = new System.Drawing.Point(0, 825);
+            this.panel9.Location = new System.Drawing.Point(0, 1075);
             this.panel9.Margin = new System.Windows.Forms.Padding(12);
             this.panel9.Name = "panel9";
             this.panel9.Padding = new System.Windows.Forms.Padding(0, 23, 0, 23);
@@ -957,6 +959,16 @@ namespace AnimePlayerLibrary.UI
             this.label4.TabIndex = 5;
             this.label4.Text = "Gatunki:";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // panelChangeStatus
+            // 
+            this.panelChangeStatus.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelChangeStatus.Location = new System.Drawing.Point(0, 277);
+            this.panelChangeStatus.Name = "panelChangeStatus";
+            this.panelChangeStatus.Padding = new System.Windows.Forms.Padding(5);
+            this.panelChangeStatus.Size = new System.Drawing.Size(922, 250);
+            this.panelChangeStatus.TabIndex = 6;
+            this.panelChangeStatus.Visible = false;
             // 
             // panelViewIcon
             // 
@@ -1277,5 +1289,6 @@ namespace AnimePlayerLibrary.UI
         private Label label15;
         private Label label16;
         private Button buttonBack2;
+        private Panel panelChangeStatus;
     }
 }

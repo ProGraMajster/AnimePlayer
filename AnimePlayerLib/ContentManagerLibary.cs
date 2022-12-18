@@ -203,6 +203,40 @@ namespace AnimePlayerLibrary
             }
             return null;
         }
+        public static PreviewTitleClass GetPreviewTitleClassFromTitle(string title)
+        {
+            try
+            {
+                DirectoryInfo dirInfo = new(AppFolders.PreviewItems);
+                foreach(var item in dirInfo.GetFiles())
+                {
+                    if(item.Exists)
+                    {
+                        PreviewTitleClass previewTitleClass = null;
+                        if (item.FullName.EndsWith(".dat"))
+                        {
+                            previewTitleClass = (PreviewTitleClass)SerializationAndDeserialization.Deserialization(
+                            item.FullName);
+                        }
+                        else if(item.FullName.EndsWith(".json"))
+                        {
+                            previewTitleClass= (PreviewTitleClass)SerializationAndDeserialization.DeserializationJson(
+                            item.FullName, typeof(PreviewTitleClass));
+                        }
+                        if(previewTitleClass != null&& title == previewTitleClass.Title)
+                        {
+                            return previewTitleClass;
+                        }
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                Console.Error.WriteLine(ex.ToString());
+                return null;
+            }
+            return null;
+        }
         /*
         private static bool CheckingIfTheContentExists()
         {

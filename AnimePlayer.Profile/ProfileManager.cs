@@ -175,6 +175,32 @@ namespace AnimePlayer.Profile
             }
         }
 
+        public static List<ProfileIAnimeList> GetAllAnimeList()
+        {
+            try
+            {
+                List<ProfileIAnimeList> allList = new List<ProfileIAnimeList>();
+                DirectoryInfo directoryInfo = new DirectoryInfo(PathToProfiles + CurrentProfile.Name + "\\Lists");
+                foreach(var file in directoryInfo.GetFiles())
+                {
+                    ProfileIAnimeList animeList = (ProfileIAnimeList)
+                        SerializationAndDeserialization.DeserializationJson(file.FullName,
+                        typeof(ProfileIAnimeList));
+                    if(animeList != null)
+                    {
+                        allList.Add(animeList);
+                    }
+                }
+                return allList;
+            }
+            catch(Exception ex)
+            {
+                Debug.WriteLine(ex.ToString());
+                Console.Error.WriteLine(ex.ToString());
+            }
+            return null;
+        }
+
         private static ProfileIAnimeList GetWatchingAnimeList()
         {
             try

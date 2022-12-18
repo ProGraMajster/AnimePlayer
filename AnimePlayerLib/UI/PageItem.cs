@@ -184,56 +184,13 @@ namespace AnimePlayerLibrary.UI
             }
         }
 
-        /*//ChangeTitleState changeTitleState;
-        private void linkLabelChangeState_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            try
-            {
-                //FormMainPlayer.panelStartPage.Enabled = false;
-                //FormMainPlayer.panelAllitem.Enabled = false;
-                this.Enabled = false;
-                changeTitleState = new ChangeTitleState(this);
-                changeTitleState.Name = "changeTitleState";
-                //FormMainPlayer.panel2.Controls.Add(changeTitleState);
-                //FormMainPlayer.Resize += ChangeTitleState_Resize;
-                changeTitleState.Show();
-                changeTitleState.BringToFront();
-                if (AnimePlayer.Properties.Settings.Default.RoundingControl)
-                {
-                    ControlsNewMethods.RoundingControl rc = new ControlsNewMethods.RoundingControl();
-                    rc.TargetControl = changeTitleState;
-                    rc.CornerRadius = 15;
-                }
-                changeTitleState.Disposed += ChangeTitleState_Disposed;
-                changeTitleState.Location = new Point((this.ClientSize.Width - changeTitleState.Width) / 2,
-                    (this.ClientSize.Height - changeTitleState.Height) / 2);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.ToString());
-            }
-        }*/
+        ChangeTitleState changeTitleState;
 
         private void ChangeTitleState_Disposed(object sender, EventArgs e)
         {
-            this.Enabled = true;
-            //FormMainPlayer.panelStartPage.Enabled = true;
-            //FormMainPlayer.panelAllitem.Enabled = true;
-            //FormMainPlayer.Resize -= ChangeTitleState_Resize;
-        }
-
-        private void ChangeTitleState_Resize(object sender, EventArgs e)
-        {
-            try
-            {
-                /*changeTitleState.Location = new Point((this.ClientSize.Width - changeTitleState.Width) / 2,
-                    (this.ClientSize.Height - changeTitleState.Height) / 2);*/
-            }
-            catch(Exception ex)
-            {
-                Console.WriteLine(ex.ToString());
-            }
-        }        
+            panelChangeStatus.Hide();
+            changeTitleState = null;
+        }    
 
         private async void Button_Load_Comments_Click(object sender, EventArgs e)
         {
@@ -339,20 +296,6 @@ namespace AnimePlayerLibrary.UI
                 int ep = int.Parse(pageItemData.TitleInformation.NumberOfEpisodes);
                 for(int i = 1; i <=ep ; i++)
                 {
-                    /*
-                    Button button = new()
-                    {
-                        AutoSize = false,
-                        Size = new Size(120, 40),
-                        Font = new Font(Font.FontFamily, 13f),
-                        FlatStyle = FlatStyle.Flat
-                    };
-                    button.FlatAppearance.BorderSize =0;
-                    button.Text = "Odcinek "+i.ToString();
-                    button.BackColor = Color.FromArgb(35, 35, 35);
-                    button.Tag = i;
-                    button.Click+=ButtonEpisode_Click;
-                    flowLayoutPanelEpisode.Controls.Add(button);*/
                     PanelEpisodeNumber panelEpisodeNumber = new();
                     panelEpisodeNumber.AutoSize = false;
                     panelEpisodeNumber.button.Text = "Odcinek " + i.ToString();
@@ -374,6 +317,7 @@ namespace AnimePlayerLibrary.UI
                         }
                     }
                 }
+
             }
             catch (Exception ex)
             {
@@ -438,6 +382,34 @@ namespace AnimePlayerLibrary.UI
         {
             this.Hide();
             this.Dispose();
+        }
+
+        private void linkLabelChangeState_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            try
+            {
+                if(changeTitleState != null)
+                {
+                    return;
+                }
+                changeTitleState = new ChangeTitleState(pageItemData);
+                changeTitleState.Name = "changeTitleState";
+                changeTitleState.Dock = DockStyle.Fill;
+                panelChangeStatus.Controls.Add(changeTitleState);
+                changeTitleState.Show();
+                panelChangeStatus.Show();
+                /*if (AnimePlayer.Properties.Settings.Default.RoundingControl)
+                {
+                    ControlsNewMethods.RoundingControl rc = new ControlsNewMethods.RoundingControl();
+                    rc.TargetControl = changeTitleState;
+                    rc.CornerRadius = 15;
+                }*/
+                changeTitleState.Disposed += ChangeTitleState_Disposed;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
         }
     }
 }

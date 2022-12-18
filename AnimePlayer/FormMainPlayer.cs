@@ -1044,7 +1044,7 @@ namespace AnimePlayer
                 panelMenu.Hide();
                 if(pageTitileStatusList == null)
                 {
-                    pageTitileStatusList = new PageTitileStatusList
+                    pageTitileStatusList = new PageTitileStatusList(currentProfile)
                     {
                         Name = "pageTitileStatusList",
                         Dock = DockStyle.Fill
@@ -1119,7 +1119,7 @@ namespace AnimePlayer
                 panelMoreButtons.Hide();
                 if (pageTitileStatusList == null && debug)
                 {
-                    pageTitileStatusList = new PageTitileStatusList
+                    pageTitileStatusList = new PageTitileStatusList(currentProfile)
                     {
                         Name = "pageTitileStatusList",
                         Dock = DockStyle.Fill

@@ -817,7 +817,6 @@ namespace AnimePlayer
             this.buttonShowTitleStatusList.Text = "Listy anime";
             this.toolTip.SetToolTip(this.buttonShowTitleStatusList, "Statusy: Oglądam, Planeuj,, Wstrzymane itp.");
             this.buttonShowTitleStatusList.UseVisualStyleBackColor = true;
-            this.buttonShowTitleStatusList.Visible = false;
             this.buttonShowTitleStatusList.Click += new System.EventHandler(this.ButtonShowTitleStatusList_Click);
             // 
             // buttonDefined
