@@ -16,6 +16,8 @@ using ZetaIpc.Runtime.Client;
 using System.Net.Sockets;
 //using Newtonsoft.Json;
 using System.Text.Json;
+using System.Threading;
+using System.Collections.Generic;
 
 namespace AnimePlayerLibrary.UI
 {
@@ -314,6 +316,39 @@ namespace AnimePlayerLibrary.UI
                         {
                             profileClass = profile;
                             linkLabelChangeState.Show();
+                            Thread thread = new(() =>
+                            {
+                                try
+                                {
+                                    List<ProfileIAnimeList> profileIAnimeLists =
+                                    ProfileManager.GetAllAnimeList();
+                                    foreach(ProfileIAnimeList animeList in profileIAnimeLists)
+                                    {
+                                        if(animeList != null)
+                                        {
+                                            if(animeList.itemToLists != null)
+                                            {
+                                                foreach (ItemToList item in animeList.itemToLists)
+                                                {
+                                                    if(item.Name == pageItemData.TitleInformation.Title)
+                                                    {
+                                                        this.Invoke(() =>
+                                                        {
+                                                            linkLabelChangeState.Text = "Zmień status (Aktualny: " + animeList.Name + ")";
+                                                        });
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                                catch(Exception ex)
+                                {
+                                    Debug.WriteLine(ex.ToString());
+                                }
+                            });
+                            thread.Name = "Thread_LoadAnimeStatus";
+                            thread.Start();
                         }
                     }
                 }

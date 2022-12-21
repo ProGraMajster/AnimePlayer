@@ -5,7 +5,9 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
+using System.Drawing.Design;
 using System.IO;
+using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -14,7 +16,8 @@ namespace AnimePlayerLibrary
     public partial class ChangeTitleState : UserControl
     {
         PageItemData pageitemData=null;
-        List<ProfileIAnimeList> profileIAnimeLists=null;
+        Dictionary<ProfileIAnimeList, string> profileIAnimeLists = null;
+        //List<ProfileIAnimeList> profileIAnimeLists=null;
         private ProfileIAnimeList CurrnetList = null;
         private AnimePlayer.Profile.ItemToList currentItem= null;
 
@@ -35,8 +38,62 @@ namespace AnimePlayerLibrary
         {
             try
             {
-                MessageBox.Show("Ta funkcja jest nie dostępna\n(Jeszcze nie jest skończona)", "Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if(profileIAnimeLists == null)
+                {
+                    MessageBox.Show("Wystąpił błąd!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                /*MessageBox.Show("Ta funkcja jest nie dostępna\n(Jeszcze nie jest skończona)", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);*/
+                if(currentItem == null)
+                {
+                    currentItem = new ItemToList();
+                    currentItem.Name = pageitemData.TitleInformation.Title;
+                    currentItem.Note = string.Empty;
+                    currentItem.Episodes = new List<EpisodeAnimeList>();
+                    currentItem.IsEpisodes = false;
+                    if (int.Parse(pageitemData.TitleInformation.NumberOfEpisodes) > 1)
+                    {
+                        currentItem.IsEpisodes = true;
+                    }
+                    currentItem.YourScore = (int)numericUpDown1.Value;
+                    currentItem.ReWatch= (int)numericUpDown2.Value;
+                    foreach(ChangeTitleStateEpisode stateEpisode in newFlowLayoutPanelEpisodes.Controls.OfType<ChangeTitleStateEpisode>())
+                    {
+                        EpisodeAnimeList episodeAnime = new()
+                        {
+                            NameAnime = pageitemData.TitleInformation.Title,
+                            EpisodeWatched = stateEpisode.checkBox.Checked,
+                            DateTimeWatched = stateEpisode.dateTimePicker.Value
+                        };
+                        if(stateEpisode.checkBox.Tag != null)
+                        {
+                            Episode episode = (Episode)stateEpisode.checkBox.Tag;
+                            if(episode != null)
+                            {
+                                episodeAnime.NumberEpisode = int.Parse(episode.NumberEpisode);
+                                episodeAnime.NameEpisode = episode.TitleOfEpisode;
+                            }
+                        }
+                        currentItem.Episodes.Add(episodeAnime);
+                    }
+                }
+                if(CurrnetList == null)
+                {
+                    foreach(ProfileIAnimeList animeList in profileIAnimeLists.Keys)
+                    {
+                        if(animeList.Name == comboBox1.SelectedItem.ToString())
+                        {
+                            animeList.itemToLists.Add(currentItem);
+                            string path;
+                            profileIAnimeLists.TryGetValue(animeList, out path);
+                            string txt = AnimePlayer.Core.SerializationAndDeserialization
+                                .SerializationJsonEx(animeList, typeof(ProfileIAnimeList));
+                            File.WriteAllText(path, txt);
+                            MessageBox.Show("Zapisano!");
+                        }
+                    }
+                }
             }
             catch (Exception ex)
             {
@@ -49,22 +106,23 @@ namespace AnimePlayerLibrary
         {
             try
             {
-                for (int i = 0; i <= int.Parse(pageitemData.TitleInformation.NumberOfEpisodes); i++)
+                for (int i = 0; i < int.Parse(pageitemData.TitleInformation.NumberOfEpisodes); i++)
                 {
-                    CheckBox checkBox = new CheckBox();
-                    checkBox.Size = new Size(290, checkBox.Size.Height);
-                    checkBox.Name = "checkBoxEpisode_"+ (i+1).ToString();
-                    checkBox.Text = "Odcinek "+ (i+1).ToString();
-                    checkBox.Tag = i;
-                    checkBox.ForeColor= Color.White;
+                    ChangeTitleStateEpisode changeTitleStateEpisode = new();
+                    //CheckBox checkBox = new CheckBox();
+                    changeTitleStateEpisode.checkBox.Name = "checkBoxEpisode_"+ (i+1).ToString();
+                    changeTitleStateEpisode.checkBox.Text = "Odcinek "+ (i+1).ToString();
+                    changeTitleStateEpisode.checkBox.Tag = i;
+                    changeTitleStateEpisode.checkBox.ForeColor= Color.White;
                     newFlowLayoutPanelEpisodes.Invoke(() =>
                     {
-                        newFlowLayoutPanelEpisodes.Controls.Add(checkBox);
+                        newFlowLayoutPanelEpisodes.Controls.Add(changeTitleStateEpisode);
                     });
                     Thread threadEp = new(() =>
                     {
                         try
                         {
+                            bool added= false;
                             List<Episode> episodes = ContentManagerLibary.GetEpisode(i, pageitemData.TitleInformation.Title);
                             if(episodes == null)
                             {
@@ -74,11 +132,13 @@ namespace AnimePlayerLibrary
                             {
                                 if (item != null)
                                 {
-                                    if (!string.IsNullOrEmpty(item.TitleOfEpisode))
+                                    if (!string.IsNullOrEmpty(item.TitleOfEpisode)&& !added)
                                     {
-                                        checkBox.Invoke(() =>
+                                        changeTitleStateEpisode.Invoke(() =>
                                         {
-                                            checkBox.Text += " | " + item.TitleOfEpisode;
+                                            changeTitleStateEpisode.checkBox.Text += " | " + item.TitleOfEpisode;
+                                            changeTitleStateEpisode.checkBox.Tag = item;
+                                            added= true;
                                         });
                                     }
                                 }
@@ -89,21 +149,21 @@ namespace AnimePlayerLibrary
                             Debug.WriteLine(exTh.ToString());
                         }
                     });
-                    //threadEp.Start();
+                    threadEp.Start();
                 }
 
                 Thread thread = new(() =>
                 {
 
-                    profileIAnimeLists = ProfileManager.GetAllAnimeList();
+                    profileIAnimeLists = ProfileManager.GetAllAnimeListAndFilePath();
                     this.Invoke(() =>
                     {
-                        foreach(var animelist in profileIAnimeLists)
+                        foreach(var animelist in profileIAnimeLists.Keys)
                         {
                             comboBox1.Items.Add(animelist.Name);
                         }
                     });
-                    foreach(var animelist in profileIAnimeLists)
+                    foreach(var animelist in profileIAnimeLists.Keys)
                     {
                         if(animelist.itemToLists!=null)
                         {
@@ -139,6 +199,22 @@ namespace AnimePlayerLibrary
             if(comboBox1.SelectedIndex > 0)
             {
                 panel3.Enabled = true;
+            }
+        }
+
+        private void buttonSelectAll_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                foreach(ChangeTitleStateEpisode changeTitleStateEpisode in newFlowLayoutPanelEpisodes.Controls.OfType<ChangeTitleStateEpisode>())
+                {
+                    changeTitleStateEpisode.checkBox.Checked= true;
+                }
+            }
+            catch(Exception ex)
+            {
+                Debug.WriteLine(ex.ToString());
+                Console.Error.WriteLine(ex.ToString());
             }
         }
     }

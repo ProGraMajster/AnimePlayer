@@ -94,7 +94,7 @@ namespace AnimePlayer.Profile
                 {
                     foreach (var item in dict)
                     {
-                        ProfileIAnimeList alist = (ProfileIAnimeList)SerializationAndDeserialization.DeserializationJson(
+                        ProfileIAnimeList alist = (ProfileIAnimeList)SerializationAndDeserialization.DeserializationJsonEx(
                             file.FullName,typeof(ProfileIAnimeList));
                         if (alist != null)
                         {
@@ -166,7 +166,8 @@ namespace AnimePlayer.Profile
                 profileIAnimeList.Name = name;
                 profileIAnimeList.Description = description;
                 profileIAnimeList.itemToLists = new List<ItemToList>();
-                SerializationAndDeserialization.SerializationJson(profileIAnimeList, path, typeof(ProfileIAnimeList));
+                string txt =SerializationAndDeserialization.SerializationJsonEx(profileIAnimeList, typeof(ProfileIAnimeList));
+                File.WriteAllText(path, txt);
             }
             catch(Exception ex)
             {
@@ -184,7 +185,7 @@ namespace AnimePlayer.Profile
                 foreach(var file in directoryInfo.GetFiles())
                 {
                     ProfileIAnimeList animeList = (ProfileIAnimeList)
-                        SerializationAndDeserialization.DeserializationJson(file.FullName,
+                        SerializationAndDeserialization.DeserializationJsonEx(file.FullName,
                         typeof(ProfileIAnimeList));
                     if(animeList != null)
                     {
@@ -192,6 +193,31 @@ namespace AnimePlayer.Profile
                     }
                 }
                 return allList;
+            }
+            catch(Exception ex)
+            {
+                Debug.WriteLine(ex.ToString());
+                Console.Error.WriteLine(ex.ToString());
+            }
+            return null;
+        }
+        public static Dictionary<ProfileIAnimeList,string> GetAllAnimeListAndFilePath()
+        {
+            try
+            {
+                Dictionary<ProfileIAnimeList, string> keyValuePairs = new Dictionary<ProfileIAnimeList, string>();
+                DirectoryInfo directoryInfo = new DirectoryInfo(PathToProfiles + CurrentProfile.Name + "\\Lists");
+                foreach(var file in directoryInfo.GetFiles())
+                {
+                    ProfileIAnimeList animeList = (ProfileIAnimeList)
+                        SerializationAndDeserialization.DeserializationJsonEx(file.FullName,
+                        typeof(ProfileIAnimeList));
+                    if(animeList != null)
+                    {
+                        keyValuePairs.Add(animeList, file.FullName);
+                    }
+                }
+                return keyValuePairs;
             }
             catch(Exception ex)
             {

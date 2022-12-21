@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.Serialization;
@@ -63,9 +64,34 @@ namespace AnimePlayer.Core
         public static string SerializationJsonGetString(object obj, Type type)
         {
             string str = null;
-            str= JsonSerializer.Serialize(obj);
-
+            str = JsonSerializer.Serialize(obj, type);
             return str;
+        }
+        public static string SerializationJsonEx(object obj, Type type)
+        {
+            string str = null;
+
+            JsonSerializerOptions jsonSerializerOptions= new JsonSerializerOptions();
+            jsonSerializerOptions.WriteIndented= true;
+            str = JsonSerializer.Serialize(obj,type,jsonSerializerOptions);
+            return str;
+        }
+        public static object DeserializationJsonEx(string path, Type type)
+        {
+            try
+            {
+                object obj = null;
+                JsonSerializerOptions jsonSerializerOptions = new JsonSerializerOptions();
+                jsonSerializerOptions.WriteIndented = true;
+                string txt = File.ReadAllText(path);
+                obj = JsonSerializer.Deserialize(txt, type, jsonSerializerOptions);
+                return obj;
+            }
+            catch(Exception ex)
+            {
+                Debug.WriteLine(ex.ToString());
+            }
+            return null;
         }
 
         public static object DeserializationJsonFromStringEx(string text, Type type)

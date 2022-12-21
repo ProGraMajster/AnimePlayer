@@ -12,8 +12,6 @@ namespace AnimePlayer.Profile
         public string Name { get; set; }
         public string Note { get; set; }
         public bool IsEpisodes { get; set; }
-        public int NumberOfEpisodes { get; set; }
-        public int WatchedEpisodes { get; set; }
         public int YourScore { get; set; }
         public int ReWatch { get; set; }
         public List<EpisodeAnimeList> Episodes { get; set; }

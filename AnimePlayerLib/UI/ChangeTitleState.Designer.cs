@@ -44,6 +44,8 @@ namespace AnimePlayerLibrary
             this.label6 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.newFlowLayoutPanelEpisodes = new AnimePlayer.ControlsWinForms.NewFlowLayoutPanel();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.buttonSelectAll = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.buttonSaveChangeState = new System.Windows.Forms.Button();
@@ -62,6 +64,7 @@ namespace AnimePlayerLibrary
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             this.panel7.SuspendLayout();
+            this.panel8.SuspendLayout();
             this.panel2.SuspendLayout();
             this.Loading.SuspendLayout();
             this.SuspendLayout();
@@ -226,7 +229,7 @@ namespace AnimePlayerLibrary
             // 
             this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.panel7.Controls.Add(this.newFlowLayoutPanelEpisodes);
-            this.panel7.Controls.Add(this.label5);
+            this.panel7.Controls.Add(this.panel8);
             this.panel7.Location = new System.Drawing.Point(537, 3);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(311, 133);
@@ -236,20 +239,42 @@ namespace AnimePlayerLibrary
             // 
             this.newFlowLayoutPanelEpisodes.AutoScroll = true;
             this.newFlowLayoutPanelEpisodes.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.newFlowLayoutPanelEpisodes.Location = new System.Drawing.Point(0, 17);
+            this.newFlowLayoutPanelEpisodes.Location = new System.Drawing.Point(0, 24);
             this.newFlowLayoutPanelEpisodes.Name = "newFlowLayoutPanelEpisodes";
-            this.newFlowLayoutPanelEpisodes.Size = new System.Drawing.Size(311, 116);
+            this.newFlowLayoutPanelEpisodes.Size = new System.Drawing.Size(311, 109);
             this.newFlowLayoutPanelEpisodes.TabIndex = 2;
+            // 
+            // panel8
+            // 
+            this.panel8.Controls.Add(this.buttonSelectAll);
+            this.panel8.Controls.Add(this.label5);
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel8.Location = new System.Drawing.Point(0, 0);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(311, 24);
+            this.panel8.TabIndex = 3;
+            // 
+            // buttonSelectAll
+            // 
+            this.buttonSelectAll.Dock = System.Windows.Forms.DockStyle.Right;
+            this.buttonSelectAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSelectAll.Location = new System.Drawing.Point(181, 0);
+            this.buttonSelectAll.Name = "buttonSelectAll";
+            this.buttonSelectAll.Size = new System.Drawing.Size(130, 24);
+            this.buttonSelectAll.TabIndex = 2;
+            this.buttonSelectAll.Text = "Zaznacz wyszystkie";
+            this.buttonSelectAll.UseVisualStyleBackColor = true;
+            this.buttonSelectAll.Click += new System.EventHandler(this.buttonSelectAll_Click);
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label5.Dock = System.Windows.Forms.DockStyle.Left;
             this.label5.Location = new System.Drawing.Point(0, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(111, 17);
+            this.label5.Size = new System.Drawing.Size(111, 24);
             this.label5.TabIndex = 1;
             this.label5.Text = "Obejrzane odcinki:";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panel2
             // 
@@ -361,7 +386,7 @@ namespace AnimePlayerLibrary
             this.panel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
             this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
+            this.panel8.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.Loading.ResumeLayout(false);
             this.Loading.PerformLayout();
@@ -395,5 +420,7 @@ namespace AnimePlayerLibrary
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Label label5;
         private AnimePlayer.ControlsWinForms.NewFlowLayoutPanel newFlowLayoutPanelEpisodes;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Button buttonSelectAll;
     }
 }
