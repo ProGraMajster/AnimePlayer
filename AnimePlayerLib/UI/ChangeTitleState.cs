@@ -21,6 +21,8 @@ namespace AnimePlayerLibrary
         private ProfileIAnimeList CurrnetList = null;
         private AnimePlayer.Profile.ItemToList currentItem= null;
 
+        public EventHandler EventSaveChangeTitleState;
+
         public ChangeTitleState(PageItemData pageItemData)
         {
             InitializeComponent();
@@ -60,20 +62,33 @@ namespace AnimePlayerLibrary
                     currentItem.ReWatch= (int)numericUpDown2.Value;
                     foreach(ChangeTitleStateEpisode stateEpisode in newFlowLayoutPanelEpisodes.Controls.OfType<ChangeTitleStateEpisode>())
                     {
-                        EpisodeAnimeList episodeAnime = new()
+                        EpisodeAnimeList episodeAnime = new();
+                        episodeAnime.NameAnime = pageitemData.TitleInformation.Title;
+                        episodeAnime.EpisodeWatched = stateEpisode.checkBox.Checked;
+                        episodeAnime.DateTimeWatched = stateEpisode.dateTimePicker.Value;
+                        if (stateEpisode.checkBox.Tag != null)
                         {
-                            NameAnime = pageitemData.TitleInformation.Title,
-                            EpisodeWatched = stateEpisode.checkBox.Checked,
-                            DateTimeWatched = stateEpisode.dateTimePicker.Value
-                        };
-                        if(stateEpisode.checkBox.Tag != null)
-                        {
-                            Episode episode = (Episode)stateEpisode.checkBox.Tag;
-                            if(episode != null)
+                            if(stateEpisode.checkBox.Tag.GetType() == typeof(Episode))
                             {
-                                episodeAnime.NumberEpisode = int.Parse(episode.NumberEpisode);
-                                episodeAnime.NameEpisode = episode.TitleOfEpisode;
+                                Episode episode = (Episode)stateEpisode.checkBox.Tag;
+                                if (episode != null)
+                                {
+                                    episodeAnime.NumberEpisode = int.Parse(episode.NumberEpisode);
+                                    episodeAnime.NameEpisode = episode.TitleOfEpisode;
+                                }
                             }
+                            else
+                            {
+                                if(stateEpisode.checkBox.Tag.GetType() == typeof(int))
+                                {
+                                    episodeAnime.NumberEpisode = 1;
+                                }
+                                episodeAnime.NameEpisode = string.Empty;
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("stateEpisode.checkBox.Tag is NULL");
                         }
                         currentItem.Episodes.Add(episodeAnime);
                     }
@@ -91,6 +106,10 @@ namespace AnimePlayerLibrary
                                 .SerializationJsonEx(animeList, typeof(ProfileIAnimeList));
                             File.WriteAllText(path, txt);
                             MessageBox.Show("Zapisano!");
+                            if(EventSaveChangeTitleState != null)
+                            {
+                                EventSaveChangeTitleState.Invoke(this, EventArgs.Empty);
+                            }
                         }
                     }
                 }
