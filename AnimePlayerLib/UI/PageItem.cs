@@ -304,6 +304,37 @@ namespace AnimePlayerLibrary.UI
                     panelEpisodeNumber.button.Tag = i;
                     panelEpisodeNumber.button.Click += ButtonEpisode_Click;
                     flowLayoutPanelEpisode.Controls.Add(panelEpisodeNumber);
+                    Thread threadEpEnd = new(() =>
+                    {
+                        List<ProfileIAnimeList> profileIAnimeLists= 
+                        ProfileManager.GetAllAnimeList();
+                        foreach(ProfileIAnimeList animeList in profileIAnimeLists)
+                        {
+                            if(animeList.itemToLists != null)
+                            {
+                                foreach(ItemToList itemToList in animeList.itemToLists)
+                                {
+                                    if(pageItemData.TitleInformation.Title == itemToList.Name)
+                                    {
+                                        if(itemToList.Episodes != null)
+                                        {
+                                            foreach(EpisodeAnimeList episodeAnimeList in itemToList.Episodes)
+                                            {
+                                                if(episodeAnimeList.EpisodeWatched)
+                                                {
+                                                    panelEpisodeNumber.Invoke(() =>
+                                                    {
+                                                        panelEpisodeNumber.label.Show();
+                                                    });
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    });
+                    threadEpEnd.Start();
                 }
 
                 string resoultRequestProfile = ipcClient.Send("get;c;ProfileClass");

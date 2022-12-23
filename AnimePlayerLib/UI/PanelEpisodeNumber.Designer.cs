@@ -73,7 +73,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.Label label;
         public System.Windows.Forms.Button button;
+        public System.Windows.Forms.Label label;
     }
 }

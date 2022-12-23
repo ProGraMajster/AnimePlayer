@@ -46,7 +46,7 @@ namespace AnimePlayerLibrary
                     foreach(var file in directoryInfo.GetFiles())
                     {
                         AnimePlayer.Profile.ProfileIAnimeList animeList =
-                        (AnimePlayer.Profile.ProfileIAnimeList)SerializationAndDeserialization.DeserializationJson(
+                        (AnimePlayer.Profile.ProfileIAnimeList)SerializationAndDeserialization.DeserializationJsonEx(
                             file.FullName, typeof(AnimePlayer.Profile.ProfileIAnimeList));
                         if(animeList != null)
                         {
