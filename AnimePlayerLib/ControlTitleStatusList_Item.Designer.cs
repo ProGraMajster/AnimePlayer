@@ -38,7 +38,7 @@
             this.buttonViewChange = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panelV2 = new System.Windows.Forms.Panel();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
+            this.newFlowLayoutPanelEpisodes = new AnimePlayer.ControlsWinForms.NewFlowLayoutPanel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.panel2.SuspendLayout();
@@ -154,7 +154,7 @@
             // 
             // panelV2
             // 
-            this.panelV2.Controls.Add(this.checkedListBox1);
+            this.panelV2.Controls.Add(this.newFlowLayoutPanelEpisodes);
             this.panelV2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelV2.Location = new System.Drawing.Point(0, 58);
             this.panelV2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -162,17 +162,17 @@
             this.panelV2.Size = new System.Drawing.Size(617, 404);
             this.panelV2.TabIndex = 3;
             // 
-            // checkedListBox1
+            // newFlowLayoutPanelEpisodes
             // 
-            this.checkedListBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.checkedListBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.checkedListBox1.ForeColor = System.Drawing.Color.White;
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Location = new System.Drawing.Point(0, 184);
-            this.checkedListBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(617, 220);
-            this.checkedListBox1.TabIndex = 0;
+            this.newFlowLayoutPanelEpisodes.AutoScroll = true;
+            this.newFlowLayoutPanelEpisodes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.newFlowLayoutPanelEpisodes.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.newFlowLayoutPanelEpisodes.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.newFlowLayoutPanelEpisodes.Location = new System.Drawing.Point(0, 174);
+            this.newFlowLayoutPanelEpisodes.Name = "newFlowLayoutPanelEpisodes";
+            this.newFlowLayoutPanelEpisodes.Size = new System.Drawing.Size(617, 230);
+            this.newFlowLayoutPanelEpisodes.TabIndex = 1;
+            this.newFlowLayoutPanelEpisodes.WrapContents = false;
             // 
             // ControlTitleStatusList_Item
             // 
@@ -185,6 +185,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "ControlTitleStatusList_Item";
             this.Size = new System.Drawing.Size(617, 462);
+            this.Load += new System.EventHandler(this.ControlTitleStatusList_Item_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
@@ -209,6 +210,6 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button buttonViewChange;
         private System.Windows.Forms.Panel panelV2;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
+        private AnimePlayer.ControlsWinForms.NewFlowLayoutPanel newFlowLayoutPanelEpisodes;
     }
 }

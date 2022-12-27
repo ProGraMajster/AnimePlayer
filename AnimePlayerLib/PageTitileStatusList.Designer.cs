@@ -31,7 +31,6 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.button = new System.Windows.Forms.Button();
             this.panelSTLnavigation = new System.Windows.Forms.Panel();
-            this.tabControl1.SuspendLayout();
             this.panelSTLnavigation.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -44,7 +43,6 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(666, 380);
             this.tabControl1.TabIndex = 1;
-            
             // 
             // button
             // 
@@ -87,7 +85,6 @@
             this.Name = "PageTitileStatusList";
             this.Size = new System.Drawing.Size(666, 412);
             this.Load += new System.EventHandler(this.PageTitileStatusList_Load);
-            this.tabControl1.ResumeLayout(false);
             this.panelSTLnavigation.ResumeLayout(false);
             this.ResumeLayout(false);
 

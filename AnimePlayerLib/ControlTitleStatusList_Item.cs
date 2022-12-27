@@ -11,6 +11,7 @@ using System.IO;
 using System.Threading;
 using AnimePlayer.Class;
 using System.Diagnostics;
+using AnimePlayer.Profile;
 
 namespace AnimePlayerLibrary
 {
@@ -18,9 +19,11 @@ namespace AnimePlayerLibrary
     {
         public PreviewTitleClass previewTitleClass=null;
         public PageItemData pageItemData=null;
+        private ItemToList ItemToList;
         public ControlTitleStatusList_Item(AnimePlayer.Profile.ItemToList itemToList)
         {
             InitializeComponent();
+            ItemToList = itemToList;
             pictureBox.LoadCompleted += PictureBox_LoadCompleted;
             try
             {
@@ -32,37 +35,6 @@ namespace AnimePlayerLibrary
                 View2 = false;
                 this.Size = new Size(this.Size.Width, hView1);
                 labelTitle.Text = itemToList.Name;
-
-                Thread threadTitleClass = new(() =>
-                {
-                    previewTitleClass = ContentManagerLibary.GetPreviewTitleClassFromTitle(itemToList.Name);
-                    pageItemData = ContentManagerLibary.GetPageItemDataWithContentFolderFromTitle(itemToList.Name);
-                    if(previewTitleClass != null)
-                    {
-                        this.Invoke(() =>
-                        {
-                            pictureBox.ImageLocation = previewTitleClass.LinkToIcon[0];
-                        });
-                    }
-                    if(pageItemData != null)
-                    {
-                        List<CheckBox> checkBoxes= new List<CheckBox>();
-                        for(int i = 0; i< int.Parse(pageItemData.TitleInformation.NumberOfEpisodes); i++)
-                        {
-                            CheckBox checkBox = new CheckBox();
-                            checkBox.Text = "Odcinek: "+ i.ToString();
-                            checkBoxes.Add(checkBox);
-                        }
-                        this.Invoke(() =>
-                        {
-                            labelOtherTitle.Text = pageItemData.TitleInformation.OtherTitle.ToString();
-                            foreach(CheckBox checkBox in checkBoxes)
-                            {
-                                checkedListBox1.Items.Add(checkBox);
-                            }
-                        });
-                    }
-                });
             }
             catch(Exception ex)
             {
@@ -133,6 +105,74 @@ namespace AnimePlayerLibrary
                 this.Size = new Size(this.Size.Width, hView2);
                 buttonViewChange.Text = @"/\";
                 return;
+            }
+        }
+
+        private void ControlTitleStatusList_Item_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                Thread threadTitleClass = new(() =>
+                {
+                    previewTitleClass = ContentManagerLibary.GetPreviewTitleClassFromTitle(ItemToList.Name);
+                    pageItemData = ContentManagerLibary.GetPageItemDataWithContentFolderFromTitle(ItemToList.Name);
+                    if (previewTitleClass != null)
+                    {
+                        this.Invoke(() =>
+                        {
+                            pictureBox.ImageLocation = previewTitleClass.LinkToIcon[0];
+                        });
+                    }
+                    if (pageItemData != null)
+                    {
+                        List<ControlTitleStatusList_Item_Episodes> episodesItem = new List<ControlTitleStatusList_Item_Episodes>();
+                        for (int i = 0; i < int.Parse(pageItemData.TitleInformation.NumberOfEpisodes); i++)
+                        {
+                            ControlTitleStatusList_Item_Episodes item_Episodes = new();
+                            item_Episodes.labelEpisodeTitle.Text = "Odcinek: " + (i+1).ToString();
+                            episodesItem.Add(item_Episodes);
+                            Thread thread = new(() =>
+                            {
+                                if(ItemToList.Episodes == null)
+                                {
+                                    return;
+                                }   
+                                foreach(EpisodeAnimeList episodeAnime in ItemToList.Episodes)
+                                {
+                                    if(i == episodeAnime.NumberEpisode)
+                                    {
+                                        item_Episodes.Tag = episodeAnime;
+                                        item_Episodes.labelEpisodeTitle.Text += " | "+episodeAnime.NameEpisode;
+                                        item_Episodes.CheckBoxState = episodeAnime.EpisodeWatched;
+                                        item_Episodes.checkBox.Checked = episodeAnime.EpisodeWatched;
+                                        item_Episodes.labelDateTime.Text = episodeAnime.DateTimeWatched.ToString();
+                                    }
+                                }
+                            });
+                            thread.Start();
+                        }
+                        this.Invoke(() =>
+                        {
+                            labelOtherTitle.Text = "";
+                            foreach (string title in pageItemData.TitleInformation.OtherTitle)
+                            {
+                                labelOtherTitle.Text += title + ", ";
+                            }
+                            foreach (var item in episodesItem)
+                            {
+                                newFlowLayoutPanelEpisodes.Invoke(() =>
+                                {
+                                    newFlowLayoutPanelEpisodes.Controls.Add(item);
+                                });
+                            }
+                        });
+                    }
+                });
+                threadTitleClass.Start();
+            }
+            catch(Exception ex)
+            {
+                Debug.WriteLine(ex.ToString());
             }
         }
     }

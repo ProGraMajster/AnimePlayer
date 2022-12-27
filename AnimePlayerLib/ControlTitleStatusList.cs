@@ -32,15 +32,6 @@ namespace AnimePlayerLibrary
             newFlowLayoutPanel.Resize += NewFlowLayoutPanel_Resize;
             panelDock.Controls.Add(newFlowLayoutPanel);
             newFlowLayoutPanel.Show();
-
-            try
-            {
-
-            }
-            catch(Exception ex)
-            {
-                Console.WriteLine(ex.ToString());
-            }
         }
 
         private void NewFlowLayoutPanel_Resize(object sender, EventArgs e)
@@ -70,10 +61,30 @@ namespace AnimePlayerLibrary
         {
             try
             {
-                foreach (ControlTitleStatusList_Item i in newFlowLayoutPanel.Controls.OfType<ControlTitleStatusList_Item>())
+                try
                 {
-                    i.SetWidth(newFlowLayoutPanel.Width - 35);
-                    Application.DoEvents();
+                    Thread thread = new(() =>
+                    {
+                        List<ControlTitleStatusList_Item> controlTitleStatusList_Items = new List<ControlTitleStatusList_Item>();
+                        foreach (ItemToList itemList in ProfileIAnimeList.itemToLists)
+                        {
+                            ControlTitleStatusList_Item controlTitleStatusList_Item = new ControlTitleStatusList_Item(itemList);
+                            controlTitleStatusList_Items.Add(controlTitleStatusList_Item);
+                        }
+
+                        this.Invoke(() =>
+                        {
+                            foreach (var item in controlTitleStatusList_Items)
+                            {
+                                newFlowLayoutPanel1.Controls.Add(item);
+                            }
+                        });
+                    });
+                    thread.Start();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.ToString());
                 }
             }
             catch (Exception ex)

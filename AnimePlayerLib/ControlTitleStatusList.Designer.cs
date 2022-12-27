@@ -34,9 +34,11 @@
             this.buttonRemoveItem = new System.Windows.Forms.Button();
             this.buttonStartPageFinditem = new System.Windows.Forms.Button();
             this.panelDock = new System.Windows.Forms.Panel();
+            this.newFlowLayoutPanel1 = new AnimePlayer.ControlsWinForms.NewFlowLayoutPanel();
             this.bWresiezItem = new System.ComponentModel.BackgroundWorker();
             this.panelNavigation.SuspendLayout();
             this.panelDockOnTextBox.SuspendLayout();
+            this.panelDock.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelNavigation
@@ -121,12 +123,21 @@
             // 
             // panelDock
             // 
+            this.panelDock.Controls.Add(this.newFlowLayoutPanel1);
             this.panelDock.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDock.Location = new System.Drawing.Point(0, 39);
             this.panelDock.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panelDock.Name = "panelDock";
             this.panelDock.Size = new System.Drawing.Size(628, 398);
             this.panelDock.TabIndex = 1;
+            // 
+            // newFlowLayoutPanel1
+            // 
+            this.newFlowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.newFlowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.newFlowLayoutPanel1.Name = "newFlowLayoutPanel1";
+            this.newFlowLayoutPanel1.Size = new System.Drawing.Size(628, 398);
+            this.newFlowLayoutPanel1.TabIndex = 0;
             // 
             // bWresiezItem
             // 
@@ -147,6 +158,7 @@
             this.panelNavigation.ResumeLayout(false);
             this.panelDockOnTextBox.ResumeLayout(false);
             this.panelDockOnTextBox.PerformLayout();
+            this.panelDock.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -160,5 +172,6 @@
         public System.Windows.Forms.Button buttonStartPageFinditem;
         private System.Windows.Forms.Panel panelDock;
         private System.ComponentModel.BackgroundWorker bWresiezItem;
+        private AnimePlayer.ControlsWinForms.NewFlowLayoutPanel newFlowLayoutPanel1;
     }
 }

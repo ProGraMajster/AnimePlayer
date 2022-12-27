@@ -53,4 +53,13 @@
 	<ItemGroup>
 	  <Folder Include="ConsoleInPlayer\" />
 	</ItemGroup>
+
+	<ItemGroup>
+	  <None Update="NerveFramework.Communication.dll">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </None>
+	  <None Update="NerveFramework.Windows.dll">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </None>
+	</ItemGroup>
 </Project>
