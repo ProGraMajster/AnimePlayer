@@ -78,7 +78,6 @@ namespace AnimePlayerLibrary
             this.labelState.Name = "labelState";
             this.labelState.Size = new System.Drawing.Size(851, 43);
             this.labelState.TabIndex = 1;
-            this.labelState.Text = "Aktualny stan:\r\nbrak ustawionego statnu";
             this.labelState.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panel

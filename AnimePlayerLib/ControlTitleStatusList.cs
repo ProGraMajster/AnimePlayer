@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -17,6 +18,8 @@ namespace AnimePlayerLibrary
     {
         readonly NewFlowLayoutPanel newFlowLayoutPanel;
         public ProfileIAnimeList ProfileIAnimeList;
+
+        public bool EditMode = false;
         public ControlTitleStatusList(ProfileIAnimeList profileIAnimeList)
         {
             InitializeComponent();
@@ -90,6 +93,93 @@ namespace AnimePlayerLibrary
             catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
+            }
+        }
+
+        private void newFlowLayoutPanel1_SizeChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                foreach(Control control in newFlowLayoutPanel1.Controls)
+                {
+                    control.Size = new Size((newFlowLayoutPanel1.Width-30), control.Height);
+                }
+            }
+            catch(Exception ex)
+            {
+                Debug.WriteLine(ex.ToString());
+                Console.WriteLine(ex.ToString());
+            }
+        }
+
+        private void newFlowLayoutPanel1_ControlAdded(object sender, ControlEventArgs e)
+        {
+            try
+            {
+                foreach (Control control in newFlowLayoutPanel1.Controls)
+                {
+                    control.Size = new Size((newFlowLayoutPanel1.Width - 30), control.Height);
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.ToString());
+                Console.WriteLine(ex.ToString());
+            }
+        }
+
+        private void buttonEditList_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if(EditMode)
+                {
+                    EditMode = false;
+                    panelEdit.Hide();
+                    buttonEditList.Text = "Edytuj";
+                    foreach (ControlTitleStatusList_Item controlTitle in newFlowLayoutPanel1.Controls.OfType<ControlTitleStatusList_Item>())
+                    {
+                        controlTitle.HideCheckBox();
+                    }
+                }
+                else
+                {
+                    EditMode = true;
+                    panelEdit.Show();
+                    buttonEditList.Text = "X";
+                    foreach (ControlTitleStatusList_Item controlTitle in newFlowLayoutPanel1.Controls.OfType<ControlTitleStatusList_Item>())
+                    {
+                        controlTitle.ShowCheckBox();
+                    }
+                }
+                
+            }
+            catch(Exception ex)
+            {
+                Debug.WriteLine(ex.ToString());
+                Console.Error.WriteLine(ex.ToString());
+            }
+        }
+
+        private void buttonRemoveSelected_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                foreach (ControlTitleStatusList_Item controlTitle in newFlowLayoutPanel1.Controls.OfType<ControlTitleStatusList_Item>())
+                {
+                    if(controlTitle.State)
+                    {
+                        controlTitle.Hide();
+                        controlTitle.Dispose();
+                    }
+                }
+                //TODO:
+                //Usuwanie z listy i zapis
+            }
+            catch(Exception ex)
+            {
+                Debug.WriteLine(ex.ToString());
+                Console.Error.WriteLine(ex.ToString());
             }
         }
     }

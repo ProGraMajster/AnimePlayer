@@ -318,7 +318,7 @@ namespace AnimePlayer
             profileSelectionPanel.Dock = DockStyle.Fill;
             profileSelectionPanel.Show();
             profileSelectionPanel.BringToFront();
-            managerStatistics = new();
+            //managerStatistics = new();
         }
         AnimePlayer.StatisticsData.ManagerStatisticsData managerStatistics;
         AnimePlayer.Profile.ProfileSelectionPanel profileSelectionPanel;

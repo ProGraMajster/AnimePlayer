@@ -199,12 +199,17 @@ namespace AnimePlayerLibrary
                     }
                     this.Invoke(() =>
                     {
+                        
                         Loading.Hide();
                         panel.Show();
                     });
                 });
                 thread.Name = "ChangeTitleState_Load";
                 thread.Start();
+                if(CurrnetList != null)
+                {
+                    labelState.Text = "Aktualna lista: \n" + CurrnetList.Name;
+                }
             }
             catch (Exception ex)
             {

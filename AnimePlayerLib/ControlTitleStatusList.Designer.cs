@@ -31,13 +31,16 @@
             this.panelNavigation = new System.Windows.Forms.Panel();
             this.panelDockOnTextBox = new System.Windows.Forms.Panel();
             this.textBoxStartPagefinditem = new System.Windows.Forms.TextBox();
-            this.buttonRemoveItem = new System.Windows.Forms.Button();
+            this.panelEdit = new System.Windows.Forms.Panel();
+            this.buttonRemoveSelected = new System.Windows.Forms.Button();
+            this.buttonEditList = new System.Windows.Forms.Button();
             this.buttonStartPageFinditem = new System.Windows.Forms.Button();
             this.panelDock = new System.Windows.Forms.Panel();
             this.newFlowLayoutPanel1 = new AnimePlayer.ControlsWinForms.NewFlowLayoutPanel();
             this.bWresiezItem = new System.ComponentModel.BackgroundWorker();
             this.panelNavigation.SuspendLayout();
             this.panelDockOnTextBox.SuspendLayout();
+            this.panelEdit.SuspendLayout();
             this.panelDock.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -45,7 +48,8 @@
             // 
             this.panelNavigation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.panelNavigation.Controls.Add(this.panelDockOnTextBox);
-            this.panelNavigation.Controls.Add(this.buttonRemoveItem);
+            this.panelNavigation.Controls.Add(this.panelEdit);
+            this.panelNavigation.Controls.Add(this.buttonEditList);
             this.panelNavigation.Controls.Add(this.buttonStartPageFinditem);
             this.panelNavigation.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelNavigation.Location = new System.Drawing.Point(0, 0);
@@ -58,11 +62,11 @@
             // 
             this.panelDockOnTextBox.Controls.Add(this.textBoxStartPagefinditem);
             this.panelDockOnTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelDockOnTextBox.Location = new System.Drawing.Point(88, 0);
+            this.panelDockOnTextBox.Location = new System.Drawing.Point(149, 0);
             this.panelDockOnTextBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panelDockOnTextBox.Name = "panelDockOnTextBox";
             this.panelDockOnTextBox.Padding = new System.Windows.Forms.Padding(0, 12, 0, 0);
-            this.panelDockOnTextBox.Size = new System.Drawing.Size(452, 39);
+            this.panelDockOnTextBox.Size = new System.Drawing.Size(391, 39);
             this.panelDockOnTextBox.TabIndex = 7;
             this.panelDockOnTextBox.Visible = false;
             // 
@@ -80,27 +84,57 @@
             this.textBoxStartPagefinditem.Location = new System.Drawing.Point(0, 12);
             this.textBoxStartPagefinditem.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.textBoxStartPagefinditem.Name = "textBoxStartPagefinditem";
-            this.textBoxStartPagefinditem.Size = new System.Drawing.Size(452, 16);
+            this.textBoxStartPagefinditem.Size = new System.Drawing.Size(391, 16);
             this.textBoxStartPagefinditem.TabIndex = 6;
             this.textBoxStartPagefinditem.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // buttonRemoveItem
+            // panelEdit
             // 
-            this.buttonRemoveItem.BackColor = System.Drawing.Color.Transparent;
-            this.buttonRemoveItem.Dock = System.Windows.Forms.DockStyle.Left;
-            this.buttonRemoveItem.FlatAppearance.BorderSize = 0;
-            this.buttonRemoveItem.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.buttonRemoveItem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.buttonRemoveItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonRemoveItem.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonRemoveItem.ForeColor = System.Drawing.Color.White;
-            this.buttonRemoveItem.Location = new System.Drawing.Point(0, 0);
-            this.buttonRemoveItem.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.buttonRemoveItem.Name = "buttonRemoveItem";
-            this.buttonRemoveItem.Size = new System.Drawing.Size(88, 39);
-            this.buttonRemoveItem.TabIndex = 8;
-            this.buttonRemoveItem.Text = "Usuń";
-            this.buttonRemoveItem.UseVisualStyleBackColor = false;
+            this.panelEdit.Controls.Add(this.buttonRemoveSelected);
+            this.panelEdit.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelEdit.Location = new System.Drawing.Point(67, 0);
+            this.panelEdit.Name = "panelEdit";
+            this.panelEdit.Size = new System.Drawing.Size(82, 39);
+            this.panelEdit.TabIndex = 9;
+            this.panelEdit.Visible = false;
+            // 
+            // buttonRemoveSelected
+            // 
+            this.buttonRemoveSelected.BackColor = System.Drawing.Color.Transparent;
+            this.buttonRemoveSelected.Dock = System.Windows.Forms.DockStyle.Left;
+            this.buttonRemoveSelected.FlatAppearance.BorderSize = 0;
+            this.buttonRemoveSelected.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.buttonRemoveSelected.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.buttonRemoveSelected.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonRemoveSelected.Font = new System.Drawing.Font("Comic Sans MS", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonRemoveSelected.ForeColor = System.Drawing.Color.White;
+            this.buttonRemoveSelected.Location = new System.Drawing.Point(0, 0);
+            this.buttonRemoveSelected.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.buttonRemoveSelected.Name = "buttonRemoveSelected";
+            this.buttonRemoveSelected.Size = new System.Drawing.Size(82, 39);
+            this.buttonRemoveSelected.TabIndex = 9;
+            this.buttonRemoveSelected.Text = "Usuń zaznaczone";
+            this.buttonRemoveSelected.UseVisualStyleBackColor = false;
+            this.buttonRemoveSelected.Click += new System.EventHandler(this.buttonRemoveSelected_Click);
+            // 
+            // buttonEditList
+            // 
+            this.buttonEditList.BackColor = System.Drawing.Color.Transparent;
+            this.buttonEditList.Dock = System.Windows.Forms.DockStyle.Left;
+            this.buttonEditList.FlatAppearance.BorderSize = 0;
+            this.buttonEditList.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.buttonEditList.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.buttonEditList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonEditList.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonEditList.ForeColor = System.Drawing.Color.White;
+            this.buttonEditList.Location = new System.Drawing.Point(0, 0);
+            this.buttonEditList.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.buttonEditList.Name = "buttonEditList";
+            this.buttonEditList.Size = new System.Drawing.Size(67, 39);
+            this.buttonEditList.TabIndex = 8;
+            this.buttonEditList.Text = "Edytuj";
+            this.buttonEditList.UseVisualStyleBackColor = false;
+            this.buttonEditList.Click += new System.EventHandler(this.buttonEditList_Click);
             // 
             // buttonStartPageFinditem
             // 
@@ -133,11 +167,14 @@
             // 
             // newFlowLayoutPanel1
             // 
+            this.newFlowLayoutPanel1.AutoScroll = true;
             this.newFlowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.newFlowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.newFlowLayoutPanel1.Name = "newFlowLayoutPanel1";
             this.newFlowLayoutPanel1.Size = new System.Drawing.Size(628, 398);
             this.newFlowLayoutPanel1.TabIndex = 0;
+            this.newFlowLayoutPanel1.SizeChanged += new System.EventHandler(this.newFlowLayoutPanel1_SizeChanged);
+            this.newFlowLayoutPanel1.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.newFlowLayoutPanel1_ControlAdded);
             // 
             // bWresiezItem
             // 
@@ -158,6 +195,7 @@
             this.panelNavigation.ResumeLayout(false);
             this.panelDockOnTextBox.ResumeLayout(false);
             this.panelDockOnTextBox.PerformLayout();
+            this.panelEdit.ResumeLayout(false);
             this.panelDock.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -166,12 +204,14 @@
         #endregion
 
         private System.Windows.Forms.Panel panelNavigation;
-        public System.Windows.Forms.Button buttonRemoveItem;
+        public System.Windows.Forms.Button buttonEditList;
         private System.Windows.Forms.Panel panelDockOnTextBox;
         public System.Windows.Forms.TextBox textBoxStartPagefinditem;
         public System.Windows.Forms.Button buttonStartPageFinditem;
         private System.Windows.Forms.Panel panelDock;
         private System.ComponentModel.BackgroundWorker bWresiezItem;
         private AnimePlayer.ControlsWinForms.NewFlowLayoutPanel newFlowLayoutPanel1;
+        private System.Windows.Forms.Panel panelEdit;
+        public System.Windows.Forms.Button buttonRemoveSelected;
     }
 }

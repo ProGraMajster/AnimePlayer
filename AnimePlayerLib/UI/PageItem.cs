@@ -248,6 +248,9 @@ namespace AnimePlayerLibrary.UI
 
         }
 
+        private ProfileIAnimeList currnetList;
+        private ItemToList currentItemToList;
+
         private void PageItem_Load(object sender, EventArgs e)
         {
             try
@@ -316,6 +319,14 @@ namespace AnimePlayerLibrary.UI
                                 {
                                     if(pageItemData.TitleInformation.Title == itemToList.Name)
                                     {
+                                        if(currentItemToList == null)
+                                        {
+                                            currentItemToList = itemToList;
+                                        }
+                                        if(currnetList ==null)
+                                        {
+                                            currnetList = animeList;
+                                        }
                                         if(itemToList.Episodes != null)
                                         {
                                             foreach(EpisodeAnimeList episodeAnimeList in itemToList.Episodes)
@@ -383,7 +394,6 @@ namespace AnimePlayerLibrary.UI
                         }
                     }
                 }
-
             }
             catch (Exception ex)
             {

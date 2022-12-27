@@ -12,6 +12,9 @@ using System.Threading;
 using AnimePlayer.Class;
 using System.Diagnostics;
 using AnimePlayer.Profile;
+using AnimePlayerLibrary.UI;
+using AnimePlayer.ControlsWinForms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace AnimePlayerLibrary
 {
@@ -76,17 +79,20 @@ namespace AnimePlayerLibrary
 
         public void ShowCheckBox()
         {
+            checkBox.Checked = false;
+            panelCheckBox.Show();
             checkBox.Show();
         }
 
         public void HideCheckBox()
         {
+            panelCheckBox.Hide();
             checkBox.Hide();
         }
 
         bool View2 = false;
-        readonly int hView1 = 55;
-        readonly int hView2 = 400;
+        readonly int hView1 = 70;
+        readonly int hView2 = 475;
 
         private void ButtonViewChange_Click(object sender, EventArgs e)
         {
@@ -141,7 +147,7 @@ namespace AnimePlayerLibrary
                                 {
                                     if(i == episodeAnime.NumberEpisode)
                                     {
-                                        item_Episodes.Tag = episodeAnime;
+                                        item_Episodes.episodeAnime = episodeAnime;
                                         item_Episodes.labelEpisodeTitle.Text += " | "+episodeAnime.NameEpisode;
                                         item_Episodes.CheckBoxState = episodeAnime.EpisodeWatched;
                                         item_Episodes.checkBox.Checked = episodeAnime.EpisodeWatched;
@@ -154,6 +160,7 @@ namespace AnimePlayerLibrary
                         this.Invoke(() =>
                         {
                             labelOtherTitle.Text = "";
+                            labelDescryption.Text = "Opis:\n" + pageItemData.TitleInformation.Description;
                             foreach (string title in pageItemData.TitleInformation.OtherTitle)
                             {
                                 labelOtherTitle.Text += title + ", ";
@@ -174,6 +181,50 @@ namespace AnimePlayerLibrary
             {
                 Debug.WriteLine(ex.ToString());
             }
+        }
+
+        private void newFlowLayoutPanelEpisodes_ControlAdded(object sender, ControlEventArgs e)
+        {
+            e.Control.Size = new System.Drawing.Size((newFlowLayoutPanelEpisodes.Size.Width - 30), e.Control.Height);
+        }
+
+        private void buttonOpenTitlePage_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                PanelItem panelItem = new(previewTitleClass);
+                PageItem pageItem = new(panelItem);
+                pageItem.pictureBoxIcon.ImageLocation = panelItem._previewTitleClass.LinkToIcon[0];
+                pageItem.Dock = DockStyle.Fill;
+                this.ParentForm.Controls.Add(pageItem);
+                pageItem.BringToFront();
+            }
+            catch(Exception ex )
+            {
+                Debug.WriteLine(ex.ToString());
+                Console.Error.WriteLine(ex.ToString());
+            }
+        }
+
+        private void newFlowLayoutPanelEpisodes_SizeChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                foreach (Control control in newFlowLayoutPanelEpisodes.Controls)
+                {
+                    control.Size = new Size((newFlowLayoutPanelEpisodes.Width - 30), control.Height);
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.ToString());
+                Console.WriteLine(ex.ToString());
+            }
+        }
+
+        private void checkBox_CheckedChanged(object sender, EventArgs e)
+        {
+            State = checkBox.Checked;
         }
     }
 }
