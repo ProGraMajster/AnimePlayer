@@ -171,6 +171,7 @@ namespace AnimePlayer
             DirFilesMoveToDir(AppFolders.UpdatedVideosItems, AppFolders.VideosItems);
             DirFilesMoveToDir(AppFolders.UpdatedWeb, AppFolders.Web);
             DirFilesMoveToDir(AppFolders.UpdatedCommunity, AppFolders.Community);
+            DirFilesMoveToDir(AppFolders.UpdatedTitleComments, AppFolders.TitleComments);
         }
          
         private static void DirFilesMoveToDir(string pathSource, string pathnewloocation)

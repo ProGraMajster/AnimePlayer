@@ -52,6 +52,8 @@ namespace AnimePlayer.Class
         public static readonly string UpdatedWeb = UpdatedRepoPath + "Web\\";
         public static readonly string UpdatedVideosItems = UpdatedRepoPath + "VideosItems\\";
         public static readonly string UpdatedItemGroups = UpdatedRepoPath + "ItemGroups\\";
+        public static readonly string UpdatedTitleComments = UpdatedRepoPath + "TitleComments\\";
+
         
         public static readonly string UpdatedDefined = UpdatedRepoPath + "Defined\\";
             public static readonly string UpdatedDefined_PlaceAndTime = UpdatedDefined + "PlaceAndTime\\";

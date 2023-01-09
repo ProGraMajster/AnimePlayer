@@ -7,6 +7,7 @@ using AnimePlayerLibrary;
 using AnimePlayer.Class;
 using System.IO;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace AnimePlayer.Updater
 {
@@ -37,6 +38,7 @@ namespace AnimePlayer.Updater
             }
             catch(Exception ex)
             {
+                Debug.WriteLine(ex.ToString());
                 Console.Error.WriteLine(ex.ToString());
             }
         }
@@ -57,7 +59,8 @@ namespace AnimePlayer.Updater
                 System.IO.Compression.ZipFile.ExtractToDirectory(AppFolders.Updater+"content.zip", AppFolders.UpdatedContentFolder);
             }
             catch(Exception ex)
-            {
+            {   
+                Debug.WriteLine(ex.ToString());
                 Console.Error.WriteLine(ex.ToString());
             }
         }
