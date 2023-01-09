@@ -227,6 +227,50 @@ namespace AnimePlayer.Profile
             return null;
         }
 
+        public static string GetPrfileAnimeListPath(ProfileIAnimeList profileIAnimeList)
+        {
+            try
+            {
+                var list = GetAllAnimeListAndFilePath();
+                foreach(var item in list)
+                {
+                    if(profileIAnimeList.Name == item.Key.Name)
+                    {
+                        return item.Value;
+                    }
+                }
+                return null;
+            }
+            catch(Exception ex)
+            {
+                Debug.WriteLine(ex.ToString());
+                Console.Error.WriteLine(ex.ToString());
+                return null;
+            }
+        }
+
+        public static ProfileIAnimeList GetProfileIAnimeListFromName(string name)
+        {
+            try
+            {
+                var list = GetAllAnimeList();
+                foreach(var item in list)
+                {
+                    if(item.Name == name)
+                    {
+                        return item;
+                    }
+                }
+                return null;
+            }
+            catch(Exception ex)
+            {
+                Debug.WriteLine(ex.ToString());
+                Console.Error.WriteLine(ex.ToString());
+                return null;
+            }
+        }
+
         private static ProfileIAnimeList GetWatchingAnimeList()
         {
             try

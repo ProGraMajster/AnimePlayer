@@ -676,6 +676,7 @@ namespace AnimePlayerLibrary.UI
             this.panel_comments.Padding = new System.Windows.Forms.Padding(0, 12, 0, 12);
             this.panel_comments.Size = new System.Drawing.Size(922, 521);
             this.panel_comments.TabIndex = 7;
+            this.panel_comments.Visible = false;
             // 
             // panel_com_dockWebview
             // 
@@ -726,6 +727,7 @@ namespace AnimePlayerLibrary.UI
             this.panelRelatedSeries.Padding = new System.Windows.Forms.Padding(0, 12, 0, 12);
             this.panelRelatedSeries.Size = new System.Drawing.Size(922, 398);
             this.panelRelatedSeries.TabIndex = 6;
+            this.panelRelatedSeries.Visible = false;
             // 
             // flowLayoutPanelRelatedSeries
             // 

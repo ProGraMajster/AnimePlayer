@@ -14,11 +14,16 @@ namespace AnimePlayerLibrary
     public partial class ControlTitleStatusList_Item_Episodes : UserControl
     {
         public bool CheckBoxState = false;
-        public EventHandler EpisodeChangeSettings;
+        public EventHandler<EventArgsIE> EpisodeChangeSettings;
         public EpisodeAnimeList episodeAnime;
         public ControlTitleStatusList_Item_Episodes()
         {
             InitializeComponent();
+        }
+
+        public class EventArgsIE : EventArgs
+        {
+            public EpisodeAnimeList EpisodeAnimeList;
         }
 
         private void checkBox_CheckedChanged(object sender, EventArgs e)
@@ -26,9 +31,12 @@ namespace AnimePlayerLibrary
            checkBox.Checked = CheckBoxState;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonEdit_Click(object sender, EventArgs e)
         {
-
+            if(EpisodeChangeSettings!= null)
+            {
+                EpisodeChangeSettings.Invoke(this, new EventArgsIE() { EpisodeAnimeList=episodeAnime});
+            }
         }
     }
 }

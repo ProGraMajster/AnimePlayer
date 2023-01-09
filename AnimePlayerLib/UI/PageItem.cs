@@ -14,10 +14,10 @@ using AnimePlayerLibrary.UI;
 using AnimePlayer.Profile;
 using ZetaIpc.Runtime.Client;
 using System.Net.Sockets;
-//using Newtonsoft.Json;
 using System.Text.Json;
 using System.Threading;
 using System.Collections.Generic;
+using Microsoft.Web.WebView2.WinForms;
 
 namespace AnimePlayerLibrary.UI
 {
@@ -200,7 +200,7 @@ namespace AnimePlayerLibrary.UI
             {
                Button btn = (Button)sender;
                
-                if(btn.Tag != null)
+                if(btn.Tag.GetType() == typeof(WebView2))
                 {
                     if(((Microsoft.Web.WebView2.WinForms.WebView2)btn.Tag).Visible)
                     {
@@ -219,6 +219,7 @@ namespace AnimePlayerLibrary.UI
                 }
                 else
                 {
+                    string code = (string)btn.Tag;
                     panel_comments.Size = new Size(panel_comments.Width, 521);
                     Microsoft.Web.WebView2.WinForms.WebView2 webView2 = new()
                     {
@@ -394,6 +395,28 @@ namespace AnimePlayerLibrary.UI
                         }
                     }
                 }
+
+                Thread threadTitleComments = new(() =>
+                {
+                    try
+                    {
+                        TitleCommentsData titleCommentsData =
+                        ContentManagerLibary.GetTitleComments(pageItemData.TitleInformation.Title);
+                        if(titleCommentsData == null)
+                        {
+                            return;
+                        }
+                        panel_comments.Show();
+                        button_Load_Comments.Tag = titleCommentsData;
+                    }
+                    catch(Exception ex)
+                    {
+                        Debug.WriteLine(ex.ToString());
+                        Console.Error.WriteLine(ex.ToString());
+                    }
+                });
+                threadTitleComments.Name = "threadTitleComments";
+                threadTitleComments.Start();
             }
             catch (Exception ex)
             {
@@ -455,7 +478,7 @@ namespace AnimePlayerLibrary.UI
         }
 
         private void buttonBack2_Click(object sender, EventArgs e)
-        {
+        {   
             this.Hide();
             this.Dispose();
         }
@@ -481,9 +504,23 @@ namespace AnimePlayerLibrary.UI
                     rc.CornerRadius = 15;
                 }*/
                 changeTitleState.Disposed += ChangeTitleState_Disposed;
+                changeTitleState.EventSaveChangeTitleState += changeTitleState_EventSaveChangeTitleState;
             }
             catch (Exception ex)
             {
+                Console.WriteLine(ex.ToString());
+            }
+        }
+
+        private void changeTitleState_EventSaveChangeTitleState(object sender, EventArgs e)
+        {
+            try
+            {
+                linkLabelChangeState.Text = "Zmień status (Aktualny: " + changeTitleState.CurrnetList.Name + ")";
+            }
+            catch(Exception ex)
+            {
+                Debug.WriteLine(ex.ToString());
                 Console.WriteLine(ex.ToString());
             }
         }

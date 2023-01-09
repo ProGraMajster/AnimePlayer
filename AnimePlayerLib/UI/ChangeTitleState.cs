@@ -18,7 +18,7 @@ namespace AnimePlayerLibrary
         PageItemData pageitemData=null;
         Dictionary<ProfileIAnimeList, string> profileIAnimeLists = null;
         //List<ProfileIAnimeList> profileIAnimeLists=null;
-        private ProfileIAnimeList CurrnetList = null;
+        public ProfileIAnimeList CurrnetList = null;
         private AnimePlayer.Profile.ItemToList currentItem= null;
 
         public EventHandler EventSaveChangeTitleState;
@@ -47,8 +47,8 @@ namespace AnimePlayerLibrary
                 }
                 /*MessageBox.Show("Ta funkcja jest nie dostępna\n(Jeszcze nie jest skończona)", "Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);*/
-                if(currentItem == null)
-                {
+               // if(currentItem == null)
+               // {
                     currentItem = new ItemToList();
                     currentItem.Name = pageitemData.TitleInformation.Title;
                     currentItem.Note = string.Empty;
@@ -92,13 +92,14 @@ namespace AnimePlayerLibrary
                         }
                         currentItem.Episodes.Add(episodeAnime);
                     }
-                }
+                //}
                 if(CurrnetList == null)
                 {
                     foreach(ProfileIAnimeList animeList in profileIAnimeLists.Keys)
                     {
                         if(animeList.Name == comboBox1.SelectedItem.ToString())
                         {
+                            CurrnetList = animeList;
                             animeList.itemToLists.Add(currentItem);
                             string path;
                             profileIAnimeLists.TryGetValue(animeList, out path);
@@ -111,6 +112,44 @@ namespace AnimePlayerLibrary
                                 EventSaveChangeTitleState.Invoke(this, EventArgs.Empty);
                             }
                         }
+                    }
+                }
+                else
+                {
+                    ProfileIAnimeList profileIAnimeListNew = CurrnetList;
+                    if (CurrnetList.Name != comboBox1.SelectedItem.ToString())
+                    {
+                        profileIAnimeListNew = ProfileManager.GetProfileIAnimeListFromName(comboBox1.SelectedItem.ToString());
+                        foreach(var item in CurrnetList.itemToLists.ToList())
+                        {
+                            if(item.Name == currentItem.Name)
+                            {
+                                CurrnetList.itemToLists.Remove(item);
+                            }
+                        }
+                        string path;
+                        profileIAnimeLists.TryGetValue(CurrnetList, out path);
+                        string txt = AnimePlayer.Core.SerializationAndDeserialization
+                            .SerializationJsonEx(CurrnetList, typeof(ProfileIAnimeList));
+                        File.WriteAllText(path, txt);
+                    }
+                    foreach (var item in profileIAnimeListNew.itemToLists.ToList())
+                    {
+                        if (item.Name == currentItem.Name)
+                        {
+                            CurrnetList.itemToLists.Remove(item);
+                        }
+                    }
+                    profileIAnimeListNew.itemToLists.Add(currentItem);
+                    string pathNew = ProfileManager.GetPrfileAnimeListPath(profileIAnimeListNew);
+                    //profileIAnimeLists.TryGetValue(profileIAnimeListNew, out pathNew);
+                    string txtNew = AnimePlayer.Core.SerializationAndDeserialization
+                        .SerializationJsonEx(profileIAnimeListNew, typeof(ProfileIAnimeList));
+                    File.WriteAllText(pathNew, txtNew);
+                    CurrnetList = profileIAnimeListNew;
+                    if (EventSaveChangeTitleState != null)
+                    {
+                        EventSaveChangeTitleState.Invoke(this, EventArgs.Empty);
                     }
                 }
             }

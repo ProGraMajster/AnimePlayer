@@ -202,7 +202,7 @@ namespace AnimePlayerLibrary
                 return null;
             }
             return null;
-        }
+        }   
         public static PreviewTitleClass GetPreviewTitleClassFromTitle(string title)
         {
             try
@@ -237,6 +237,62 @@ namespace AnimePlayerLibrary
             }
             return null;
         }
+
+        public static List<TitleCommentsData> GetAllTitleCommentsData()
+        {
+            try
+            {
+                List<TitleCommentsData> titleCommentsDatas = new();
+                DirectoryInfo directoryInfo = new(AppFolders.TitleComments);
+                foreach(var item in directoryInfo.GetFiles())
+                {
+                    if(item.Exists)
+                    {
+                        TitleCommentsData titleCommentsData =
+                            (TitleCommentsData)SerializationAndDeserialization
+                            .DeserializationJsonEx(item.FullName, typeof(TitleCommentsData));
+                        if(titleCommentsData!= null)
+                        {
+                            titleCommentsDatas.Add(titleCommentsData);
+                        }
+                    }
+                }
+                return titleCommentsDatas;
+            }
+            catch(Exception ex)
+            {
+                Debug.WriteLine(ex.ToString());
+                Console.Error.WriteLine(ex.ToString());
+                return null;
+            }
+        }
+
+        public static TitleCommentsData GetTitleComments(string title)
+        {
+            try
+            {
+                var list = GetAllTitleCommentsData();
+                if(list == null)
+                {
+                    return null;
+                }
+                foreach(var item in list)
+                {
+                    if(item.Title == title)
+                    {
+                        return item;
+                    }
+                }
+                return null;
+            }
+            catch(Exception ex)
+            {
+                Debug.WriteLine(ex.ToString());
+                Console.Error.WriteLine(ex.ToString());
+                return null;
+            }
+        }
+
         /*
         private static bool CheckingIfTheContentExists()
         {

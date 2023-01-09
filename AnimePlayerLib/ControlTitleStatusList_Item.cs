@@ -22,7 +22,17 @@ namespace AnimePlayerLibrary
     {
         public PreviewTitleClass previewTitleClass=null;
         public PageItemData pageItemData=null;
-        private ItemToList ItemToList;
+        public ItemToList ItemToList;
+        public EventHandler<EventArgsI> ItemEpisodeChangeSettings;
+        public class EventArgsI:EventArgs
+        {
+            public EpisodeAnimeList EpisodeAnimeList { get; set; }
+            public ItemToList ItemToList { get;set; }
+            public bool Remove {get; set; }
+            public bool Move { get; set; }
+            public string MoveTo { get; set; }
+            public bool ChangeSetting { get; set; }
+        }
         public ControlTitleStatusList_Item(AnimePlayer.Profile.ItemToList itemToList)
         {
             InitializeComponent();
@@ -135,6 +145,21 @@ namespace AnimePlayerLibrary
                         for (int i = 0; i < int.Parse(pageItemData.TitleInformation.NumberOfEpisodes); i++)
                         {
                             ControlTitleStatusList_Item_Episodes item_Episodes = new();
+                            item_Episodes.EpisodeChangeSettings += new EventHandler<ControlTitleStatusList_Item_Episodes.EventArgsIE>((s, e) =>
+                            {
+                                if(ItemEpisodeChangeSettings != null)
+                                {
+                                    ItemEpisodeChangeSettings.Invoke(this, new EventArgsI()
+                                    {
+                                        EpisodeAnimeList = e.EpisodeAnimeList,
+                                        ItemToList = this.ItemToList,
+                                        MoveTo = string.Empty,
+                                        Move = false,
+                                        Remove= false,
+                                        ChangeSetting = true
+                                    });
+                                }
+                            });
                             item_Episodes.labelEpisodeTitle.Text = "Odcinek: " + (i+1).ToString();
                             episodesItem.Add(item_Episodes);
                             Thread thread = new(() =>
@@ -182,6 +207,14 @@ namespace AnimePlayerLibrary
                 Debug.WriteLine(ex.ToString());
             }
         }
+
+        /*private void item_Episodes_EpisodeChangeSettings(object sender, EventArgs e)
+        {
+            if(ItemEpisodeChangeSettings != null)
+            {
+                ItemEpisodeChangeSettings.Invoke(sender, e);
+            }
+        }*/
 
         private void newFlowLayoutPanelEpisodes_ControlAdded(object sender, ControlEventArgs e)
         {

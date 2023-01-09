@@ -36,6 +36,8 @@ namespace AnimePlayer.Class
             "\\AnimePlayer\\Settings\\";
         public static readonly string ItemGroups = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) +
             "\\AnimePlayer\\ItemGroups\\";
+        public static readonly string TitleComments = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + 
+            "\\AnimePlayer\\TitleComments\\";
         //========================
         public static readonly string Profiles = AppFolder + "Profiles\\";
 

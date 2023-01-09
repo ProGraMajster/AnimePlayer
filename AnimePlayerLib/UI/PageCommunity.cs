@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
 using System.Threading;
+using System.Net;
+using AnimePlayer.Class;
 
 namespace AnimePlayerLibrary.UI
 {
@@ -51,18 +53,28 @@ namespace AnimePlayerLibrary.UI
                 panelView.Show();
                 buttonBack.Show();
                 labelName.Text = itemCommunity.Name;
+                pictureBoxIcon.Tag = itemCommunity;
                 if(itemCommunity.IconLinks.Length >0 && itemCommunity.IconLinks != null)
                 {
                     pictureBoxIcon.ImageLocation = itemCommunity.IconLinks[0];
                 }
                 if(itemCommunity.banners.Length >0 && itemCommunity.banners != null)
                 {
-                    PictureBox pictureBox = new()
+                    //TODO: \/
+                    //      \/
+                    /*PictureBox pictureBox = new()
                     {
                         ImageLocation = itemCommunity.banners[0]
-                    };
-                    panelViewBack.BackgroundImage = pictureBox.Image;
-                    pictureBox.Dispose();
+                    };*/
+                    var request = WebRequest.Create(itemCommunity.banners[0]);
+
+                    using (var response = request.GetResponse())
+                    using (var stream = response.GetResponseStream())
+                    {
+                        panelViewBack.BackgroundImage = Bitmap.FromStream(stream);
+                    }
+                    //pictureBox.Image;
+                    //pictureBox.Dispose();
                 }
                 foreach(var item in itemCommunity.URLs)
                 {
@@ -118,6 +130,33 @@ namespace AnimePlayerLibrary.UI
                 labelName.Text = "";
                 pictureBoxIcon.Image = null;
                 newFlowLayoutPanelLinks.Controls.Clear();
+            }
+        }
+
+        int UsedLinkIcon=0;
+        private void pictureBoxIcon_LoadCompleted(object sender, AsyncCompletedEventArgs e)
+        {
+            try
+            {
+                Control control = (Control)sender;
+                AnimePlayer.Class.ItemCommunity itemCommunity = (AnimePlayer.Class.ItemCommunity)control.Tag;
+                if (e.Error != null)
+                {
+                    UsedLinkIcon++;
+                    if(UsedLinkIcon > itemCommunity.IconLinks.Length-1)
+                    {
+                        return;
+                    }
+                    pictureBoxIcon.ImageLocation = itemCommunity.IconLinks[UsedLinkIcon];
+                    #if DEBUG
+                    Debug.WriteLine(e.Error.ToString() + "\n UsedLinkIcon:" + UsedLinkIcon);
+                    #endif
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.ToString());
+                Console.Error.WriteLine(ex.ToString());
             }
         }
     }

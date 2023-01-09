@@ -20,6 +20,7 @@ using AnimePlayer.ControlsWinForms;
 using AnimePlayer.Class;
 using AnimePlayer.Profile;
 using AnimePlayer.StatisticsData;
+using Microsoft.Web.WebView2.WinForms;
 
 namespace AnimePlayer
 {
@@ -318,7 +319,7 @@ namespace AnimePlayer
             profileSelectionPanel.Dock = DockStyle.Fill;
             profileSelectionPanel.Show();
             profileSelectionPanel.BringToFront();
-            //managerStatistics = new();
+            managerStatistics = new();
         }
         AnimePlayer.StatisticsData.ManagerStatisticsData managerStatistics;
         AnimePlayer.Profile.ProfileSelectionPanel profileSelectionPanel;
@@ -1237,6 +1238,25 @@ namespace AnimePlayer
                     control.Show();
                 }
                 catch(Exception ex)
+                {
+                    Console.Error.WriteLine(ex.ToString());
+                }
+            }
+            else if(input.StartsWith("webbrowser.test.titlecomments.fromfile;"))
+            {
+                try
+                {
+                    string file = input.Split(';')[1];
+                    Form form = new Form();
+                    WebView2 webView2 = new WebView2()
+                    {
+                        Source = new Uri(file),
+                        Dock = DockStyle.Fill
+                    };
+                    form.Controls.Add(webView2);
+                    form.Show();
+                }
+                catch (Exception ex)
                 {
                     Console.Error.WriteLine(ex.ToString());
                 }

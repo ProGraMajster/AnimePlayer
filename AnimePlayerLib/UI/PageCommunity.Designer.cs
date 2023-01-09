@@ -222,6 +222,7 @@
             // panelViewBack
             // 
             this.panelViewBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.panelViewBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panelViewBack.Controls.Add(this.labelName);
             this.panelViewBack.Controls.Add(this.pictureBoxIcon);
             this.panelViewBack.Dock = System.Windows.Forms.DockStyle.Top;
@@ -255,6 +256,7 @@
             this.pictureBoxIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxIcon.TabIndex = 0;
             this.pictureBoxIcon.TabStop = false;
+            this.pictureBoxIcon.LoadCompleted += new System.ComponentModel.AsyncCompletedEventHandler(this.pictureBoxIcon_LoadCompleted);
             // 
             // PageCommunity
             // 

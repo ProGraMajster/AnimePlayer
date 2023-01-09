@@ -4,12 +4,14 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using AnimePlayer.ControlsWinForms;
+using AnimePlayer.Core;
 using AnimePlayer.Profile;
 
 namespace AnimePlayerLibrary
@@ -72,6 +74,49 @@ namespace AnimePlayerLibrary
                         foreach (ItemToList itemList in ProfileIAnimeList.itemToLists)
                         {
                             ControlTitleStatusList_Item controlTitleStatusList_Item = new ControlTitleStatusList_Item(itemList);
+                            controlTitleStatusList_Item.ItemEpisodeChangeSettings += new EventHandler<ControlTitleStatusList_Item.EventArgsI>((s, e) =>
+                            {
+                                Thread threadSaveChange = new(() =>
+                                {
+                                    try
+                                    {
+                                        if (e != null)
+                                        {
+                                            if (e.ChangeSetting)
+                                            {
+                                                foreach(var ep in e.ItemToList.Episodes)
+                                                {
+                                                    if(ep.NumberEpisode == e.EpisodeAnimeList.NumberEpisode)
+                                                    {
+                                                        e.ItemToList.Episodes.Remove(ep);
+                                                        e.ItemToList.Episodes.Add(e.EpisodeAnimeList);
+                                                        break;
+                                                    }
+                                                }
+                                                foreach(var itl in ProfileIAnimeList.itemToLists)
+                                                {
+                                                    if(itl.Name == e.ItemToList.Name)
+                                                    {
+                                                        ProfileIAnimeList.itemToLists.Remove(itl);
+                                                        ProfileIAnimeList.itemToLists.Add(e.ItemToList);
+                                                    }
+                                                }
+                                                string path = ProfileManager.GetPrfileAnimeListPath(ProfileIAnimeList);
+                                                string json = AnimePlayer.Core.SerializationAndDeserialization
+                                                .SerializationJsonEx(ProfileIAnimeList, typeof(ProfileIAnimeList));
+                                                File.WriteAllText(path, json);
+                                                MessageBox.Show("Zapisano!");
+                                            }
+                                        }
+                                    }
+                                    catch(Exception ex)
+                                    {
+                                        Debug.WriteLine(ex.ToString());
+                                        Console.WriteLine(ex.ToString());
+                                    }
+                                });
+                                threadSaveChange.Start();
+                            });
                             controlTitleStatusList_Items.Add(controlTitleStatusList_Item);
                         }
 
@@ -165,21 +210,59 @@ namespace AnimePlayerLibrary
         {
             try
             {
-                foreach (ControlTitleStatusList_Item controlTitle in newFlowLayoutPanel1.Controls.OfType<ControlTitleStatusList_Item>())
+                List<ItemToList> items = new List<ItemToList>();
+                //UI
+                for(int i = 0; i <= newFlowLayoutPanel1.Controls.Count-1; i++)
                 {
+                    ControlTitleStatusList_Item controlTitle = 
+                        (ControlTitleStatusList_Item)newFlowLayoutPanel1.Controls[i];
+                    if (controlTitle != null)
+                    {
+                        if (controlTitle.State)
+                        {
+                            items.Add(controlTitle.ItemToList);
+                            controlTitle.Hide();
+                            controlTitle.Dispose();
+                        }
+                    }
+                }
+                /*foreach (Control c in newFlowLayoutPanel1.Controls)
+                {
+                    ControlTitleStatusList_Item controlTitle = (ControlTitleStatusList_Item)c;
+                    if(controlTitle == null)
+                    {
+                        break;
+                    }
                     if(controlTitle.State)
                     {
+                        items.Add(controlTitle.ItemToList);
                         controlTitle.Hide();
                         controlTitle.Dispose();
                     }
+                }*/
+
+                var animeList = ProfileIAnimeList.itemToLists;
+
+                foreach(var anime in animeList.ToList())
+                {
+                    foreach(var item in items)
+                    {
+                        if(anime.Name == item.Name)
+                        {
+                            ProfileIAnimeList.itemToLists.Remove(anime);
+                        }
+                    }
                 }
-                //TODO:
-                //Usuwanie z listy i zapis
+
+                string path = ProfileManager.GetPrfileAnimeListPath(ProfileIAnimeList);
+                string json = SerializationAndDeserialization.SerializationJsonEx(ProfileIAnimeList, typeof(ProfileIAnimeList));
+                File.WriteAllText(path, json);
             }
             catch(Exception ex)
             {
                 Debug.WriteLine(ex.ToString());
                 Console.Error.WriteLine(ex.ToString());
+                MessageBox.Show("Wystąpił błąd!\n"+ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

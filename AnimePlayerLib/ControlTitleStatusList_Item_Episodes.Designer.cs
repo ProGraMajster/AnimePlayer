@@ -30,7 +30,7 @@
         {
             this.checkBox = new System.Windows.Forms.CheckBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonEdit = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.labelEpisodeTitle = new System.Windows.Forms.Label();
             this.labelDateTime = new System.Windows.Forms.Label();
@@ -57,17 +57,18 @@
             this.dateTimePicker1.TabIndex = 1;
             this.dateTimePicker1.Visible = false;
             // 
-            // button1
+            // buttonEdit
             // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(10, 26);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 25);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Edytuj";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.buttonEdit.Dock = System.Windows.Forms.DockStyle.Left;
+            this.buttonEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonEdit.Location = new System.Drawing.Point(10, 26);
+            this.buttonEdit.Name = "buttonEdit";
+            this.buttonEdit.Size = new System.Drawing.Size(75, 25);
+            this.buttonEdit.TabIndex = 2;
+            this.buttonEdit.Text = "Edytuj";
+            this.buttonEdit.UseVisualStyleBackColor = true;
+            this.buttonEdit.Visible = false;
+            this.buttonEdit.Click += new System.EventHandler(this.buttonEdit_Click);
             // 
             // panel1
             // 
@@ -106,7 +107,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
             this.Controls.Add(this.labelDateTime);
             this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonEdit);
             this.Controls.Add(this.panel1);
             this.ForeColor = System.Drawing.Color.White;
             this.Name = "ControlTitleStatusList_Item_Episodes";
@@ -120,7 +121,7 @@
 
         #endregion
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonEdit;
         private System.Windows.Forms.Panel panel1;
         public System.Windows.Forms.CheckBox checkBox;
         public System.Windows.Forms.Label labelEpisodeTitle;
