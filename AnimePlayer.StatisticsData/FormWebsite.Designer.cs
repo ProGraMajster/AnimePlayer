@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.webView21 = new Microsoft.Web.WebView2.WinForms.WebView2();
+            this.timerParentProcess = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.webView21)).BeginInit();
             this.SuspendLayout();
             // 
@@ -44,6 +46,11 @@
             this.webView21.Source = new System.Uri("https://sites.google.com/view/animeplayerstatisticdata", System.UriKind.Absolute);
             this.webView21.TabIndex = 0;
             this.webView21.ZoomFactor = 1D;
+            // 
+            // timerParentProcess
+            // 
+            this.timerParentProcess.Interval = 1000;
+            this.timerParentProcess.Tick += new System.EventHandler(this.timerParentProcess_Tick);
             // 
             // FormWebsite
             // 
@@ -63,5 +70,6 @@
         #endregion
 
         private Microsoft.Web.WebView2.WinForms.WebView2 webView21;
+        private System.Windows.Forms.Timer timerParentProcess;
     }
 }

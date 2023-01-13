@@ -232,7 +232,7 @@ namespace AnimePlayerLibrary.UI
                     btn.Tag = webView2;
                     if (webView2 != null && webView2.CoreWebView2 != null)
                     {
-                        //webView2.CoreWebView2.Navigate("file:///"+ AnimePlayer.Class.AppFolders.Web + values.name + "_script_comments.html");
+                        webView2.CoreWebView2.NavigateToString(code);
                         btn.Text = "Ukryj";
                     }
                 }
@@ -409,8 +409,9 @@ namespace AnimePlayerLibrary.UI
                         this.Invoke(() =>
                         {
                             panel_comments.Show();
+                            button_Load_Comments.Show();
+                            button_Load_Comments.Tag = titleCommentsData.Code;
                         });
-                        button_Load_Comments.Tag = titleCommentsData;
                     }
                     catch(Exception ex)
                     {

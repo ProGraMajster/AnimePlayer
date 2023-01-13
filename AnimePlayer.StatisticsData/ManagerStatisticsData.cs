@@ -16,7 +16,7 @@ namespace AnimePlayer.StatisticsData
             {
                 childProcess = new Process();
                 childProcess.StartInfo.FileName = Application.ExecutablePath;
-                childProcess.StartInfo.Arguments = "-OtherArgs -AnimePlayerStatisticsData";
+                childProcess.StartInfo.Arguments = "-OtherArgs -AnimePlayerStatisticsData -parent_process;"+Process.GetCurrentProcess().Id;
                 childProcess.Start();
             }
             catch(Exception ex)
