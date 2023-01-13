@@ -406,7 +406,10 @@ namespace AnimePlayerLibrary.UI
                         {
                             return;
                         }
-                        panel_comments.Show();
+                        this.Invoke(() =>
+                        {
+                            panel_comments.Show();
+                        });
                         button_Load_Comments.Tag = titleCommentsData;
                     }
                     catch(Exception ex)

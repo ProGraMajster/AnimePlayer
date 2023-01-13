@@ -181,6 +181,10 @@ namespace AnimePlayer
                 Directory.Delete(pathnewloocation, true);
                 Directory.CreateDirectory(pathnewloocation);
             }
+            else
+            {
+                Directory.CreateDirectory(pathnewloocation);
+            }
             DirectoryInfo directoryInfo = new(pathSource);
             DirectoryInfo directoryInfo2 = new(pathnewloocation);
             if(!directoryInfo.Exists)
