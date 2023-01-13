@@ -159,6 +159,7 @@ namespace AnimePlayer
             this.textBoxCommandOutput = new System.Windows.Forms.TextBox();
             this.textBoxCommandInput = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
+            this.timerFindWaitnig = new System.Windows.Forms.Timer(this.components);
             this.panelStartPage.SuspendLayout();
             this.panelGroup.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
@@ -2048,5 +2049,6 @@ namespace AnimePlayer
         private ComboBox comboBoxViewtype;
         private Label label24;
         private PictureBox pictureBox1;
+        private Timer timerFindWaitnig;
     }
 }
