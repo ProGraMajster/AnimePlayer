@@ -59,7 +59,7 @@ namespace AnimePlayerLibrary.UI
                 if(pictureBox1.Image == pictureBox1.ErrorImage)
                 {
                     numerLink++;
-                    if(numerLink>=links.Length)
+                    if(numerLink>links.Length)
                     {
                         pictureBox1.Image = image;
                     }

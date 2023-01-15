@@ -54,7 +54,20 @@ namespace AnimePlayerLibrary.UI
                 buttonBack.Show();
                 labelName.Text = itemCommunity.Name;
                 pictureBoxIcon.Tag = itemCommunity;
-                if(itemCommunity.IconLinks.Length >0 && itemCommunity.IconLinks != null)
+
+                foreach (var item in itemCommunity.URLs)
+                {
+                    LinkLabel linkLabel = new()
+                    {
+                        Text = item.Key.ToString(),
+                        Tag = item.Value.ToString(),
+                        LinkColor = Color.Aqua
+                    };
+                    linkLabel.LinkClicked += LinkLabel_LinkClicked;
+                    newFlowLayoutPanelLinks.Controls.Add(linkLabel);
+                }
+
+                if (itemCommunity.IconLinks.Length >0 && itemCommunity.IconLinks != null)
                 {
                     pictureBoxIcon.ImageLocation = itemCommunity.IconLinks[0];
                 }
@@ -75,17 +88,6 @@ namespace AnimePlayerLibrary.UI
                     }
                     //pictureBox.Image;
                     //pictureBox.Dispose();
-                }
-                foreach(var item in itemCommunity.URLs)
-                {
-                    LinkLabel linkLabel = new()
-                    {
-                        Text = item.Key.ToString(),
-                        Tag = item.Value.ToString(),
-                        LinkColor = Color.Aqua
-                    };
-                    linkLabel.LinkClicked +=LinkLabel_LinkClicked;
-                    newFlowLayoutPanelLinks.Controls.Add(linkLabel);
                 }
             } 
             catch(Exception ex)

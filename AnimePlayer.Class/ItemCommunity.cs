@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic.ApplicationServices;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,5 +14,6 @@ namespace AnimePlayer.Class
         public string[] IconLinks { get; set; }
         public string[] banners { get; set; }
         public Dictionary<string, string> URLs { get; set; }
+        public List<CommunityUser> Users { get; set; }
     }
 }

@@ -40,12 +40,14 @@
             this.panelView = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.newFlowLayoutPanelLinks = new AnimePlayer.ControlsWinForms.NewFlowLayoutPanel();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panelViewBack = new System.Windows.Forms.Panel();
             this.labelName = new System.Windows.Forms.Label();
             this.pictureBoxIcon = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panelTop.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelAll.SuspendLayout();
@@ -138,17 +140,17 @@
             this.newFlowLayoutPanelAll.Dock = System.Windows.Forms.DockStyle.Fill;
             this.newFlowLayoutPanelAll.Location = new System.Drawing.Point(0, 10);
             this.newFlowLayoutPanelAll.Name = "newFlowLayoutPanelAll";
-            this.newFlowLayoutPanelAll.Size = new System.Drawing.Size(795, 580);
+            this.newFlowLayoutPanelAll.Size = new System.Drawing.Size(795, 555);
             this.newFlowLayoutPanelAll.TabIndex = 1;
             // 
             // panelAll
             // 
             this.panelAll.Controls.Add(this.newFlowLayoutPanelAll);
             this.panelAll.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelAll.Location = new System.Drawing.Point(20, 70);
+            this.panelAll.Location = new System.Drawing.Point(20, 95);
             this.panelAll.Name = "panelAll";
             this.panelAll.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.panelAll.Size = new System.Drawing.Size(795, 590);
+            this.panelAll.Size = new System.Drawing.Size(795, 565);
             this.panelAll.TabIndex = 2;
             // 
             // panelView
@@ -156,10 +158,10 @@
             this.panelView.Controls.Add(this.panel5);
             this.panelView.Controls.Add(this.panelViewBack);
             this.panelView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelView.Location = new System.Drawing.Point(20, 70);
+            this.panelView.Location = new System.Drawing.Point(20, 95);
             this.panelView.Name = "panelView";
             this.panelView.Padding = new System.Windows.Forms.Padding(10, 11, 10, 11);
-            this.panelView.Size = new System.Drawing.Size(795, 590);
+            this.panelView.Size = new System.Drawing.Size(795, 565);
             this.panelView.TabIndex = 0;
             this.panelView.VisibleChanged += new System.EventHandler(this.panelView_VisibleChanged);
             // 
@@ -176,6 +178,7 @@
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.panel6.Controls.Add(this.richTextBox1);
             this.panel6.Controls.Add(this.newFlowLayoutPanelLinks);
             this.panel6.Controls.Add(this.label3);
             this.panel6.Controls.Add(this.label2);
@@ -185,6 +188,19 @@
             this.panel6.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.panel6.Size = new System.Drawing.Size(765, 362);
             this.panel6.TabIndex = 0;
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.richTextBox1.ForeColor = System.Drawing.Color.White;
+            this.richTextBox1.Location = new System.Drawing.Point(10, 141);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ReadOnly = true;
+            this.richTextBox1.Size = new System.Drawing.Size(755, 207);
+            this.richTextBox1.TabIndex = 3;
+            this.richTextBox1.Text = "";
             // 
             // newFlowLayoutPanelLinks
             // 
@@ -258,6 +274,16 @@
             this.pictureBoxIcon.TabStop = false;
             this.pictureBoxIcon.LoadCompleted += new System.ComponentModel.AsyncCompletedEventHandler(this.pictureBoxIcon_LoadCompleted);
             // 
+            // label1
+            // 
+            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label1.Location = new System.Drawing.Point(20, 70);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(795, 25);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "^_____^";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // PageCommunity
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -265,6 +291,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
             this.Controls.Add(this.panelView);
             this.Controls.Add(this.panelAll);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.panelTop);
             this.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ForeColor = System.Drawing.Color.White;
@@ -306,5 +333,7 @@
         private AnimePlayer.ControlsWinForms.NewFlowLayoutPanel newFlowLayoutPanelLinks;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button buttonBack;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.Label label1;
     }
 }
