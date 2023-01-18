@@ -28,6 +28,8 @@ namespace AnimePlayerLibrary
                 this.Controls.Add(layoutPanel);
                 layoutPanel.BackColor = Color.FromArgb(20, 20, 20);
                 layoutPanel.Dock = DockStyle.Fill;
+                layoutPanel.WrapContents = false;
+                layoutPanel.AutoScroll= true;
                 layoutPanel.Show();
                 this.Controls.SetChildIndex(layoutPanel, 0);
                 labelTitleGroup.Text = groupClass.Name;

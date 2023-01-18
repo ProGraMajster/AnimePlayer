@@ -23,12 +23,12 @@ namespace AnimePlayer
             {
                 Updater.ContentUpdate.DownloadContent();
                 ContentMove();
-                List<PreviewTitleClass> previewTitleClasses = GetAllPreviewTitleClassFromFolder();
-                foreach (PreviewTitleClass item in previewTitleClasses)
+               // List<PreviewTitleClass> previewTitleClasses = GetAllPreviewTitleClassFromFolder();
+                /*foreach (PreviewTitleClass item in previewTitleClasses)
                 {
                     Panel panel = CreatePreviewPanelFromData(item);
-                    _formMainPlayer.flowLayoutPanelPolecane.Controls.Add(panel);
-                }
+                    //_formMainPlayer.flowLayoutPanelPolecane.Controls.Add(panel);
+                }*/
                 List<GroupClass> groups = GetGroups();
                 foreach (GroupClass group in groups)
                 {
@@ -41,6 +41,10 @@ namespace AnimePlayer
                     };
                     thread.Start();
                 }
+
+                GroupClass groupClass = new GroupClass();
+                groupClass.Name = "Wysztkie tytuły";
+                CreateGroup(_formMainPlayer, groupClass);
             }
             catch (Exception ex)
             {
@@ -91,6 +95,10 @@ namespace AnimePlayer
                 {
                     return false;
                 }
+                if(string.IsNullOrEmpty(sortingtype))
+                {
+                    return false;
+                }
                 if(sortingtype.StartsWith("DateOfIssue"))
                 {
                     if(sortingtype.Contains(";"))
@@ -136,11 +144,17 @@ namespace AnimePlayer
                 List<PreviewTitleClass> previewTitleClassesAll = GetAllPreviewTitleClassFromFolder();
                 foreach(PreviewTitleClass item in previewTitleClassesAll)
                 {
-                    
                     PageItemData pageItemData = AnimePlayerLibrary.ContentManagerLibary.GetPageItemDataWithContentFolderFromTitle(item.Title);
-                    if (CheckingItemSortFromString(groupClass.GetFromSortingContent, pageItemData))
+                    if(string.IsNullOrEmpty(groupClass.GetFromSortingContent))
                     {
                         previewTitlesInGroup.Add(item);
+                    }
+                    else
+                    {
+                        if (CheckingItemSortFromString(groupClass.GetFromSortingContent, pageItemData))
+                        {
+                            previewTitlesInGroup.Add(item);
+                        }
                     }
                 }
                 AnimePlayerLibrary.ItemsGroup itemsGroup = new AnimePlayerLibrary.ItemsGroup(groupClass);
