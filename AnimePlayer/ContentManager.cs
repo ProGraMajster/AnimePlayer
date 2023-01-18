@@ -23,12 +23,11 @@ namespace AnimePlayer
             {
                 Updater.ContentUpdate.DownloadContent();
                 ContentMove();
-               // List<PreviewTitleClass> previewTitleClasses = GetAllPreviewTitleClassFromFolder();
-                /*foreach (PreviewTitleClass item in previewTitleClasses)
+                foreach (PreviewTitleClass item in GetAllPreviewTitleClassFromFolder())
                 {
                     Panel panel = CreatePreviewPanelFromData(item);
-                    //_formMainPlayer.flowLayoutPanelPolecane.Controls.Add(panel);
-                }*/
+                    _formMainPlayer.flowLayoutPanelAll.Controls.Add(panel);
+                }
                 List<GroupClass> groups = GetGroups();
                 foreach (GroupClass group in groups)
                 {

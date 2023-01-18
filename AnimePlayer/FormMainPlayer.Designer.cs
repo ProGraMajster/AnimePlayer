@@ -2040,7 +2040,6 @@ namespace AnimePlayer
         private Button buttonDefined;
         private Button buttonHomePage;
         public NewFlowLayoutPanel flowLayoutPanelFinditem;
-        private NewFlowLayoutPanel flowLayoutPanelAll;
         private Panel panel22;
         private PictureBox pictureBoxProfileIcon;
         private Label label23;
@@ -2051,5 +2050,6 @@ namespace AnimePlayer
         private Label label24;
         private PictureBox pictureBox1;
         private Timer timerFindWaitnig;
+        public NewFlowLayoutPanel flowLayoutPanelAll;
     }
 }
