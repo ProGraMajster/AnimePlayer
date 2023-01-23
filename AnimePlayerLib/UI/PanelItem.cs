@@ -151,7 +151,6 @@ namespace AnimePlayerLibrary.UI
             {
                 UpdateLoadingTextdetails("Find Page > "+ _previewTitleClass.Title);
                 ShowPanelLoading();
-
                 PageItem pageItem = new(this)
                 {
                     Name = "pageItem",
