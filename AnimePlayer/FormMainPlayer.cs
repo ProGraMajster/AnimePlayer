@@ -1000,8 +1000,7 @@ namespace AnimePlayer
 
         private void BackgroundWorkerGetSTNews_DoWork(object sender, DoWorkEventArgs e)
         {
-            
-            if(onOnline)
+            if (onOnline)
             {
                 bool state = DownloadFileNews.DownloadWithGdrive();
                 if(state == false)
