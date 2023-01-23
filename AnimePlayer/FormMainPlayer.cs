@@ -109,6 +109,7 @@ namespace AnimePlayer
             {
                 Console.Error.WriteLine(exPer.ToString());
             }
+            comboBoxViewtype.SelectedIndex = 0;
         }
 
         private void IpcServerData_ReceivedRequest(object sender, ZetaIpc.Runtime.Server.ReceivedRequestEventArgs e)
@@ -1333,19 +1334,90 @@ namespace AnimePlayer
         }
         private void comboBoxViewtype_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(comboBoxViewtype.SelectedIndex == 0)
+            panelLoading.Show();
+            panelLoading.BringToFront();
+            Application.DoEvents();
+            labelLoadingDetails.Text = "Zmiana widoku...";
+            List<PanelItem> panelItems = new List<PanelItem>();
+            foreach(Panel panel in flowLayoutPanelAll.Controls.OfType<Panel>())
             {
-
+                if(panel.Tag.GetType() == typeof(AnimePlayerLibrary.UI.PanelItem))
+                {
+                    panelItems.Add((PanelItem)panel.Tag);
+                }
             }
+            List<PanelItemViewTypeList> panelItemViewTypeLists = flowLayoutPanelAll.Controls.OfType<PanelItemViewTypeList>().ToList();
+            if (comboBoxViewtype.SelectedIndex == 0)
+            {
+                if (panelItems == null)
+                {
+                    comboBoxViewtype.SelectedIndex = 0; 
+                    panelLoading.Hide();
+                    return;
+                }
+                foreach (PanelItem item in panelItems)
+                {
+                    item.panelItem.Show();
+                }
+                if (panelItemViewTypeLists == null || panelItemViewTypeLists.Count == 0)
+                {
+                    panelLoading.Hide();
+                    return;
+                }
+                foreach (PanelItemViewTypeList panelItemViewTypeList in panelItemViewTypeLists)
+                {
+                    panelItemViewTypeList.Hide();
+                }
+            }
+            else
+            {
+                if(panelItems == null)
+                {
+                    comboBoxViewtype.SelectedIndex = 0;
+                    panelLoading.Hide();
+                    return;
+                }
+                if(panelItems.Count== 0)
+                {
+                    comboBoxViewtype.SelectedIndex = 0;
+                    panelLoading.Hide();
+                    return;
+                }
+                foreach (PanelItem item in panelItems)
+                {       
+                    item.panelItem.Hide();
+                    Application.DoEvents();
+                }
+                if (panelItemViewTypeLists == null || panelItemViewTypeLists.Count == 0)
+                {
+                    foreach(PanelItem item in panelItems)
+                    {
+                        PanelItemViewTypeList panelItemViewTypeList = new(item._previewTitleClass);
+                        flowLayoutPanelAll.Controls.Add(panelItemViewTypeList);
+                        panelItemViewTypeList.Show();
+                        panelItemViewTypeLists.Add(panelItemViewTypeList);
+                    }
+                    panelLoading.Hide();
+                }
+                foreach(PanelItemViewTypeList panelItemViewTypeList in panelItemViewTypeLists)
+                {
+                    panelItemViewTypeList.Show();
+                }
+            }
+            panelLoading.Hide();
+            flowLayoutPanelAll.Width += 1;
+            flowLayoutPanelAll.Width -= 1;
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void flowLayoutPanelAll_SizeChanged(object sender, EventArgs e)
         {
-            /*PageWinterEvent2022 pageWinterEvent2022 = new();
-            this.Controls.Add(pageWinterEvent2022);
-            pageWinterEvent2022.Dock = DockStyle.Fill;
-            pageWinterEvent2022.Show();
-            pageWinterEvent2022.BringToFront();*/
+            if(comboBoxViewtype.SelectedIndex == 1)
+            {
+                foreach (PanelItemViewTypeList panelItemViewTypeList in flowLayoutPanelAll.Controls.OfType<PanelItemViewTypeList>())
+                {
+                    panelItemViewTypeList.Size = new Size(this.Width - 50, panelItemViewTypeList.Height);
+                }
+            }
         }
     }
 }

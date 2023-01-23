@@ -583,7 +583,6 @@ namespace AnimePlayer
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             this.toolTip.SetToolTip(this.pictureBox1, "Źródło: https://cdn-icons-png.flaticon.com/512/2077/2077008.png");
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // panelLoading
             // 
@@ -958,6 +957,7 @@ namespace AnimePlayer
             this.flowLayoutPanelAll.Padding = new System.Windows.Forms.Padding(12, 2, 12, 2);
             this.flowLayoutPanelAll.Size = new System.Drawing.Size(1090, 497);
             this.flowLayoutPanelAll.TabIndex = 0;
+            this.flowLayoutPanelAll.SizeChanged += new System.EventHandler(this.flowLayoutPanelAll_SizeChanged);
             // 
             // panel23
             // 
@@ -969,7 +969,6 @@ namespace AnimePlayer
             this.panel23.Padding = new System.Windows.Forms.Padding(0, 0, 25, 0);
             this.panel23.Size = new System.Drawing.Size(1090, 27);
             this.panel23.TabIndex = 0;
-            this.panel23.Visible = false;
             // 
             // panel24
             // 
