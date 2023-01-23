@@ -62,7 +62,6 @@ namespace AnimePlayer
             this.labelSatusWorkingApp = new System.Windows.Forms.Label();
             this.buttonMenuOpen = new System.Windows.Forms.Button();
             this.label = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelLoading = new System.Windows.Forms.Panel();
             this.labelLoadingA = new System.Windows.Forms.Label();
             this.labelLoadingDetails = new System.Windows.Forms.Label();
@@ -175,7 +174,6 @@ namespace AnimePlayer
             this.panel9.SuspendLayout();
             this.panel22.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProfileIcon)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelLoading.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoading)).BeginInit();
             this.panelMenu.SuspendLayout();
@@ -419,7 +417,6 @@ namespace AnimePlayer
             this.roundedPanel1.Controls.Add(this.labelSatusWorkingApp);
             this.roundedPanel1.Controls.Add(this.buttonMenuOpen);
             this.roundedPanel1.Controls.Add(this.label);
-            this.roundedPanel1.Controls.Add(this.pictureBox1);
             this.roundedPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.roundedPanel1.ExBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.roundedPanel1.Location = new System.Drawing.Point(12, 12);
@@ -437,11 +434,11 @@ namespace AnimePlayer
             this.panel7.Controls.Add(this.buttonStartPageFinditem);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.panel7.Location = new System.Drawing.Point(288, 7);
+            this.panel7.Location = new System.Drawing.Point(221, 7);
             this.panel7.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panel7.Name = "panel7";
             this.panel7.Padding = new System.Windows.Forms.Padding(6, 23, 6, 17);
-            this.panel7.Size = new System.Drawing.Size(498, 67);
+            this.panel7.Size = new System.Drawing.Size(565, 67);
             this.panel7.TabIndex = 4;
             // 
             // panel9
@@ -452,7 +449,7 @@ namespace AnimePlayer
             this.panel9.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panel9.Name = "panel9";
             this.panel9.Padding = new System.Windows.Forms.Padding(0, 6, 0, 0);
-            this.panel9.Size = new System.Drawing.Size(398, 27);
+            this.panel9.Size = new System.Drawing.Size(465, 27);
             this.panel9.TabIndex = 5;
             // 
             // textBoxStartPagefinditem
@@ -469,7 +466,7 @@ namespace AnimePlayer
             this.textBoxStartPagefinditem.Location = new System.Drawing.Point(0, 6);
             this.textBoxStartPagefinditem.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.textBoxStartPagefinditem.Name = "textBoxStartPagefinditem";
-            this.textBoxStartPagefinditem.Size = new System.Drawing.Size(398, 16);
+            this.textBoxStartPagefinditem.Size = new System.Drawing.Size(465, 16);
             this.textBoxStartPagefinditem.TabIndex = 3;
             this.textBoxStartPagefinditem.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBoxStartPagefinditem.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextBoxSPfinditem_KeyDown);
@@ -484,7 +481,7 @@ namespace AnimePlayer
             this.buttonStartPageFinditem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonStartPageFinditem.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonStartPageFinditem.ForeColor = System.Drawing.Color.White;
-            this.buttonStartPageFinditem.Location = new System.Drawing.Point(404, 23);
+            this.buttonStartPageFinditem.Location = new System.Drawing.Point(471, 23);
             this.buttonStartPageFinditem.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.buttonStartPageFinditem.Name = "buttonStartPageFinditem";
             this.buttonStartPageFinditem.Size = new System.Drawing.Size(88, 27);
@@ -564,25 +561,13 @@ namespace AnimePlayer
             this.label.Dock = System.Windows.Forms.DockStyle.Left;
             this.label.Font = new System.Drawing.Font("Comic Sans MS", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label.ForeColor = System.Drawing.Color.White;
-            this.label.Location = new System.Drawing.Point(90, 7);
+            this.label.Location = new System.Drawing.Point(23, 7);
             this.label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label.Name = "label";
             this.label.Size = new System.Drawing.Size(198, 67);
             this.label.TabIndex = 0;
             this.label.Text = "Anime Player";
             this.label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBox1.ImageLocation = "https://cdn-icons-png.flaticon.com/512/2077/2077008.png";
-            this.pictureBox1.Location = new System.Drawing.Point(23, 7);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(67, 67);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
-            this.toolTip.SetToolTip(this.pictureBox1, "Źródło: https://cdn-icons-png.flaticon.com/512/2077/2077008.png");
             // 
             // panelLoading
             // 
@@ -1884,7 +1869,6 @@ namespace AnimePlayer
             this.panel9.PerformLayout();
             this.panel22.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProfileIcon)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelLoading.ResumeLayout(false);
             this.panelLoading.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoading)).EndInit();
@@ -2047,7 +2031,6 @@ namespace AnimePlayer
         private Panel panel24;
         private ComboBox comboBoxViewtype;
         private Label label24;
-        private PictureBox pictureBox1;
         private Timer timerFindWaitnig;
         public NewFlowLayoutPanel flowLayoutPanelAll;
     }
