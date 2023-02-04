@@ -31,6 +31,7 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.button = new System.Windows.Forms.Button();
             this.panelSTLnavigation = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.panelSTLnavigation.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,6 +66,7 @@
             // 
             // panelSTLnavigation
             // 
+            this.panelSTLnavigation.Controls.Add(this.label1);
             this.panelSTLnavigation.Controls.Add(this.button);
             this.panelSTLnavigation.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSTLnavigation.Location = new System.Drawing.Point(0, 0);
@@ -72,6 +74,17 @@
             this.panelSTLnavigation.Name = "panelSTLnavigation";
             this.panelSTLnavigation.Size = new System.Drawing.Size(666, 32);
             this.panelSTLnavigation.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(100, 32);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Listy anime";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // PageTitileStatusList
             // 
@@ -95,5 +108,6 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.Button button;
         private System.Windows.Forms.Panel panelSTLnavigation;
+        private System.Windows.Forms.Label label1;
     }
 }

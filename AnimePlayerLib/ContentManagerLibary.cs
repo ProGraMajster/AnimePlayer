@@ -167,7 +167,19 @@ namespace AnimePlayerLibrary
                 DirectoryInfo directoryInfo = new(AppFolders.VideosItems);
                 foreach(var item in directoryInfo.GetFiles())
                 {
-                    Episode episode = (Episode)SerializationAndDeserialization.Deserialization(item.FullName);
+                    Episode episode;
+                    if (item.FullName.EndsWith(".dat"))
+                    {
+                        episode = (Episode)SerializationAndDeserialization.Deserialization(item.FullName);
+                    }
+                    else if(item.FullName.EndsWith(".json"))
+                    {
+                        episode = (Episode)SerializationAndDeserialization.DeserializationJsonEx(item.FullName, typeof(Episode));
+                    }
+                    else
+                    {
+                        break;
+                    }
                     if(episode.NumberEpisode == number.ToString() &&
                         Replacer.Names(episode.Title) == Replacer.Names(title)&&
                         episode != null)

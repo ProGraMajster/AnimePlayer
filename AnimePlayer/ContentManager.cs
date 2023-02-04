@@ -50,7 +50,7 @@ namespace AnimePlayer
                 }
 
                 GroupClass groupClass = new GroupClass();
-                groupClass.Name = "Wysztkie tytuły";
+                groupClass.Name = "Wszystkie tytuły";
                 CreateGroup(_formMainPlayer, groupClass);
             }
             catch (Exception ex)
