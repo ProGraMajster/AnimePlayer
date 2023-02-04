@@ -5,7 +5,7 @@ Tytuły, informacje i odcinki są na bieżąco dodawane.
 
 
 Strona główna:
-![image](https://user-images.githubusercontent.com/51681610/214106798-88e3ce40-1131-4aaf-aef2-398a04e8d510.png)
+![image](https://user-images.githubusercontent.com/51681610/216769755-5143b447-48c1-4a2c-89ec-bcbf19ecffa4.png)
 Strona tytułu:
 ![image](https://user-images.githubusercontent.com/51681610/214106970-1b1f74d1-d80c-4bd0-9700-660d62d8ac47.png)
 ![image](https://user-images.githubusercontent.com/51681610/214107001-fa73caa9-145d-42c9-9613-c86ab84fc6da.png)
