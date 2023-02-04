@@ -46,7 +46,6 @@ namespace AnimePlayer
                 {
                     FormMainPlayer.labelLoadingDetails.Text = "Ładowanie motywu...";
                     Application.DoEvents();
-                    FormMainPlayer.usedThemeColors = true;
                     File.WriteAllText("C:\\ContentLibrarys\\OtherFiles\\WMP_OverlayApp\\theme.txt", openFileDialogThemeFile.FileName);
                 }
                 catch (Exception ex)

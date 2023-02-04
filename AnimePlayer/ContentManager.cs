@@ -23,11 +23,19 @@ namespace AnimePlayer
             {
                 Updater.ContentUpdate.DownloadContent();
                 ContentMove();
-                foreach (PreviewTitleClass item in GetAllPreviewTitleClassFromFolder())
+                Thread threadflowLayoutPanelAll = new(() =>
                 {
-                    Panel panel = CreatePreviewPanelFromData(item);
-                    _formMainPlayer.flowLayoutPanelAll.Controls.Add(panel);
-                }
+                    foreach (PreviewTitleClass item in GetAllPreviewTitleClassFromFolder())
+                    {
+                        Panel panel = CreatePreviewPanelFromData(item);
+                        _formMainPlayer.Invoke(() =>
+                        {
+                            _formMainPlayer.flowLayoutPanelAll.Controls.Add(panel);
+                        });
+                    }
+                });
+                threadflowLayoutPanelAll.Name = "threadflowLayoutPanelAll";
+                threadflowLayoutPanelAll.Start();
                 List<GroupClass> groups = GetGroups();
                 foreach (GroupClass group in groups)
                 {
@@ -60,24 +68,23 @@ namespace AnimePlayer
         {
             try
             {
-                List<PreviewTitleClass> previewTitleClasses = GetAllPreviewTitleClassFromFolder();
-                foreach (PreviewTitleClass item in previewTitleClasses)
+                Thread threadLoadContentToForm = new(() =>
                 {
-                    Panel panel = CreatePreviewPanelFromData(item);
-                    _formMainPlayer.flowLayoutPanelPolecane.Controls.Add(panel);
-                }
-                List<GroupClass> groups = GetGroups();
-                foreach (GroupClass group in groups)
-                {
-                    Thread thread = new(() =>
+                    List<GroupClass> groups = GetGroups();
+                    foreach (GroupClass group in groups)
                     {
-                        CreateGroup(_formMainPlayer, group);
-                    })
-                    {
-                        Name = "Thread_CreateGroup"
-                    };
-                    thread.Start();
-                }
+                        Thread thread = new(() =>
+                        {
+                            CreateGroup(_formMainPlayer, group);
+                        })
+                        {
+                            Name = "Thread_CreateGroup"
+                        };
+                        thread.Start();
+                    }
+                });
+                threadLoadContentToForm.Name = "threadLoadContentToForm";
+                threadLoadContentToForm.Start();
             }
             catch (Exception ex)
             {

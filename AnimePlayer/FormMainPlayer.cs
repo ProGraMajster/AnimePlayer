@@ -21,6 +21,7 @@ using AnimePlayer.Class;
 using AnimePlayer.Profile;
 using AnimePlayer.StatisticsData;
 using Microsoft.Web.WebView2.WinForms;
+using System.Threading;
 
 namespace AnimePlayer
 {
@@ -30,70 +31,46 @@ namespace AnimePlayer
 
         public bool debug = false;
         public bool onOnline = true;
-        readonly PanelSearchFilters panelSearch;
-        readonly NewFlowLayoutPanel panelNews;
+        private int memsize;
         public AutoCompleteStringCollection autoCSC_find;
         public List<ItemsGroup> itemsGroups = new();
-        public bool usedThemeColors = false;
-        public string ThemePath = null;
         public ItemList_ClassItemOnStateList iList_ClassItemOnState;
         public PerformanceCounter performanceCounter_app;
-
+        private PanelSearchFilters panelSearch;
+        private NewFlowLayoutPanel panelNews;
         private ProfileClass currentProfile=null;
-
-        int memsize;
+        public HelpPage helpPage;
+        
         public ZetaIpc.Runtime.Server.IpcServer IpcServerData;
         public ZetaIpc.Runtime.Client.IpcClient clientToBrowser;
-
-        public HelpPage helpPage;
-
+        
         private FormLoading formLoading;
 
         public FormMainPlayer()  
         {
             InitializeComponent();
             try
-            { 
-                formLoading = new FormLoading();
-                IpcServerData = new ZetaIpc.Runtime.Server.IpcServer();
-                IpcServerData.Start();
-                IpcServerData.ReceivedRequest += IpcServerData_ReceivedRequest;
-                formLoading.Show();
-                autoCSC_find = new AutoCompleteStringCollection();
-                panelSearch = new PanelSearchFilters(flowLayoutPanelAll, flowLayoutPanelFinditem)
-                {
-                    Dock = DockStyle.None
-                };
-                panelAllitem.Controls.Add(panelSearch);
-                panelSearch.Location = new Point(0, 110);
-                panelSearch.Hide();
-                labelLoadingDetails.Text = "Initialize";
-
-                panelNews = new NewFlowLayoutPanel
-                {
-                    Name = "newFlowLayoutPanel_panelNews",
-                    Dock = DockStyle.Fill
-                };
-                panelSTNewsMain.Controls.Add(panelNews);
-                panelNews.Show();
-                panelNews.ControlAdded += PanelNews_ControlAdded;
-                panelNews.WrapContents = false;
-                panelNews.AutoScroll = true;
-                panelSTNewsMain.Hide();
-
+            {
+                Controller.FormMainPlayer = this;
+                InitFormLoading();
+                InitIpcServerData();
+                InitOtherControls();
                 AnimePlayer.Core.CheckingAppFolders.CheckMainFolder();
-                quickMove = new QuickMovePanel();
-                quickMove.Hide();   
-                this.Controls.Add(quickMove);
                 clientToBrowser = new ZetaIpc.Runtime.Client.IpcClient();
                 clientToBrowser.Initialize(65500);
                 File.WriteAllText("IpcServerData_port.txt", IpcServerData.Port.ToString());
             }
             catch (Exception ex)
             {
+                Debug.WriteLine(ex.ToString());
                 Console.Error.WriteLine(ex);
             }
-            CreateBackupicon();
+            Thread thread = new Thread(() =>
+            {
+                ContentManagerLibary.CreateBackupicon();
+            });
+            thread.Name = "thread";
+            thread.Start();
             try
             {
                 performanceCounter_app = new PerformanceCounter
@@ -102,14 +79,53 @@ namespace AnimePlayer
                     CounterName = "Working Set - Private",
                     InstanceName = "AnimePlayerPL"
                 };
-                memsize = Convert.ToInt32(performanceCounter_app.NextValue()) / (int)(1024);
                 timerAppPer.Start();
             }
             catch (Exception exPer)
             {
+                Debug.WriteLine(exPer.ToString());
                 Console.Error.WriteLine(exPer.ToString());
             }
             comboBoxViewtype.SelectedIndex = 0;
+        }
+        private void InitFormLoading()
+        {
+            formLoading = new FormLoading();
+            formLoading.Show();
+        }
+        private void InitIpcServerData()
+        {
+            IpcServerData = new ZetaIpc.Runtime.Server.IpcServer();
+            IpcServerData.Start();
+            IpcServerData.ReceivedRequest += IpcServerData_ReceivedRequest;
+        }
+        private void InitOtherControls()
+        {
+            autoCSC_find = new AutoCompleteStringCollection();
+            panelSearch = new PanelSearchFilters(flowLayoutPanelAll, flowLayoutPanelFinditem)
+            {
+                Name= "panelSearch",
+                Dock = DockStyle.None,
+                Location = new Point(0, 110)
+            };
+            panelAllitem.Controls.Add(panelSearch);
+            panelSearch.Hide();
+            labelLoadingDetails.Text = "Initialize";
+            panelNews = new NewFlowLayoutPanel
+            {
+                Name = "newFlowLayoutPanel_panelNews",
+                WrapContents = false,
+                Dock = DockStyle.Fill,
+                AutoScroll = true
+            };
+            panelSTNewsMain.Controls.Add(panelNews);
+            panelNews.ControlAdded += PanelNews_ControlAdded;
+            panelNews.Show();
+            panelSTNewsMain.Hide();
+            quickMove = new QuickMovePanel();
+            quickMove.Name = "quickMove";
+            quickMove.Hide();
+            this.Controls.Add(quickMove);
         }
 
         private void IpcServerData_ReceivedRequest(object sender, ZetaIpc.Runtime.Server.ReceivedRequestEventArgs e)
@@ -154,26 +170,7 @@ namespace AnimePlayer
             panelStartPage.Controls.SetChildIndex(panelSTNewsMain, 2);
         }
 
-        static Task CreateBackupicon()
-        {
-            try
-            {
-                DirectoryInfo directoryInfo = new("C:\\ContentLibrarys\\OtherFiles\\WMP_OverlayApp\\Icon");
-
-                foreach (FileInfo fileInfo in directoryInfo.GetFiles())
-                {
-                    File.Copy(fileInfo.FullName, "C:\\ContentLibrarys\\OtherFiles\\WMP_OverlayApp\\IconBackup\\" + fileInfo.Name, true);
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.ToString());
-            }
-
-            return null;
-        }
-
-        readonly QuickMovePanel quickMove=null;
+        QuickMovePanel quickMove=null;
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Escape)

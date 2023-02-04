@@ -8,11 +8,12 @@ namespace AnimePlayer
 {
     public static class Controller
     {
+        public static FormMainPlayer FormMainPlayer { get; set; }
         public static void LoadingScreen(bool visable)
         {
             if (visable)
             {
-
+                
             }
             else
             {

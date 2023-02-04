@@ -4,9 +4,11 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using AnimePlayer.Class;
+using AnimePlayer.Profile;
 using AnimePlayerLibrary;
 
 namespace AnimePlayerLibrary.UI
@@ -138,17 +140,30 @@ namespace AnimePlayerLibrary.UI
 
         public async void GetLoadingCotrols()
         {
-            await Task.Run(() =>
+            try
             {
-                panelLoading = (Panel)Application.OpenForms[0].Controls.Find("panelLoading", true)[0];
-                labelLoadingDetails = (Label)Application.OpenForms[0].Controls.Find("labelLoadingDetails", true)[0];
-            });
+                Thread thread = new(() =>
+                {
+                    panelLoading = (Panel)Application.OpenForms[0].Controls.Find("panelLoading", true)[0];
+                    labelLoadingDetails = (Label)Application.OpenForms[0].Controls.Find("labelLoadingDetails", true)[0];
+                });
+                thread.Start();
+            }
+            catch(Exception ex)
+            {
+                Debug.WriteLine(ex.ToString());
+                Console.Error.WriteLine(ex.ToString());
+            }
         }
 
         private void Object_Click(object sender, EventArgs e)
         {
             try
             {
+                if(Form.ActiveForm!= null)
+                {
+                    Form.ActiveForm.ActiveControl = buttonItem;
+                }
                 UpdateLoadingTextdetails("Find Page > "+ _previewTitleClass.Title);
                 ShowPanelLoading();
                 PageItem pageItem = new(this)
@@ -191,7 +206,7 @@ namespace AnimePlayerLibrary.UI
                 panelLoading.Hide();
             }
         }
-
+        bool watched = false;
         public PanelItem(PreviewTitleClass previewTitleClass)
         {
             _previewTitleClass = previewTitleClass;
@@ -203,6 +218,11 @@ namespace AnimePlayerLibrary.UI
             AnimePlayer.CNM.ExtensionsControl.RoundingTheCorners(buttonItem, 15);
             AnimePlayer.CNM.ExtensionsControl.RoundingTheCorners(pictureBoxItem, 15);
             panelItem.Tag=this;
+            /*Thread thread = new(() =>
+            {
+                
+            });
+            thread.Start();*/
         }
     }
 }

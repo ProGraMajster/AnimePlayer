@@ -36,17 +36,6 @@ namespace AnimePlayer
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMainPlayer));
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.panelStartPage = new System.Windows.Forms.Panel();
-            this.panelGroup = new System.Windows.Forms.Panel();
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.panePolecane = new System.Windows.Forms.Panel();
-            this.flowLayoutPanelPolecane = new AnimePlayer.ControlsWinForms.NewFlowLayoutPanel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
             this.panelSTNewsMain = new System.Windows.Forms.Panel();
             this.label_InfoText_news = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
@@ -160,13 +149,6 @@ namespace AnimePlayer
             this.label22 = new System.Windows.Forms.Label();
             this.timerFindWaitnig = new System.Windows.Forms.Timer(this.components);
             this.panelStartPage.SuspendLayout();
-            this.panelGroup.SuspendLayout();
-            this.flowLayoutPanel2.SuspendLayout();
-            this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.panel4.SuspendLayout();
-            this.panePolecane.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.panelSTNewsMain.SuspendLayout();
             this.panelTop.SuspendLayout();
             this.roundedPanel1.SuspendLayout();
@@ -216,8 +198,6 @@ namespace AnimePlayer
             // 
             this.panelStartPage.AutoScroll = true;
             this.panelStartPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.panelStartPage.Controls.Add(this.panelGroup);
-            this.panelStartPage.Controls.Add(this.panePolecane);
             this.panelStartPage.Controls.Add(this.panelSTNewsMain);
             this.panelStartPage.Controls.Add(this.panel8);
             this.panelStartPage.Controls.Add(this.panelTop);
@@ -229,140 +209,6 @@ namespace AnimePlayer
             this.panelStartPage.TabIndex = 6;
             this.panelStartPage.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.PanelStartPage_ControlAdded);
             // 
-            // panelGroup
-            // 
-            this.panelGroup.Controls.Add(this.flowLayoutPanel2);
-            this.panelGroup.Controls.Add(this.panel4);
-            this.panelGroup.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelGroup.Location = new System.Drawing.Point(0, 881);
-            this.panelGroup.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.panelGroup.Name = "panelGroup";
-            this.panelGroup.Size = new System.Drawing.Size(1073, 342);
-            this.panelGroup.TabIndex = 4;
-            this.panelGroup.Visible = false;
-            // 
-            // flowLayoutPanel2
-            // 
-            this.flowLayoutPanel2.AutoScroll = true;
-            this.flowLayoutPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.flowLayoutPanel2.Controls.Add(this.panel3);
-            this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(0, 35);
-            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Padding = new System.Windows.Forms.Padding(12, 2, 12, 2);
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(1073, 307);
-            this.flowLayoutPanel2.TabIndex = 1;
-            this.flowLayoutPanel2.WrapContents = false;
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.pictureBox2);
-            this.panel3.Controls.Add(this.button3);
-            this.panel3.Location = new System.Drawing.Point(16, 5);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(206, 278);
-            this.panel3.TabIndex = 0;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(206, 230);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
-            // 
-            // button3
-            // 
-            this.button3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.button3.Location = new System.Drawing.Point(0, 230);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(206, 48);
-            this.button3.TabIndex = 1;
-            this.button3.Text = "Name";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.label3);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.panel4.Name = "panel4";
-            this.panel4.Padding = new System.Windows.Forms.Padding(12, 0, 12, 0);
-            this.panel4.Size = new System.Drawing.Size(1073, 35);
-            this.panel4.TabIndex = 2;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label3.Font = new System.Drawing.Font("Comic Sans MS", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(12, 7);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(112, 28);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "TitleGroup";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panePolecane
-            // 
-            this.panePolecane.Controls.Add(this.flowLayoutPanelPolecane);
-            this.panePolecane.Controls.Add(this.panel1);
-            this.panePolecane.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panePolecane.Location = new System.Drawing.Point(0, 539);
-            this.panePolecane.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.panePolecane.Name = "panePolecane";
-            this.panePolecane.Size = new System.Drawing.Size(1073, 342);
-            this.panePolecane.TabIndex = 3;
-            this.panePolecane.Visible = false;
-            // 
-            // flowLayoutPanelPolecane
-            // 
-            this.flowLayoutPanelPolecane.AutoScroll = true;
-            this.flowLayoutPanelPolecane.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.flowLayoutPanelPolecane.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanelPolecane.Location = new System.Drawing.Point(0, 35);
-            this.flowLayoutPanelPolecane.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.flowLayoutPanelPolecane.Name = "flowLayoutPanelPolecane";
-            this.flowLayoutPanelPolecane.Padding = new System.Windows.Forms.Padding(2);
-            this.flowLayoutPanelPolecane.Size = new System.Drawing.Size(1073, 307);
-            this.flowLayoutPanelPolecane.TabIndex = 5;
-            this.flowLayoutPanelPolecane.WrapContents = false;
-            this.flowLayoutPanelPolecane.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.FlowLayoutPanelControlAdded);
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(12, 0, 12, 0);
-            this.panel1.Size = new System.Drawing.Size(1073, 35);
-            this.panel1.TabIndex = 2;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label2.Font = new System.Drawing.Font("Comic Sans MS", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(12, 7);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(90, 28);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Polecane";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // panelSTNewsMain
             // 
             this.panelSTNewsMain.Controls.Add(this.label_InfoText_news);
@@ -370,7 +216,7 @@ namespace AnimePlayer
             this.panelSTNewsMain.Location = new System.Drawing.Point(0, 130);
             this.panelSTNewsMain.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panelSTNewsMain.Name = "panelSTNewsMain";
-            this.panelSTNewsMain.Size = new System.Drawing.Size(1073, 409);
+            this.panelSTNewsMain.Size = new System.Drawing.Size(1090, 409);
             this.panelSTNewsMain.TabIndex = 4;
             this.panelSTNewsMain.Visible = false;
             // 
@@ -394,7 +240,7 @@ namespace AnimePlayer
             this.panel8.Location = new System.Drawing.Point(0, 105);
             this.panel8.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(1073, 25);
+            this.panel8.Size = new System.Drawing.Size(1090, 25);
             this.panel8.TabIndex = 3;
             // 
             // panelTop
@@ -405,7 +251,7 @@ namespace AnimePlayer
             this.panelTop.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panelTop.Name = "panelTop";
             this.panelTop.Padding = new System.Windows.Forms.Padding(12);
-            this.panelTop.Size = new System.Drawing.Size(1073, 105);
+            this.panelTop.Size = new System.Drawing.Size(1090, 105);
             this.panelTop.TabIndex = 0;
             // 
             // roundedPanel1
@@ -424,7 +270,7 @@ namespace AnimePlayer
             this.roundedPanel1.Name = "roundedPanel1";
             this.roundedPanel1.Padding = new System.Windows.Forms.Padding(23, 7, 23, 7);
             this.roundedPanel1.RadiusArcPanel = 15F;
-            this.roundedPanel1.Size = new System.Drawing.Size(1049, 81);
+            this.roundedPanel1.Size = new System.Drawing.Size(1066, 81);
             this.roundedPanel1.TabIndex = 0;
             this.roundedPanel1.Resize += new System.EventHandler(this.Panel_Resize);
             // 
@@ -438,7 +284,7 @@ namespace AnimePlayer
             this.panel7.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panel7.Name = "panel7";
             this.panel7.Padding = new System.Windows.Forms.Padding(6, 23, 6, 17);
-            this.panel7.Size = new System.Drawing.Size(565, 67);
+            this.panel7.Size = new System.Drawing.Size(582, 67);
             this.panel7.TabIndex = 4;
             // 
             // panel9
@@ -449,7 +295,7 @@ namespace AnimePlayer
             this.panel9.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panel9.Name = "panel9";
             this.panel9.Padding = new System.Windows.Forms.Padding(0, 6, 0, 0);
-            this.panel9.Size = new System.Drawing.Size(465, 27);
+            this.panel9.Size = new System.Drawing.Size(482, 27);
             this.panel9.TabIndex = 5;
             // 
             // textBoxStartPagefinditem
@@ -466,7 +312,7 @@ namespace AnimePlayer
             this.textBoxStartPagefinditem.Location = new System.Drawing.Point(0, 6);
             this.textBoxStartPagefinditem.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.textBoxStartPagefinditem.Name = "textBoxStartPagefinditem";
-            this.textBoxStartPagefinditem.Size = new System.Drawing.Size(465, 16);
+            this.textBoxStartPagefinditem.Size = new System.Drawing.Size(482, 16);
             this.textBoxStartPagefinditem.TabIndex = 3;
             this.textBoxStartPagefinditem.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBoxStartPagefinditem.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextBoxSPfinditem_KeyDown);
@@ -481,7 +327,7 @@ namespace AnimePlayer
             this.buttonStartPageFinditem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonStartPageFinditem.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonStartPageFinditem.ForeColor = System.Drawing.Color.White;
-            this.buttonStartPageFinditem.Location = new System.Drawing.Point(471, 23);
+            this.buttonStartPageFinditem.Location = new System.Drawing.Point(488, 23);
             this.buttonStartPageFinditem.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.buttonStartPageFinditem.Name = "buttonStartPageFinditem";
             this.buttonStartPageFinditem.Size = new System.Drawing.Size(88, 27);
@@ -495,7 +341,7 @@ namespace AnimePlayer
             this.panel22.Controls.Add(this.pictureBoxProfileIcon);
             this.panel22.Controls.Add(this.label23);
             this.panel22.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel22.Location = new System.Drawing.Point(786, 7);
+            this.panel22.Location = new System.Drawing.Point(803, 7);
             this.panel22.Name = "panel22";
             this.panel22.Size = new System.Drawing.Size(80, 67);
             this.panel22.TabIndex = 5;
@@ -528,7 +374,7 @@ namespace AnimePlayer
             this.labelSatusWorkingApp.Dock = System.Windows.Forms.DockStyle.Right;
             this.labelSatusWorkingApp.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelSatusWorkingApp.ForeColor = System.Drawing.SystemColors.Window;
-            this.labelSatusWorkingApp.Location = new System.Drawing.Point(866, 7);
+            this.labelSatusWorkingApp.Location = new System.Drawing.Point(883, 7);
             this.labelSatusWorkingApp.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelSatusWorkingApp.Name = "labelSatusWorkingApp";
             this.labelSatusWorkingApp.Size = new System.Drawing.Size(77, 67);
@@ -548,7 +394,7 @@ namespace AnimePlayer
             this.buttonMenuOpen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonMenuOpen.Font = new System.Drawing.Font("Comic Sans MS", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonMenuOpen.ForeColor = System.Drawing.Color.White;
-            this.buttonMenuOpen.Location = new System.Drawing.Point(943, 7);
+            this.buttonMenuOpen.Location = new System.Drawing.Point(960, 7);
             this.buttonMenuOpen.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.buttonMenuOpen.Name = "buttonMenuOpen";
             this.buttonMenuOpen.Size = new System.Drawing.Size(83, 67);
@@ -1851,15 +1697,6 @@ namespace AnimePlayer
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyUp);
             this.Resize += new System.EventHandler(this.FormMainPlayer_Resize);
             this.panelStartPage.ResumeLayout(false);
-            this.panelGroup.ResumeLayout(false);
-            this.flowLayoutPanel2.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            this.panePolecane.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.panelSTNewsMain.ResumeLayout(false);
             this.panelSTNewsMain.PerformLayout();
             this.panelTop.ResumeLayout(false);
@@ -1912,9 +1749,6 @@ namespace AnimePlayer
         private System.Windows.Forms.Panel panelTop;
         private AnimePlayerLibrary.RoundedPanel roundedPanel1;
         private System.Windows.Forms.Label label;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label2;
-        public System.Windows.Forms.Panel panePolecane;
         public System.Windows.Forms.Panel panelLoading;
         private System.Windows.Forms.Button buttonMenuClose;
         private System.Windows.Forms.Button buttonPlayer;
@@ -1935,7 +1769,6 @@ namespace AnimePlayer
         private System.Windows.Forms.Button buttonViewFindintems;
         public System.Windows.Forms.Label labelLoading;
         private System.Windows.Forms.Button buttonRestartApp;
-        public NewFlowLayoutPanel flowLayoutPanelPolecane;
         public System.Windows.Forms.Panel panelMenu;
         public System.Windows.Forms.Label labelLoadingDetails;
         public System.Windows.Forms.Panel panelStartPage;
@@ -2012,13 +1845,6 @@ namespace AnimePlayer
         private TextBox textBoxCommandOutput;
         private TextBox textBoxCommandInput;
         public Label label22;
-        private Panel panelGroup;
-        private FlowLayoutPanel flowLayoutPanel2;
-        private Panel panel3;
-        private PictureBox pictureBox2;
-        private Button button3;
-        private Panel panel4;
-        private Label label3;
         private Panel panel21;
         private Button buttonDefined;
         private Button buttonHomePage;

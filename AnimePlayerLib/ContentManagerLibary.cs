@@ -30,6 +30,22 @@ namespace AnimePlayerLibrary
         }
         */
 
+        public static void CreateBackupicon()
+        {
+            try
+            {
+                DirectoryInfo directoryInfo = new("C:\\ContentLibrarys\\OtherFiles\\WMP_OverlayApp\\Icon");
+                foreach (FileInfo fileInfo in directoryInfo.GetFiles())
+                {
+                    File.Copy(fileInfo.FullName, "C:\\ContentLibrarys\\OtherFiles\\WMP_OverlayApp\\IconBackup\\" + fileInfo.Name, true);
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.ToString());
+                Console.WriteLine(ex.ToString());
+            }
+        }
         public static List<ItemCommunity> GetAllItemCommunities()
         {
             List<ItemCommunity> items = new();
