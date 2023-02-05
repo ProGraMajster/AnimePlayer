@@ -9,6 +9,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Linq;
 using System.Text;
+using System.Threading;
 
 using Newtonsoft.Json;
 
@@ -21,7 +22,6 @@ using AnimePlayer.Class;
 using AnimePlayer.Profile;
 using AnimePlayer.StatisticsData;
 using Microsoft.Web.WebView2.WinForms;
-using System.Threading;
 
 namespace AnimePlayer
 {
@@ -46,7 +46,7 @@ namespace AnimePlayer
         
         private FormLoading formLoading;
 
-        public FormMainPlayer()  
+        public FormMainPlayer()
         {
             InitializeComponent();
             try
@@ -220,7 +220,7 @@ namespace AnimePlayer
                 }
                 else if (e.KeyCode == Keys.Tab && e.Control)
                 {
-                    CenterControlInForm(quickMove);
+                    AnimePlayer.CNM.ControlsNewMethods.CenterControlInForm(quickMove, this);
                     quickMove.BringToFront();
                     quickMove.Show();
                 }
@@ -289,7 +289,7 @@ namespace AnimePlayer
                 formLoading.Dispose();
             }
             panelLoading.BringToFront();
-            CenterControlInForm(labelLoading);
+            //CenterControlInForm(labelLoading);
             panelLoading.Show();
             this.Show();
             Console.WriteLine("ContentManager.Initalize...");
@@ -306,11 +306,9 @@ namespace AnimePlayer
 
             //textBoxFinditem.AutoCompleteCustomSource = autoCSC_find;
             //textBoxStartPagefinditem.AutoCompleteCustomSource = autoCSC_find;
-            panelLoading.Hide();
-            this.Show();
+            
             /*FormStatisticData formStatisticData = new FormStatisticData();
             formStatisticData.Show();*/
-            //backgroundWorkerLoadItems.RunWorkerAsync();
             profileSelectionPanel = new AnimePlayer.Profile.ProfileSelectionPanel();
             this.Controls.Add(profileSelectionPanel);
             profileSelectionPanel.eventHandler += ProfileSelect_Click;
@@ -318,6 +316,8 @@ namespace AnimePlayer
             profileSelectionPanel.Show();
             profileSelectionPanel.BringToFront();
             managerStatistics = new();
+            panelLoading.Hide();
+            this.Show();
         }
         AnimePlayer.StatisticsData.ManagerStatisticsData managerStatistics;
         AnimePlayer.Profile.ProfileSelectionPanel profileSelectionPanel;
@@ -341,18 +341,7 @@ namespace AnimePlayer
             }
         }
 
-        public void CenterControlInForm(Control control)
-        {
-            try
-            {
-                control.Left = (this.ClientSize.Width - control.Width) / 2;
-                control.Top = (this.ClientSize.Height - control.Height) / 2;
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message + Environment.NewLine);
-            }
-        }
+        
 
         private void Panel_Resize(object sender, EventArgs e)
         {
@@ -376,12 +365,12 @@ namespace AnimePlayer
 
         private void LabelLoading_VisibleChanged(object sender, EventArgs e)
         {
-            CenterControlInForm(labelLoading);
+            //CenterControlInForm(labelLoading);
         }
 
         private void PanelLoading_VisibleChanged(object sender, EventArgs e)
         {
-            CenterControlInForm(labelLoading);
+            //CenterControlInForm(labelLoading);
         }
 
         private void ButtonSetting_Click(object sender, EventArgs e)
@@ -488,7 +477,7 @@ namespace AnimePlayer
         {
             if (labelLoading.Visible)
             {
-                CenterControlInForm(labelLoading);
+                //CenterControlInForm(labelLoading);
             }
 
             if (WindowState != LastWindowState)
@@ -528,7 +517,7 @@ namespace AnimePlayer
         {
             if (labelLoading.Visible)
             {
-                CenterControlInForm(labelLoading);
+                //CenterControlInForm(labelLoading);
             }
 
             if (panelMenu.Visible)
@@ -995,28 +984,6 @@ namespace AnimePlayer
             }
         }
 
-        private void BackgroundWorkerGetSTNews_DoWork(object sender, DoWorkEventArgs e)
-        {
-            if (onOnline)
-            {
-                bool state = DownloadFileNews.DownloadWithGdrive();
-                if(state == false)
-                {
-                    DownloadFileNews.DownloadWithOneDrive();
-                }
-                InterpreterFileNews.Start(panelNews, DownloadFileNews.GetPathListNews(), panel2);
-            }
-            else
-            {
-                InterpreterFileNews.Start(panelNews, DownloadFileNews.GetPathListNews(), panel2);
-            }
-            if(panelNews.Controls.Count > 0)
-            {
-                this.Invoke(new Action(() => panelNews.Show()));
-            }
-            return;
-        }
-
         private void FormMainPlayer_FormClosing(object sender, FormClosingEventArgs e)
         {
             try
@@ -1200,21 +1167,6 @@ namespace AnimePlayer
             */
         }
 
-        private void BackgroundWorkerLoadItems_DoWork(object sender, DoWorkEventArgs e)
-        {
-            try
-            {
-
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.ToString());
-                this.BeginInvoke(new Action(() => {
-                    ShowAppMessageBox("Wystąpił błąd podczas odtwarzania bazy danych. Kod błędu: IL01", 350);
-                }));
-            }
-        }
-
         private void TextBoxCommandInput_KeyDown(object sender, KeyEventArgs e)
         {
             if(e.KeyCode == Keys.Enter)
@@ -1264,13 +1216,8 @@ namespace AnimePlayer
         {
             if(quickMove != null && quickMove.Visible)
             {
-                CenterControlInForm(quickMove);
+               AnimePlayer.CNM.ControlsNewMethods.CenterControlInForm(quickMove, this);
             }
-        }
-
-        private void ButtonProfile_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void TextBoxFinditem_TextChanged(object sender, EventArgs e)

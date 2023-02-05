@@ -49,9 +49,13 @@ namespace AnimePlayer
                     thread.Start();
                 }
 
-                GroupClass groupClass = new GroupClass();
-                groupClass.Name = "Wszystkie tytuły";
-                CreateGroup(_formMainPlayer, groupClass);
+                Thread threadAllTitle = new(() =>
+                {
+                    GroupClass groupClass = new GroupClass();
+                    groupClass.Name = "Wszystkie tytuły";
+                    CreateGroup(_formMainPlayer, groupClass);
+                });
+                threadAllTitle.Start();
             }
             catch (Exception ex)
             {

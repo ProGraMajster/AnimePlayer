@@ -137,12 +137,10 @@ namespace AnimePlayer
             this.labelError = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.timerAnimationError = new System.Windows.Forms.Timer(this.components);
-            this.backgroundWorkerGetSTNews = new System.ComponentModel.BackgroundWorker();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.timerAppPer = new System.Windows.Forms.Timer(this.components);
             this.panel18 = new System.Windows.Forms.Panel();
             this.labelAppRamUsage = new System.Windows.Forms.Label();
-            this.backgroundWorkerLoadItems = new System.ComponentModel.BackgroundWorker();
             this.panelCommands = new System.Windows.Forms.Panel();
             this.textBoxCommandOutput = new System.Windows.Forms.TextBox();
             this.textBoxCommandInput = new System.Windows.Forms.TextBox();
@@ -1590,10 +1588,6 @@ namespace AnimePlayer
             this.timerAnimationError.Interval = 1;
             this.timerAnimationError.Tick += new System.EventHandler(this.TimerAnimationError_Tick);
             // 
-            // backgroundWorkerGetSTNews
-            // 
-            this.backgroundWorkerGetSTNews.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BackgroundWorkerGetSTNews_DoWork);
-            // 
             // timerAppPer
             // 
             this.timerAppPer.Interval = 1000;
@@ -1617,10 +1611,6 @@ namespace AnimePlayer
             this.labelAppRamUsage.Size = new System.Drawing.Size(110, 15);
             this.labelAppRamUsage.TabIndex = 0;
             this.labelAppRamUsage.Text = "labelAppRamUsage";
-            // 
-            // backgroundWorkerLoadItems
-            // 
-            this.backgroundWorkerLoadItems.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BackgroundWorkerLoadItems_DoWork);
             // 
             // panelCommands
             // 
@@ -1775,7 +1765,6 @@ namespace AnimePlayer
         public System.Windows.Forms.Label labelLoadingA;
         public System.Windows.Forms.PictureBox pictureBoxLoading;
         private System.Windows.Forms.Panel panelSTNewsMain;
-        private System.ComponentModel.BackgroundWorker backgroundWorkerGetSTNews;
         public System.Windows.Forms.TextBox textBoxStartPagefinditem;
         private System.Windows.Forms.Panel panel9;
         public System.Windows.Forms.Button buttonStartPageFinditem;
@@ -1840,7 +1829,6 @@ namespace AnimePlayer
         private Label label20;
         private Button buttonAllNewsContnet;
         private Label label21;
-        private System.ComponentModel.BackgroundWorker backgroundWorkerLoadItems;
         private Panel panelCommands;
         private TextBox textBoxCommandOutput;
         private TextBox textBoxCommandInput;

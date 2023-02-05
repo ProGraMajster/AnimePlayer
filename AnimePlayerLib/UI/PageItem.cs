@@ -23,6 +23,7 @@ namespace AnimePlayerLibrary.UI
 {
     public partial class PageItem : UserControl
     {
+        public PageItemData pageItemData;
         private ProfileClass profileClass { get; set; }
         private ZetaIpc.Runtime.Client.IpcClient ipcClient;
         public string linkToScriptComment = null;
@@ -40,6 +41,29 @@ namespace AnimePlayerLibrary.UI
             ShowPanelLoading();
             SettingInofrmationUIFromPanelItem();
             pageItemData = ContentManagerLibary.GetPageItemDataWithContentFolderFromTitle(panelItem._previewTitleClass.Title);
+            LoadPageItem(pageItemData);
+            HidePanelLoading();
+            try
+            {
+                ipcClient = new IpcClient();
+                int port = int.Parse(File.ReadAllText("IpcServerData_port.txt"));
+                ipcClient.Initialize(port);
+            }
+            catch(Exception ex)
+            {
+                Debug.WriteLine(ex.ToString());
+                Console.Error.WriteLine(ex.ToString());
+            }
+        }
+        public PageItem(PageItemData pageItemDataP)
+        {
+            InitializeComponent();
+            pageItemData = pageItemDataP;
+            GetLoadingCotrols();
+            UpdateLoadingTextdetails("Ładowanie strony...");
+            ShowPanelLoading();
+            labelTitle.Text = pageItemData.TitleInformation.Title;
+            pageItemData = ContentManagerLibary.GetPageItemDataWithContentFolderFromTitle(pageItemData.TitleInformation.Title);
             LoadPageItem(pageItemData);
             HidePanelLoading();
             try
@@ -114,8 +138,6 @@ namespace AnimePlayerLibrary.UI
                 }
             }
         }
-
-        public PageItemData pageItemData;
 
         public void LoadPageItem(PageItemData pageItemData)
         {

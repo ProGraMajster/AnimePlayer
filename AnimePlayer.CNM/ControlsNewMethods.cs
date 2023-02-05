@@ -8,6 +8,18 @@ namespace AnimePlayer.CNM
 {
     public static class ControlsNewMethods
     {
+        public static void CenterControlInForm(Control control, Form form)
+        {
+            try
+            {
+                control.Left = (form.ClientSize.Width - control.Width) / 2;
+                control.Top = (form.ClientSize.Height - control.Height) / 2;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message + Environment.NewLine);
+            }
+        }
         public class RoundingControl : Component
         {
             [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
