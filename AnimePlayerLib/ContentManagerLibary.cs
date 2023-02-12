@@ -92,6 +92,17 @@ namespace AnimePlayerLibrary
                             }
                         }
                     }
+                    else if(item.Name.EndsWith(".json"))
+                    {
+                        PageItemData pageItemData = (PageItemData)SerializationAndDeserialization.DeserializationJsonEx(item.FullName, typeof(PageItemData));
+                        if (pageItemData != null)
+                        {
+                            if (title == pageItemData.TitleInformation.Title)
+                            {
+                                return pageItemData;
+                            }
+                        }
+                    }
                 }
                 directoryInfo = new DirectoryInfo(AppFolders.PagesItems);
                 foreach (var item in directoryInfo.GetFiles())
@@ -107,10 +118,22 @@ namespace AnimePlayerLibrary
                             }
                         }
                     }
+                    else if(item.Name.EndsWith(".json"))
+                    {
+                        PageItemData pageItemData = (PageItemData)SerializationAndDeserialization.DeserializationJsonEx(item.FullName, typeof(PageItemData));
+                        if (pageItemData != null)
+                        {
+                            if (title == pageItemData.TitleInformation.Title)
+                            {
+                                return pageItemData;
+                            }
+                        }
+                    }
                 }
             }
             catch(Exception ex)
             {
+                Debug.WriteLine(ex.ToString());
                 Console.Error.WriteLine(ex.ToString());
             }
             return null;
