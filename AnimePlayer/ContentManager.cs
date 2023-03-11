@@ -279,11 +279,14 @@ namespace AnimePlayer
                 DirectoryInfo directoryInfo = new(AppFolders.PreviewItems.TrimEnd('\\'));
                 foreach (var item in directoryInfo.GetFiles())
                 {
-                    if (item.FullName.EndsWith(".dat"))
+                    if (item.FullName.EndsWith(".json"))
                     {
-                        Console.WriteLine(item.FullName);
+                        Console.WriteLine(item.FullName);/*
                         PreviewTitleClass previewTitleClass = (PreviewTitleClass)SerializationAndDeserialization.Deserialization(item.FullName);
-                       list.Add(previewTitleClass);
+                       list.Add(previewTitleClass);*/
+                        PreviewTitleClass previewTitleClass = (PreviewTitleClass)SerializationAndDeserialization
+                            .DeserializationJsonEx(item.FullName, typeof(PreviewTitleClass));
+                        list.Add(previewTitleClass);
                     }
                 }
             }
@@ -303,10 +306,12 @@ namespace AnimePlayer
                 DirectoryInfo directoryInfo = new(AppFolders.UpdatedItemGroups);
                 foreach(FileInfo fileInfo in directoryInfo.GetFiles())
                 {
-                    if (fileInfo.FullName.EndsWith(".dat"))
+                    if (fileInfo.FullName.EndsWith(".json"))
                     {
-                        GroupClass groupClass = (GroupClass)Core.SerializationAndDeserialization
-                            .Deserialization(fileInfo.FullName);
+                        /*GroupClass groupClass = (GroupClass)Core.SerializationAndDeserialization
+                            .Deserialization(fileInfo.FullName);*/
+                        GroupClass groupClass = (GroupClass)SerializationAndDeserialization
+                            .DeserializationJsonEx(fileInfo.FullName, typeof(GroupClass));
                         list.Add(groupClass);
                     }
                 }

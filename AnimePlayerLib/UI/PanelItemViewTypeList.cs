@@ -24,14 +24,14 @@ namespace AnimePlayerLibrary.UI
         {
             InitializeComponent();
             previewTitleClass = preview;
-            if(previewTitleClass == null )
+            if (previewTitleClass == null)
             {
                 return;
             }
             Thread thread = new Thread(() =>
             {
                 pageItemData = ContentManagerLibary.GetPageItemDataWithContentFolderFromTitle(previewTitleClass.Title);
-                if(pageItemData == null )
+                if (pageItemData == null)
                 {
                     this.Invoke(() =>
                     {
@@ -42,15 +42,15 @@ namespace AnimePlayerLibrary.UI
                 }
                 this.Invoke(() =>
                 {
-                    labelType.Text = pageItemData.TitleInformation.Type + " ("+pageItemData.TitleInformation.NumberOfEpisodes+" Odcinków)";
-                    labelDate.Text= pageItemData.TitleInformation.DateOfIssue.ToString() + " - "+pageItemData.TitleInformation.EndOfIssue.ToString();
+                    labelType.Text = pageItemData.TitleInformation.Type + " (" + pageItemData.TitleInformation.NumberOfEpisodes + " Odcinków)";
+                    labelDate.Text = pageItemData.TitleInformation.DateOfIssue.ToString() + " - " + pageItemData.TitleInformation.EndOfIssue.ToString();
                     foreach (var item in pageItemData.TitleInformation.Species)
                     {
                         LinkLabel linkLabel = new()
                         {
                             TextAlign = ContentAlignment.MiddleCenter,
                             AutoSize = true,
-                            BackColor = Color.FromArgb(45,45,45),
+                            BackColor = Color.FromArgb(45, 45, 45),
                             ActiveLinkColor = Color.Red,
                             LinkColor = Color.DeepSkyBlue
                         };
@@ -72,14 +72,40 @@ namespace AnimePlayerLibrary.UI
                 {
                     UsedLinkIcon++;
                     pictureBoxItem.ImageLocation = previewTitleClass.LinkToIcon[UsedLinkIcon];
-                #if DEBUG
+#if DEBUG
                     Debug.WriteLine(e.Error.ToString() + "\n UsedLinkIcon:" + UsedLinkIcon);
-                #endif
+#endif
                 }
             }
             catch (Exception ex)
             {
                 Debug.WriteLine(ex.ToString());
+                Console.Error.WriteLine(ex.ToString());
+            }
+        }
+
+        private void Object_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (Form.ActiveForm != null)
+                {
+                    Form.ActiveForm.ActiveControl = this;
+                }
+                //ShowPanelLoading();
+                PageItem pageItem = new(pageItemData)
+                {
+                    Name = "pageItem",
+                    Dock = DockStyle.Fill,
+                };
+                this.ParentForm.Controls.Add(pageItem);
+                //panelFromMainContent.Controls.Add(pageItem);
+                pageItem.Show();
+                pageItem.BringToFront();
+                //HidePanelLoading();
+            }
+            catch (Exception ex)
+            {
                 Console.Error.WriteLine(ex.ToString());
             }
         }

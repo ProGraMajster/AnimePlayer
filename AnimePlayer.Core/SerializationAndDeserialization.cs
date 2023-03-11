@@ -18,12 +18,21 @@ namespace AnimePlayer.Core
         public static object Deserialization(string path)
         {
 
-            Stream stream = new FileStream(path, FileMode.Open, FileAccess.Read);
-            IFormatter formattter = new BinaryFormatter();
-            object obj = formattter.Deserialize(stream);
-            stream.Close();
-            stream.Dispose();
-            return obj;
+            try
+            {
+                Stream stream = new FileStream(path, FileMode.Open, FileAccess.Read);
+                IFormatter formattter = new BinaryFormatter();
+                object obj = formattter.Deserialize(stream);
+                stream.Close();
+                stream.Dispose();
+                return obj;
+            }
+            catch(Exception ex)
+            {
+                Debug.WriteLine(ex.ToString());
+                Console.Error.WriteLineAsync(ex.ToString());
+                return null;
+            }
         }
 
         public static void Serialization(object obj, string path)

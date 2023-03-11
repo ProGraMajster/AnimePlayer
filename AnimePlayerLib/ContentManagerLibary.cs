@@ -54,10 +54,13 @@ namespace AnimePlayerLibrary
                 DirectoryInfo directoryInfo = new(AppFolders.Community);
                 foreach(var item in directoryInfo.GetFiles())
                 {
-                    if(item.FullName.EndsWith(".dat"))
+                    if(item.FullName.EndsWith(".json"))
                     {
+                        /*ItemCommunity itemCommunity =
+                            (ItemCommunity)SerializationAndDeserialization.Deserialization(item.FullName);*/
                         ItemCommunity itemCommunity =
-                            (ItemCommunity)SerializationAndDeserialization.Deserialization(item.FullName);
+                            (ItemCommunity)SerializationAndDeserialization
+                            .DeserializationJsonEx(item.FullName, typeof(ItemCommunity));
                         items.Add(itemCommunity);
                     }
                 }
@@ -81,6 +84,7 @@ namespace AnimePlayerLibrary
                 DirectoryInfo directoryInfo = new(AppFolders.UpdatedPagesItems);
                 foreach(var item in directoryInfo.GetFiles())
                 {
+                    /*
                     if(item.Name.EndsWith(".dat"))
                     {
                         PageItemData pageItemData = (PageItemData)SerializationAndDeserialization.Deserialization(item.FullName);
@@ -92,7 +96,8 @@ namespace AnimePlayerLibrary
                             }
                         }
                     }
-                    else if(item.Name.EndsWith(".json"))
+                    else */
+                    if(item.Name.EndsWith(".json"))
                     {
                         PageItemData pageItemData = (PageItemData)SerializationAndDeserialization.DeserializationJsonEx(item.FullName, typeof(PageItemData));
                         if (pageItemData != null)
@@ -107,6 +112,7 @@ namespace AnimePlayerLibrary
                 directoryInfo = new DirectoryInfo(AppFolders.PagesItems);
                 foreach (var item in directoryInfo.GetFiles())
                 {
+                    /*
                     if (item.Name.EndsWith(".dat"))
                     {
                         PageItemData pageItemData = (PageItemData)SerializationAndDeserialization.Deserialization(item.FullName);
@@ -118,7 +124,8 @@ namespace AnimePlayerLibrary
                             }
                         }
                     }
-                    else if(item.Name.EndsWith(".json"))
+                    else */
+                    if(item.Name.EndsWith(".json"))
                     {
                         PageItemData pageItemData = (PageItemData)SerializationAndDeserialization.DeserializationJsonEx(item.FullName, typeof(PageItemData));
                         if (pageItemData != null)
@@ -165,10 +172,11 @@ namespace AnimePlayerLibrary
                 DirectoryInfo directoryInfo = new(AppFolders.PreviewItems.TrimEnd('\\'));
                 foreach (var item in directoryInfo.GetFiles())
                 {
-                    if (item.FullName.EndsWith(".dat"))
+                    if (item.FullName.EndsWith(".json"))
                     {
                         Console.WriteLine(item.FullName);
-                        PreviewTitleClass previewTitleClass = (PreviewTitleClass)SerializationAndDeserialization.Deserialization(item.FullName);
+                        PreviewTitleClass previewTitleClass = (PreviewTitleClass)SerializationAndDeserialization
+                            .DeserializationJsonEx(item.FullName, typeof(PreviewTitleClass));
                        list.Add(previewTitleClass);
                     }
                 }
@@ -190,24 +198,44 @@ namespace AnimePlayerLibrary
                 DirectoryInfo directoryInfo = new(AppFolders.VideosItems);
                 foreach(var item in directoryInfo.GetFiles())
                 {
-                    Episode episode;
+                    Episode episode = null;
+                    /*
                     if (item.FullName.EndsWith(".dat"))
                     {
-                        episode = (Episode)SerializationAndDeserialization.Deserialization(item.FullName);
+                        try
+                        {
+                            episode = (Episode)SerializationAndDeserialization.Deserialization(item.FullName);
+                        }
+                        catch(Exception exDat)
+                        {
+                            Debug.WriteLine(exDat.ToString());
+                            Console.Error.WriteLine(exDat.ToString());
+                        }
                     }
-                    else if(item.FullName.EndsWith(".json"))
+                    else 
+                    */if(item.FullName.EndsWith(".json"))
                     {
-                        episode = (Episode)SerializationAndDeserialization.DeserializationJsonEx(item.FullName, typeof(Episode));
+                        try
+                        {
+                            episode = (Episode)SerializationAndDeserialization.DeserializationJsonEx(item.FullName, typeof(Episode));
+                        }
+                        catch(Exception exJson)
+                        {
+                            Debug.WriteLine(exJson.ToString());
+                            Console.Error.WriteLine(exJson.ToString());
+                        }
                     }
                     else
                     {
                         break;
                     }
-                    if(episode.NumberEpisode == number.ToString() &&
-                        Replacer.Names(episode.Title) == Replacer.Names(title)&&
-                        episode != null)
+                    if(episode != null)
                     {
-                        list.Add(episode);
+                        if (episode.NumberEpisode == number.ToString() &&
+                        Replacer.Names(episode.Title) == Replacer.Names(title))
+                        {
+                            list.Add(episode);
+                        }
                     }
                 }
                 return list;
@@ -230,14 +258,15 @@ namespace AnimePlayerLibrary
                     if(item.Exists)
                     {
                         PreviewTitleClass previewTitleClass = null;
-                        if (item.FullName.EndsWith(".dat"))
+                        /*if (item.FullName.EndsWith(".dat"))
                         {
                             previewTitleClass = (PreviewTitleClass)SerializationAndDeserialization.Deserialization(
                             item.FullName);
                         }
-                        else if(item.FullName.EndsWith(".json"))
+                        else 
+                        */if(item.FullName.EndsWith(".json"))
                         {
-                            previewTitleClass= (PreviewTitleClass)SerializationAndDeserialization.DeserializationJson(
+                            previewTitleClass= (PreviewTitleClass)SerializationAndDeserialization.DeserializationJsonEx(
                             item.FullName, typeof(PreviewTitleClass));
                         }
                         if(previewTitleClass != null&& title == previewTitleClass.Title)
@@ -264,14 +293,15 @@ namespace AnimePlayerLibrary
                     if(item.Exists)
                     {
                         PreviewTitleClass previewTitleClass = null;
-                        if (item.FullName.EndsWith(".dat"))
+                        /*if (item.FullName.EndsWith(".dat"))
                         {
                             previewTitleClass = (PreviewTitleClass)SerializationAndDeserialization.Deserialization(
                             item.FullName);
                         }
-                        else if(item.FullName.EndsWith(".json"))
+                        else
+                        */if(item.FullName.EndsWith(".json"))
                         {
-                            previewTitleClass= (PreviewTitleClass)SerializationAndDeserialization.DeserializationJson(
+                            previewTitleClass= (PreviewTitleClass)SerializationAndDeserialization.DeserializationJsonEx(
                             item.FullName, typeof(PreviewTitleClass));
                         }
                         if(previewTitleClass != null&& title == previewTitleClass.Title)
