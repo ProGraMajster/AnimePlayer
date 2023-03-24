@@ -141,7 +141,8 @@ namespace AnimePlayerLibrary.UI
                 {
                     return;
                 }
-                Definition definition = (Definition)SerializationAndDeserialization.Deserialization(e.Node.Tag.ToString());
+                Definition definition = (Definition)SerializationAndDeserialization
+                    .DeserializationJsonEx(e.Node.Tag.ToString(),typeof(Definition));
                 label1.Text = definition.Name+"\nOpis:\n"+definition.Description;
             }
             
@@ -188,7 +189,8 @@ namespace AnimePlayerLibrary.UI
                 {
                     return;
                 }
-                Definition definition = (Definition)SerializationAndDeserialization.Deserialization(e.Node.Tag.ToString());
+                Definition definition = (Definition)SerializationAndDeserialization
+                    .DeserializationJsonEx(e.Node.Tag.ToString(), typeof(Definition));
                 label1.Text = definition.Name+"\nOpis:\n"+definition.Description;
             }
         }
@@ -218,7 +220,7 @@ namespace AnimePlayerLibrary.UI
                     {
                         Tag = item.FullName
                     };
-                    Definition definition = (Definition)SerializationAndDeserialization.Deserialization(item.FullName);
+                    Definition definition = (Definition)SerializationAndDeserialization.DeserializationJsonEx(item.FullName, typeof(Definition));
                     if(definition.Name.Contains(textBoxFind.Text))
                     {
                         treeNode.Nodes.Add(treeNodeItem);
@@ -237,7 +239,7 @@ namespace AnimePlayerLibrary.UI
                     {
                         Tag = item.FullName
                     };
-                    Definition definition = (Definition)SerializationAndDeserialization.Deserialization(item.FullName);
+                    Definition definition = (Definition)SerializationAndDeserialization.DeserializationJsonEx(item.FullName, typeof(Definition));
                     if (definition.Name.Contains(textBoxFind.Text))
                     {
                         treeNode.Nodes.Add(treeNodeItem);
@@ -256,7 +258,7 @@ namespace AnimePlayerLibrary.UI
                     {
                         Tag = item.FullName
                     };
-                    Definition definition = (Definition)SerializationAndDeserialization.Deserialization(item.FullName);
+                    Definition definition = (Definition)SerializationAndDeserialization.DeserializationJsonEx(item.FullName, typeof(Definition));
                     if (definition.Name.Contains(textBoxFind.Text))
                     {
                         treeNode.Nodes.Add(treeNodeItem);
@@ -275,7 +277,7 @@ namespace AnimePlayerLibrary.UI
                     {
                         Tag = item.FullName
                     };
-                    Definition definition = (Definition)SerializationAndDeserialization.Deserialization(item.FullName);
+                    Definition definition = (Definition)SerializationAndDeserialization.DeserializationJsonEx(item.FullName, typeof(Definition));
                     if (definition.Name.Contains(textBoxFind.Text))
                     {
                         treeNode.Nodes.Add(treeNodeItem);
@@ -287,7 +289,7 @@ namespace AnimePlayerLibrary.UI
                 });
             }
             catch(Exception ex)
-            {
+            {   
                 Console.Error.WriteLine(ex.ToString());
                 MessageBox.Show(ex.Message);
             }
@@ -332,7 +334,7 @@ namespace AnimePlayerLibrary.UI
                 {
                     return;
                 }
-                Definition definition = (Definition)SerializationAndDeserialization.Deserialization(e.Node.Tag.ToString());
+                Definition definition = (Definition)SerializationAndDeserialization.DeserializationJsonEx(e.Node.Tag.ToString(), typeof(Definition));
                 label3.Text = definition.Name + "\nOpis:\n" + definition.Description;
             }
         }
@@ -375,7 +377,7 @@ namespace AnimePlayerLibrary.UI
                 {
                     return;
                 }
-                Definition definition = (Definition)SerializationAndDeserialization.Deserialization(e.Node.Tag.ToString());
+                Definition definition = (Definition)SerializationAndDeserialization.DeserializationJsonEx(e.Node.Tag.ToString(), typeof(Definition));
                 label3.Text = definition.Name + "\nOpis:\n" + definition.Description;
             }
         }
