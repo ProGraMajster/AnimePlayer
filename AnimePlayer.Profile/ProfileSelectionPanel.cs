@@ -23,7 +23,7 @@ namespace AnimePlayer.Profile
             AnimePlayer.CNM.ExtensionsControl.RoundingTheCorners(buttonCreate, 100);
             AnimePlayer.CNM.ExtensionsControl.RoundingTheCorners(pictureBoxIcon, 100);
             SetLocationChildControl();
-            CenterChildControlPanelCreate();   
+            CenterChildControlPanelCreate();
         }
 
         private void SetLocationChildControl()
@@ -35,7 +35,7 @@ namespace AnimePlayer.Profile
                 {
                     w += c.Width;
                 }
-                int p = (this.ClientSize.Width-w)/2;
+                int p = (this.ClientSize.Width - w) / 2;
                 newFlowLayoutPanel1.Padding = new Padding(p, 0, 0, 0);
             }
             catch (Exception ex)
@@ -81,7 +81,7 @@ namespace AnimePlayer.Profile
 
         private void LocationSetCenter(Control control)
         {
-            control.Location = new((control.Parent.Width- control.Width) / 2, control.Location.Y);
+            control.Location = new((control.Parent.Width - control.Width) / 2, control.Location.Y);
         }
 
         private void CenterChildControlPanelCreate()
@@ -132,12 +132,12 @@ namespace AnimePlayer.Profile
             {
                 OpenFileDialog openFileDialog = new();
                 openFileDialog.Filter = "Image Files (*.bmp;*.jpg;*.jpeg,*.png)|*.BMP;*.JPG;*.JPEG;*.PNG";
-                if(openFileDialog.ShowDialog() == DialogResult.OK)
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
                     pictureBoxIcon.Image = Image.FromFile(openFileDialog.FileName);
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Debug.WriteLine(ex.ToString());
                 Console.Error.WriteLine(ex.ToString());
@@ -148,7 +148,7 @@ namespace AnimePlayer.Profile
         {
             try
             {
-                if(string.IsNullOrEmpty(textBoxName.Text))
+                if (string.IsNullOrEmpty(textBoxName.Text))
                 {
                     MessageBox.Show("Pole tekstowe nie może być puste!");
                     return;
@@ -156,7 +156,7 @@ namespace AnimePlayer.Profile
                 DirectoryInfo directoryInfo = new DirectoryInfo(AnimePlayer.Class.AppFolders.Profiles);
                 foreach (DirectoryInfo childDirectory in directoryInfo.GetDirectories())
                 {
-                    if(childDirectory.Name.Equals(Replacer.Names(textBoxName.Text)))
+                    if (childDirectory.Name.Equals(Replacer.Names(textBoxName.Text)))
                     {
                         return;
                     }
@@ -168,7 +168,7 @@ namespace AnimePlayer.Profile
                 profileClass.Name = textBoxName.Text;
                 profileClass.Description = textBoxDescryption.Text;
                 profileClass.PassState = checkBoxPasswordState.Checked;
-                if(checkBoxPasswordState.Checked)
+                if (checkBoxPasswordState.Checked)
                 {
                     profileClass.K = Replacer.Names(DateTime.Now.ToString()).Replace(".", "").Replace(" ", "");
                     profileClass.Password = AesOperation.EncryptString(profileClass.K, maskedTextBoxPassword.Text);
@@ -186,7 +186,7 @@ namespace AnimePlayer.Profile
                     .Serialization(profileClass, path + "\\profile.dat");
 
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Debug.WriteLine(ex.ToString());
                 Console.Error.WriteLine(ex.ToString());
@@ -213,7 +213,7 @@ namespace AnimePlayer.Profile
                             p.MouseLeave += Panel_MouseLeave;
                             p.Size = new Size(100, 125);
                             PictureBox pictureBox = new PictureBox();
-                            if(profileClass.IconProfile !=null)
+                            if (profileClass.IconProfile != null)
                             {
                                 pictureBox.Image = profileClass.IconProfile;
                             }
@@ -229,7 +229,7 @@ namespace AnimePlayer.Profile
                             pictureBox.MouseMove += PictureBox_MouseMove;
                             pictureBox.MouseLeave += PictureBox_MouseLeave;
                             label.MouseMove += PictureBox_MouseMove;
-                            label.MouseLeave+=PictureBox_MouseLeave;
+                            label.MouseLeave += PictureBox_MouseLeave;
                             p.Tag = profileClass;
                             pictureBox.Tag = profileClass;
                             label.Tag = profileClass;
@@ -311,10 +311,10 @@ namespace AnimePlayer.Profile
                 control.BackColor = Color.FromArgb(50, 50, 50);
                 foreach (Control c in control.Controls)
                 {
-                    c.BackColor=control.BackColor;
+                    c.BackColor = control.BackColor;
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Debug.WriteLine(ex.ToString());
                 Console.Error.WriteLine(ex.ToString());
@@ -325,13 +325,13 @@ namespace AnimePlayer.Profile
         {
             try
             {
-                if(!Directory.Exists(AnimePlayer.Class.AppFolders.Profiles))
+                if (!Directory.Exists(AnimePlayer.Class.AppFolders.Profiles))
                 {
                     Directory.CreateDirectory(AnimePlayer.Class.AppFolders.Profiles);
                 }
                 LoadProfiles();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Debug.WriteLine(ex.ToString());
                 Console.Error.WriteLine(ex.ToString());
@@ -340,9 +340,9 @@ namespace AnimePlayer.Profile
 
         private void newFlowLayoutPanel1_VisibleChanged(object sender, EventArgs e)
         {
-            if(!this.Visible)
+            if (!this.Visible)
             {
-                foreach(Panel p in newFlowLayoutPanel1.Controls.OfType<Panel>())
+                foreach (Panel p in newFlowLayoutPanel1.Controls.OfType<Panel>())
                 {
                     p.Dispose();
                 }

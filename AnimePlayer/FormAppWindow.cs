@@ -16,7 +16,7 @@ namespace AnimePlayer
 
         void CloseWindow(IntPtr hwnd)
         {
-           DLLApi.SendMessage(hwnd, DLLApi.WM_CLOSE, IntPtr.Zero, IntPtr.Zero);
+            DLLApi.SendMessage(hwnd, DLLApi.WM_CLOSE, IntPtr.Zero, IntPtr.Zero);
         }
 
         private void buttonClose_Click(object sender, EventArgs e)
@@ -86,7 +86,7 @@ namespace AnimePlayer
             panelWindowMenu.Location = new Point(buttonOptions.Left - panelWindowMenu.Width, buttonOptions.Top);
             if (MainWindowHandle != IntPtr.Zero)
             {
-               DLLApi.MoveWindow(MainWindowHandle, 1, 1, panelContent.Width - 2, panelContent.Height - 2, true);
+                DLLApi.MoveWindow(MainWindowHandle, 1, 1, panelContent.Width - 2, panelContent.Height - 2, true);
             }
         }
 
@@ -152,7 +152,7 @@ namespace AnimePlayer
 
         private void CheckBoxTopMost_CheckedChanged(object sender, EventArgs e)
         {
-            TopMost= checkBoxTopMost.Checked;
+            TopMost = checkBoxTopMost.Checked;
         }
 
         private void ButtonHideMenu_Click(object sender, EventArgs e)
@@ -193,7 +193,7 @@ namespace AnimePlayer
             if (DLLApi.GetWindowRect(new HandleRef(processApp, processApp.MainWindowHandle), out DLLApi.RECT rect))
             {
                 //To do anything  
-                int width = rect.Right -rect.Left;
+                int width = rect.Right - rect.Left;
                 int height = rect.Bottom;
                 Size = new Size(width, height);
             }

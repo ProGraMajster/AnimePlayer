@@ -29,304 +29,300 @@ namespace AnimePlayerLibrary.UI
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.labelEpTitle = new System.Windows.Forms.Label();
-            this.labelEpNumber = new System.Windows.Forms.Label();
-            this.labelTitle = new System.Windows.Forms.Label();
-            this.buttonForwardEp = new System.Windows.Forms.Button();
-            this.buttonClose = new System.Windows.Forms.Button();
-            this.buttonBackEp = new System.Windows.Forms.Button();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.panelViewIcon = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.buttonViewIconClose = new System.Windows.Forms.Button();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panelSort = new System.Windows.Forms.Panel();
-            this.labelSortLoading = new System.Windows.Forms.Label();
-            this.comboBoxSort = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel1.SuspendLayout();
-            this.panelViewIcon.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.panel2.SuspendLayout();
-            this.panelSort.SuspendLayout();
-            this.SuspendLayout();
+            components = new System.ComponentModel.Container();
+            pictureBox1 = new System.Windows.Forms.PictureBox();
+            panel1 = new System.Windows.Forms.Panel();
+            labelEpTitle = new System.Windows.Forms.Label();
+            labelEpNumber = new System.Windows.Forms.Label();
+            labelTitle = new System.Windows.Forms.Label();
+            buttonForwardEp = new System.Windows.Forms.Button();
+            buttonClose = new System.Windows.Forms.Button();
+            buttonBackEp = new System.Windows.Forms.Button();
+            flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            panelViewIcon = new System.Windows.Forms.Panel();
+            pictureBox2 = new System.Windows.Forms.PictureBox();
+            buttonViewIconClose = new System.Windows.Forms.Button();
+            panel4 = new System.Windows.Forms.Panel();
+            panel2 = new System.Windows.Forms.Panel();
+            panelSort = new System.Windows.Forms.Panel();
+            labelSortLoading = new System.Windows.Forms.Label();
+            comboBoxSort = new System.Windows.Forms.ComboBox();
+            label1 = new System.Windows.Forms.Label();
+            toolTip1 = new System.Windows.Forms.ToolTip(components);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            panel1.SuspendLayout();
+            panelViewIcon.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            panel2.SuspendLayout();
+            panelSort.SuspendLayout();
+            SuspendLayout();
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(122, 144);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.PictureBox1_Click);
+            pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
+            pictureBox1.Location = new System.Drawing.Point(12, 12);
+            pictureBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new System.Drawing.Size(122, 144);
+            pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += PictureBox1_Click;
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.labelEpTitle);
-            this.panel1.Controls.Add(this.labelEpNumber);
-            this.panel1.Controls.Add(this.labelTitle);
-            this.panel1.Controls.Add(this.buttonForwardEp);
-            this.panel1.Controls.Add(this.buttonClose);
-            this.panel1.Controls.Add(this.buttonBackEp);
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(12, 12);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(12);
-            this.panel1.Size = new System.Drawing.Size(712, 168);
-            this.panel1.TabIndex = 1;
+            panel1.Controls.Add(labelEpTitle);
+            panel1.Controls.Add(labelEpNumber);
+            panel1.Controls.Add(labelTitle);
+            panel1.Controls.Add(buttonForwardEp);
+            panel1.Controls.Add(buttonClose);
+            panel1.Controls.Add(buttonBackEp);
+            panel1.Controls.Add(pictureBox1);
+            panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            panel1.Location = new System.Drawing.Point(12, 12);
+            panel1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            panel1.Name = "panel1";
+            panel1.Padding = new System.Windows.Forms.Padding(12);
+            panel1.Size = new System.Drawing.Size(1008, 168);
+            panel1.TabIndex = 1;
             // 
             // labelEpTitle
             // 
-            this.labelEpTitle.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelEpTitle.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelEpTitle.ForeColor = System.Drawing.Color.White;
-            this.labelEpTitle.Location = new System.Drawing.Point(172, 79);
-            this.labelEpTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelEpTitle.Name = "labelEpTitle";
-            this.labelEpTitle.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.labelEpTitle.Size = new System.Drawing.Size(449, 43);
-            this.labelEpTitle.TabIndex = 6;
-            this.labelEpTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.labelEpTitle.Visible = false;
+            labelEpTitle.Dock = System.Windows.Forms.DockStyle.Top;
+            labelEpTitle.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            labelEpTitle.ForeColor = System.Drawing.Color.White;
+            labelEpTitle.Location = new System.Drawing.Point(172, 79);
+            labelEpTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            labelEpTitle.Name = "labelEpTitle";
+            labelEpTitle.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            labelEpTitle.Size = new System.Drawing.Size(745, 43);
+            labelEpTitle.TabIndex = 6;
+            labelEpTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            labelEpTitle.Visible = false;
             // 
             // labelEpNumber
             // 
-            this.labelEpNumber.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelEpNumber.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelEpNumber.ForeColor = System.Drawing.Color.White;
-            this.labelEpNumber.Location = new System.Drawing.Point(172, 36);
-            this.labelEpNumber.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelEpNumber.Name = "labelEpNumber";
-            this.labelEpNumber.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.labelEpNumber.Size = new System.Drawing.Size(449, 43);
-            this.labelEpNumber.TabIndex = 1;
-            this.labelEpNumber.Text = "Odcinek";
-            this.labelEpNumber.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            labelEpNumber.Dock = System.Windows.Forms.DockStyle.Top;
+            labelEpNumber.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            labelEpNumber.ForeColor = System.Drawing.Color.White;
+            labelEpNumber.Location = new System.Drawing.Point(172, 36);
+            labelEpNumber.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            labelEpNumber.Name = "labelEpNumber";
+            labelEpNumber.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            labelEpNumber.Size = new System.Drawing.Size(745, 43);
+            labelEpNumber.TabIndex = 1;
+            labelEpNumber.Text = "Odcinek";
+            labelEpNumber.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // labelTitle
             // 
-            this.labelTitle.AutoSize = true;
-            this.labelTitle.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelTitle.Font = new System.Drawing.Font("Comic Sans MS", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelTitle.ForeColor = System.Drawing.Color.White;
-            this.labelTitle.Location = new System.Drawing.Point(172, 12);
-            this.labelTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.labelTitle.Size = new System.Drawing.Size(61, 24);
-            this.labelTitle.TabIndex = 4;
-            this.labelTitle.Text = "Title";
-            this.labelTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            labelTitle.AutoSize = true;
+            labelTitle.Dock = System.Windows.Forms.DockStyle.Top;
+            labelTitle.Font = new System.Drawing.Font("Comic Sans MS", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            labelTitle.ForeColor = System.Drawing.Color.White;
+            labelTitle.Location = new System.Drawing.Point(172, 12);
+            labelTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            labelTitle.Name = "labelTitle";
+            labelTitle.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            labelTitle.Size = new System.Drawing.Size(61, 24);
+            labelTitle.TabIndex = 4;
+            labelTitle.Text = "Title";
+            labelTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // buttonForwardEp
             // 
-            this.buttonForwardEp.Dock = System.Windows.Forms.DockStyle.Right;
-            this.buttonForwardEp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonForwardEp.ForeColor = System.Drawing.Color.White;
-            this.buttonForwardEp.Location = new System.Drawing.Point(621, 12);
-            this.buttonForwardEp.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.buttonForwardEp.Name = "buttonForwardEp";
-            this.buttonForwardEp.Size = new System.Drawing.Size(38, 144);
-            this.buttonForwardEp.TabIndex = 3;
-            this.buttonForwardEp.Text = ">";
-            this.toolTip1.SetToolTip(this.buttonForwardEp, "Następny odcinek");
-            this.buttonForwardEp.UseVisualStyleBackColor = true;
-            this.buttonForwardEp.Visible = false;
-            this.buttonForwardEp.Click += new System.EventHandler(this.ButtonForwardEp_Click);
+            buttonForwardEp.Dock = System.Windows.Forms.DockStyle.Right;
+            buttonForwardEp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            buttonForwardEp.ForeColor = System.Drawing.Color.White;
+            buttonForwardEp.Location = new System.Drawing.Point(917, 12);
+            buttonForwardEp.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            buttonForwardEp.Name = "buttonForwardEp";
+            buttonForwardEp.Size = new System.Drawing.Size(38, 144);
+            buttonForwardEp.TabIndex = 3;
+            buttonForwardEp.Text = ">";
+            toolTip1.SetToolTip(buttonForwardEp, "Następny odcinek");
+            buttonForwardEp.UseVisualStyleBackColor = true;
+            buttonForwardEp.Visible = false;
+            buttonForwardEp.Click += ButtonForwardEp_Click;
             // 
             // buttonClose
             // 
-            this.buttonClose.Dock = System.Windows.Forms.DockStyle.Right;
-            this.buttonClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonClose.ForeColor = System.Drawing.Color.Red;
-            this.buttonClose.Location = new System.Drawing.Point(659, 12);
-            this.buttonClose.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.buttonClose.MaximumSize = new System.Drawing.Size(41, 29);
-            this.buttonClose.Name = "buttonClose";
-            this.buttonClose.Size = new System.Drawing.Size(41, 29);
-            this.buttonClose.TabIndex = 5;
-            this.buttonClose.Text = "X";
-            this.buttonClose.UseVisualStyleBackColor = true;
-            this.buttonClose.Click += new System.EventHandler(this.ButtonClose_Click);
+            buttonClose.Dock = System.Windows.Forms.DockStyle.Right;
+            buttonClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            buttonClose.ForeColor = System.Drawing.Color.Red;
+            buttonClose.Location = new System.Drawing.Point(955, 12);
+            buttonClose.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            buttonClose.MaximumSize = new System.Drawing.Size(41, 29);
+            buttonClose.Name = "buttonClose";
+            buttonClose.Size = new System.Drawing.Size(41, 29);
+            buttonClose.TabIndex = 5;
+            buttonClose.Text = "X";
+            buttonClose.UseVisualStyleBackColor = true;
+            buttonClose.Click += ButtonClose_Click;
             // 
             // buttonBackEp
             // 
-            this.buttonBackEp.Dock = System.Windows.Forms.DockStyle.Left;
-            this.buttonBackEp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonBackEp.ForeColor = System.Drawing.Color.White;
-            this.buttonBackEp.Location = new System.Drawing.Point(134, 12);
-            this.buttonBackEp.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.buttonBackEp.Name = "buttonBackEp";
-            this.buttonBackEp.Size = new System.Drawing.Size(38, 144);
-            this.buttonBackEp.TabIndex = 2;
-            this.buttonBackEp.Text = "<";
-            this.toolTip1.SetToolTip(this.buttonBackEp, "Poprzedni odcinek");
-            this.buttonBackEp.UseVisualStyleBackColor = true;
-            this.buttonBackEp.Visible = false;
-            this.buttonBackEp.Click += new System.EventHandler(this.ButtonBackEp_Click);
+            buttonBackEp.Dock = System.Windows.Forms.DockStyle.Left;
+            buttonBackEp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            buttonBackEp.ForeColor = System.Drawing.Color.White;
+            buttonBackEp.Location = new System.Drawing.Point(134, 12);
+            buttonBackEp.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            buttonBackEp.Name = "buttonBackEp";
+            buttonBackEp.Size = new System.Drawing.Size(38, 144);
+            buttonBackEp.TabIndex = 2;
+            buttonBackEp.Text = "<";
+            toolTip1.SetToolTip(buttonBackEp, "Poprzedni odcinek");
+            buttonBackEp.UseVisualStyleBackColor = true;
+            buttonBackEp.Visible = false;
+            buttonBackEp.Click += ButtonBackEp_Click;
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 30);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(12);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(12, 0, 12, 0);
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(712, 361);
-            this.flowLayoutPanel1.TabIndex = 2;
+            flowLayoutPanel1.AutoScroll = true;
+            flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(38, 38, 38);
+            flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            flowLayoutPanel1.Location = new System.Drawing.Point(0, 30);
+            flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(12);
+            flowLayoutPanel1.Name = "flowLayoutPanel1";
+            flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(12, 0, 12, 0);
+            flowLayoutPanel1.Size = new System.Drawing.Size(1008, 374);
+            flowLayoutPanel1.TabIndex = 2;
             // 
             // panelViewIcon
             // 
-            this.panelViewIcon.Controls.Add(this.pictureBox2);
-            this.panelViewIcon.Controls.Add(this.buttonViewIconClose);
-            this.panelViewIcon.Location = new System.Drawing.Point(70, 23);
-            this.panelViewIcon.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.panelViewIcon.Name = "panelViewIcon";
-            this.panelViewIcon.Size = new System.Drawing.Size(666, 560);
-            this.panelViewIcon.TabIndex = 5;
-            this.panelViewIcon.Visible = false;
+            panelViewIcon.Controls.Add(pictureBox2);
+            panelViewIcon.Controls.Add(buttonViewIconClose);
+            panelViewIcon.Location = new System.Drawing.Point(70, 23);
+            panelViewIcon.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            panelViewIcon.Name = "panelViewIcon";
+            panelViewIcon.Size = new System.Drawing.Size(666, 560);
+            panelViewIcon.TabIndex = 5;
+            panelViewIcon.Visible = false;
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(625, 560);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
+            pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            pictureBox2.Location = new System.Drawing.Point(0, 0);
+            pictureBox2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new System.Drawing.Size(625, 560);
+            pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 0;
+            pictureBox2.TabStop = false;
             // 
             // buttonViewIconClose
             // 
-            this.buttonViewIconClose.Dock = System.Windows.Forms.DockStyle.Right;
-            this.buttonViewIconClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonViewIconClose.ForeColor = System.Drawing.Color.White;
-            this.buttonViewIconClose.Location = new System.Drawing.Point(625, 0);
-            this.buttonViewIconClose.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.buttonViewIconClose.MaximumSize = new System.Drawing.Size(41, 29);
-            this.buttonViewIconClose.Name = "buttonViewIconClose";
-            this.buttonViewIconClose.Size = new System.Drawing.Size(41, 29);
-            this.buttonViewIconClose.TabIndex = 6;
-            this.buttonViewIconClose.Text = "X";
-            this.buttonViewIconClose.UseVisualStyleBackColor = true;
-            this.buttonViewIconClose.Click += new System.EventHandler(this.ButtonViewIconClose_Click);
+            buttonViewIconClose.Dock = System.Windows.Forms.DockStyle.Right;
+            buttonViewIconClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            buttonViewIconClose.ForeColor = System.Drawing.Color.White;
+            buttonViewIconClose.Location = new System.Drawing.Point(625, 0);
+            buttonViewIconClose.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            buttonViewIconClose.MaximumSize = new System.Drawing.Size(41, 29);
+            buttonViewIconClose.Name = "buttonViewIconClose";
+            buttonViewIconClose.Size = new System.Drawing.Size(41, 29);
+            buttonViewIconClose.TabIndex = 6;
+            buttonViewIconClose.Text = "X";
+            buttonViewIconClose.UseVisualStyleBackColor = true;
+            buttonViewIconClose.Click += ButtonViewIconClose_Click;
             // 
             // panel4
             // 
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(12, 571);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(712, 40);
-            this.panel4.TabIndex = 0;
+            panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
+            panel4.Location = new System.Drawing.Point(12, 584);
+            panel4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            panel4.Name = "panel4";
+            panel4.Size = new System.Drawing.Size(1008, 40);
+            panel4.TabIndex = 0;
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.flowLayoutPanel1);
-            this.panel2.Controls.Add(this.panelSort);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(12, 180);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(712, 391);
-            this.panel2.TabIndex = 0;
+            panel2.Controls.Add(flowLayoutPanel1);
+            panel2.Controls.Add(panelSort);
+            panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            panel2.Location = new System.Drawing.Point(12, 180);
+            panel2.Name = "panel2";
+            panel2.Size = new System.Drawing.Size(1008, 404);
+            panel2.TabIndex = 0;
             // 
             // panelSort
             // 
-            this.panelSort.Controls.Add(this.labelSortLoading);
-            this.panelSort.Controls.Add(this.comboBoxSort);
-            this.panelSort.Controls.Add(this.label1);
-            this.panelSort.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSort.Location = new System.Drawing.Point(0, 0);
-            this.panelSort.Name = "panelSort";
-            this.panelSort.Padding = new System.Windows.Forms.Padding(15, 5, 0, 5);
-            this.panelSort.Size = new System.Drawing.Size(712, 30);
-            this.panelSort.TabIndex = 0;
-            this.panelSort.Visible = false;
+            panelSort.Controls.Add(labelSortLoading);
+            panelSort.Controls.Add(comboBoxSort);
+            panelSort.Controls.Add(label1);
+            panelSort.Dock = System.Windows.Forms.DockStyle.Top;
+            panelSort.Location = new System.Drawing.Point(0, 0);
+            panelSort.Name = "panelSort";
+            panelSort.Padding = new System.Windows.Forms.Padding(15, 5, 0, 5);
+            panelSort.Size = new System.Drawing.Size(1008, 30);
+            panelSort.TabIndex = 0;
+            panelSort.Visible = false;
             // 
             // labelSortLoading
             // 
-            this.labelSortLoading.Dock = System.Windows.Forms.DockStyle.Left;
-            this.labelSortLoading.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelSortLoading.ForeColor = System.Drawing.Color.White;
-            this.labelSortLoading.Location = new System.Drawing.Point(172, 5);
-            this.labelSortLoading.Name = "labelSortLoading";
-            this.labelSortLoading.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.labelSortLoading.Size = new System.Drawing.Size(104, 20);
-            this.labelSortLoading.TabIndex = 2;
-            this.labelSortLoading.Text = "Ładowanie...";
-            this.labelSortLoading.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.labelSortLoading.Visible = false;
+            labelSortLoading.Dock = System.Windows.Forms.DockStyle.Left;
+            labelSortLoading.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            labelSortLoading.ForeColor = System.Drawing.Color.White;
+            labelSortLoading.Location = new System.Drawing.Point(172, 5);
+            labelSortLoading.Name = "labelSortLoading";
+            labelSortLoading.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            labelSortLoading.Size = new System.Drawing.Size(104, 20);
+            labelSortLoading.TabIndex = 2;
+            labelSortLoading.Text = "Ładowanie...";
+            labelSortLoading.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            labelSortLoading.Visible = false;
             // 
             // comboBoxSort
             // 
-            this.comboBoxSort.BackColor = System.Drawing.Color.Black;
-            this.comboBoxSort.Dock = System.Windows.Forms.DockStyle.Left;
-            this.comboBoxSort.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxSort.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBoxSort.ForeColor = System.Drawing.Color.White;
-            this.comboBoxSort.FormattingEnabled = true;
-            this.comboBoxSort.Items.AddRange(new object[] {
-            "Wszystko",
-            "Napisy PL",
-            "Lektor PL"});
-            this.comboBoxSort.Location = new System.Drawing.Point(78, 5);
-            this.comboBoxSort.Name = "comboBoxSort";
-            this.comboBoxSort.Size = new System.Drawing.Size(94, 23);
-            this.comboBoxSort.TabIndex = 1;
-            this.toolTip1.SetToolTip(this.comboBoxSort, "Sortowanie odcinków");
-            this.comboBoxSort.SelectedIndexChanged += new System.EventHandler(this.comboBoxSort_SelectedIndexChanged);
+            comboBoxSort.BackColor = System.Drawing.Color.Black;
+            comboBoxSort.Dock = System.Windows.Forms.DockStyle.Left;
+            comboBoxSort.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            comboBoxSort.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            comboBoxSort.ForeColor = System.Drawing.Color.White;
+            comboBoxSort.FormattingEnabled = true;
+            comboBoxSort.Items.AddRange(new object[] { "Wszystko", "Napisy PL", "Lektor PL" });
+            comboBoxSort.Location = new System.Drawing.Point(78, 5);
+            comboBoxSort.Name = "comboBoxSort";
+            comboBoxSort.Size = new System.Drawing.Size(94, 23);
+            comboBoxSort.TabIndex = 1;
+            toolTip1.SetToolTip(comboBoxSort, "Sortowanie odcinków");
+            comboBoxSort.SelectedIndexChanged += comboBoxSort_SelectedIndexChanged;
             // 
             // label1
             // 
-            this.label1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label1.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(15, 5);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Pokaż:";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            label1.Dock = System.Windows.Forms.DockStyle.Left;
+            label1.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label1.ForeColor = System.Drawing.Color.White;
+            label1.Location = new System.Drawing.Point(15, 5);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(63, 20);
+            label1.TabIndex = 0;
+            label1.Text = "Pokaż:";
+            label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // PageEpisode
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoScroll = true;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel4);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.panelViewIcon);
-            this.DoubleBuffered = true;
-            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.Name = "PageEpisode";
-            this.Padding = new System.Windows.Forms.Padding(12);
-            this.Size = new System.Drawing.Size(11, 13);
-            this.Resize += new System.EventHandler(this.PageEpisode_Resize);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panelViewIcon.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panelSort.ResumeLayout(false);
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            AutoScroll = true;
+            BackColor = System.Drawing.Color.FromArgb(25, 25, 25);
+            Controls.Add(panel2);
+            Controls.Add(panel4);
+            Controls.Add(panel1);
+            Controls.Add(panelViewIcon);
+            DoubleBuffered = true;
+            Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            Name = "PageEpisode";
+            Padding = new System.Windows.Forms.Padding(12);
+            Size = new System.Drawing.Size(1032, 636);
+            Resize += PageEpisode_Resize;
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            panelViewIcon.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            panel2.ResumeLayout(false);
+            panelSort.ResumeLayout(false);
+            ResumeLayout(false);
         }
 
         #endregion

@@ -12,6 +12,18 @@
     <SupportedOSPlatformVersion>7.0</SupportedOSPlatformVersion>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="bin\Debug\net7.0-windows10.0.22621.0\AnimePlayerPL.exe.WebView2\**" />
+    <Compile Remove="bin\Debug\net7.0-windows10.0.22621.0\runtimes\**" />
+    <Compile Remove="bin\Release\**" />
+    <EmbeddedResource Remove="bin\Debug\net7.0-windows10.0.22621.0\AnimePlayerPL.exe.WebView2\**" />
+    <EmbeddedResource Remove="bin\Debug\net7.0-windows10.0.22621.0\runtimes\**" />
+    <EmbeddedResource Remove="bin\Release\**" />
+    <None Remove="bin\Debug\net7.0-windows10.0.22621.0\AnimePlayerPL.exe.WebView2\**" />
+    <None Remove="bin\Debug\net7.0-windows10.0.22621.0\runtimes\**" />
+    <None Remove="bin\Release\**" />
+  </ItemGroup>
+
 
   <ItemGroup>
     <Content Include="bin\Debug\net7.0-windows10.0.22621.0\AnimePlayerPL.deps.json" />
@@ -20,25 +32,6 @@
     <Content Include="icon.ico" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\AnimePlayer.Updater\AnimePlayer.Updater.csproj" />
-    <ProjectReference Include="..\AnimePlayer\AnimePlayer.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="NewMessageBox">
-      <HintPath>..\AnimePlayer\NewMessageBox.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Update="NewMessageBox.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="PrzeczytajTenPlik.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
 
   <ItemGroup>
     <None Include="bin\Debug\net7.0-windows10.0.22621.0\AnimePlayer.Class.dll" />
@@ -70,11 +63,28 @@
     <None Include="bin\Debug\net7.0-windows10.0.22621.0\Microsoft.Windows.SDK.NET.dll" />
     <None Include="bin\Debug\net7.0-windows10.0.22621.0\NewMessageBox.dll" />
     <None Include="bin\Debug\net7.0-windows10.0.22621.0\Newtonsoft.Json.dll" />
-    <None Include="bin\Debug\net7.0-windows10.0.22621.0\runtimes\win-arm64\native\WebView2Loader.dll" />
-    <None Include="bin\Debug\net7.0-windows10.0.22621.0\runtimes\win-x64\native\WebView2Loader.dll" />
-    <None Include="bin\Debug\net7.0-windows10.0.22621.0\runtimes\win-x86\native\WebView2Loader.dll" />
     <None Include="bin\Debug\net7.0-windows10.0.22621.0\WinRT.Runtime.dll" />
     <None Include="bin\Debug\net7.0-windows10.0.22621.0\ZetaIpc.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AnimePlayer.Updater\AnimePlayer.Updater.csproj" />
+    <ProjectReference Include="..\AnimePlayer\AnimePlayer.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="NewMessageBox">
+      <HintPath>..\AnimePlayer\NewMessageBox.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="NewMessageBox.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="PrzeczytajTenPlik.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

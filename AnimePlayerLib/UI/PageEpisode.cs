@@ -27,7 +27,7 @@ namespace AnimePlayerLibrary.UI
 
         private void PageEpisode_Load(object sender, EventArgs e)
         {
-            if(numberEp > 1)
+            if (numberEp > 1)
             {
                 buttonBackEp.Show();
             }
@@ -35,7 +35,7 @@ namespace AnimePlayerLibrary.UI
             {
                 buttonBackEp.Hide();
             }
-            if(_PageItemData == null)
+            if (_PageItemData == null)
             {
                 MessageBox.Show("Wystąpił błąd podczas ładwoania zawartości", "Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -53,19 +53,19 @@ namespace AnimePlayerLibrary.UI
                     buttonForwardEp.Show();
                 }
             }
-            catch(Exception ex1)
+            catch (Exception ex1)
             {
-                Console.Error.WriteLine("ex1\n"+ex1.ToString());
+                Console.Error.WriteLine("ex1\n" + ex1.ToString());
             }
 
             try
             {
                 labelTitle.Text = _PageItemData.TitleInformation.Title;
-                labelEpNumber.Text = "Odcinek "+numberEp.ToString();
+                labelEpNumber.Text = "Odcinek " + numberEp.ToString();
                 Thread thread = new(() =>
                 {
                     List<Episode> episodes = ContentManagerLibary.GetEpisode(numberEp, _PageItemData.TitleInformation.Title);
-                    if(episodes != null&& episodes.Count > 0)
+                    if (episodes != null && episodes.Count > 0)
                     {
                         foreach (var item in episodes)
                         {
@@ -78,7 +78,7 @@ namespace AnimePlayerLibrary.UI
                         }
                     }
 
-                    if(flowLayoutPanel1.Controls.Count == 0)
+                    if (flowLayoutPanel1.Controls.Count == 0)
                     {
                         Label label = new()
                         {
@@ -102,12 +102,12 @@ namespace AnimePlayerLibrary.UI
                         });
                     }
                 });
-                thread.Name="Thread_LoadEpisode";
+                thread.Name = "Thread_LoadEpisode";
                 thread.Start();
                 Thread thread2 = new(() =>
                 {
                     List<string> strings = ContentManagerLibary.GetLinkToIcon(_PageItemData.TitleInformation.Title);
-                    if(strings == null)
+                    if (strings == null)
                     {
                         return;
                     }
@@ -120,13 +120,13 @@ namespace AnimePlayerLibrary.UI
                 thread2.Name = "Thread_LoadIcon";
                 thread2.Start();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Console.Error.WriteLine(ex.ToString());
             }
         }
 
-        private void ButtonPlayEpisode_Click(object sender, EventArgs e)    
+        private void ButtonPlayEpisode_Click(object sender, EventArgs e)
         {
             try
             {
@@ -138,7 +138,7 @@ namespace AnimePlayerLibrary.UI
                 videoPlayerWeb.Show();
                 videoPlayerWeb.BringToFront();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Wystąpił błąd podczas ładowania!", "Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -181,11 +181,11 @@ namespace AnimePlayerLibrary.UI
 
         private void ButtonBackEp_Click(object sender, EventArgs e)
         {
-            if(numberEp==1)
+            if (numberEp == 1)
             {
                 return;
             }
-            PageEpisode pageEpisode = new(_PageItemData, numberEp-=1)
+            PageEpisode pageEpisode = new(_PageItemData, numberEp -= 1)
             {
                 Dock = DockStyle.Fill
             };
@@ -197,7 +197,7 @@ namespace AnimePlayerLibrary.UI
 
         private void ButtonForwardEp_Click(object sender, EventArgs e)
         {
-            PageEpisode pageEpisode = new(_PageItemData, numberEp+=1)
+            PageEpisode pageEpisode = new(_PageItemData, numberEp += 1)
             {
                 Dock = DockStyle.Fill
             };
@@ -206,14 +206,14 @@ namespace AnimePlayerLibrary.UI
             pageEpisode.BringToFront();
             this.Dispose();
         }
-            
+
         bool comboBoxSort_Working = false;
 
         private void comboBoxSort_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
             {
-                if(comboBoxSort_Working != true)
+                if (comboBoxSort_Working != true)
                 {
                     return;
                 }
@@ -243,7 +243,7 @@ namespace AnimePlayerLibrary.UI
                 flowLayoutPanel1.Enabled = true;
                 comboBoxSort.Enabled = true;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Debug.WriteLine(ex.ToString());
                 Console.Error.WriteLine(ex.ToString());

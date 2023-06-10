@@ -24,33 +24,33 @@ namespace AnimePlayerLibrary.UI
             try
             {
                 Episode = episode;
-                labelTitleAndNumber.Text ="Odcinek: "+episode.NumberEpisode+" | "+ episode.TitleOfEpisode;
-                labelType.Text = "Typ:    "+episode.Type;
-                labelAudio.Text = "Audio:   "+episode.AudioLanguage;
-                labelSubtitle.Text = "Napisy:   "+episode.SubtitleLanguage;
-                linkLabel1.Text = "Tłumacz:    "+episode.TranslationCreator;
+                labelTitleAndNumber.Text = "Odcinek: " + episode.NumberEpisode + " | " + episode.TitleOfEpisode;
+                labelType.Text = "Typ:    " + episode.Type;
+                labelAudio.Text = "Audio:   " + episode.AudioLanguage;
+                labelSubtitle.Text = "Napisy:   " + episode.SubtitleLanguage;
+                linkLabel1.Text = "Tłumacz:    " + episode.TranslationCreator;
                 linkLabel1.LinkArea = new LinkArea(12, 1000);
                 richTextBox1.Text = episode.TranslationCreatorAdditionalInformation;
                 buttonPlayEpisode.Tag = episode;
 
-                if(episode.LinkToEpisode.Contains("cda"))
+                if (episode.LinkToEpisode.Contains("cda"))
                 {
-                    labelType.Text+="   | Serwis: CDA";
+                    labelType.Text += "   | Serwis: CDA";
                 }
-                else if(episode.LinkToEpisode.Contains("drive.google"))
+                else if (episode.LinkToEpisode.Contains("drive.google"))
                 {
-                    labelType.Text+="   | Serwis: Google";
+                    labelType.Text += "   | Serwis: Google";
                 }
-                else if(episode.LinkToEpisode.Contains("mega"))
+                else if (episode.LinkToEpisode.Contains("mega"))
                 {
-                    labelType.Text+="   | Serwis: Mega";
+                    labelType.Text += "   | Serwis: Mega";
                 }
                 else if (episode.LinkToEpisode.Contains("sibnet.ru"))
                 {
                     labelType.Text += "   | Serwis: Sibnet";
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Console.Error.WriteLine(ex.ToString());
             }
@@ -65,11 +65,11 @@ namespace AnimePlayerLibrary.UI
         {
             try
             {
-                
+
                 /*var status = new Ping().Send("www.google.com.mx").Status == IPStatus.Success;
                 Debug.WriteLine(status.ToString());*/
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Debug.WriteLine(ex.ToString());
             }

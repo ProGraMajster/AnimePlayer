@@ -28,177 +28,175 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panelNavigation = new System.Windows.Forms.Panel();
-            this.panelDockOnTextBox = new System.Windows.Forms.Panel();
-            this.textBoxStartPagefinditem = new System.Windows.Forms.TextBox();
-            this.panelEdit = new System.Windows.Forms.Panel();
-            this.buttonRemoveSelected = new System.Windows.Forms.Button();
-            this.buttonEditList = new System.Windows.Forms.Button();
-            this.buttonStartPageFinditem = new System.Windows.Forms.Button();
-            this.panelDock = new System.Windows.Forms.Panel();
-            this.newFlowLayoutPanel1 = new AnimePlayer.ControlsWinForms.NewFlowLayoutPanel();
-            this.bWresiezItem = new System.ComponentModel.BackgroundWorker();
-            this.panelNavigation.SuspendLayout();
-            this.panelDockOnTextBox.SuspendLayout();
-            this.panelEdit.SuspendLayout();
-            this.panelDock.SuspendLayout();
-            this.SuspendLayout();
+            panelNavigation = new System.Windows.Forms.Panel();
+            panelDockOnTextBox = new System.Windows.Forms.Panel();
+            textBoxStartPagefinditem = new System.Windows.Forms.TextBox();
+            panelEdit = new System.Windows.Forms.Panel();
+            buttonRemoveSelected = new System.Windows.Forms.Button();
+            buttonEditList = new System.Windows.Forms.Button();
+            buttonStartPageFinditem = new System.Windows.Forms.Button();
+            panelDock = new System.Windows.Forms.Panel();
+            newFlowLayoutPanel1 = new AnimePlayer.ControlsWinForms.NewFlowLayoutPanel();
+            bWresiezItem = new System.ComponentModel.BackgroundWorker();
+            panelNavigation.SuspendLayout();
+            panelDockOnTextBox.SuspendLayout();
+            panelEdit.SuspendLayout();
+            panelDock.SuspendLayout();
+            SuspendLayout();
             // 
             // panelNavigation
             // 
-            this.panelNavigation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.panelNavigation.Controls.Add(this.panelDockOnTextBox);
-            this.panelNavigation.Controls.Add(this.panelEdit);
-            this.panelNavigation.Controls.Add(this.buttonEditList);
-            this.panelNavigation.Controls.Add(this.buttonStartPageFinditem);
-            this.panelNavigation.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelNavigation.Location = new System.Drawing.Point(0, 0);
-            this.panelNavigation.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.panelNavigation.Name = "panelNavigation";
-            this.panelNavigation.Size = new System.Drawing.Size(628, 39);
-            this.panelNavigation.TabIndex = 0;
+            panelNavigation.BackColor = System.Drawing.Color.FromArgb(30, 30, 30);
+            panelNavigation.Controls.Add(panelDockOnTextBox);
+            panelNavigation.Controls.Add(panelEdit);
+            panelNavigation.Controls.Add(buttonEditList);
+            panelNavigation.Controls.Add(buttonStartPageFinditem);
+            panelNavigation.Dock = System.Windows.Forms.DockStyle.Top;
+            panelNavigation.Location = new System.Drawing.Point(0, 0);
+            panelNavigation.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            panelNavigation.Name = "panelNavigation";
+            panelNavigation.Size = new System.Drawing.Size(628, 39);
+            panelNavigation.TabIndex = 0;
             // 
             // panelDockOnTextBox
             // 
-            this.panelDockOnTextBox.Controls.Add(this.textBoxStartPagefinditem);
-            this.panelDockOnTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelDockOnTextBox.Location = new System.Drawing.Point(149, 0);
-            this.panelDockOnTextBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.panelDockOnTextBox.Name = "panelDockOnTextBox";
-            this.panelDockOnTextBox.Padding = new System.Windows.Forms.Padding(0, 12, 0, 0);
-            this.panelDockOnTextBox.Size = new System.Drawing.Size(391, 39);
-            this.panelDockOnTextBox.TabIndex = 7;
-            this.panelDockOnTextBox.Visible = false;
+            panelDockOnTextBox.Controls.Add(textBoxStartPagefinditem);
+            panelDockOnTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            panelDockOnTextBox.Location = new System.Drawing.Point(149, 0);
+            panelDockOnTextBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            panelDockOnTextBox.Name = "panelDockOnTextBox";
+            panelDockOnTextBox.Padding = new System.Windows.Forms.Padding(0, 12, 0, 0);
+            panelDockOnTextBox.Size = new System.Drawing.Size(391, 39);
+            panelDockOnTextBox.TabIndex = 7;
+            panelDockOnTextBox.Visible = false;
             // 
             // textBoxStartPagefinditem
             // 
-            this.textBoxStartPagefinditem.AutoCompleteCustomSource.AddRange(new string[] {
-            "TEST"});
-            this.textBoxStartPagefinditem.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.textBoxStartPagefinditem.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.textBoxStartPagefinditem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.textBoxStartPagefinditem.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxStartPagefinditem.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxStartPagefinditem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBoxStartPagefinditem.ForeColor = System.Drawing.Color.White;
-            this.textBoxStartPagefinditem.Location = new System.Drawing.Point(0, 12);
-            this.textBoxStartPagefinditem.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBoxStartPagefinditem.Name = "textBoxStartPagefinditem";
-            this.textBoxStartPagefinditem.Size = new System.Drawing.Size(391, 16);
-            this.textBoxStartPagefinditem.TabIndex = 6;
-            this.textBoxStartPagefinditem.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            textBoxStartPagefinditem.AutoCompleteCustomSource.AddRange(new string[] { "TEST" });
+            textBoxStartPagefinditem.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            textBoxStartPagefinditem.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            textBoxStartPagefinditem.BackColor = System.Drawing.Color.FromArgb(20, 20, 20);
+            textBoxStartPagefinditem.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            textBoxStartPagefinditem.Dock = System.Windows.Forms.DockStyle.Fill;
+            textBoxStartPagefinditem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            textBoxStartPagefinditem.ForeColor = System.Drawing.Color.White;
+            textBoxStartPagefinditem.Location = new System.Drawing.Point(0, 12);
+            textBoxStartPagefinditem.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            textBoxStartPagefinditem.Name = "textBoxStartPagefinditem";
+            textBoxStartPagefinditem.Size = new System.Drawing.Size(391, 16);
+            textBoxStartPagefinditem.TabIndex = 6;
+            textBoxStartPagefinditem.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // panelEdit
             // 
-            this.panelEdit.Controls.Add(this.buttonRemoveSelected);
-            this.panelEdit.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelEdit.Location = new System.Drawing.Point(67, 0);
-            this.panelEdit.Name = "panelEdit";
-            this.panelEdit.Size = new System.Drawing.Size(82, 39);
-            this.panelEdit.TabIndex = 9;
-            this.panelEdit.Visible = false;
+            panelEdit.Controls.Add(buttonRemoveSelected);
+            panelEdit.Dock = System.Windows.Forms.DockStyle.Left;
+            panelEdit.Location = new System.Drawing.Point(67, 0);
+            panelEdit.Name = "panelEdit";
+            panelEdit.Size = new System.Drawing.Size(82, 39);
+            panelEdit.TabIndex = 9;
+            panelEdit.Visible = false;
             // 
             // buttonRemoveSelected
             // 
-            this.buttonRemoveSelected.BackColor = System.Drawing.Color.Transparent;
-            this.buttonRemoveSelected.Dock = System.Windows.Forms.DockStyle.Left;
-            this.buttonRemoveSelected.FlatAppearance.BorderSize = 0;
-            this.buttonRemoveSelected.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.buttonRemoveSelected.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.buttonRemoveSelected.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonRemoveSelected.Font = new System.Drawing.Font("Comic Sans MS", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonRemoveSelected.ForeColor = System.Drawing.Color.White;
-            this.buttonRemoveSelected.Location = new System.Drawing.Point(0, 0);
-            this.buttonRemoveSelected.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.buttonRemoveSelected.Name = "buttonRemoveSelected";
-            this.buttonRemoveSelected.Size = new System.Drawing.Size(82, 39);
-            this.buttonRemoveSelected.TabIndex = 9;
-            this.buttonRemoveSelected.Text = "Usuń zaznaczone";
-            this.buttonRemoveSelected.UseVisualStyleBackColor = false;
-            this.buttonRemoveSelected.Click += new System.EventHandler(this.buttonRemoveSelected_Click);
+            buttonRemoveSelected.BackColor = System.Drawing.Color.Transparent;
+            buttonRemoveSelected.Dock = System.Windows.Forms.DockStyle.Left;
+            buttonRemoveSelected.FlatAppearance.BorderSize = 0;
+            buttonRemoveSelected.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(60, 60, 60);
+            buttonRemoveSelected.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(55, 55, 55);
+            buttonRemoveSelected.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            buttonRemoveSelected.Font = new System.Drawing.Font("Comic Sans MS", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            buttonRemoveSelected.ForeColor = System.Drawing.Color.White;
+            buttonRemoveSelected.Location = new System.Drawing.Point(0, 0);
+            buttonRemoveSelected.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            buttonRemoveSelected.Name = "buttonRemoveSelected";
+            buttonRemoveSelected.Size = new System.Drawing.Size(82, 39);
+            buttonRemoveSelected.TabIndex = 9;
+            buttonRemoveSelected.Text = "Usuń zaznaczone";
+            buttonRemoveSelected.UseVisualStyleBackColor = false;
+            buttonRemoveSelected.Click += buttonRemoveSelected_Click;
             // 
             // buttonEditList
             // 
-            this.buttonEditList.BackColor = System.Drawing.Color.Transparent;
-            this.buttonEditList.Dock = System.Windows.Forms.DockStyle.Left;
-            this.buttonEditList.FlatAppearance.BorderSize = 0;
-            this.buttonEditList.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.buttonEditList.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.buttonEditList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonEditList.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonEditList.ForeColor = System.Drawing.Color.White;
-            this.buttonEditList.Location = new System.Drawing.Point(0, 0);
-            this.buttonEditList.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.buttonEditList.Name = "buttonEditList";
-            this.buttonEditList.Size = new System.Drawing.Size(67, 39);
-            this.buttonEditList.TabIndex = 8;
-            this.buttonEditList.Text = "Edytuj";
-            this.buttonEditList.UseVisualStyleBackColor = false;
-            this.buttonEditList.Click += new System.EventHandler(this.buttonEditList_Click);
+            buttonEditList.BackColor = System.Drawing.Color.Transparent;
+            buttonEditList.Dock = System.Windows.Forms.DockStyle.Left;
+            buttonEditList.FlatAppearance.BorderSize = 0;
+            buttonEditList.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(60, 60, 60);
+            buttonEditList.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(55, 55, 55);
+            buttonEditList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            buttonEditList.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            buttonEditList.ForeColor = System.Drawing.Color.White;
+            buttonEditList.Location = new System.Drawing.Point(0, 0);
+            buttonEditList.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            buttonEditList.Name = "buttonEditList";
+            buttonEditList.Size = new System.Drawing.Size(67, 39);
+            buttonEditList.TabIndex = 8;
+            buttonEditList.Text = "Edytuj";
+            buttonEditList.UseVisualStyleBackColor = false;
+            buttonEditList.Click += buttonEditList_Click;
             // 
             // buttonStartPageFinditem
             // 
-            this.buttonStartPageFinditem.BackColor = System.Drawing.Color.Transparent;
-            this.buttonStartPageFinditem.Dock = System.Windows.Forms.DockStyle.Right;
-            this.buttonStartPageFinditem.FlatAppearance.BorderSize = 0;
-            this.buttonStartPageFinditem.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.buttonStartPageFinditem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.buttonStartPageFinditem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonStartPageFinditem.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonStartPageFinditem.ForeColor = System.Drawing.Color.White;
-            this.buttonStartPageFinditem.Location = new System.Drawing.Point(540, 0);
-            this.buttonStartPageFinditem.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.buttonStartPageFinditem.Name = "buttonStartPageFinditem";
-            this.buttonStartPageFinditem.Size = new System.Drawing.Size(88, 39);
-            this.buttonStartPageFinditem.TabIndex = 5;
-            this.buttonStartPageFinditem.Text = "Szukaj";
-            this.buttonStartPageFinditem.UseVisualStyleBackColor = false;
-            this.buttonStartPageFinditem.Visible = false;
+            buttonStartPageFinditem.BackColor = System.Drawing.Color.Transparent;
+            buttonStartPageFinditem.Dock = System.Windows.Forms.DockStyle.Right;
+            buttonStartPageFinditem.FlatAppearance.BorderSize = 0;
+            buttonStartPageFinditem.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(60, 60, 60);
+            buttonStartPageFinditem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(55, 55, 55);
+            buttonStartPageFinditem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            buttonStartPageFinditem.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            buttonStartPageFinditem.ForeColor = System.Drawing.Color.White;
+            buttonStartPageFinditem.Location = new System.Drawing.Point(540, 0);
+            buttonStartPageFinditem.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            buttonStartPageFinditem.Name = "buttonStartPageFinditem";
+            buttonStartPageFinditem.Size = new System.Drawing.Size(88, 39);
+            buttonStartPageFinditem.TabIndex = 5;
+            buttonStartPageFinditem.Text = "Szukaj";
+            buttonStartPageFinditem.UseVisualStyleBackColor = false;
+            buttonStartPageFinditem.Visible = false;
             // 
             // panelDock
             // 
-            this.panelDock.Controls.Add(this.newFlowLayoutPanel1);
-            this.panelDock.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelDock.Location = new System.Drawing.Point(0, 39);
-            this.panelDock.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.panelDock.Name = "panelDock";
-            this.panelDock.Size = new System.Drawing.Size(628, 398);
-            this.panelDock.TabIndex = 1;
+            panelDock.Controls.Add(newFlowLayoutPanel1);
+            panelDock.Dock = System.Windows.Forms.DockStyle.Fill;
+            panelDock.Location = new System.Drawing.Point(0, 39);
+            panelDock.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            panelDock.Name = "panelDock";
+            panelDock.Size = new System.Drawing.Size(628, 398);
+            panelDock.TabIndex = 1;
             // 
             // newFlowLayoutPanel1
             // 
-            this.newFlowLayoutPanel1.AutoScroll = true;
-            this.newFlowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.newFlowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.newFlowLayoutPanel1.Name = "newFlowLayoutPanel1";
-            this.newFlowLayoutPanel1.Size = new System.Drawing.Size(628, 398);
-            this.newFlowLayoutPanel1.TabIndex = 0;
-            this.newFlowLayoutPanel1.SizeChanged += new System.EventHandler(this.newFlowLayoutPanel1_SizeChanged);
-            this.newFlowLayoutPanel1.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.newFlowLayoutPanel1_ControlAdded);
+            newFlowLayoutPanel1.AutoScroll = true;
+            newFlowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            newFlowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            newFlowLayoutPanel1.Name = "newFlowLayoutPanel1";
+            newFlowLayoutPanel1.Size = new System.Drawing.Size(628, 398);
+            newFlowLayoutPanel1.TabIndex = 0;
+            newFlowLayoutPanel1.SizeChanged += newFlowLayoutPanel1_SizeChanged;
+            newFlowLayoutPanel1.ControlAdded += newFlowLayoutPanel1_ControlAdded;
             // 
             // bWresiezItem
             // 
-            this.bWresiezItem.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BWresiezItem_DoWork);
+            bWresiezItem.DoWork += BWresiezItem_DoWork;
             // 
             // ControlTitleStatusList
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.Controls.Add(this.panelDock);
-            this.Controls.Add(this.panelNavigation);
-            this.DoubleBuffered = true;
-            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.Name = "ControlTitleStatusList";
-            this.Size = new System.Drawing.Size(628, 437);
-            this.Load += new System.EventHandler(this.ControlTitleStatusList_Load);
-            this.panelNavigation.ResumeLayout(false);
-            this.panelDockOnTextBox.ResumeLayout(false);
-            this.panelDockOnTextBox.PerformLayout();
-            this.panelEdit.ResumeLayout(false);
-            this.panelDock.ResumeLayout(false);
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            BackColor = System.Drawing.Color.FromArgb(25, 25, 25);
+            Controls.Add(panelDock);
+            Controls.Add(panelNavigation);
+            DoubleBuffered = true;
+            Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            Name = "ControlTitleStatusList";
+            Size = new System.Drawing.Size(628, 437);
+            Load += ControlTitleStatusList_Load;
+            panelNavigation.ResumeLayout(false);
+            panelDockOnTextBox.ResumeLayout(false);
+            panelDockOnTextBox.PerformLayout();
+            panelEdit.ResumeLayout(false);
+            panelDock.ResumeLayout(false);
+            ResumeLayout(false);
         }
 
         #endregion

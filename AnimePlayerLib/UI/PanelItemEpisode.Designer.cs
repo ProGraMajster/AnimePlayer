@@ -28,132 +28,131 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.labelTitleAndNumber = new System.Windows.Forms.Label();
-            this.labelType = new System.Windows.Forms.Label();
-            this.labelAudio = new System.Windows.Forms.Label();
-            this.labelSubtitle = new System.Windows.Forms.Label();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.buttonPlayEpisode = new System.Windows.Forms.Button();
-            this.SuspendLayout();
+            labelTitleAndNumber = new System.Windows.Forms.Label();
+            labelType = new System.Windows.Forms.Label();
+            labelAudio = new System.Windows.Forms.Label();
+            labelSubtitle = new System.Windows.Forms.Label();
+            linkLabel1 = new System.Windows.Forms.LinkLabel();
+            richTextBox1 = new System.Windows.Forms.RichTextBox();
+            buttonPlayEpisode = new System.Windows.Forms.Button();
+            SuspendLayout();
             // 
             // labelTitleAndNumber
             // 
-            this.labelTitleAndNumber.AutoEllipsis = true;
-            this.labelTitleAndNumber.AutoSize = true;
-            this.labelTitleAndNumber.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelTitleAndNumber.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelTitleAndNumber.Location = new System.Drawing.Point(5, 5);
-            this.labelTitleAndNumber.MaximumSize = new System.Drawing.Size(490, 0);
-            this.labelTitleAndNumber.Name = "labelTitleAndNumber";
-            this.labelTitleAndNumber.Padding = new System.Windows.Forms.Padding(5, 5, 0, 5);
-            this.labelTitleAndNumber.Size = new System.Drawing.Size(87, 30);
-            this.labelTitleAndNumber.TabIndex = 1;
-            this.labelTitleAndNumber.Text = "labelName";
-            this.labelTitleAndNumber.DoubleClick += new System.EventHandler(this.PanelItemEpisode_DoubleClick);
+            labelTitleAndNumber.AutoEllipsis = true;
+            labelTitleAndNumber.AutoSize = true;
+            labelTitleAndNumber.Dock = System.Windows.Forms.DockStyle.Top;
+            labelTitleAndNumber.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            labelTitleAndNumber.Location = new System.Drawing.Point(5, 5);
+            labelTitleAndNumber.MaximumSize = new System.Drawing.Size(490, 0);
+            labelTitleAndNumber.Name = "labelTitleAndNumber";
+            labelTitleAndNumber.Padding = new System.Windows.Forms.Padding(5, 5, 0, 5);
+            labelTitleAndNumber.Size = new System.Drawing.Size(87, 30);
+            labelTitleAndNumber.TabIndex = 1;
+            labelTitleAndNumber.Text = "labelName";
+            labelTitleAndNumber.DoubleClick += PanelItemEpisode_DoubleClick;
             // 
             // labelType
             // 
-            this.labelType.AutoSize = true;
-            this.labelType.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelType.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelType.Location = new System.Drawing.Point(5, 35);
-            this.labelType.Name = "labelType";
-            this.labelType.Padding = new System.Windows.Forms.Padding(5, 5, 0, 5);
-            this.labelType.Size = new System.Drawing.Size(78, 30);
-            this.labelType.TabIndex = 4;
-            this.labelType.Text = "labelType";
-            this.labelType.DoubleClick += new System.EventHandler(this.PanelItemEpisode_DoubleClick);
+            labelType.AutoSize = true;
+            labelType.Dock = System.Windows.Forms.DockStyle.Top;
+            labelType.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            labelType.Location = new System.Drawing.Point(5, 35);
+            labelType.Name = "labelType";
+            labelType.Padding = new System.Windows.Forms.Padding(5, 5, 0, 5);
+            labelType.Size = new System.Drawing.Size(78, 30);
+            labelType.TabIndex = 4;
+            labelType.Text = "labelType";
+            labelType.DoubleClick += PanelItemEpisode_DoubleClick;
             // 
             // labelAudio
             // 
-            this.labelAudio.AutoSize = true;
-            this.labelAudio.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelAudio.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelAudio.Location = new System.Drawing.Point(5, 65);
-            this.labelAudio.Name = "labelAudio";
-            this.labelAudio.Padding = new System.Windows.Forms.Padding(5, 5, 0, 5);
-            this.labelAudio.Size = new System.Drawing.Size(87, 30);
-            this.labelAudio.TabIndex = 5;
-            this.labelAudio.Text = "labelAudio";
-            this.labelAudio.DoubleClick += new System.EventHandler(this.PanelItemEpisode_DoubleClick);
+            labelAudio.AutoSize = true;
+            labelAudio.Dock = System.Windows.Forms.DockStyle.Top;
+            labelAudio.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            labelAudio.Location = new System.Drawing.Point(5, 65);
+            labelAudio.Name = "labelAudio";
+            labelAudio.Padding = new System.Windows.Forms.Padding(5, 5, 0, 5);
+            labelAudio.Size = new System.Drawing.Size(87, 30);
+            labelAudio.TabIndex = 5;
+            labelAudio.Text = "labelAudio";
+            labelAudio.DoubleClick += PanelItemEpisode_DoubleClick;
             // 
             // labelSubtitle
             // 
-            this.labelSubtitle.AutoSize = true;
-            this.labelSubtitle.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelSubtitle.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelSubtitle.Location = new System.Drawing.Point(5, 95);
-            this.labelSubtitle.Name = "labelSubtitle";
-            this.labelSubtitle.Padding = new System.Windows.Forms.Padding(5, 5, 0, 5);
-            this.labelSubtitle.Size = new System.Drawing.Size(98, 30);
-            this.labelSubtitle.TabIndex = 6;
-            this.labelSubtitle.Text = "labelSubtitle";
-            this.labelSubtitle.DoubleClick += new System.EventHandler(this.PanelItemEpisode_DoubleClick);
+            labelSubtitle.AutoSize = true;
+            labelSubtitle.Dock = System.Windows.Forms.DockStyle.Top;
+            labelSubtitle.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            labelSubtitle.Location = new System.Drawing.Point(5, 95);
+            labelSubtitle.Name = "labelSubtitle";
+            labelSubtitle.Padding = new System.Windows.Forms.Padding(5, 5, 0, 5);
+            labelSubtitle.Size = new System.Drawing.Size(98, 30);
+            labelSubtitle.TabIndex = 6;
+            labelSubtitle.Text = "labelSubtitle";
+            labelSubtitle.DoubleClick += PanelItemEpisode_DoubleClick;
             // 
             // linkLabel1
             // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.linkLabel1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.linkLabel1.LinkArea = new System.Windows.Forms.LinkArea(0, 10);
-            this.linkLabel1.LinkColor = System.Drawing.Color.Aqua;
-            this.linkLabel1.Location = new System.Drawing.Point(5, 125);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Padding = new System.Windows.Forms.Padding(5, 5, 0, 5);
-            this.linkLabel1.Size = new System.Drawing.Size(75, 29);
-            this.linkLabel1.TabIndex = 7;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "linkLabel1";
+            linkLabel1.AutoSize = true;
+            linkLabel1.Dock = System.Windows.Forms.DockStyle.Top;
+            linkLabel1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            linkLabel1.LinkArea = new System.Windows.Forms.LinkArea(0, 10);
+            linkLabel1.LinkColor = System.Drawing.Color.Aqua;
+            linkLabel1.Location = new System.Drawing.Point(5, 125);
+            linkLabel1.Name = "linkLabel1";
+            linkLabel1.Padding = new System.Windows.Forms.Padding(5, 5, 0, 5);
+            linkLabel1.Size = new System.Drawing.Size(75, 29);
+            linkLabel1.TabIndex = 7;
+            linkLabel1.TabStop = true;
+            linkLabel1.Text = "linkLabel1";
             // 
             // richTextBox1
             // 
-            this.richTextBox1.BackColor = System.Drawing.Color.Black;
-            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTextBox1.ForeColor = System.Drawing.Color.White;
-            this.richTextBox1.Location = new System.Drawing.Point(5, 154);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(490, 69);
-            this.richTextBox1.TabIndex = 8;
-            this.richTextBox1.Text = "";
-            this.richTextBox1.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.richTextBox1_LinkClicked);
-            this.richTextBox1.DoubleClick += new System.EventHandler(this.PanelItemEpisode_DoubleClick);
+            richTextBox1.BackColor = System.Drawing.Color.Black;
+            richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            richTextBox1.ForeColor = System.Drawing.Color.White;
+            richTextBox1.Location = new System.Drawing.Point(5, 154);
+            richTextBox1.Name = "richTextBox1";
+            richTextBox1.ReadOnly = true;
+            richTextBox1.Size = new System.Drawing.Size(490, 69);
+            richTextBox1.TabIndex = 8;
+            richTextBox1.Text = "";
+            richTextBox1.LinkClicked += richTextBox1_LinkClicked;
+            richTextBox1.DoubleClick += PanelItemEpisode_DoubleClick;
             // 
             // buttonPlayEpisode
             // 
-            this.buttonPlayEpisode.BackColor = System.Drawing.Color.Black;
-            this.buttonPlayEpisode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonPlayEpisode.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonPlayEpisode.Location = new System.Drawing.Point(395, 114);
-            this.buttonPlayEpisode.Name = "buttonPlayEpisode";
-            this.buttonPlayEpisode.Size = new System.Drawing.Size(100, 34);
-            this.buttonPlayEpisode.TabIndex = 9;
-            this.buttonPlayEpisode.Text = "Oglądaj >";
-            this.buttonPlayEpisode.UseVisualStyleBackColor = false;
+            buttonPlayEpisode.BackColor = System.Drawing.Color.Black;
+            buttonPlayEpisode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            buttonPlayEpisode.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            buttonPlayEpisode.Location = new System.Drawing.Point(395, 114);
+            buttonPlayEpisode.Name = "buttonPlayEpisode";
+            buttonPlayEpisode.Size = new System.Drawing.Size(100, 34);
+            buttonPlayEpisode.TabIndex = 9;
+            buttonPlayEpisode.Text = "Oglądaj >";
+            buttonPlayEpisode.UseVisualStyleBackColor = false;
             // 
             // PanelItemEpisode
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.Controls.Add(this.buttonPlayEpisode);
-            this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.linkLabel1);
-            this.Controls.Add(this.labelSubtitle);
-            this.Controls.Add(this.labelAudio);
-            this.Controls.Add(this.labelType);
-            this.Controls.Add(this.labelTitleAndNumber);
-            this.ForeColor = System.Drawing.Color.White;
-            this.Name = "PanelItemEpisode";
-            this.Padding = new System.Windows.Forms.Padding(5);
-            this.Size = new System.Drawing.Size(500, 228);
-            this.Load += new System.EventHandler(this.PanelItemEpisode_Load);
-            this.DoubleClick += new System.EventHandler(this.PanelItemEpisode_DoubleClick);
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            BackColor = System.Drawing.Color.FromArgb(55, 55, 55);
+            Controls.Add(buttonPlayEpisode);
+            Controls.Add(richTextBox1);
+            Controls.Add(linkLabel1);
+            Controls.Add(labelSubtitle);
+            Controls.Add(labelAudio);
+            Controls.Add(labelType);
+            Controls.Add(labelTitleAndNumber);
+            ForeColor = System.Drawing.Color.White;
+            Name = "PanelItemEpisode";
+            Padding = new System.Windows.Forms.Padding(5);
+            Size = new System.Drawing.Size(500, 228);
+            Load += PanelItemEpisode_Load;
+            DoubleClick += PanelItemEpisode_DoubleClick;
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
