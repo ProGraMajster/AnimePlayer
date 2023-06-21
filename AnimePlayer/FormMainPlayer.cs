@@ -1131,8 +1131,15 @@ namespace AnimePlayer
 
         private void TimerAppPer_Tick(object sender, EventArgs e)
         {
-            memsize = Convert.ToInt32(performanceCounter_app.NextValue()) / (int)(1024);
-            labelAppRamUsage.Text = "Wykorzystanie pamięci RAM przez aplikację: " + (memsize / 1024).ToString() + "MB";
+            try
+            {
+                memsize = Convert.ToInt32(performanceCounter_app.NextValue()) / (int)(1024);
+                labelAppRamUsage.Text = "Wykorzystanie pamięci RAM przez aplikację: " + (memsize / 1024).ToString() + "MB";
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
         }
 
         private void ButtonCloseMoreButtons_Click(object sender, EventArgs e)
