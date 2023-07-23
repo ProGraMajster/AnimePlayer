@@ -12,60 +12,6 @@
     <SupportedOSPlatformVersion>7.0</SupportedOSPlatformVersion>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Compile Remove="bin\Debug\net7.0-windows10.0.22621.0\AnimePlayerPL.exe.WebView2\**" />
-    <Compile Remove="bin\Debug\net7.0-windows10.0.22621.0\runtimes\**" />
-    <Compile Remove="bin\Release\**" />
-    <EmbeddedResource Remove="bin\Debug\net7.0-windows10.0.22621.0\AnimePlayerPL.exe.WebView2\**" />
-    <EmbeddedResource Remove="bin\Debug\net7.0-windows10.0.22621.0\runtimes\**" />
-    <EmbeddedResource Remove="bin\Release\**" />
-    <None Remove="bin\Debug\net7.0-windows10.0.22621.0\AnimePlayerPL.exe.WebView2\**" />
-    <None Remove="bin\Debug\net7.0-windows10.0.22621.0\runtimes\**" />
-    <None Remove="bin\Release\**" />
-  </ItemGroup>
-
-
-  <ItemGroup>
-    <Content Include="bin\Debug\net7.0-windows10.0.22621.0\AnimePlayerPL.deps.json" />
-    <Content Include="bin\Debug\net7.0-windows10.0.22621.0\AnimePlayerPL.runtimeconfig.json" />
-    <Content Include="bin\Debug\net7.0-windows10.0.22621.0\IpcServerData_port.txt" />
-    <Content Include="icon.ico" />
-  </ItemGroup>
-
-
-  <ItemGroup>
-    <None Include="bin\Debug\net7.0-windows10.0.22621.0\AnimePlayer.Class.dll" />
-    <None Include="bin\Debug\net7.0-windows10.0.22621.0\AnimePlayer.Class.pdb" />
-    <None Include="bin\Debug\net7.0-windows10.0.22621.0\AnimePlayer.CNM.dll" />
-    <None Include="bin\Debug\net7.0-windows10.0.22621.0\AnimePlayer.CNM.pdb" />
-    <None Include="bin\Debug\net7.0-windows10.0.22621.0\AnimePlayer.ControlsWinForms.dll" />
-    <None Include="bin\Debug\net7.0-windows10.0.22621.0\AnimePlayer.ControlsWinForms.pdb" />
-    <None Include="bin\Debug\net7.0-windows10.0.22621.0\AnimePlayer.Core.dll" />
-    <None Include="bin\Debug\net7.0-windows10.0.22621.0\AnimePlayer.Core.pdb" />
-    <None Include="bin\Debug\net7.0-windows10.0.22621.0\AnimePlayer.dll" />
-    <None Include="bin\Debug\net7.0-windows10.0.22621.0\AnimePlayer.pdb" />
-    <None Include="bin\Debug\net7.0-windows10.0.22621.0\AnimePlayer.Profile.dll" />
-    <None Include="bin\Debug\net7.0-windows10.0.22621.0\AnimePlayer.Profile.pdb" />
-    <None Include="bin\Debug\net7.0-windows10.0.22621.0\AnimePlayer.StatisticsData.dll" />
-    <None Include="bin\Debug\net7.0-windows10.0.22621.0\AnimePlayer.StatisticsData.pdb" />
-    <None Include="bin\Debug\net7.0-windows10.0.22621.0\AnimePlayer.Updater.dll" />
-    <None Include="bin\Debug\net7.0-windows10.0.22621.0\AnimePlayer.Updater.pdb" />
-    <None Include="bin\Debug\net7.0-windows10.0.22621.0\AnimePlayerLibrary.dll" />
-    <None Include="bin\Debug\net7.0-windows10.0.22621.0\AnimePlayerLibrary.pdb" />
-    <None Include="bin\Debug\net7.0-windows10.0.22621.0\AnimePlayerPL.dll" />
-    <None Include="bin\Debug\net7.0-windows10.0.22621.0\AnimePlayerPL.exe" />
-    <None Include="bin\Debug\net7.0-windows10.0.22621.0\AnimePlayerPL.pdb" />
-    <None Include="bin\Debug\net7.0-windows10.0.22621.0\AxInterop.WMPLib.dll" />
-    <None Include="bin\Debug\net7.0-windows10.0.22621.0\Interop.WMPLib.dll" />
-    <None Include="bin\Debug\net7.0-windows10.0.22621.0\Microsoft.Web.WebView2.Core.dll" />
-    <None Include="bin\Debug\net7.0-windows10.0.22621.0\Microsoft.Web.WebView2.WinForms.dll" />
-    <None Include="bin\Debug\net7.0-windows10.0.22621.0\Microsoft.Web.WebView2.Wpf.dll" />
-    <None Include="bin\Debug\net7.0-windows10.0.22621.0\Microsoft.Windows.SDK.NET.dll" />
-    <None Include="bin\Debug\net7.0-windows10.0.22621.0\NewMessageBox.dll" />
-    <None Include="bin\Debug\net7.0-windows10.0.22621.0\Newtonsoft.Json.dll" />
-    <None Include="bin\Debug\net7.0-windows10.0.22621.0\WinRT.Runtime.dll" />
-    <None Include="bin\Debug\net7.0-windows10.0.22621.0\ZetaIpc.dll" />
-  </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\AnimePlayer.Updater\AnimePlayer.Updater.csproj" />
