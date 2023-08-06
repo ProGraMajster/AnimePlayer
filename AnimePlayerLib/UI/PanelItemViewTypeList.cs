@@ -43,7 +43,10 @@ namespace AnimePlayerLibrary.UI
                 this.Invoke(() =>
                 {
                     labelType.Text = pageItemData.TitleInformation.Type + " (" + pageItemData.TitleInformation.NumberOfEpisodes + " Odcinków)";
-                    labelDate.Text = pageItemData.TitleInformation.DateOfIssue.ToString() + " - " + pageItemData.TitleInformation.EndOfIssue.ToString();
+                    if(!string.IsNullOrEmpty(pageItemData.TitleInformation.DateOfIssue) && !string.IsNullOrEmpty(pageItemData.TitleInformation.EndOfIssue))
+                    {
+                        labelDate.Text = pageItemData.TitleInformation.DateOfIssue.ToString() + " - " + pageItemData.TitleInformation.EndOfIssue.ToString();
+                    }
                     foreach (var item in pageItemData.TitleInformation.Species)
                     {
                         LinkLabel linkLabel = new()

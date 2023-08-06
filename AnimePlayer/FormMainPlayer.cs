@@ -38,12 +38,12 @@ namespace AnimePlayer
         public PerformanceCounter performanceCounter_app;
         private PanelSearchFilters panelSearch;
         private NewFlowLayoutPanel panelNews;
-        private ProfileClass currentProfile=null;
+        private ProfileClass currentProfile = null;
         public HelpPage helpPage;
-        
+
         public ZetaIpc.Runtime.Server.IpcServer IpcServerData;
         public ZetaIpc.Runtime.Client.IpcClient clientToBrowser;
-        
+
         private FormLoading formLoading;
 
         public FormMainPlayer()
@@ -104,7 +104,7 @@ namespace AnimePlayer
             autoCSC_find = new AutoCompleteStringCollection();
             panelSearch = new PanelSearchFilters(flowLayoutPanelAll, flowLayoutPanelFinditem)
             {
-                Name= "panelSearch",
+                Name = "panelSearch",
                 Dock = DockStyle.None,
                 Location = new Point(0, 110)
             };
@@ -156,7 +156,7 @@ namespace AnimePlayer
                 }
                 e.Handled = true;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Debug.WriteLine(ex.ToString());
                 Console.Error.WriteLine(ex.ToString());
@@ -170,7 +170,7 @@ namespace AnimePlayer
             panelStartPage.Controls.SetChildIndex(panelSTNewsMain, 2);
         }
 
-        QuickMovePanel quickMove=null;
+        QuickMovePanel quickMove = null;
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Escape)
@@ -190,21 +190,21 @@ namespace AnimePlayer
                     return;
                 }
             }
-            else if(e.KeyCode == Keys.F1)
+            else if (e.KeyCode == Keys.F1)
             {
                 helpPage.Show();
                 helpPage.BringToFront();
             }
-            else if(e.KeyCode == Keys.F10)
+            else if (e.KeyCode == Keys.F10)
             {
                 FormDebug fd = new()
                 {
-                    form=(Form)this
+                    form = (Form)this
                 };
                 fd.Show();
             }
-            
-            if(debug)
+
+            if (debug)
             {
                 if (e.KeyCode == Keys.F12)
                 {
@@ -229,7 +229,7 @@ namespace AnimePlayer
 
         private void Form1_KeyUp(object sender, KeyEventArgs e)
         {
-            if(e.Control)
+            if (e.Control)
             {
                 quickMove.Hide();
             }
@@ -248,29 +248,29 @@ namespace AnimePlayer
                 {
                     local = true;
                 }
-                if (arg =="-offline")
+                if (arg == "-offline")
                 {
                     onOnline = false;
                 }
-                if (arg =="-debug")
+                if (arg == "-debug")
                 {
                     debug = true;
                 }
-                if(arg == "-updated")
+                if (arg == "-updated")
                 {
-                    if(File.Exists(AppFolders.Updater+"update"))
+                    if (File.Exists(AppFolders.Updater + "update"))
                     {
-                        File.Delete(AppFolders.Updater+"update");
+                        File.Delete(AppFolders.Updater + "update");
                     }
                 }
             }
 
-            if(debug)
+            if (debug)
             {
                 labelLoadingDetails.TextChanged += LabelLoadingDetails_TextChanged;
                 try
                 {
-                    FileStream filestream = new(AnimePlayer.Class.AppFolders.Logs+"\\"+ Process.GetCurrentProcess().StartTime.ToString().Replace(":", " ") + "_console_out.txt", FileMode.Append);
+                    FileStream filestream = new(AnimePlayer.Class.AppFolders.Logs + "\\" + Process.GetCurrentProcess().StartTime.ToString().Replace(":", " ") + "_console_out.txt", FileMode.Append);
                     var streamwriter = new StreamWriter(filestream)
                     {
                         AutoFlush = true
@@ -278,12 +278,12 @@ namespace AnimePlayer
                     Console.SetOut(streamwriter);
                     Console.SetError(streamwriter);
                 }
-                catch(Exception exFile)
+                catch (Exception exFile)
                 {
                     Console.Error.WriteLine(exFile.ToString());
                 }
             }
-            if (formLoading!=null)
+            if (formLoading != null)
             {
                 formLoading.Hide();
                 formLoading.Dispose();
@@ -300,13 +300,13 @@ namespace AnimePlayer
             helpPage.DelegateLoadContentToForm = ContentManager.LoadContentToForm;
             ContentManager.Start();
             labelLoadingDetails.Text = "Download Files";
-           
+
             //Nie używać aż do ukończenia prac związanych z powiązanymi funkcjami!
             //backgroundWorkerGetSTNews.RunWorkerAsync();
 
             //textBoxFinditem.AutoCompleteCustomSource = autoCSC_find;
             //textBoxStartPagefinditem.AutoCompleteCustomSource = autoCSC_find;
-            
+
             /*FormStatisticData formStatisticData = new FormStatisticData();
             formStatisticData.Show();*/
             profileSelectionPanel = new AnimePlayer.Profile.ProfileSelectionPanel();
@@ -334,14 +334,14 @@ namespace AnimePlayer
                 AnimePlayer.CNM.ExtensionsControl.RoundingTheCorners(pictureBoxProfileIcon, 100);
                 ProfileManager.Init(profileClass);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Debug.WriteLine(ex.ToString());
                 Console.Error.WriteLine(ex.ToString());
             }
         }
 
-        
+
 
         private void Panel_Resize(object sender, EventArgs e)
         {
@@ -534,7 +534,7 @@ namespace AnimePlayer
 
         public void FlowLayoutPanelPolecane_ControlAdded(object sender, ControlEventArgs e)
         {
-           TaskAddToAllList(e);
+            TaskAddToAllList(e);
         }
 
 
@@ -548,19 +548,19 @@ namespace AnimePlayer
             try
             {
                 bool add = true;
-                foreach(Control c in flowLayoutPanelAll.Controls)
+                foreach (Control c in flowLayoutPanelAll.Controls)
                 {
-                    if(c.Tag == null)
+                    if (c.Tag == null)
                     {
                         add = false;
                     }
                     PanelItem panelItem = (PanelItem)c.Tag;
-                    if(panelItem._previewTitleClass.Title== e.Control.Name)
+                    if (panelItem._previewTitleClass.Title == e.Control.Name)
                     {
-                        add=false;
+                        add = false;
                     }
                 }
-                if(add)
+                if (add)
                 {
                     PanelItem panelItem = (PanelItem)e.Control.Tag;
                     PanelItem item = new(panelItem._previewTitleClass);
@@ -584,7 +584,7 @@ namespace AnimePlayer
 
         private void ButtonFindItem_Click(object sender, EventArgs e)
         {
-            if(flags_findItem == false)
+            if (flags_findItem == false)
             {
                 flowLayoutPanelFinditem.Controls.Clear();
                 flowLayoutPanelFinditem.Enabled = false;
@@ -637,7 +637,7 @@ namespace AnimePlayer
                     PanelItem panelItem = (PanelItem)c.Tag;
                     if (findText != null && findText != "")
                     {
-                        if(!panelItem._previewTitleClass.Title.ToLower().Contains(findText.ToLower()))
+                        if (!panelItem._previewTitleClass.Title.ToLower().Contains(findText.ToLower()))
                         {
                             break;
                         }
@@ -650,7 +650,7 @@ namespace AnimePlayer
                         }*/
                     }
 
-                    if(add)
+                    if (add)
                     {
                         PanelItem pi = new(panelItem._previewTitleClass);
                         flowLayoutPanelFinditem.Controls.Add(pi.panelItem);
@@ -679,7 +679,7 @@ namespace AnimePlayer
                     AutoSize = false,
                     AutoEllipsis = true,
                     TextAlign = ContentAlignment.MiddleCenter,
-                    Text = "Podana fraza - "+ findText+" - nie została odnaleziona.",
+                    Text = "Podana fraza - " + findText + " - nie została odnaleziona.",
                     Dock = DockStyle.Bottom,
                     ForeColor = Color.White,
                     Size = new Size(300, 100)
@@ -687,7 +687,7 @@ namespace AnimePlayer
                 label.Font = new Font(label.Font.FontFamily, 12);
                 PictureBox pictureBox = new()
                 {
-                    ImageLocation =@"https://cdn-icons-png.flaticon.com/512/6134/6134065.png",
+                    ImageLocation = @"https://cdn-icons-png.flaticon.com/512/6134/6134065.png",
                     Size = new Size(200, 200),
                     SizeMode = PictureBoxSizeMode.Zoom
                 };
@@ -704,13 +704,13 @@ namespace AnimePlayer
         {
             SetInfofilersLabel();
             flags_findItem = true;
-            if(panelSearch.use)
+            if (panelSearch.use)
             {
                 FindItemsF();
                 flags_findItem = false;
                 return;
             }
-            
+
             Stopwatch stopWatch = new();
             stopWatch.Start();
             string findText = textBoxFinditem.Text.ToLower().Replace("\n", "").Replace("\r", "").Replace("\t", "");
@@ -773,7 +773,7 @@ namespace AnimePlayer
                     AutoSize = false,
                     AutoEllipsis = true,
                     TextAlign = ContentAlignment.MiddleCenter,
-                    Text = "Podana fraza - "+ findText+" - nie została odnaleziona.",
+                    Text = "Podana fraza - " + findText + " - nie została odnaleziona.",
                     Dock = DockStyle.Bottom,
                     ForeColor = Color.White,
                     Size = new Size(300, 100)
@@ -781,7 +781,7 @@ namespace AnimePlayer
                 label.Font = new Font(label.Font.FontFamily, 12);
                 PictureBox pictureBox = new()
                 {
-                    ImageLocation =@"https://cdn-icons-png.flaticon.com/512/6134/6134065.png",
+                    ImageLocation = @"https://cdn-icons-png.flaticon.com/512/6134/6134065.png",
                     Size = new Size(200, 200),
                     SizeMode = PictureBoxSizeMode.Zoom
                 };
@@ -852,7 +852,7 @@ namespace AnimePlayer
             {
                 Console.WriteLine(eex.ToString());
             }
-            if(flowLayoutPanelFinditem.Controls.Count == 0)
+            if (flowLayoutPanelFinditem.Controls.Count == 0)
             {
                 Panel panel = new()
                 {
@@ -864,15 +864,15 @@ namespace AnimePlayer
                     AutoSize = false,
                     AutoEllipsis = true,
                     TextAlign = ContentAlignment.MiddleCenter,
-                    Text = "Podana fraza - "+ findText+" - nie została odnaleziona.",
+                    Text = "Podana fraza - " + findText + " - nie została odnaleziona.",
                     Dock = DockStyle.Bottom,
                     ForeColor = Color.White,
                     Size = new Size(300, 100)
                 };
-                label.Font = new Font(label.Font.FontFamily,12);
+                label.Font = new Font(label.Font.FontFamily, 12);
                 PictureBox pictureBox = new()
                 {
-                    ImageLocation =@"https://cdn-icons-png.flaticon.com/512/6134/6134065.png",
+                    ImageLocation = @"https://cdn-icons-png.flaticon.com/512/6134/6134065.png",
                     Size = new Size(200, 200),
                     SizeMode = PictureBoxSizeMode.Zoom
                 };
@@ -971,12 +971,12 @@ namespace AnimePlayer
         private void ButtonfinditemF_Click(object sender, EventArgs e)
         {
             SetInfofilersLabel();
-            if(panelSearch.Visible == true)
+            if (panelSearch.Visible == true)
             {
                 panelSearch.Hide();
                 return;
             }
-            if(panelSearch.Visible == false)
+            if (panelSearch.Visible == false)
             {
                 panelSearch.Show();
                 panelSearch.BringToFront();
@@ -988,14 +988,14 @@ namespace AnimePlayer
         {
             try
             {
-                if(managerStatistics!=null)
+                if (managerStatistics != null)
                 {
                     managerStatistics.Exit();
                 }
-                
+
                 //Directory.Delete(DefaultAppDir.Temp, true);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
             }
@@ -1007,7 +1007,7 @@ namespace AnimePlayer
             try
             {
                 panelMenu.Hide();
-                if(pageTitileStatusList == null)
+                if (pageTitileStatusList == null)
                 {
                     pageTitileStatusList = new PageTitileStatusList(currentProfile)
                     {
@@ -1111,7 +1111,7 @@ namespace AnimePlayer
             {
                 OpenLinks.Start("https://github.com/ProGraMajster/AnimePlayer");
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Wystąpił błąd :(", "Error");
                 Console.Error.WriteLine(ex.ToString());
@@ -1121,7 +1121,7 @@ namespace AnimePlayer
         private void Button7button2button_MoreBtn_Open_twojeanimepl_Click(object sender, EventArgs e)
         {
             Exception ex = OpenLinks.Start("https://sites.google.com/view/twojeanimepl");
-            if(ex != null)
+            if (ex != null)
             {
                 Console.Error.WriteLine(ex.ToString());
             }
@@ -1136,7 +1136,7 @@ namespace AnimePlayer
                 memsize = Convert.ToInt32(performanceCounter_app.NextValue()) / (int)(1024);
                 labelAppRamUsage.Text = "Wykorzystanie pamięci RAM przez aplikację: " + (memsize / 1024).ToString() + "MB";
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
             }
@@ -1151,8 +1151,8 @@ namespace AnimePlayer
         {
             try
             {
-                string path = AnimePlayer.Class.AppFolders.Logs + Process.GetCurrentProcess().StartTime.ToString().Replace(":"," ") + ".txt";
-                string text = "[ " + DateTime.Now.ToString().Replace(":", " ")+" ]" + labelLoadingDetails.Text + Environment.NewLine;
+                string path = AnimePlayer.Class.AppFolders.Logs + Process.GetCurrentProcess().StartTime.ToString().Replace(":", " ") + ".txt";
+                string text = "[ " + DateTime.Now.ToString().Replace(":", " ") + " ]" + labelLoadingDetails.Text + Environment.NewLine;
                 File.AppendAllText(path, text);
             }
             catch (Exception ex)
@@ -1176,16 +1176,16 @@ namespace AnimePlayer
 
         private void TextBoxCommandInput_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Enter)
+            if (e.KeyCode == Keys.Enter)
             {
                 ConsolePlayer(textBoxCommandInput.Text);
-                textBoxCommandInput.Text = "";  
+                textBoxCommandInput.Text = "";
             }
         }
 
         public void ConsolePlayer(string input)
         {
-            if(input.StartsWith("control.show;"))
+            if (input.StartsWith("control.show;"))
             {
                 try
                 {
@@ -1193,12 +1193,12 @@ namespace AnimePlayer
                     Control control = this.Controls.Find(controlName, true)[0];
                     control.Show();
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     Console.Error.WriteLine(ex.ToString());
                 }
             }
-            else if(input.StartsWith("webbrowser.test.titlecomments.fromfile;"))
+            else if (input.StartsWith("webbrowser.test.titlecomments.fromfile;"))
             {
                 try
                 {
@@ -1221,9 +1221,9 @@ namespace AnimePlayer
 
         private void FormMainPlayer_SizeChanged(object sender, EventArgs e)
         {
-            if(quickMove != null && quickMove.Visible)
+            if (quickMove != null && quickMove.Visible)
             {
-               AnimePlayer.CNM.ControlsNewMethods.CenterControlInForm(quickMove, this);
+                AnimePlayer.CNM.ControlsNewMethods.CenterControlInForm(quickMove, this);
             }
         }
 
@@ -1264,7 +1264,14 @@ namespace AnimePlayer
 
         private void Button2_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Funkcja nie dostęona!");
+            try
+            {
+                Process.Start("cmd", "/C start \"\" https://sites.google.com/view/animeplayerpl/zestaw-narz%C4%99dzi");
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.ToString());
+            }
         }
 
         private void pictureBoxProfileIcon_Paint(object sender, PaintEventArgs e)
@@ -1274,7 +1281,7 @@ namespace AnimePlayer
 
         private void panel2_ControlAdded(object sender, ControlEventArgs e)
         {
-           //
+            //
         }
 
         private void buttonHelp_Click(object sender, EventArgs e)
@@ -1289,9 +1296,9 @@ namespace AnimePlayer
             Application.DoEvents();
             labelLoadingDetails.Text = "Zmiana widoku...";
             List<PanelItem> panelItems = new List<PanelItem>();
-            foreach(Panel panel in flowLayoutPanelAll.Controls.OfType<Panel>())
+            foreach (Panel panel in flowLayoutPanelAll.Controls.OfType<Panel>())
             {
-                if(panel.Tag.GetType() == typeof(AnimePlayerLibrary.UI.PanelItem))
+                if (panel.Tag.GetType() == typeof(AnimePlayerLibrary.UI.PanelItem))
                 {
                     panelItems.Add((PanelItem)panel.Tag);
                 }
@@ -1301,7 +1308,7 @@ namespace AnimePlayer
             {
                 if (panelItems == null)
                 {
-                    comboBoxViewtype.SelectedIndex = 0; 
+                    comboBoxViewtype.SelectedIndex = 0;
                     panelLoading.Hide();
                     return;
                 }
@@ -1321,26 +1328,26 @@ namespace AnimePlayer
             }
             else
             {
-                if(panelItems == null)
+                if (panelItems == null)
                 {
                     comboBoxViewtype.SelectedIndex = 0;
                     panelLoading.Hide();
                     return;
                 }
-                if(panelItems.Count== 0)
+                if (panelItems.Count == 0)
                 {
                     comboBoxViewtype.SelectedIndex = 0;
                     panelLoading.Hide();
                     return;
                 }
                 foreach (PanelItem item in panelItems)
-                {       
+                {
                     item.panelItem.Hide();
                     Application.DoEvents();
                 }
                 if (panelItemViewTypeLists == null || panelItemViewTypeLists.Count == 0)
                 {
-                    foreach(PanelItem item in panelItems)
+                    foreach (PanelItem item in panelItems)
                     {
                         PanelItemViewTypeList panelItemViewTypeList = new(item._previewTitleClass);
                         flowLayoutPanelAll.Controls.Add(panelItemViewTypeList);
@@ -1349,7 +1356,7 @@ namespace AnimePlayer
                     }
                     panelLoading.Hide();
                 }
-                foreach(PanelItemViewTypeList panelItemViewTypeList in panelItemViewTypeLists)
+                foreach (PanelItemViewTypeList panelItemViewTypeList in panelItemViewTypeLists)
                 {
                     panelItemViewTypeList.Show();
                 }
@@ -1361,7 +1368,7 @@ namespace AnimePlayer
 
         private void flowLayoutPanelAll_SizeChanged(object sender, EventArgs e)
         {
-            if(comboBoxViewtype.SelectedIndex == 1)
+            if (comboBoxViewtype.SelectedIndex == 1)
             {
                 foreach (PanelItemViewTypeList panelItemViewTypeList in flowLayoutPanelAll.Controls.OfType<PanelItemViewTypeList>())
                 {

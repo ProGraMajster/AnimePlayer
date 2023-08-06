@@ -62,8 +62,8 @@ namespace AnimePlayerLibrary.UI
             GetLoadingCotrols();
             UpdateLoadingTextdetails("Ładowanie strony...");
             ShowPanelLoading();
-            labelTitle.Text = pageItemData.TitleInformation.Title;
             pageItemData = ContentManagerLibary.GetPageItemDataWithContentFolderFromTitle(pageItemData.TitleInformation.Title);
+            SettingInofrmationUIFromPanelItem();
             LoadPageItem(pageItemData);
             HidePanelLoading();
             try
@@ -172,8 +172,28 @@ namespace AnimePlayerLibrary.UI
 
         public void SettingInofrmationUIFromPanelItem()
         {
-            pictureBoxIcon.Image = _PanelItem.pictureBoxItem.Image;
-            labelTitle.Text = _PanelItem._previewTitleClass.Title;
+            if(_PanelItem != null)
+            {
+                pictureBoxIcon.Image = _PanelItem.pictureBoxItem.Image;
+                labelTitle.Text = _PanelItem._previewTitleClass.Title;
+            }
+            else
+            {
+                labelTitle.Text = pageItemData.TitleInformation.Title;
+                Thread thread = new(() =>
+                {
+                    Thread.Sleep(1000);
+                    var p = ContentManagerLibary.GetPreviewTitleClassFromTitle(pageItemData.TitleInformation.Title);
+                    if (p != null)
+                    {
+                        this.Invoke(() =>
+                        {
+                            pictureBoxIcon.ImageLocation = p.LinkToIcon[0];
+                        });
+                    }
+                });
+                thread.Start();
+            }
         }
 
         private void Button_Click(object sender, EventArgs e)
@@ -334,6 +354,10 @@ namespace AnimePlayerLibrary.UI
                     {
                         List<ProfileIAnimeList> profileIAnimeLists= 
                         ProfileManager.GetAllAnimeList();
+                        if(profileIAnimeLists == null)
+                        {
+                            return;
+                        }
                         foreach(ProfileIAnimeList animeList in profileIAnimeLists)
                         {
                             if(animeList.itemToLists != null)

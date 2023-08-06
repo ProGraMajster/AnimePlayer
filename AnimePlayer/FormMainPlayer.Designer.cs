@@ -32,1756 +32,1750 @@ namespace AnimePlayer
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMainPlayer));
-            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
-            this.panelStartPage = new System.Windows.Forms.Panel();
-            this.panelSTNewsMain = new System.Windows.Forms.Panel();
-            this.label_InfoText_news = new System.Windows.Forms.Label();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.panelTop = new System.Windows.Forms.Panel();
-            this.roundedPanel1 = new AnimePlayerLibrary.RoundedPanel();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.textBoxStartPagefinditem = new System.Windows.Forms.TextBox();
-            this.buttonStartPageFinditem = new System.Windows.Forms.Button();
-            this.panel22 = new System.Windows.Forms.Panel();
-            this.pictureBoxProfileIcon = new System.Windows.Forms.PictureBox();
-            this.label23 = new System.Windows.Forms.Label();
-            this.labelSatusWorkingApp = new System.Windows.Forms.Label();
-            this.buttonMenuOpen = new System.Windows.Forms.Button();
-            this.label = new System.Windows.Forms.Label();
-            this.panelLoading = new System.Windows.Forms.Panel();
-            this.labelLoadingA = new System.Windows.Forms.Label();
-            this.labelLoadingDetails = new System.Windows.Forms.Label();
-            this.labelLoading = new System.Windows.Forms.Label();
-            this.pictureBoxLoading = new System.Windows.Forms.PictureBox();
-            this.panelMenu = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.pictureBoxGithub = new System.Windows.Forms.PictureBox();
-            this.pictureBoxSite = new System.Windows.Forms.PictureBox();
-            this.buttonSite = new System.Windows.Forms.Button();
-            this.buttonExitApp = new System.Windows.Forms.Button();
-            this.buttonRestartApp = new System.Windows.Forms.Button();
-            this.panelSep = new System.Windows.Forms.Panel();
-            this.buttonMoreBtnMenu = new System.Windows.Forms.Button();
-            this.buttonHelp = new System.Windows.Forms.Button();
-            this.buttonShowTitleStatusList = new System.Windows.Forms.Button();
-            this.buttonDefined = new System.Windows.Forms.Button();
-            this.buttonViewFindintems = new System.Windows.Forms.Button();
-            this.buttonPlayer = new System.Windows.Forms.Button();
-            this.buttonSetting = new System.Windows.Forms.Button();
-            this.buttonHomePage = new System.Windows.Forms.Button();
-            this.buttonMenuClose = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panelAllitem = new System.Windows.Forms.Panel();
-            this.flowLayoutPanelFinditem = new AnimePlayer.ControlsWinForms.NewFlowLayoutPanel();
-            this.flowLayoutPanelAll = new AnimePlayer.ControlsWinForms.NewFlowLayoutPanel();
-            this.panel23 = new System.Windows.Forms.Panel();
-            this.panel24 = new System.Windows.Forms.Panel();
-            this.comboBoxViewtype = new System.Windows.Forms.ComboBox();
-            this.label24 = new System.Windows.Forms.Label();
-            this.panelTopFinder = new System.Windows.Forms.Panel();
-            this.labelEnableFiltres = new System.Windows.Forms.Label();
-            this.roundedPanel2 = new AnimePlayerLibrary.RoundedPanel();
-            this.labelFindSatus = new System.Windows.Forms.Label();
-            this.buttonfinditemReset = new System.Windows.Forms.Button();
-            this.buttonfinditemF = new System.Windows.Forms.Button();
-            this.buttonFindItem = new System.Windows.Forms.Button();
-            this.panel21 = new System.Windows.Forms.Panel();
-            this.textBoxFinditem = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.buttonFinditemPageClose = new System.Windows.Forms.Button();
-            this.panelMoreButtons = new System.Windows.Forms.Panel();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.newFlowLayoutPanel1 = new AnimePlayer.ControlsWinForms.NewFlowLayoutPanel();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.button_MoreBtn_Open_Settings = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel12 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
-            this.button2button_MoreBtn_Open_Player = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.panel13 = new System.Windows.Forms.Panel();
-            this.label8 = new System.Windows.Forms.Label();
-            this.button4button2button_MoreBtn_Open_FindItem = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
-            this.panel14 = new System.Windows.Forms.Panel();
-            this.label10 = new System.Windows.Forms.Label();
-            this.button5button2button_MoreBtn_Open_Lists = new System.Windows.Forms.Button();
-            this.label11 = new System.Windows.Forms.Label();
-            this.panel17 = new System.Windows.Forms.Panel();
-            this.label16 = new System.Windows.Forms.Label();
-            this.buttonCommunity = new System.Windows.Forms.Button();
-            this.label17 = new System.Windows.Forms.Label();
-            this.panel15 = new System.Windows.Forms.Panel();
-            this.label12 = new System.Windows.Forms.Label();
-            this.button2button_MoreBtn_Open_GitHub = new System.Windows.Forms.Button();
-            this.label13 = new System.Windows.Forms.Label();
-            this.panel16 = new System.Windows.Forms.Panel();
-            this.label14 = new System.Windows.Forms.Label();
-            this.button7button2button_MoreBtn_Open_twojeanimepl = new System.Windows.Forms.Button();
-            this.label15 = new System.Windows.Forms.Label();
-            this.panel19 = new System.Windows.Forms.Panel();
-            this.label18 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label19 = new System.Windows.Forms.Label();
-            this.panel20 = new System.Windows.Forms.Panel();
-            this.label20 = new System.Windows.Forms.Label();
-            this.buttonAllNewsContnet = new System.Windows.Forms.Button();
-            this.label21 = new System.Windows.Forms.Label();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.buttonCloseMoreButtons = new System.Windows.Forms.Button();
-            this.panelNotifiError = new System.Windows.Forms.Panel();
-            this.labelError = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.timerAnimationError = new System.Windows.Forms.Timer(this.components);
-            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.timerAppPer = new System.Windows.Forms.Timer(this.components);
-            this.panel18 = new System.Windows.Forms.Panel();
-            this.labelAppRamUsage = new System.Windows.Forms.Label();
-            this.panelCommands = new System.Windows.Forms.Panel();
-            this.textBoxCommandOutput = new System.Windows.Forms.TextBox();
-            this.textBoxCommandInput = new System.Windows.Forms.TextBox();
-            this.label22 = new System.Windows.Forms.Label();
-            this.timerFindWaitnig = new System.Windows.Forms.Timer(this.components);
-            this.panelStartPage.SuspendLayout();
-            this.panelSTNewsMain.SuspendLayout();
-            this.panelTop.SuspendLayout();
-            this.roundedPanel1.SuspendLayout();
-            this.panel7.SuspendLayout();
-            this.panel9.SuspendLayout();
-            this.panel22.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProfileIcon)).BeginInit();
-            this.panelLoading.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoading)).BeginInit();
-            this.panelMenu.SuspendLayout();
-            this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGithub)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSite)).BeginInit();
-            this.panel2.SuspendLayout();
-            this.panelAllitem.SuspendLayout();
-            this.panel23.SuspendLayout();
-            this.panel24.SuspendLayout();
-            this.panelTopFinder.SuspendLayout();
-            this.roundedPanel2.SuspendLayout();
-            this.panel21.SuspendLayout();
-            this.panelMoreButtons.SuspendLayout();
-            this.panel10.SuspendLayout();
-            this.newFlowLayoutPanel1.SuspendLayout();
-            this.panel11.SuspendLayout();
-            this.panel12.SuspendLayout();
-            this.panel13.SuspendLayout();
-            this.panel14.SuspendLayout();
-            this.panel17.SuspendLayout();
-            this.panel15.SuspendLayout();
-            this.panel16.SuspendLayout();
-            this.panel19.SuspendLayout();
-            this.panel20.SuspendLayout();
-            this.panel6.SuspendLayout();
-            this.panelNotifiError.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            this.panel18.SuspendLayout();
-            this.panelCommands.SuspendLayout();
-            this.SuspendLayout();
+            notifyIcon1 = new NotifyIcon(components);
+            panelStartPage = new Panel();
+            panelSTNewsMain = new Panel();
+            label_InfoText_news = new Label();
+            panel8 = new Panel();
+            panelTop = new Panel();
+            roundedPanel1 = new RoundedPanel();
+            panel7 = new Panel();
+            panel9 = new Panel();
+            textBoxStartPagefinditem = new TextBox();
+            buttonStartPageFinditem = new Button();
+            panel22 = new Panel();
+            pictureBoxProfileIcon = new PictureBox();
+            label23 = new Label();
+            labelSatusWorkingApp = new Label();
+            buttonMenuOpen = new Button();
+            label = new Label();
+            panelLoading = new Panel();
+            labelLoadingA = new Label();
+            labelLoadingDetails = new Label();
+            labelLoading = new Label();
+            pictureBoxLoading = new PictureBox();
+            panelMenu = new Panel();
+            panel5 = new Panel();
+            pictureBoxGithub = new PictureBox();
+            pictureBoxSite = new PictureBox();
+            buttonSite = new Button();
+            buttonExitApp = new Button();
+            buttonRestartApp = new Button();
+            panelSep = new Panel();
+            buttonMoreBtnMenu = new Button();
+            buttonHelp = new Button();
+            buttonShowTitleStatusList = new Button();
+            buttonDefined = new Button();
+            buttonViewFindintems = new Button();
+            buttonPlayer = new Button();
+            buttonSetting = new Button();
+            buttonHomePage = new Button();
+            buttonMenuClose = new Button();
+            panel2 = new Panel();
+            panelMoreButtons = new Panel();
+            panel10 = new Panel();
+            newFlowLayoutPanel1 = new NewFlowLayoutPanel();
+            panel11 = new Panel();
+            label5 = new Label();
+            button_MoreBtn_Open_Settings = new Button();
+            label1 = new Label();
+            panel12 = new Panel();
+            label6 = new Label();
+            button2button_MoreBtn_Open_Player = new Button();
+            label7 = new Label();
+            panel13 = new Panel();
+            label8 = new Label();
+            button4button2button_MoreBtn_Open_FindItem = new Button();
+            label9 = new Label();
+            panel14 = new Panel();
+            label10 = new Label();
+            button5button2button_MoreBtn_Open_Lists = new Button();
+            label11 = new Label();
+            panel17 = new Panel();
+            label16 = new Label();
+            buttonCommunity = new Button();
+            label17 = new Label();
+            panel15 = new Panel();
+            label12 = new Label();
+            button2button_MoreBtn_Open_GitHub = new Button();
+            label13 = new Label();
+            panel16 = new Panel();
+            label14 = new Label();
+            button7button2button_MoreBtn_Open_twojeanimepl = new Button();
+            label15 = new Label();
+            panel19 = new Panel();
+            label18 = new Label();
+            button2 = new Button();
+            label19 = new Label();
+            panel20 = new Panel();
+            label20 = new Label();
+            buttonAllNewsContnet = new Button();
+            label21 = new Label();
+            panel6 = new Panel();
+            buttonCloseMoreButtons = new Button();
+            panelAllitem = new Panel();
+            flowLayoutPanelFinditem = new NewFlowLayoutPanel();
+            flowLayoutPanelAll = new NewFlowLayoutPanel();
+            panel23 = new Panel();
+            panel24 = new Panel();
+            comboBoxViewtype = new ComboBox();
+            label24 = new Label();
+            panelTopFinder = new Panel();
+            labelEnableFiltres = new Label();
+            roundedPanel2 = new RoundedPanel();
+            labelFindSatus = new Label();
+            buttonfinditemReset = new Button();
+            buttonfinditemF = new Button();
+            buttonFindItem = new Button();
+            panel21 = new Panel();
+            textBoxFinditem = new TextBox();
+            label4 = new Label();
+            buttonFinditemPageClose = new Button();
+            panelNotifiError = new Panel();
+            labelError = new Label();
+            pictureBox3 = new PictureBox();
+            timerAnimationError = new Timer(components);
+            toolTip = new ToolTip(components);
+            timerAppPer = new Timer(components);
+            panel18 = new Panel();
+            labelAppRamUsage = new Label();
+            panelCommands = new Panel();
+            textBoxCommandOutput = new TextBox();
+            textBoxCommandInput = new TextBox();
+            label22 = new Label();
+            timerFindWaitnig = new Timer(components);
+            panelStartPage.SuspendLayout();
+            panelSTNewsMain.SuspendLayout();
+            panelTop.SuspendLayout();
+            roundedPanel1.SuspendLayout();
+            panel7.SuspendLayout();
+            panel9.SuspendLayout();
+            panel22.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxProfileIcon).BeginInit();
+            panelLoading.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxLoading).BeginInit();
+            panelMenu.SuspendLayout();
+            panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxGithub).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxSite).BeginInit();
+            panel2.SuspendLayout();
+            panelMoreButtons.SuspendLayout();
+            panel10.SuspendLayout();
+            newFlowLayoutPanel1.SuspendLayout();
+            panel11.SuspendLayout();
+            panel12.SuspendLayout();
+            panel13.SuspendLayout();
+            panel14.SuspendLayout();
+            panel17.SuspendLayout();
+            panel15.SuspendLayout();
+            panel16.SuspendLayout();
+            panel19.SuspendLayout();
+            panel20.SuspendLayout();
+            panel6.SuspendLayout();
+            panelAllitem.SuspendLayout();
+            panel23.SuspendLayout();
+            panel24.SuspendLayout();
+            panelTopFinder.SuspendLayout();
+            roundedPanel2.SuspendLayout();
+            panel21.SuspendLayout();
+            panelNotifiError.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            panel18.SuspendLayout();
+            panelCommands.SuspendLayout();
+            SuspendLayout();
             // 
             // notifyIcon1
             // 
-            this.notifyIcon1.Text = "WMP_OverlayApp";
-            this.notifyIcon1.Visible = true;
-            this.notifyIcon1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.NotifyIcon1_MouseDoubleClick);
+            notifyIcon1.Text = "WMP_OverlayApp";
+            notifyIcon1.Visible = true;
+            notifyIcon1.MouseDoubleClick += NotifyIcon1_MouseDoubleClick;
             // 
             // panelStartPage
             // 
-            this.panelStartPage.AutoScroll = true;
-            this.panelStartPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.panelStartPage.Controls.Add(this.panelSTNewsMain);
-            this.panelStartPage.Controls.Add(this.panel8);
-            this.panelStartPage.Controls.Add(this.panelTop);
-            this.panelStartPage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelStartPage.Location = new System.Drawing.Point(0, 0);
-            this.panelStartPage.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.panelStartPage.Name = "panelStartPage";
-            this.panelStartPage.Size = new System.Drawing.Size(1090, 624);
-            this.panelStartPage.TabIndex = 6;
-            this.panelStartPage.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.PanelStartPage_ControlAdded);
+            panelStartPage.AutoScroll = true;
+            panelStartPage.BackColor = System.Drawing.Color.FromArgb(20, 20, 20);
+            panelStartPage.Controls.Add(panelSTNewsMain);
+            panelStartPage.Controls.Add(panel8);
+            panelStartPage.Controls.Add(panelTop);
+            panelStartPage.Dock = DockStyle.Fill;
+            panelStartPage.Location = new System.Drawing.Point(0, 0);
+            panelStartPage.Margin = new Padding(4, 3, 4, 3);
+            panelStartPage.Name = "panelStartPage";
+            panelStartPage.Size = new System.Drawing.Size(1090, 624);
+            panelStartPage.TabIndex = 6;
+            panelStartPage.ControlAdded += PanelStartPage_ControlAdded;
             // 
             // panelSTNewsMain
             // 
-            this.panelSTNewsMain.Controls.Add(this.label_InfoText_news);
-            this.panelSTNewsMain.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSTNewsMain.Location = new System.Drawing.Point(0, 130);
-            this.panelSTNewsMain.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.panelSTNewsMain.Name = "panelSTNewsMain";
-            this.panelSTNewsMain.Size = new System.Drawing.Size(1090, 409);
-            this.panelSTNewsMain.TabIndex = 4;
-            this.panelSTNewsMain.Visible = false;
+            panelSTNewsMain.Controls.Add(label_InfoText_news);
+            panelSTNewsMain.Dock = DockStyle.Top;
+            panelSTNewsMain.Location = new System.Drawing.Point(0, 130);
+            panelSTNewsMain.Margin = new Padding(4, 3, 4, 3);
+            panelSTNewsMain.Name = "panelSTNewsMain";
+            panelSTNewsMain.Size = new System.Drawing.Size(1090, 409);
+            panelSTNewsMain.TabIndex = 4;
+            panelSTNewsMain.Visible = false;
             // 
             // label_InfoText_news
             // 
-            this.label_InfoText_news.AutoSize = true;
-            this.label_InfoText_news.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label_InfoText_news.Font = new System.Drawing.Font("Comic Sans MS", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label_InfoText_news.ForeColor = System.Drawing.Color.White;
-            this.label_InfoText_news.Location = new System.Drawing.Point(0, 0);
-            this.label_InfoText_news.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label_InfoText_news.Name = "label_InfoText_news";
-            this.label_InfoText_news.Size = new System.Drawing.Size(117, 28);
-            this.label_InfoText_news.TabIndex = 1;
-            this.label_InfoText_news.Text = "Aktualności";
-            this.label_InfoText_news.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label_InfoText_news.AutoSize = true;
+            label_InfoText_news.Dock = DockStyle.Top;
+            label_InfoText_news.Font = new System.Drawing.Font("Comic Sans MS", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label_InfoText_news.ForeColor = System.Drawing.Color.White;
+            label_InfoText_news.Location = new System.Drawing.Point(0, 0);
+            label_InfoText_news.Margin = new Padding(4, 0, 4, 0);
+            label_InfoText_news.Name = "label_InfoText_news";
+            label_InfoText_news.Size = new System.Drawing.Size(117, 28);
+            label_InfoText_news.TabIndex = 1;
+            label_InfoText_news.Text = "Aktualności";
+            label_InfoText_news.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel8
             // 
-            this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel8.Location = new System.Drawing.Point(0, 105);
-            this.panel8.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(1090, 25);
-            this.panel8.TabIndex = 3;
+            panel8.Dock = DockStyle.Top;
+            panel8.Location = new System.Drawing.Point(0, 105);
+            panel8.Margin = new Padding(4, 3, 4, 3);
+            panel8.Name = "panel8";
+            panel8.Size = new System.Drawing.Size(1090, 25);
+            panel8.TabIndex = 3;
             // 
             // panelTop
             // 
-            this.panelTop.Controls.Add(this.roundedPanel1);
-            this.panelTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTop.Location = new System.Drawing.Point(0, 0);
-            this.panelTop.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.panelTop.Name = "panelTop";
-            this.panelTop.Padding = new System.Windows.Forms.Padding(12);
-            this.panelTop.Size = new System.Drawing.Size(1090, 105);
-            this.panelTop.TabIndex = 0;
+            panelTop.Controls.Add(roundedPanel1);
+            panelTop.Dock = DockStyle.Top;
+            panelTop.Location = new System.Drawing.Point(0, 0);
+            panelTop.Margin = new Padding(4, 3, 4, 3);
+            panelTop.Name = "panelTop";
+            panelTop.Padding = new Padding(12);
+            panelTop.Size = new System.Drawing.Size(1090, 105);
+            panelTop.TabIndex = 0;
             // 
             // roundedPanel1
             // 
-            this.roundedPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.roundedPanel1.ColorEdges = System.Drawing.SystemColors.ActiveCaptionText;
-            this.roundedPanel1.Controls.Add(this.panel7);
-            this.roundedPanel1.Controls.Add(this.panel22);
-            this.roundedPanel1.Controls.Add(this.labelSatusWorkingApp);
-            this.roundedPanel1.Controls.Add(this.buttonMenuOpen);
-            this.roundedPanel1.Controls.Add(this.label);
-            this.roundedPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.roundedPanel1.ExBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.roundedPanel1.Location = new System.Drawing.Point(12, 12);
-            this.roundedPanel1.Margin = new System.Windows.Forms.Padding(12);
-            this.roundedPanel1.Name = "roundedPanel1";
-            this.roundedPanel1.Padding = new System.Windows.Forms.Padding(23, 7, 23, 7);
-            this.roundedPanel1.RadiusArcPanel = 15F;
-            this.roundedPanel1.Size = new System.Drawing.Size(1066, 81);
-            this.roundedPanel1.TabIndex = 0;
-            this.roundedPanel1.Resize += new System.EventHandler(this.Panel_Resize);
+            roundedPanel1.BackColor = System.Drawing.Color.Transparent;
+            roundedPanel1.ColorEdges = System.Drawing.SystemColors.ActiveCaptionText;
+            roundedPanel1.Controls.Add(panel7);
+            roundedPanel1.Controls.Add(panel22);
+            roundedPanel1.Controls.Add(labelSatusWorkingApp);
+            roundedPanel1.Controls.Add(buttonMenuOpen);
+            roundedPanel1.Controls.Add(label);
+            roundedPanel1.Dock = DockStyle.Fill;
+            roundedPanel1.ExBackColor = System.Drawing.Color.FromArgb(55, 55, 55);
+            roundedPanel1.Location = new System.Drawing.Point(12, 12);
+            roundedPanel1.Margin = new Padding(12);
+            roundedPanel1.Name = "roundedPanel1";
+            roundedPanel1.Padding = new Padding(23, 7, 23, 7);
+            roundedPanel1.RadiusArcPanel = 15F;
+            roundedPanel1.Size = new System.Drawing.Size(1066, 81);
+            roundedPanel1.TabIndex = 0;
+            roundedPanel1.Resize += Panel_Resize;
             // 
             // panel7
             // 
-            this.panel7.Controls.Add(this.panel9);
-            this.panel7.Controls.Add(this.buttonStartPageFinditem);
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.panel7.Location = new System.Drawing.Point(221, 7);
-            this.panel7.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.panel7.Name = "panel7";
-            this.panel7.Padding = new System.Windows.Forms.Padding(6, 23, 6, 17);
-            this.panel7.Size = new System.Drawing.Size(582, 67);
-            this.panel7.TabIndex = 4;
+            panel7.Controls.Add(panel9);
+            panel7.Controls.Add(buttonStartPageFinditem);
+            panel7.Dock = DockStyle.Fill;
+            panel7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            panel7.Location = new System.Drawing.Point(221, 7);
+            panel7.Margin = new Padding(4, 3, 4, 3);
+            panel7.Name = "panel7";
+            panel7.Padding = new Padding(6, 23, 6, 17);
+            panel7.Size = new System.Drawing.Size(582, 67);
+            panel7.TabIndex = 4;
             // 
             // panel9
             // 
-            this.panel9.Controls.Add(this.textBoxStartPagefinditem);
-            this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel9.Location = new System.Drawing.Point(6, 23);
-            this.panel9.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.panel9.Name = "panel9";
-            this.panel9.Padding = new System.Windows.Forms.Padding(0, 6, 0, 0);
-            this.panel9.Size = new System.Drawing.Size(482, 27);
-            this.panel9.TabIndex = 5;
+            panel9.Controls.Add(textBoxStartPagefinditem);
+            panel9.Dock = DockStyle.Fill;
+            panel9.Location = new System.Drawing.Point(6, 23);
+            panel9.Margin = new Padding(4, 3, 4, 3);
+            panel9.Name = "panel9";
+            panel9.Padding = new Padding(0, 6, 0, 0);
+            panel9.Size = new System.Drawing.Size(482, 27);
+            panel9.TabIndex = 5;
             // 
             // textBoxStartPagefinditem
             // 
-            this.textBoxStartPagefinditem.AutoCompleteCustomSource.AddRange(new string[] {
-            "TEST"});
-            this.textBoxStartPagefinditem.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.textBoxStartPagefinditem.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.textBoxStartPagefinditem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.textBoxStartPagefinditem.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxStartPagefinditem.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxStartPagefinditem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBoxStartPagefinditem.ForeColor = System.Drawing.Color.White;
-            this.textBoxStartPagefinditem.Location = new System.Drawing.Point(0, 6);
-            this.textBoxStartPagefinditem.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBoxStartPagefinditem.Name = "textBoxStartPagefinditem";
-            this.textBoxStartPagefinditem.Size = new System.Drawing.Size(482, 16);
-            this.textBoxStartPagefinditem.TabIndex = 3;
-            this.textBoxStartPagefinditem.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBoxStartPagefinditem.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextBoxSPfinditem_KeyDown);
+            textBoxStartPagefinditem.AutoCompleteCustomSource.AddRange(new string[] { "TEST" });
+            textBoxStartPagefinditem.AutoCompleteMode = AutoCompleteMode.Suggest;
+            textBoxStartPagefinditem.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            textBoxStartPagefinditem.BackColor = System.Drawing.Color.FromArgb(20, 20, 20);
+            textBoxStartPagefinditem.BorderStyle = BorderStyle.None;
+            textBoxStartPagefinditem.Dock = DockStyle.Fill;
+            textBoxStartPagefinditem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            textBoxStartPagefinditem.ForeColor = System.Drawing.Color.White;
+            textBoxStartPagefinditem.Location = new System.Drawing.Point(0, 6);
+            textBoxStartPagefinditem.Margin = new Padding(4, 3, 4, 3);
+            textBoxStartPagefinditem.Name = "textBoxStartPagefinditem";
+            textBoxStartPagefinditem.Size = new System.Drawing.Size(482, 16);
+            textBoxStartPagefinditem.TabIndex = 3;
+            textBoxStartPagefinditem.TextAlign = HorizontalAlignment.Center;
+            textBoxStartPagefinditem.KeyDown += TextBoxSPfinditem_KeyDown;
             // 
             // buttonStartPageFinditem
             // 
-            this.buttonStartPageFinditem.BackColor = System.Drawing.Color.Transparent;
-            this.buttonStartPageFinditem.Dock = System.Windows.Forms.DockStyle.Right;
-            this.buttonStartPageFinditem.FlatAppearance.BorderSize = 0;
-            this.buttonStartPageFinditem.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
-            this.buttonStartPageFinditem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(65)))), ((int)(((byte)(65)))));
-            this.buttonStartPageFinditem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonStartPageFinditem.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonStartPageFinditem.ForeColor = System.Drawing.Color.White;
-            this.buttonStartPageFinditem.Location = new System.Drawing.Point(488, 23);
-            this.buttonStartPageFinditem.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.buttonStartPageFinditem.Name = "buttonStartPageFinditem";
-            this.buttonStartPageFinditem.Size = new System.Drawing.Size(88, 27);
-            this.buttonStartPageFinditem.TabIndex = 4;
-            this.buttonStartPageFinditem.Text = "Szukaj";
-            this.buttonStartPageFinditem.UseVisualStyleBackColor = true;
-            this.buttonStartPageFinditem.Click += new System.EventHandler(this.ButtonStartPageFinditem_Click);
+            buttonStartPageFinditem.BackColor = System.Drawing.Color.Transparent;
+            buttonStartPageFinditem.Dock = DockStyle.Right;
+            buttonStartPageFinditem.FlatAppearance.BorderSize = 0;
+            buttonStartPageFinditem.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(70, 70, 70);
+            buttonStartPageFinditem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(65, 65, 65);
+            buttonStartPageFinditem.FlatStyle = FlatStyle.Flat;
+            buttonStartPageFinditem.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            buttonStartPageFinditem.ForeColor = System.Drawing.Color.White;
+            buttonStartPageFinditem.Location = new System.Drawing.Point(488, 23);
+            buttonStartPageFinditem.Margin = new Padding(4, 3, 4, 3);
+            buttonStartPageFinditem.Name = "buttonStartPageFinditem";
+            buttonStartPageFinditem.Size = new System.Drawing.Size(88, 27);
+            buttonStartPageFinditem.TabIndex = 4;
+            buttonStartPageFinditem.Text = "Szukaj";
+            buttonStartPageFinditem.UseVisualStyleBackColor = true;
+            buttonStartPageFinditem.Click += ButtonStartPageFinditem_Click;
             // 
             // panel22
             // 
-            this.panel22.Controls.Add(this.pictureBoxProfileIcon);
-            this.panel22.Controls.Add(this.label23);
-            this.panel22.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel22.Location = new System.Drawing.Point(803, 7);
-            this.panel22.Name = "panel22";
-            this.panel22.Size = new System.Drawing.Size(80, 67);
-            this.panel22.TabIndex = 5;
-            this.panel22.Visible = false;
+            panel22.Controls.Add(pictureBoxProfileIcon);
+            panel22.Controls.Add(label23);
+            panel22.Dock = DockStyle.Right;
+            panel22.Location = new System.Drawing.Point(803, 7);
+            panel22.Name = "panel22";
+            panel22.Size = new System.Drawing.Size(80, 67);
+            panel22.TabIndex = 5;
+            panel22.Visible = false;
             // 
             // pictureBoxProfileIcon
             // 
-            this.pictureBoxProfileIcon.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBoxProfileIcon.Location = new System.Drawing.Point(0, 15);
-            this.pictureBoxProfileIcon.Name = "pictureBoxProfileIcon";
-            this.pictureBoxProfileIcon.Size = new System.Drawing.Size(80, 52);
-            this.pictureBoxProfileIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxProfileIcon.TabIndex = 6;
-            this.pictureBoxProfileIcon.TabStop = false;
-            this.pictureBoxProfileIcon.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBoxProfileIcon_Paint);
+            pictureBoxProfileIcon.Dock = DockStyle.Fill;
+            pictureBoxProfileIcon.Location = new System.Drawing.Point(0, 15);
+            pictureBoxProfileIcon.Name = "pictureBoxProfileIcon";
+            pictureBoxProfileIcon.Size = new System.Drawing.Size(80, 52);
+            pictureBoxProfileIcon.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBoxProfileIcon.TabIndex = 6;
+            pictureBoxProfileIcon.TabStop = false;
+            pictureBoxProfileIcon.Paint += pictureBoxProfileIcon_Paint;
             // 
             // label23
             // 
-            this.label23.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label23.ForeColor = System.Drawing.Color.White;
-            this.label23.Location = new System.Drawing.Point(0, 0);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(80, 15);
-            this.label23.TabIndex = 7;
-            this.label23.Text = "Profil";
-            this.label23.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            label23.Dock = DockStyle.Top;
+            label23.ForeColor = System.Drawing.Color.White;
+            label23.Location = new System.Drawing.Point(0, 0);
+            label23.Name = "label23";
+            label23.Size = new System.Drawing.Size(80, 15);
+            label23.TabIndex = 7;
+            label23.Text = "Profil";
+            label23.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // labelSatusWorkingApp
             // 
-            this.labelSatusWorkingApp.Dock = System.Windows.Forms.DockStyle.Right;
-            this.labelSatusWorkingApp.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelSatusWorkingApp.ForeColor = System.Drawing.SystemColors.Window;
-            this.labelSatusWorkingApp.Location = new System.Drawing.Point(883, 7);
-            this.labelSatusWorkingApp.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelSatusWorkingApp.Name = "labelSatusWorkingApp";
-            this.labelSatusWorkingApp.Size = new System.Drawing.Size(77, 67);
-            this.labelSatusWorkingApp.TabIndex = 2;
-            this.labelSatusWorkingApp.Text = "Satus działania:";
-            this.labelSatusWorkingApp.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.labelSatusWorkingApp.Visible = false;
+            labelSatusWorkingApp.Dock = DockStyle.Right;
+            labelSatusWorkingApp.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            labelSatusWorkingApp.ForeColor = System.Drawing.SystemColors.Window;
+            labelSatusWorkingApp.Location = new System.Drawing.Point(883, 7);
+            labelSatusWorkingApp.Margin = new Padding(4, 0, 4, 0);
+            labelSatusWorkingApp.Name = "labelSatusWorkingApp";
+            labelSatusWorkingApp.Size = new System.Drawing.Size(77, 67);
+            labelSatusWorkingApp.TabIndex = 2;
+            labelSatusWorkingApp.Text = "Satus działania:";
+            labelSatusWorkingApp.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            labelSatusWorkingApp.Visible = false;
             // 
             // buttonMenuOpen
             // 
-            this.buttonMenuOpen.BackgroundImage = global::AnimePlayer.Properties.Resources.white_menu_icon_12;
-            this.buttonMenuOpen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonMenuOpen.Dock = System.Windows.Forms.DockStyle.Right;
-            this.buttonMenuOpen.FlatAppearance.BorderSize = 0;
-            this.buttonMenuOpen.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.buttonMenuOpen.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.buttonMenuOpen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonMenuOpen.Font = new System.Drawing.Font("Comic Sans MS", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonMenuOpen.ForeColor = System.Drawing.Color.White;
-            this.buttonMenuOpen.Location = new System.Drawing.Point(960, 7);
-            this.buttonMenuOpen.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.buttonMenuOpen.Name = "buttonMenuOpen";
-            this.buttonMenuOpen.Size = new System.Drawing.Size(83, 67);
-            this.buttonMenuOpen.TabIndex = 1;
-            this.buttonMenuOpen.UseVisualStyleBackColor = true;
-            this.buttonMenuOpen.Click += new System.EventHandler(this.ButtonMenuOpen_Click);
+            buttonMenuOpen.BackgroundImage = Properties.Resources.white_menu_icon_12;
+            buttonMenuOpen.BackgroundImageLayout = ImageLayout.Zoom;
+            buttonMenuOpen.Dock = DockStyle.Right;
+            buttonMenuOpen.FlatAppearance.BorderSize = 0;
+            buttonMenuOpen.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(60, 60, 60);
+            buttonMenuOpen.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(55, 55, 55);
+            buttonMenuOpen.FlatStyle = FlatStyle.Flat;
+            buttonMenuOpen.Font = new System.Drawing.Font("Comic Sans MS", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            buttonMenuOpen.ForeColor = System.Drawing.Color.White;
+            buttonMenuOpen.Location = new System.Drawing.Point(960, 7);
+            buttonMenuOpen.Margin = new Padding(4, 3, 4, 3);
+            buttonMenuOpen.Name = "buttonMenuOpen";
+            buttonMenuOpen.Size = new System.Drawing.Size(83, 67);
+            buttonMenuOpen.TabIndex = 1;
+            buttonMenuOpen.UseVisualStyleBackColor = true;
+            buttonMenuOpen.Click += ButtonMenuOpen_Click;
             // 
             // label
             // 
-            this.label.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label.Font = new System.Drawing.Font("Comic Sans MS", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label.ForeColor = System.Drawing.Color.White;
-            this.label.Location = new System.Drawing.Point(23, 7);
-            this.label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label.Name = "label";
-            this.label.Size = new System.Drawing.Size(198, 67);
-            this.label.TabIndex = 0;
-            this.label.Text = "Anime Player";
-            this.label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label.Dock = DockStyle.Left;
+            label.Font = new System.Drawing.Font("Comic Sans MS", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label.ForeColor = System.Drawing.Color.White;
+            label.Location = new System.Drawing.Point(23, 7);
+            label.Margin = new Padding(4, 0, 4, 0);
+            label.Name = "label";
+            label.Size = new System.Drawing.Size(198, 67);
+            label.TabIndex = 0;
+            label.Text = "Anime Player";
+            label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panelLoading
             // 
-            this.panelLoading.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panelLoading.Controls.Add(this.labelLoadingA);
-            this.panelLoading.Controls.Add(this.labelLoadingDetails);
-            this.panelLoading.Controls.Add(this.labelLoading);
-            this.panelLoading.Controls.Add(this.pictureBoxLoading);
-            this.panelLoading.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelLoading.Location = new System.Drawing.Point(0, 0);
-            this.panelLoading.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.panelLoading.Name = "panelLoading";
-            this.panelLoading.Size = new System.Drawing.Size(1090, 624);
-            this.panelLoading.TabIndex = 2;
-            this.panelLoading.VisibleChanged += new System.EventHandler(this.PanelLoading_VisibleChanged);
+            panelLoading.BackgroundImageLayout = ImageLayout.Stretch;
+            panelLoading.Controls.Add(labelLoadingA);
+            panelLoading.Controls.Add(labelLoadingDetails);
+            panelLoading.Controls.Add(labelLoading);
+            panelLoading.Controls.Add(pictureBoxLoading);
+            panelLoading.Dock = DockStyle.Fill;
+            panelLoading.Location = new System.Drawing.Point(0, 0);
+            panelLoading.Margin = new Padding(4, 3, 4, 3);
+            panelLoading.Name = "panelLoading";
+            panelLoading.Size = new System.Drawing.Size(1090, 624);
+            panelLoading.TabIndex = 2;
+            panelLoading.VisibleChanged += PanelLoading_VisibleChanged;
             // 
             // labelLoadingA
             // 
-            this.labelLoadingA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.labelLoadingA.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelLoadingA.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelLoadingA.ForeColor = System.Drawing.Color.White;
-            this.labelLoadingA.Location = new System.Drawing.Point(0, 0);
-            this.labelLoadingA.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelLoadingA.Name = "labelLoadingA";
-            this.labelLoadingA.Size = new System.Drawing.Size(1090, 32);
-            this.labelLoadingA.TabIndex = 2;
-            this.labelLoadingA.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            labelLoadingA.BackColor = System.Drawing.Color.FromArgb(100, 20, 20, 20);
+            labelLoadingA.Dock = DockStyle.Top;
+            labelLoadingA.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            labelLoadingA.ForeColor = System.Drawing.Color.White;
+            labelLoadingA.Location = new System.Drawing.Point(0, 0);
+            labelLoadingA.Margin = new Padding(4, 0, 4, 0);
+            labelLoadingA.Name = "labelLoadingA";
+            labelLoadingA.Size = new System.Drawing.Size(1090, 32);
+            labelLoadingA.TabIndex = 2;
+            labelLoadingA.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // labelLoadingDetails
             // 
-            this.labelLoadingDetails.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.labelLoadingDetails.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.labelLoadingDetails.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelLoadingDetails.ForeColor = System.Drawing.Color.White;
-            this.labelLoadingDetails.Location = new System.Drawing.Point(0, 592);
-            this.labelLoadingDetails.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelLoadingDetails.Name = "labelLoadingDetails";
-            this.labelLoadingDetails.Size = new System.Drawing.Size(1090, 32);
-            this.labelLoadingDetails.TabIndex = 1;
-            this.labelLoadingDetails.Text = ":";
-            this.labelLoadingDetails.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            labelLoadingDetails.BackColor = System.Drawing.Color.FromArgb(100, 20, 20, 20);
+            labelLoadingDetails.Dock = DockStyle.Bottom;
+            labelLoadingDetails.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            labelLoadingDetails.ForeColor = System.Drawing.Color.White;
+            labelLoadingDetails.Location = new System.Drawing.Point(0, 592);
+            labelLoadingDetails.Margin = new Padding(4, 0, 4, 0);
+            labelLoadingDetails.Name = "labelLoadingDetails";
+            labelLoadingDetails.Size = new System.Drawing.Size(1090, 32);
+            labelLoadingDetails.TabIndex = 1;
+            labelLoadingDetails.Text = ":";
+            labelLoadingDetails.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // labelLoading
             // 
-            this.labelLoading.AutoSize = true;
-            this.labelLoading.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.labelLoading.Font = new System.Drawing.Font("Comic Sans MS", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelLoading.ForeColor = System.Drawing.Color.White;
-            this.labelLoading.Location = new System.Drawing.Point(467, 286);
-            this.labelLoading.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelLoading.Name = "labelLoading";
-            this.labelLoading.Size = new System.Drawing.Size(145, 38);
-            this.labelLoading.TabIndex = 0;
-            this.labelLoading.Text = "Ładowanie";
-            this.labelLoading.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.labelLoading.VisibleChanged += new System.EventHandler(this.LabelLoading_VisibleChanged);
+            labelLoading.AutoSize = true;
+            labelLoading.BackColor = System.Drawing.Color.FromArgb(100, 20, 20, 20);
+            labelLoading.Font = new System.Drawing.Font("Comic Sans MS", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            labelLoading.ForeColor = System.Drawing.Color.White;
+            labelLoading.Location = new System.Drawing.Point(467, 286);
+            labelLoading.Margin = new Padding(4, 0, 4, 0);
+            labelLoading.Name = "labelLoading";
+            labelLoading.Size = new System.Drawing.Size(145, 38);
+            labelLoading.TabIndex = 0;
+            labelLoading.Text = "Ładowanie";
+            labelLoading.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            labelLoading.VisibleChanged += LabelLoading_VisibleChanged;
             // 
             // pictureBoxLoading
             // 
-            this.pictureBoxLoading.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBoxLoading.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBoxLoading.Location = new System.Drawing.Point(0, 0);
-            this.pictureBoxLoading.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.pictureBoxLoading.Name = "pictureBoxLoading";
-            this.pictureBoxLoading.Size = new System.Drawing.Size(1090, 624);
-            this.pictureBoxLoading.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxLoading.TabIndex = 3;
-            this.pictureBoxLoading.TabStop = false;
+            pictureBoxLoading.BackgroundImageLayout = ImageLayout.Zoom;
+            pictureBoxLoading.Dock = DockStyle.Fill;
+            pictureBoxLoading.Location = new System.Drawing.Point(0, 0);
+            pictureBoxLoading.Margin = new Padding(4, 3, 4, 3);
+            pictureBoxLoading.Name = "pictureBoxLoading";
+            pictureBoxLoading.Size = new System.Drawing.Size(1090, 624);
+            pictureBoxLoading.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxLoading.TabIndex = 3;
+            pictureBoxLoading.TabStop = false;
             // 
             // panelMenu
             // 
-            this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.panelMenu.Controls.Add(this.panel5);
-            this.panelMenu.Controls.Add(this.buttonExitApp);
-            this.panelMenu.Controls.Add(this.buttonRestartApp);
-            this.panelMenu.Controls.Add(this.panelSep);
-            this.panelMenu.Controls.Add(this.buttonMoreBtnMenu);
-            this.panelMenu.Controls.Add(this.buttonHelp);
-            this.panelMenu.Controls.Add(this.buttonShowTitleStatusList);
-            this.panelMenu.Controls.Add(this.buttonDefined);
-            this.panelMenu.Controls.Add(this.buttonViewFindintems);
-            this.panelMenu.Controls.Add(this.buttonPlayer);
-            this.panelMenu.Controls.Add(this.buttonSetting);
-            this.panelMenu.Controls.Add(this.buttonHomePage);
-            this.panelMenu.Controls.Add(this.buttonMenuClose);
-            this.panelMenu.Location = new System.Drawing.Point(875, 0);
-            this.panelMenu.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Padding = new System.Windows.Forms.Padding(12);
-            this.panelMenu.Size = new System.Drawing.Size(233, 624);
-            this.panelMenu.TabIndex = 1;
-            this.panelMenu.Visible = false;
+            panelMenu.BackColor = System.Drawing.Color.FromArgb(15, 15, 15);
+            panelMenu.Controls.Add(panel5);
+            panelMenu.Controls.Add(buttonExitApp);
+            panelMenu.Controls.Add(buttonRestartApp);
+            panelMenu.Controls.Add(panelSep);
+            panelMenu.Controls.Add(buttonMoreBtnMenu);
+            panelMenu.Controls.Add(buttonHelp);
+            panelMenu.Controls.Add(buttonShowTitleStatusList);
+            panelMenu.Controls.Add(buttonDefined);
+            panelMenu.Controls.Add(buttonViewFindintems);
+            panelMenu.Controls.Add(buttonPlayer);
+            panelMenu.Controls.Add(buttonSetting);
+            panelMenu.Controls.Add(buttonHomePage);
+            panelMenu.Controls.Add(buttonMenuClose);
+            panelMenu.Location = new System.Drawing.Point(875, 0);
+            panelMenu.Margin = new Padding(4, 3, 4, 3);
+            panelMenu.Name = "panelMenu";
+            panelMenu.Padding = new Padding(12);
+            panelMenu.Size = new System.Drawing.Size(233, 624);
+            panelMenu.TabIndex = 1;
+            panelMenu.Visible = false;
             // 
             // panel5
             // 
-            this.panel5.Controls.Add(this.pictureBoxGithub);
-            this.panel5.Controls.Add(this.pictureBoxSite);
-            this.panel5.Controls.Add(this.buttonSite);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel5.Location = new System.Drawing.Point(12, 566);
-            this.panel5.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(209, 46);
-            this.panel5.TabIndex = 4;
+            panel5.Controls.Add(pictureBoxGithub);
+            panel5.Controls.Add(pictureBoxSite);
+            panel5.Controls.Add(buttonSite);
+            panel5.Dock = DockStyle.Bottom;
+            panel5.Location = new System.Drawing.Point(12, 566);
+            panel5.Margin = new Padding(4, 3, 4, 3);
+            panel5.Name = "panel5";
+            panel5.Size = new System.Drawing.Size(209, 46);
+            panel5.TabIndex = 4;
             // 
             // pictureBoxGithub
             // 
-            this.pictureBoxGithub.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBoxGithub.Image = global::AnimePlayer.Properties.Resources.GitHub_Mark_Light_120px_plus;
-            this.pictureBoxGithub.Location = new System.Drawing.Point(0, 0);
-            this.pictureBoxGithub.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.pictureBoxGithub.Name = "pictureBoxGithub";
-            this.pictureBoxGithub.Size = new System.Drawing.Size(47, 46);
-            this.pictureBoxGithub.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxGithub.TabIndex = 0;
-            this.pictureBoxGithub.TabStop = false;
-            this.pictureBoxGithub.Click += new System.EventHandler(this.PictureBoxGithub_Click);
+            pictureBoxGithub.Dock = DockStyle.Left;
+            pictureBoxGithub.Image = Properties.Resources.GitHub_Mark_Light_120px_plus;
+            pictureBoxGithub.Location = new System.Drawing.Point(0, 0);
+            pictureBoxGithub.Margin = new Padding(4, 3, 4, 3);
+            pictureBoxGithub.Name = "pictureBoxGithub";
+            pictureBoxGithub.Size = new System.Drawing.Size(47, 46);
+            pictureBoxGithub.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxGithub.TabIndex = 0;
+            pictureBoxGithub.TabStop = false;
+            pictureBoxGithub.Click += PictureBoxGithub_Click;
             // 
             // pictureBoxSite
             // 
-            this.pictureBoxSite.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pictureBoxSite.Image = global::AnimePlayer.Properties.Resources.siteIcon;
-            this.pictureBoxSite.Location = new System.Drawing.Point(68, 0);
-            this.pictureBoxSite.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.pictureBoxSite.Name = "pictureBoxSite";
-            this.pictureBoxSite.Size = new System.Drawing.Size(47, 46);
-            this.pictureBoxSite.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxSite.TabIndex = 2;
-            this.pictureBoxSite.TabStop = false;
-            this.pictureBoxSite.Click += new System.EventHandler(this.PictureBoxSite_Click);
+            pictureBoxSite.Dock = DockStyle.Right;
+            pictureBoxSite.Image = Properties.Resources.siteIcon;
+            pictureBoxSite.Location = new System.Drawing.Point(68, 0);
+            pictureBoxSite.Margin = new Padding(4, 3, 4, 3);
+            pictureBoxSite.Name = "pictureBoxSite";
+            pictureBoxSite.Size = new System.Drawing.Size(47, 46);
+            pictureBoxSite.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxSite.TabIndex = 2;
+            pictureBoxSite.TabStop = false;
+            pictureBoxSite.Click += PictureBoxSite_Click;
             // 
             // buttonSite
             // 
-            this.buttonSite.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.buttonSite.Dock = System.Windows.Forms.DockStyle.Right;
-            this.buttonSite.FlatAppearance.BorderSize = 0;
-            this.buttonSite.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSite.ForeColor = System.Drawing.Color.White;
-            this.buttonSite.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonSite.Location = new System.Drawing.Point(115, 0);
-            this.buttonSite.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.buttonSite.Name = "buttonSite";
-            this.buttonSite.Size = new System.Drawing.Size(94, 46);
-            this.buttonSite.TabIndex = 4;
-            this.buttonSite.Text = "Twojanimepl";
-            this.buttonSite.UseVisualStyleBackColor = true;
-            this.buttonSite.Click += new System.EventHandler(this.ButtonSite_Click);
+            buttonSite.BackgroundImageLayout = ImageLayout.None;
+            buttonSite.Dock = DockStyle.Right;
+            buttonSite.FlatAppearance.BorderSize = 0;
+            buttonSite.FlatStyle = FlatStyle.Flat;
+            buttonSite.ForeColor = System.Drawing.Color.White;
+            buttonSite.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            buttonSite.Location = new System.Drawing.Point(115, 0);
+            buttonSite.Margin = new Padding(4, 3, 4, 3);
+            buttonSite.Name = "buttonSite";
+            buttonSite.Size = new System.Drawing.Size(94, 46);
+            buttonSite.TabIndex = 4;
+            buttonSite.Text = "Twojanimepl";
+            buttonSite.UseVisualStyleBackColor = true;
+            buttonSite.Click += ButtonSite_Click;
             // 
             // buttonExitApp
             // 
-            this.buttonExitApp.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonExitApp.FlatAppearance.BorderSize = 0;
-            this.buttonExitApp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonExitApp.ForeColor = System.Drawing.Color.White;
-            this.buttonExitApp.Location = new System.Drawing.Point(12, 463);
-            this.buttonExitApp.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.buttonExitApp.Name = "buttonExitApp";
-            this.buttonExitApp.Size = new System.Drawing.Size(209, 46);
-            this.buttonExitApp.TabIndex = 3;
-            this.buttonExitApp.Text = "Zamknij aplikacje";
-            this.buttonExitApp.UseVisualStyleBackColor = true;
-            this.buttonExitApp.Click += new System.EventHandler(this.ButtonExitApp_Click);
+            buttonExitApp.Dock = DockStyle.Top;
+            buttonExitApp.FlatAppearance.BorderSize = 0;
+            buttonExitApp.FlatStyle = FlatStyle.Flat;
+            buttonExitApp.ForeColor = System.Drawing.Color.White;
+            buttonExitApp.Location = new System.Drawing.Point(12, 463);
+            buttonExitApp.Margin = new Padding(4, 3, 4, 3);
+            buttonExitApp.Name = "buttonExitApp";
+            buttonExitApp.Size = new System.Drawing.Size(209, 46);
+            buttonExitApp.TabIndex = 3;
+            buttonExitApp.Text = "Zamknij aplikacje";
+            buttonExitApp.UseVisualStyleBackColor = true;
+            buttonExitApp.Click += ButtonExitApp_Click;
             // 
             // buttonRestartApp
             // 
-            this.buttonRestartApp.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonRestartApp.FlatAppearance.BorderSize = 0;
-            this.buttonRestartApp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonRestartApp.ForeColor = System.Drawing.Color.White;
-            this.buttonRestartApp.Location = new System.Drawing.Point(12, 417);
-            this.buttonRestartApp.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.buttonRestartApp.Name = "buttonRestartApp";
-            this.buttonRestartApp.Size = new System.Drawing.Size(209, 46);
-            this.buttonRestartApp.TabIndex = 6;
-            this.buttonRestartApp.Text = "Zrestartuj aplikacjie";
-            this.buttonRestartApp.UseVisualStyleBackColor = true;
-            this.buttonRestartApp.Visible = false;
-            this.buttonRestartApp.Click += new System.EventHandler(this.ButtonRestartApp_Click);
+            buttonRestartApp.Dock = DockStyle.Top;
+            buttonRestartApp.FlatAppearance.BorderSize = 0;
+            buttonRestartApp.FlatStyle = FlatStyle.Flat;
+            buttonRestartApp.ForeColor = System.Drawing.Color.White;
+            buttonRestartApp.Location = new System.Drawing.Point(12, 417);
+            buttonRestartApp.Margin = new Padding(4, 3, 4, 3);
+            buttonRestartApp.Name = "buttonRestartApp";
+            buttonRestartApp.Size = new System.Drawing.Size(209, 46);
+            buttonRestartApp.TabIndex = 6;
+            buttonRestartApp.Text = "Zrestartuj aplikacjie";
+            buttonRestartApp.UseVisualStyleBackColor = true;
+            buttonRestartApp.Visible = false;
+            buttonRestartApp.Click += ButtonRestartApp_Click;
             // 
             // panelSep
             // 
-            this.panelSep.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.panelSep.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSep.Location = new System.Drawing.Point(12, 412);
-            this.panelSep.Name = "panelSep";
-            this.panelSep.Size = new System.Drawing.Size(209, 5);
-            this.panelSep.TabIndex = 9;
+            panelSep.BackColor = System.Drawing.Color.FromArgb(40, 40, 40);
+            panelSep.Dock = DockStyle.Top;
+            panelSep.Location = new System.Drawing.Point(12, 412);
+            panelSep.Name = "panelSep";
+            panelSep.Size = new System.Drawing.Size(209, 5);
+            panelSep.TabIndex = 9;
             // 
             // buttonMoreBtnMenu
             // 
-            this.buttonMoreBtnMenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonMoreBtnMenu.FlatAppearance.BorderSize = 0;
-            this.buttonMoreBtnMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonMoreBtnMenu.ForeColor = System.Drawing.Color.White;
-            this.buttonMoreBtnMenu.Location = new System.Drawing.Point(12, 366);
-            this.buttonMoreBtnMenu.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.buttonMoreBtnMenu.Name = "buttonMoreBtnMenu";
-            this.buttonMoreBtnMenu.Size = new System.Drawing.Size(209, 46);
-            this.buttonMoreBtnMenu.TabIndex = 8;
-            this.buttonMoreBtnMenu.Text = "Więcej..";
-            this.toolTip.SetToolTip(this.buttonMoreBtnMenu, "Statusy: Oglądam, Planeuj,, Wstrzymane itp.");
-            this.buttonMoreBtnMenu.UseVisualStyleBackColor = true;
-            this.buttonMoreBtnMenu.Click += new System.EventHandler(this.ButtonMoreBtnMenu_Click);
+            buttonMoreBtnMenu.Dock = DockStyle.Top;
+            buttonMoreBtnMenu.FlatAppearance.BorderSize = 0;
+            buttonMoreBtnMenu.FlatStyle = FlatStyle.Flat;
+            buttonMoreBtnMenu.ForeColor = System.Drawing.Color.White;
+            buttonMoreBtnMenu.Location = new System.Drawing.Point(12, 366);
+            buttonMoreBtnMenu.Margin = new Padding(4, 3, 4, 3);
+            buttonMoreBtnMenu.Name = "buttonMoreBtnMenu";
+            buttonMoreBtnMenu.Size = new System.Drawing.Size(209, 46);
+            buttonMoreBtnMenu.TabIndex = 8;
+            buttonMoreBtnMenu.Text = "Więcej..";
+            toolTip.SetToolTip(buttonMoreBtnMenu, "Statusy: Oglądam, Planeuj,, Wstrzymane itp.");
+            buttonMoreBtnMenu.UseVisualStyleBackColor = true;
+            buttonMoreBtnMenu.Click += ButtonMoreBtnMenu_Click;
             // 
             // buttonHelp
             // 
-            this.buttonHelp.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonHelp.FlatAppearance.BorderSize = 0;
-            this.buttonHelp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonHelp.ForeColor = System.Drawing.Color.White;
-            this.buttonHelp.Location = new System.Drawing.Point(12, 320);
-            this.buttonHelp.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.buttonHelp.Name = "buttonHelp";
-            this.buttonHelp.Size = new System.Drawing.Size(209, 46);
-            this.buttonHelp.TabIndex = 12;
-            this.buttonHelp.Text = "Pomoc";
-            this.toolTip.SetToolTip(this.buttonHelp, "Statusy: Oglądam, Planeuj,, Wstrzymane itp.");
-            this.buttonHelp.UseVisualStyleBackColor = true;
-            this.buttonHelp.Click += new System.EventHandler(this.buttonHelp_Click);
+            buttonHelp.Dock = DockStyle.Top;
+            buttonHelp.FlatAppearance.BorderSize = 0;
+            buttonHelp.FlatStyle = FlatStyle.Flat;
+            buttonHelp.ForeColor = System.Drawing.Color.White;
+            buttonHelp.Location = new System.Drawing.Point(12, 320);
+            buttonHelp.Margin = new Padding(4, 3, 4, 3);
+            buttonHelp.Name = "buttonHelp";
+            buttonHelp.Size = new System.Drawing.Size(209, 46);
+            buttonHelp.TabIndex = 12;
+            buttonHelp.Text = "Pomoc";
+            toolTip.SetToolTip(buttonHelp, "Statusy: Oglądam, Planeuj,, Wstrzymane itp.");
+            buttonHelp.UseVisualStyleBackColor = true;
+            buttonHelp.Click += buttonHelp_Click;
             // 
             // buttonShowTitleStatusList
             // 
-            this.buttonShowTitleStatusList.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonShowTitleStatusList.FlatAppearance.BorderSize = 0;
-            this.buttonShowTitleStatusList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonShowTitleStatusList.ForeColor = System.Drawing.Color.White;
-            this.buttonShowTitleStatusList.Location = new System.Drawing.Point(12, 274);
-            this.buttonShowTitleStatusList.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.buttonShowTitleStatusList.Name = "buttonShowTitleStatusList";
-            this.buttonShowTitleStatusList.Size = new System.Drawing.Size(209, 46);
-            this.buttonShowTitleStatusList.TabIndex = 7;
-            this.buttonShowTitleStatusList.Text = "Listy anime";
-            this.toolTip.SetToolTip(this.buttonShowTitleStatusList, "Statusy: Oglądam, Planeuj,, Wstrzymane itp.");
-            this.buttonShowTitleStatusList.UseVisualStyleBackColor = true;
-            this.buttonShowTitleStatusList.Click += new System.EventHandler(this.ButtonShowTitleStatusList_Click);
+            buttonShowTitleStatusList.Dock = DockStyle.Top;
+            buttonShowTitleStatusList.FlatAppearance.BorderSize = 0;
+            buttonShowTitleStatusList.FlatStyle = FlatStyle.Flat;
+            buttonShowTitleStatusList.ForeColor = System.Drawing.Color.White;
+            buttonShowTitleStatusList.Location = new System.Drawing.Point(12, 274);
+            buttonShowTitleStatusList.Margin = new Padding(4, 3, 4, 3);
+            buttonShowTitleStatusList.Name = "buttonShowTitleStatusList";
+            buttonShowTitleStatusList.Size = new System.Drawing.Size(209, 46);
+            buttonShowTitleStatusList.TabIndex = 7;
+            buttonShowTitleStatusList.Text = "Listy anime";
+            toolTip.SetToolTip(buttonShowTitleStatusList, "Statusy: Oglądam, Planeuj,, Wstrzymane itp.");
+            buttonShowTitleStatusList.UseVisualStyleBackColor = true;
+            buttonShowTitleStatusList.Click += ButtonShowTitleStatusList_Click;
             // 
             // buttonDefined
             // 
-            this.buttonDefined.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonDefined.FlatAppearance.BorderSize = 0;
-            this.buttonDefined.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonDefined.ForeColor = System.Drawing.Color.White;
-            this.buttonDefined.Location = new System.Drawing.Point(12, 228);
-            this.buttonDefined.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.buttonDefined.Name = "buttonDefined";
-            this.buttonDefined.Size = new System.Drawing.Size(209, 46);
-            this.buttonDefined.TabIndex = 10;
-            this.buttonDefined.Text = "Definicje";
-            this.toolTip.SetToolTip(this.buttonDefined, "Definicje tagów");
-            this.buttonDefined.UseVisualStyleBackColor = true;
-            this.buttonDefined.Click += new System.EventHandler(this.ButtonDefined_Click);
+            buttonDefined.Dock = DockStyle.Top;
+            buttonDefined.FlatAppearance.BorderSize = 0;
+            buttonDefined.FlatStyle = FlatStyle.Flat;
+            buttonDefined.ForeColor = System.Drawing.Color.White;
+            buttonDefined.Location = new System.Drawing.Point(12, 228);
+            buttonDefined.Margin = new Padding(4, 3, 4, 3);
+            buttonDefined.Name = "buttonDefined";
+            buttonDefined.Size = new System.Drawing.Size(209, 46);
+            buttonDefined.TabIndex = 10;
+            buttonDefined.Text = "Definicje";
+            toolTip.SetToolTip(buttonDefined, "Definicje tagów");
+            buttonDefined.UseVisualStyleBackColor = true;
+            buttonDefined.Click += ButtonDefined_Click;
             // 
             // buttonViewFindintems
             // 
-            this.buttonViewFindintems.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonViewFindintems.FlatAppearance.BorderSize = 0;
-            this.buttonViewFindintems.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonViewFindintems.ForeColor = System.Drawing.Color.White;
-            this.buttonViewFindintems.Location = new System.Drawing.Point(12, 182);
-            this.buttonViewFindintems.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.buttonViewFindintems.Name = "buttonViewFindintems";
-            this.buttonViewFindintems.Size = new System.Drawing.Size(209, 46);
-            this.buttonViewFindintems.TabIndex = 5;
-            this.buttonViewFindintems.Text = "Wyszukiwarka";
-            this.buttonViewFindintems.UseVisualStyleBackColor = true;
-            this.buttonViewFindintems.Click += new System.EventHandler(this.ButtonViewFindintems_Click);
+            buttonViewFindintems.Dock = DockStyle.Top;
+            buttonViewFindintems.FlatAppearance.BorderSize = 0;
+            buttonViewFindintems.FlatStyle = FlatStyle.Flat;
+            buttonViewFindintems.ForeColor = System.Drawing.Color.White;
+            buttonViewFindintems.Location = new System.Drawing.Point(12, 182);
+            buttonViewFindintems.Margin = new Padding(4, 3, 4, 3);
+            buttonViewFindintems.Name = "buttonViewFindintems";
+            buttonViewFindintems.Size = new System.Drawing.Size(209, 46);
+            buttonViewFindintems.TabIndex = 5;
+            buttonViewFindintems.Text = "Wyszukiwarka";
+            buttonViewFindintems.UseVisualStyleBackColor = true;
+            buttonViewFindintems.Click += ButtonViewFindintems_Click;
             // 
             // buttonPlayer
             // 
-            this.buttonPlayer.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonPlayer.FlatAppearance.BorderSize = 0;
-            this.buttonPlayer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonPlayer.ForeColor = System.Drawing.Color.White;
-            this.buttonPlayer.Location = new System.Drawing.Point(12, 136);
-            this.buttonPlayer.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.buttonPlayer.Name = "buttonPlayer";
-            this.buttonPlayer.Size = new System.Drawing.Size(209, 46);
-            this.buttonPlayer.TabIndex = 2;
-            this.buttonPlayer.Text = "Odtwarzacz";
-            this.buttonPlayer.UseVisualStyleBackColor = true;
-            this.buttonPlayer.Click += new System.EventHandler(this.ButtonPlayer_Click);
+            buttonPlayer.Dock = DockStyle.Top;
+            buttonPlayer.FlatAppearance.BorderSize = 0;
+            buttonPlayer.FlatStyle = FlatStyle.Flat;
+            buttonPlayer.ForeColor = System.Drawing.Color.White;
+            buttonPlayer.Location = new System.Drawing.Point(12, 136);
+            buttonPlayer.Margin = new Padding(4, 3, 4, 3);
+            buttonPlayer.Name = "buttonPlayer";
+            buttonPlayer.Size = new System.Drawing.Size(209, 46);
+            buttonPlayer.TabIndex = 2;
+            buttonPlayer.Text = "Odtwarzacz";
+            buttonPlayer.UseVisualStyleBackColor = true;
+            buttonPlayer.Click += ButtonPlayer_Click;
             // 
             // buttonSetting
             // 
-            this.buttonSetting.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonSetting.FlatAppearance.BorderSize = 0;
-            this.buttonSetting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSetting.ForeColor = System.Drawing.Color.White;
-            this.buttonSetting.Location = new System.Drawing.Point(12, 90);
-            this.buttonSetting.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.buttonSetting.Name = "buttonSetting";
-            this.buttonSetting.Size = new System.Drawing.Size(209, 46);
-            this.buttonSetting.TabIndex = 1;
-            this.buttonSetting.Text = "Ustawienia";
-            this.buttonSetting.UseVisualStyleBackColor = true;
-            this.buttonSetting.Visible = false;
-            this.buttonSetting.Click += new System.EventHandler(this.ButtonSetting_Click);
+            buttonSetting.Dock = DockStyle.Top;
+            buttonSetting.FlatAppearance.BorderSize = 0;
+            buttonSetting.FlatStyle = FlatStyle.Flat;
+            buttonSetting.ForeColor = System.Drawing.Color.White;
+            buttonSetting.Location = new System.Drawing.Point(12, 90);
+            buttonSetting.Margin = new Padding(4, 3, 4, 3);
+            buttonSetting.Name = "buttonSetting";
+            buttonSetting.Size = new System.Drawing.Size(209, 46);
+            buttonSetting.TabIndex = 1;
+            buttonSetting.Text = "Ustawienia";
+            buttonSetting.UseVisualStyleBackColor = true;
+            buttonSetting.Visible = false;
+            buttonSetting.Click += ButtonSetting_Click;
             // 
             // buttonHomePage
             // 
-            this.buttonHomePage.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonHomePage.FlatAppearance.BorderSize = 0;
-            this.buttonHomePage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonHomePage.ForeColor = System.Drawing.Color.White;
-            this.buttonHomePage.Location = new System.Drawing.Point(12, 44);
-            this.buttonHomePage.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.buttonHomePage.Name = "buttonHomePage";
-            this.buttonHomePage.Size = new System.Drawing.Size(209, 46);
-            this.buttonHomePage.TabIndex = 11;
-            this.buttonHomePage.Text = "Strona główna";
-            this.buttonHomePage.UseVisualStyleBackColor = true;
-            this.buttonHomePage.Click += new System.EventHandler(this.ButtonHomePage_Click);
+            buttonHomePage.Dock = DockStyle.Top;
+            buttonHomePage.FlatAppearance.BorderSize = 0;
+            buttonHomePage.FlatStyle = FlatStyle.Flat;
+            buttonHomePage.ForeColor = System.Drawing.Color.White;
+            buttonHomePage.Location = new System.Drawing.Point(12, 44);
+            buttonHomePage.Margin = new Padding(4, 3, 4, 3);
+            buttonHomePage.Name = "buttonHomePage";
+            buttonHomePage.Size = new System.Drawing.Size(209, 46);
+            buttonHomePage.TabIndex = 11;
+            buttonHomePage.Text = "Strona główna";
+            buttonHomePage.UseVisualStyleBackColor = true;
+            buttonHomePage.Click += ButtonHomePage_Click;
             // 
             // buttonMenuClose
             // 
-            this.buttonMenuClose.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonMenuClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonMenuClose.ForeColor = System.Drawing.Color.Red;
-            this.buttonMenuClose.Location = new System.Drawing.Point(12, 12);
-            this.buttonMenuClose.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.buttonMenuClose.Name = "buttonMenuClose";
-            this.buttonMenuClose.Size = new System.Drawing.Size(209, 32);
-            this.buttonMenuClose.TabIndex = 0;
-            this.buttonMenuClose.Text = "X";
-            this.buttonMenuClose.UseVisualStyleBackColor = true;
-            this.buttonMenuClose.Click += new System.EventHandler(this.ButtonMenuClose_Click);
+            buttonMenuClose.Dock = DockStyle.Top;
+            buttonMenuClose.FlatStyle = FlatStyle.Flat;
+            buttonMenuClose.ForeColor = System.Drawing.Color.Red;
+            buttonMenuClose.Location = new System.Drawing.Point(12, 12);
+            buttonMenuClose.Margin = new Padding(4, 3, 4, 3);
+            buttonMenuClose.Name = "buttonMenuClose";
+            buttonMenuClose.Size = new System.Drawing.Size(209, 32);
+            buttonMenuClose.TabIndex = 0;
+            buttonMenuClose.Text = "X";
+            buttonMenuClose.UseVisualStyleBackColor = true;
+            buttonMenuClose.Click += ButtonMenuClose_Click;
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.panelStartPage);
-            this.panel2.Controls.Add(this.panelAllitem);
-            this.panel2.Controls.Add(this.panelMoreButtons);
-            this.panel2.Controls.Add(this.panelLoading);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1090, 624);
-            this.panel2.TabIndex = 5;
-            this.panel2.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.panel2_ControlAdded);
-            // 
-            // panelAllitem
-            // 
-            this.panelAllitem.Controls.Add(this.flowLayoutPanelFinditem);
-            this.panelAllitem.Controls.Add(this.flowLayoutPanelAll);
-            this.panelAllitem.Controls.Add(this.panel23);
-            this.panelAllitem.Controls.Add(this.panelTopFinder);
-            this.panelAllitem.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelAllitem.Location = new System.Drawing.Point(0, 0);
-            this.panelAllitem.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.panelAllitem.Name = "panelAllitem";
-            this.panelAllitem.Size = new System.Drawing.Size(1090, 624);
-            this.panelAllitem.TabIndex = 0;
-            // 
-            // flowLayoutPanelFinditem
-            // 
-            this.flowLayoutPanelFinditem.AutoScroll = true;
-            this.flowLayoutPanelFinditem.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanelFinditem.Location = new System.Drawing.Point(0, 127);
-            this.flowLayoutPanelFinditem.Name = "flowLayoutPanelFinditem";
-            this.flowLayoutPanelFinditem.Padding = new System.Windows.Forms.Padding(12, 2, 12, 2);
-            this.flowLayoutPanelFinditem.Size = new System.Drawing.Size(1090, 497);
-            this.flowLayoutPanelFinditem.TabIndex = 0;
-            // 
-            // flowLayoutPanelAll
-            // 
-            this.flowLayoutPanelAll.AutoScroll = true;
-            this.flowLayoutPanelAll.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanelAll.Location = new System.Drawing.Point(0, 127);
-            this.flowLayoutPanelAll.Name = "flowLayoutPanelAll";
-            this.flowLayoutPanelAll.Padding = new System.Windows.Forms.Padding(12, 2, 12, 2);
-            this.flowLayoutPanelAll.Size = new System.Drawing.Size(1090, 497);
-            this.flowLayoutPanelAll.TabIndex = 0;
-            this.flowLayoutPanelAll.SizeChanged += new System.EventHandler(this.flowLayoutPanelAll_SizeChanged);
-            // 
-            // panel23
-            // 
-            this.panel23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
-            this.panel23.Controls.Add(this.panel24);
-            this.panel23.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel23.Location = new System.Drawing.Point(0, 100);
-            this.panel23.Name = "panel23";
-            this.panel23.Padding = new System.Windows.Forms.Padding(0, 0, 25, 0);
-            this.panel23.Size = new System.Drawing.Size(1090, 27);
-            this.panel23.TabIndex = 0;
-            // 
-            // panel24
-            // 
-            this.panel24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.panel24.Controls.Add(this.comboBoxViewtype);
-            this.panel24.Controls.Add(this.label24);
-            this.panel24.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel24.Location = new System.Drawing.Point(862, 0);
-            this.panel24.Name = "panel24";
-            this.panel24.Padding = new System.Windows.Forms.Padding(0, 2, 0, 0);
-            this.panel24.Size = new System.Drawing.Size(203, 27);
-            this.panel24.TabIndex = 0;
-            // 
-            // comboBoxViewtype
-            // 
-            this.comboBoxViewtype.BackColor = System.Drawing.Color.Black;
-            this.comboBoxViewtype.Dock = System.Windows.Forms.DockStyle.Right;
-            this.comboBoxViewtype.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxViewtype.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBoxViewtype.ForeColor = System.Drawing.Color.White;
-            this.comboBoxViewtype.FormattingEnabled = true;
-            this.comboBoxViewtype.Items.AddRange(new object[] {
-            "Siatka",
-            "Lista"});
-            this.comboBoxViewtype.Location = new System.Drawing.Point(82, 2);
-            this.comboBoxViewtype.Name = "comboBoxViewtype";
-            this.comboBoxViewtype.Size = new System.Drawing.Size(121, 23);
-            this.comboBoxViewtype.TabIndex = 1;
-            this.comboBoxViewtype.SelectedIndexChanged += new System.EventHandler(this.comboBoxViewtype_SelectedIndexChanged);
-            // 
-            // label24
-            // 
-            this.label24.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label24.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label24.ForeColor = System.Drawing.Color.White;
-            this.label24.Location = new System.Drawing.Point(0, 2);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(72, 25);
-            this.label24.TabIndex = 0;
-            this.label24.Text = "Widok";
-            this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panelTopFinder
-            // 
-            this.panelTopFinder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.panelTopFinder.Controls.Add(this.labelEnableFiltres);
-            this.panelTopFinder.Controls.Add(this.roundedPanel2);
-            this.panelTopFinder.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTopFinder.Location = new System.Drawing.Point(0, 0);
-            this.panelTopFinder.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.panelTopFinder.Name = "panelTopFinder";
-            this.panelTopFinder.Padding = new System.Windows.Forms.Padding(12);
-            this.panelTopFinder.Size = new System.Drawing.Size(1090, 100);
-            this.panelTopFinder.TabIndex = 0;
-            // 
-            // labelEnableFiltres
-            // 
-            this.labelEnableFiltres.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.labelEnableFiltres.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.labelEnableFiltres.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelEnableFiltres.ForeColor = System.Drawing.SystemColors.Window;
-            this.labelEnableFiltres.Location = new System.Drawing.Point(12, 68);
-            this.labelEnableFiltres.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelEnableFiltres.MaximumSize = new System.Drawing.Size(117, 35);
-            this.labelEnableFiltres.Name = "labelEnableFiltres";
-            this.labelEnableFiltres.Size = new System.Drawing.Size(117, 20);
-            this.labelEnableFiltres.TabIndex = 6;
-            this.labelEnableFiltres.Text = "Filtry włączone";
-            this.labelEnableFiltres.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.labelEnableFiltres.Visible = false;
-            // 
-            // roundedPanel2
-            // 
-            this.roundedPanel2.BackColor = System.Drawing.Color.Transparent;
-            this.roundedPanel2.ColorEdges = System.Drawing.SystemColors.ActiveCaptionText;
-            this.roundedPanel2.Controls.Add(this.labelFindSatus);
-            this.roundedPanel2.Controls.Add(this.buttonfinditemReset);
-            this.roundedPanel2.Controls.Add(this.buttonfinditemF);
-            this.roundedPanel2.Controls.Add(this.buttonFindItem);
-            this.roundedPanel2.Controls.Add(this.panel21);
-            this.roundedPanel2.Controls.Add(this.label4);
-            this.roundedPanel2.Controls.Add(this.buttonFinditemPageClose);
-            this.roundedPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.roundedPanel2.ExBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.roundedPanel2.Location = new System.Drawing.Point(12, 12);
-            this.roundedPanel2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.roundedPanel2.Name = "roundedPanel2";
-            this.roundedPanel2.Padding = new System.Windows.Forms.Padding(12, 30, 12, 20);
-            this.roundedPanel2.RadiusArcPanel = 20F;
-            this.roundedPanel2.Size = new System.Drawing.Size(1066, 76);
-            this.roundedPanel2.TabIndex = 0;
-            // 
-            // labelFindSatus
-            // 
-            this.labelFindSatus.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelFindSatus.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelFindSatus.ForeColor = System.Drawing.Color.White;
-            this.labelFindSatus.Location = new System.Drawing.Point(901, 30);
-            this.labelFindSatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelFindSatus.Name = "labelFindSatus";
-            this.labelFindSatus.Size = new System.Drawing.Size(61, 26);
-            this.labelFindSatus.TabIndex = 4;
-            this.labelFindSatus.Text = "Szukanie";
-            this.labelFindSatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.labelFindSatus.Visible = false;
-            // 
-            // buttonfinditemReset
-            // 
-            this.buttonfinditemReset.Dock = System.Windows.Forms.DockStyle.Left;
-            this.buttonfinditemReset.FlatAppearance.BorderSize = 0;
-            this.buttonfinditemReset.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.buttonfinditemReset.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.buttonfinditemReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonfinditemReset.ForeColor = System.Drawing.Color.White;
-            this.buttonfinditemReset.Location = new System.Drawing.Point(813, 30);
-            this.buttonfinditemReset.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.buttonfinditemReset.Name = "buttonfinditemReset";
-            this.buttonfinditemReset.Size = new System.Drawing.Size(88, 26);
-            this.buttonfinditemReset.TabIndex = 3;
-            this.buttonfinditemReset.Text = "Reset";
-            this.buttonfinditemReset.UseVisualStyleBackColor = true;
-            this.buttonfinditemReset.Click += new System.EventHandler(this.ButtonfinditemReset_Click);
-            // 
-            // buttonfinditemF
-            // 
-            this.buttonfinditemF.Dock = System.Windows.Forms.DockStyle.Left;
-            this.buttonfinditemF.FlatAppearance.BorderSize = 0;
-            this.buttonfinditemF.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.buttonfinditemF.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.buttonfinditemF.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonfinditemF.ForeColor = System.Drawing.Color.White;
-            this.buttonfinditemF.Location = new System.Drawing.Point(744, 30);
-            this.buttonfinditemF.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.buttonfinditemF.Name = "buttonfinditemF";
-            this.buttonfinditemF.Size = new System.Drawing.Size(69, 26);
-            this.buttonfinditemF.TabIndex = 6;
-            this.buttonfinditemF.Text = "Filtry";
-            this.buttonfinditemF.UseVisualStyleBackColor = true;
-            this.buttonfinditemF.Visible = false;
-            this.buttonfinditemF.Click += new System.EventHandler(this.ButtonfinditemF_Click);
-            // 
-            // buttonFindItem
-            // 
-            this.buttonFindItem.Dock = System.Windows.Forms.DockStyle.Left;
-            this.buttonFindItem.FlatAppearance.BorderSize = 0;
-            this.buttonFindItem.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.buttonFindItem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.buttonFindItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonFindItem.ForeColor = System.Drawing.Color.White;
-            this.buttonFindItem.Location = new System.Drawing.Point(656, 30);
-            this.buttonFindItem.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.buttonFindItem.Name = "buttonFindItem";
-            this.buttonFindItem.Size = new System.Drawing.Size(88, 26);
-            this.buttonFindItem.TabIndex = 2;
-            this.buttonFindItem.Text = "Szukaj";
-            this.buttonFindItem.UseVisualStyleBackColor = true;
-            this.buttonFindItem.Click += new System.EventHandler(this.ButtonFindItem_Click);
-            // 
-            // panel21
-            // 
-            this.panel21.Controls.Add(this.textBoxFinditem);
-            this.panel21.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel21.Location = new System.Drawing.Point(216, 30);
-            this.panel21.Name = "panel21";
-            this.panel21.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
-            this.panel21.Size = new System.Drawing.Size(440, 26);
-            this.panel21.TabIndex = 7;
-            // 
-            // textBoxFinditem
-            // 
-            this.textBoxFinditem.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.textBoxFinditem.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.textBoxFinditem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.textBoxFinditem.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxFinditem.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.textBoxFinditem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBoxFinditem.ForeColor = System.Drawing.Color.White;
-            this.textBoxFinditem.Location = new System.Drawing.Point(0, 5);
-            this.textBoxFinditem.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBoxFinditem.Name = "textBoxFinditem";
-            this.textBoxFinditem.PlaceholderText = "Szukaj";
-            this.textBoxFinditem.Size = new System.Drawing.Size(440, 16);
-            this.textBoxFinditem.TabIndex = 1;
-            this.textBoxFinditem.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBoxFinditem.TextChanged += new System.EventHandler(this.TextBoxFinditem_TextChanged);
-            this.textBoxFinditem.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextBoxFinditem_KeyDown);
-            // 
-            // label4
-            // 
-            this.label4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label4.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.ForeColor = System.Drawing.SystemColors.Window;
-            this.label4.Location = new System.Drawing.Point(12, 30);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(204, 26);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "AnimePlayer - Wyszukiwarka";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // buttonFinditemPageClose
-            // 
-            this.buttonFinditemPageClose.BackColor = System.Drawing.Color.Transparent;
-            this.buttonFinditemPageClose.Dock = System.Windows.Forms.DockStyle.Right;
-            this.buttonFinditemPageClose.FlatAppearance.BorderSize = 0;
-            this.buttonFinditemPageClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonFinditemPageClose.ForeColor = System.Drawing.Color.Red;
-            this.buttonFinditemPageClose.Location = new System.Drawing.Point(962, 30);
-            this.buttonFinditemPageClose.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.buttonFinditemPageClose.Name = "buttonFinditemPageClose";
-            this.buttonFinditemPageClose.Size = new System.Drawing.Size(92, 26);
-            this.buttonFinditemPageClose.TabIndex = 0;
-            this.buttonFinditemPageClose.Text = "Zamknij kartę";
-            this.buttonFinditemPageClose.UseVisualStyleBackColor = false;
-            this.buttonFinditemPageClose.Click += new System.EventHandler(this.ButtonFinditemPageClose_Click);
+            panel2.Controls.Add(panelStartPage);
+            panel2.Controls.Add(panelAllitem);
+            panel2.Controls.Add(panelMoreButtons);
+            panel2.Controls.Add(panelLoading);
+            panel2.Dock = DockStyle.Fill;
+            panel2.Location = new System.Drawing.Point(0, 0);
+            panel2.Margin = new Padding(4, 3, 4, 3);
+            panel2.Name = "panel2";
+            panel2.Size = new System.Drawing.Size(1090, 624);
+            panel2.TabIndex = 5;
+            panel2.ControlAdded += panel2_ControlAdded;
             // 
             // panelMoreButtons
             // 
-            this.panelMoreButtons.Controls.Add(this.panel10);
-            this.panelMoreButtons.Controls.Add(this.panel6);
-            this.panelMoreButtons.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelMoreButtons.Location = new System.Drawing.Point(0, 0);
-            this.panelMoreButtons.Name = "panelMoreButtons";
-            this.panelMoreButtons.Size = new System.Drawing.Size(1090, 624);
-            this.panelMoreButtons.TabIndex = 2;
-            this.panelMoreButtons.Visible = false;
+            panelMoreButtons.Controls.Add(panel10);
+            panelMoreButtons.Controls.Add(panel6);
+            panelMoreButtons.Dock = DockStyle.Fill;
+            panelMoreButtons.Location = new System.Drawing.Point(0, 0);
+            panelMoreButtons.Name = "panelMoreButtons";
+            panelMoreButtons.Size = new System.Drawing.Size(1090, 624);
+            panelMoreButtons.TabIndex = 2;
+            panelMoreButtons.Visible = false;
             // 
             // panel10
             // 
-            this.panel10.Controls.Add(this.newFlowLayoutPanel1);
-            this.panel10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel10.Location = new System.Drawing.Point(0, 38);
-            this.panel10.Name = "panel10";
-            this.panel10.Padding = new System.Windows.Forms.Padding(20, 20, 20, 0);
-            this.panel10.Size = new System.Drawing.Size(1090, 586);
-            this.panel10.TabIndex = 1;
+            panel10.Controls.Add(newFlowLayoutPanel1);
+            panel10.Dock = DockStyle.Fill;
+            panel10.Location = new System.Drawing.Point(0, 38);
+            panel10.Name = "panel10";
+            panel10.Padding = new Padding(20, 20, 20, 0);
+            panel10.Size = new System.Drawing.Size(1090, 586);
+            panel10.TabIndex = 1;
             // 
             // newFlowLayoutPanel1
             // 
-            this.newFlowLayoutPanel1.Controls.Add(this.panel11);
-            this.newFlowLayoutPanel1.Controls.Add(this.panel12);
-            this.newFlowLayoutPanel1.Controls.Add(this.panel13);
-            this.newFlowLayoutPanel1.Controls.Add(this.panel14);
-            this.newFlowLayoutPanel1.Controls.Add(this.panel17);
-            this.newFlowLayoutPanel1.Controls.Add(this.panel15);
-            this.newFlowLayoutPanel1.Controls.Add(this.panel16);
-            this.newFlowLayoutPanel1.Controls.Add(this.panel19);
-            this.newFlowLayoutPanel1.Controls.Add(this.panel20);
-            this.newFlowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.newFlowLayoutPanel1.Location = new System.Drawing.Point(20, 20);
-            this.newFlowLayoutPanel1.Name = "newFlowLayoutPanel1";
-            this.newFlowLayoutPanel1.Padding = new System.Windows.Forms.Padding(5);
-            this.newFlowLayoutPanel1.Size = new System.Drawing.Size(1050, 566);
-            this.newFlowLayoutPanel1.TabIndex = 1;
+            newFlowLayoutPanel1.Controls.Add(panel11);
+            newFlowLayoutPanel1.Controls.Add(panel12);
+            newFlowLayoutPanel1.Controls.Add(panel13);
+            newFlowLayoutPanel1.Controls.Add(panel14);
+            newFlowLayoutPanel1.Controls.Add(panel17);
+            newFlowLayoutPanel1.Controls.Add(panel15);
+            newFlowLayoutPanel1.Controls.Add(panel16);
+            newFlowLayoutPanel1.Controls.Add(panel19);
+            newFlowLayoutPanel1.Controls.Add(panel20);
+            newFlowLayoutPanel1.Dock = DockStyle.Fill;
+            newFlowLayoutPanel1.Location = new System.Drawing.Point(20, 20);
+            newFlowLayoutPanel1.Name = "newFlowLayoutPanel1";
+            newFlowLayoutPanel1.Padding = new Padding(5);
+            newFlowLayoutPanel1.Size = new System.Drawing.Size(1050, 566);
+            newFlowLayoutPanel1.TabIndex = 1;
             // 
             // panel11
             // 
-            this.panel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.panel11.Controls.Add(this.label5);
-            this.panel11.Controls.Add(this.button_MoreBtn_Open_Settings);
-            this.panel11.Controls.Add(this.label1);
-            this.panel11.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel11.Location = new System.Drawing.Point(8, 8);
-            this.panel11.Name = "panel11";
-            this.panel11.Padding = new System.Windows.Forms.Padding(1);
-            this.panel11.Size = new System.Drawing.Size(200, 120);
-            this.panel11.TabIndex = 0;
+            panel11.BackColor = System.Drawing.Color.FromArgb(35, 35, 35);
+            panel11.Controls.Add(label5);
+            panel11.Controls.Add(button_MoreBtn_Open_Settings);
+            panel11.Controls.Add(label1);
+            panel11.Dock = DockStyle.Top;
+            panel11.Location = new System.Drawing.Point(8, 8);
+            panel11.Name = "panel11";
+            panel11.Padding = new Padding(1);
+            panel11.Size = new System.Drawing.Size(200, 120);
+            panel11.TabIndex = 0;
             // 
             // label5
             // 
-            this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label5.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(1, 33);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(198, 56);
-            this.label5.TabIndex = 2;
+            label5.Dock = DockStyle.Fill;
+            label5.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label5.ForeColor = System.Drawing.Color.White;
+            label5.Location = new System.Drawing.Point(1, 33);
+            label5.Name = "label5";
+            label5.Size = new System.Drawing.Size(198, 56);
+            label5.TabIndex = 2;
             // 
             // button_MoreBtn_Open_Settings
             // 
-            this.button_MoreBtn_Open_Settings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.button_MoreBtn_Open_Settings.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.button_MoreBtn_Open_Settings.FlatAppearance.BorderSize = 0;
-            this.button_MoreBtn_Open_Settings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_MoreBtn_Open_Settings.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button_MoreBtn_Open_Settings.ForeColor = System.Drawing.Color.White;
-            this.button_MoreBtn_Open_Settings.Location = new System.Drawing.Point(1, 89);
-            this.button_MoreBtn_Open_Settings.Name = "button_MoreBtn_Open_Settings";
-            this.button_MoreBtn_Open_Settings.Size = new System.Drawing.Size(198, 30);
-            this.button_MoreBtn_Open_Settings.TabIndex = 1;
-            this.button_MoreBtn_Open_Settings.Text = "Przejdź";
-            this.button_MoreBtn_Open_Settings.UseVisualStyleBackColor = false;
-            this.button_MoreBtn_Open_Settings.Click += new System.EventHandler(this.Button_MoreBtn_Open_Settings_Click);
+            button_MoreBtn_Open_Settings.BackColor = System.Drawing.Color.FromArgb(40, 40, 40);
+            button_MoreBtn_Open_Settings.Dock = DockStyle.Bottom;
+            button_MoreBtn_Open_Settings.FlatAppearance.BorderSize = 0;
+            button_MoreBtn_Open_Settings.FlatStyle = FlatStyle.Flat;
+            button_MoreBtn_Open_Settings.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            button_MoreBtn_Open_Settings.ForeColor = System.Drawing.Color.White;
+            button_MoreBtn_Open_Settings.Location = new System.Drawing.Point(1, 89);
+            button_MoreBtn_Open_Settings.Name = "button_MoreBtn_Open_Settings";
+            button_MoreBtn_Open_Settings.Size = new System.Drawing.Size(198, 30);
+            button_MoreBtn_Open_Settings.TabIndex = 1;
+            button_MoreBtn_Open_Settings.Text = "Przejdź";
+            button_MoreBtn_Open_Settings.UseVisualStyleBackColor = false;
+            button_MoreBtn_Open_Settings.Click += Button_MoreBtn_Open_Settings_Click;
             // 
             // label1
             // 
-            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(1, 1);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(198, 32);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Ustawienia";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label1.Dock = DockStyle.Top;
+            label1.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label1.ForeColor = System.Drawing.Color.White;
+            label1.Location = new System.Drawing.Point(1, 1);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(198, 32);
+            label1.TabIndex = 0;
+            label1.Text = "Ustawienia";
+            label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel12
             // 
-            this.panel12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.panel12.Controls.Add(this.label6);
-            this.panel12.Controls.Add(this.button2button_MoreBtn_Open_Player);
-            this.panel12.Controls.Add(this.label7);
-            this.panel12.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel12.Location = new System.Drawing.Point(214, 8);
-            this.panel12.Name = "panel12";
-            this.panel12.Padding = new System.Windows.Forms.Padding(1);
-            this.panel12.Size = new System.Drawing.Size(200, 120);
-            this.panel12.TabIndex = 1;
+            panel12.BackColor = System.Drawing.Color.FromArgb(35, 35, 35);
+            panel12.Controls.Add(label6);
+            panel12.Controls.Add(button2button_MoreBtn_Open_Player);
+            panel12.Controls.Add(label7);
+            panel12.Dock = DockStyle.Top;
+            panel12.Location = new System.Drawing.Point(214, 8);
+            panel12.Name = "panel12";
+            panel12.Padding = new Padding(1);
+            panel12.Size = new System.Drawing.Size(200, 120);
+            panel12.TabIndex = 1;
             // 
             // label6
             // 
-            this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label6.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(1, 33);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(198, 56);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "Odtwarzacz plików lokalnych";
+            label6.Dock = DockStyle.Fill;
+            label6.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label6.ForeColor = System.Drawing.Color.White;
+            label6.Location = new System.Drawing.Point(1, 33);
+            label6.Name = "label6";
+            label6.Size = new System.Drawing.Size(198, 56);
+            label6.TabIndex = 2;
+            label6.Text = "Odtwarzacz plików lokalnych";
             // 
             // button2button_MoreBtn_Open_Player
             // 
-            this.button2button_MoreBtn_Open_Player.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.button2button_MoreBtn_Open_Player.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.button2button_MoreBtn_Open_Player.FlatAppearance.BorderSize = 0;
-            this.button2button_MoreBtn_Open_Player.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2button_MoreBtn_Open_Player.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button2button_MoreBtn_Open_Player.ForeColor = System.Drawing.Color.White;
-            this.button2button_MoreBtn_Open_Player.Location = new System.Drawing.Point(1, 89);
-            this.button2button_MoreBtn_Open_Player.Name = "button2button_MoreBtn_Open_Player";
-            this.button2button_MoreBtn_Open_Player.Size = new System.Drawing.Size(198, 30);
-            this.button2button_MoreBtn_Open_Player.TabIndex = 1;
-            this.button2button_MoreBtn_Open_Player.Text = "Przejdź";
-            this.button2button_MoreBtn_Open_Player.UseVisualStyleBackColor = false;
-            this.button2button_MoreBtn_Open_Player.Click += new System.EventHandler(this.Button2button_MoreBtn_Open_Player_Click);
+            button2button_MoreBtn_Open_Player.BackColor = System.Drawing.Color.FromArgb(40, 40, 40);
+            button2button_MoreBtn_Open_Player.Dock = DockStyle.Bottom;
+            button2button_MoreBtn_Open_Player.FlatAppearance.BorderSize = 0;
+            button2button_MoreBtn_Open_Player.FlatStyle = FlatStyle.Flat;
+            button2button_MoreBtn_Open_Player.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            button2button_MoreBtn_Open_Player.ForeColor = System.Drawing.Color.White;
+            button2button_MoreBtn_Open_Player.Location = new System.Drawing.Point(1, 89);
+            button2button_MoreBtn_Open_Player.Name = "button2button_MoreBtn_Open_Player";
+            button2button_MoreBtn_Open_Player.Size = new System.Drawing.Size(198, 30);
+            button2button_MoreBtn_Open_Player.TabIndex = 1;
+            button2button_MoreBtn_Open_Player.Text = "Przejdź";
+            button2button_MoreBtn_Open_Player.UseVisualStyleBackColor = false;
+            button2button_MoreBtn_Open_Player.Click += Button2button_MoreBtn_Open_Player_Click;
             // 
             // label7
             // 
-            this.label7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label7.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(1, 1);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(198, 32);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "Odtwarzacz";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label7.Dock = DockStyle.Top;
+            label7.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label7.ForeColor = System.Drawing.Color.White;
+            label7.Location = new System.Drawing.Point(1, 1);
+            label7.Name = "label7";
+            label7.Size = new System.Drawing.Size(198, 32);
+            label7.TabIndex = 0;
+            label7.Text = "Odtwarzacz";
+            label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel13
             // 
-            this.panel13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.panel13.Controls.Add(this.label8);
-            this.panel13.Controls.Add(this.button4button2button_MoreBtn_Open_FindItem);
-            this.panel13.Controls.Add(this.label9);
-            this.panel13.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel13.Location = new System.Drawing.Point(420, 8);
-            this.panel13.Name = "panel13";
-            this.panel13.Padding = new System.Windows.Forms.Padding(1);
-            this.panel13.Size = new System.Drawing.Size(200, 120);
-            this.panel13.TabIndex = 2;
+            panel13.BackColor = System.Drawing.Color.FromArgb(35, 35, 35);
+            panel13.Controls.Add(label8);
+            panel13.Controls.Add(button4button2button_MoreBtn_Open_FindItem);
+            panel13.Controls.Add(label9);
+            panel13.Dock = DockStyle.Top;
+            panel13.Location = new System.Drawing.Point(420, 8);
+            panel13.Name = "panel13";
+            panel13.Padding = new Padding(1);
+            panel13.Size = new System.Drawing.Size(200, 120);
+            panel13.TabIndex = 2;
             // 
             // label8
             // 
-            this.label8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label8.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(1, 33);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(198, 56);
-            this.label8.TabIndex = 2;
-            this.label8.Text = "Wyszukiwarka dostępnych tytułów";
+            label8.Dock = DockStyle.Fill;
+            label8.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label8.ForeColor = System.Drawing.Color.White;
+            label8.Location = new System.Drawing.Point(1, 33);
+            label8.Name = "label8";
+            label8.Size = new System.Drawing.Size(198, 56);
+            label8.TabIndex = 2;
+            label8.Text = "Wyszukiwarka dostępnych tytułów";
             // 
             // button4button2button_MoreBtn_Open_FindItem
             // 
-            this.button4button2button_MoreBtn_Open_FindItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.button4button2button_MoreBtn_Open_FindItem.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.button4button2button_MoreBtn_Open_FindItem.FlatAppearance.BorderSize = 0;
-            this.button4button2button_MoreBtn_Open_FindItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4button2button_MoreBtn_Open_FindItem.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button4button2button_MoreBtn_Open_FindItem.ForeColor = System.Drawing.Color.White;
-            this.button4button2button_MoreBtn_Open_FindItem.Location = new System.Drawing.Point(1, 89);
-            this.button4button2button_MoreBtn_Open_FindItem.Name = "button4button2button_MoreBtn_Open_FindItem";
-            this.button4button2button_MoreBtn_Open_FindItem.Size = new System.Drawing.Size(198, 30);
-            this.button4button2button_MoreBtn_Open_FindItem.TabIndex = 1;
-            this.button4button2button_MoreBtn_Open_FindItem.Text = "Przejdź";
-            this.button4button2button_MoreBtn_Open_FindItem.UseVisualStyleBackColor = false;
-            this.button4button2button_MoreBtn_Open_FindItem.Click += new System.EventHandler(this.Button4button2button_MoreBtn_Open_FindItem_Click);
+            button4button2button_MoreBtn_Open_FindItem.BackColor = System.Drawing.Color.FromArgb(40, 40, 40);
+            button4button2button_MoreBtn_Open_FindItem.Dock = DockStyle.Bottom;
+            button4button2button_MoreBtn_Open_FindItem.FlatAppearance.BorderSize = 0;
+            button4button2button_MoreBtn_Open_FindItem.FlatStyle = FlatStyle.Flat;
+            button4button2button_MoreBtn_Open_FindItem.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            button4button2button_MoreBtn_Open_FindItem.ForeColor = System.Drawing.Color.White;
+            button4button2button_MoreBtn_Open_FindItem.Location = new System.Drawing.Point(1, 89);
+            button4button2button_MoreBtn_Open_FindItem.Name = "button4button2button_MoreBtn_Open_FindItem";
+            button4button2button_MoreBtn_Open_FindItem.Size = new System.Drawing.Size(198, 30);
+            button4button2button_MoreBtn_Open_FindItem.TabIndex = 1;
+            button4button2button_MoreBtn_Open_FindItem.Text = "Przejdź";
+            button4button2button_MoreBtn_Open_FindItem.UseVisualStyleBackColor = false;
+            button4button2button_MoreBtn_Open_FindItem.Click += Button4button2button_MoreBtn_Open_FindItem_Click;
             // 
             // label9
             // 
-            this.label9.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label9.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(1, 1);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(198, 32);
-            this.label9.TabIndex = 0;
-            this.label9.Text = "Wyszukiwarka";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label9.Dock = DockStyle.Top;
+            label9.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label9.ForeColor = System.Drawing.Color.White;
+            label9.Location = new System.Drawing.Point(1, 1);
+            label9.Name = "label9";
+            label9.Size = new System.Drawing.Size(198, 32);
+            label9.TabIndex = 0;
+            label9.Text = "Wyszukiwarka";
+            label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel14
             // 
-            this.panel14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.panel14.Controls.Add(this.label10);
-            this.panel14.Controls.Add(this.button5button2button_MoreBtn_Open_Lists);
-            this.panel14.Controls.Add(this.label11);
-            this.panel14.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel14.Location = new System.Drawing.Point(626, 8);
-            this.panel14.Name = "panel14";
-            this.panel14.Padding = new System.Windows.Forms.Padding(1);
-            this.panel14.Size = new System.Drawing.Size(200, 120);
-            this.panel14.TabIndex = 3;
-            this.panel14.Visible = false;
+            panel14.BackColor = System.Drawing.Color.FromArgb(35, 35, 35);
+            panel14.Controls.Add(label10);
+            panel14.Controls.Add(button5button2button_MoreBtn_Open_Lists);
+            panel14.Controls.Add(label11);
+            panel14.Dock = DockStyle.Top;
+            panel14.Location = new System.Drawing.Point(626, 8);
+            panel14.Name = "panel14";
+            panel14.Padding = new Padding(1);
+            panel14.Size = new System.Drawing.Size(200, 120);
+            panel14.TabIndex = 3;
+            panel14.Visible = false;
             // 
             // label10
             // 
-            this.label10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label10.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(1, 33);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(198, 56);
-            this.label10.TabIndex = 2;
-            this.label10.Text = "Listy: \r\nOglądam, Planeuj,, Wstrzymane, Porzucone, itp.";
+            label10.Dock = DockStyle.Fill;
+            label10.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label10.ForeColor = System.Drawing.Color.White;
+            label10.Location = new System.Drawing.Point(1, 33);
+            label10.Name = "label10";
+            label10.Size = new System.Drawing.Size(198, 56);
+            label10.TabIndex = 2;
+            label10.Text = "Listy: \r\nOglądam, Planeuj,, Wstrzymane, Porzucone, itp.";
             // 
             // button5button2button_MoreBtn_Open_Lists
             // 
-            this.button5button2button_MoreBtn_Open_Lists.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.button5button2button_MoreBtn_Open_Lists.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.button5button2button_MoreBtn_Open_Lists.FlatAppearance.BorderSize = 0;
-            this.button5button2button_MoreBtn_Open_Lists.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5button2button_MoreBtn_Open_Lists.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button5button2button_MoreBtn_Open_Lists.ForeColor = System.Drawing.Color.White;
-            this.button5button2button_MoreBtn_Open_Lists.Location = new System.Drawing.Point(1, 89);
-            this.button5button2button_MoreBtn_Open_Lists.Name = "button5button2button_MoreBtn_Open_Lists";
-            this.button5button2button_MoreBtn_Open_Lists.Size = new System.Drawing.Size(198, 30);
-            this.button5button2button_MoreBtn_Open_Lists.TabIndex = 1;
-            this.button5button2button_MoreBtn_Open_Lists.Text = "Przejdź";
-            this.button5button2button_MoreBtn_Open_Lists.UseVisualStyleBackColor = false;
-            this.button5button2button_MoreBtn_Open_Lists.Click += new System.EventHandler(this.Button5button2button_MoreBtn_Open_Lists_Click);
+            button5button2button_MoreBtn_Open_Lists.BackColor = System.Drawing.Color.FromArgb(40, 40, 40);
+            button5button2button_MoreBtn_Open_Lists.Dock = DockStyle.Bottom;
+            button5button2button_MoreBtn_Open_Lists.FlatAppearance.BorderSize = 0;
+            button5button2button_MoreBtn_Open_Lists.FlatStyle = FlatStyle.Flat;
+            button5button2button_MoreBtn_Open_Lists.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            button5button2button_MoreBtn_Open_Lists.ForeColor = System.Drawing.Color.White;
+            button5button2button_MoreBtn_Open_Lists.Location = new System.Drawing.Point(1, 89);
+            button5button2button_MoreBtn_Open_Lists.Name = "button5button2button_MoreBtn_Open_Lists";
+            button5button2button_MoreBtn_Open_Lists.Size = new System.Drawing.Size(198, 30);
+            button5button2button_MoreBtn_Open_Lists.TabIndex = 1;
+            button5button2button_MoreBtn_Open_Lists.Text = "Przejdź";
+            button5button2button_MoreBtn_Open_Lists.UseVisualStyleBackColor = false;
+            button5button2button_MoreBtn_Open_Lists.Click += Button5button2button_MoreBtn_Open_Lists_Click;
             // 
             // label11
             // 
-            this.label11.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label11.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(1, 1);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(198, 32);
-            this.label11.TabIndex = 0;
-            this.label11.Text = "Listy anime";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label11.Dock = DockStyle.Top;
+            label11.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label11.ForeColor = System.Drawing.Color.White;
+            label11.Location = new System.Drawing.Point(1, 1);
+            label11.Name = "label11";
+            label11.Size = new System.Drawing.Size(198, 32);
+            label11.TabIndex = 0;
+            label11.Text = "Listy anime";
+            label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel17
             // 
-            this.panel17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.panel17.Controls.Add(this.label16);
-            this.panel17.Controls.Add(this.buttonCommunity);
-            this.panel17.Controls.Add(this.label17);
-            this.panel17.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel17.Location = new System.Drawing.Point(832, 8);
-            this.panel17.Name = "panel17";
-            this.panel17.Padding = new System.Windows.Forms.Padding(1);
-            this.panel17.Size = new System.Drawing.Size(200, 120);
-            this.panel17.TabIndex = 6;
+            panel17.BackColor = System.Drawing.Color.FromArgb(35, 35, 35);
+            panel17.Controls.Add(label16);
+            panel17.Controls.Add(buttonCommunity);
+            panel17.Controls.Add(label17);
+            panel17.Dock = DockStyle.Top;
+            panel17.Location = new System.Drawing.Point(832, 8);
+            panel17.Name = "panel17";
+            panel17.Padding = new Padding(1);
+            panel17.Size = new System.Drawing.Size(200, 120);
+            panel17.TabIndex = 6;
             // 
             // label16
             // 
-            this.label16.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label16.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label16.ForeColor = System.Drawing.Color.White;
-            this.label16.Location = new System.Drawing.Point(1, 33);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(198, 56);
-            this.label16.TabIndex = 2;
-            this.label16.Text = "Ludzie, Grupy...";
+            label16.Dock = DockStyle.Fill;
+            label16.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label16.ForeColor = System.Drawing.Color.White;
+            label16.Location = new System.Drawing.Point(1, 33);
+            label16.Name = "label16";
+            label16.Size = new System.Drawing.Size(198, 56);
+            label16.TabIndex = 2;
+            label16.Text = "Ludzie, Grupy...";
             // 
             // buttonCommunity
             // 
-            this.buttonCommunity.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.buttonCommunity.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.buttonCommunity.FlatAppearance.BorderSize = 0;
-            this.buttonCommunity.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonCommunity.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonCommunity.ForeColor = System.Drawing.Color.White;
-            this.buttonCommunity.Location = new System.Drawing.Point(1, 89);
-            this.buttonCommunity.Name = "buttonCommunity";
-            this.buttonCommunity.Size = new System.Drawing.Size(198, 30);
-            this.buttonCommunity.TabIndex = 1;
-            this.buttonCommunity.Text = "Przejdź";
-            this.buttonCommunity.UseVisualStyleBackColor = false;
-            this.buttonCommunity.Click += new System.EventHandler(this.ButtonCommunity_Click);
+            buttonCommunity.BackColor = System.Drawing.Color.FromArgb(40, 40, 40);
+            buttonCommunity.Dock = DockStyle.Bottom;
+            buttonCommunity.FlatAppearance.BorderSize = 0;
+            buttonCommunity.FlatStyle = FlatStyle.Flat;
+            buttonCommunity.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            buttonCommunity.ForeColor = System.Drawing.Color.White;
+            buttonCommunity.Location = new System.Drawing.Point(1, 89);
+            buttonCommunity.Name = "buttonCommunity";
+            buttonCommunity.Size = new System.Drawing.Size(198, 30);
+            buttonCommunity.TabIndex = 1;
+            buttonCommunity.Text = "Przejdź";
+            buttonCommunity.UseVisualStyleBackColor = false;
+            buttonCommunity.Click += ButtonCommunity_Click;
             // 
             // label17
             // 
-            this.label17.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label17.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label17.ForeColor = System.Drawing.Color.White;
-            this.label17.Location = new System.Drawing.Point(1, 1);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(198, 32);
-            this.label17.TabIndex = 0;
-            this.label17.Text = "Społeczność";
-            this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label17.Dock = DockStyle.Top;
+            label17.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label17.ForeColor = System.Drawing.Color.White;
+            label17.Location = new System.Drawing.Point(1, 1);
+            label17.Name = "label17";
+            label17.Size = new System.Drawing.Size(198, 32);
+            label17.TabIndex = 0;
+            label17.Text = "Społeczność";
+            label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel15
             // 
-            this.panel15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.panel15.Controls.Add(this.label12);
-            this.panel15.Controls.Add(this.button2button_MoreBtn_Open_GitHub);
-            this.panel15.Controls.Add(this.label13);
-            this.panel15.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel15.Location = new System.Drawing.Point(8, 134);
-            this.panel15.Name = "panel15";
-            this.panel15.Padding = new System.Windows.Forms.Padding(1);
-            this.panel15.Size = new System.Drawing.Size(200, 120);
-            this.panel15.TabIndex = 4;
+            panel15.BackColor = System.Drawing.Color.FromArgb(35, 35, 35);
+            panel15.Controls.Add(label12);
+            panel15.Controls.Add(button2button_MoreBtn_Open_GitHub);
+            panel15.Controls.Add(label13);
+            panel15.Dock = DockStyle.Top;
+            panel15.Location = new System.Drawing.Point(8, 134);
+            panel15.Name = "panel15";
+            panel15.Padding = new Padding(1);
+            panel15.Size = new System.Drawing.Size(200, 120);
+            panel15.TabIndex = 4;
             // 
             // label12
             // 
-            this.label12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label12.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(1, 33);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(198, 56);
-            this.label12.TabIndex = 2;
-            this.label12.Text = "Kod źródłowy aplikacji";
+            label12.Dock = DockStyle.Fill;
+            label12.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label12.ForeColor = System.Drawing.Color.White;
+            label12.Location = new System.Drawing.Point(1, 33);
+            label12.Name = "label12";
+            label12.Size = new System.Drawing.Size(198, 56);
+            label12.TabIndex = 2;
+            label12.Text = "Kod źródłowy aplikacji";
             // 
             // button2button_MoreBtn_Open_GitHub
             // 
-            this.button2button_MoreBtn_Open_GitHub.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.button2button_MoreBtn_Open_GitHub.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.button2button_MoreBtn_Open_GitHub.FlatAppearance.BorderSize = 0;
-            this.button2button_MoreBtn_Open_GitHub.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2button_MoreBtn_Open_GitHub.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button2button_MoreBtn_Open_GitHub.ForeColor = System.Drawing.Color.White;
-            this.button2button_MoreBtn_Open_GitHub.Location = new System.Drawing.Point(1, 89);
-            this.button2button_MoreBtn_Open_GitHub.Name = "button2button_MoreBtn_Open_GitHub";
-            this.button2button_MoreBtn_Open_GitHub.Size = new System.Drawing.Size(198, 30);
-            this.button2button_MoreBtn_Open_GitHub.TabIndex = 1;
-            this.button2button_MoreBtn_Open_GitHub.Text = "Przejdź";
-            this.button2button_MoreBtn_Open_GitHub.UseVisualStyleBackColor = false;
-            this.button2button_MoreBtn_Open_GitHub.Click += new System.EventHandler(this.Button2button_MoreBtn_Open_GitHub_Click);
+            button2button_MoreBtn_Open_GitHub.BackColor = System.Drawing.Color.FromArgb(40, 40, 40);
+            button2button_MoreBtn_Open_GitHub.Dock = DockStyle.Bottom;
+            button2button_MoreBtn_Open_GitHub.FlatAppearance.BorderSize = 0;
+            button2button_MoreBtn_Open_GitHub.FlatStyle = FlatStyle.Flat;
+            button2button_MoreBtn_Open_GitHub.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            button2button_MoreBtn_Open_GitHub.ForeColor = System.Drawing.Color.White;
+            button2button_MoreBtn_Open_GitHub.Location = new System.Drawing.Point(1, 89);
+            button2button_MoreBtn_Open_GitHub.Name = "button2button_MoreBtn_Open_GitHub";
+            button2button_MoreBtn_Open_GitHub.Size = new System.Drawing.Size(198, 30);
+            button2button_MoreBtn_Open_GitHub.TabIndex = 1;
+            button2button_MoreBtn_Open_GitHub.Text = "Przejdź";
+            button2button_MoreBtn_Open_GitHub.UseVisualStyleBackColor = false;
+            button2button_MoreBtn_Open_GitHub.Click += Button2button_MoreBtn_Open_GitHub_Click;
             // 
             // label13
             // 
-            this.label13.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label13.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(1, 1);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(198, 32);
-            this.label13.TabIndex = 0;
-            this.label13.Text = "GitHub";
-            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label13.Dock = DockStyle.Top;
+            label13.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label13.ForeColor = System.Drawing.Color.White;
+            label13.Location = new System.Drawing.Point(1, 1);
+            label13.Name = "label13";
+            label13.Size = new System.Drawing.Size(198, 32);
+            label13.TabIndex = 0;
+            label13.Text = "GitHub";
+            label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel16
             // 
-            this.panel16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.panel16.Controls.Add(this.label14);
-            this.panel16.Controls.Add(this.button7button2button_MoreBtn_Open_twojeanimepl);
-            this.panel16.Controls.Add(this.label15);
-            this.panel16.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel16.Location = new System.Drawing.Point(214, 134);
-            this.panel16.Name = "panel16";
-            this.panel16.Padding = new System.Windows.Forms.Padding(1);
-            this.panel16.Size = new System.Drawing.Size(200, 120);
-            this.panel16.TabIndex = 5;
+            panel16.BackColor = System.Drawing.Color.FromArgb(35, 35, 35);
+            panel16.Controls.Add(label14);
+            panel16.Controls.Add(button7button2button_MoreBtn_Open_twojeanimepl);
+            panel16.Controls.Add(label15);
+            panel16.Dock = DockStyle.Top;
+            panel16.Location = new System.Drawing.Point(214, 134);
+            panel16.Name = "panel16";
+            panel16.Padding = new Padding(1);
+            panel16.Size = new System.Drawing.Size(200, 120);
+            panel16.TabIndex = 5;
             // 
             // label14
             // 
-            this.label14.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label14.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label14.ForeColor = System.Drawing.Color.White;
-            this.label14.Location = new System.Drawing.Point(1, 33);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(198, 56);
-            this.label14.TabIndex = 2;
-            this.label14.Text = "Strona internetowa Twojeanimepl";
+            label14.Dock = DockStyle.Fill;
+            label14.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label14.ForeColor = System.Drawing.Color.White;
+            label14.Location = new System.Drawing.Point(1, 33);
+            label14.Name = "label14";
+            label14.Size = new System.Drawing.Size(198, 56);
+            label14.TabIndex = 2;
+            label14.Text = "Strona internetowa Twojeanimepl";
             // 
             // button7button2button_MoreBtn_Open_twojeanimepl
             // 
-            this.button7button2button_MoreBtn_Open_twojeanimepl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.button7button2button_MoreBtn_Open_twojeanimepl.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.button7button2button_MoreBtn_Open_twojeanimepl.FlatAppearance.BorderSize = 0;
-            this.button7button2button_MoreBtn_Open_twojeanimepl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7button2button_MoreBtn_Open_twojeanimepl.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button7button2button_MoreBtn_Open_twojeanimepl.ForeColor = System.Drawing.Color.White;
-            this.button7button2button_MoreBtn_Open_twojeanimepl.Location = new System.Drawing.Point(1, 89);
-            this.button7button2button_MoreBtn_Open_twojeanimepl.Name = "button7button2button_MoreBtn_Open_twojeanimepl";
-            this.button7button2button_MoreBtn_Open_twojeanimepl.Size = new System.Drawing.Size(198, 30);
-            this.button7button2button_MoreBtn_Open_twojeanimepl.TabIndex = 1;
-            this.button7button2button_MoreBtn_Open_twojeanimepl.Text = "Przejdź";
-            this.button7button2button_MoreBtn_Open_twojeanimepl.UseVisualStyleBackColor = false;
-            this.button7button2button_MoreBtn_Open_twojeanimepl.Click += new System.EventHandler(this.Button7button2button_MoreBtn_Open_twojeanimepl_Click);
+            button7button2button_MoreBtn_Open_twojeanimepl.BackColor = System.Drawing.Color.FromArgb(40, 40, 40);
+            button7button2button_MoreBtn_Open_twojeanimepl.Dock = DockStyle.Bottom;
+            button7button2button_MoreBtn_Open_twojeanimepl.FlatAppearance.BorderSize = 0;
+            button7button2button_MoreBtn_Open_twojeanimepl.FlatStyle = FlatStyle.Flat;
+            button7button2button_MoreBtn_Open_twojeanimepl.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            button7button2button_MoreBtn_Open_twojeanimepl.ForeColor = System.Drawing.Color.White;
+            button7button2button_MoreBtn_Open_twojeanimepl.Location = new System.Drawing.Point(1, 89);
+            button7button2button_MoreBtn_Open_twojeanimepl.Name = "button7button2button_MoreBtn_Open_twojeanimepl";
+            button7button2button_MoreBtn_Open_twojeanimepl.Size = new System.Drawing.Size(198, 30);
+            button7button2button_MoreBtn_Open_twojeanimepl.TabIndex = 1;
+            button7button2button_MoreBtn_Open_twojeanimepl.Text = "Przejdź";
+            button7button2button_MoreBtn_Open_twojeanimepl.UseVisualStyleBackColor = false;
+            button7button2button_MoreBtn_Open_twojeanimepl.Click += Button7button2button_MoreBtn_Open_twojeanimepl_Click;
             // 
             // label15
             // 
-            this.label15.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label15.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label15.ForeColor = System.Drawing.Color.White;
-            this.label15.Location = new System.Drawing.Point(1, 1);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(198, 32);
-            this.label15.TabIndex = 0;
-            this.label15.Text = "Twojeanimepl";
-            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label15.Dock = DockStyle.Top;
+            label15.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label15.ForeColor = System.Drawing.Color.White;
+            label15.Location = new System.Drawing.Point(1, 1);
+            label15.Name = "label15";
+            label15.Size = new System.Drawing.Size(198, 32);
+            label15.TabIndex = 0;
+            label15.Text = "Twojeanimepl";
+            label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel19
             // 
-            this.panel19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.panel19.Controls.Add(this.label18);
-            this.panel19.Controls.Add(this.button2);
-            this.panel19.Controls.Add(this.label19);
-            this.panel19.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel19.Location = new System.Drawing.Point(420, 134);
-            this.panel19.Name = "panel19";
-            this.panel19.Padding = new System.Windows.Forms.Padding(1);
-            this.panel19.Size = new System.Drawing.Size(200, 120);
-            this.panel19.TabIndex = 7;
+            panel19.BackColor = System.Drawing.Color.FromArgb(35, 35, 35);
+            panel19.Controls.Add(label18);
+            panel19.Controls.Add(button2);
+            panel19.Controls.Add(label19);
+            panel19.Dock = DockStyle.Top;
+            panel19.Location = new System.Drawing.Point(420, 134);
+            panel19.Name = "panel19";
+            panel19.Padding = new Padding(1);
+            panel19.Size = new System.Drawing.Size(200, 120);
+            panel19.TabIndex = 7;
             // 
             // label18
             // 
-            this.label18.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label18.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label18.ForeColor = System.Drawing.Color.White;
-            this.label18.Location = new System.Drawing.Point(1, 33);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(198, 56);
-            this.label18.TabIndex = 2;
-            this.label18.Text = "Twórz tręsci dla tej aplikacji. Zestaw aplikacji dla ludzi którzy chcą pomoć w ro" +
-    "zwijaniu player\'a";
+            label18.Dock = DockStyle.Fill;
+            label18.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label18.ForeColor = System.Drawing.Color.White;
+            label18.Location = new System.Drawing.Point(1, 33);
+            label18.Name = "label18";
+            label18.Size = new System.Drawing.Size(198, 56);
+            label18.TabIndex = 2;
+            label18.Text = "Twórz tręsci dla tej aplikacji. Zestaw aplikacji dla ludzi którzy chcą pomoć w rozwijaniu player'a";
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.button2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(1, 89);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(198, 30);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Przejdź";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.Button2_Click);
+            button2.BackColor = System.Drawing.Color.FromArgb(40, 40, 40);
+            button2.Dock = DockStyle.Bottom;
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            button2.ForeColor = System.Drawing.Color.White;
+            button2.Location = new System.Drawing.Point(1, 89);
+            button2.Name = "button2";
+            button2.Size = new System.Drawing.Size(198, 30);
+            button2.TabIndex = 1;
+            button2.Text = "Przejdź";
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += Button2_Click;
             // 
             // label19
             // 
-            this.label19.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label19.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label19.ForeColor = System.Drawing.Color.White;
-            this.label19.Location = new System.Drawing.Point(1, 1);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(198, 32);
-            this.label19.TabIndex = 0;
-            this.label19.Text = "Narzędzia";
-            this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label19.Dock = DockStyle.Top;
+            label19.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label19.ForeColor = System.Drawing.Color.White;
+            label19.Location = new System.Drawing.Point(1, 1);
+            label19.Name = "label19";
+            label19.Size = new System.Drawing.Size(198, 32);
+            label19.TabIndex = 0;
+            label19.Text = "Narzędzia";
+            label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel20
             // 
-            this.panel20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.panel20.Controls.Add(this.label20);
-            this.panel20.Controls.Add(this.buttonAllNewsContnet);
-            this.panel20.Controls.Add(this.label21);
-            this.panel20.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel20.Location = new System.Drawing.Point(626, 134);
-            this.panel20.Name = "panel20";
-            this.panel20.Padding = new System.Windows.Forms.Padding(1);
-            this.panel20.Size = new System.Drawing.Size(200, 120);
-            this.panel20.TabIndex = 8;
+            panel20.BackColor = System.Drawing.Color.FromArgb(35, 35, 35);
+            panel20.Controls.Add(label20);
+            panel20.Controls.Add(buttonAllNewsContnet);
+            panel20.Controls.Add(label21);
+            panel20.Dock = DockStyle.Top;
+            panel20.Location = new System.Drawing.Point(626, 134);
+            panel20.Name = "panel20";
+            panel20.Padding = new Padding(1);
+            panel20.Size = new System.Drawing.Size(200, 120);
+            panel20.TabIndex = 8;
             // 
             // label20
             // 
-            this.label20.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label20.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label20.ForeColor = System.Drawing.Color.White;
-            this.label20.Location = new System.Drawing.Point(1, 33);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(198, 56);
-            this.label20.TabIndex = 2;
-            this.label20.Text = "Wiadmości itp.";
+            label20.Dock = DockStyle.Fill;
+            label20.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label20.ForeColor = System.Drawing.Color.White;
+            label20.Location = new System.Drawing.Point(1, 33);
+            label20.Name = "label20";
+            label20.Size = new System.Drawing.Size(198, 56);
+            label20.TabIndex = 2;
+            label20.Text = "Wiadmości itp.";
             // 
             // buttonAllNewsContnet
             // 
-            this.buttonAllNewsContnet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.buttonAllNewsContnet.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.buttonAllNewsContnet.FlatAppearance.BorderSize = 0;
-            this.buttonAllNewsContnet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAllNewsContnet.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonAllNewsContnet.ForeColor = System.Drawing.Color.White;
-            this.buttonAllNewsContnet.Location = new System.Drawing.Point(1, 89);
-            this.buttonAllNewsContnet.Name = "buttonAllNewsContnet";
-            this.buttonAllNewsContnet.Size = new System.Drawing.Size(198, 30);
-            this.buttonAllNewsContnet.TabIndex = 1;
-            this.buttonAllNewsContnet.Text = "Przejdź";
-            this.buttonAllNewsContnet.UseVisualStyleBackColor = false;
-            this.buttonAllNewsContnet.Click += new System.EventHandler(this.ButtonAllNewsContnet_Click);
+            buttonAllNewsContnet.BackColor = System.Drawing.Color.FromArgb(40, 40, 40);
+            buttonAllNewsContnet.Dock = DockStyle.Bottom;
+            buttonAllNewsContnet.FlatAppearance.BorderSize = 0;
+            buttonAllNewsContnet.FlatStyle = FlatStyle.Flat;
+            buttonAllNewsContnet.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            buttonAllNewsContnet.ForeColor = System.Drawing.Color.White;
+            buttonAllNewsContnet.Location = new System.Drawing.Point(1, 89);
+            buttonAllNewsContnet.Name = "buttonAllNewsContnet";
+            buttonAllNewsContnet.Size = new System.Drawing.Size(198, 30);
+            buttonAllNewsContnet.TabIndex = 1;
+            buttonAllNewsContnet.Text = "Przejdź";
+            buttonAllNewsContnet.UseVisualStyleBackColor = false;
+            buttonAllNewsContnet.Click += ButtonAllNewsContnet_Click;
             // 
             // label21
             // 
-            this.label21.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label21.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label21.ForeColor = System.Drawing.Color.White;
-            this.label21.Location = new System.Drawing.Point(1, 1);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(198, 32);
-            this.label21.TabIndex = 0;
-            this.label21.Text = "Aktualności";
-            this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label21.Dock = DockStyle.Top;
+            label21.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label21.ForeColor = System.Drawing.Color.White;
+            label21.Location = new System.Drawing.Point(1, 1);
+            label21.Name = "label21";
+            label21.Size = new System.Drawing.Size(198, 32);
+            label21.TabIndex = 0;
+            label21.Text = "Aktualności";
+            label21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel6
             // 
-            this.panel6.Controls.Add(this.buttonCloseMoreButtons);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel6.Location = new System.Drawing.Point(0, 0);
-            this.panel6.Name = "panel6";
-            this.panel6.Padding = new System.Windows.Forms.Padding(0, 10, 10, 0);
-            this.panel6.Size = new System.Drawing.Size(1090, 38);
-            this.panel6.TabIndex = 0;
+            panel6.Controls.Add(buttonCloseMoreButtons);
+            panel6.Dock = DockStyle.Top;
+            panel6.Location = new System.Drawing.Point(0, 0);
+            panel6.Name = "panel6";
+            panel6.Padding = new Padding(0, 10, 10, 0);
+            panel6.Size = new System.Drawing.Size(1090, 38);
+            panel6.TabIndex = 0;
             // 
             // buttonCloseMoreButtons
             // 
-            this.buttonCloseMoreButtons.Dock = System.Windows.Forms.DockStyle.Right;
-            this.buttonCloseMoreButtons.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonCloseMoreButtons.ForeColor = System.Drawing.Color.Red;
-            this.buttonCloseMoreButtons.Location = new System.Drawing.Point(1039, 10);
-            this.buttonCloseMoreButtons.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.buttonCloseMoreButtons.MaximumSize = new System.Drawing.Size(41, 29);
-            this.buttonCloseMoreButtons.Name = "buttonCloseMoreButtons";
-            this.buttonCloseMoreButtons.Size = new System.Drawing.Size(41, 28);
-            this.buttonCloseMoreButtons.TabIndex = 6;
-            this.buttonCloseMoreButtons.Text = "X";
-            this.buttonCloseMoreButtons.UseVisualStyleBackColor = true;
-            this.buttonCloseMoreButtons.Click += new System.EventHandler(this.ButtonCloseMoreButtons_Click);
+            buttonCloseMoreButtons.Dock = DockStyle.Right;
+            buttonCloseMoreButtons.FlatStyle = FlatStyle.Flat;
+            buttonCloseMoreButtons.ForeColor = System.Drawing.Color.Red;
+            buttonCloseMoreButtons.Location = new System.Drawing.Point(1039, 10);
+            buttonCloseMoreButtons.Margin = new Padding(4, 3, 4, 3);
+            buttonCloseMoreButtons.MaximumSize = new System.Drawing.Size(41, 29);
+            buttonCloseMoreButtons.Name = "buttonCloseMoreButtons";
+            buttonCloseMoreButtons.Size = new System.Drawing.Size(41, 28);
+            buttonCloseMoreButtons.TabIndex = 6;
+            buttonCloseMoreButtons.Text = "X";
+            buttonCloseMoreButtons.UseVisualStyleBackColor = true;
+            buttonCloseMoreButtons.Click += ButtonCloseMoreButtons_Click;
+            // 
+            // panelAllitem
+            // 
+            panelAllitem.Controls.Add(flowLayoutPanelFinditem);
+            panelAllitem.Controls.Add(flowLayoutPanelAll);
+            panelAllitem.Controls.Add(panel23);
+            panelAllitem.Controls.Add(panelTopFinder);
+            panelAllitem.Dock = DockStyle.Fill;
+            panelAllitem.Location = new System.Drawing.Point(0, 0);
+            panelAllitem.Margin = new Padding(4, 3, 4, 3);
+            panelAllitem.Name = "panelAllitem";
+            panelAllitem.Size = new System.Drawing.Size(1090, 624);
+            panelAllitem.TabIndex = 0;
+            // 
+            // flowLayoutPanelFinditem
+            // 
+            flowLayoutPanelFinditem.AutoScroll = true;
+            flowLayoutPanelFinditem.Dock = DockStyle.Fill;
+            flowLayoutPanelFinditem.Location = new System.Drawing.Point(0, 127);
+            flowLayoutPanelFinditem.Name = "flowLayoutPanelFinditem";
+            flowLayoutPanelFinditem.Padding = new Padding(12, 2, 12, 2);
+            flowLayoutPanelFinditem.Size = new System.Drawing.Size(1090, 497);
+            flowLayoutPanelFinditem.TabIndex = 0;
+            // 
+            // flowLayoutPanelAll
+            // 
+            flowLayoutPanelAll.AutoScroll = true;
+            flowLayoutPanelAll.Dock = DockStyle.Fill;
+            flowLayoutPanelAll.Location = new System.Drawing.Point(0, 127);
+            flowLayoutPanelAll.Name = "flowLayoutPanelAll";
+            flowLayoutPanelAll.Padding = new Padding(12, 2, 12, 2);
+            flowLayoutPanelAll.Size = new System.Drawing.Size(1090, 497);
+            flowLayoutPanelAll.TabIndex = 0;
+            flowLayoutPanelAll.SizeChanged += flowLayoutPanelAll_SizeChanged;
+            // 
+            // panel23
+            // 
+            panel23.BackColor = System.Drawing.Color.FromArgb(33, 33, 33);
+            panel23.Controls.Add(panel24);
+            panel23.Dock = DockStyle.Top;
+            panel23.Location = new System.Drawing.Point(0, 100);
+            panel23.Name = "panel23";
+            panel23.Padding = new Padding(0, 0, 25, 0);
+            panel23.Size = new System.Drawing.Size(1090, 27);
+            panel23.TabIndex = 0;
+            // 
+            // panel24
+            // 
+            panel24.BackColor = System.Drawing.Color.FromArgb(45, 45, 45);
+            panel24.Controls.Add(comboBoxViewtype);
+            panel24.Controls.Add(label24);
+            panel24.Dock = DockStyle.Right;
+            panel24.Location = new System.Drawing.Point(862, 0);
+            panel24.Name = "panel24";
+            panel24.Padding = new Padding(0, 2, 0, 0);
+            panel24.Size = new System.Drawing.Size(203, 27);
+            panel24.TabIndex = 0;
+            // 
+            // comboBoxViewtype
+            // 
+            comboBoxViewtype.BackColor = System.Drawing.Color.Black;
+            comboBoxViewtype.Dock = DockStyle.Right;
+            comboBoxViewtype.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxViewtype.FlatStyle = FlatStyle.Flat;
+            comboBoxViewtype.ForeColor = System.Drawing.Color.White;
+            comboBoxViewtype.FormattingEnabled = true;
+            comboBoxViewtype.Items.AddRange(new object[] { "Siatka", "Lista" });
+            comboBoxViewtype.Location = new System.Drawing.Point(82, 2);
+            comboBoxViewtype.Name = "comboBoxViewtype";
+            comboBoxViewtype.Size = new System.Drawing.Size(121, 23);
+            comboBoxViewtype.TabIndex = 1;
+            comboBoxViewtype.SelectedIndexChanged += comboBoxViewtype_SelectedIndexChanged;
+            // 
+            // label24
+            // 
+            label24.Dock = DockStyle.Left;
+            label24.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label24.ForeColor = System.Drawing.Color.White;
+            label24.Location = new System.Drawing.Point(0, 2);
+            label24.Name = "label24";
+            label24.Size = new System.Drawing.Size(72, 25);
+            label24.TabIndex = 0;
+            label24.Text = "Widok";
+            label24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panelTopFinder
+            // 
+            panelTopFinder.BackColor = System.Drawing.Color.FromArgb(20, 20, 20);
+            panelTopFinder.Controls.Add(labelEnableFiltres);
+            panelTopFinder.Controls.Add(roundedPanel2);
+            panelTopFinder.Dock = DockStyle.Top;
+            panelTopFinder.Location = new System.Drawing.Point(0, 0);
+            panelTopFinder.Margin = new Padding(4, 3, 4, 3);
+            panelTopFinder.Name = "panelTopFinder";
+            panelTopFinder.Padding = new Padding(12);
+            panelTopFinder.Size = new System.Drawing.Size(1090, 100);
+            panelTopFinder.TabIndex = 0;
+            // 
+            // labelEnableFiltres
+            // 
+            labelEnableFiltres.BackColor = System.Drawing.Color.FromArgb(60, 60, 60);
+            labelEnableFiltres.Dock = DockStyle.Bottom;
+            labelEnableFiltres.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            labelEnableFiltres.ForeColor = System.Drawing.SystemColors.Window;
+            labelEnableFiltres.Location = new System.Drawing.Point(12, 68);
+            labelEnableFiltres.Margin = new Padding(4, 0, 4, 0);
+            labelEnableFiltres.MaximumSize = new System.Drawing.Size(117, 35);
+            labelEnableFiltres.Name = "labelEnableFiltres";
+            labelEnableFiltres.Size = new System.Drawing.Size(117, 20);
+            labelEnableFiltres.TabIndex = 6;
+            labelEnableFiltres.Text = "Filtry włączone";
+            labelEnableFiltres.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            labelEnableFiltres.Visible = false;
+            // 
+            // roundedPanel2
+            // 
+            roundedPanel2.BackColor = System.Drawing.Color.Transparent;
+            roundedPanel2.ColorEdges = System.Drawing.SystemColors.ActiveCaptionText;
+            roundedPanel2.Controls.Add(labelFindSatus);
+            roundedPanel2.Controls.Add(buttonfinditemReset);
+            roundedPanel2.Controls.Add(buttonfinditemF);
+            roundedPanel2.Controls.Add(buttonFindItem);
+            roundedPanel2.Controls.Add(panel21);
+            roundedPanel2.Controls.Add(label4);
+            roundedPanel2.Controls.Add(buttonFinditemPageClose);
+            roundedPanel2.Dock = DockStyle.Fill;
+            roundedPanel2.ExBackColor = System.Drawing.Color.FromArgb(40, 40, 40);
+            roundedPanel2.Location = new System.Drawing.Point(12, 12);
+            roundedPanel2.Margin = new Padding(4, 3, 4, 3);
+            roundedPanel2.Name = "roundedPanel2";
+            roundedPanel2.Padding = new Padding(12, 30, 12, 20);
+            roundedPanel2.RadiusArcPanel = 20F;
+            roundedPanel2.Size = new System.Drawing.Size(1066, 76);
+            roundedPanel2.TabIndex = 0;
+            // 
+            // labelFindSatus
+            // 
+            labelFindSatus.Dock = DockStyle.Fill;
+            labelFindSatus.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            labelFindSatus.ForeColor = System.Drawing.Color.White;
+            labelFindSatus.Location = new System.Drawing.Point(901, 30);
+            labelFindSatus.Margin = new Padding(4, 0, 4, 0);
+            labelFindSatus.Name = "labelFindSatus";
+            labelFindSatus.Size = new System.Drawing.Size(61, 26);
+            labelFindSatus.TabIndex = 4;
+            labelFindSatus.Text = "Szukanie";
+            labelFindSatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            labelFindSatus.Visible = false;
+            // 
+            // buttonfinditemReset
+            // 
+            buttonfinditemReset.Dock = DockStyle.Left;
+            buttonfinditemReset.FlatAppearance.BorderSize = 0;
+            buttonfinditemReset.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(60, 60, 60);
+            buttonfinditemReset.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(55, 55, 55);
+            buttonfinditemReset.FlatStyle = FlatStyle.Flat;
+            buttonfinditemReset.ForeColor = System.Drawing.Color.White;
+            buttonfinditemReset.Location = new System.Drawing.Point(813, 30);
+            buttonfinditemReset.Margin = new Padding(4, 3, 4, 3);
+            buttonfinditemReset.Name = "buttonfinditemReset";
+            buttonfinditemReset.Size = new System.Drawing.Size(88, 26);
+            buttonfinditemReset.TabIndex = 3;
+            buttonfinditemReset.Text = "Reset";
+            buttonfinditemReset.UseVisualStyleBackColor = true;
+            buttonfinditemReset.Click += ButtonfinditemReset_Click;
+            // 
+            // buttonfinditemF
+            // 
+            buttonfinditemF.Dock = DockStyle.Left;
+            buttonfinditemF.FlatAppearance.BorderSize = 0;
+            buttonfinditemF.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(60, 60, 60);
+            buttonfinditemF.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(55, 55, 55);
+            buttonfinditemF.FlatStyle = FlatStyle.Flat;
+            buttonfinditemF.ForeColor = System.Drawing.Color.White;
+            buttonfinditemF.Location = new System.Drawing.Point(744, 30);
+            buttonfinditemF.Margin = new Padding(4, 3, 4, 3);
+            buttonfinditemF.Name = "buttonfinditemF";
+            buttonfinditemF.Size = new System.Drawing.Size(69, 26);
+            buttonfinditemF.TabIndex = 6;
+            buttonfinditemF.Text = "Filtry";
+            buttonfinditemF.UseVisualStyleBackColor = true;
+            buttonfinditemF.Visible = false;
+            buttonfinditemF.Click += ButtonfinditemF_Click;
+            // 
+            // buttonFindItem
+            // 
+            buttonFindItem.Dock = DockStyle.Left;
+            buttonFindItem.FlatAppearance.BorderSize = 0;
+            buttonFindItem.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(60, 60, 60);
+            buttonFindItem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(55, 55, 55);
+            buttonFindItem.FlatStyle = FlatStyle.Flat;
+            buttonFindItem.ForeColor = System.Drawing.Color.White;
+            buttonFindItem.Location = new System.Drawing.Point(656, 30);
+            buttonFindItem.Margin = new Padding(4, 3, 4, 3);
+            buttonFindItem.Name = "buttonFindItem";
+            buttonFindItem.Size = new System.Drawing.Size(88, 26);
+            buttonFindItem.TabIndex = 2;
+            buttonFindItem.Text = "Szukaj";
+            buttonFindItem.UseVisualStyleBackColor = true;
+            buttonFindItem.Click += ButtonFindItem_Click;
+            // 
+            // panel21
+            // 
+            panel21.Controls.Add(textBoxFinditem);
+            panel21.Dock = DockStyle.Left;
+            panel21.Location = new System.Drawing.Point(216, 30);
+            panel21.Name = "panel21";
+            panel21.Padding = new Padding(0, 0, 0, 5);
+            panel21.Size = new System.Drawing.Size(440, 26);
+            panel21.TabIndex = 7;
+            // 
+            // textBoxFinditem
+            // 
+            textBoxFinditem.AutoCompleteMode = AutoCompleteMode.Suggest;
+            textBoxFinditem.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            textBoxFinditem.BackColor = System.Drawing.Color.FromArgb(20, 20, 20);
+            textBoxFinditem.BorderStyle = BorderStyle.None;
+            textBoxFinditem.Dock = DockStyle.Bottom;
+            textBoxFinditem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            textBoxFinditem.ForeColor = System.Drawing.Color.White;
+            textBoxFinditem.Location = new System.Drawing.Point(0, 5);
+            textBoxFinditem.Margin = new Padding(4, 3, 4, 3);
+            textBoxFinditem.Name = "textBoxFinditem";
+            textBoxFinditem.PlaceholderText = "Szukaj";
+            textBoxFinditem.Size = new System.Drawing.Size(440, 16);
+            textBoxFinditem.TabIndex = 1;
+            textBoxFinditem.TextAlign = HorizontalAlignment.Center;
+            textBoxFinditem.TextChanged += TextBoxFinditem_TextChanged;
+            textBoxFinditem.KeyDown += TextBoxFinditem_KeyDown;
+            // 
+            // label4
+            // 
+            label4.Dock = DockStyle.Left;
+            label4.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label4.ForeColor = System.Drawing.SystemColors.Window;
+            label4.Location = new System.Drawing.Point(12, 30);
+            label4.Margin = new Padding(4, 0, 4, 0);
+            label4.Name = "label4";
+            label4.Size = new System.Drawing.Size(204, 26);
+            label4.TabIndex = 5;
+            label4.Text = "AnimePlayer - Wyszukiwarka";
+            label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // buttonFinditemPageClose
+            // 
+            buttonFinditemPageClose.BackColor = System.Drawing.Color.Transparent;
+            buttonFinditemPageClose.Dock = DockStyle.Right;
+            buttonFinditemPageClose.FlatAppearance.BorderSize = 0;
+            buttonFinditemPageClose.FlatStyle = FlatStyle.Flat;
+            buttonFinditemPageClose.ForeColor = System.Drawing.Color.Red;
+            buttonFinditemPageClose.Location = new System.Drawing.Point(962, 30);
+            buttonFinditemPageClose.Margin = new Padding(4, 3, 4, 3);
+            buttonFinditemPageClose.Name = "buttonFinditemPageClose";
+            buttonFinditemPageClose.Size = new System.Drawing.Size(92, 26);
+            buttonFinditemPageClose.TabIndex = 0;
+            buttonFinditemPageClose.Text = "Zamknij kartę";
+            buttonFinditemPageClose.UseVisualStyleBackColor = false;
+            buttonFinditemPageClose.Click += ButtonFinditemPageClose_Click;
             // 
             // panelNotifiError
             // 
-            this.panelNotifiError.Controls.Add(this.labelError);
-            this.panelNotifiError.Controls.Add(this.pictureBox3);
-            this.panelNotifiError.Location = new System.Drawing.Point(0, 0);
-            this.panelNotifiError.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.panelNotifiError.Name = "panelNotifiError";
-            this.panelNotifiError.Size = new System.Drawing.Size(233, 59);
-            this.panelNotifiError.TabIndex = 6;
+            panelNotifiError.Controls.Add(labelError);
+            panelNotifiError.Controls.Add(pictureBox3);
+            panelNotifiError.Location = new System.Drawing.Point(0, 0);
+            panelNotifiError.Margin = new Padding(4, 3, 4, 3);
+            panelNotifiError.Name = "panelNotifiError";
+            panelNotifiError.Size = new System.Drawing.Size(233, 59);
+            panelNotifiError.TabIndex = 6;
             // 
             // labelError
             // 
-            this.labelError.AutoEllipsis = true;
-            this.labelError.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelError.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelError.ForeColor = System.Drawing.Color.Red;
-            this.labelError.Location = new System.Drawing.Point(66, 0);
-            this.labelError.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelError.Name = "labelError";
-            this.labelError.Size = new System.Drawing.Size(167, 59);
-            this.labelError.TabIndex = 1;
-            this.labelError.Text = "Error code:";
-            this.labelError.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            labelError.AutoEllipsis = true;
+            labelError.Dock = DockStyle.Fill;
+            labelError.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            labelError.ForeColor = System.Drawing.Color.Red;
+            labelError.Location = new System.Drawing.Point(66, 0);
+            labelError.Margin = new Padding(4, 0, 4, 0);
+            labelError.Name = "labelError";
+            labelError.Size = new System.Drawing.Size(167, 59);
+            labelError.TabIndex = 1;
+            labelError.Text = "Error code:";
+            labelError.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox3
             // 
-            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBox3.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(66, 59);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 0;
-            this.pictureBox3.TabStop = false;
+            pictureBox3.BackColor = System.Drawing.Color.Transparent;
+            pictureBox3.Dock = DockStyle.Left;
+            pictureBox3.Location = new System.Drawing.Point(0, 0);
+            pictureBox3.Margin = new Padding(4, 3, 4, 3);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new System.Drawing.Size(66, 59);
+            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox3.TabIndex = 0;
+            pictureBox3.TabStop = false;
             // 
             // timerAnimationError
             // 
-            this.timerAnimationError.Interval = 1;
-            this.timerAnimationError.Tick += new System.EventHandler(this.TimerAnimationError_Tick);
+            timerAnimationError.Interval = 1;
+            timerAnimationError.Tick += TimerAnimationError_Tick;
             // 
             // timerAppPer
             // 
-            this.timerAppPer.Interval = 1000;
-            this.timerAppPer.Tick += new System.EventHandler(this.TimerAppPer_Tick);
+            timerAppPer.Interval = 1000;
+            timerAppPer.Tick += TimerAppPer_Tick;
             // 
             // panel18
             // 
-            this.panel18.Controls.Add(this.labelAppRamUsage);
-            this.panel18.Location = new System.Drawing.Point(0, 0);
-            this.panel18.Name = "panel18";
-            this.panel18.Size = new System.Drawing.Size(170, 35);
-            this.panel18.TabIndex = 7;
-            this.panel18.Visible = false;
+            panel18.Controls.Add(labelAppRamUsage);
+            panel18.Location = new System.Drawing.Point(0, 0);
+            panel18.Name = "panel18";
+            panel18.Size = new System.Drawing.Size(170, 35);
+            panel18.TabIndex = 7;
+            panel18.Visible = false;
             // 
             // labelAppRamUsage
             // 
-            this.labelAppRamUsage.AutoSize = true;
-            this.labelAppRamUsage.ForeColor = System.Drawing.Color.White;
-            this.labelAppRamUsage.Location = new System.Drawing.Point(3, 12);
-            this.labelAppRamUsage.Name = "labelAppRamUsage";
-            this.labelAppRamUsage.Size = new System.Drawing.Size(110, 15);
-            this.labelAppRamUsage.TabIndex = 0;
-            this.labelAppRamUsage.Text = "labelAppRamUsage";
+            labelAppRamUsage.AutoSize = true;
+            labelAppRamUsage.ForeColor = System.Drawing.Color.White;
+            labelAppRamUsage.Location = new System.Drawing.Point(3, 12);
+            labelAppRamUsage.Name = "labelAppRamUsage";
+            labelAppRamUsage.Size = new System.Drawing.Size(110, 15);
+            labelAppRamUsage.TabIndex = 0;
+            labelAppRamUsage.Text = "labelAppRamUsage";
             // 
             // panelCommands
             // 
-            this.panelCommands.Controls.Add(this.textBoxCommandOutput);
-            this.panelCommands.Controls.Add(this.textBoxCommandInput);
-            this.panelCommands.Controls.Add(this.label22);
-            this.panelCommands.Location = new System.Drawing.Point(355, 216);
-            this.panelCommands.Name = "panelCommands";
-            this.panelCommands.Size = new System.Drawing.Size(357, 133);
-            this.panelCommands.TabIndex = 8;
-            this.panelCommands.Visible = false;
+            panelCommands.Controls.Add(textBoxCommandOutput);
+            panelCommands.Controls.Add(textBoxCommandInput);
+            panelCommands.Controls.Add(label22);
+            panelCommands.Location = new System.Drawing.Point(355, 216);
+            panelCommands.Name = "panelCommands";
+            panelCommands.Size = new System.Drawing.Size(357, 133);
+            panelCommands.TabIndex = 8;
+            panelCommands.Visible = false;
             // 
             // textBoxCommandOutput
             // 
-            this.textBoxCommandOutput.BackColor = System.Drawing.Color.Black;
-            this.textBoxCommandOutput.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxCommandOutput.ForeColor = System.Drawing.Color.White;
-            this.textBoxCommandOutput.Location = new System.Drawing.Point(11, 27);
-            this.textBoxCommandOutput.Multiline = true;
-            this.textBoxCommandOutput.Name = "textBoxCommandOutput";
-            this.textBoxCommandOutput.ReadOnly = true;
-            this.textBoxCommandOutput.Size = new System.Drawing.Size(340, 65);
-            this.textBoxCommandOutput.TabIndex = 2;
+            textBoxCommandOutput.BackColor = System.Drawing.Color.Black;
+            textBoxCommandOutput.BorderStyle = BorderStyle.None;
+            textBoxCommandOutput.ForeColor = System.Drawing.Color.White;
+            textBoxCommandOutput.Location = new System.Drawing.Point(11, 27);
+            textBoxCommandOutput.Multiline = true;
+            textBoxCommandOutput.Name = "textBoxCommandOutput";
+            textBoxCommandOutput.ReadOnly = true;
+            textBoxCommandOutput.Size = new System.Drawing.Size(340, 65);
+            textBoxCommandOutput.TabIndex = 2;
             // 
             // textBoxCommandInput
             // 
-            this.textBoxCommandInput.AutoCompleteCustomSource.AddRange(new string[] {
-            "videoplayerweb open loaclfile type youtube;"});
-            this.textBoxCommandInput.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
-            this.textBoxCommandInput.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.textBoxCommandInput.BackColor = System.Drawing.Color.Black;
-            this.textBoxCommandInput.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxCommandInput.ForeColor = System.Drawing.Color.White;
-            this.textBoxCommandInput.Location = new System.Drawing.Point(11, 101);
-            this.textBoxCommandInput.Name = "textBoxCommandInput";
-            this.textBoxCommandInput.Size = new System.Drawing.Size(340, 23);
-            this.textBoxCommandInput.TabIndex = 1;
-            this.textBoxCommandInput.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextBoxCommandInput_KeyDown);
+            textBoxCommandInput.AutoCompleteCustomSource.AddRange(new string[] { "videoplayerweb open loaclfile type youtube;" });
+            textBoxCommandInput.AutoCompleteMode = AutoCompleteMode.Append;
+            textBoxCommandInput.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            textBoxCommandInput.BackColor = System.Drawing.Color.Black;
+            textBoxCommandInput.BorderStyle = BorderStyle.FixedSingle;
+            textBoxCommandInput.ForeColor = System.Drawing.Color.White;
+            textBoxCommandInput.Location = new System.Drawing.Point(11, 101);
+            textBoxCommandInput.Name = "textBoxCommandInput";
+            textBoxCommandInput.Size = new System.Drawing.Size(340, 23);
+            textBoxCommandInput.TabIndex = 1;
+            textBoxCommandInput.KeyDown += TextBoxCommandInput_KeyDown;
             // 
             // label22
             // 
-            this.label22.AutoSize = true;
-            this.label22.ForeColor = System.Drawing.Color.White;
-            this.label22.Location = new System.Drawing.Point(11, 9);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(94, 15);
-            this.label22.TabIndex = 0;
-            this.label22.Text = "Konsola poleceń";
+            label22.AutoSize = true;
+            label22.ForeColor = System.Drawing.Color.White;
+            label22.Location = new System.Drawing.Point(11, 9);
+            label22.Name = "label22";
+            label22.Size = new System.Drawing.Size(94, 15);
+            label22.TabIndex = 0;
+            label22.Text = "Konsola poleceń";
             // 
             // FormMainPlayer
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.ClientSize = new System.Drawing.Size(1090, 624);
-            this.Controls.Add(this.panel18);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panelCommands);
-            this.Controls.Add(this.panelMenu);
-            this.Controls.Add(this.panelNotifiError);
-            this.DoubleBuffered = true;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.KeyPreview = true;
-            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.MinimumSize = new System.Drawing.Size(1106, 629);
-            this.Name = "FormMainPlayer";
-            this.Text = "AnimePlayer";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormMainPlayer_FormClosing);
-            this.Load += new System.EventHandler(this.FormMainPlayer_Load);
-            this.ResizeBegin += new System.EventHandler(this.FormMainPlayer_ResizeBegin);
-            this.ResizeEnd += new System.EventHandler(this.FormMainPlayer_ResizeEnd);
-            this.SizeChanged += new System.EventHandler(this.FormMainPlayer_SizeChanged);
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
-            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyUp);
-            this.Resize += new System.EventHandler(this.FormMainPlayer_Resize);
-            this.panelStartPage.ResumeLayout(false);
-            this.panelSTNewsMain.ResumeLayout(false);
-            this.panelSTNewsMain.PerformLayout();
-            this.panelTop.ResumeLayout(false);
-            this.roundedPanel1.ResumeLayout(false);
-            this.panel7.ResumeLayout(false);
-            this.panel9.ResumeLayout(false);
-            this.panel9.PerformLayout();
-            this.panel22.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProfileIcon)).EndInit();
-            this.panelLoading.ResumeLayout(false);
-            this.panelLoading.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoading)).EndInit();
-            this.panelMenu.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGithub)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSite)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panelAllitem.ResumeLayout(false);
-            this.panel23.ResumeLayout(false);
-            this.panel24.ResumeLayout(false);
-            this.panelTopFinder.ResumeLayout(false);
-            this.roundedPanel2.ResumeLayout(false);
-            this.panel21.ResumeLayout(false);
-            this.panel21.PerformLayout();
-            this.panelMoreButtons.ResumeLayout(false);
-            this.panel10.ResumeLayout(false);
-            this.newFlowLayoutPanel1.ResumeLayout(false);
-            this.panel11.ResumeLayout(false);
-            this.panel12.ResumeLayout(false);
-            this.panel13.ResumeLayout(false);
-            this.panel14.ResumeLayout(false);
-            this.panel17.ResumeLayout(false);
-            this.panel15.ResumeLayout(false);
-            this.panel16.ResumeLayout(false);
-            this.panel19.ResumeLayout(false);
-            this.panel20.ResumeLayout(false);
-            this.panel6.ResumeLayout(false);
-            this.panelNotifiError.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            this.panel18.ResumeLayout(false);
-            this.panel18.PerformLayout();
-            this.panelCommands.ResumeLayout(false);
-            this.panelCommands.PerformLayout();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = System.Drawing.Color.FromArgb(28, 28, 28);
+            ClientSize = new System.Drawing.Size(1090, 624);
+            Controls.Add(panel18);
+            Controls.Add(panel2);
+            Controls.Add(panelCommands);
+            Controls.Add(panelMenu);
+            Controls.Add(panelNotifiError);
+            DoubleBuffered = true;
+            Icon = (System.Drawing.Icon)resources.GetObject("$this.Icon");
+            KeyPreview = true;
+            Margin = new Padding(4, 3, 4, 3);
+            MinimumSize = new System.Drawing.Size(1106, 629);
+            Name = "FormMainPlayer";
+            Text = "AnimePlayer";
+            FormClosing += FormMainPlayer_FormClosing;
+            Load += FormMainPlayer_Load;
+            ResizeBegin += FormMainPlayer_ResizeBegin;
+            ResizeEnd += FormMainPlayer_ResizeEnd;
+            SizeChanged += FormMainPlayer_SizeChanged;
+            KeyDown += Form1_KeyDown;
+            KeyUp += Form1_KeyUp;
+            Resize += FormMainPlayer_Resize;
+            panelStartPage.ResumeLayout(false);
+            panelSTNewsMain.ResumeLayout(false);
+            panelSTNewsMain.PerformLayout();
+            panelTop.ResumeLayout(false);
+            roundedPanel1.ResumeLayout(false);
+            panel7.ResumeLayout(false);
+            panel9.ResumeLayout(false);
+            panel9.PerformLayout();
+            panel22.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBoxProfileIcon).EndInit();
+            panelLoading.ResumeLayout(false);
+            panelLoading.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxLoading).EndInit();
+            panelMenu.ResumeLayout(false);
+            panel5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBoxGithub).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxSite).EndInit();
+            panel2.ResumeLayout(false);
+            panelMoreButtons.ResumeLayout(false);
+            panel10.ResumeLayout(false);
+            newFlowLayoutPanel1.ResumeLayout(false);
+            panel11.ResumeLayout(false);
+            panel12.ResumeLayout(false);
+            panel13.ResumeLayout(false);
+            panel14.ResumeLayout(false);
+            panel17.ResumeLayout(false);
+            panel15.ResumeLayout(false);
+            panel16.ResumeLayout(false);
+            panel19.ResumeLayout(false);
+            panel20.ResumeLayout(false);
+            panel6.ResumeLayout(false);
+            panelAllitem.ResumeLayout(false);
+            panel23.ResumeLayout(false);
+            panel24.ResumeLayout(false);
+            panelTopFinder.ResumeLayout(false);
+            roundedPanel2.ResumeLayout(false);
+            panel21.ResumeLayout(false);
+            panel21.PerformLayout();
+            panelNotifiError.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            panel18.ResumeLayout(false);
+            panel18.PerformLayout();
+            panelCommands.ResumeLayout(false);
+            panelCommands.PerformLayout();
+            ResumeLayout(false);
         }
 
         #endregion
-        private System.Windows.Forms.NotifyIcon notifyIcon1;
-        private System.Windows.Forms.Panel panelTop;
-        private AnimePlayerLibrary.RoundedPanel roundedPanel1;
-        private System.Windows.Forms.Label label;
-        public System.Windows.Forms.Panel panelLoading;
-        private System.Windows.Forms.Button buttonMenuClose;
-        private System.Windows.Forms.Button buttonPlayer;
-        private System.Windows.Forms.Button buttonSetting;
-        public System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button buttonExitApp;
-        private System.Windows.Forms.Panel panelNotifiError;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        public System.Windows.Forms.Label labelError;
-        public System.Windows.Forms.Timer timerAnimationError;
-        public System.Windows.Forms.Label labelSatusWorkingApp;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.PictureBox pictureBoxGithub;
-        private System.Windows.Forms.PictureBox pictureBoxSite;
-        private System.Windows.Forms.Button buttonSite;
-        private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Button buttonViewFindintems;
-        public System.Windows.Forms.Label labelLoading;
-        private System.Windows.Forms.Button buttonRestartApp;
-        public System.Windows.Forms.Panel panelMenu;
-        public System.Windows.Forms.Label labelLoadingDetails;
-        public System.Windows.Forms.Panel panelStartPage;
-        public System.Windows.Forms.Label labelLoadingA;
-        public System.Windows.Forms.PictureBox pictureBoxLoading;
-        private System.Windows.Forms.Panel panelSTNewsMain;
-        public System.Windows.Forms.TextBox textBoxStartPagefinditem;
-        private System.Windows.Forms.Panel panel9;
-        public System.Windows.Forms.Button buttonStartPageFinditem;
-        public System.Windows.Forms.Button buttonMenuOpen;
+        private NotifyIcon notifyIcon1;
+        private Panel panelTop;
+        private RoundedPanel roundedPanel1;
+        private Label label;
+        public Panel panelLoading;
+        private Button buttonMenuClose;
+        private Button buttonPlayer;
+        private Button buttonSetting;
+        public Panel panel2;
+        private Button buttonExitApp;
+        private Panel panelNotifiError;
+        private PictureBox pictureBox3;
+        public Label labelError;
+        public Timer timerAnimationError;
+        public Label labelSatusWorkingApp;
+        private Panel panel5;
+        private PictureBox pictureBoxGithub;
+        private PictureBox pictureBoxSite;
+        private Button buttonSite;
+        private Panel panel7;
+        private Panel panel8;
+        private Button buttonViewFindintems;
+        public Label labelLoading;
+        private Button buttonRestartApp;
+        public Panel panelMenu;
+        public Label labelLoadingDetails;
+        public Panel panelStartPage;
+        public Label labelLoadingA;
+        public PictureBox pictureBoxLoading;
+        private Panel panelSTNewsMain;
+        public TextBox textBoxStartPagefinditem;
+        private Panel panel9;
+        public Button buttonStartPageFinditem;
+        public Button buttonMenuOpen;
         public RoundedPanel roundedPanel2;
-        public System.Windows.Forms.Panel panelTopFinder;
-        public System.Windows.Forms.Label labelEnableFiltres;
-        public System.Windows.Forms.Button buttonFinditemPageClose;
-        public System.Windows.Forms.Button buttonFindItem;
-        public System.Windows.Forms.TextBox textBoxFinditem;
-        public System.Windows.Forms.Button buttonfinditemReset;
-        public System.Windows.Forms.Label labelFindSatus;
-        public System.Windows.Forms.Label label4;
-        public System.Windows.Forms.Button buttonfinditemF;
-        public System.Windows.Forms.Panel panelAllitem;
-        private System.Windows.Forms.Button buttonShowTitleStatusList;
-        private System.Windows.Forms.ToolTip toolTip;
+        public Panel panelTopFinder;
+        public Label labelEnableFiltres;
+        public Button buttonFinditemPageClose;
+        public Button buttonFindItem;
+        public TextBox textBoxFinditem;
+        public Button buttonfinditemReset;
+        public Label labelFindSatus;
+        public Label label4;
+        public Button buttonfinditemF;
+        public Panel panelAllitem;
+        private Button buttonShowTitleStatusList;
+        private ToolTip toolTip;
         private Label label1;
         private Label label_InfoText_news;
         private Button buttonMoreBtnMenu;
@@ -1818,7 +1812,7 @@ namespace AnimePlayer
         private Label label16;
         private Button buttonCommunity;
         private Label label17;
-        private System.Windows.Forms.Timer timerAppPer;
+        private Timer timerAppPer;
         private Panel panel18;
         public Label labelAppRamUsage;
         private Panel panel19;

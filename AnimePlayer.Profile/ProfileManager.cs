@@ -180,6 +180,10 @@ namespace AnimePlayer.Profile
         {
             try
             {
+                if(CurrentProfile == null)
+                {
+                    return null;
+                }
                 List<ProfileIAnimeList> allList = new List<ProfileIAnimeList>();
                 DirectoryInfo directoryInfo = new DirectoryInfo(PathToProfiles + CurrentProfile.Name + "\\Lists");
                 foreach(var file in directoryInfo.GetFiles())
