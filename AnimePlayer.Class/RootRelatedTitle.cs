@@ -12,5 +12,7 @@ namespace AnimePlayer.Class
         public string RootTitle { get; set; }
 
         public List<RelatedTitle> RelatedTitles { get; set; }
+        public Guid Guid { get; set; }
+        public string FileCrator { get; set; }
     }
 }

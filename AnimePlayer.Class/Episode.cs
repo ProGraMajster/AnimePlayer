@@ -18,5 +18,7 @@ namespace AnimePlayer.Class
         public string LinkToEpisode { get; set; }
         public string TranslationCreator { get; set; }
         public string TranslationCreatorAdditionalInformation { get; set; }
+        public Guid Guid { get; set; }
+        public string FileCrator { get; set; }
     }
 }

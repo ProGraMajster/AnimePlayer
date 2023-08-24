@@ -184,7 +184,8 @@ namespace AnimePlayer.Profile
                 Directory.CreateDirectory(path);
                 SerializationAndDeserialization
                     .Serialization(profileClass, path + "\\profile.dat");
-
+                panelCreate.Hide();
+                LoadProfiles();
             }
             catch (Exception ex)
             {
