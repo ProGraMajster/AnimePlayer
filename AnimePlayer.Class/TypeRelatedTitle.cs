@@ -2,6 +2,7 @@
 
 namespace AnimePlayer.Class
 {
+    [Serializable]
     public enum TypeRelatedTitle : int
     {
         Sequel = 0,

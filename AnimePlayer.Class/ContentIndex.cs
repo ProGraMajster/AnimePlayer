@@ -11,7 +11,7 @@ namespace AnimePlayer.Class
     {
         public List<MainItemClass> MainItemClasses{ get; set; }
 
-        public List<EpisodeInforamion> EpisodeInforamions{ get; set; }
+        //public List<EpisodeInforamion> EpisodeInforamions{ get; set; }
         public Dictionary<string, string> IconTitles{ get; set; }
         public Dictionary<string, MainItemClass> FindItemFormName{ get; set; }
     }
