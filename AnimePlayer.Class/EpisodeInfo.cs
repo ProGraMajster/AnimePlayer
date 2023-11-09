@@ -9,6 +9,9 @@ namespace AnimePlayer.Class
     public class EpisodeInfo
     {
         public bool Aired { get; set; }
+        public bool Delayed { get; set; }
+        public bool Translated { get; set; }
+        public DateTime DateTimeDelayed {  get; set; }
         public string AnimeTitle { get; set; }
         public string EpisodeTitle { get; set; }
         public string EpisodeDescription { get; set; }

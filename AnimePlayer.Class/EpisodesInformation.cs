@@ -10,7 +10,8 @@ namespace AnimePlayer.Class
     [Serializable]
     public class EpisodesInformation
     {
-        public string Title { get; set; }
-        List<EpisodeInfo> EpisodeInfos { get; set; }
+        public string AnimeTitle { get; set; }
+        public List<EpisodeInfo> EpisodeInfos { get; set; }
+        public Guid GuidAnime { get; set; }
     }
 }
