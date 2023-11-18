@@ -397,5 +397,133 @@ namespace AnimePlayerLibrary
             }
         }
         */
+
+        public static List<ScrapedOffClass> GetLatestEpisodesS(int limit)
+        {
+            try
+            {
+                var watch = System.Diagnostics.Stopwatch.StartNew();
+                List<ScrapedOffClass> scrapeds = new List<ScrapedOffClass>();
+                string folderPath = AppFolders.ScrapedOff;
+                var sortedFiles = new DirectoryInfo(folderPath).GetFiles()
+                                                  .OrderBy(f => f.LastWriteTime)
+                                                  .ToList();
+                int x = 0;
+                foreach (FileInfo file in sortedFiles)
+                {
+                    if (x == limit)
+                    {
+                        watch.Stop();
+                        //LogManager.Log("Ładowanie najnowszych odcinków: " + watch.ElapsedMilliseconds.ToString() + "ms", "", "INFO", "M_0");
+                        return scrapeds;
+                    }
+                    ScrapedOffClass scrapedOffClass = (ScrapedOffClass)
+                        SerializationAndDeserialization.DeserializationJsonEx(file.FullName, typeof(ScrapedOffClass));
+                    if (scrapedOffClass != null)
+                    {
+                        if (scrapeds.Count > 0)
+                        {
+                            List<string> strings = new List<string>();
+                            foreach (var i in scrapeds)
+                            {
+                                strings.Add(i.TitleAnime);
+                            }
+                            if (!strings.Contains(scrapedOffClass.TitleAnime))
+                            {
+                                scrapeds.Add(scrapedOffClass);
+                                x++;
+                            }
+                            strings = null;
+                        }
+                        else
+                        {
+                            scrapeds.Add(scrapedOffClass);
+                            x++;
+                        }
+                    }
+                }
+                watch.Stop();
+                //LogManager.Log("Ładowanie najnowszych odcinków: " + watch.ElapsedMilliseconds.ToString() + "ms", "", "INFO", "M_0");
+                return scrapeds;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            return null;
+        }
+
+
+        public static RootRelatedTitle GetRootRelatedTitleFromName(string name)
+        {
+            try
+            {
+                DirectoryInfo directoryInfo = new DirectoryInfo(AppFolders.RelatedTitle);
+                foreach (var item in directoryInfo.GetFiles())
+                {
+                    if (item.FullName.EndsWith(".json"))
+                    {
+                        RootRelatedTitle rootRelatedTitle = (RootRelatedTitle)AnimePlayer.Core.SerializationAndDeserialization
+                            .DeserializationJsonEx(item.FullName, typeof(RootRelatedTitle));
+                        if (rootRelatedTitle != null)
+                        {
+                            if (rootRelatedTitle.RootTitle.ToUpper() == name.ToUpper())
+                            {
+                                return rootRelatedTitle;
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            return null;
+        }
+
+
+        public static List<ScrapedOffClass> GetScrapedOffClass(int number, string title)
+        {
+            try
+            {
+                DirectoryInfo directoryInfo = new DirectoryInfo(AppFolders.ScrapedOff);
+                List<ScrapedOffClass> list = new();
+
+                title = Replacer.Names(title);
+                foreach (FileInfo file in directoryInfo.GetFiles())
+                {
+                    if (file == null)
+                    {
+                        Console.WriteLine("item is null");
+                        break;
+                    }
+                    ScrapedOffClass s = null;
+                    if (file.FullName.EndsWith(".json"))
+                    {
+                        Console.WriteLine("Json type file");
+                        s = (ScrapedOffClass)AnimePlayer.Core.SerializationAndDeserialization.DeserializationJsonEx(file.FullName, typeof(ScrapedOffClass));
+                    }
+
+                    if (s != null)
+                    {
+                        if (s.Number.Replace("'", "") == number.ToString() &&
+                            Replacer.Names(s.TitleAnime) == Replacer.Names(title))
+                        {
+                            Console.WriteLine("Add");
+                            list.Add(s);
+                        }
+                    }
+                }
+                return list;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("GetEpisode >");
+                Console.WriteLine(ex.ToString());
+                Debug.WriteLine(ex.ToString());
+            }
+            return null;
+        }
     }
 }

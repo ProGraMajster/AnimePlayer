@@ -62,6 +62,57 @@ namespace AnimePlayerLibrary.UI
             {
                 labelTitle.Text = _PageItemData.TitleInformation.Title;
                 labelEpNumber.Text = "Odcinek " + numberEp.ToString();
+                Thread thScrapedList = new(() =>
+                {
+                    try
+                    {
+                        var list = ContentManagerLibary.GetScrapedOffClass(numberEp, _PageItemData.TitleInformation.Title);
+                        if (list != null && list.Count > 0)
+                        {
+                            foreach (var item in list)
+                            {
+                                PanelEpisodeScrapedOff panelEpisodeScrapedOff = new(item);
+                                panelEpisodeScrapedOff.buttonWatch.Tag = item;
+                                panelEpisodeScrapedOff.buttonWatch.Click += PanelEpisodeScrapedOff_buttonWatch_Click;
+                                flowLayoutPanel1.Invoke(() =>
+                                {
+                                    flowLayoutPanel1.Controls.Add(panelEpisodeScrapedOff);
+                                });
+                            }/*
+                            MainThread.BeginInvokeOnMainThread(() =>
+                            {
+                                TheSpinner.IsVisible = false;
+                                if (slScrapedEpList.Children.Count > 0)
+                                {
+                                    slScrapedMain.IsVisible = true;
+                                }
+                            });*/
+                        }/*
+                        else
+                        {
+                            MainThread.BeginInvokeOnMainThread(() =>
+                            {
+                                TheSpinner.IsVisible = false;
+                                slScrapedMain.IsVisible = true;
+                                slScrapedEpList.Children.Add(new Label()
+                                {
+                                    Text = "Brak tłumaczeń 'nie sprawdzonych' (；′⌒`)",
+                                    Margin = new Thickness(5, 20, 5, 20),
+                                    HorizontalTextAlignment = TextAlignment.Center,
+                                    VerticalTextAlignment = TextAlignment.Center,
+                                    FontSize = 16
+                                });
+                            });
+                        }*/
+
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex.ToString());
+                       // LogManager.Log(ex);
+                    }
+                });
+                thScrapedList.Start();
                 Thread thread = new(() =>
                 {
                     List<Episode> episodes = ContentManagerLibary.GetEpisode(numberEp, _PageItemData.TitleInformation.Title);
@@ -78,6 +129,28 @@ namespace AnimePlayerLibrary.UI
                         }
                     }
 
+                });
+                thread.Name = "Thread_LoadEpisode";
+                thread.Start();
+                Thread thread2 = new(() =>
+                {
+                    List<string> strings = ContentManagerLibary.GetLinkToIcon(_PageItemData.TitleInformation.Title);
+                    if (strings == null)
+                    {
+                        return;
+                    }
+                    linksToIcon = strings;
+                    pictureBox1.Invoke(() =>
+                    {
+                        pictureBox1.ImageLocation = strings[0];
+                    });
+                });
+                thread2.Name = "Thread_LoadIcon";
+                thread2.Start();
+
+                Thread threadNo = new(() =>
+                {
+                    Thread.Sleep(1000);
                     if (flowLayoutPanel1.Controls.Count == 0)
                     {
                         Label label = new()
@@ -102,26 +175,33 @@ namespace AnimePlayerLibrary.UI
                         });
                     }
                 });
-                thread.Name = "Thread_LoadEpisode";
-                thread.Start();
-                Thread thread2 = new(() =>
-                {
-                    List<string> strings = ContentManagerLibary.GetLinkToIcon(_PageItemData.TitleInformation.Title);
-                    if (strings == null)
-                    {
-                        return;
-                    }
-                    linksToIcon = strings;
-                    pictureBox1.Invoke(() =>
-                    {
-                        pictureBox1.ImageLocation = strings[0];
-                    });
-                });
-                thread2.Name = "Thread_LoadIcon";
-                thread2.Start();
+                threadNo.Start();
             }
             catch (Exception ex)
             {
+                Console.Error.WriteLine(ex.ToString());
+            }
+        }
+
+        private void PanelEpisodeScrapedOff_buttonWatch_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Control control = (Control)sender;
+                ScrapedOffClass scrapedOffClass = (ScrapedOffClass)control.Tag;
+
+                Episode episode = new();
+                episode.LinkToEpisode = scrapedOffClass.LinkToIFrame;
+                VideoPlayerWeb videoPlayerWeb = new(episode);
+                this.Parent.Controls.Add(videoPlayerWeb);
+                videoPlayerWeb.Dock = DockStyle.Fill;
+                videoPlayerWeb.Show();
+                videoPlayerWeb.BringToFront();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Wystąpił błąd podczas ładowania!", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Console.Error.WriteLine(ex.ToString());
             }
         }

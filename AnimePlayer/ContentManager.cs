@@ -11,6 +11,7 @@ using AnimePlayerLibrary.UI;
 using System.Windows.Forms;
 using System.Diagnostics;
 using System.Threading;
+using AnimePlayerLibrary;
 
 namespace AnimePlayer
 {
@@ -152,7 +153,37 @@ namespace AnimePlayer
             {
                 List<PreviewTitleClass> previewTitlesInGroup = new List<PreviewTitleClass>();
                 List<PreviewTitleClass> previewTitleClassesAll = GetAllPreviewTitleClassFromFolder();
-                foreach(PreviewTitleClass item in previewTitleClassesAll)
+
+                bool IN = false;
+                if (groupClass.ItemNames != null)
+                {
+                    IN = true;
+                    foreach (PreviewTitleClass item in previewTitleClassesAll)
+                    {
+                        if (groupClass.ItemNames.Contains(item.Title))
+                        {
+                            previewTitlesInGroup.Add(item);
+                        }
+                    }
+                }
+
+                foreach (PreviewTitleClass item in previewTitleClassesAll)
+                {
+                    PageItemData pageItemData = GetPageItemDataWithContentFolderFromTitle(item.Title);
+                    if (string.IsNullOrEmpty(groupClass.GetFromSortingContent) && IN == false)
+                    {
+                        previewTitlesInGroup.Add(item);
+                    }
+                    else
+                    {
+                        if (CheckingItemSortFromString(groupClass.GetFromSortingContent, pageItemData))
+                        {
+                            previewTitlesInGroup.Add(item);
+                        }
+                    }
+                }
+/*
+                foreach (PreviewTitleClass item in previewTitleClassesAll)
                 {
                     PageItemData pageItemData = AnimePlayerLibrary.ContentManagerLibary.GetPageItemDataWithContentFolderFromTitle(item.Title);
                     if(string.IsNullOrEmpty(groupClass.GetFromSortingContent))
@@ -166,7 +197,7 @@ namespace AnimePlayer
                             previewTitlesInGroup.Add(item);
                         }
                     }
-                }
+                }*/
                 AnimePlayerLibrary.ItemsGroup itemsGroup = new AnimePlayerLibrary.ItemsGroup(groupClass);
                 foreach(var item in previewTitlesInGroup)
                 {
@@ -196,6 +227,9 @@ namespace AnimePlayer
             DirFilesMoveToDir(AppFolders.UpdatedWeb, AppFolders.Web);
             DirFilesMoveToDir(AppFolders.UpdatedCommunity, AppFolders.Community);
             DirFilesMoveToDir(AppFolders.UpdatedTitleComments, AppFolders.TitleComments);
+            DirFilesMoveToDir(AppFolders.UpdatedScrapedOff, AppFolders.ScrapedOff);
+            DirFilesMoveToDir(AppFolders.UpdatedRelatedTitle, AppFolders.RelatedTitle);
+            DirFilesMoveToDir(AppFolders.UpdatedEpisodesInformation, AppFolders.EpisodesInformation);
         }
          
         private static void DirFilesMoveToDir(string pathSource, string pathnewloocation)
@@ -321,6 +355,170 @@ namespace AnimePlayer
             {
                 Debug.WriteLine(ex.ToString());
                 Console.Error.WriteLine(ex.ToString());
+            }
+            return null;
+        }
+
+        public static EpisodesInformation GetEpisodesInformationFormTitle(string title)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(title))
+                {
+                    return null;
+                }
+                title = Replacer.Names(title);
+                DirectoryInfo directoryInfo = new(AppFolders.EpisodesInformation);
+                foreach (var item in directoryInfo.GetFiles())
+                {
+                    EpisodesInformation episodesInformation = null;
+                    if (item.FullName.EndsWith(".json"))
+                    {
+                        episodesInformation = (EpisodesInformation)
+                            SerializationAndDeserialization
+                            .DeserializationJsonEx(item.FullName, typeof(EpisodesInformation));
+                    }
+                    if (episodesInformation != null)
+                    {
+                        if (Replacer.Names(title) == Replacer.Names(episodesInformation.AnimeTitle))
+                        {
+                            return episodesInformation;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                return null;
+            }
+            return null;
+        }
+
+        public static List<ScrapedOffClass> GetLatestEpisodesS(int limit)
+        {
+            try
+            {
+                var watch = System.Diagnostics.Stopwatch.StartNew();
+                List<ScrapedOffClass> scrapeds = new List<ScrapedOffClass>();
+                string folderPath = AppFolders.ScrapedOff;
+                var sortedFiles = new DirectoryInfo(folderPath).GetFiles()
+                                                  .OrderBy(f => f.LastWriteTime)
+                                                  .ToList();
+                int x = 0;
+                foreach (FileInfo file in sortedFiles)
+                {
+                    if (x == limit)
+                    {
+                        watch.Stop();
+                        //LogManager.Log("Ładowanie najnowszych odcinków: " + watch.ElapsedMilliseconds.ToString() + "ms", "", "INFO", "M_0");
+                        return scrapeds;
+                    }
+                    ScrapedOffClass scrapedOffClass = (ScrapedOffClass)
+                        SerializationAndDeserialization.DeserializationJsonEx(file.FullName, typeof(ScrapedOffClass));
+                    if (scrapedOffClass != null)
+                    {
+                        if (scrapeds.Count > 0)
+                        {
+                            List<string> strings = new List<string>();
+                            foreach (var i in scrapeds)
+                            {
+                                strings.Add(i.TitleAnime);
+                            }
+                            if (!strings.Contains(scrapedOffClass.TitleAnime))
+                            {
+                                scrapeds.Add(scrapedOffClass);
+                                x++;
+                            }
+                            strings = null;
+                        }
+                        else
+                        {
+                            scrapeds.Add(scrapedOffClass);
+                            x++;
+                        }
+                    }
+                }
+                watch.Stop();
+                //LogManager.Log("Ładowanie najnowszych odcinków: " + watch.ElapsedMilliseconds.ToString() + "ms", "", "INFO", "M_0");
+                return scrapeds;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            return null;
+        }
+
+
+        public static RootRelatedTitle GetRootRelatedTitleFromName(string name)
+        {
+            try
+            {
+                DirectoryInfo directoryInfo = new DirectoryInfo(AppFolders.RelatedTitle);
+                foreach (var item in directoryInfo.GetFiles())
+                {
+                    if (item.FullName.EndsWith(".json"))
+                    {
+                        RootRelatedTitle rootRelatedTitle = (RootRelatedTitle)AnimePlayer.Core.SerializationAndDeserialization
+                            .DeserializationJsonEx(item.FullName, typeof(RootRelatedTitle));
+                        if (rootRelatedTitle != null)
+                        {
+                            if (rootRelatedTitle.RootTitle.ToUpper() == name.ToUpper())
+                            {
+                                return rootRelatedTitle;
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            return null;
+        }
+
+
+        public static List<ScrapedOffClass> GetScrapedOffClass(int number, string title)
+        {
+            try
+            {
+                DirectoryInfo directoryInfo = new DirectoryInfo(AppFolders.ScrapedOff);
+                List<ScrapedOffClass> list = new();
+
+                title = Replacer.Names(title);
+                foreach (FileInfo file in directoryInfo.GetFiles().ToList())
+                {
+                    if (file == null)
+                    {
+                        Console.WriteLine("item is null");
+                        break;
+                    }
+                    ScrapedOffClass s = null;
+                    if (file.FullName.EndsWith(".json"))
+                    {
+                        Console.WriteLine("Json type file");
+                        s = (ScrapedOffClass)AnimePlayer.Core.SerializationAndDeserialization.DeserializationJsonEx(file.FullName, typeof(ScrapedOffClass));
+                    }
+
+                    if (s != null)
+                    {
+                        if (s.Number.Replace("'", "") == number.ToString() &&
+                            Replacer.Names(s.TitleAnime) == Replacer.Names(title))
+                        {
+                            Console.WriteLine("Add");
+                            list.Add(s);
+                        }
+                    }
+                }
+                return list;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("GetEpisode >");
+                Console.WriteLine(ex.ToString());
+                Debug.WriteLine(ex.ToString());
             }
             return null;
         }

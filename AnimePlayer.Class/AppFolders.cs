@@ -38,6 +38,13 @@ namespace AnimePlayer.Class
             "\\AnimePlayer\\ItemGroups\\";
         public static readonly string TitleComments = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + 
             "\\AnimePlayer\\TitleComments\\";
+
+        public static readonly string ScrapedOff = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) +
+            "\\AnimePlayer\\ScrapedOff\\";
+        public static readonly string RelatedTitle = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) +
+            "\\AnimePlayer\\RelatedTitle\\";
+        public static readonly string EpisodesInformation = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) +
+            "\\AnimePlayer\\EpisodesInformation\\";
         //========================
         public static readonly string Profiles = AppFolder + "Profiles\\";
 
@@ -54,7 +61,14 @@ namespace AnimePlayer.Class
         public static readonly string UpdatedItemGroups = UpdatedRepoPath + "ItemGroups\\";
         public static readonly string UpdatedTitleComments = UpdatedRepoPath + "TitleComments\\";
 
-        
+        public static readonly string UpdatedScrapedOff = UpdatedRepoPath +
+            "\\ScrapedOff\\";
+        public static readonly string UpdatedRelatedTitle = UpdatedRepoPath +
+            "\\RelatedTitle\\";
+        public static readonly string UpdatedEpisodesInformation = UpdatedRepoPath +
+            "\\EpisodesInformation\\";
+
+
         public static readonly string UpdatedDefined = UpdatedRepoPath + "Defined\\";
             public static readonly string UpdatedDefined_PlaceAndTime = UpdatedDefined + "PlaceAndTime\\";
             public static readonly string UpdatedDefined_Species = UpdatedDefined + "Species\\";
